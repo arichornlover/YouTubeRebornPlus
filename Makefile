@@ -1,4 +1,4 @@
-uYouPlus_INJECT_DYLIBS = uYou.dylib iSponsorBlock.dylib libcolorpicker.dylib YTUHD.dylib YouPiP.dylib
+CercubePlus_INJECT_DYLIBS = Cercube.dylib iSponsorBlock.dylib libcolorpicker.dylib YTUHD.dylib YouPiP.dylib
 
 
 ARCHS = arm64
@@ -7,11 +7,11 @@ FINALPACKAGE = 1
 CODESIGN_IPA = 0
 
 
-TWEAK_NAME = uYouPlus
+TWEAK_NAME = CercubePlus
 DISPLAY_NAME = YouTube
 BUNDLE_ID = com.google.ios.youtube
  
-uYouPlus_FILES = Tweak.x
+uYouPlus_FILES = CercubePlus.x
 uYouPlus_IPA = /path/to/the/decrypted/YouTube/IPA
 ### edit the path to your decrypted YouTube IPA!!!
 uYouPlus_FRAMEWORKS = Alderis
