@@ -2,21 +2,6 @@
 #import <UIKit/UIKit.h>
 
 
-//YTNOCheckLocalNetWork
-%hook YTHotConfig
-- (BOOL)isPromptForLocalNetworkPermissionsEnabled {
-    return NO;
-}
-%end
-
-
-//YouRememberCaption
-%hook YTColdConfig
-- (BOOL)respectDeviceCaptionSetting {
-    return NO;
-}
-%end
-
 //NOYTPremium
 %hook YTCommerceEventGroupHandler
 - (void)addEventHandlers {}
@@ -102,24 +87,40 @@
 %end
 
 
-//YTSystemAppearance
+//YouAreThere
 %hook YTColdConfig
-- (BOOL)shouldUseAppThemeSetting {
-    return YES;
+- (BOOL)enableYouthereCommandsOnIos {
+    return NO;
+}
+%end
+
+%hook YTYouThereController
+- (BOOL)shouldShowYouTherePrompt {
+    return NO;
 }
 %end
 
 
-//YouAreThere
-//%hook YTColdConfig
-//- (bool)enableYouthereCommandsOnIos {
-//    return NO;
-//}
-//%end
-
-%hook YTYouThereController
-- (bool)shouldShowYouTherePrompt {
+//YouRememberCaption
+%hook YTColdConfig
+- (BOOL)respectDeviceCaptionSetting {
     return NO;
+}
+%end
+
+
+//YTNOCheckLocalNetWork
+%hook YTHotConfig
+- (BOOL)isPromptForLocalNetworkPermissionsEnabled {
+    return NO;
+}
+%end
+
+
+//YTSystemAppearance
+%hook YTColdConfig
+- (BOOL)shouldUseAppThemeSetting {
+    return YES;
 }
 %end
 
