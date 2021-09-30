@@ -2,7 +2,7 @@
 #import <UIKit/UIKit.h>
 
 
-// NO local
+//YTNOCheckLocalNetWork
 %hook YTHotConfig
 - (BOOL)isPromptForLocalNetworkPermissionsEnabled {
     return NO;
@@ -17,12 +17,11 @@
 }
 %end
 
-// Alert
+//NOYTPremium
 %hook YTCommerceEventGroupHandler
 - (void)addEventHandlers {}
 %end
 
-// Full-screen
 %hook YTInterstitialPromoEventGroupHandler
 - (void)addEventHandlers {}
 %end
@@ -31,7 +30,6 @@
 - (BOOL)shouldThrottleInterstitial { return YES; }
 %end
 
-// Whatever these are for
 %hook YTPromoThrottleController
 - (BOOL)canShowThrottledPromo { return NO; }
 - (BOOL)canShowThrottledPromoWithFrequencyCap:(id)frequencyCap { return NO; }
@@ -43,12 +41,10 @@
 
 
 //YTClassicVideoQuality
-//YTClassicVideoQuality Header
 
 @interface YTVideoQualitySwitchOriginalController : NSObject
 - (instancetype)initWithParentResponder:(id)responder;
 @end
-//---
 
 %hook YTVideoQualitySwitchControllerFactory
 
@@ -106,9 +102,9 @@
 %end
 
 
-//YTSystemTheme
+//YTSystemAppearance
 %hook YTColdConfig
-- (bool)shouldUseAppThemeSetting {
+- (BOOL)shouldUseAppThemeSetting {
     return YES;
 }
 %end

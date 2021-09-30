@@ -11,10 +11,10 @@ TWEAK_NAME = CercubePlus
 DISPLAY_NAME = YouTube
 BUNDLE_ID = com.google.ios.youtube
  
-uYouPlus_FILES = CercubePlus.x
-uYouPlus_IPA = /path/to/the/decrypted/YouTube/IPA
+CercubePlus_FILES = CercubePlus.x
+CercubePlus_IPA = /path/to/the/decrypted/YouTube/IPA
 ### edit the path to your decrypted YouTube IPA!!!
-uYouPlus_FRAMEWORKS = Alderis
+CercubePlus_FRAMEWORKS = Alderis
 
 
 include $(THEOS)/makefiles/common.mk
