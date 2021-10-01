@@ -89,7 +89,7 @@
 
 # Download (IPA)
 
-- **CercubePlus** (Cercube++) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** (Cercube++) can be found in the [Release tab]().
+- **CercubePlus** (Cercube++) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** (Cercube++) can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
 - Version info:
 
