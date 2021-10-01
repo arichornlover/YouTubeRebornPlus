@@ -1,4 +1,4 @@
-CercubePlus_INJECT_DYLIBS = Cercube.dylib iSponsorBlock.dylib libcolorpicker.dylib YTUHD.dylib YouPiP.dylib
+CercubePlus_INJECT_DYLIBS = Tweaks/Cercube.dylib Tweaks/libcolorpicker.dylib Tweaks/iSponsorBlock.dylib Tweaks/YTUHD.dylib Tweaks/YouPiP.dylib
 
 
 ARCHS = arm64
