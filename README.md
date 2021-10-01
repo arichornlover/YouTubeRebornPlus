@@ -112,11 +112,13 @@
 >
 > - The sideloaded version of iSponsorBlock is here ([Luewii's fork](https://github.com/Luewii/iSponsorBlock)).
 
-3. Run `azule` in any Terminal window and follow the instruction.
+3. Prepare the **decrypted** YouTube IPA.
 
-4. Select `1. Inject tweaks`, then Drag & drop the **decrypted** YouTube IPA and your prepared tweaks into the azule window. Other options are optional.
+4. Run `azule` in any Terminal window and follow the instruction.
 
-5. Done! Azule will take care of the rest!
+5. Select `1. Inject tweaks`, then Drag & drop the **decrypted** YouTube IPA and your prepared tweaks into the azule window. Other options are optional.
+
+6. Done! Azule will take care of the rest!
 
 ## Method 2: theos-jailed (complex way)
 
