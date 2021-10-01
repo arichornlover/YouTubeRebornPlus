@@ -47,7 +47,7 @@ Cercube with extra features!
 >
 > - And more...
 
-2. **iSponsorBlock:** Skips annoying sponsor ads inside videos. iSponsorBlock is based on [SponsorBlock engine](https://sponsor.ajay.app/). This is iOS version of the SponsorBlock extension.
+2. **iSponsorBlock:** Skips annoying sponsor ads inside videos. iSponsorBlock is based on [SponsorBlock engine](https://sponsor.ajay.app/). This is the iOS version of the SponsorBlock extension.
 
 3. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
 
@@ -67,7 +67,7 @@ Cercube with extra features!
 
 7. **YouPiP:** enable YouTube's **native PiP**. More options are in YouTube Settings => General.
 
-8. **YTNoHoverCards:** annoyed by suggested videos (thumbnails) appearing at the end of the video? YTNoHoverCards offers an option to enable/disable them. 
+8. **YTNoHoverCards:** offers an option to enable/disable the annoying suggested videos show up at the end of the videos.
 
 
 
@@ -81,7 +81,7 @@ Cercube with extra features!
 
 4. **YouPiP:** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](). The bug also happens when you try to play multi sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk.
 
-5. Not a bug: the app won't be albe to receive push notifications if you use a free developer account to sideload it. 
+5. **Not a bug**: the app won't be albe to receive push notifications if you use a free developer account to sideload it. 
 
 
 
