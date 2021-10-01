@@ -13,9 +13,9 @@ BUNDLE_ID = com.google.ios.youtube
  
  
 CercubePlus_FILES = CercubePlus.x
+CercubePlus_FRAMEWORKS = Alderis
 CercubePlus_IPA = /path/to/the/decrypted/YouTube/IPA
 ### edit the path to your decrypted YouTube IPA!!!
-CercubePlus_FRAMEWORKS = Alderis
 
 
 include $(THEOS)/makefiles/common.mk

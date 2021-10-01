@@ -72,7 +72,7 @@
 
 1. **Cercube**: Hide Cast button is not working.
 
-2. **iSponsorBlock**: the modified time doesn't show up in the seek bar
+2. **iSponsorBlock**: the modified time doesn't show up in the seek bar.
 
 3. **YTUHD**: Stuttering on 4K videos (sometimes).
 
@@ -89,7 +89,7 @@
 - Version info:
 
 | **Tweaks/App** | **Version** | **Open source** |
-| :-------------: | :------------:| :------------: |
+| :------------: | :----------:| :-------------: |
 | **YouTube** | 16.38.2 | ✖︎  |
 | **Cercube** | 5.3.3 | ✖︎ |
 | **iSponsorBlock** | 1.0-10 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -98,6 +98,7 @@
 | **NOYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTUHD** | 1.2.4 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | 1.5.10 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 
 
 # Building (optional)
