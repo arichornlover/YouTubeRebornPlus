@@ -11,6 +11,7 @@ TWEAK_NAME = CercubePlus
 DISPLAY_NAME = YouTube
 BUNDLE_ID = com.google.ios.youtube
  
+ 
 CercubePlus_FILES = CercubePlus.x
 CercubePlus_IPA = /path/to/the/decrypted/YouTube/IPA
 ### edit the path to your decrypted YouTube IPA!!!
