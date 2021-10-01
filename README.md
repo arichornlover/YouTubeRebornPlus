@@ -16,13 +16,13 @@
 
 # Credits
 
-- [Majd Alfhaily](https://twitter.com/freemanrepo?s=21) as the developer of [Cercube](https://apt.alfhaily.me/depiction/FDXO5R).
+- [Majd Alfhaily](https://twitter.com/freemanrepo?s=21) for [Cercube](https://apt.alfhaily.me/depiction/FDXO5R).
 
 - [Galactic-Dev](https://github.com/Galactic-Dev) and [Luewii](https://github.com/Luewii) for [iSponsorBlock](https://github.com/Galactic-Dev/iSponsorBlock).
 
 - [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks used by CercubePlus, include: [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html) and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
 
-- [level3tjg](https://twitter.com/level3tjg?s=21) - developer of [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
+- [level3tjg](https://twitter.com/level3tjg?s=21) - for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
 
 - [Al4ise](https://github.com/Al4ise) for [Azule](https://github.com/Al4ise/Azule), a tool used to inject jailbreak tweaks into jailed iOS apps.
 
@@ -39,7 +39,7 @@
 >
 > - Set default player quality on WiFi & Celullar.
 >
-> - Save videos in high resolution, save videos as audio only, save public playlists (beta).
+> - Save videos in high resolution, save videos as audio-only, save public playlists (beta).
 > 
 > - Manage and share downloads to any app.
 >
@@ -49,11 +49,11 @@
 
 3. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
 
-> - YouAreThere: disable "Video paused. Continue watching?" popup in YouTube app when you play a long video.
+> - YouAreThere: disable "Video paused. Continue watching?" popup in the YouTube app when you play a long video.
 >
 > - YouRememberCaption: make YouTube remember your video caption setting (if not already).
 >
-> - YTNoCheckLocalNetwork: block the Local Network permisson popup.
+> - YTNoCheckLocalNetwork: block the Local Network permission popup.
 >
 > - YTSystemAppearance: sync the YouTube theme (dark/light) with the system theme.
 
@@ -76,15 +76,15 @@
 
 3. **YTUHD**: Stuttering on 4K videos (sometimes).
 
-4. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk.
+4. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk.
 
-5. **Not a bug**: the app won't be albe to receive push notifications if you use a free developer account to sideload it. 
+5. **Not a bug**: the app won't be able to receive push notifications if you use a free developer account to sideload it. 
 
 
 
 # Download (IPA)
 
-- Cercube++ requires iOS & iPadOS 13.0 and later. The latest version of Cercube++ can be found in the [Release tab]().
+- **CercubePlus+** requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab]().
 
 - Version info:
 
@@ -97,7 +97,7 @@
 | YTClassicVideoQuality | 1.0.1 |
 | NOYTPremium | 1.0.2 |
 | YTUHD | 1.2.4 |
-| YouPiP | 1.0.1 |
+| YouPiP | 1.5.10 |
 
 
 # Building (optional)
@@ -108,7 +108,7 @@
 
 2. Download all the tweaks you want to inject. 
 
-> - **[iOS Repo Updates]**(https://www.ios-repo-updates.com/) is a trust-able source. If the repo of the tweak is not avaiable on iOS Repo Updates, use [cydownload](https://github.com/borishonman/cydownload).
+> - **[iOS Repo Updates]**(https://www.ios-repo-updates.com/) is a trust-able source. [cydownload](https://github.com/borishonman/cydownload) and [Windows Repo Tool](https://github.com/SarahH12099/Windows-Repo-Tool) are good alternative.
 >
 > - The sideloaded version of iSponsorBlock is here ([Luewii's fork](https://github.com/Luewii/iSponsorBlock)).
 
