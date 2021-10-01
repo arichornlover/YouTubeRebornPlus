@@ -20,7 +20,9 @@
 
 - [Galactic-Dev](https://github.com/Galactic-Dev) and [Luewii](https://github.com/Luewii) for [iSponsorBlock](https://github.com/Galactic-Dev/iSponsorBlock).
 
-- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks used by CercubePlus, include: [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html) and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
+- [HASHBANG Productions](https://github.com/hbang) for [Alderis Color Picker](https://github.com/hbang/Alderis) - a dependency of iSponsorBlock.
+
+- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks used by CercubePlus, include: [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html) and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
 
 - [level3tjg](https://twitter.com/level3tjg?s=21) - for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
 
@@ -57,15 +59,15 @@
 >
 > - YTSystemAppearance: sync the YouTube theme (dark/light) with the system theme.
 
-4. **YTClassicVideoQuality:** since YouTube v16.xx, you need one more step to change the video quality. YTClassicVideoQuality brings back the old video quality selector, which is a lot better than the new one.
+4. **NOYTPremium:** remove YouTube Premium upsell alerts.
 
-5. **NOYTPremium:** remove YouTube Premium upsell alerts.
+5. **YTClassicVideoQuality:** since YouTube v16.xx, you need one more step to change the video quality. YTClassicVideoQuality brings back the old video quality selector, which is a lot better than the new one.
 
-6. **YTUHD:** unlock VP9 codec and in effect, enables video quality of 2K and 4K. You can enable/disable YTUHD in YouTube Settings => Video quality preferences.
+6. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
 
-7. **YouPiP:** enable YouTube's **native PiP**. More options are in YouTube Settings => General.
+7. **YTUHD:** unlock VP9 codec and in effect, enables video quality of 2K and 4K. You can enable/disable YTUHD in YouTube Settings => Video quality preferences.
 
-8. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
+8. **YouPiP:** enable YouTube's **native PiP**. More options are in YouTube Settings => General.
 
 
 # Known issues
@@ -84,7 +86,7 @@
 
 # Download (IPA)
 
-- **CercubePlus+** requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab]().
+- **CercubePlus** (Cercube++) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** (Cercube++) can be found in the [Release tab]().
 
 - Version info:
 
@@ -93,12 +95,13 @@
 | **YouTube** | 16.38.2 | ✖︎  |
 | **Cercube** | 5.3.3 | ✖︎ |
 | **iSponsorBlock** | 1.0-10 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
+| **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
-| **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **NOYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
+| **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
+| **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.4 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | 1.5.10 | [✔︎](https://github.com/PoomSmart/YouPiP) |
-| **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 
 
 # Building (optional)
@@ -123,7 +126,7 @@
 
 ## Method 2: theos-jailed (complex way)
 
-1. Setup [theos-jailed](https://github.com/kabiroberai/theos-jailed/wiki/Installation)
+1. Setup [theos-jailed](https://github.com/kabiroberai/theos-jailed/wiki/Installation).
 
 2. Clone this repo:
 
@@ -135,7 +138,7 @@ git clone https://github.com/qnblackcat/CercubePlus.git
 
 4. Optional: Modify the app the way you want. I suggest you take a look at the [theos-jailed wiki](https://github.com/kabiroberai/theos-jailed/wiki/Usage) and my `Makefile`.
 
-5. `cd` to the project folder, run
+5. `cd` to the project folder, run:
 ```
 make clean package
 ```
