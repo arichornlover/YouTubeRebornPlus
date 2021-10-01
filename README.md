@@ -88,16 +88,16 @@
 
 - Version info:
 
-| **Tweak/App** | **Version** |
-| ------------- | -------------|
-| YouTube | 16.38.2 |
-| Cercube | 5.3.3 |
-| iSponsorBlock | 1.0-10 |
-| YTABGoodies | 1.0 |
-| YTClassicVideoQuality | 1.0.1 |
-| NOYTPremium | 1.0.2 |
-| YTUHD | 1.2.4 |
-| YouPiP | 1.5.10 |
+| **Tweaks/App** | **Version** | **Open source** |
+| :-------------: | :------------:| :------------: |
+| **YouTube** | 16.38.2 | ✖︎  |
+| **Cercube** | 5.3.3 | ✖︎ |
+| **iSponsorBlock** | 1.0-10 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
+| **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
+| **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
+| **NOYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
+| **YTUHD** | 1.2.4 | [✔︎](https://github.com/PoomSmart/YTUHD) |
+| **YouPiP** | 1.5.10 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 
 
 # Building (optional)
