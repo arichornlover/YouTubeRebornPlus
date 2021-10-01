@@ -7,12 +7,12 @@ Cercube with extra features!
 * [CercubePlus](#cercubeplus)
 * [Credits](#credits)
 * [Features](#features)
-* [Known issues:](#known-issues)
+* [Known issues](#known-issues)
 * [Download (IPA)](#download-ipa)
 * [Building (optional)](#building-optional)
    * [Method 1: azule (simple way)](#method-1-azule-simple-way)
    * [Method 2: theos-jailed (complex way)](#method-2-theos-jailed-complex-way)
-* [Screenshots:](#screenshots)
+* [Screenshots](#screenshots)
 
 
 # Credits
@@ -67,11 +67,11 @@ Cercube with extra features!
 
 7. **YouPiP:** enable YouTube's **native PiP**. More options are in YouTube Settings => General.
 
-8. **YTNoHoverCards:** offers an option to enable/disable the annoying suggested videos show up at the end of the videos.
+8. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
 
 
 
-# Known issues:
+# Known issues
 
 1. **Cercube**: Hide Cast button is not working.
 
@@ -87,7 +87,7 @@ Cercube with extra features!
 
 # Download (IPA)
 
-- Cercube++ requires iOS 13.0 and later. The latest version of Cercube++ can be found in the [Release tab]().
+- Cercube++ requires iOS & iPadOS 13.0 and later. The latest version of Cercube++ can be found in the [Release tab]().
 
 - Version info:
 
@@ -142,5 +142,8 @@ make clean package
 ```
 
 
-# Screenshots:
+# Screenshots
+
+![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
+
 
