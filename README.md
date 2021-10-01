@@ -1,6 +1,4 @@
-# CercubePlus
-
-Cercube with extra features!
+## Cercube with extra features!
 
 ![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
 
@@ -78,7 +76,7 @@ Cercube with extra features!
 
 3. **YTUHD**: Stuttering on 4K videos (sometimes).
 
-4. **YouPiP:** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](). The bug also happens when you try to play multi sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk.
+4. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk.
 
 5. **Not a bug**: the app won't be albe to receive push notifications if you use a free developer account to sideload it. 
 
