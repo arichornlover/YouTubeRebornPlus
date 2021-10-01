@@ -108,7 +108,7 @@
 
 2. Download all the tweaks you want to inject. 
 
-> - **[iOS Repo Updates]**(https://www.ios-repo-updates.com/) is a trust-able source. [cydownload](https://github.com/borishonman/cydownload) and [Windows Repo Tool](https://github.com/SarahH12099/Windows-Repo-Tool) are good alternative.
+> - [**iOS Repo Updates**](https://www.ios-repo-updates.com/) is a trust-able source. [**cydownload**](https://github.com/borishonman/cydownload) and [**Windows Repo Tool**](https://github.com/SarahH12099/Windows-Repo-Tool) are good alternative.
 >
 > - The sideloaded version of iSponsorBlock is here ([Luewii's fork](https://github.com/Luewii/iSponsorBlock)).
 
@@ -120,7 +120,7 @@
 
 ## Method 2: theos-jailed (complex way)
 
-1. 1. Setup [theos-jailed](https://github.com/kabiroberai/theos-jailed/wiki/Installation)
+1. Setup [theos-jailed](https://github.com/kabiroberai/theos-jailed/wiki/Installation)
 
 2. Clone this repo:
 
@@ -128,7 +128,7 @@
 git clone https://github.com/qnblackcat/CercubePlus.git
 ```
 
-3. Open `Makefile` and edit the path to your decrypted YouTube IPA. 
+3. **Important:** Open `Makefile` and edit the path to your decrypted YouTube IPA. 
 
 4. Optional: Modify the app the way you want. I suggest you take a look at the [theos-jailed wiki](https://github.com/kabiroberai/theos-jailed/wiki/Usage) and my `Makefile`.
 
