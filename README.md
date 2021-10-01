@@ -1,5 +1,8 @@
 # CercubePlus
+
 Cercube with extra features!
+
+![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
 
 
 # Table of Contents
@@ -11,7 +14,6 @@ Cercube with extra features!
 * [Building (optional)](#building-optional)
    * [Method 1: azule (simple way)](#method-1-azule-simple-way)
    * [Method 2: theos-jailed (complex way)](#method-2-theos-jailed-complex-way)
-* [Screenshots](#screenshots)
 
 
 # Credits
@@ -27,7 +29,6 @@ Cercube with extra features!
 - [Al4ise](https://github.com/Al4ise) for [Azule](https://github.com/Al4ise/Azule), a tool used to inject jailbreak tweaks into jailed iOS apps.
 
 - [theos team](https://github.com/theos/theos) for theos & theos-jailed.
-
 
 
 # Features
@@ -69,7 +70,6 @@ Cercube with extra features!
 8. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
 
 
-
 # Known issues
 
 1. **Cercube**: Hide Cast button is not working.
@@ -100,7 +100,6 @@ Cercube with extra features!
 | NOYTPremium | 1.0.2 |
 | YTUHD | 1.2.4 |
 | YouPiP | 1.0.1 |
-
 
 
 # Building (optional)
@@ -139,10 +138,3 @@ git clone https://github.com/qnblackcat/CercubePlus.git
 ```
 make clean package
 ```
-
-
-# Screenshots
-
-![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
-
-
