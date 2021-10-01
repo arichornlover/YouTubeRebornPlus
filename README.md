@@ -4,7 +4,6 @@ Cercube with extra features!
 
 # Table of Contents
 
-* [CercubePlus](#cercubeplus)
 * [Credits](#credits)
 * [Features](#features)
 * [Known issues](#known-issues)
