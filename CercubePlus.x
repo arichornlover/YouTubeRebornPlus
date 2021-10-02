@@ -2,7 +2,8 @@
 #import <UIKit/UIKit.h>
 
 
-//NOYTPremium
+// NOYTPremium: https://github.com/PoomSmart/NoYTPremium
+
 %hook YTCommerceEventGroupHandler
 - (void)addEventHandlers {}
 %end
@@ -25,7 +26,47 @@
 %end
 
 
-//YTClassicVideoQuality
+// YTABGoodies: https://poomsmart.github.io/repo/depictions/ytabgoodies.html
+// YouAreThere
+
+%hook YTColdConfig
+- (BOOL)enableYouthereCommandsOnIos {
+    return NO;
+}
+%end
+
+%hook YTYouThereController
+- (BOOL)shouldShowYouTherePrompt {
+    return NO;
+}
+%end
+
+// YouRememberCaption
+
+%hook YTColdConfig
+- (BOOL)respectDeviceCaptionSetting {
+    return NO;
+}
+%end
+
+// YTNOCheckLocalNetWork
+
+%hook YTHotConfig
+- (BOOL)isPromptForLocalNetworkPermissionsEnabled {
+    return NO;
+}
+%end
+
+// YTSystemAppearance
+
+%hook YTColdConfig
+- (BOOL)shouldUseAppThemeSetting {
+    return YES;
+}
+%end
+
+
+// YTClassicVideoQuality: https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html
 
 @interface YTVideoQualitySwitchOriginalController : NSObject
 - (instancetype)initWithParentResponder:(id)responder;
@@ -40,7 +81,8 @@
 %end
 
 
-//YTNoHoverCards 0.0.3
+// YTNoHoverCards 0.0.3: https://github.com/level3tjg/YTNoHoverCards
+
 @interface YTCollectionViewCell : UICollectionViewCell
 @end
 
@@ -85,91 +127,3 @@
 	%orig;
 }
 %end
-
-
-//YouAreThere
-%hook YTColdConfig
-- (BOOL)enableYouthereCommandsOnIos {
-    return NO;
-}
-%end
-
-%hook YTYouThereController
-- (BOOL)shouldShowYouTherePrompt {
-    return NO;
-}
-%end
-
-
-//YouRememberCaption
-%hook YTColdConfig
-- (BOOL)respectDeviceCaptionSetting {
-    return NO;
-}
-%end
-
-
-//YTNOCheckLocalNetWork
-%hook YTHotConfig
-- (BOOL)isPromptForLocalNetworkPermissionsEnabled {
-    return NO;
-}
-%end
-
-
-//YTSystemAppearance
-%hook YTColdConfig
-- (BOOL)shouldUseAppThemeSetting {
-    return YES;
-}
-%end
-
-
-//YTNoShorts
-
-//YTNoShortsHeader
-//@interface ELMCellNode
-//@end
-
-//@interface _ASCollectionViewCell : UICollectionViewCell
-//- (id)node;
-//@end
-
-//@interface YTAsyncCollectionView : UICollectionView
-//- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath;
-//@end
-//------
-
-//#pragma mark - Hooks
-//%hook YTAsyncCollectionView
-//- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-//    UICollectionViewCell *cell = %orig;
-//
-//    if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
-//        _ASCollectionViewCell *cell = %orig;
-//        if ([cell respondsToSelector:@selector(node)]) {
-//            if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"]) {
-//                [self removeShortsCellAtIndexPath:indexPath];
-//            }
-//        }
-//    } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
-//        [self removeShortsCellAtIndexPath:indexPath];
-//    }
-//    return %orig;
-//}
-
-//%new
-//- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
-//    [self performBatchUpdates:^{
-//        [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
-//    } completion:nil];
-//}
-//%end
-
-//#pragma mark - ctor
-//%ctor {
-//    @autoreleasepool {
-//        if (![[NSFileManager defaultManager] fileExistsAtPath:@"/var/lib/dpkg/info/com.miro.ytnoshorts.list"]) return;
-//        [[NSBundle bundleWithPath:[NSString stringWithFormat:@"%@/Frameworks/Module_Framework.framework", [[NSBundle mainBundle] bundlePath]]] load];
-//    }
-//}
