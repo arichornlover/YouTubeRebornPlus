@@ -10,8 +10,6 @@
 * [Known issues](#known-issues)
 * [Download (IPA)](#download-ipa)
 * [Building (optional)](#building-optional)
-   * [Method 1: azule (simple way)](#method-1-azule-simple-way)
-   * [Method 2: theos-jailed (complex way)](#method-2-theos-jailed-complex-way)
 
 
 # Credits
@@ -43,7 +41,7 @@
 
 - And more...
 
-2. **iSponsorBlock:** Skips annoying sponsor ads inside videos. iSponsorBlock is based on [SponsorBlock engine](https://sponsor.ajay.app/). This is the iOS version of the SponsorBlock extension.
+2. **iSponsorBlock:** Skips annoying sponsor ads inside videos. iSponsorBlock is based on [SponsorBlock engine](https://sponsor.ajay.app/). Basically, this is the iOS version of the SponsorBlock extension.
 
 3. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
 
