@@ -35,29 +35,25 @@
 
 1. **Cercube:**
 
-> - Block all advertisements.
->
-> - Enable background playback.
->
-> - Set default player quality on WiFi & Celullar.
->
-> - Save videos in high resolution, save videos as audio-only, save public playlists (beta).
-> 
-> - Manage and share downloads to any app.
->
-> - And more...
+- Block all advertisements & Enable background playback.
+
+- Set default player quality on WiFi & Celullar.
+
+- Save videos in high resolution, save videos as audio-only, save public playlists (beta).
+
+- And more...
 
 2. **iSponsorBlock:** Skips annoying sponsor ads inside videos. iSponsorBlock is based on [SponsorBlock engine](https://sponsor.ajay.app/). This is the iOS version of the SponsorBlock extension.
 
 3. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
 
-> - YouAreThere: disable "Video paused. Continue watching?" popup in the YouTube app when you play a long video.
->
-> - YouRememberCaption: make YouTube remember your video caption setting (if not already).
->
-> - YTNoCheckLocalNetwork: block the Local Network permission popup.
->
-> - YTSystemAppearance: sync the YouTube theme (dark/light) with the system theme.
+- YouAreThere: disable "Video paused. Continue watching?" popup in the YouTube app when you play a long video.
+
+- YouRememberCaption: make YouTube remember your video caption setting (if not already).
+
+- YTNoCheckLocalNetwork: block the Local Network permission popup.
+
+- YTSystemAppearance: sync the YouTube theme (dark/light) with the system theme.
 
 4. **NOYTPremium:** remove YouTube Premium upsell alerts.
 
@@ -82,9 +78,9 @@
 
 5. **Not a bug**: 
 
-> - The app won't be able to receive push notifications if you use a free developer account to sideload it. 
->
-> - It's impossible to fix deep-link (a.k.a Open in the YouTube app). However, you can use this [Shortcuts](https://shortcutsgallery.com/shortcuts/open-in-youtube/) as a workaround (tested on iOS 14). **Credit:** RandomAccessMemories#5025
+- The app won't be able to receive push notifications if you use a free developer account to sideload it. 
+
+- It's impossible to fix deep-link (a.k.a Open in the YouTube app). However, you can use this [Shortcuts](https://shortcutsgallery.com/shortcuts/open-in-youtube/) as a workaround (tested on iOS 14). **Credit:** RandomAccessMemories#5025
 
 
 # Download (IPA)
@@ -95,7 +91,7 @@
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 16.38.2 | ✖︎ |
+| **YouTube** | 16.42.3 | ✖︎ |
 | **Cercube** | 5.3.3 | ✖︎ |
 | **iSponsorBlock** | 1.0-10 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
@@ -103,8 +99,8 @@
 | **NOYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
-| **YTUHD** | 1.2.4 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.5.10 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YTUHD** | 1.2.5 | [✔︎](https://github.com/PoomSmart/YTUHD) |
+| **YouPiP** | 1.5.14 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 
 
 # Building (optional)
