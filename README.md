@@ -103,4 +103,4 @@
 
 # Building (optional)
 
-See [Building - FAQ](https://github.com/qnblackcat/CercubePlus/wiki/Building)
+See [Building - Wiki](https://github.com/qnblackcat/CercubePlus/wiki/Building)
