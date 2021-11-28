@@ -68,11 +68,11 @@
 
 1. **Cercube**: Hide Cast button is not working.
 
-2. **iSponsorBlock**: the modified time doesn't show up in the seek bar.
+2. **iSponsorBlock**: there's still a [visual bug](https://i.imgur.com/kpkBGjG.jpg) in iSponsorBlock 1.0-11. It's not a big deal to be honest
 
 3. **YTUHD**: Stuttering on 4K videos (sometimes).
 
-4. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk.
+4. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
 
 5. **Not a bug**: 
 
@@ -85,20 +85,22 @@
 
 - **CercubePlus** (or you can call it Cercube++) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- Version info:
+- For AltStore user: [Open in AltStore](https://tinyurl.com/yck5bhu2). (Note: It will take a while to install because AltStore need to download the IPA.).
+
+- Version info: _(Nov 28)_
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 16.42.3 | ✖︎ |
+| **YouTube** | 16.45.4 | ✖︎ |
 | **Cercube** | 5.3.3 | ✖︎ |
-| **iSponsorBlock** | 1.0-10 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
+| **iSponsorBlock** | 1.0-11 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
 | **NOYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.5 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.5.14 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | 1.5.15 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 
 
 # Building (optional)
