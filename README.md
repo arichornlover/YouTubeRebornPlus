@@ -20,9 +20,11 @@
 
 - [HASHBANG Productions](https://github.com/hbang) for [Alderis Color Picker](https://github.com/hbang/Alderis) - a dependency of iSponsorBlock.
 
-- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks used by CercubePlus, include: [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html) and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
+- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html) and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
 
-- [level3tjg](https://twitter.com/level3tjg?s=21) - for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
+- **Lillie** for [YouTube Dislike Return](https://repo.lillieweeb001.xyz/)
+
+- [level3tjg](https://twitter.com/level3tjg?s=21) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
 
 - [Al4ise](https://github.com/Al4ise) for [Azule](https://github.com/Al4ise/Azule), a tool used to inject jailbreak tweaks into jailed iOS apps.
 
@@ -39,11 +41,24 @@
 
 - Save videos in high resolution, save videos as audio-only, save public playlists (beta).
 
-- And more...
+- And many more...
 
 2. **iSponsorBlock:** Skips annoying sponsor ads inside videos. iSponsorBlock is based on [SponsorBlock engine](https://sponsor.ajay.app/). Basically, this is the iOS version of the SponsorBlock extension.
 
-3. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
+3. **YouPiP:** enable YouTube's **native PiP**. More options are in YouTube Settings => General.
+
+4. **YTUHD:** unlock VP9 codec and in effect, enables video quality of 2K and 4K. You can configure YTUHD in YouTube's Settings - Video quality preferences.
+
+5. **YouTube Dislike Return:** brings back Dislike counts under YouTube videos using **ReturnYoutubeDislike**'s API.
+
+<details>
+  <summary>Expand!</summary>
+
+6. **YTClassicVideoQuality:** since YouTube v16.xx, you need one more step to change the video quality. YTClassicVideoQuality brings back the old video quality selector, which is a lot better than the new one.
+
+7. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
+
+8. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
 
 - YouAreThere: disable "Video paused. Continue watching?" popup in the YouTube app when you play a long video.
 
@@ -53,15 +68,8 @@
 
 - YTSystemAppearance: sync the YouTube theme (dark/light) with the system theme.
 
-4. **NOYTPremium:** remove YouTube Premium upsell alerts.
-
-5. **YTClassicVideoQuality:** since YouTube v16.xx, you need one more step to change the video quality. YTClassicVideoQuality brings back the old video quality selector, which is a lot better than the new one.
-
-6. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
-
-7. **YTUHD:** unlock VP9 codec and in effect, enables video quality of 2K and 4K. You can enable/disable YTUHD in YouTube Settings => Video quality preferences.
-
-8. **YouPiP:** enable YouTube's **native PiP**. More options are in YouTube Settings => General.
+9. **NOYTPremium:** remove YouTube Premium upsell alerts.
+</details>
 
 
 # Known issues
@@ -85,14 +93,15 @@
 
 - **CercubePlus** (or you can call it Cercube++) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- For AltStore user: [Open in AltStore](https://tinyurl.com/yck5bhu2). (Note: It will take a while to install because AltStore need to download the IPA.).
+- For AltStore user: [Open in AltStore](https://tinyurl.com/yjjshvn4). (Note: It will take a while to install because AltStore need to download the IPA.).
 
-- Version info: _(Nov 28)_
+- Version info: _(Dec 09)_
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 16.45.4 | ✖︎ |
+| **YouTube** | 16.46.5 | ✖︎ |
 | **Cercube** | 5.3.3 | ✖︎ |
+| **YouTube Dislike Return** | 1.2.0 | ✖︎ |
 | **iSponsorBlock** | 1.0-11 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
