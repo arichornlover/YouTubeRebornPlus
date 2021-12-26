@@ -22,7 +22,7 @@
 
 - [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html) and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
 
-- **Lillie** for [YouTube Dislike Return](https://repo.lillieweeb001.xyz/)
+- **Lillie** for [YouTube Dislike Return](https://github.com/LillieWeeb001/iOS-Tweaks/tree/main/YouTube%20Dislikes%20Return)
 
 - [level3tjg](https://twitter.com/level3tjg?s=21) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
 
@@ -66,8 +66,6 @@
 
 - YTNoCheckLocalNetwork: block the Local Network permission popup.
 
-- YTSystemAppearance: sync the YouTube theme (dark/light) with the system theme.
-
 9. **NOYTPremium:** remove YouTube Premium upsell alerts.
 </details>
 
@@ -91,17 +89,17 @@
 
 # Download (IPA)
 
-- **CercubePlus** (or you can call it Cercube++) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
+- **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
 - For AltStore user: [Open in AltStore](https://tinyurl.com/yjjshvn4). (Note: It will take a while to install because AltStore need to download the IPA.).
 
-- Version info: _(Dec 09)_
+- Version info: _(Dec 26)_
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
 | **YouTube** | 16.46.5 | ✖︎ |
 | **Cercube** | 5.3.3 | ✖︎ |
-| **YouTube Dislike Return** | 1.2.0 | ✖︎ |
+| **YouTube Dislike Return** | 1.2.0 | [✔︎](https://github.com/LillieWeeb001/iOS-Tweaks/tree/main/YouTube%20Dislikes%20Return) |
 | **iSponsorBlock** | 1.0-11 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
@@ -109,7 +107,7 @@
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.5 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.5.15 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | 1.6.3 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 
 
 # Building (optional)
