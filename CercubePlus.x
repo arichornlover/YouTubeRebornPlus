@@ -57,14 +57,6 @@
 }
 %end
 
-// YTSystemAppearance
-
-%hook YTColdConfig
-- (BOOL)shouldUseAppThemeSetting {
-    return YES;
-}
-%end
-
 
 // YTClassicVideoQuality: https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html
 
