@@ -22,7 +22,7 @@
 
 - [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html) and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
 
-- **Lillie** for [YouTube Dislike Return](https://github.com/LillieWeeb001/iOS-Tweaks/tree/main/YouTube%20Dislikes%20Return)
+- **Lillie & Poomsmart** for [YouTube Dislike Return](https://github.com/PoomSmart/Return-YouTube-Dislikes)
 
 - [level3tjg](https://twitter.com/level3tjg?s=21) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
 
@@ -74,9 +74,9 @@
 
 1. **Cercube**: Hide Cast button is not working.
 
-2. **iSponsorBlock**: there's still a [visual bug](https://i.imgur.com/kpkBGjG.jpg) in iSponsorBlock 1.0-11. It's not a big deal to be honest
+2. **iSponsorBlock**: there's still a [visual bug](https://i.imgur.com/kpkBGjG.jpg) in iSponsorBlock 1.0-11. It's not a big deal to be honest.
 
-3. **YTUHD**: Stuttering on 4K videos (sometimes).
+3. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
 
 4. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
 
@@ -91,23 +91,26 @@
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- For AltStore user: [Open in AltStore](https://tinyurl.com/yjjshvn4). (Note: It will take a while to install because AltStore need to download the IPA.).
+- For AltStore user: 
+  - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-- Version info: _(Dec 26)_
+  - [Open in AltStore (v17.01.4-5.3.3)](https://tinyurl.com/3pbhaa3h) - It will take a while to install because AltStore needs to download the IPA.
+
+- Version info: _(Jan 16)_
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 16.46.5 | ✖︎ |
+| **YouTube** | 17.01.4 | ✖︎ |
 | **Cercube** | 5.3.3 | ✖︎ |
-| **YouTube Dislike Return** | 1.2.0 | [✔︎](https://github.com/LillieWeeb001/iOS-Tweaks/tree/main/YouTube%20Dislikes%20Return) |
+| **YouTube Dislike Return** | 1.5.0 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlock** | 1.0-11 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
-| **NOYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
+| **NoYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.5 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.6.3 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | 1.6.4 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 
 
 # Building (optional)
