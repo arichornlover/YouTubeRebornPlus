@@ -1,0 +1,20 @@
+[submodule "Tweaks/iSponsorBlock"]
+	path = Tweaks/iSponsorBlock
+	url = https://github.com/qnblackcat/iSponsorBlock.git
+	branch = master
+[submodule "Tweaks/YTUHD"]
+	path = Tweaks/YTUHD
+	url = https://github.com/PoomSmart/YTUHD.git
+	branch = master
+[submodule "Tweaks/YouPiP"]
+	path = Tweaks/YouPiP
+	url = https://github.com/PoomSmart/YouPiP.git
+	branch = main
+[submodule "Tweaks/Return-YouTube-Dislikes"]
+	path = Tweaks/Return-YouTube-Dislikes
+	url = https://github.com/PoomSmart/Return-YouTube-Dislikes.git
+	branch = main
+[submodule "Tweaks/YouTubeHeader"]
+	path = Tweaks/YouTubeHeader
+	url = https://github.com/PoomSmart/YouTubeHeader.git
+	branch = main
