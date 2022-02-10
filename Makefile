@@ -1,4 +1,4 @@
-CercubePlus_INJECT_DYLIBS = Tweaks/uYou.dylib Tweaks/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YTUHD.dylib .theos/obj/YouPiP.dylib .theos/obj/YouTubeDislikesReturn.dylib 
+CercubePlus_INJECT_DYLIBS = Tweaks/Cercube.dylib Tweaks/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YTUHD.dylib .theos/obj/YouPiP.dylib .theos/obj/YouTubeDislikesReturn.dylib 
 
 CercubePlus_USE_FLEX = 0
 ARCHS = arm64
