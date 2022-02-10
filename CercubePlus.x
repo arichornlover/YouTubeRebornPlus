@@ -119,3 +119,11 @@
 	%orig;
 }
 %end
+
+// YTSystemAppearance: https://poomsmart.github.io/repo/depictions/ytsystemappearance.html
+
+%hook YTColdConfig
+- (BOOL)shouldUseAppThemeSetting {
+    return YES;
+}
+%end
