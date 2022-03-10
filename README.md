@@ -74,13 +74,11 @@
 
 1. **Cercube**: Hide Cast button is not working.
 
-2. **iSponsorBlock**: there's still a [visual bug](https://i.imgur.com/kpkBGjG.jpg) in iSponsorBlock 1.0-11. It's not a big deal to be honest.
+2. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
 
-3. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
+3. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
 
-4. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
-
-5. **Not a bug**: 
+4. **Not a bug**: 
 
 - The app won't be able to receive push notifications if you use a free developer account to sideload it. 
 
@@ -94,15 +92,15 @@
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-  - [Open in AltStore (v17.05.2-5.3.4)](https://tinyurl.com/9eahm6ua) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.09.1-5.3.6)](https://tinyurl.com/mv293jun) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Feb 10)_
+- Version info: _(Mar 10)_
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.05.2 | ✖︎ |
-| **Cercube** | 5.3.4 | ✖︎ |
-| **Return YouTube Dislike** | 1.6.2 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **YouTube** | 17.09.1 | ✖︎ |
+| **Cercube** | 5.3.6 | ✖︎ |
+| **Return YouTube Dislike** | 1.6.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlock** | 1.0-13 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
@@ -110,7 +108,7 @@
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.6 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.6.6 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | 1.6.8 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 
 
 # Building (optional)
