@@ -92,14 +92,14 @@
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-  - [Open in AltStore (v17.09.1-5.3.6)](https://tinyurl.com/mv293jun) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.09.1-5.3.6)](https://tinyurl.com/5mxbznvw) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Mar 10)_
+- Version info: _(Mar 12)_
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
 | **YouTube** | 17.09.1 | ✖︎ |
-| **Cercube** | 5.3.6 | ✖︎ |
+| **Cercube** | 5.3.7 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlock** | 1.0-13 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
