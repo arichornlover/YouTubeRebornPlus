@@ -2,6 +2,7 @@
 
 ![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
 
+# iOS 12 users
 
 # Table of Contents
 
@@ -87,27 +88,26 @@
 
 # Download (IPA)
 
-- **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
+- **CercubePlusLegacy** requires iOS & iPadOS 12.0. Get the latest IPA [here]
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-  - [Open in AltStore (v17.09.1-5.3.6)](https://tinyurl.com/5mxbznvw) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.09.1-5.3.7)] - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Mar 12)_
+- Version info: _(Mar 20)_
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
 | **YouTube** | 17.09.1 | ✖︎ |
 | **Cercube** | 5.3.7 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
-| **iSponsorBlock** | 1.0-13 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
+| **iSponsorBlockLegacy** | 1.0-13 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy.git) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
 | **NoYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
-| **YTUHD** | 1.2.6 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | 1.6.8 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 
 
