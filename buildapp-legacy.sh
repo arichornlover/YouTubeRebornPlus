@@ -13,7 +13,8 @@ else
 
 # Extract Cercube
 	echo -e "==> \033[1mExtracting Cercube...\033[0m"
-	if (cd Tweaks/Cercube && tar -xf me.alfhaily.cercube_5.3.7_iphoneos-arm.deb && tar -xf data.tar.*) ; then
+	if (cd Tweaks/Cercube && tar -xf me.alfhaily.cercube_5.3.7_iphoneos-arm.deb && tar -xf data.tar.*)
+then
 	echo -e "\033[1m> Extracted Cercube\033[0m"
 else
 	echo "> \033[1mCouldn't extract Cercube\033[0m"
