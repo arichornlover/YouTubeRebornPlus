@@ -89,12 +89,12 @@
 # Download (IPA)
 ### ⚠️⚠️⚠️ DO NOT DOWNLOAD THE IPA FROM THE RELEASE TAB!!! ⚠️⚠️⚠️
 
-- **CercubePlusLegacy** requires iOS & iPadOS 12.0. Get the latest IPA [here]. 
+- **CercubePlusLegacy** requires iOS & iPadOS 12.0. Get the latest IPA [here](https://27man-my.sharepoint.com/:u:/g/personal/qn____27man_onmicrosoft_com/ETNpuzVOPd5BgTR_UNkeOkcBuH6FckLjOwgnTtHxOQNHbw?e=ih4HdH). 
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-  - [Open in AltStore (v17.09.1-5.3.7)] - It will take a while to install because AltStore needs to download the IPA.
+  - **CercubePlusLegacy**: [Open in AltStore (v17.09.1-5.3.7)](https://tinyurl.com/2ex4m7mv) - It will take a while to install because AltStore needs to download the IPA.
 
 - Version info: _(Mar 20)_
 
