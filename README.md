@@ -2,14 +2,16 @@
 
 ![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
 ***
-# This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa).
+# ⚠️⚠️⚠️ This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa) ⚠️⚠️⚠️
+### ☞ _Expected bugs because I cannot test the IPA my self!_
+### ☞ _YTUHD is removed because most iOS 12 devices don't support VP9 codec (Hardware restriction)._
 ***
 
 # Table of Contents
 * [Credits](#credits)
 * [Features](#features)
 * [Known issues](#known-issues)
-* [Download (IPA)](#download-ipa)
+* [Download](#download-ipa)
 * [Building (optional)](#building-optional)
 
 
@@ -17,11 +19,11 @@
 
 - [Majd Alfhaily](https://twitter.com/freemanrepo?s=21) for [Cercube](https://apt.alfhaily.me/depiction/FDXO5R).
 
-- [Galactic-Dev](https://github.com/Galactic-Dev) and [Luewii](https://github.com/Luewii) for [iSponsorBlock](https://github.com/Galactic-Dev/iSponsorBlock).
+- [Galactic-Dev](https://github.com/Galactic-Dev) and [Luewii](https://github.com/Luewii) for [iSponsorBlockLegacy](https://github.com/Galactic-Dev/iSponsorBlockLegacy).
 
 - [HASHBANG Productions](https://github.com/hbang) for [Alderis Color Picker](https://github.com/hbang/Alderis) - a dependency of iSponsorBlock.
 
-- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html) and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
+- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
 
 - **Lillie & Poomsmart** for [YouTube Dislike Return](https://github.com/PoomSmart/Return-YouTube-Dislikes)
 
@@ -48,18 +50,16 @@
 
 3. **YouPiP:** enable YouTube's **native PiP**. More options are in YouTube Settings => General.
 
-4. **YTUHD:** unlock VP9 codec and in effect, enables video quality of 2K and 4K. You can configure YTUHD in YouTube's Settings - Video quality preferences.
-
-5. **YouTube Dislike Return:** brings back Dislike counts under YouTube videos using **ReturnYoutubeDislike**'s API.
+4. **YouTube Dislike Return:** brings back Dislike counts under YouTube videos using **ReturnYoutubeDislike**'s API.
 
 <details>
   <summary>Expand!</summary>
 
-6. **YTClassicVideoQuality:** since YouTube v16.xx, you need one more step to change the video quality. YTClassicVideoQuality brings back the old video quality selector, which is a lot better than the new one.
+5. **YTClassicVideoQuality:** since YouTube v16.xx, you need one more step to change the video quality. YTClassicVideoQuality brings back the old video quality selector, which is a lot better than the new one.
 
-7. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
+6. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
 
-8. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
+7. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
 
 - YouAreThere: disable "Video paused. Continue watching?" popup in the YouTube app when you play a long video.
 
@@ -67,7 +67,7 @@
 
 - YTNoCheckLocalNetwork: block the Local Network permission popup.
 
-9. **NOYTPremium:** remove YouTube Premium upsell alerts.
+8. **NOYTPremium:** remove YouTube Premium upsell alerts.
 </details>
 
 
@@ -75,11 +75,9 @@
 
 1. **Cercube**: Hide Cast button is not working.
 
-2. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
+2. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
 
-3. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
-
-4. **Not a bug**: 
+3. **Not a bug**: 
 
 - The app won't be able to receive push notifications if you use a free developer account to sideload it. 
 
@@ -103,7 +101,7 @@
 | **YouTube** | 17.09.1 | ✖︎ |
 | **Cercube** | 5.3.7 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
-| **iSponsorBlockLegacy** | 1.0-13 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy.git) |
+| **iSponsorBlockLegacy** | 1.0-13 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
 | **NoYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
