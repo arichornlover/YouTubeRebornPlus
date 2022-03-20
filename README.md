@@ -1,11 +1,11 @@
 ## Cercube with extra features!
 
 ![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
-
-# iOS 12 users
+***
+# This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa).
+***
 
 # Table of Contents
-
 * [Credits](#credits)
 * [Features](#features)
 * [Known issues](#known-issues)
@@ -87,8 +87,9 @@
 
 
 # Download (IPA)
+### ⚠️⚠️⚠️ DO NOT DOWNLOAD THE IPA FROM THE RELEASE TAB!!! ⚠️⚠️⚠️
 
-- **CercubePlusLegacy** requires iOS & iPadOS 12.0. Get the latest IPA [here]
+- **CercubePlusLegacy** requires iOS & iPadOS 12.0. Get the latest IPA [here]. 
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
