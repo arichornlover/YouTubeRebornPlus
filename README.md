@@ -2,7 +2,7 @@
 
 ![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
 ***
-# ⚠️⚠️⚠️ This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa) ⚠️⚠️⚠️
+## ⚠️⚠️⚠️ This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa) ⚠️⚠️⚠️
 ### ☞ _Expected bugs because I cannot test the IPA my self!_
 ### ☞ _YTUHD is removed because most iOS 12 devices don't support VP9 codec (Hardware restriction)._
 ***
@@ -95,7 +95,9 @@
   - **CercubePlusLegacy**: [Open in AltStore (v17.09.1-5.3.7)](https://tinyurl.com/2ex4m7mv) - It will take a while to install because AltStore needs to download the IPA.
 
 - Version info: _(Mar 20)_
-
+<details>
+  <summary>Expand:</summary>
+  
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
 | **YouTube** | 17.09.1 | ✖︎ |
@@ -108,7 +110,7 @@
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YouPiP** | 1.6.8 | [✔︎](https://github.com/PoomSmart/YouPiP) |
-
+</details>
 
 # Building (optional)
 
