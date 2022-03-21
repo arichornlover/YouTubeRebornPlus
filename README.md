@@ -1,8 +1,4 @@
-## Cercube with extra features!
-
-![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
-***
-## ⚠️⚠️⚠️ This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa) ⚠️⚠️⚠️
+# ⚠️⚠️⚠️ This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa) ⚠️⚠️⚠️
 ### ☞ _Expected bugs because I cannot test the IPA my self!_
 ### ☞ _YTUHD is removed because most iOS 12 devices don't support VP9 codec (Hardware restriction)._
 ***
