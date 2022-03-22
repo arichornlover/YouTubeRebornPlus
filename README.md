@@ -1,6 +1,7 @@
 # ⚠️⚠️⚠️ This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa) ⚠️⚠️⚠️
 ### ☞ _Expected bugs because I cannot test the IPA my self!_
 ### ☞ _YTUHD is removed because most iOS 12 devices don't support VP9 codec (Hardware restriction)._
+### ☞ _iOS 12 doesn't have the built-in Picture in Picture mode like iOS 14+, so YouPiP must be removed as well._
 ***
 
 # Table of Contents
@@ -19,9 +20,7 @@
 
 - [HASHBANG Productions](https://github.com/hbang) for [Alderis Color Picker](https://github.com/hbang/Alderis) - a dependency of iSponsorBlock.
 
-- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
-
-- **Lillie & Poomsmart** for [YouTube Dislike Return](https://github.com/PoomSmart/Return-YouTube-Dislikes)
+- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), and [Return YouTube Dislike](https://github.com/PoomSmart/Return-YouTube-Dislikes)
 
 - [level3tjg](https://twitter.com/level3tjg?s=21) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
 
@@ -83,20 +82,20 @@
 # Download (IPA)
 ### ⚠️⚠️⚠️ DO NOT DOWNLOAD THE IPA FROM THE RELEASE TAB!!! ⚠️⚠️⚠️
 
-- **CercubePlus (Legacy)** requires iOS & iPadOS 12.0. Get the latest IPA [here](https://27man-my.sharepoint.com/:u:/g/personal/qn____27man_onmicrosoft_com/ETNpuzVOPd5BgTR_UNkeOkcBuH6FckLjOwgnTtHxOQNHbw?e=ih4HdH). 
+- **CercubePlus (Legacy)** requires iOS & iPadOS 12.0. Get the latest IPA [here](https://27man-my.sharepoint.com/:u:/g/personal/qn____27man_onmicrosoft_com/EW2_JNxoApFGmb23mPpm9REBFVJ2j7QSK2kfhXjtB6whmA?download=1). 
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-  - **CercubePlus (Legacy)**: [Open in AltStore (v17.09.1-5.3.7)](https://tinyurl.com/2ex4m7mv) - It will take a while to install because AltStore needs to download the IPA.
+  - **CercubePlus (Legacy)**: [Open in AltStore (v17.10.2-5.3.7)](https://tinyurl.com/muchx636) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Mar 20)_
+- Version info: _(Mar 22)_
 <details>
   <summary>Expand:</summary>
   
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.09.1 | ✖︎ |
+| **YouTube** | 17.10.2 | ✖︎ |
 | **Cercube** | 5.3.7 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlockLegacy** | 1.0-13 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
@@ -105,7 +104,6 @@
 | **NoYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
-| **YouPiP** | 1.6.8 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 </details>
 
 # Building (optional)
