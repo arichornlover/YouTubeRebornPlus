@@ -1,6 +1,1 @@
-.theos
-.DS_Store
-packages
-Makefile
-Tweaks/Cercube/*
-!Tweaks/Cercube/.gitkeep
+
