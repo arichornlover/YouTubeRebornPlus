@@ -3,7 +3,6 @@
 
 
 // NOYTPremium: https://github.com/PoomSmart/NoYTPremium
-
 %hook YTCommerceEventGroupHandler
 - (void)addEventHandlers {}
 %end
@@ -28,7 +27,6 @@
 
 // YTABGoodies: https://poomsmart.github.io/repo/depictions/ytabgoodies.html
 // YouAreThere
-
 %hook YTColdConfig
 - (BOOL)enableYouthereCommandsOnIos {
     return NO;
@@ -42,7 +40,6 @@
 %end
 
 // YouRememberCaption
-
 %hook YTColdConfig
 - (BOOL)respectDeviceCaptionSetting {
     return NO;
@@ -50,7 +47,6 @@
 %end
 
 // YTNOCheckLocalNetWork
-
 %hook YTHotConfig
 - (BOOL)isPromptForLocalNetworkPermissionsEnabled {
     return NO;
@@ -59,7 +55,6 @@
 
 
 // YTClassicVideoQuality: https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html
-
 @interface YTVideoQualitySwitchOriginalController : NSObject
 - (instancetype)initWithParentResponder:(id)responder;
 @end
@@ -74,7 +69,6 @@
 
 
 // YTNoHoverCards 0.0.3: https://github.com/level3tjg/YTNoHoverCards
-
 @interface YTCollectionViewCell : UICollectionViewCell
 @end
 
@@ -117,13 +111,5 @@
 	if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hover_cards_enabled"])
 		hidden = YES;
 	%orig;
-}
-%end
-
-// YTSystemAppearance: https://poomsmart.github.io/repo/depictions/ytsystemappearance.html
-
-%hook YTColdConfig
-- (BOOL)shouldUseAppThemeSetting {
-    return YES;
 }
 %end
