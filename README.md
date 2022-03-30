@@ -20,9 +20,7 @@
 
 - [HASHBANG Productions](https://github.com/hbang) for [Alderis Color Picker](https://github.com/hbang/Alderis) - a dependency of iSponsorBlock.
 
-- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html) and [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html).
-
-- **Lillie & Poomsmart** for [YouTube Dislike Return](https://github.com/PoomSmart/Return-YouTube-Dislikes)
+- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html), [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html), and [Return YouTube Dislike](https://github.com/PoomSmart/Return-YouTube-Dislikes).
 
 - [level3tjg](https://twitter.com/level3tjg?s=21) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
 
@@ -91,24 +89,23 @@
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
+  - [Open in AltStore (v17.12.5-5.3.7)](https://tinyurl.com/yhd3c7u2) - It will take a while to install because AltStore needs to download the IPA.
 
-  - [Open in AltStore (v17.09.1-5.3.6)](https://tinyurl.com/5mxbznvw) - It will take a while to install because AltStore needs to download the IPA.
-
-- Version info: _(Mar 12)_
+- Version info: _(Mar 31)_
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.09.1 | ✖︎ |
+| **YouTube** | 17.12.5 | ✖︎ |
 | **Cercube** | 5.3.7 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
-| **iSponsorBlock** | 1.0-13 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
+| **iSponsorBlock** | 1.0-14 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
 | **NoYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.6 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.6.8 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | 1.6.9 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 
 
 # Building (optional)
