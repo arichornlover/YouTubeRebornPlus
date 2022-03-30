@@ -15,7 +15,7 @@ else
 	echo -e "==> \033[1mExtracting Cercube...\033[0m"
 	if (cd Tweaks/Cercube && tar -xf me.alfhaily.cercube_5.3.7_iphoneos-arm.deb && tar -xf data.tar.*)
 then
-	echo -e "\033[1m> Extracted Cercube\033[0m"
+	echo -e "\033[1m> Extracted Cercube!\033[0m"
 else
 	echo "> \033[1mCouldn't extract Cercube\033[0m"
 	fi
@@ -30,8 +30,8 @@ then
 else
 	echo "This is not an iPA!"
 	fi
+
 # Clean up	
 	tput setaf 1 && echo -e "==> \033[1mCleaning up...\033[0m"
 	find Tweaks/Cercube -mindepth 1 -name me.alfhaily.cercube_5.3.7_iphoneos-arm.deb -prune -o -exec rm -rf {} +
-	rm -rf Resources
-	rm -rf .theos/_/Payload
+	rm -rf Resources .theos/_/Payload
