@@ -33,5 +33,5 @@ else
 
 # Clean up	
 	tput setaf 1 && echo -e "==> \033[1mCleaning up...\033[0m"
-	find Tweaks/Cercube -mindepth 1 -name me.alfhaily.cercube_5.3.8_iphoneos-arm.deb -prune -o -exec rm -rf {} +
+	find Tweaks/Cercube -mindepth 1 ! -name "me.alfhaily.cercube_5.3.8_iphoneos-arm.deb" ! -name ".gitkeep" -exec rm -rf {} \; 2>/dev/null
 	rm -rf Resources .theos/_/Payload
