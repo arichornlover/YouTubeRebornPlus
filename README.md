@@ -89,15 +89,15 @@
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.12.5-5.3.7)](https://tinyurl.com/yhd3c7u2) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.13.3-5.3.9)](https://tinyurl.com/ytwehypx) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Mar 31)_
+- Version info: _(Apr 06)_
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.12.5 | ✖︎ |
-| **Cercube** | 5.3.7 | ✖︎ |
-| **Return YouTube Dislike** | 1.6.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **YouTube** | 17.13.3 | ✖︎ |
+| **Cercube** | 5.3.9 | ✖︎ |
+| **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlock** | 1.0-14 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
@@ -106,6 +106,7 @@
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.6 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | 1.6.9 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+|**YTSpeed**| 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed.git) |
 
 
 # Building (optional)
