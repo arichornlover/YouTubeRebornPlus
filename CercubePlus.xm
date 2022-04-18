@@ -324,6 +324,7 @@ BOOL noHoverCard() {
 }
 %end
 
+%hook YTInlineSignInView
 -(void)setBackgroundColor:(id)arg1 {
 	arg1 = oledColor;
 	%orig;
