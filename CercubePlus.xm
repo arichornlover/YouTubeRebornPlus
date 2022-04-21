@@ -22,6 +22,14 @@
 @interface YTPlayerViewController (YTAFS)
 - (void)autoFullscreen;
 @end
+@interface ASCollectionView : UIView
+@end
+@interface YTLightweightQTMButton : UIView
+@end
+@interface YTELMView : UIView
+@end
+@interface NIAttributedLabel : UIView
+@end
 
 UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 
@@ -179,13 +187,9 @@ BOOL bigYTMiniPlayer() {
 // OLED 
 // Thanks u/DGh0st for his very well explained comment - https://www.reddit.com/r/jailbreakdevelopers/comments/9uape7/comment/e94sq80/
 // Thanks sinfool for his flex patch which brings OLED Dark mode for YouTube - "Color Customizer (YouTube) OLED"
-%group gOLED 
+%group gOLED
 %hook UIView
 -(void)setBackgroundColor:(id)arg1 {
-	if ([self.nextResponder isKindOfClass:%c(DownloadedVC)])  //uYou
-	arg1 = oledColor;
-	if ([self.nextResponder isKindOfClass:%c(DownloadsPagerVC)]) //uYou
-	arg1 = oledColor;
 	if ([self.nextResponder isKindOfClass:%c(YTLinkCell)])
 	arg1 = oledColor;
 	if ([self.nextResponder isKindOfClass:%c(YTCommentsHeaderView)]) 
@@ -222,20 +226,27 @@ BOOL bigYTMiniPlayer() {
 	arg1 = oledColor;	
 	if ([self.nextResponder isKindOfClass:%c(ASWAppSwitcherCollectionViewCell)])
 	arg1 = oledColor;	
+	if ([self.nextResponder isKindOfClass:%c(YTEditSheetControllerHeader)])
+	arg1 = oledColor;
 	%orig;
-    }
+}
+//- (void)layoutSubviews {
+//	%orig;	
+//  if ([self.nextResponder isKindOfClass:%c(YTALDialog)])
+//	self.backgroundColor = oledColor;
+//}
 %end
 
 %hook YTAsyncCollectionView
 -(void)setBackgroundColor:(id)arg1 {
     if([self.nextResponder isKindOfClass:%c(YTRelatedVideosCollectionViewController)]) {
-    arg1 = [oledColor colorWithAlphaComponent:0.0];
+        arg1 = [oledColor colorWithAlphaComponent:0.0];
     } else if([self.nextResponder isKindOfClass:%c(YTFullscreenMetadataHighlightsCollectionViewController)]) {
-    arg1 = [oledColor colorWithAlphaComponent:0.0];
-    } else { 
-	arg1 = oledColor; 
-	}
-	%orig;
+        arg1 = [oledColor colorWithAlphaComponent:0.0];
+    } else {
+        arg1 = oledColor;
+    }
+    %orig;
 }
 %end
 
@@ -402,7 +413,7 @@ BOOL bigYTMiniPlayer() {
 	arg1 = oledColor;
 	%orig;
 }
-%end 
+%end
 
 %hook ASWAppSwitchingSheetHeaderView
 -(void)setBackgroundColor:(id)arg1 {
@@ -426,6 +437,33 @@ BOOL bigYTMiniPlayer() {
 - (void)layoutSubviews {}
 %end
 
+%hook ASCollectionView
+-(void)layoutSubviews {
+	self.backgroundColor = oledColor;
+	%orig;
+}
+%end
+
+%hook YTLightweightQTMButton
+-(void)setBackgroundColor:(id)arg1 {
+    if([self.nextResponder isKindOfClass:%c(YTShareMainView)]) {
+    arg1 = oledColor;
+    %orig;
+	}
+}
+-(void)setCustomTitleColor:(id)arg1 {
+    arg1 = [UIColor whiteColor];
+    %orig;
+}
+%end
+
+%hook YTShareBusyView // sharesheet load
+-(void)setBackgroundColor:(id)arg1 { 
+	arg1 = oledColor;
+	%orig;
+}
+%end
+
 %hook YTSearchSuggestionCollectionViewCell
 -(void)updateColors {}
 %end
@@ -437,25 +475,64 @@ BOOL bigYTMiniPlayer() {
 }
 %end
 
+%hook YTELMView // upload videos
+-(void)layoutSubviews {
+	%orig;
+	self.backgroundColor = oledColor;
+}
+%end
+
+%hook YTMealBarPromoView
+-(void)setBackgroundColor:(id)arg1 { // Offline
+	arg1 = oledColor;
+	%orig;
+}
+%end
+
+%hook NIAttributedLabel
+-(void)setBackgroundColor:(id)arg1 {
+	if ([self.nextResponder isKindOfClass:%c(UIScrollView)])
+	arg1 = oledColor;
+	%orig;
+}
+%end
+
 /*
+%hook YTShortsGalleryHeaderView  // upload videos heaer (gallery)
+-(void)setBackgroundColor:(id)arg1 {
+    arg1 = oledColor;
+    %orig;
+}
+%end
+
+%hook _ASDisplayView // edit your videos
+-(void)layoutSubviews {
+	if ([self.nextResponder isKindOfClass:%c(ELMView)])  //uYou
+	self.backgroundColor = oledColor;
+}
+%end
+
 %hook YTChannelProfileDescriptionEditorView // edit profile Description
 -(void)setBackgroundColor:(id)arg1 {
     arg1 = oledColor;
     %orig;
 }
 %end
+
 %hook YTChannelProfileNameEditorView  // edit profile Name
 -(void)setBackgroundColor:(id)arg1 {
     arg1 = oledColor;
     %orig;
 }
 %end
+
 hook GOOTextField 
 -(void)setBackgroundColor:(id)arg1 {  // edit profile Description
 	arg1 = oledColor;
 	%orig;
 }
 %end
+
 %hook GOOMultilineTextField// 
 -(void)setBackgroundColor:(id)arg1 { // edit profile Name
 	arg1 = oledColor;
@@ -463,7 +540,6 @@ hook GOOTextField
 }
 %end
 */
-
 %end
 
 // YTReExplore: https://github.com/PoomSmart/YTReExplore/
