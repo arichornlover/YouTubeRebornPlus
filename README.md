@@ -87,9 +87,9 @@
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-  - **CercubePlus (Legacy)**: [Open in AltStore (v17.13.3-5.3.9)](https://tinyurl.com/5xzprbad) - It will take a while to install because AltStore needs to download the IPA.
+  - **CercubePlus (Legacy)**: [Open in AltStore (v17.15.2-5.3.9)](https://tinyurl.com/mrxz8uwu) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Apr 06)_
+- Version info: _(Apr 22)_
 <details>
   <summary>Expand:</summary>
   
