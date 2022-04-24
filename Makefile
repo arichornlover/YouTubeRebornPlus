@@ -10,8 +10,8 @@ TWEAK_NAME = CercubePlus
 DISPLAY_NAME = YouTube
 BUNDLE_ID = com.google.ios.youtube
  
-CercubePlus_FILES = CercubePlus.xm
-CercubePlus_IPA = /path/to/your/decrypted/YouTube/IPA
+CercubePlus_FILES = CercubePlus.xm Settings.xm
+CercubePlus_IPA = /System/Volumes/Data/Volumes/Data_Macintosh/Sideloads/IPAs/YouTube_17.15.2.ipa
 ### Important: edit the path to your decrypted YouTube IPA!!! 
 
 include $(THEOS)/makefiles/common.mk
