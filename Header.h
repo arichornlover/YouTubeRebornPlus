@@ -1,0 +1,27 @@
+#import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
+
+@interface YTMainAppVideoPlayerOverlayView : UIView
+-(UIViewController *)_viewControllerForAncestor;
+@end
+
+@interface YTWatchMiniBarView : UIView
+@end
+
+@interface YTAsyncCollectionView : UIView
+@end
+
+@interface YTPlayerViewController (YTAFS)
+- (void)autoFullscreen;
+@end
+
+//@interface ASCollectionView : UIView
+//@end
+
+@interface YTLightweightQTMButton : UIView
+@end
+
+@interface YTELMView : UIView
+@end
+
+@interface NIAttributedLabel : UIView
+@end
