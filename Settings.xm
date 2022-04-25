@@ -19,7 +19,7 @@ extern BOOL castConfirm();
 		}];
 		if (statsForNerdsIndex != NSNotFound) {
 	                //
-			YTSettingsSectionItem *castConfirm = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Confirm alert before casting (YTCastConfirm)" titleDescription:@"Show a confirm alert before casting to prevent accidentally hijacking the TV."];
+			YTSettingsSectionItem *castConfirm = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Confirm alert before casting (YTCastConfirm)" titleDescription:@"Show a confirm alert before casting to prevent accidentally hijacking TV."];
 			castConfirm.hasSwitch = YES;
 			castConfirm.switchVisible = YES;
 			castConfirm.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"castConfirm_enabled"];
@@ -89,7 +89,7 @@ extern BOOL castConfirm();
 			};
 			[sectionItems insertObject:autoFUll atIndex:statsForNerdsIndex + 3];
 			//
-			YTSettingsSectionItem *hideHUD = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide HUD Messages" titleDescription:@"Example: CC is turned on/off, Video loop is on,... App restart is required."];
+			YTSettingsSectionItem *hideHUD = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide HUD Messages" titleDescription:@"Example: CC is turned on/off, Video loop is on,..."];
 			hideHUD.hasSwitch = YES;
 			hideHUD.switchVisible = YES;
 			hideHUD.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
