@@ -91,16 +91,16 @@ any many more...
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.15.2-5.3.9)](https://tinyurl.com/4pp9eckn) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.16.4-5.3.9)](https://tinyurl.com/yuv2nbp9) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Apr 22)_
+- Version info: _(Apr 25)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.15.2 | ✖︎ |
+| **YouTube** | 17.16.4 | ✖︎ |
 | **Cercube** | 5.3.9 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlock** | 1.0-14 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -110,7 +110,7 @@ any many more...
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.7 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.6.9 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | 1.6.11 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YTSpeed** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **YTAutoFullScreen** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 </details>
