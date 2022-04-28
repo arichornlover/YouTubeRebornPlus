@@ -30,3 +30,7 @@
 	path = Tweaks/YTSpeed
 	url = https://github.com/qnblackcat/YTSpeed.git
 	branch = main
+[submodule "Extensions"]
+	path = Extensions
+	url = https://github.com/CokePokes/YoutubeExtensions.git
+	branch = main

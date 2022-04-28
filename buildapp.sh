@@ -21,17 +21,28 @@ else
 	fi
 
 # Makefile
-	read -e -p "==> Path to the decrypted YouTube iPA: " PATHTOIPA
-	if [[ $PATHTOIPA == *.ipa ]]
+	read -e -p "==> Path to the decrypted YouTube.ipa or YouTube.app: " PATHTOYT
+if [[ $PATHTOYT == *.ipa ]]
 then 
-	sed -i '' "14s#.*#CercubePlus_IPA = $PATHTOIPA#g" ./Makefile
+	unzip -q "$PATHTOYT" -d ./tmp
+	rm -rf ./tmp/Payload/YouTube.app/PlugIns/*.appex
+	cp -R Extensions/*.appex tmp/Payload/YouTube.app/PlugIns 
+	make package
+	open ./packages
+
+elif [[ $PATHTOYT == *.app ]]
+then
+	mkdir -p ./tmp/Payload/
+	cp -R "$PATHTOYT" ./tmp/Payload 2>/dev/null
+	rm -rf ./tmp/Payload/YouTube.app/PlugIns/*.appex
+	cp -R Extensions/*.appex tmp/Payload/YouTube.app/PlugIns 
 	make package
 	open ./packages
 else
-	echo "This is not an iPA!"
-	fi
+	echo "This is not an ipa/app!"
+fi
 
 # Clean up	
 	tput setaf 1 && echo -e "==> \033[1mCleaning up...\033[0m"
 	find Tweaks/Cercube -mindepth 1 ! -name "me.alfhaily.cercube_5.3.9_iphoneos-arm.deb" ! -name ".gitkeep" -exec rm -rf {} \; 2>/dev/null
-	rm -rf Resources .theos/_/Payload
+	rm -rf tmp/ Resources .theos/_/Payload
