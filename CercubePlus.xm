@@ -148,6 +148,8 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 	arg1 = oledColor;
 	if ([self.nextResponder isKindOfClass:%c(YCHLiveChatTextCell)])
 	arg1 = oledColor;
+	if ([self.nextResponder isKindOfClass:%c(YCHLiveChatView)])
+	arg1 = oledColor;
 	if ([self.nextResponder isKindOfClass:%c(YCHLiveChatViewerEngagementCell)])
 	arg1 = oledColor;
 	if ([self.nextResponder isKindOfClass:%c(YTSlideForActionsView)])
@@ -165,7 +167,9 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 	if ([self.nextResponder isKindOfClass:%c(ASWAppSwitcherCollectionViewCell)])
 	arg1 = oledColor;	
 	if ([self.nextResponder isKindOfClass:%c(YTEditSheetControllerHeader)])
-	arg1 = oledColor;
+	arg1 = oledColor;	
+	if ([self.nextResponder isKindOfClass:%c(YTDialogContainerScrollView)])
+	arg1 = oledColor;	
 	%orig;
 }
 //- (void)layoutSubviews {
@@ -173,6 +177,14 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 //  if ([self.nextResponder isKindOfClass:%c(YTALDialog)])
 //	self.backgroundColor = oledColor;
 //}
+%end
+
+%hook UIControl // this sucks I know :/
+-(void)setBackgroundColor:(id)arg1 {
+	if ([self.nextResponder isKindOfClass:%c(YTShareMainView)]) 
+	arg1 = oledColor;
+	%orig;
+}
 %end
 
 %hook YTAsyncCollectionView
@@ -188,8 +200,19 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
-%hook YTTopAlignedView // Example from Dune - https://github.com/Skittyblock/Dune/blob/9b1df9790230115b7553cc9dbadf36889018d7f9/Tweak.xm#L700
--(void)layoutSubviews {
+%hook YTDialogContainerScrollView
+-(void)setBackgroundColor:(id)arg1 {
+    arg1 = oledColor;
+    %orig;
+}
+%end
+
+%hook YTTopAlignedView 
+-(void)setBackgroundColor:(id)arg1 {
+    arg1 = oledColor;
+    %orig;
+}
+-(void)layoutSubviews {  // Dune - https://github.com/Skittyblock/Dune/blob/9b1df9790230115b7553cc9dbadf36889018d7f9/Tweak.xm#L70
 	%orig;
 	MSHookIvar<UIView *>(self, "_contentView").backgroundColor = oledColor;
 }
@@ -402,6 +425,27 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
+%hook YTPageView
+-(void)setBackgroundColor:(id)arg1 { 
+	arg1 = oledColor;
+	%orig;
+}
+%end
+
+%hook YTWatchView
+-(void)setBackgroundColor:(id)arg1 { 
+	arg1 = oledColor;
+	%orig;
+}
+%end
+
+%hook YTSearchBarView
+-(void)setBackgroundColor:(id)arg1 { 
+	arg1 = oledColor;
+	%orig;
+}
+%end
+
 %hook YTSearchSuggestionCollectionViewCell
 -(void)updateColors {}
 %end
@@ -437,6 +481,14 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 
 ////
 /*
+%hook UICollectionView
+-(void)setBackgroundColor:(id)arg1 {
+	if ([self.nextResponder isKindOfClass:%c(UICollectionViewControllerWrapperView)])
+	arg1 = oledColor;
+	%orig;
+}
+%end
+
 %hook YTShortsGalleryHeaderView  // upload videos heaer (gallery)
 -(void)setBackgroundColor:(id)arg1 {
     arg1 = oledColor;
@@ -446,7 +498,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 
 %hook _ASDisplayView // edit your videos
 -(void)layoutSubviews {
-	if ([self.nextResponder isKindOfClass:%c(ELMView)])  //uYou
+	if ([self.nextResponder isKindOfClass:%c(ELMView)])
 	self.backgroundColor = oledColor;
 }
 %end

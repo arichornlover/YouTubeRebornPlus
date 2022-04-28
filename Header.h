@@ -14,8 +14,8 @@
 - (void)autoFullscreen;
 @end
 
-//@interface ASCollectionView : UIView
-//@end
+@interface YTTopAlignedView : UIView
+@end
 
 @interface YTLightweightQTMButton : UIView
 @end
@@ -24,4 +24,10 @@
 @end
 
 @interface NIAttributedLabel : UIView
+@end
+
+@interface YTShareMainView : UIView
+@end
+
+@interface UICollectionViewControllerWrapperView : UIView
 @end
