@@ -99,7 +99,7 @@ extern BOOL castConfirm();
 			};
 			[sectionItems insertObject:hideHUD atIndex:statsForNerdsIndex + 1];
 	               	//	
-			YTSettingsSectionItem *Oleditem = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Dark mode (Experimental)" titleDescription:@"WARNING: OLED Dark mode only works when YouTube is in Dark theme. App restart is required."];
+			YTSettingsSectionItem *Oleditem = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Dark mode (Experimental)" titleDescription:@"WARNING: OLED Dark mode only works when YouTube is in Dark theme. App restart is required (In case OLED dark mode doesn't work: just switch between Light/Dark theme, then restart the app)."];
 			Oleditem.hasSwitch = YES;
 			Oleditem.switchVisible = YES;
 			Oleditem.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"oled_enabled"];
