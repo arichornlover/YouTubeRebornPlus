@@ -24,6 +24,8 @@
 
 - [level3tjg](https://twitter.com/level3tjg?s=21) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
 
+- [YouTube Extensions](https://github.com/CokePokes/YoutubeExtensions) by [CokePokes](https://github.com/CokePokes/).
+
 - [Al4ise](https://github.com/Al4ise) for [Azule](https://github.com/Al4ise/Azule), a tool used to inject jailbreak tweaks into jailed iOS apps.
 
 - [theos team](https://github.com/theos/theos) for theos & theos-jailed.
@@ -91,17 +93,18 @@ any many more...
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.16.4-5.3.9)](https://tinyurl.com/yuv2nbp9) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.17.4-5.3.9)](https://tinyurl.com/2p84s282) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Apr 25)_
+- Version info: _(May 02)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.16.4 | ✖︎ |
+| **YouTube** | 17.17.4 | ✖︎ |
 | **Cercube** | 5.3.9 | ✖︎ |
+| [Open in YouTube](https://github.com/CokePokes/YoutubeExtensions/) | 1.2 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlock** | 1.0-14 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
@@ -110,7 +113,7 @@ any many more...
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.7 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.6.11 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | 1.6.12 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YTSpeed** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **YTAutoFullScreen** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 </details>
