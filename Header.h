@@ -1,7 +1,7 @@
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 
 @interface YTMainAppVideoPlayerOverlayView : UIView
--(UIViewController *)_viewControllerForAncestor;
+- (UIViewController *)_viewControllerForAncestor;
 @end
 
 @interface YTWatchMiniBarView : UIView
