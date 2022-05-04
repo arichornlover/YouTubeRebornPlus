@@ -3,26 +3,30 @@
 cd "$(dirname "$0")"
 
 # Check Cercube
-	if [[ ! -f Tweaks/Cercube/me.alfhaily.cercube_5.3.9_iphoneos-arm.deb ]]
+if	[ ! -f Tweaks/Cercube/me.alfhaily.cercube_5.3.9_iphoneos-arm.deb ]
 then
-    	echo -e "==> \033[1mCercube v5.3.9 is not found. Downloading Cercube (v5.3.9)...\033[0m"
+	echo -e "==> \033[1mCercube v5.3.9 is not found. Downloading Cercube (v5.3.9)...\033[0m"
 	curl https://apt.alfhaily.me/files/me.alfhaily.cercube_5.3.9_iphoneos-arm.deb --output Tweaks/Cercube/me.alfhaily.cercube_5.3.9_iphoneos-arm.deb
 else
-    	echo -e "==> \033[1mFounded Cercube (v5.3.9)\033[0m"
-	fi
+   	echo -e "==> \033[1mFounded Cercube (v5.3.9)\033[0m"
+fi
 
 # Extract Cercube
 	echo -e "==> \033[1mExtracting Cercube...\033[0m"
-	if (cd Tweaks/Cercube && tar -xf me.alfhaily.cercube_5.3.9_iphoneos-arm.deb && tar -xf data.tar.*)
+if 	(cd Tweaks/Cercube && tar -xf me.alfhaily.cercube_5.3.9_iphoneos-arm.deb && tar -xf data.tar.*)
 then
 	echo -e "\033[1m> Extracted Cercube!\033[0m"
 else
 	echo "> \033[1mCouldn't extract Cercube\033[0m"
-	fi
+fi
 
 # Makefile
+if 	[ -d ./tmp ]
+then
+	rm -rf ./tmp
+fi
 	read -e -p "==> Path to the decrypted YouTube.ipa or YouTube.app: " PATHTOYT
-if [[ $PATHTOYT == *.ipa ]]
+if 	[[ $PATHTOYT == *.ipa ]]
 then 
 	unzip -q "$PATHTOYT" -d ./tmp
 	rm -rf ./tmp/Payload/YouTube.app/PlugIns/*.appex
@@ -30,7 +34,7 @@ then
 	make package
 	open ./packages
 
-elif [[ $PATHTOYT == *.app ]]
+elif	[[ $PATHTOYT == *.app ]]
 then
 	mkdir -p ./tmp/Payload/
 	cp -R "$PATHTOYT" ./tmp/Payload 2>/dev/null
