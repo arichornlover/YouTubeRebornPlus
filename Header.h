@@ -20,9 +20,6 @@
 @interface YTLightweightQTMButton : UIView
 @end
 
-@interface YTELMView : UIView
-@end
-
 @interface NIAttributedLabel : UIView
 @end
 
@@ -30,4 +27,10 @@
 @end
 
 @interface UICollectionViewControllerWrapperView : UIView
+@end
+
+@interface ASScrollView : UIView
+@end
+
+@interface ASCollectionView : UIView
 @end
