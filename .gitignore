@@ -2,5 +2,6 @@
 .DS_Store
 packages
 Makefile
+tmp
 Tweaks/Cercube/*
 !Tweaks/Cercube/.gitkeep
