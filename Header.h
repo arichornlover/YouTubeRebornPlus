@@ -26,11 +26,20 @@
 @interface YTShareMainView : UIView
 @end
 
-@interface UICollectionViewControllerWrapperView : UIView
-@end
-
 @interface ASScrollView : UIView
 @end
 
 @interface ASCollectionView : UIView
+@end
+
+@interface UIKeyboardLayoutStar : UIView
+@end
+
+@interface UIKeyboardDockView : UIView
+@end
+
+@interface UICandidateViewController : UIViewController
+@end
+
+@interface UIPredictionViewController : UIViewController
 @end
