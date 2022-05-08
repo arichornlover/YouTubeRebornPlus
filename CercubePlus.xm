@@ -125,7 +125,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 // YTNoHoverCards 0.0.3: https://github.com/level3tjg/YTNoHoverCards
 %hook YTCreatorEndscreenView
 - (void)setHidden:(BOOL)hidden {
-	if (!noHoverCard())
+	if (noHoverCard())
 	hidden = YES;
 	%orig;
 }
@@ -512,7 +512,7 @@ static void replaceTab(YTIGuideResponse *response) {
 - (void)setWatchMiniPlayerLayout:(int)arg1 {
     %orig(1);
 }
-- (void)watchMiniPlayerLayout {
+- (int)watchMiniPlayerLayout {
     return 1;
 }
 - (void)layoutSubviews {
@@ -522,7 +522,7 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 
 %hook YTMainAppVideoPlayerOverlayView
-- (void)isUserInteractionEnabled {
+- (BOOL)isUserInteractionEnabled {
     if([[self _viewControllerForAncestor].parentViewController.parentViewController isKindOfClass:%c(YTWatchMiniBarViewController)]) {
         return NO;
     }
