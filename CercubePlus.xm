@@ -17,6 +17,9 @@ BOOL hideHUD() {
 BOOL oled() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"oled_enabled"];
 }
+BOOL oledKB() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"oledKeyBoard_enabled"];
+}
 BOOL autoFullScreen() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"autofull_enabled"];
 }
@@ -257,40 +260,6 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
-// OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
-%hook UIPredictionViewController
-- (void)loadView {
-    %orig;
-    [self.view setBackgroundColor:oledColor];
-}
-%end
-
-%hook UICandidateViewController
-- (void)loadView {
-    %orig;
-    [self.view setBackgroundColor:oledColor];
-}
-%end
-
-%hook UIKeyboardDockView
-- (void)didMoveToWindow {
-    self.backgroundColor = oledColor;
-    %orig;
-}
-%end
-
-%hook UIKeyboardLayoutStar 
-- (void)didMoveToWindow {
-    self.backgroundColor = oledColor;
-    %orig;
-}
-%end
-
-%hook UIKBRenderConfig // Prediction text color
-- (void)setLightKeyboard:(BOOL)arg1 { %orig(NO); }
-%end
-//
-
 %hook YTDialogContainerScrollView
 - (void)setBackgroundColor:(id)arg1 { %orig(oledColor); }
 %end
@@ -430,7 +399,6 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 - (void)setBackgroundColor:(id)arg1 { %orig(oledColor); }
 %end
 
-
 ////
 /*
 %hook UICollectionView
@@ -470,6 +438,40 @@ hook GOOTextField
 }
 %end
 */
+%end
+
+%group gOLEDKB // OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
+%hook UIPredictionViewController
+- (void)loadView {
+    %orig;
+    [self.view setBackgroundColor:oledColor];
+}
+%end
+
+%hook UICandidateViewController
+- (void)loadView {
+    %orig;
+    [self.view setBackgroundColor:oledColor];
+}
+%end
+
+%hook UIKeyboardDockView
+- (void)didMoveToWindow {
+    self.backgroundColor = oledColor;
+    %orig;
+}
+%end
+
+%hook UIKeyboardLayoutStar 
+- (void)didMoveToWindow {
+    self.backgroundColor = oledColor;
+    %orig;
+}
+%end
+
+%hook UIKBRenderConfig // Prediction text color
+- (void)setLightKeyboard:(BOOL)arg1 { %orig(NO); }
+%end
 %end
 
 // YTReExplore: https://github.com/PoomSmart/YTReExplore/
@@ -536,10 +538,13 @@ static void replaceTab(YTIGuideResponse *response) {
     if (oled() && ([[NSUserDefaults standardUserDefaults] integerForKey:@"page_style"] == 1)) {
 		%init(gOLED);
     }
+	if (oledKB()) {
+        %init(gOLEDKB);
+	}
 	if (ReExplore()) {
-        %init(gReExplore)
+        %init(gReExplore);
 	}
 	if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
-        %init(Main)
+        %init(Main);
 	}
 }

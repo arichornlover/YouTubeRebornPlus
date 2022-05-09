@@ -10,6 +10,7 @@ static const NSInteger CercubePlusSection = 500;
 
 extern BOOL hideHUD();
 extern BOOL oled();
+extern BOOL oledKB();
 extern BOOL autoFullScreen();
 extern BOOL noHoverCard();
 extern BOOL ReExplore();
@@ -79,11 +80,11 @@ extern BOOL hideAutoplaySwitch();
         return YES;
     };
 
-    YTSettingsSectionItem *autoFUll = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Auto Full Screen (YTAutoFullScreen)" titleDescription:@"Autoplay videos at full screen."];
-    autoFUll.hasSwitch = YES;
-    autoFUll.switchVisible = YES;
-    autoFUll.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"autofull_enabled"];
-    autoFUll.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+    YTSettingsSectionItem *autoFull = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Auto Full Screen (YTAutoFullScreen)" titleDescription:@"Autoplay videos at full screen."];
+    autoFull.hasSwitch = YES;
+    autoFull.switchVisible = YES;
+    autoFull.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"autofull_enabled"];
+    autoFull.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
         [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"autofull_enabled"];
         return YES;
     };
@@ -97,16 +98,25 @@ extern BOOL hideAutoplaySwitch();
         return YES;
     };
 
-    YTSettingsSectionItem *Oleditem = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Dark mode (Experimental)" titleDescription:@"WARNING: OLED Dark mode only works when YouTube is in Dark theme. App restart is required. (In case OLED dark mode doesn't work: just switch between Light/Dark theme, then restart the app)."];
-    Oleditem.hasSwitch = YES;
-    Oleditem.switchVisible = YES;
-    Oleditem.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"oled_enabled"];
-    Oleditem.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+    YTSettingsSectionItem *oledDarkMode = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Dark mode (Experimental)" titleDescription:@"WARNING: OLED Dark mode only works when YouTube is in Dark theme. App restart is required. (In case OLED dark mode doesn't work: just switch between Light/Dark theme, then restart the app)."];
+    oledDarkMode.hasSwitch = YES;
+    oledDarkMode.switchVisible = YES;
+    oledDarkMode.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"oled_enabled"];
+    oledDarkMode.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
         [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"oled_enabled"];
         return YES;
     };
 
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[hoverCardItem, bigYTMiniPlayer, reExplore, hideCC, hideAutoplaySwitch, autoFUll, hideHUD, Oleditem]];
+    YTSettingsSectionItem *oledKeyBoard = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Keyboard" titleDescription:@"Might not working properly in some cases . App restart is required."];
+    oledKeyBoard.hasSwitch = YES;
+    oledKeyBoard.switchVisible = YES;
+    oledKeyBoard.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"oledKeyBoard_enabled"];
+    oledKeyBoard.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"oledKeyBoard_enabled"];
+        return YES;
+    };
+ 
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideAutoplaySwitch, hideCC, hideHUD, hoverCardItem, bigYTMiniPlayer, oledKeyBoard, oledDarkMode,reExplore]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 
