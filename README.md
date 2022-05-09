@@ -93,27 +93,27 @@ any many more...
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.17.4-5.3.9)](https://tinyurl.com/2p84s282) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.18.4-5.3.9)](https://tinyurl.com/2p8394bf) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(May 02)_
+- Version info: _(May 09)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.17.4 | ✖︎ |
-| **Cercube** | 5.3.9 | ✖︎ |
+| **YouTube** | 17.18.4 | ✖︎ |
+| [Cercube](https://apt.alfhaily.me/depiction/FDXO5R) | 5.3.9 | ✖︎ |
 | [Open in YouTube](https://github.com/CokePokes/YoutubeExtensions/) | 1.2 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlock** | 1.0-14 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
-| **NoYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
+| **NoYTPremium** | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.7 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.6.12 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | 1.7.0 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YTSpeed** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **YTAutoFullScreen** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 </details>
