@@ -43,18 +43,16 @@
 
 2. **iSponsorBlock:** Skips annoying sponsor ads inside videos. iSponsorBlock is based on [SponsorBlock engine](https://sponsor.ajay.app/). Basically, this is the iOS version of the SponsorBlock extension.
 
-3. **YouPiP:** enable YouTube's **native PiP**. More options are in YouTube Settings => General.
-
-4. **YouTube Dislike Return:** brings back Dislike counts under YouTube videos using **ReturnYoutubeDislike**'s API.
+3. **YouTube Dislike Return:** brings back Dislike counts under YouTube videos using **ReturnYoutubeDislike**'s API.
 
 <details>
   <summary>Expand!</summary>
 
-5. **YTClassicVideoQuality:** since YouTube v16.xx, you need one more step to change the video quality. YTClassicVideoQuality brings back the old video quality selector, which is a lot better than the new one.
+4. **YTClassicVideoQuality:** since YouTube v16.xx, you need one more step to change the video quality. YTClassicVideoQuality brings back the old video quality selector, which is a lot better than the new one.
 
-6. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
+5. **YTNoHoverCards:** offer an option to enable/disable the annoying suggested videos show up at the end of the videos.
 
-7. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
+6. **YTABGoodies:** allow you to disable some YouTube A/B testing features. It is a combination of several tweaks, such as:
 
 - YouAreThere: disable "Video paused. Continue watching?" popup in the YouTube app when you play a long video.
 
@@ -62,7 +60,7 @@
 
 - YTNoCheckLocalNetwork: block the Local Network permission popup.
 
-8. **NOYTPremium:** remove YouTube Premium upsell alerts.
+7. **NOYTPremium:** remove YouTube Premium upsell alerts.
 </details>
 
 
@@ -70,9 +68,7 @@
 
 1. **Cercube**: Hide Cast button is not working.
 
-2. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
-
-3. **Not a bug**: 
+2. **Not a bug**: 
 
 - The app won't be able to receive push notifications if you use a free developer account to sideload it. 
 
@@ -87,21 +83,21 @@
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-  - **CercubePlus (Legacy)**: [Open in AltStore (v17.15.2-5.3.9)](https://tinyurl.com/mrxz8uwu) - It will take a while to install because AltStore needs to download the IPA.
+  - **CercubePlus (Legacy)**: [Open in AltStore (v17.18.4-5.3.9)](https://tinyurl.com/bdzb8nfu) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Apr 22)_
+- Version info: _(May 11)_
 <details>
   <summary>Expand:</summary>
   
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.15.2 | ✖︎ |
+| **YouTube** | 17.18.4 | ✖︎ |
 | **Cercube** | 5.3.9 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlockLegacy** | 1.0-14 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
 | **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
-| **NoYTPremium** | 1.0.2 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
+| **NoYTPremium** | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTAutoFullScreen** | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen/) |

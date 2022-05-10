@@ -1,18 +1,18 @@
-CercubePlus_INJECT_DYLIBS = Tweaks/Cercube/Library/MobileSubstrate/DynamicLibraries/Cercube.dylib .theos/obj/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YouTubeDislikesReturn.dylib 
+CercubePlusLegacy_INJECT_DYLIBS = Tweaks/Cercube/Library/MobileSubstrate/DynamicLibraries/Cercube.dylib .theos/obj/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YouTubeDislikesReturn.dylib 
 
 TARGET = iphone:clang:latest:12.0
-CercubePlus_USE_FLEX = 0
+CercubePlusLegacy_USE_FLEX = 0
 ARCHS = arm64
 MODULES = jailed
 FINALPACKAGE = 1
 CODESIGN_IPA = 0
 
-TWEAK_NAME = CercubePlus
+TWEAK_NAME = CercubePlusLegacy
 DISPLAY_NAME = YouTube
 BUNDLE_ID = com.google.ios.youtube
  
-CercubePlus_FILES = CercubePlus.xm
-CercubePlus_IPA = /path/to/your/decrypted/YouTube/IPA
+CercubePlusLegacy_FILES = CercubePlusLegacy.xm Settings.xm
+CercubePlusLegacy_IPA = /System/Volumes/Data/Volumes/Data_Macintosh/Sideloads/Github/IGSideloadFix/Duet_Display.ipa
 ### Important: edit the path to your decrypted YouTube IPA!!! 
 
 include $(THEOS)/makefiles/common.mk
