@@ -1,5 +1,6 @@
 CercubePlus_INJECT_DYLIBS = Tweaks/Cercube/Library/MobileSubstrate/DynamicLibraries/Cercube.dylib .theos/obj/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YTUHD.dylib .theos/obj/YouPiP.dylib .theos/obj/YouTubeDislikesReturn.dylib 
 
+TARGET = iphone:clang:latest:12.0
 CercubePlus_USE_FLEX = 0
 ARCHS = arm64
 MODULES = jailed
