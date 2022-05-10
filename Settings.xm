@@ -98,7 +98,7 @@ extern BOOL hideAutoplaySwitch();
         return YES;
     };
 
-    YTSettingsSectionItem *oledDarkMode = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Dark mode (Experimental)" titleDescription:@"WARNING: OLED Dark mode only works when YouTube is in Dark theme. App restart is required. (In case OLED dark mode doesn't work: just switch between Light/Dark theme, then restart the app)."];
+    YTSettingsSectionItem *oledDarkMode = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Dark mode (Experimental)" titleDescription:@"App restart might be needed after switching between Light/Dark theme to fully apply changes. In case OLED Dark mode doesn't work: just switch between Light/Dark theme, then restart the app."];
     oledDarkMode.hasSwitch = YES;
     oledDarkMode.switchVisible = YES;
     oledDarkMode.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"oled_enabled"];
@@ -107,7 +107,7 @@ extern BOOL hideAutoplaySwitch();
         return YES;
     };
 
-    YTSettingsSectionItem *oledKeyBoard = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Keyboard" titleDescription:@"Might not working properly in some cases . App restart is required."];
+    YTSettingsSectionItem *oledKeyBoard = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Keyboard (Experimental)" titleDescription:@"Might not working properly in some cases . App restart is required."];
     oledKeyBoard.hasSwitch = YES;
     oledKeyBoard.switchVisible = YES;
     oledKeyBoard.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"oledKeyBoard_enabled"];
