@@ -83,7 +83,7 @@ extern BOOL hideWatermarks();
         return YES;
     };
 
-    YTSettingsSectionItem *autoFull = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Auto Full Screen (YTAutoFullScreen)" titleDescription:@"Автоматически открывает ролики в полноэкранном режиме."];
+    YTSettingsSectionItem *autoFull = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Auto Full Screen (YTAutoFullScreen)" titleDescription:@"Autoplay videos at full screen."];
     autoFull.hasSwitch = YES;
     autoFull.switchVisible = YES;
     autoFull.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"autofull_enabled"];
@@ -92,7 +92,7 @@ extern BOOL hideWatermarks();
         return YES;
     };
 	
-	YTSettingsSectionItem *hideCercubeButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube button" titleDescription:@"Скрывает кнопку «Cercube» с панели навигации."];
+	YTSettingsSectionItem *hideCercubeButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube button" titleDescription:@"Hides Cercube button from Navigation bar. Restart required."];
     hideCercubeButton.hasSwitch = YES;
     hideCercubeButton.switchVisible = YES;
     hideCercubeButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
@@ -101,7 +101,7 @@ extern BOOL hideWatermarks();
         return YES;
     };
 	
-	YTSettingsSectionItem *disableCastButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Disable Cast button" titleDescription:@"Скрывает кнопку «Транслирования» с панели навигации."];
+	YTSettingsSectionItem *disableCastButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Disable Cast button" titleDescription:@"Disables Cast button in YT. Restart required."];
     disableCastButton.hasSwitch = YES;
     disableCastButton.switchVisible = YES;
     disableCastButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"disableCastButton_enabled"];
@@ -110,7 +110,7 @@ extern BOOL hideWatermarks();
         return YES;
     };
 	
-	YTSettingsSectionItem *hideWatermarks = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Watermarks" titleDescription:@"Скрывает водяные значки каналов в плеере."];
+	YTSettingsSectionItem *hideWatermarks = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Watermarks" titleDescription:@"Hides channel watermarks from player."];
     hideWatermarks.hasSwitch = YES;
     hideWatermarks.switchVisible = YES;
     hideWatermarks.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
