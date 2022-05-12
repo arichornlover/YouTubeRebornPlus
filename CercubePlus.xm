@@ -2,6 +2,7 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import "Header.h"
+#import "Tweak.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 #import "Tweaks/YouTubeHeader/YTWatchController.h"
@@ -42,6 +43,50 @@ BOOL hideCC() {
 BOOL hideAutoplaySwitch() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideAutoplaySwitch_enabled"];
 }
+BOOL hideCercubeButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
+}
+BOOL disableCastButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"disableCastButton_enabled"];
+}
+BOOL hideWatermarks() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
+}
+
+// Hide Cercube Button
+%hook x43mW1cl
+-(void)setFrame:(CGRect)frame {
+    %orig(CGRectMake(frame.origin.x, frame.origin.y, 0, 0));
+}
+%end
+
+//Disable Cast Button
+%group gDisableCastButton
+%hook YTSettings
+- (BOOL)disableMDXDeviceDiscovery {
+    return YES;
+} 
+%end
+%hook YTRightNavigationButtons
+- (void)layoutSubviews {
+	%orig();
+	if(![[self MDXButton] isHidden]) [[self MDXButton] setHidden:YES];
+}
+%end
+%hook YTMainAppControlsOverlayView
+- (void)layoutSubviews {
+	%orig();
+	if(![[self playbackRouteButton] isHidden]) [[self playbackRouteButton] setHidden:YES];
+}
+%end
+%end
+
+// Hide Watermarks
+%hook YTFeaturedWatermarkView
+-(void)setFrame:(CGRect)frame {
+    %orig(CGRectMake(frame.origin.x, frame.origin.y, 0, 0));
+}
+%end
 
 // Hide CC / Autoplay switch
 %hook YTMainAppControlsOverlayView
@@ -413,6 +458,9 @@ static void replaceTab(YTIGuideResponse *response) {
     %init;
     if (oled()) {
 		%init(gOLED);
+    }
+    if (disableCastButton()) {
+		%init(gDisableCastButton);
     }
 	if (oledKB()) {
         %init(gOLEDKB);
