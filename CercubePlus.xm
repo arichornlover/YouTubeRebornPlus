@@ -2,7 +2,6 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 #import "Header.h"
-#import "Tweak.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 #import "Tweaks/YouTubeHeader/YTWatchController.h"
@@ -46,45 +45,44 @@ BOOL hideAutoplaySwitch() {
 BOOL hideCercubeButton() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
 }
-BOOL disableCastButton() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"disableCastButton_enabled"];
+BOOL hideCastButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCastButton_enabled"];
 }
 BOOL hideWatermarks() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
 }
 
+
 // Hide Cercube Button
 %hook x43mW1cl
--(void)setFrame:(CGRect)frame {
-    %orig(CGRectMake(frame.origin.x, frame.origin.y, 0, 0));
+- (void)didMoveToWindow {
+    if (hideCercubeButton()) {
+    self.hidden = YES;
+    %orig; 
+    }
+    return %orig;
 }
 %end
 
 //Disable Cast Button
-%group gDisableCastButton
+%group gHideCastButton
+%hook MDXPlaybackRouteButtonController
+- (BOOL)isPersistentCastIconEnabled { return NO; }
+- (void)updateRouteButton:(id)arg1 {} // hide Cast button in video controls overlay
+- (void)updateAllRouteButtons {} // hide Cast button in Nav bar
+%end
+
 %hook YTSettings
-- (BOOL)disableMDXDeviceDiscovery {
-    return YES;
-} 
-%end
-%hook YTRightNavigationButtons
-- (void)layoutSubviews {
-	%orig();
-	if(![[self MDXButton] isHidden]) [[self MDXButton] setHidden:YES];
-}
-%end
-%hook YTMainAppControlsOverlayView
-- (void)layoutSubviews {
-	%orig();
-	if(![[self playbackRouteButton] isHidden]) [[self playbackRouteButton] setHidden:YES];
-}
+- (void)setDisableMDXDeviceDiscovery:(BOOL)arg1 { %orig(YES); }
 %end
 %end
 
 // Hide Watermarks
-%hook YTFeaturedWatermarkView
--(void)setFrame:(CGRect)frame {
-    %orig(CGRectMake(frame.origin.x, frame.origin.y, 0, 0));
+// Can't test it
+%hook YTAnnotationsViewController
+- (void)loadFeaturedChannelWatermark {
+    if (hideWatermarks()) {}
+    return %orig;
 }
 %end
 
