@@ -1,5 +1,15 @@
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 
+@interface x43mW1cl : UIView // Cercube v5.3.9
+@end
+
+@interface ASWAppSwitcherCollectionViewCell : UIView
+@end
+
+/* @interface YTMainAppVideoPlayerOverlayViewController : UIViewController
+@property (nonatomic, strong, readwrite) UIStackView *cercubeButtonsContainer;
+@end */
+
 @interface YTMainAppVideoPlayerOverlayView : UIView
 - (UIViewController *)_viewControllerForAncestor;
 @end
