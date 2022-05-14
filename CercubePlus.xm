@@ -456,7 +456,7 @@ static void replaceTab(YTIGuideResponse *response) {
     if (oled()) {
 	%init(gOLED);
     }
-    if (disableCastButton()) {
+    if (hideCastButton()) {
 	%init(gHideCastButton);
     }
     if (oledKB()) {
