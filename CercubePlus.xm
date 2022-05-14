@@ -454,18 +454,18 @@ static void replaceTab(YTIGuideResponse *response) {
 %ctor {
     %init;
     if (oled()) {
-		%init(gOLED);
+	%init(gOLED);
     }
     if (disableCastButton()) {
-		%init(gDisableCastButton);
+	%init(gHideCastButton);
     }
-	if (oledKB()) {
+    if (oledKB()) {
         %init(gOLEDKB);
-	}
-	if (ReExplore()) {
+    }
+    if (ReExplore()) {
         %init(gReExplore);
-	}
-	if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
+    }
+    if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
         %init(Main);
-	}
+    }
 }
