@@ -45,7 +45,13 @@ BOOL hideAutoplaySwitch() {
 BOOL hideCercubeButton() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
 }
-BOOL hideCastButton() {
+BOOL hideCercubePiP() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubePiP_enabled"];
+}
+BOOL hideCercubeDownload() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeDownload_enabled"];
+}
+BOOL hideCastButton () {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCastButton_enabled"];
 }
 BOOL hideWatermarks() {
@@ -60,6 +66,19 @@ BOOL hideWatermarks() {
         %orig; 
     }
         return %orig;
+}
+%end
+
+// Hide Cercube PiP & Download button
+%hook UIStackView
+- (void)didMoveToWindow {
+    %orig;
+    if (hideCercubePiP() && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
+        self.subviews[0].hidden = YES;
+    }
+    if (hideCercubeDownload() && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
+        self.subviews[1].hidden = YES;
+    }
 }
 %end
 
@@ -179,6 +198,7 @@ BOOL hideWatermarks() {
 %end
 
 // OLED dark mode by BandarHL
+
 UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 
 %group gOLED
@@ -225,6 +245,15 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
+%hook YTInnerTubeCollectionViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    if (pageStyle == 1) { 
+        return oledColor; 
+    }
+        return %orig;
+}
+%end
+
 // Explore
 %hook ASScrollView 
 - (void)didMoveToWindow {
@@ -252,7 +281,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig([UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.9]);
     }
-    return %orig;
+        return %orig;
 }
 %end
 
@@ -271,17 +300,17 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
+        return %orig;
 }
 %end
 
 // Comment view
-%hook YTCreateCommentAccessoryView // community reply comment
+%hook YTCreateCommentAccessoryView // #shorts reply comment
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
+        return %orig;
 }
 %end
 
@@ -290,13 +319,13 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
+        return %orig;
 }
 - (void)setTextColor:(UIColor *)color { // fix black text in #Shorts video's comment
     if (isDarkMode()) { 
         return %orig ([UIColor whiteColor]); 
     }
-    return %orig;
+        return %orig;
 }
 %end
 
@@ -305,7 +334,16 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
+        return %orig;
+}
+%end
+
+%hook YTFormattedStringLabel 
+- (void)setBackgroundColor:(UIColor *)color { // YT is werid...
+    if (isDarkMode()) {
+        return %orig ([UIColor clearColor]);
+    }
+        return %orig;
 }
 %end
 
@@ -314,17 +352,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
-}
-%end
-
-// Separation lines
-%hook YTCollectionSeparatorView
-- (void)didMoveToWindow {
-    if (isDarkMode()) {}
-    else { 
-        return %orig(); 
-    }
+        return %orig;
 }
 %end
 
@@ -345,17 +373,22 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
-// this sucks :/
-%hook UIView
-- (void)setBackgroundColor:(UIColor *)color {
-    if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(YTHUDMessageView)]) { color = oledColor; }
-        if ([self.nextResponder isKindOfClass:%c(ASWAppSwitcherCollectionViewCell)]) { color = oledColor; } // Open link with...
+%hook ASWAppSwitcherCollectionViewCell
+- (void)didMoveToWindow {
+    if (isDarkMode()) { 
         %orig;
+        self.subviews[1].backgroundColor = oledColor;
     }
-        return %orig;
 }
 %end
+
+// this sucks :/
+/* %hook UIView
+- (void)setBackgroundColor:(UIColor *)color {
+        if (oled() && ([self.nextResponder isKindOfClass:%c(YTHUDMessageView)]) { color = oledColor; }
+        %orig;
+}
+%end */
 %end
 
 %group gOLEDKB // OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
@@ -454,18 +487,18 @@ static void replaceTab(YTIGuideResponse *response) {
 %ctor {
     %init;
     if (oled()) {
-	%init(gOLED);
+		%init(gOLED);
     }
-    if (hideCastButton()) {
-	%init(gHideCastButton);
-    }
-    if (oledKB()) {
+	if (oledKB()) {
         %init(gOLEDKB);
-    }
-    if (ReExplore()) {
+	}
+	if (ReExplore()) {
         %init(gReExplore);
-    }
-    if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
+	}
+	if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
         %init(Main);
+	}
+    if (hideCastButton()) {
+        %init(gHideCastButton);
     }
 }

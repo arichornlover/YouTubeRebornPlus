@@ -17,9 +17,11 @@ extern BOOL ReExplore();
 extern BOOL bigYTMiniPlayer();
 extern BOOL hideCC();
 extern BOOL hideAutoplaySwitch();
-extern BOOL hideWatermarks();
 extern BOOL hideCercubeButton();
+extern BOOL hideCercubePiP();
+extern BOOL hideCercubeDownload();
 extern BOOL hideCastButton();
+extern BOOL hideWatermarks();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -37,6 +39,51 @@ extern BOOL hideCastButton();
 %hook YTSettingsSectionItemManager
 %new - (void)updateCercubePlusSectionWithEntry:(id)entry {
     YTSettingsViewController *delegate = [self valueForKey:@"_dataDelegate"];
+
+    YTSettingsSectionItem *hideCercubeButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube button in the Navigation bar" titleDescription:@""];
+    hideCercubeButton.hasSwitch = YES;
+    hideCercubeButton.switchVisible = YES;
+    hideCercubeButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
+    hideCercubeButton.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideCercubeButton_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *hideCercubePiP = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube's PiP button" titleDescription:@"Hide the PiP button of Cercube in the video player."];
+    hideCercubePiP.hasSwitch = YES;
+    hideCercubePiP.switchVisible = YES;
+    hideCercubePiP.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubePiP_enabled"];
+    hideCercubePiP.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideCercubePiP_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *hideCercubeDownload = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube's Download button" titleDescription:@"Hide the Download button of Cercube in the video player."];
+    hideCercubeDownload.hasSwitch = YES;
+    hideCercubeDownload.switchVisible = YES;
+    hideCercubeDownload.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeDownload_enabled"];
+    hideCercubeDownload.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideCercubeDownload_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *hideCastButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cast button" titleDescription:@"App restart is required."];
+    hideCastButton.hasSwitch = YES;
+    hideCastButton.switchVisible = YES;
+    hideCastButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCastButton_enabled"];
+    hideCastButton.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideCastButton_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *hideWatermarks = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Watermarks" titleDescription:@"Hide channel watermarks from video controls overlay."];
+    hideWatermarks.hasSwitch = YES;
+    hideWatermarks.switchVisible = YES;
+    hideWatermarks.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
+    hideWatermarks.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideWatermarks_enabled"];
+        return YES;
+    };
 
     YTSettingsSectionItem *hoverCardItem = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide End screens hover cards (YTNoHoverCards)" titleDescription:@"Hide creator End screens (thumbnails) at the end of videos."];
     hoverCardItem.hasSwitch = YES;
@@ -91,33 +138,6 @@ extern BOOL hideCastButton();
         [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"autofull_enabled"];
         return YES;
     };
-	
-    YTSettingsSectionItem *hideCercubeButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube button" titleDescription:@"Hide Cercube button in the Navigation bar."];
-    hideCercubeButton.hasSwitch = YES;
-    hideCercubeButton.switchVisible = YES;
-    hideCercubeButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
-    hideCercubeButton.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideCercubeButton_enabled"];
-        return YES;
-    };
-	
-    YTSettingsSectionItem *hideCastButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cast button" titleDescription:@"App restart is required."];
-    hideCastButton.hasSwitch = YES;
-    hideCastButton.switchVisible = YES;
-    hideCastButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCastButton_enabled"];
-    hideCastButton.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideCastButton_enabled"];
-        return YES;
-    };
-	
-    YTSettingsSectionItem *hideWatermarks = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Watermarks" titleDescription:@"Hide channel watermarks from video controls overlay."];
-    hideWatermarks.hasSwitch = YES;
-    hideWatermarks.switchVisible = YES;
-    hideWatermarks.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
-    hideWatermarks.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideWatermarks_enabled"];
-        return YES;
-    };
 
     YTSettingsSectionItem *hideHUD = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide HUD Messages" titleDescription:@"Example: CC is turned on/off, Video loop is on,..."];
     hideHUD.hasSwitch = YES;
@@ -146,7 +166,7 @@ extern BOOL hideCastButton();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCastButton, hideWatermarks, hideCercubeButton, hideAutoplaySwitch, hideCC, hideHUD, hoverCardItem, bigYTMiniPlayer, oledKeyBoard, oledDarkMode, reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hoverCardItem, hideWatermarks, bigYTMiniPlayer, oledKeyBoard, oledDarkMode,reExplore]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 
