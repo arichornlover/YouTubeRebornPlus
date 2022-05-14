@@ -42,6 +42,48 @@ BOOL hideCC() {
 BOOL hideAutoplaySwitch() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideAutoplaySwitch_enabled"];
 }
+BOOL hideCercubeButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
+}
+BOOL hideCastButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCastButton_enabled"];
+}
+BOOL hideWatermarks() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
+}
+
+// Hide Cercube Button in Nav Bar - v5.3.9
+%hook x43mW1cl
+- (void)didMoveToWindow {
+    if (hideCercubeButton() && (![self.nextResponder isKindOfClass:%c(UIStackView)])) {
+        self.hidden = YES;
+        %orig; 
+    }
+        return %orig;
+}
+%end
+
+//Hide Cast Button since Cercube's option is not working
+%group gHideCastButton
+%hook MDXPlaybackRouteButtonController
+- (BOOL)isPersistentCastIconEnabled { return NO; }
+- (void)updateRouteButton:(id)arg1 {} // hide Cast button in video controls overlay
+- (void)updateAllRouteButtons {} // hide Cast button in Nav bar
+%end
+
+%hook YTSettings
+- (void)setDisableMDXDeviceDiscovery:(BOOL)arg1 { %orig(YES); }
+%end
+%end
+
+// Hide Watermarks
+// Can't test it
+%hook YTAnnotationsViewController
+- (void)loadFeaturedChannelWatermark {
+    if (hideWatermarks()) {}
+    return %orig;
+}
+%end
 
 // Hide CC / Autoplay switch
 %hook YTMainAppControlsOverlayView
@@ -412,15 +454,18 @@ static void replaceTab(YTIGuideResponse *response) {
 %ctor {
     %init;
     if (oled()) {
-		%init(gOLED);
+	%init(gOLED);
     }
-	if (oledKB()) {
+    if (hideCastButton()) {
+	%init(gHideCastButton);
+    }
+    if (oledKB()) {
         %init(gOLEDKB);
-	}
-	if (ReExplore()) {
+    }
+    if (ReExplore()) {
         %init(gReExplore);
-	}
-	if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
+    }
+    if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
         %init(Main);
-	}
+    }
 }
