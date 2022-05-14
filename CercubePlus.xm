@@ -52,19 +52,18 @@ BOOL hideWatermarks() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
 }
 
-
-// Hide Cercube Button
+// Hide Cercube Button in Nav Bar - v5.3.9
 %hook x43mW1cl
 - (void)didMoveToWindow {
-    if (hideCercubeButton()) {
-    self.hidden = YES;
-    %orig; 
+    if (hideCercubeButton() && (![self.nextResponder isKindOfClass:%c(UIStackView)])) {
+        self.hidden = YES;
+        %orig; 
     }
-    return %orig;
+        return %orig;
 }
 %end
 
-//Disable Cast Button
+//Hide Cast Button since Cercube's option is not working
 %group gHideCastButton
 %hook MDXPlaybackRouteButtonController
 - (BOOL)isPersistentCastIconEnabled { return NO; }
