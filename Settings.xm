@@ -22,6 +22,7 @@ extern BOOL hideCercubePiP();
 extern BOOL hideCercubeDownload();
 extern BOOL hideCastButton();
 extern BOOL hideWatermarks();
+extern BOOL ytMiniPlayer();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -33,12 +34,20 @@ extern BOOL hideWatermarks();
         [mutableOrder insertObject:@(CercubePlusSection) atIndex:insertIndex + 1];
     return mutableOrder;
 }
-
 %end
 
 %hook YTSettingsSectionItemManager
 %new - (void)updateCercubePlusSectionWithEntry:(id)entry {
     YTSettingsViewController *delegate = [self valueForKey:@"_dataDelegate"];
+
+    YTSettingsSectionItem *ytMiniPlayer = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Enable the Miniplayer for all YouTube videos" titleDescription:@"App restart is required."];
+    ytMiniPlayer.hasSwitch = YES;
+    ytMiniPlayer.switchVisible = YES;
+    ytMiniPlayer.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"ytMiniPlayer_enabled"];
+    ytMiniPlayer.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytMiniPlayer_enabled"];
+        return YES;
+    };
 
     YTSettingsSectionItem *hideCercubeButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube button in the Navigation bar" titleDescription:@""];
     hideCercubeButton.hasSwitch = YES;
@@ -166,7 +175,7 @@ extern BOOL hideWatermarks();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hoverCardItem, hideWatermarks, bigYTMiniPlayer, oledKeyBoard, oledDarkMode,reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, ytMiniPlayer, hoverCardItem, hideWatermarks, bigYTMiniPlayer, oledKeyBoard, oledDarkMode,reExplore]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 

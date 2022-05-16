@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+#import <fishhook.h>
 #import "Header.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
@@ -10,7 +11,7 @@
 #import "Tweaks/YouTubeHeader/YTIPivotBarSupportedRenderers.h"
 #import "Tweaks/YouTubeHeader/YTIPivotBarRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIBrowseRequest.h"
-#import "Tweaks/YouTubeHeader/YTColorPalette.h"
+#import "Tweaks/YouTubeHeader/YTCommonColorPalette.h"
 
 BOOL hideHUD() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
@@ -56,6 +57,21 @@ BOOL hideCastButton () {
 }
 BOOL hideWatermarks() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
+}
+BOOL ytMiniPlayer() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"ytMiniPlayer_enabled"];
+}
+
+// Tweaks
+// YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
+static BOOL (*orig_class_addMethod)(Class, SEL, IMP, const char *);
+static BOOL hook_class_addMethod(Class cls, SEL name, IMP imp, const char *types) {
+  if (ytMiniPlayer() && [cls isEqual:%c(YTIMiniplayerRenderer)] && [NSStringFromSelector(name) hasPrefix:@"has"]) {
+    imp = imp_implementationWithBlock(^BOOL(id self, SEL _cmd) {
+      return NO;
+    });
+  }
+  return orig_class_addMethod(cls, name, imp, types);
 }
 
 // Hide Cercube Button in Nav Bar - v5.3.9
@@ -202,7 +218,7 @@ BOOL hideWatermarks() {
 UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 
 %group gOLED
-%hook YTColorPalette
+%hook YTCommonColorPalette
 - (UIColor *)brandBackgroundSolid {
     if (self.pageStyle == 1) {
         return oledColor;
@@ -305,7 +321,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %end
 
 // Comment view
-%hook YTCreateCommentAccessoryView // #shorts reply comment
+%hook YTCreateCommentAccessoryView // community reply comment
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
         return %orig (oledColor);
@@ -329,19 +345,19 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
-%hook YCHLiveChatActionPanelView  // live chat comment
+%hook YTFormattedStringLabel  // YT is werid...
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig (oledColor);
+        return %orig ([UIColor clearColor]);
     }
         return %orig;
 }
 %end
 
-%hook YTFormattedStringLabel 
-- (void)setBackgroundColor:(UIColor *)color { // YT is werid...
+%hook YCHLiveChatActionPanelView  // live chat comment
+- (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig ([UIColor clearColor]);
+        return %orig (oledColor);
     }
         return %orig;
 }
@@ -383,12 +399,15 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %end
 
 // this sucks :/
-/* %hook UIView
-- (void)setBackgroundColor:(UIColor *)color {
-        if (oled() && ([self.nextResponder isKindOfClass:%c(YTHUDMessageView)]) { color = oledColor; }
-        %orig;
-}
-%end */
+// %hook UIView
+// - (void)setBackgroundColor:(UIColor *)color {
+//     if (isDarkMode()) {
+//         if ([self.nextResponder isKindOfClass:%c(YTHUDMessageView)]) { color = oledColor; }
+//         %orig;
+//     }
+//         return %orig;
+// }
+// %end
 %end
 
 %group gOLEDKB // OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
@@ -485,19 +504,20 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 
 %ctor {
+    rebind_symbols((struct rebinding[1]){{"class_addMethod", (void *)hook_class_addMethod, (void **)&orig_class_addMethod}}, 1);
     %init;
     if (oled()) {
-		%init(gOLED);
+       %init(gOLED);
     }
-	if (oledKB()) {
-        %init(gOLEDKB);
-	}
-	if (ReExplore()) {
-        %init(gReExplore);
-	}
-	if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
-        %init(Main);
-	}
+    if (oledKB()) {
+       %init(gOLEDKB);
+    }
+    if (ReExplore()) {
+       %init(gReExplore);
+    }
+    if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
+       %init(Main);
+    }
     if (hideCastButton()) {
         %init(gHideCastButton);
     }
