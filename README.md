@@ -2,15 +2,14 @@
 
 ![cydia-1900000833-iphone-0-1628581139 2](https://user-images.githubusercontent.com/52943116/135557251-f4be8ccf-8f0b-4d19-9fcf-6c9544aba281.PNG)
 
-
 # Table of Contents
 
 * [Credits](#credits)
 * [Features](#features)
 * [Known issues](#known-issues)
 * [Download (IPA)](#download-ipa)
+* [Support the developers!](#support-the-developers)
 * [Building (optional)](#building-optional)
-
 
 # Credits
 
@@ -22,14 +21,13 @@
 
 - [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTAutoFullScreen](https://github.com/PoomSmart/YTAutoFullScreen/), [YTUHD](https://poomsmart.github.io/repo/depictions/ytuhd.html), [YouPiP](https://poomsmart.github.io/repo/depictions/youpip.html), and [Return YouTube Dislike](https://github.com/PoomSmart/Return-YouTube-Dislikes).
 
-- [level3tjg](https://twitter.com/level3tjg?s=21) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
+- [level3tjg](https://twitter.com/level3tjg) - for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards) and [YTMiniplayerEnabler](https://github.com/level3tjg/YTMiniplayerEnabler).
 
 - [YouTube Extensions](https://github.com/CokePokes/YoutubeExtensions) by [CokePokes](https://github.com/CokePokes/).
 
 - [Al4ise](https://github.com/Al4ise) for [Azule](https://github.com/Al4ise/Azule), a tool used to inject jailbreak tweaks into jailed iOS apps.
 
 - [theos team](https://github.com/theos/theos) for theos & theos-jailed.
-
 
 # Features
 
@@ -71,7 +69,6 @@
 any many more...
 </details>
 
-
 # Known issues
 
 1. **Cercube**: Hide Cast button is not working.
@@ -86,23 +83,22 @@ any many more...
 
 - It's impossible to fix deep-link (a.k.a Open in the YouTube app). However, you can use this [Shortcuts](https://shortcutsgallery.com/shortcuts/open-in-youtube/) as a workaround (tested on iOS 14). **Credit:** RandomAccessMemories#5025
 
-
 # Download (IPA)
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.18.4-5.3.9)](https://tinyurl.com/2p8394bf) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.19.2-5.3.9)](https://tinyurl.com/3rrbahka) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(May 09)_
+- Version info: _(May 16)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.18.4 | ✖︎ |
+| **YouTube** | 17.19.2 | ✖︎ |
 | [Cercube](https://apt.alfhaily.me/depiction/FDXO5R) | 5.3.9 | ✖︎ |
 | [Open in YouTube](https://github.com/CokePokes/YoutubeExtensions/) | 1.2 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
@@ -116,6 +112,33 @@ any many more...
 | **YouPiP** | 1.7.0 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YTSpeed** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **YTAutoFullScreen** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
+| **YTMiniplayerEnabler** | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
+
+</details>
+
+# Support the developers
+
+<details>
+  <summary>▶︎ MiRO92</summary>
+  
+- CashApp: https://cash.app/$MiRO92M
+ 
+- Other payment methods are available in uYou's settings.
+</details>
+
+<details>
+  <summary>▶︎ Poomsmart</summary>
+
+- Paypal: https://poomsmart.github.io/
+
+</details>
+
+<details>
+  <summary>▶︎ Galactic-dev</summary>
+  
+- Paypal: https://www.paypal.com/paypalme/DBrett684 
+
+- Venmo: https://venmo.com/u/DavidBrett
 </details>
 
 # Building (optional)
