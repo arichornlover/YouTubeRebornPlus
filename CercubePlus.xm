@@ -1,7 +1,6 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
-#import <fishhook.h>
 #import "Header.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
@@ -64,20 +63,17 @@ BOOL ytMiniPlayer() {
 
 // Tweaks
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
-static BOOL (*orig_class_addMethod)(Class, SEL, IMP, const char *);
-static BOOL hook_class_addMethod(Class cls, SEL name, IMP imp, const char *types) {
-  if (ytMiniPlayer() && [cls isEqual:%c(YTIMiniplayerRenderer)] && [NSStringFromSelector(name) hasPrefix:@"has"]) {
-    imp = imp_implementationWithBlock(^BOOL(id self, SEL _cmd) {
-      return NO;
-    });
-  }
-  return orig_class_addMethod(cls, name, imp, types);
+%hook YTWatchMiniBarViewController
+- (void)updateMiniBarPlayerStateFromRenderer {
+    if (ytMiniPlayer()) {}
+    else { return %orig; }
 }
+%end
 
 // Hide Cercube Button in Nav Bar - v5.3.9
 %hook x43mW1cl
 - (void)didMoveToWindow {
-    if (hideCercubeButton() && (![self.nextResponder isKindOfClass:%c(UIStackView)])) {
+    if (hideCercubeButton() && [self.nextResponder isKindOfClass:%c(YTRightNavigationButtons)]) {
         self.hidden = YES;
         %orig; 
     }
@@ -504,7 +500,6 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 
 %ctor {
-    rebind_symbols((struct rebinding[1]){{"class_addMethod", (void *)hook_class_addMethod, (void **)&orig_class_addMethod}}, 1);
     %init;
     if (oled()) {
        %init(gOLED);
