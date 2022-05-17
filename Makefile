@@ -2,7 +2,7 @@ CercubePlus_INJECT_DYLIBS = Tweaks/Cercube/Library/MobileSubstrate/DynamicLibrar
 
 TARGET = iphone:clang:latest:12.0
 CercubePlus_USE_FLEX = 0
-CercubePlus_USE_FISHHOOK = 1
+CercubePlus_USE_FISHHOOK = 0
 ARCHS = arm64
 MODULES = jailed
 FINALPACKAGE = 1
