@@ -89,7 +89,7 @@ any many more...
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.19.2-5.3.9)](https://tinyurl.com/3rrbahka) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.19.2-5.3.9)](https://tinyurl.com/mrxhhcrv) - It will take a while to install because AltStore needs to download the IPA.
 
 - Version info: _(May 16)_
 
