@@ -108,11 +108,11 @@ BOOL ytMiniPlayer() {
 %end
 
 // Hide Watermarks
-// Can't test it
+
 %hook YTAnnotationsViewController
 - (void)loadFeaturedChannelWatermark {
     if (hideWatermarks()) {}
-    return %orig;
+    else { return %orig; }
 }
 %end
 

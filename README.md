@@ -71,7 +71,7 @@ any many more...
 
 # Known issues
 
-1. **Cercube**: Hide Cast button is not working.
+1. **Cercube**: Hide Cast button is not working. (Workaround: Hide cast button in CercubePlus settings)
 
 2. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
 
