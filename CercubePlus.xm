@@ -118,12 +118,13 @@ BOOL ytMiniPlayer() {
 
 // Hide CC / Autoplay switch
 %hook YTMainAppControlsOverlayView
-- (void)layoutSubviews {
-    %orig;
-    if (hideAutoplaySwitch())
-        MSHookIvar<UIView *>(self, "_autonavSwitch").hidden = YES;
-    if (hideCC())
-        MSHookIvar<UIView *>(self, "_closedCaptionsOrSubtitlesButton").hidden = YES;
+- (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC?!
+    if (hideCC()) { return %orig(NO); }   
+    else { return %orig; }
+}
+- (void)setAutoplaySwitchButtonRenderer:(id)arg1 {
+    if (hideAutoplaySwitch()) {}
+    else { return %orig; }
 }
 %end
 
@@ -288,6 +289,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
+// YouTube's Miniplayer
 %hook YTWatchMiniBarView 
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
@@ -393,17 +395,6 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     }
 }
 %end
-
-// this sucks :/
-// %hook UIView
-// - (void)setBackgroundColor:(UIColor *)color {
-//     if (isDarkMode()) {
-//         if ([self.nextResponder isKindOfClass:%c(YTHUDMessageView)]) { color = oledColor; }
-//         %orig;
-//     }
-//         return %orig;
-// }
-// %end
 %end
 
 %group gOLEDKB // OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
