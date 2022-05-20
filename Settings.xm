@@ -175,7 +175,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCercubeButton, hideCercubePiP, hideCercubeDownload, ytMiniPlayer, hideCastButton, hideAutoplaySwitch, hideCC, hideHUD, hoverCardItem, hideWatermarks, bigYTMiniPlayer, oledKeyBoard, oledDarkMode,reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCercubeButton, hideCercubePiP, hideCercubeDownload, ytMiniPlayer, hideAutoplaySwitch, hideCastButton, hideCC, hideHUD, hoverCardItem, hideWatermarks, bigYTMiniPlayer, oledKeyBoard, oledDarkMode, reExplore]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 
