@@ -89,16 +89,16 @@ any many more...
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.19.2-5.3.9)](https://tinyurl.com/mrxhhcrv) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.19.3-5.3.9)](https://tinyurl.com/2p8faz7z) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(May 16)_
+- Version info: _(May 20)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.19.2 | ✖︎ |
+| **YouTube** | 17.19.3 | ✖︎ |
 | [Cercube](https://apt.alfhaily.me/depiction/FDXO5R) | 5.3.9 | ✖︎ |
 | [Open in YouTube](https://github.com/CokePokes/YoutubeExtensions/) | 1.2 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
@@ -117,14 +117,6 @@ any many more...
 </details>
 
 # Support the developers
-
-<details>
-  <summary>▶︎ MiRO92</summary>
-  
-- CashApp: https://cash.app/$MiRO92M
- 
-- Other payment methods are available in uYou's settings.
-</details>
 
 <details>
   <summary>▶︎ Poomsmart</summary>
