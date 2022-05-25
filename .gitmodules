@@ -1,7 +1,3 @@
-[submodule "Tweaks/YouPiP"]
-	path = Tweaks/YouPiP
-	url = https://github.com/PoomSmart/YouPiP.git
-	branch = main
 [submodule "Tweaks/Return-YouTube-Dislikes"]
 	path = Tweaks/Return-YouTube-Dislikes
 	url = https://github.com/PoomSmart/Return-YouTube-Dislikes.git
