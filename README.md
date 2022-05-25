@@ -78,24 +78,24 @@
 # Download (IPA)
 ### ⚠️⚠️⚠️ DO NOT DOWNLOAD THE IPA FROM THE RELEASE TAB!!! ⚠️⚠️⚠️
 
-- **CercubePlus (Legacy)** requires iOS & iPadOS 12.0. Get the latest IPA [here](https://27man-my.sharepoint.com/:u:/g/personal/qn____27man_onmicrosoft_com/EXpZ06ASMtpBhS5Le8ZVeJ8BmtNAsePIJN1JroFGdG2kNg?download=1). 
+- **CercubePlus (Legacy)** requires iOS & iPadOS 12.0. Get the latest IPA [here](https://27man-my.sharepoint.com/:u:/g/personal/qn____27man_onmicrosoft_com/Efo0JGvo4NxJk4kf4W6rKS8BvQNsxjO3UAH-Xfv1agmy_g?download=1). 
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-  - **CercubePlus (Legacy)**: [Open in AltStore (v17.18.4-5.3.9)](https://tinyurl.com/bdzb8nfu) - It will take a while to install because AltStore needs to download the IPA.
+  - **CercubePlus (Legacy)**: [Open in AltStore (v17.20.3-5.3.9)](https://tinyurl.com/yuwhj4hs) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(May 11)_
+- Version info: _(May 25)_
 <details>
   <summary>Expand:</summary>
   
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.18.4 | ✖︎ |
+| **YouTube** | 17.20.3 | ✖︎ |
 | **Cercube** | 5.3.9 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
-| **iSponsorBlockLegacy** | 1.0-14 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
-| **Alderis Color Picker** | 1.1.2| [✔︎](https://github.com/hbang/Alderis) |
+| **iSponsorBlockLegacy** | 1.0-13~ios12b2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
+| **Alderis Color Picker** | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
 | **NoYTPremium** | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
