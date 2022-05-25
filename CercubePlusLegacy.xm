@@ -10,7 +10,7 @@
 #import "Tweaks/YouTubeHeader/YTIPivotBarSupportedRenderers.h"
 #import "Tweaks/YouTubeHeader/YTIPivotBarRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIBrowseRequest.h"
-#import "Tweaks/YouTubeHeader/YTColorPalette.h"
+#import "Tweaks/YouTubeHeader/YTCommonColorPalette.h"
 
 BOOL hideHUD() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
@@ -42,15 +42,77 @@ BOOL hideCC() {
 BOOL hideAutoplaySwitch() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideAutoplaySwitch_enabled"];
 }
+BOOL hideCercubeButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
+}
+BOOL hideCercubePiP() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubePiP_enabled"];
+}
+BOOL hideCercubeDownload() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeDownload_enabled"];
+}
+BOOL hideCastButton () {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCastButton_enabled"];
+}
+BOOL ytMiniPlayer() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"ytMiniPlayer_enabled"];
+}
+
+// Tweaks
+// YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
+%hook YTWatchMiniBarViewController
+- (void)updateMiniBarPlayerStateFromRenderer {
+    if (ytMiniPlayer()) {}
+    else { return %orig; }
+}
+%end
+
+// Hide Cercube Button in Nav Bar - v5.3.9
+%hook x43mW1cl
+- (void)didMoveToWindow {
+    if (hideCercubeButton() && [self.nextResponder isKindOfClass:%c(YTRightNavigationButtons)]) {
+        self.hidden = YES;
+        %orig; 
+    }
+        return %orig;
+}
+%end
+
+// Hide Cercube PiP & Download button
+%hook UIStackView
+- (void)didMoveToWindow {
+    %orig;
+    if (hideCercubePiP() && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
+        self.subviews[0].hidden = YES;
+    }
+    if (hideCercubeDownload() && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
+        self.subviews[1].hidden = YES;
+    }
+}
+%end
+
+//Hide Cast Button since Cercube's option is not working
+%group gHideCastButton
+%hook MDXPlaybackRouteButtonController
+- (BOOL)isPersistentCastIconEnabled { return NO; }
+- (void)updateRouteButton:(id)arg1 {} // hide Cast button in video controls overlay
+- (void)updateAllRouteButtons {} // hide Cast button in Nav bar
+%end
+
+%hook YTSettings
+- (void)setDisableMDXDeviceDiscovery:(BOOL)arg1 { %orig(YES); }
+%end
+%end
 
 // Hide CC / Autoplay switch
 %hook YTMainAppControlsOverlayView
-- (void)layoutSubviews {
-    %orig;
-    if (hideAutoplaySwitch())
-        MSHookIvar<UIView *>(self, "_autonavSwitch").hidden = YES;
-    if (hideCC())
-        MSHookIvar<UIView *>(self, "_closedCaptionsOrSubtitlesButton").hidden = YES;
+- (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC?!
+    if (hideCC()) { return %orig(NO); }   
+    else { return %orig; }
+}
+- (void)setAutoplaySwitchButtonRenderer:(id)arg1 {
+    if (hideAutoplaySwitch()) {}
+    else { return %orig; }
 }
 %end
 
@@ -136,10 +198,11 @@ BOOL hideAutoplaySwitch() {
 %end
 
 // OLED dark mode by BandarHL
+
 UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 
 %group gOLED
-%hook YTColorPalette
+%hook YTCommonColorPalette
 - (UIColor *)brandBackgroundSolid {
     if (self.pageStyle == 1) {
         return oledColor;
@@ -182,6 +245,15 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
+%hook YTInnerTubeCollectionViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    if (pageStyle == 1) { 
+        return oledColor; 
+    }
+        return %orig;
+}
+%end
+
 // Explore
 %hook ASScrollView 
 - (void)didMoveToWindow {
@@ -198,18 +270,26 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
         %orig;
         self.tableView.backgroundColor = oledColor;
-    } else { 
-        return %orig(); 
-    }
+    } else { return %orig; }
 }
 %end
 
+%hook SponsorBlockViewController
+- (void)viewDidLoad {
+    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+        %orig;
+        self.view.backgroundColor = oledColor;
+    } else { return %orig; }
+}
+%end
+
+// YouTube's Miniplayer
 %hook YTWatchMiniBarView 
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
         return %orig([UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.9]);
     }
-    return %orig;
+        return %orig;
 }
 %end
 
@@ -228,7 +308,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
+        return %orig;
 }
 %end
 
@@ -238,7 +318,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
+        return %orig;
 }
 %end
 
@@ -247,13 +327,22 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
+        return %orig;
 }
 - (void)setTextColor:(UIColor *)color { // fix black text in #Shorts video's comment
     if (isDarkMode()) { 
         return %orig ([UIColor whiteColor]); 
     }
-    return %orig;
+        return %orig;
+}
+%end
+
+%hook YTFormattedStringLabel  // YT is werid...
+- (void)setBackgroundColor:(UIColor *)color {
+    if (isDarkMode()) {
+        return %orig ([UIColor clearColor]);
+    }
+        return %orig;
 }
 %end
 
@@ -262,7 +351,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
+        return %orig;
 }
 %end
 
@@ -271,17 +360,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) {
         return %orig (oledColor);
     }
-    return %orig;
-}
-%end
-
-// Separation lines
-%hook YTCollectionSeparatorView
-- (void)didMoveToWindow {
-    if (isDarkMode()) {}
-    else { 
-        return %orig(); 
-    }
+        return %orig;
 }
 %end
 
@@ -302,15 +381,12 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
-// this sucks :/
-%hook UIView
-- (void)setBackgroundColor:(UIColor *)color {
-    if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(YTHUDMessageView)]) { color = oledColor; }
-        if ([self.nextResponder isKindOfClass:%c(ASWAppSwitcherCollectionViewCell)]) { color = oledColor; } // Open link with...
+%hook ASWAppSwitcherCollectionViewCell
+- (void)didMoveToWindow {
+    if (isDarkMode()) { 
         %orig;
+        self.subviews[1].backgroundColor = oledColor;
     }
-        return %orig;
 }
 %end
 %end
@@ -422,4 +498,7 @@ static void replaceTab(YTIGuideResponse *response) {
 	if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
         %init(Main);
 	}
+    if (hideCastButton()) {
+        %init(gHideCastButton);
+    }
 }

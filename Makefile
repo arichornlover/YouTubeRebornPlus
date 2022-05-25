@@ -12,7 +12,7 @@ DISPLAY_NAME = YouTube
 BUNDLE_ID = com.google.ios.youtube
  
 CercubePlusLegacy_FILES = CercubePlusLegacy.xm Settings.xm
-CercubePlusLegacy_IPA = /System/Volumes/Data/Volumes/Data_Macintosh/Sideloads/Github/IGSideloadFix/Duet_Display.ipa
+CercubePlusLegacy_IPA = /System/Volumes/Data/Volumes/Data_Macintosh/Sideloads/IPAs/YouTube_17.20.3.ipa
 ### Important: edit the path to your decrypted YouTube IPA!!! 
 
 include $(THEOS)/makefiles/common.mk
