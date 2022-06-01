@@ -1,5 +1,8 @@
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 
+@interface SSOConfiguration : NSObject
+@end
+
 @interface x43mW1cl : UIView // Cercube v5.3.9
 @end
 
