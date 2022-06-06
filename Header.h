@@ -1,18 +1,14 @@
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 
+// IAmYouTube
 @interface SSOConfiguration : NSObject
 @end
 
-@interface x43mW1cl : UIView // Cercube v5.3.9
+// Cercube button in Nav bar
+@interface x43mW1cl : UIView // v5.3.9
 @end
 
-@interface ASWAppSwitcherCollectionViewCell : UIView
-@end
-
-/* @interface YTMainAppVideoPlayerOverlayViewController : UIViewController
-@property (nonatomic, strong, readwrite) UIStackView *cercubeButtonsContainer;
-@end */
-
+// BigYTMiniPlayer
 @interface YTMainAppVideoPlayerOverlayView : UIView
 - (UIViewController *)_viewControllerForAncestor;
 @end
@@ -20,8 +16,25 @@
 @interface YTWatchMiniBarView : UIView
 @end
 
+// YTAutoFullscreen
 @interface YTPlayerViewController (YTAFS)
 - (void)autoFullscreen;
+@end
+
+// YTNoShorts
+@interface ELMCellNode
+@end
+
+@interface _ASCollectionViewCell : UICollectionViewCell
+- (id)node;
+@end
+
+@interface YTAsyncCollectionView : UICollectionView
+- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath;
+@end
+
+// OLED Darkmode
+@interface ASWAppSwitcherCollectionViewCell : UIView
 @end
 
 @interface ASScrollView : UIView
@@ -40,4 +53,7 @@
 @end
 
 @interface SponsorBlockSettingsController : UITableViewController 
+@end
+
+@interface _ASDisplayView : UIView
 @end
