@@ -23,6 +23,8 @@
 
 - [level3tjg](https://twitter.com/level3tjg) - for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards) and [YTMiniplayerEnabler](https://github.com/level3tjg/YTMiniplayerEnabler).
 
+- [MiRO92](https://twitter.com/miro92) for [YTNoShorts](https://github.com/MiRO92/YTNoShorts/blob/main/Tweak.h).
+
 - [YouTube Extensions](https://github.com/CokePokes/YoutubeExtensions) by [CokePokes](https://github.com/CokePokes/).
 
 - [Al4ise](https://github.com/Al4ise) for [Azule](https://github.com/Al4ise/Azule), a tool used to inject jailbreak tweaks into jailed iOS apps.
@@ -89,19 +91,19 @@ any many more...
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.21.3-5.3.9)](https://tinyurl.com/yc6h4jwj) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.22.3-5.3.9)](https://tinyurl.com/3a73dhbr) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(June 01)_
+- Version info: _(June 06)_
 
 <details>
   <summary>▶︎ Expand!</summary>
 
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.21.3 | ✖︎ |
+| **YouTube** | 17.22.3 | ✖︎ |
 | [Cercube](https://apt.alfhaily.me/depiction/FDXO5R) | 5.3.9 | ✖︎ |
 | [Open in YouTube](https://github.com/CokePokes/YoutubeExtensions/) | 1.2 | ✖︎ |
-| **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | 1.6.5 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlock** | 1.0-14 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **Alderis Color Picker** | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
@@ -109,11 +111,12 @@ any many more...
 | **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
 | **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTUHD** | 1.2.7 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | 1.7.0 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | 1.7.1 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **IAmYouTube** | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTSpeed** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **YTAutoFullScreen** | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **YTMiniplayerEnabler** | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
+| **YTNoShorts** | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 
 </details>
 
@@ -132,6 +135,14 @@ any many more...
 - Paypal: https://www.paypal.com/paypalme/DBrett684 
 
 - Venmo: https://venmo.com/u/DavidBrett
+</details>
+
+<details>
+  <summary>▶︎ MiRO92</summary>
+  
+- CashApp: https://cash.app/$MiRO92M
+ 
+- Other payment methods are available in uYou's settings.
 </details>
 
 # Building (optional)
