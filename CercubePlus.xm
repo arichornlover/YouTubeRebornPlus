@@ -64,6 +64,9 @@ BOOL hideWatermarks() {
 BOOL ytMiniPlayer() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"ytMiniPlayer_enabled"];
 }
+BOOL hideShorts() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideShorts_enabled"];
+}
 
 // Tweaks
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
@@ -212,6 +215,11 @@ BOOL ytMiniPlayer() {
 	hidden = YES;
 	%orig;
 }
+%end
+
+// Enable scroll bar in Shorts videos - credit @level3tjg - https://reddit.com/r/jailbreak/comments/v29yvk/_/iasl1l0/
+%hook YTReelPlayerViewControllerSub
+- (BOOL)shouldEnablePlayerBar { return YES; }
 %end
 
 // IAmYouTube - https://github.com/PoomSmart/IAmYouTube/
@@ -402,6 +410,15 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
+%hook _ASDisplayView // comment reply under videos
+- (void)didMoveToWindow {
+    if (isDarkMode() && [self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) {
+        %orig;
+        self.backgroundColor = oledColor;
+    }
+}
+%end
+
 %hook YTFormattedStringLabel  // YT is werid...
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
@@ -547,6 +564,32 @@ static void replaceTab(YTIGuideResponse *response) {
     return %orig;
 }
 %end
+%end
+
+// YTNoShorts: https://github.com/MiRO92/YTNoShorts
+%hook YTAsyncCollectionView
+- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (hideShorts()) {
+        UICollectionViewCell *cell = %orig;
+        if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
+            _ASCollectionViewCell *cell = %orig;
+            if ([cell respondsToSelector:@selector(node)]) {
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"]) {
+                    [self removeShortsCellAtIndexPath:indexPath];
+                }
+            }
+        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
+            [self removeShortsCellAtIndexPath:indexPath];
+        }
+        return %orig;
+    }
+        return %orig;
+}
+
+%new
+- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
+        [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+}
 %end
 
 %ctor {

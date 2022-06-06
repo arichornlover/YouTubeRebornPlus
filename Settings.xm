@@ -23,6 +23,7 @@ extern BOOL hideCercubeDownload();
 extern BOOL hideCastButton();
 extern BOOL hideWatermarks();
 extern BOOL ytMiniPlayer();
+extern BOOL hideShorts();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -39,6 +40,15 @@ extern BOOL ytMiniPlayer();
 %hook YTSettingsSectionItemManager
 %new - (void)updateCercubePlusSectionWithEntry:(id)entry {
     YTSettingsViewController *delegate = [self valueForKey:@"_dataDelegate"];
+
+    YTSettingsSectionItem *hideShorts = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Shorts videos" titleDescription:@"Hide Shorts videos in Homepage, Recommended..."];
+    hideShorts.hasSwitch = YES;
+    hideShorts.switchVisible = YES;
+    hideShorts.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideShorts_enabled"];
+    hideShorts.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShorts_enabled"];
+        return YES;
+    };
 
     YTSettingsSectionItem *ytMiniPlayer = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Enable the Miniplayer for all YouTube videos" titleDescription:@"Kid videos for example."];
     ytMiniPlayer.hasSwitch = YES;
@@ -175,7 +185,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCercubeButton, hideCercubePiP, hideCercubeDownload, ytMiniPlayer, hideAutoplaySwitch, hideCastButton, hideCC, hideHUD, hoverCardItem, hideWatermarks, bigYTMiniPlayer, oledKeyBoard, oledDarkMode, reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCercubeButton, hideCercubePiP, hideCercubeDownload, ytMiniPlayer, hideAutoplaySwitch, hideCastButton, hideCC, hideHUD, hoverCardItem, hideShorts, hideWatermarks, bigYTMiniPlayer, oledKeyBoard, oledDarkMode, reExplore]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 
