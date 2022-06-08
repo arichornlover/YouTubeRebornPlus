@@ -1,0 +1,49 @@
+// Settings
+
+"HIDE_SHORTS_VIDEOS" = "Ẩn video Shorts";
+"HIDE_SHORTS_VIDEOS_DESC" = "Ẩn các video Shorts trong tab Trang chủ, tab Đề xuất cho bạn...";
+
+"YT_MINIPLAYER" = "Cho phép trình phát thu nhỏ chạy với mọi video";
+"YT_MINIPLAYER_DESC" = "Ví dụ: Video cho trẻ em.";
+
+"HIDE_CERCUBE_BUTTON" = "Ẩn nút Setting của Cercube trong thanh điều hướng";
+"HIDE_CERCUBE_BUTTON_DESC" = "";
+
+"HIDE_CERCUBE_PIP_BUTTON" = "Ẩn nút PiP của Cercube";
+"HIDE_CERCUBE_PIP_BUTTON_DESC" = "Ẩn nút PiP của Cercube trong trình phát video.";
+
+"HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Ẩn nút Tải xuống của Cercube";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Ẩn nút Tải xuống của Cercube trong trình phát video.";
+
+"HIDE_CAST_BUTTON" = "Ẩn nút Cast video";
+"HIDE_CAST_BUTTON_DESC" = "Cần khởi động lại ứng dụng.";
+
+"HIDE_WATERMARKS" = "Ẩn logo Watermarks";
+"HIDE_WATERMARKS_DESC" = "Ẩn logo watermark của kênh trong trình phát video.";
+
+"HIDE_HOVER_CARD" = "Ẩn video dạng thumbnails (YTNoHoverCards)";
+"HIDE_HOVER_CARD_DESC" = "Ẩn các video dạng thu nhỏ (thumbnails) xuất hiện ở gần cuối video.";
+
+"NEW_MINIPLAYER_STYLE" = "Giao diện trình phát thu nhỏ kiểu mới (BigYTMiniPlayer)";
+"NEW_MINIPLAYER_STYLE_DESC" = "Cần khởi động lại ứng dụng.";
+
+"YT_RE_EXPLORE" = "Thay thế tab Shorts bằng tab Khám phá (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "Cần khởi động lại ứng dụng.";
+
+"HIDE_SUBTITLES_BUTTON" = "Ẩn nút bật Phụ đề";
+"HIDE_SUBTITLES_BUTTON_DESC" = "Ẩn nút bật phụ đề trong trình phát video.";
+
+"HIDE_AUTOPLAY_SWITCH" = "Ẩn công tắc Tự động phát";
+"HIDE_AUTOPLAY_SWITCH_DESC" = "Ẩn công tắc Tự động phát trong trình phát video.";
+
+"AUTO_FULLSCREEN" = "Tự động toàn màn hình (YTAutoFullScreen)";
+"AUTO_FULLSCREEN_DESC" = "Tự động phát video ở chế độ toàn màn hình.";
+
+"HIDE_HUD_MESSAGES" = "Ẩn tin nhắn HUD";
+"HIDE_HUD_MESSAGES_DESC" = "Ví dụ: Đã bật/tắt phụ đề, Tính năng phát video lặp lại đang bật,...";
+
+"OLED_DARKMODE" = "Chế độ tối OLED (Thử nghiệm)";
+"OLED_DARKMODE_DESC" = "Cần khởi động lại ứng dụng nếu bạn bật/tắt tính năng này, nhưng không cần khởi động lại ứng dụng nếu chuyển giữa chế độ Sáng và chế độ Tối.";
+
+"OLED_KEYBOARD" = "Bàn phím OLED (Thử nghiệm)";
+"OLED_KEYBOARD_DESC" = "Tính năng này có thể không hoạt động tốt trong một vài trường hợp. Cần khởi động lại ứng dụng.";
