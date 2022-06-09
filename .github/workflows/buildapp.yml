@@ -112,7 +112,7 @@ jobs:
         with:
           tag_name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
           release_name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
-          draft: false
+          draft: true
           prerelease: false
 
       - name: Upload Release Asset
@@ -124,5 +124,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ env.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
-          asset_name: CercubePlus_${{ env.YOUTUBE_VERSION  }}_${{ env.CERCUBE_VERSION }}_(${{ github.run_number }}).ipa
+          asset_name: CercubePlus_${{ env.YOUTUBE_VERSION  }}_${{ env.CERCUBE_VERSION }}.ipa
           asset_content_type: application/vnd.debian.binary-package
