@@ -55,5 +55,8 @@
 @interface SponsorBlockSettingsController : UITableViewController 
 @end
 
+@interface SponsorBlockViewController : UIViewController
+@end
+
 @interface _ASDisplayView : UIView
 @end
