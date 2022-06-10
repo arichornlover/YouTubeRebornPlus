@@ -1,7 +1,7 @@
 # Original idea by @ISnackable. Many thanks to him for handling the most hardest parts!
 # https://github.com/ISnackable/CercubePlus/blob/main/.github/workflows/Build.yml
 
-name: Build and Release CercubePlus
+name: Build CercubePlus Artifact
 
 on:
   workflow_dispatch:
@@ -32,9 +32,6 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Set Env
-        run: echo "workspace=$GITHUB_WORKSPACE" >> $GITHUB_ENV
-
       - name: Checkout Main
         uses: actions/checkout@v3
         with:
@@ -60,7 +57,7 @@ jobs:
           mv $TMP/sdks-main/*.sdk $THEOS/sdks
           rm -r main.zip $TMP
         env:
-          THEOS: ${{ env.workspace }}/theos
+          THEOS: ${{ github.workspace }}/theos
 
       - name: Setup Theos Jailed
         uses: actions/checkout@v3
@@ -74,11 +71,11 @@ jobs:
         run: |
           ./theos-jailed/install
         env:
-          THEOS: ${{ env.workspace }}/theos
+          THEOS: ${{ github.workspace }}/theos
 
       - name: Download Dylibs
         run: |
-          curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"  
+          curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
           curl "https://apt.alfhaily.me/files/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "./main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
           wget "$YOUTUBE_URL" --no-verbose -O ./main/YouTube.ipa
           dpkg-deb -x "./main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" ./main/Tweaks/Cercube/
@@ -87,42 +84,29 @@ jobs:
           cp -R ./main/Extensions/*.appex ./main/tmp/Payload/YouTube.app/PlugIns
 
         env:
-          THEOS: ${{ env.workspace }}/theos
+          THEOS: ${{ github.workspace }}/theos
           CERCUBE_VERSION: ${{ github.event.inputs.cercube_version }}
           YOUTUBE_URL: ${{ github.event.inputs.decrypted_youtube_url }}
-          YOUTUBE_VERSION: ${{ github.event.inputs.youtube_version }}
 
-      - name: Fix compiling && Build Package
+      - name: Fix Compiling && Build Package
         id: build_package
         run: |
-          cd ${{ env.workspace }}/main
-          (cd ${{ env.workspace }}/main/Tweaks/YouPiP && sed -i '' "14s#.*#YouPiP_FRAMEWORKS = AVKit AVFoundation UIKit#g" ./Makefile)
+          cd ${{ github.workspace }}/main
+          (cd ${{ github.workspace }}/main/Tweaks/YouPiP && sed -i '' "14s#.*#YouPiP_FRAMEWORKS = AVKit AVFoundation UIKit#g" ./Makefile)
           make package FINALPACKAGE=1
+          (mv "packages/$(ls -t packages | head -n1)" "packages/CercubePlus_${{ env.YOUTUBE_VERSION  }}_${{ env.CERCUBE_VERSION }}.ipa")
           echo "::set-output name=package::$(ls -t packages | head -n1)"
         env:
-          THEOS: ${{ env.workspace }}/theos
+          THEOS: ${{ github.workspace }}/theos
+          CERCUBE_VERSION: ${{ github.event.inputs.cercube_version }}
+          YOUTUBE_VERSION: ${{ github.event.inputs.youtube_version }}
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           CERCUBE_VERSION: ${{ github.event.inputs.cercube_version }}
           YOUTUBE_VERSION: ${{ github.event.inputs.youtube_version }}
         with:
-          tag_name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
-          release_name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
-          draft: true
-          prerelease: false
-
-      - name: Upload Release Asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CERCUBE_VERSION: ${{ github.event.inputs.cercube_version }}
-          YOUTUBE_VERSION: ${{ github.event.inputs.youtube_version }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
-          asset_name: CercubePlus_${{ env.YOUTUBE_VERSION  }}_${{ env.CERCUBE_VERSION }}.ipa
-          asset_content_type: application/vnd.debian.binary-package
+          name: CercubePlus_${{ env.YOUTUBE_VERSION  }}_${{ env.CERCUBE_VERSION }}
+          path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
+          if-no-files-found: error
