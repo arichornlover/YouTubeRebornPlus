@@ -1,5 +1,9 @@
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 
+// CercubePlus
+@interface YTMainAppControlsOverlayView: UIView
+@end
+
 // IAmYouTube
 @interface SSOConfiguration : NSObject
 @end
