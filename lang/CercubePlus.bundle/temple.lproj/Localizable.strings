@@ -1,6 +1,6 @@
-// How to translate uYouPlus to your languate:
+// How to translate CercubePlus to your languate:
 //
-// 1. Fork uYouPlus repo
+// 1. Fork CercubePlus repo
 // 2. Rename the temple.lproj folder to your <lang_code>.lproj id. For example: ru.lproj for Russia
 // 3. Translate each line below after each =
 // 4. Open a Pull Request
