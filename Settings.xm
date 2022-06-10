@@ -27,6 +27,7 @@ extern BOOL hideCastButton();
 extern BOOL hideWatermarks();
 extern BOOL ytMiniPlayer();
 extern BOOL hideShorts();
+extern BOOL hidePreviousAndNextButton();
 
 NSBundle *tweakBundle = CercubePlusBundle();
 
@@ -45,6 +46,15 @@ NSBundle *tweakBundle = CercubePlusBundle();
 %hook YTSettingsSectionItemManager
 %new - (void)updateCercubePlusSectionWithEntry:(id)entry {
     YTSettingsViewController *delegate = [self valueForKey:@"_dataDelegate"];
+
+    YTSettingsSectionItem *hidePreviousAndNextButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON") titleDescription:LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC")];
+    hidePreviousAndNextButton.hasSwitch = YES;
+    hidePreviousAndNextButton.switchVisible = YES;
+    hidePreviousAndNextButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hidePreviousAndNextButton_enabled"];
+    hidePreviousAndNextButton.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hidePreviousAndNextButton_enabled"];
+        return YES;
+    };
 
     YTSettingsSectionItem *hideShorts = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_SHORTS_VIDEOS") titleDescription:LOC(@"HIDE_SHORTS_VIDEOS_DESC")];
     hideShorts.hasSwitch = YES;
@@ -190,7 +200,7 @@ NSBundle *tweakBundle = CercubePlusBundle();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCercubeButton, hideCercubePiP, hideCercubeDownload, ytMiniPlayer, hideAutoplaySwitch, hideCastButton, hideCC, hideHUD, hideHoverCard, hideShorts, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCercubeButton, hideCercubePiP, hideCercubeDownload, ytMiniPlayer, hideAutoplaySwitch, hideCastButton, hideCC, hideHUD, hideHoverCard, hideShorts, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 

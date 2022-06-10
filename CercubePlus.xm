@@ -68,6 +68,9 @@ BOOL ytMiniPlayer() {
 BOOL hideShorts() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideShorts_enabled"];
 }
+BOOL hidePreviousAndNextButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hidePreviousAndNextButton_enabled"];
+}
 
 # pragma mark - Tweaks
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
@@ -124,7 +127,7 @@ BOOL hideShorts() {
 }
 %end
 
-// Hide CC / Autoplay switch
+// Hide CC / Autoplay switch // Previous & Next button
 %hook YTMainAppControlsOverlayView
 - (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC?!
     if (hideCC()) { return %orig(NO); }   
@@ -133,6 +136,14 @@ BOOL hideShorts() {
 - (void)setAutoplaySwitchButtonRenderer:(id)arg1 {
     if (hideAutoplaySwitch()) {}
     else { return %orig; }
+}
+- (void)layoutSubviews {
+    if (hidePreviousAndNextButton()) {
+	    MSHookIvar<YTMainAppControlsOverlayView *>(self, "_nextButton").hidden = YES;
+    	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;        
+        %orig;
+    }
+    return %orig;
 }
 %end
 
@@ -501,6 +512,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) { 
         %orig;        
         self.subviews[1].backgroundColor = oledColor;
+        self.superview.backgroundColor = oledColor;
     }
 }
 %end
