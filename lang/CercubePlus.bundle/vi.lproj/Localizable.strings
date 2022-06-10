@@ -1,5 +1,8 @@
 // Settings
 
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Ẩn nút Next và nút Previous";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Ẩn nút Next và nút Previous trong trình phát video.";
+
 "HIDE_SHORTS_VIDEOS" = "Ẩn video Shorts";
 "HIDE_SHORTS_VIDEOS_DESC" = "Ẩn các video Shorts trong tab Trang chủ, tab Đề xuất cho bạn...";
 

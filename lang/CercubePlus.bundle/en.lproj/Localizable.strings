@@ -1,5 +1,8 @@
 // Settings
 
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Hide Previous and Next button";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
+
 "HIDE_SHORTS_VIDEOS" = "Hide Shorts videos";
 "HIDE_SHORTS_VIDEOS_DESC" = "Hide Shorts videos in Homepage, Recommended...";
 
