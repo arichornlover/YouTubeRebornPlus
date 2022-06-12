@@ -1,5 +1,9 @@
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 
+#define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
+#define YT_BUNDLE_ID @"com.google.ios.youtube"
+#define YT_NAME @"YouTube"
+
 // CercubePlus
 @interface YTMainAppControlsOverlayView: UIView
 @end
@@ -38,7 +42,7 @@
 @end
 
 // OLED Darkmode
-@interface ASWAppSwitcherCollectionViewCell : UIView
+@interface ASWAppSwitcherCollectionViewCell: UIView
 @end
 
 @interface ASScrollView : UIView
@@ -50,10 +54,7 @@
 @interface UIKeyboardDockView : UIView
 @end
 
-@interface UICandidateViewController : UIViewController
-@end
-
-@interface UIPredictionViewController : UIViewController
+@interface _ASDisplayView : UIView
 @end
 
 @interface SponsorBlockSettingsController : UITableViewController 
@@ -62,5 +63,8 @@
 @interface SponsorBlockViewController : UIViewController
 @end
 
-@interface _ASDisplayView : UIView
+@interface UICandidateViewController : UIViewController
+@end
+
+@interface UIPredictionViewController : UIViewController
 @end
