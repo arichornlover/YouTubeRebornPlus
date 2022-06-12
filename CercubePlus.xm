@@ -14,8 +14,16 @@
 #import "Tweaks/YouTubeHeader/YTCommonColorPalette.h"
 #import "Tweaks/YouTubeHeader/ASCollectionView.h"
 
-#define YT_BUNDLE_ID @"com.google.ios.youtube"
-#define YT_NAME @"YouTube"
+NSBundle *CercubePlusBundle() {
+    static NSBundle *bundle = nil;
+    static dispatch_once_t onceToken;
+ 	dispatch_once(&onceToken, ^{
+        NSString *tweakBundlePath = [[NSBundle mainBundle] pathForResource:@"CercubePlus" ofType:@"bundle"];
+        bundle = [NSBundle bundleWithPath:tweakBundlePath];
+    });
+    return bundle;
+}
+NSBundle *tweakBundle = CercubePlusBundle();
 
 BOOL hideHUD() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
@@ -127,21 +135,21 @@ BOOL hidePreviousAndNextButton() {
 }
 %end
 
-// Hide CC / Autoplay switch // Previous & Next button
+// Hide CC / Autoplay switch / Next & Previous button
 %hook YTMainAppControlsOverlayView
-- (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC?!
+- (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC button
     if (hideCC()) { return %orig(NO); }   
     else { return %orig; }
 }
-- (void)setAutoplaySwitchButtonRenderer:(id)arg1 {
+- (void)setAutoplaySwitchButtonRenderer:(id)arg1 { // hide Autoplay
     if (hideAutoplaySwitch()) {}
     else { return %orig; }
 }
 - (void)layoutSubviews {
-    if (hidePreviousAndNextButton()) {
-        %orig;
+    %orig;
+    if (hidePreviousAndNextButton()) { // hide Next & Previous button
 	    MSHookIvar<YTMainAppControlsOverlayView *>(self, "_nextButton").hidden = YES;
-    	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;
+    	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;        
     }
 }
 %end
@@ -641,16 +649,6 @@ static void replaceTab(YTIGuideResponse *response) {
         [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
 }
 %end
-
-NSBundle *CercubePlusBundle() {
-    static NSBundle *bundle = nil;
-    static dispatch_once_t onceToken;
- 	dispatch_once(&onceToken, ^{
-        NSString *tweakBundlePath = [[NSBundle mainBundle] pathForResource:@"CercubePlus" ofType:@"bundle"];
-        bundle = [NSBundle bundleWithPath:tweakBundlePath];
-    });
-    return bundle;
-}
 
 # pragma mark - ctor
 %ctor {
