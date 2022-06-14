@@ -145,11 +145,14 @@ BOOL hidePreviousAndNextButton() {
     if (hideAutoplaySwitch()) {}
     else { return %orig; }
 }
-- (void)layoutSubviews {
+- (void)layoutSubviews { // hide Next & Previous button
     %orig;
-    if (hidePreviousAndNextButton()) { // hide Next & Previous button
+    if (hidePreviousAndNextButton()) { 
 	    MSHookIvar<YTMainAppControlsOverlayView *>(self, "_nextButton").hidden = YES;
-    	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;        
+    	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;
+        // YouTube love beta testing :/
+    	MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
+    	MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
     }
 }
 %end
