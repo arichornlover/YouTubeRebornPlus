@@ -8,6 +8,9 @@
 @interface YTMainAppControlsOverlayView: UIView
 @end
 
+@interface YTTransportControlsButtonView : UIView
+@end
+
 // IAmYouTube
 @interface SSOConfiguration : NSObject
 @end
