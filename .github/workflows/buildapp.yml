@@ -141,6 +141,6 @@ jobs:
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ env.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
+          asset_path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           asset_name: CercubePlus_${{ env.YOUTUBE_VERSION  }}_${{ env.CERCUBE_VERSION }}.ipa
           asset_content_type: application/vnd.debian.binary-package
