@@ -22,7 +22,7 @@ on:
         required: true
         type: string
       create_release:
-        description: "To create a draft release"
+        description: "Create a draft release"
         default: false
         required: false
         type: boolean
