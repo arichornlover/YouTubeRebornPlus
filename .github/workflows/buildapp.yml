@@ -21,6 +21,11 @@ on:
         default: ""
         required: true
         type: string
+      create_release:
+        description: "To create a draft release"
+        default: false
+        required: false
+        type: boolean
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -30,6 +35,8 @@ jobs:
   build:
     name: Build CercubePlus
     runs-on: macos-latest
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Main
@@ -85,8 +92,8 @@ jobs:
 
         env:
           THEOS: ${{ github.workspace }}/theos
-          CERCUBE_VERSION: ${{ github.event.inputs.cercube_version }}
-          YOUTUBE_URL: ${{ github.event.inputs.decrypted_youtube_url }}
+          CERCUBE_VERSION: ${{ inputs.cercube_version }}
+          YOUTUBE_URL: ${{ inputs.decrypted_youtube_url }}
 
       - name: Fix Compiling && Build Package
         id: build_package
@@ -98,15 +105,42 @@ jobs:
           echo "::set-output name=package::$(ls -t packages | head -n1)"
         env:
           THEOS: ${{ github.workspace }}/theos
-          CERCUBE_VERSION: ${{ github.event.inputs.cercube_version }}
-          YOUTUBE_VERSION: ${{ github.event.inputs.youtube_version }}
+          CERCUBE_VERSION: ${{ inputs.cercube_version }}
+          YOUTUBE_VERSION: ${{ inputs.youtube_version }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         env:
-          CERCUBE_VERSION: ${{ github.event.inputs.cercube_version }}
-          YOUTUBE_VERSION: ${{ github.event.inputs.youtube_version }}
+          CERCUBE_VERSION: ${{ inputs.cercube_version }}
+          YOUTUBE_VERSION: ${{ inputs.youtube_version }}
         with:
           name: CercubePlus_${{ env.YOUTUBE_VERSION  }}_${{ env.CERCUBE_VERSION }}
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
+
+      - name: Create Release
+        if: ${{ inputs.create_release }}
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CERCUBE_VERSION: ${{ inputs.cercube_version }}
+          YOUTUBE_VERSION: ${{ inputs.youtube_version }}
+        with:
+          tag_name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
+          release_name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
+          draft: true
+          prerelease: false
+
+      - name: Upload Release Asset
+        if: ${{ inputs.create_release }}
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CERCUBE_VERSION: ${{ inputs.cercube_version }}
+          YOUTUBE_VERSION: ${{ inputs.youtube_version }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
+          asset_name: CercubePlus_${{ env.YOUTUBE_VERSION  }}_${{ env.CERCUBE_VERSION }}.ipa
+          asset_content_type: application/vnd.debian.binary-package
