@@ -1,7 +1,8 @@
 // How to translate CercubePlus to your languate:
 //
 // 1. Fork CercubePlus repo
-// 2. Rename the temple.lproj folder to your <lang_code>.lproj id. For example: ru.lproj for Russia
+// 2. Duplicate the template.lproj folder, and edit the duplicated folder's name to your <lang_code>.lproj id. 
+// For example: ru.lproj for Russia. For more details, visit: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 // 3. Translate each line below after each =
 // 4. Open a Pull Request
 //
