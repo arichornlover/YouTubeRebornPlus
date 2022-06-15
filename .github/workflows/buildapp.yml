@@ -1,7 +1,7 @@
 # Original idea by @ISnackable. Many thanks to him for handling the most hardest parts!
 # https://github.com/ISnackable/CercubePlus/blob/main/.github/workflows/Build.yml
 
-name: Build CercubePlus Artifact
+name: Build and Release CercubePlus
 
 on:
   workflow_dispatch:
