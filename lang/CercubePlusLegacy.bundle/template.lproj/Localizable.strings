@@ -1,0 +1,62 @@
+// How to translate CercubePlus to your languate:
+//
+// 1. Fork CercubePlus repo
+// 2. Duplicate the template.lproj folder, and edit the duplicated folder's name to your <lang_code>.lproj id. 
+// For example: ru.lproj for Russia. For more details, visit: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+// 3. Translate each line below after each =
+// 4. Open a Pull Request
+//
+// If your language already exists then feel free to check it and/or improve it!
+//
+// Settings
+
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Hide Previous and Next button";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
+
+"HIDE_SHORTS_VIDEOS" = "Hide Shorts videos";
+"HIDE_SHORTS_VIDEOS_DESC" = "Hide Shorts videos in Homepage, Recommended...";
+
+"YT_MINIPLAYER" = "Enable the Miniplayer for all YouTube videos";
+"YT_MINIPLAYER_DESC" = "Kid videos for example.";
+
+"HIDE_CERCUBE_BUTTON" = "Hide Cercube button in the Navigation bar";
+"HIDE_CERCUBE_BUTTON_DESC" = "";
+
+"HIDE_CERCUBE_PIP_BUTTON" = "Hide Cercube's PiP button";
+"HIDE_CERCUBE_PIP_BUTTON_DESC" = "Hide the PiP button of Cercube in video controls overlay.";
+
+"HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Hide Cercube's Download button";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Hide the Download button of Cercube in video controls overlay.";
+
+"HIDE_CAST_BUTTON" = "Hide Cast button";
+"HIDE_CAST_BUTTON_DESC" = "App restart is required.";
+
+"HIDE_WATERMARKS" = "Hide Watermarks";
+"HIDE_WATERMARKS_DESC" = "Hide channel watermarks in video controls overlay.";
+
+"HIDE_HOVER_CARD" = "Hide End screens hover cards (YTNoHoverCards)";
+"HIDE_HOVER_CARD_DESC" = "Hide creator End screens (thumbnails) at the end of videos.";
+
+"NEW_MINIPLAYER_STYLE" = "New miniplayer bar style (BigYTMiniPlayer)";
+"NEW_MINIPLAYER_STYLE_DESC" = "App restart is required.";
+
+"YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "App restart is required.";
+
+"HIDE_SUBTITLES_BUTTON" = "Hide Subtitles button";
+"HIDE_SUBTITLES_BUTTON_DESC" = "Hide the Subtitles button in video controls overlay.";
+
+"HIDE_AUTOPLAY_SWITCH" = "Hide Autoplay switch";
+"HIDE_AUTOPLAY_SWITCH_DESC" = "Hide the Autoplay switch in video controls overlay.";
+
+"AUTO_FULLSCREEN" = "Auto Full Screen (YTAutoFullScreen)";
+"AUTO_FULLSCREEN_DESC" = "Autoplay videos at full screen.";
+
+"HIDE_HUD_MESSAGES" = "Hide HUD Messages";
+"HIDE_HUD_MESSAGES_DESC" = "Example: CC is turned on/off, Video loop is on,...";
+
+"OLED_DARKMODE" = "OLED Dark mode (Experimental)";
+"OLED_DARKMODE_DESC" = "Might not working correctly in some cases. App restart is required after you enable/disable this option.";
+
+"OLED_KEYBOARD" = "OLED Keyboard (Experimental)";
+"OLED_KEYBOARD_DESC" = "Might not working correctly in some cases. App restart is required.";
