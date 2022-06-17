@@ -13,7 +13,6 @@
 
 
 # Credits
-
 - [Majd Alfhaily](https://twitter.com/freemanrepo?s=21) for [Cercube](https://apt.alfhaily.me/depiction/FDXO5R).
 
 - [Galactic-Dev](https://github.com/Galactic-Dev) and [Luewii](https://github.com/Luewii) for [iSponsorBlockLegacy](https://github.com/Galactic-Dev/iSponsorBlockLegacy) and [BigYTMiniPlayer](https://github.com/Galactic-Dev/BigYTMiniPlayer).
@@ -22,7 +21,9 @@
 
 - [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTAutoFullScreen](https://github.com/PoomSmart/YTAutoFullScreen/), [YTReExplore](https://github.com/PoomSmart/YTReExplore/), and [Return YouTube Dislike](https://github.com/PoomSmart/Return-YouTube-Dislikes)
 
-- [level3tjg](https://twitter.com/level3tjg?s=21) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards).
+- [level3tjg](https://twitter.com/level3tjg) - for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards) and [YTMiniplayerEnabler](https://github.com/level3tjg/YTMiniplayerEnabler).
+
+- [MiRO92](https://twitter.com/miro92) for [YTNoShorts](https://github.com/MiRO92/YTNoShorts/blob/main/Tweak.h).
 
 - [Al4ise](https://github.com/Al4ise) for [Azule](https://github.com/Al4ise/Azule), a tool used to inject jailbreak tweaks into jailed iOS apps.
 
@@ -78,22 +79,24 @@
 # Download (IPA)
 ### ⚠️⚠️⚠️ DO NOT DOWNLOAD THE IPA FROM THE RELEASE TAB!!! ⚠️⚠️⚠️
 
-- **CercubePlus (Legacy)** requires iOS & iPadOS 12.0. Get the latest IPA [here](https://27man-my.sharepoint.com/:u:/g/personal/qn____27man_onmicrosoft_com/Efo0JGvo4NxJk4kf4W6rKS8BvQNsxjO3UAH-Xfv1agmy_g?download=1). 
+- **CercubePlus (Legacy)** requires iOS & iPadOS 12.0. Get the latest IPA [here](https://27man-my.sharepoint.com/:f:/g/personal/qn____27man_onmicrosoft_com/EoHq5P3wr8ZIs0HT2PLv-fEBIMQucxNFLokbPOZdVEwQPQ?download=1). 
+
+- Older versions can be found [here](https://27man-my.sharepoint.com/:f:/g/personal/qn____27man_onmicrosoft_com/EoHq5P3wr8ZIs0HT2PLv-fEBIMQucxNFLokbPOZdVEwQPQ?e=dyqH9Y).
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
 
-  - **CercubePlus (Legacy)**: [Open in AltStore (v17.20.3-5.3.9)](https://tinyurl.com/yuwhj4hs) - It will take a while to install because AltStore needs to download the IPA.
+  - **CercubePlus (Legacy)**: [Open in AltStore (v17.23.6-5.3.9)](https://tinyurl.com/3jxe9ftf) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(May 25)_
+- Version info: _(Jun 17)_
 <details>
   <summary>Expand:</summary>
   
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
-| **YouTube** | 17.20.3 | ✖︎ |
+| **YouTube** | 17.23.6 | ✖︎ |
 | **Cercube** | 5.3.9 | ✖︎ |
-| **Return YouTube Dislike** | 1.6.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | 1.6.5 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlockLegacy** | 1.0-13~ios12b2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
 | **Alderis Color Picker** | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
 | **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
@@ -103,8 +106,36 @@
 | **YTAutoFullScreen** | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen/) |
 | **YTReExplore** | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **BigYTMiniPlayer** | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
+| **YTNoShorts** | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
+
+</details>
+
+# Support the developers
+
+<details>
+  <summary>Poomsmart</summary>
+
+- Paypal: https://poomsmart.github.io/
+
+</details>
+
+<details>
+  <summary>Galactic-dev</summary>
+  
+- Paypal: https://www.paypal.com/paypalme/DBrett684 
+
+- Venmo: https://venmo.com/u/DavidBrett
+</details>
+
+<details>
+  <summary>MiRO92</summary>
+  
+- CashApp: https://cash.app/$MiRO92M
+ 
+- Other payment methods are available in uYou's settings.
 </details>
 
 # Building (optional)
 
 See [Building - Wiki](https://github.com/qnblackcat/CercubePlus/wiki/Building)
+
