@@ -1,6 +1,7 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
+#import <dlfcn.h>
 #import "Header.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
@@ -11,6 +12,18 @@
 #import "Tweaks/YouTubeHeader/YTIPivotBarRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIBrowseRequest.h"
 #import "Tweaks/YouTubeHeader/YTCommonColorPalette.h"
+#import "Tweaks/YouTubeHeader/ASCollectionView.h"
+
+NSBundle *CercubePlusLegacyBundle() {
+    static NSBundle *bundle = nil;
+    static dispatch_once_t onceToken;
+ 	dispatch_once(&onceToken, ^{
+        NSString *tweakBundlePath = [[NSBundle mainBundle] pathForResource:@"CercubePlusLegacy" ofType:@"bundle"];
+        bundle = [NSBundle bundleWithPath:tweakBundlePath];
+    });
+    return bundle;
+}
+NSBundle *tweakBundle = CercubePlusLegacyBundle();
 
 BOOL hideHUD() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
@@ -25,12 +38,12 @@ BOOL isDarkMode() {
     return ([[NSUserDefaults standardUserDefaults] integerForKey:@"page_style"] == 1);
 }
 BOOL autoFullScreen() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"autofull_enabled"];
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"autoFull_enabled"];
 }
-BOOL noHoverCard() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hover_cards_enabled"];
+BOOL hideHoverCard() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHoverCard_enabled"];
 }
-BOOL ReExplore() {
+BOOL reExplore() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"reExplore_enabled"];
 }
 BOOL bigYTMiniPlayer() {
@@ -56,6 +69,12 @@ BOOL hideCastButton () {
 }
 BOOL ytMiniPlayer() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"ytMiniPlayer_enabled"];
+}
+BOOL hideShorts() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideShorts_enabled"];
+}
+BOOL hidePreviousAndNextButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hidePreviousAndNextButton_enabled"];
 }
 
 // Tweaks
@@ -104,15 +123,25 @@ BOOL ytMiniPlayer() {
 %end
 %end
 
-// Hide CC / Autoplay switch
+// Hide CC / Autoplay switch / Next & Previous button
 %hook YTMainAppControlsOverlayView
-- (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC?!
+- (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC button
     if (hideCC()) { return %orig(NO); }   
     else { return %orig; }
 }
-- (void)setAutoplaySwitchButtonRenderer:(id)arg1 {
+- (void)setAutoplaySwitchButtonRenderer:(id)arg1 { // hide Autoplay
     if (hideAutoplaySwitch()) {}
     else { return %orig; }
+}
+- (void)layoutSubviews { // hide Next & Previous button
+    %orig;
+    if (hidePreviousAndNextButton()) { 
+	    MSHookIvar<YTMainAppControlsOverlayView *>(self, "_nextButton").hidden = YES;
+    	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;
+        // YouTube love beta testing :/
+    	MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
+    	MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
+    }
 }
 %end
 
@@ -191,13 +220,73 @@ BOOL ytMiniPlayer() {
 // YTNoHoverCards 0.0.3: https://github.com/level3tjg/YTNoHoverCards
 %hook YTCreatorEndscreenView
 - (void)setHidden:(BOOL)hidden {
-	if (noHoverCard())
+	if (hideHoverCard())
 	hidden = YES;
 	%orig;
 }
 %end
 
-// OLED dark mode by BandarHL
+// Enable scroll bar in Shorts videos - credit @level3tjg - https://reddit.com/r/jailbreak/comments/v29yvk/_/iasl1l0/
+%hook YTReelPlayerViewControllerSub
+- (BOOL)shouldEnablePlayerBar { return YES; }
+%end
+
+# pragma mark - IAmYouTube - https://github.com/PoomSmart/IAmYouTube/
+%hook YTVersionUtils
++ (NSString *)appName { return YT_NAME; }
++ (NSString *)appID { return YT_BUNDLE_ID; }
+%end
+
+%hook GCKBUtils
++ (NSString *)appIdentifier { return YT_BUNDLE_ID; }
+%end
+
+%hook GPCDeviceInfo
++ (NSString *)bundleId { return YT_BUNDLE_ID; }
+%end
+
+%hook OGLBundle
++ (NSString *)shortAppName { return YT_NAME; }
+%end
+
+%hook GVROverlayView
++ (NSString *)appName { return YT_NAME; }
+%end
+
+%hook OGLPhenotypeFlagServiceImpl
+- (NSString *)bundleId { return YT_BUNDLE_ID; }
+%end
+
+%hook SSOConfiguration
+- (id)initWithClientID:(id)clientID supportedAccountServices:(id)supportedAccountServices {
+    self = %orig;
+    [self setValue:YT_NAME forKey:@"_shortAppName"];
+    [self setValue:YT_BUNDLE_ID forKey:@"_applicationIdentifier"];
+    return self;
+}
+%end
+
+%hook NSBundle
+- (NSString *)bundleIdentifier {
+    NSArray *address = [NSThread callStackReturnAddresses];
+    Dl_info info = {0};
+    if (dladdr((void *)[address[2] longLongValue], &info) == 0)
+        return %orig;
+    NSString *path = [NSString stringWithUTF8String:info.dli_fname];
+    if ([path hasPrefix:NSBundle.mainBundle.bundlePath])
+        return YT_BUNDLE_ID;
+    return %orig;
+}
+- (id)objectForInfoDictionaryKey:(NSString *)key {
+    if ([key isEqualToString:@"CFBundleIdentifier"])
+        return YT_BUNDLE_ID;
+    if ([key isEqualToString:@"CFBundleDisplayName"] || [key isEqualToString:@"CFBundleName"])
+        return YT_NAME;
+    return %orig;
+}
+%end
+
+# pragma mark - OLED dark mode by BandarHL
 
 UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 
@@ -258,13 +347,23 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook ASScrollView 
 - (void)didMoveToWindow {
     if (isDarkMode()) {
-        self.backgroundColor = oledColor;
         %orig;
+        self.backgroundColor = oledColor;
     }
 }
 %end
 
-// SponsorBlock settings
+// Your videos
+%hook ASCollectionView
+- (void)didMoveToWindow {
+    if (isDarkMode() && [self.nextResponder isKindOfClass:%c(_ASDisplayView)]) { 
+        %orig;
+        self.superview.backgroundColor = [UIColor clearColor];
+    }
+}
+%end
+
+// iSponsorBlock
 %hook SponsorBlockSettingsController
 - (void)viewDidLoad {
     if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
@@ -283,7 +382,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 }
 %end
 
-// YouTube's Miniplayer
+// YT Miniplayer
 %hook YTWatchMiniBarView 
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
@@ -297,26 +396,36 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTSearchBarView 
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig (oledColor);
+        return %orig(oledColor);
     }
         return %orig;
 }
 %end
 
+// History Search view
 %hook YTSearchBoxView 
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig (oledColor);
+        return %orig(oledColor);
     }
         return %orig;
 }
 %end
 
 // Comment view
-%hook YTCreateCommentAccessoryView // community reply comment
+%hook YTCommentView
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig (oledColor);
+        return %orig(oledColor);
+    }
+        return %orig;
+}
+%end
+
+%hook YTCreateCommentAccessoryView
+- (void)setBackgroundColor:(UIColor *)color { 
+    if (isDarkMode()) {
+        return %orig(oledColor);
     }
         return %orig;
 }
@@ -325,13 +434,13 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTCreateCommentTextView
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig (oledColor);
+        return %orig(oledColor);
     }
         return %orig;
 }
 - (void)setTextColor:(UIColor *)color { // fix black text in #Shorts video's comment
     if (isDarkMode()) { 
-        return %orig ([UIColor whiteColor]); 
+        return %orig([UIColor whiteColor]); 
     }
         return %orig;
 }
@@ -340,27 +449,46 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTFormattedStringLabel  // YT is werid...
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig ([UIColor clearColor]);
+        return %orig([UIColor clearColor]);
     }
         return %orig;
 }
 %end
 
-%hook YCHLiveChatActionPanelView  // live chat comment
+// Live chat comment
+%hook YCHLiveChatActionPanelView 
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig (oledColor);
+        return %orig(oledColor);
     }
         return %orig;
 }
 %end
 
-%hook YTEmojiTextView // live chat comment
+%hook YTEmojiTextView
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig (oledColor);
+        return %orig(oledColor);
     }
         return %orig;
+}
+%end
+
+// Nasty stuff :/
+%hook _ASDisplayView
+- (void)didMoveToWindow {
+    %orig;
+    if (isDarkMode()) {
+        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.filter_chip_bar"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.backgroundColor = oledColor; }
+    }
 }
 %end
 
@@ -368,7 +496,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook ASWAppSwitchingSheetHeaderView
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig (oledColor);
+        return %orig(oledColor);
     }
 }
 %end
@@ -376,7 +504,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook ASWAppSwitchingSheetFooterView
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig (oledColor);
+        return %orig(oledColor);
     }
 }
 %end
@@ -386,6 +514,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
     if (isDarkMode()) { 
         %orig;
         self.subviews[1].backgroundColor = oledColor;
+        self.superview.backgroundColor = oledColor;
     }
 }
 %end
@@ -484,6 +613,32 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 %end
 
+// YTNoShorts: https://github.com/MiRO92/YTNoShorts
+%hook YTAsyncCollectionView
+- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (hideShorts()) {
+        UICollectionViewCell *cell = %orig;
+        if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
+            _ASCollectionViewCell *cell = %orig;
+            if ([cell respondsToSelector:@selector(node)]) {
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"]) {
+                    [self removeShortsCellAtIndexPath:indexPath];
+                }
+            }
+        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
+            [self removeShortsCellAtIndexPath:indexPath];
+        }
+        return %orig;
+    }
+        return %orig;
+}
+
+%new
+- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
+        [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+}
+%end
+
 %ctor {
     %init;
     if (oled()) {
@@ -492,7 +647,7 @@ static void replaceTab(YTIGuideResponse *response) {
 	if (oledKB()) {
 		%init(gOLEDKB);
 	}
-	if (ReExplore()) {
+	if (reExplore()) {
         %init(gReExplore);
 	}
 	if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {

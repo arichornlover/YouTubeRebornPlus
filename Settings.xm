@@ -1,19 +1,21 @@
+#import "Header.h"
 #import "Tweaks/YouTubeHeader/YTSettingsViewController.h"
 #import "Tweaks/YouTubeHeader/YTSettingsSectionItem.h"
 #import "Tweaks/YouTubeHeader/YTSettingsSectionItemManager.h"
 
 @interface YTSettingsSectionItemManager (YouPiP)
-- (void)updateCercubePlusSectionWithEntry:(id)entry;
+- (void)updateCercubePlusLegacySectionWithEntry:(id)entry;
 @end
 
-static const NSInteger CercubePlusSection = 500;
+static const NSInteger CercubePlusLegacySection = 500;
 
+extern NSBundle *CercubePlusLegacyBundle();
 extern BOOL hideHUD();
 extern BOOL oled();
 extern BOOL oledKB();
 extern BOOL autoFullScreen();
-extern BOOL noHoverCard();
-extern BOOL ReExplore();
+extern BOOL hideHoverCard();
+extern BOOL reExplore();
 extern BOOL bigYTMiniPlayer();
 extern BOOL hideCC();
 extern BOOL hideAutoplaySwitch();
@@ -22,6 +24,8 @@ extern BOOL hideCercubePiP();
 extern BOOL hideCercubeDownload();
 extern BOOL hideCastButton();
 extern BOOL ytMiniPlayer();
+extern BOOL hideShorts();
+extern BOOL hidePreviousAndNextButton();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -30,16 +34,36 @@ extern BOOL ytMiniPlayer();
     NSMutableArray *mutableOrder = [order mutableCopy];
     NSUInteger insertIndex = [order indexOfObject:@(1)];
     if (insertIndex != NSNotFound)
-        [mutableOrder insertObject:@(CercubePlusSection) atIndex:insertIndex + 1];
+        [mutableOrder insertObject:@(CercubePlusLegacySection) atIndex:insertIndex + 1];
     return mutableOrder;
 }
 %end
 
 %hook YTSettingsSectionItemManager
-%new - (void)updateCercubePlusSectionWithEntry:(id)entry {
+%new 
+- (void)updateCercubePlusSectionWithEntry:(id)entry {
     YTSettingsViewController *delegate = [self valueForKey:@"_dataDelegate"];
+    NSBundle *tweakBundle = CercubePlusLegacyBundle();
 
-    YTSettingsSectionItem *ytMiniPlayer = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Enable the Miniplayer for all YouTube videos" titleDescription:@""];
+    YTSettingsSectionItem *hidePreviousAndNextButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON") titleDescription:LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC")];
+    hidePreviousAndNextButton.hasSwitch = YES;
+    hidePreviousAndNextButton.switchVisible = YES;
+    hidePreviousAndNextButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hidePreviousAndNextButton_enabled"];
+    hidePreviousAndNextButton.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hidePreviousAndNextButton_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *hideShorts = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_SHORTS_VIDEOS") titleDescription:LOC(@"HIDE_SHORTS_VIDEOS_DESC")];
+    hideShorts.hasSwitch = YES;
+    hideShorts.switchVisible = YES;
+    hideShorts.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideShorts_enabled"];
+    hideShorts.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShorts_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *ytMiniPlayer = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"YT_MINIPLAYER") titleDescription:LOC(@"YT_MINIPLAYER_DESC")];
     ytMiniPlayer.hasSwitch = YES;
     ytMiniPlayer.switchVisible = YES;
     ytMiniPlayer.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"ytMiniPlayer_enabled"];
@@ -48,7 +72,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *hideCercubeButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube button in the Navigation bar" titleDescription:@""];
+    YTSettingsSectionItem *hideCercubeButton = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_CERCUBE_BUTTON") titleDescription:LOC(@"")];
     hideCercubeButton.hasSwitch = YES;
     hideCercubeButton.switchVisible = YES;
     hideCercubeButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
@@ -57,7 +81,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *hideCercubePiP = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube's PiP button" titleDescription:@"Hide the PiP button of Cercube in the video player."];
+    YTSettingsSectionItem *hideCercubePiP = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_CERCUBE_PIP_BUTTON") titleDescription:LOC(@"HIDE_CERCUBE_PIP_BUTTON_DESC")];
     hideCercubePiP.hasSwitch = YES;
     hideCercubePiP.switchVisible = YES;
     hideCercubePiP.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubePiP_enabled"];
@@ -66,7 +90,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *hideCercubeDownload = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cercube's Download button" titleDescription:@"Hide the Download button of Cercube in the video player."];
+    YTSettingsSectionItem *hideCercubeDownload = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_CERCUBE_DOWNLOAD_BUTTON") titleDescription:LOC(@"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC")];
     hideCercubeDownload.hasSwitch = YES;
     hideCercubeDownload.switchVisible = YES;
     hideCercubeDownload.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeDownload_enabled"];
@@ -75,7 +99,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *hideCastButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Cast button" titleDescription:@"App restart is required."];
+    YTSettingsSectionItem *hideCastButton = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_CAST_BUTTON") titleDescription:LOC(@"HIDE_CAST_BUTTON_DESC")];
     hideCastButton.hasSwitch = YES;
     hideCastButton.switchVisible = YES;
     hideCastButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCastButton_enabled"];
@@ -84,16 +108,16 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *hoverCardItem = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide End screens hover cards (YTNoHoverCards)" titleDescription:@"Hide creator End screens (thumbnails) at the end of videos."];
-    hoverCardItem.hasSwitch = YES;
-    hoverCardItem.switchVisible = YES;
-    hoverCardItem.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hover_cards_enabled"];
-    hoverCardItem.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hover_cards_enabled"];
+    YTSettingsSectionItem *hideHoverCard = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_HOVER_CARD") titleDescription:LOC(@"HIDE_HOVER_CARD_DESC")];
+    hideHoverCard.hasSwitch = YES;
+    hideHoverCard.switchVisible = YES;
+    hideHoverCard.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHoverCard_enabled"];
+    hideHoverCard.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideHoverCard_enabled"];
         return YES;
     };
 
-    YTSettingsSectionItem *bigYTMiniPlayer = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"New miniplayer bar style (BigYTMiniPlayer)" titleDescription:@"App restart is required."];
+    YTSettingsSectionItem *bigYTMiniPlayer = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"NEW_MINIPLAYER_STYLE") titleDescription:LOC(@"NEW_MINIPLAYER_STYLE_DESC")];
     bigYTMiniPlayer.hasSwitch = YES;
     bigYTMiniPlayer.switchVisible = YES;
     bigYTMiniPlayer.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"bigYTMiniPlayer_enabled"];
@@ -102,7 +126,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *reExplore = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Replace Shorts tab with Explore tab (YTReExplore)" titleDescription:@"App restart is required."];
+    YTSettingsSectionItem *reExplore = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"YT_RE_EXPLORE") titleDescription:LOC(@"YT_RE_EXPLORE_DESC")];
     reExplore.hasSwitch = YES;
     reExplore.switchVisible = YES;
     reExplore.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"reExplore_enabled"];
@@ -111,7 +135,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *hideCC = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Subtitles button" titleDescription:@"Hide the Subtitles button in video controls overlay. "];
+    YTSettingsSectionItem *hideCC = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_SUBTITLES_BUTTON") titleDescription:LOC(@"HIDE_SUBTITLES_BUTTON_DESC")];
     hideCC.hasSwitch = YES;
     hideCC.switchVisible = YES;
     hideCC.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCC_enabled"];
@@ -120,7 +144,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *hideAutoplaySwitch = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide Autoplay switch" titleDescription:@"Hide the Autoplay switch button in video controls overlay."];
+    YTSettingsSectionItem *hideAutoplaySwitch = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_AUTOPLAY_SWITCH") titleDescription:LOC(@"HIDE_AUTOPLAY_SWITCH_DESC")];
     hideAutoplaySwitch.hasSwitch = YES;
     hideAutoplaySwitch.switchVisible = YES;
     hideAutoplaySwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideAutoplaySwitch_enabled"];
@@ -129,16 +153,16 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *autoFull = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Auto Full Screen (YTAutoFullScreen)" titleDescription:@"Autoplay videos at full screen."];
+    YTSettingsSectionItem *autoFull = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"AUTO_FULLSCREEN") titleDescription:LOC(@"AUTO_FULLSCREEN_DESC")];
     autoFull.hasSwitch = YES;
     autoFull.switchVisible = YES;
-    autoFull.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"autofull_enabled"];
+    autoFull.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"autoFull_enabled"];
     autoFull.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"autofull_enabled"];
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"autoFull_enabled"];
         return YES;
     };
 
-    YTSettingsSectionItem *hideHUD = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Hide HUD Messages" titleDescription:@"Example: CC is turned on/off, Video loop is on,..."];
+    YTSettingsSectionItem *hideHUD = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_HUD_MESSAGES") titleDescription:LOC(@"HIDE_HUD_MESSAGES_DESC")];
     hideHUD.hasSwitch = YES;
     hideHUD.switchVisible = YES;
     hideHUD.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
@@ -147,7 +171,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *oledDarkMode = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Dark mode (Experimental)" titleDescription:@"App restart might be needed after switching between Light/Dark theme to fully apply changes. In case OLED Dark mode doesn't work: just switch between Light/Dark theme, then restart the app."];
+    YTSettingsSectionItem *oledDarkMode = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"OLED_DARKMODE") titleDescription:LOC(@"OLED_DARKMODE_DESC")];
     oledDarkMode.hasSwitch = YES;
     oledDarkMode.switchVisible = YES;
     oledDarkMode.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"oled_enabled"];
@@ -156,7 +180,7 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
 
-    YTSettingsSectionItem *oledKeyBoard = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"OLED Keyboard (Experimental)" titleDescription:@"Might not working properly in some cases. App restart is required."];
+    YTSettingsSectionItem *oledKeyBoard = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"OLED_KEYBOARD") titleDescription:LOC(@"OLED_KEYBOARD_DESC")];
     oledKeyBoard.hasSwitch = YES;
     oledKeyBoard.switchVisible = YES;
     oledKeyBoard.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"oledKeyBoard_enabled"];
@@ -165,13 +189,13 @@ extern BOOL ytMiniPlayer();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCercubeButton, hideCercubePiP, hideCercubeDownload, ytMiniPlayer, hideAutoplaySwitch, hideCastButton, hideCC, hideHUD, hoverCardItem, bigYTMiniPlayer, oledKeyBoard, oledDarkMode, reExplore]];
-    [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCercubeButton, hideCercubePiP, hideCercubeDownload, ytMiniPlayer, hideAutoplaySwitch, hideCastButton, hideCC, hideHUD, hideHoverCard, hideShorts, hidePreviousAndNextButton, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore]];
+    [delegate setSectionItems:sectionItems forCategory:CercubePlusLegacySection title:@"CercubePlusLegacy" titleDescription:nil headerHidden:NO];
 }
 
 - (void)updateSectionForCategory:(NSUInteger)category withEntry:(id)entry {
-    if (category == CercubePlusSection) {
-        [self updateCercubePlusSectionWithEntry:entry];
+    if (category == CercubePlusLegacySection) {
+        [self updateCercubePlusLegacySectionWithEntry:entry];
         return;
     }
     %orig;
