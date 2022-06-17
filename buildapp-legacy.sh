@@ -22,7 +22,7 @@ else
 
 # Makefile
 	read -e -p "==> Path to the decrypted YouTube IPA: " PATHTOIPA
-	sed -i '' "15s#.*#CercubePlusLegacy_IPA = $PATHTOIPA#g" ./Makefile
+	sed -i '' "14s#.*#CercubePlusLegacy_IPA = $PATHTOIPA#g" ./Makefile
 	make package
 	open ./packages
 
