@@ -1,15 +1,25 @@
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 
-@interface x43mW1cl : UIView // Cercube v5.3.9
+#define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
+#define YT_BUNDLE_ID @"com.google.ios.youtube"
+#define YT_NAME @"YouTube"
+
+// CercubePlus
+@interface YTMainAppControlsOverlayView: UIView
 @end
 
-@interface ASWAppSwitcherCollectionViewCell : UIView
+@interface YTTransportControlsButtonView : UIView
 @end
 
-/* @interface YTMainAppVideoPlayerOverlayViewController : UIViewController
-@property (nonatomic, strong, readwrite) UIStackView *cercubeButtonsContainer;
-@end */
+// IAmYouTube
+@interface SSOConfiguration : NSObject
+@end
 
+// Cercube button in Nav bar
+@interface x43mW1cl : UIView // v5.3.9
+@end
+
+// BigYTMiniPlayer
 @interface YTMainAppVideoPlayerOverlayView : UIView
 - (UIViewController *)_viewControllerForAncestor;
 @end
@@ -17,8 +27,25 @@
 @interface YTWatchMiniBarView : UIView
 @end
 
+// YTAutoFullscreen
 @interface YTPlayerViewController (YTAFS)
 - (void)autoFullscreen;
+@end
+
+// YTNoShorts
+@interface ELMCellNode
+@end
+
+@interface _ASCollectionViewCell : UICollectionViewCell
+- (id)node;
+@end
+
+@interface YTAsyncCollectionView : UICollectionView
+- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath;
+@end
+
+// OLED Darkmode
+@interface ASWAppSwitcherCollectionViewCell : UIView
 @end
 
 @interface ASScrollView : UIView
@@ -30,14 +57,17 @@
 @interface UIKeyboardDockView : UIView
 @end
 
+@interface _ASDisplayView : UIView
+@end
+
+@interface SponsorBlockSettingsController : UITableViewController
+@end
+
+@interface SponsorBlockViewController : UIViewController
+@end
+
 @interface UICandidateViewController : UIViewController
 @end
 
 @interface UIPredictionViewController : UIViewController
-@end
-
-@interface SponsorBlockSettingsController : UITableViewController 
-@end
-
-@interface SponsorBlockViewController : UIViewController
 @end
