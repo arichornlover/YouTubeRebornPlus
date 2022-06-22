@@ -150,9 +150,8 @@ BOOL hidePreviousAndNextButton() {
     if (hidePreviousAndNextButton()) { 
 	    MSHookIvar<YTMainAppControlsOverlayView *>(self, "_nextButton").hidden = YES;
     	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;
-        // YouTube love beta testing :/
-    	MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
-    	MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
+    	// MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
+    	// MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
     }
 }
 %end
@@ -361,7 +360,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 - (void)didMoveToWindow {
     if (isDarkMode()) {
         %orig;
-        self.backgroundColor = oledColor;
+        self.backgroundColor = [UIColor clearColor];
     }
 }
 %end
@@ -492,15 +491,17 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 - (void)didMoveToWindow {
     %orig;
     if (isDarkMode()) {
+        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = [UIColor clearColor]; }        
+        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = oledColor; }
+        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = oledColor; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.backgroundColor = oledColor; } 
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = oledColor; } 
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = oledColor; } 
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.filter_chip_bar"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.backgroundColor = oledColor; } 
         if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.backgroundColor = oledColor; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.backgroundColor = oledColor; } 
+        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.superview.backgroundColor = oledColor; } 
     }
 }
 %end
@@ -630,20 +631,17 @@ static void replaceTab(YTIGuideResponse *response) {
 // YTNoShorts: https://github.com/MiRO92/YTNoShorts
 %hook YTAsyncCollectionView
 - (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (hideShorts()) {
         UICollectionViewCell *cell = %orig;
         if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
             _ASCollectionViewCell *cell = %orig;
             if ([cell respondsToSelector:@selector(node)]) {
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"]) {
-                    [self removeShortsCellAtIndexPath:indexPath];
-                }
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"] && hideShorts()) { [self removeShortsCellAtIndexPath:indexPath]; }
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
             }
         } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
             [self removeShortsCellAtIndexPath:indexPath];
         }
-        return %orig;
-    }
         return %orig;
 }
 
