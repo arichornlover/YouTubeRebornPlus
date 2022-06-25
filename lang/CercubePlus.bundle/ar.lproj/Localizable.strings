@@ -1,0 +1,62 @@
+// How to translate CercubePlus to your languate:
+//
+// 1. Fork CercubePlus repo
+// 2. Duplicate the template.lproj folder, and edit the duplicated folder's name to your <lang_code>.lproj id. 
+// For example: ru.lproj for Russia. For more details, visit: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+// 3. Translate each line below after each =
+// 4. Open a Pull Request
+//
+// If your language already exists then feel free to check it and/or improve it!
+//
+// Settings
+
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "إخفاء زر التقدم والرجوع";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "لإخفاء زر التقدم والرجوع في مشغل الفيديو";
+
+"HIDE_SHORTS_VIDEOS" = "إخفاء فيديوهات الشورت";
+"HIDE_SHORTS_VIDEOS_DESC" = "لإخفاء مقاطع فيديوهات الشورت في الصفحة الرئيسية";
+
+"YT_MINIPLAYER" = "تفعيل مشغل مصغر لجميع فيديوهات اليوتيوب";
+"YT_MINIPLAYER_DESC" = "على سبيل المثال : فيديوهات الأطفال";
+
+"HIDE_CERCUBE_BUTTON" = "إخفاء زر سيركيوب في الصفحة الرئيسية";
+"HIDE_CERCUBE_BUTTON_DESC" = "";
+
+"HIDE_CERCUBE_PIP_BUTTON" = "إخفاء زر صورة في صورة الخاص بسيركيوب";
+"HIDE_CERCUBE_PIP_BUTTON_DESC" = "لإخفاء الزر في مشغل الفيديو";
+
+"HIDE_CERCUBE_DOWNLOAD_BUTTON" = "إخفاء زر التنزيل الخاص بسيركيوب";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "لإخفاء زر التنزيل في مشغل الفيديو";
+
+"HIDE_CAST_BUTTON" = "إخفاء زر الكاست";
+"HIDE_CAST_BUTTON_DESC" = "تحتاج لإغلاق التطبيق وإعادة فتحه";
+
+"HIDE_WATERMARKS" = "إخفاء العلامة المائية";
+"HIDE_WATERMARKS_DESC" = "لإخفاء العلامة المائية للقناة في مشغل الفيديو";
+
+"HIDE_HOVER_CARD" = "إخفاء الصور المصغرة في نهاية الفيديو";
+"HIDE_HOVER_CARD_DESC" = "لإخفاء الصور المصغرة في نهاية كل فيديو";
+
+"NEW_MINIPLAYER_STYLE" = "مشغل مصغر بشكل جديد";
+"NEW_MINIPLAYER_STYLE_DESC" = "تحتاج لإغلاق التطبيق وإعادة فتحه";
+
+"YT_RE_EXPLORE" = "إستبدال خانة شورت بخانة الاكسبلور";
+"YT_RE_EXPLORE_DESC" = "تحتاج لإغلاق التطبيق وإعادة فتحه";
+
+"HIDE_SUBTITLES_BUTTON" = "إخفاء زر الترجمة";
+"HIDE_SUBTITLES_BUTTON_DESC" = "لإخفاء زر الترجمة في مشغل الفيديو";
+
+"HIDE_AUTOPLAY_SWITCH" = "إخفاء زر التشغيل التلقائي";
+"HIDE_AUTOPLAY_SWITCH_DESC" = "لإخفاء زر التشغيل التلقائي في مشغل الفيديو";
+
+"AUTO_FULLSCREEN" = "تفعيل شاشة كاملة تلقائيا";
+"AUTO_FULLSCREEN_DESC" = "تشغيل الفيديوهات بشاشة كاملة تلقائيا";
+
+"HIDE_HUD_MESSAGES" = "إخفاء الرسائل المنبثقة";
+"HIDE_HUD_MESSAGES_DESC" = "على سبيل المثال : تم تشغيل/إيقاف الترجمة";
+
+"OLED_DARKMODE" = "OLED وضع ليلي ( تجريبي )";
+"OLED_DARKMODE_DESC" = "تحتاج لإغلاق التطبيق وإعادة فتحه ، قد لا يعمل بشكل ممتاز في بعض الحالات";
+
+"OLED_KEYBOARD" = "OLED لوحة مفاتيح ( تجريبي )";
+"OLED_KEYBOARD_DESC" = "تحتاج لإغلاق التطبيق وإعادة فتحه ، قد لا تعمل بشكل ممتاز في بعض الحالات";
