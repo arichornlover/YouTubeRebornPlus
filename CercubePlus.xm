@@ -232,9 +232,10 @@ BOOL hidePreviousAndNextButton() {
 // YTNoHoverCards 0.0.3: https://github.com/level3tjg/YTNoHoverCards
 %hook YTCreatorEndscreenView
 - (void)setHidden:(BOOL)hidden {
-	if (hideHoverCard())
-	hidden = YES;
-	%orig;
+    if (hideHoverCard()) {
+        hidden = YES;
+        %orig;
+    }
 }
 %end
 
@@ -299,38 +300,35 @@ BOOL hidePreviousAndNextButton() {
 %end
 
 # pragma mark - OLED dark mode by BandarHL
-
-UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
-
 %group gOLED
 %hook YTCommonColorPalette
 - (UIColor *)brandBackgroundSolid {
     if (self.pageStyle == 1) {
-        return oledColor;
+        return [UIColor blackColor];
     }
         return %orig;
 }
 - (UIColor *)brandBackgroundPrimary {
     if (self.pageStyle == 1) {
-        return oledColor;
+        return [UIColor blackColor];
     }
         return %orig;
 }
 - (UIColor *)brandBackgroundSecondary {
     if (self.pageStyle == 1) {
-        return oledColor;
+        return [UIColor blackColor];
     }
         return %orig;
 }
 - (UIColor *)staticBrandBlack {
     if (self.pageStyle == 1) {
-        return oledColor;
+        return [UIColor blackColor];
     }
         return %orig;
 }
 - (UIColor *)generalBackgroundA {
     if (self.pageStyle == 1) {
-        return oledColor;
+        return [UIColor blackColor];
     }
         return %orig;
 }
@@ -340,26 +338,26 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTAccountPanelBodyViewController
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
     if (pageStyle == 1) { 
-        return oledColor; 
+        return [UIColor blackColor]; 
     }
         return %orig;
 }
 %end
 
-%hook YTInnerTubeCollectionViewController
-- (UIColor *)backgroundColor:(NSInteger)pageStyle {
-    if (pageStyle == 1) { 
-        return oledColor; 
-    }
-        return %orig;
-}
-%end
+// %hook YTInnerTubeCollectionViewController
+// - (UIColor *)backgroundColor:(NSInteger)pageStyle {
+//     if (pageStyle == 1) { 
+//         return [UIColor blackColor]; 
+//     }
+//         return %orig;
+// }
+// %end
 
 // Explore
 %hook ASScrollView 
 - (void)didMoveToWindow {
-    if (isDarkMode()) {
-        %orig;
+    %orig;
+    if (isDarkMode()) { 
         self.backgroundColor = [UIColor clearColor];
     }
 }
@@ -368,8 +366,8 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 // Your videos
 %hook ASCollectionView
 - (void)didMoveToWindow {
+    %orig;
     if (isDarkMode() && [self.nextResponder isKindOfClass:%c(_ASDisplayView)]) { 
-        %orig;
         self.superview.backgroundColor = [UIColor clearColor];
     }
 }
@@ -380,7 +378,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 - (void)viewDidLoad {
     if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
         %orig;
-        self.tableView.backgroundColor = oledColor;
+        self.tableView.backgroundColor = [UIColor blackColor];
     } else { return %orig; }
 }
 %end
@@ -389,7 +387,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 - (void)viewDidLoad {
     if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
         %orig;
-        self.view.backgroundColor = oledColor;
+        self.view.backgroundColor = [UIColor blackColor];
     } else { return %orig; }
 }
 %end
@@ -398,7 +396,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTWatchMiniBarView 
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig([UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.9]);
+        return %orig([[UIColor blackColor] colorWithAlphaComponent:0.88]);
     }
         return %orig;
 }
@@ -408,7 +406,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTSearchBarView 
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig(oledColor);
+        return %orig([UIColor blackColor]);
     }
         return %orig;
 }
@@ -418,7 +416,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTSearchBoxView 
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig(oledColor);
+        return %orig([UIColor blackColor]);
     }
         return %orig;
 }
@@ -428,7 +426,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTCommentView
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig(oledColor);
+        return %orig([UIColor blackColor]);
     }
         return %orig;
 }
@@ -437,7 +435,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTCreateCommentAccessoryView
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig(oledColor);
+        return %orig([UIColor blackColor]);
     }
         return %orig;
 }
@@ -446,7 +444,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTCreateCommentTextView
 - (void)setBackgroundColor:(UIColor *)color { 
     if (isDarkMode()) {
-        return %orig(oledColor);
+        return %orig([UIColor blackColor]);
     }
         return %orig;
 }
@@ -455,6 +453,15 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
         return %orig([UIColor whiteColor]); 
     }
         return %orig;
+}
+%end
+
+%hook YTCommentDetailHeaderCell
+- (void)didMoveToWindow {
+    %orig;
+    if (isDarkMode()) {
+        self.subviews[2].backgroundColor = [UIColor blackColor];
+    }
 }
 %end
 
@@ -471,7 +478,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YCHLiveChatActionPanelView 
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig(oledColor);
+        return %orig([UIColor blackColor]);
     }
         return %orig;
 }
@@ -480,7 +487,7 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook YTEmojiTextView
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig(oledColor);
+        return %orig([UIColor blackColor]);
     }
         return %orig;
 }
@@ -491,17 +498,17 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 - (void)didMoveToWindow {
     %orig;
     if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = [UIColor clearColor]; }        
-        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = oledColor; }
-        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = oledColor; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.filter_chip_bar"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.backgroundColor = oledColor; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.backgroundColor = oledColor; } 
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.superview.backgroundColor = oledColor; } 
+        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = [UIColor clearColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.filter_chip_bar"]) { self.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.backgroundColor = [UIColor blackColor]; }
     }
 }
 %end
@@ -510,25 +517,27 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook ASWAppSwitchingSheetHeaderView
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig(oledColor);
+        return %orig([UIColor blackColor]);
     }
+        return %orig;
 }
 %end
 
 %hook ASWAppSwitchingSheetFooterView
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig(oledColor);
+        return %orig([UIColor blackColor]);
     }
+        return %orig;
 }
 %end
 
 %hook ASWAppSwitcherCollectionViewCell
 - (void)didMoveToWindow {
+    %orig;
     if (isDarkMode()) { 
-        %orig;
-        self.subviews[1].backgroundColor = oledColor;
-        self.superview.backgroundColor = oledColor;
+        self.subviews[1].backgroundColor = [UIColor blackColor];
+        self.superview.backgroundColor = [UIColor blackColor];
     }
 }
 %end
@@ -539,28 +548,28 @@ UIColor* oledColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:1.0];
 %hook UIPredictionViewController
 - (void)loadView {
     %orig;
-    [self.view setBackgroundColor:oledColor];
+    [self.view setBackgroundColor:[UIColor blackColor]];
 }
 %end
 
 %hook UICandidateViewController
 - (void)loadView {
     %orig;
-    [self.view setBackgroundColor:oledColor];
+    [self.view setBackgroundColor:[UIColor blackColor]];
 }
 %end
 
 %hook UIKeyboardDockView
 - (void)didMoveToWindow {
     %orig;
-    self.backgroundColor = oledColor;
+    self.backgroundColor = [UIColor blackColor];
 }
 %end
 
 %hook UIKeyboardLayoutStar 
 - (void)didMoveToWindow {
     %orig;
-    self.backgroundColor = oledColor;
+    self.backgroundColor = [UIColor blackColor];
 }
 %end
 
@@ -639,7 +648,7 @@ static void replaceTab(YTIGuideResponse *response) {
                 if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
                 if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
             }
-        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
+        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && hideShorts()) {
             [self removeShortsCellAtIndexPath:indexPath];
         }
         return %orig;
