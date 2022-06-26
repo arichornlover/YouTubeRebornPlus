@@ -80,7 +80,7 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Download Dylibs
+      - name: Download Cercube & prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
           curl "https://apt.alfhaily.me/files/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "./main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
@@ -99,7 +99,7 @@ jobs:
         id: build_package
         run: |
           cd ${{ github.workspace }}/main
-          (cd ${{ github.workspace }}/main/Tweaks/YouPiP && sed -i '' "14s#.*#YouPiP_FRAMEWORKS = AVKit AVFoundation UIKit#g" ./Makefile)
+          (cd ${{ github.workspace }}/main/Tweaks/YouPiP && sed -i '' "14s/$/ AVFoundation UIKit/" Makefile)
           make package FINALPACKAGE=1
           (mv "packages/$(ls -t packages | head -n1)" "packages/CercubePlus_${{ env.YOUTUBE_VERSION  }}_${{ env.CERCUBE_VERSION }}.ipa")
           echo "::set-output name=package::$(ls -t packages | head -n1)"
