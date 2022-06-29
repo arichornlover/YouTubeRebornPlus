@@ -244,6 +244,10 @@ BOOL hidePreviousAndNextButton() {
 - (BOOL)shouldEnablePlayerBar { return YES; }
 %end
 
+%hook YTReelPlayerViewController
+- (BOOL)shouldEnablePlayerBar { return YES; }
+%end
+
 # pragma mark - IAmYouTube - https://github.com/PoomSmart/IAmYouTube/
 %hook YTVersionUtils
 + (NSString *)appName { return YT_NAME; }
@@ -316,6 +320,12 @@ BOOL hidePreviousAndNextButton() {
 }
 - (UIColor *)brandBackgroundSecondary {
     if (self.pageStyle == 1) {
+        return [[UIColor blackColor] colorWithAlphaComponent:0.88];
+    }
+        return %orig;
+}
+- (UIColor *)raisedBackground {
+    if (self.pageStyle == 1) {
         return [UIColor blackColor];
     }
         return %orig;
@@ -343,15 +353,6 @@ BOOL hidePreviousAndNextButton() {
         return %orig;
 }
 %end
-
-// %hook YTInnerTubeCollectionViewController
-// - (UIColor *)backgroundColor:(NSInteger)pageStyle {
-//     if (pageStyle == 1) { 
-//         return [UIColor blackColor]; 
-//     }
-//         return %orig;
-// }
-// %end
 
 // Explore
 %hook ASScrollView 
@@ -389,16 +390,6 @@ BOOL hidePreviousAndNextButton() {
         %orig;
         self.view.backgroundColor = [UIColor blackColor];
     } else { return %orig; }
-}
-%end
-
-// YT Miniplayer
-%hook YTWatchMiniBarView 
-- (void)setBackgroundColor:(UIColor *)color { 
-    if (isDarkMode()) {
-        return %orig([[UIColor blackColor] colorWithAlphaComponent:0.88]);
-    }
-        return %orig;
 }
 %end
 
@@ -493,7 +484,7 @@ BOOL hidePreviousAndNextButton() {
 }
 %end
 
-// Nasty stuff :/
+// Others
 %hook _ASDisplayView
 - (void)didMoveToWindow {
     %orig;
