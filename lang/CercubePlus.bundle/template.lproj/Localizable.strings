@@ -1,12 +1,13 @@
 // How to translate CercubePlus to your languate:
 //
 // 1. Fork CercubePlus repo
-// 2. Duplicate the template.lproj folder, and edit the duplicated folder's name to your <lang_code>.lproj id. 
-// For example: ru.lproj for Russia. For more details, visit: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
+// 2. Duplicate the template.lproj folder, and edit the duplicated folder's name to your <lang_code>.lproj id.  
+// For example: <ru.lproj> for Russia. For more details, visit: https://en.wikipedia.org/wiki/List_of_ISO_3166_country_codes
 // 3. Translate each line below after each =
 // 4. Open a Pull Request
 //
-// If your language already exists then feel free to check it and/or improve it!
+// You can also add your localiztion to YouPiP here, the process is the same
+// https://github.com/PoomSmart/YouPiP/tree/main/layout/Library/Application%20Support/YouPiP.bundle
 //
 // Settings
 
@@ -60,3 +61,9 @@
 
 "OLED_KEYBOARD" = "OLED Keyboard (Experimental)";
 "OLED_KEYBOARD_DESC" = "Might not working correctly in some cases. App restart is required.";
+
+"HIDE_PAID_PROMOTION_CARDS" = "Hide Paid Promotion cards";
+"HIDE_PAID_PROMOTION_CARDS_DESC" = "Hide the 'Includes Paid Promotions' card in some videos.";
+
+"HIDE_NOTIFICATION_BUTTON" = "Hide Notifcation button in the Navigation bar";
+"HIDE_NOTIFICATION_BUTTON_DESC" = "";

@@ -50,3 +50,9 @@
 
 "OLED_KEYBOARD" = "OLED Keyboard (Experimental)";
 "OLED_KEYBOARD_DESC" = "Might not working correctly in some cases. App restart is required.";
+
+"HIDE_PAID_PROMOTION_CARDS" = "Hide Paid Promotion cards";
+"HIDE_PAID_PROMOTION_CARDS_DESC" = "Hide the 'Includes Paid Promotions' card in some videos.";
+
+"HIDE_NOTIFICATION_BUTTON" = "Hide Notifcation button in the Navigation bar";
+"HIDE_NOTIFICATION_BUTTON_DESC" = "";
