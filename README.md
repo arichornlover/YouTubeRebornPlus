@@ -89,9 +89,9 @@ any many more...
 
 - For AltStore user: 
   - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.25.1-5.3.9)](https://tinyurl.com/mrynxkdy) - It will take a while to install because AltStore needs to download the IPA.
+  - [Open in AltStore (v17.25.1-5.3.10)](https://tinyurl.com/4rvjvx97) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(June 29)_
+- Version info: _(June 30)_
 
 <details>
   <summary>▶︎ Expand!</summary>
@@ -99,7 +99,7 @@ any many more...
 | **Tweaks/App** | **Version** | **Open source** |
 | :------------: | :----------:| :-------------: |
 | **YouTube** | 17.25.1 | ✖︎ |
-| [Cercube](https://apt.alfhaily.me/depiction/FDXO5R) | 5.3.9 | ✖︎ |
+| [Cercube](https://apt.alfhaily.me/depiction/FDXO5R) | 5.3.10 | ✖︎ |
 | [Open in YouTube](https://github.com/CokePokes/YoutubeExtensions/) | 1.2 | ✖︎ |
 | **Return YouTube Dislike** | 1.6.5 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **iSponsorBlock** | 1.0-14 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
