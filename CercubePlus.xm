@@ -13,6 +13,8 @@
 #import "Tweaks/YouTubeHeader/YTIBrowseRequest.h"
 #import "Tweaks/YouTubeHeader/YTCommonColorPalette.h"
 #import "Tweaks/YouTubeHeader/ASCollectionView.h"
+#import "Tweaks/YouTubeHeader/YTPlayerOverlay.h"
+#import "Tweaks/YouTubeHeader/YTPlayerOverlayProvider.h"
 
 NSBundle *CercubePlusBundle() {
     static NSBundle *bundle = nil;
@@ -79,6 +81,12 @@ BOOL hideShorts() {
 BOOL hidePreviousAndNextButton() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hidePreviousAndNextButton_enabled"];
 }
+BOOL hidePaidPromotionCard() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hidePaidPromotionCard_enabled"];
+}
+BOOL hideNotificationButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideNotificationButton_enabled"];
+}
 
 # pragma mark - Tweaks
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
@@ -89,15 +97,19 @@ BOOL hidePreviousAndNextButton() {
 }
 %end
 
-# pragma mark - Hide Cercube Button 
-// Hide Cercube button in Nav Bar - v5.3.9
-%hook x43mW1cl
+# pragma mark - Hide Cercube Button && Notification Button
+%hook YTRightNavigationButtons
 - (void)didMoveToWindow {
-    if (hideCercubeButton() && [self.nextResponder isKindOfClass:%c(YTRightNavigationButtons)]) {
-        self.hidden = YES;
-        %orig; 
+    %orig;
+    if (hideCercubeButton()) { 
+        self.cercubeButton.hidden = YES; 
     }
-        return %orig;
+}
+- (void)layoutSubviews {
+    %orig;
+    if (hideNotificationButton()) {
+        self.notificationButton.hidden = YES;
+    }
 }
 %end
 
@@ -248,6 +260,25 @@ BOOL hidePreviousAndNextButton() {
 - (BOOL)shouldEnablePlayerBar { return YES; }
 %end
 
+// Hide Paid Promotion Card
+%hook YTMainAppVideoPlayerOverlayViewController
+- (void)setPaidContentWithPlayerData:(id)data {
+    if (hidePaidPromotionCard()) {}
+    else { return %orig; }
+}
+- (void)playerOverlayProvider:(YTPlayerOverlayProvider *)provider didInsertPlayerOverlay:(YTPlayerOverlay *)overlay {
+    if ([[overlay overlayIdentifier] isEqualToString:@"player_overlay_paid_content"] && hidePaidPromotionCard()) return;
+    %orig;
+}
+%end
+
+%hook YTInlineMutedPlaybackPlayerOverlayViewController
+- (void)setPaidContentWithPlayerData:(id)data {
+    if (hidePaidPromotionCard()) {}
+    else { return %orig; }
+}
+%end
+
 # pragma mark - IAmYouTube - https://github.com/PoomSmart/IAmYouTube/
 %hook YTVersionUtils
 + (NSString *)appName { return YT_NAME; }
@@ -304,6 +335,7 @@ BOOL hidePreviousAndNextButton() {
 %end
 
 # pragma mark - OLED dark mode by BandarHL
+UIColor* raisedColor = [UIColor colorWithRed:0.02 green:0.02 blue:0.02 alpha:1.0];
 %group gOLED
 %hook YTCommonColorPalette
 - (UIColor *)brandBackgroundSolid {
@@ -320,13 +352,13 @@ BOOL hidePreviousAndNextButton() {
 }
 - (UIColor *)brandBackgroundSecondary {
     if (self.pageStyle == 1) {
-        return [[UIColor blackColor] colorWithAlphaComponent:0.88];
+        return [[UIColor blackColor] colorWithAlphaComponent:0.9];
     }
         return %orig;
 }
 - (UIColor *)raisedBackground {
     if (self.pageStyle == 1) {
-        return [UIColor blackColor];
+        return raisedColor;
     }
         return %orig;
 }
@@ -489,11 +521,11 @@ BOOL hidePreviousAndNextButton() {
 - (void)didMoveToWindow {
     %orig;
     if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = [UIColor clearColor]; }
+        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = raisedColor; }
         if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.backgroundColor = [UIColor blackColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.backgroundColor = raisedColor; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.filter_chip_bar"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = [UIColor blackColor]; }
@@ -508,7 +540,7 @@ BOOL hidePreviousAndNextButton() {
 %hook ASWAppSwitchingSheetHeaderView
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig([UIColor blackColor]);
+        return %orig(raisedColor);
     }
         return %orig;
 }
@@ -517,7 +549,7 @@ BOOL hidePreviousAndNextButton() {
 %hook ASWAppSwitchingSheetFooterView
 - (void)setBackgroundColor:(UIColor *)color {
     if (isDarkMode()) {
-        return %orig([UIColor blackColor]);
+        return %orig(raisedColor);
     }
         return %orig;
 }
@@ -527,8 +559,8 @@ BOOL hidePreviousAndNextButton() {
 - (void)didMoveToWindow {
     %orig;
     if (isDarkMode()) { 
-        self.subviews[1].backgroundColor = [UIColor blackColor];
-        self.superview.backgroundColor = [UIColor blackColor];
+        self.subviews[1].backgroundColor = raisedColor;
+        self.superview.backgroundColor = raisedColor;
     }
 }
 %end
@@ -644,10 +676,9 @@ static void replaceTab(YTIGuideResponse *response) {
         }
         return %orig;
 }
-
 %new
 - (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
-        [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+    [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
 }
 %end
 
@@ -667,6 +698,6 @@ static void replaceTab(YTIGuideResponse *response) {
        %init(Main);
     }
     if (hideCastButton()) {
-        %init(gHideCastButton);
+       %init(gHideCastButton);
     }
 }
