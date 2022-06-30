@@ -11,12 +11,20 @@
 @interface YTTransportControlsButtonView : UIView
 @end
 
-// IAmYouTube
-@interface SSOConfiguration : NSObject
+// // Cercube button in Nav bar
+@interface MDCButton : UIButton
 @end
 
-// Cercube button in Nav bar
-@interface x43mW1cl : UIView // v5.3.9
+@interface YTQTMButton : UIButton
+@end
+
+@interface YTRightNavigationButtons : UIView
+@property (nonatomic, strong, readwrite) MDCButton *cercubeButton;
+@property YTQTMButton *notificationButton;
+@end
+
+// IAmYouTube
+@interface SSOConfiguration : NSObject
 @end
 
 // BigYTMiniPlayer
