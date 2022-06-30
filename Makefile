@@ -13,6 +13,7 @@ BUNDLE_ID = com.google.ios.youtube
 CercubePlus_INJECT_DYLIBS = Tweaks/Cercube/Library/MobileSubstrate/DynamicLibraries/Cercube.dylib .theos/obj/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YTUHD.dylib .theos/obj/YouPiP.dylib .theos/obj/YouTubeDislikesReturn.dylib 
 CercubePlus_FILES = CercubePlus.xm Settings.xm
 CercubePlus_IPA = ./tmp/Payload/YouTube.app
+CercubePlus_CFLAGS = -fobjc-arc
 CercubePlus_FRAMEWORKS = UIKit
 
 include $(THEOS)/makefiles/common.mk
