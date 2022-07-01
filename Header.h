@@ -11,7 +11,7 @@
 @interface YTTransportControlsButtonView : UIView
 @end
 
-// // Cercube button in Nav bar
+// Cercube button in Nav bar
 @interface MDCButton : UIButton
 @end
 
