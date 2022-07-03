@@ -50,3 +50,9 @@
 
 "OLED_KEYBOARD" = "Bàn phím OLED (Thử nghiệm)";
 "OLED_KEYBOARD_DESC" = "Tính năng này có thể không hoạt động tốt trong một vài trường hợp. Cần khởi động lại ứng dụng.";
+
+"HIDE_PAID_PROMOTION_CARDS" = "Ẩn popup quảng cáo được trả tiền";
+"HIDE_PAID_PROMOTION_CARDS_DESC" = "Ẩn popup 'Chứa nội dung được trả tiền để quảng cáo' trong một số video.";
+
+"HIDE_NOTIFICATION_BUTTON" = "Ẩn nút thông báo trong thanh điều hướng";
+"HIDE_NOTIFICATION_BUTTON_DESC" = "";
