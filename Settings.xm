@@ -23,9 +23,12 @@ extern BOOL hideCercubeButton();
 extern BOOL hideCercubePiP();
 extern BOOL hideCercubeDownload();
 extern BOOL hideCastButton();
+extern BOOL hideWatermarks();
 extern BOOL ytMiniPlayer();
 extern BOOL hideShorts();
 extern BOOL hidePreviousAndNextButton();
+extern BOOL hidePaidPromotionCard();
+extern BOOL hideNotificationButton();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -44,6 +47,24 @@ extern BOOL hidePreviousAndNextButton();
 - (void)updateCercubePlusSectionWithEntry:(id)entry {
     YTSettingsViewController *delegate = [self valueForKey:@"_dataDelegate"];
     NSBundle *tweakBundle = CercubePlusLegacyBundle();
+
+    YTSettingsSectionItem *hideNotificationButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"HIDE_NOTIFICATION_BUTTON") titleDescription:LOC(@"HIDE_NOTIFICATION_BUTTON_DESC")];
+    hideNotificationButton.hasSwitch = YES;
+    hideNotificationButton.switchVisible = YES;
+    hideNotificationButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideNotificationButton_enabled"];
+    hideNotificationButton.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideNotificationButton_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *hidePaidPromotionCard = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"HIDE_PAID_PROMOTION_CARDS") titleDescription:LOC(@"HIDE_PAID_PROMOTION_CARDS_DESC")];
+    hidePaidPromotionCard.hasSwitch = YES;
+    hidePaidPromotionCard.switchVisible = YES;
+    hidePaidPromotionCard.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hidePaidPromotionCard_enabled"];
+    hidePaidPromotionCard.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hidePaidPromotionCard_enabled"];
+        return YES;
+    };
 
     YTSettingsSectionItem *hidePreviousAndNextButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON") titleDescription:LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC")];
     hidePreviousAndNextButton.hasSwitch = YES;
@@ -107,6 +128,16 @@ extern BOOL hidePreviousAndNextButton();
         [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideCastButton_enabled"];
         return YES;
     };
+
+    YTSettingsSectionItem *hideWatermarks = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_WATERMARKS") titleDescription:LOC(@"HIDE_WATERMARKS_DESC")];
+    hideWatermarks.hasSwitch = YES;
+    hideWatermarks.switchVisible = YES;
+    hideWatermarks.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
+    hideWatermarks.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideWatermarks_enabled"];
+        return YES;
+    };
+
 
     YTSettingsSectionItem *hideHoverCard = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_HOVER_CARD") titleDescription:LOC(@"HIDE_HOVER_CARD_DESC")];
     hideHoverCard.hasSwitch = YES;
@@ -189,7 +220,7 @@ extern BOOL hidePreviousAndNextButton();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, hideCercubeButton, hideCercubePiP, hideCercubeDownload, ytMiniPlayer, hideAutoplaySwitch, hideCastButton, hideCC, hideHUD, hideHoverCard, hideShorts, hidePreviousAndNextButton, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, ytMiniPlayer, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusLegacySection title:@"CercubePlusLegacy" titleDescription:nil headerHidden:NO];
 }
 
