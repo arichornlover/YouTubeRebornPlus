@@ -16,7 +16,15 @@
 @end
 
 // Cercube button in Nav bar
-@interface x43mW1cl : UIView // v5.3.9
+@interface MDCButton : UIButton
+@end
+
+@interface YTQTMButton : UIButton
+@end
+
+@interface YTRightNavigationButtons : UIView
+@property (nonatomic, strong, readwrite) MDCButton *cercubeButton;
+@property YTQTMButton *notificationButton;
 @end
 
 // BigYTMiniPlayer
@@ -33,9 +41,6 @@
 @end
 
 // YTNoShorts
-@interface ELMCellNode
-@end
-
 @interface _ASCollectionViewCell : UICollectionViewCell
 - (id)node;
 @end
@@ -58,6 +63,9 @@
 @end
 
 @interface _ASDisplayView : UIView
+@end
+
+@interface YTCommentDetailHeaderCell : UIView
 @end
 
 @interface SponsorBlockSettingsController : UITableViewController
