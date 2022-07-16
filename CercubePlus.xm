@@ -197,7 +197,6 @@ BOOL hideNotificationButton() {
 - (BOOL)enableYouthereCommandsOnIos { return NO; }
 - (BOOL)respectDeviceCaptionSetting { return NO; }
 - (BOOL)shouldUseAppThemeSetting { return YES; }
-//- (BOOL)enableDarkerDarkMode { return YES; }
 %end
 
 %hook YTYouThereController
@@ -252,10 +251,6 @@ BOOL hideNotificationButton() {
 %end
 
 // Enable scroll bar in Shorts videos - credit @level3tjg - https://reddit.com/r/jailbreak/comments/v29yvk/_/iasl1l0/
-%hook YTReelPlayerViewControllerSub
-- (BOOL)shouldEnablePlayerBar { return YES; }
-%end
-
 %hook YTReelPlayerViewController
 - (BOOL)shouldEnablePlayerBar { return YES; }
 %end
@@ -335,7 +330,7 @@ BOOL hideNotificationButton() {
 %end
 
 # pragma mark - OLED dark mode by BandarHL
-UIColor* raisedColor = [UIColor colorWithRed:0.02 green:0.02 blue:0.02 alpha:1.0];
+UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:1.0];
 %group gOLED
 %hook YTCommonColorPalette
 - (UIColor *)brandBackgroundSolid {
