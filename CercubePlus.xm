@@ -87,6 +87,9 @@ BOOL hidePaidPromotionCard() {
 BOOL hideNotificationButton() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideNotificationButton_enabled"];
 }
+BOOL ytDisableHighContrastIcons () {
+      return [[NSUserDefaults standardUserDefaults] boolForKey:@"ytDisableHighContrastIcons_enabled"];
+}
 
 # pragma mark - Tweaks
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
@@ -655,6 +658,47 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 %end
 
+%group gYTDisableHighContrastIcons
+%hook YTCommonColorPalette
+- (UIColor *)textPrimary {
+     if (self.pageStyle == 1) {
+         return [UIColor colorWithWhite:0.565 alpha:1];
+     }
+         return [UIColor colorWithWhite:0.5 alpha:1];
+ }
+- (UIColor *)textSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithWhite:0.565 alpha:1];
+     }
+        return [UIColor colorWithWhite:0.5 alpha:1];
+ }
+- (UIColor *)overlayTextPrimary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithWhite:0.565 alpha:1];
+     }
+        return [UIColor colorWithWhite:0.5 alpha:1];
+ }
+- (UIColor *)overlayTextSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithWhite:0.565 alpha:1];
+     }
+        return [UIColor colorWithWhite:0.5 alpha:1];
+ }
+- (UIColor *)overlayTextTertiary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithWhite:0.565 alpha:1];
+     }
+        return [UIColor colorWithWhite:0.5 alpha:1];
+ } 
+- (UIColor *)themedOverlayBackground {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithWhite:0.565 alpha:1];
+     }
+        return [UIColor colorWithWhite:0.5 alpha:1];
+ } 
+%end
+%end
+
 // YTNoShorts: https://github.com/MiRO92/YTNoShorts
 %hook YTAsyncCollectionView
 - (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -694,5 +738,9 @@ static void replaceTab(YTIGuideResponse *response) {
     }
     if (hideCastButton()) {
        %init(gHideCastButton);
+    }
+    if (ytDisableHighContrastIcons()) {
+       %init(gYTDisableHighContrastIcons);
+//  }
     }
 }
