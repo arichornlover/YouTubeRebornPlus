@@ -89,6 +89,12 @@ BOOL hideNotificationButton() {
 }
 
 # pragma mark - Tweaks
+// Enable Reorder videos from playlist while on the Watch page - @PoomSmart
+%hook YTIPlaylistPanelVideoRenderer 
+%new 
+- (BOOL)canReorder { return YES; }
+%end
+
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
 %hook YTWatchMiniBarViewController
 - (void)updateMiniBarPlayerStateFromRenderer {
