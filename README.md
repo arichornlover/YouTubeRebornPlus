@@ -87,14 +87,12 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- For AltStore user: 
-  - My official AltStore repo: https://qnblackcat.github.io/AltStore/
-  - [Open in AltStore (v17.26.2-5.3.10)](https://tinyurl.com/mr3ftnfv) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v17.26.2-5.3.10)](https://tinyurl.com/mr3ftnfv) - It will take a while to install because AltStore needs to download the IPA first.
 
 - Version info: _(Jul 17)_
 
 <details>
-  <summary>▶︎ Expand!</summary>
+  <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
