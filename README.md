@@ -21,13 +21,17 @@
 
 - [PoomSmart](https://twitter.com/poomsmart) - the developer of many tweaks used by CercubePlus, see [Version info - Download](#download) for more details.
 
-- [level3tjg](https://twitter.com/level3tjg) - for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards) and [YTMiniplayerEnabler](https://github.com/level3tjg/YTMiniplayerEnabler).
+- [level3tjg](https://twitter.com/level3tjg) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards) and [YTMiniplayerEnabler](https://github.com/level3tjg/YTMiniplayerEnabler).
+
+- [BandarHL](https://twitter.com/bandarhl) for a bunch of improvements.
 
 - [MiRO92](https://twitter.com/miro92) for [YTNoShorts](https://github.com/MiRO92/YTNoShorts/blob/main/Tweak.h).
 
 - [YouTube Extensions](https://github.com/CokePokes/YoutubeExtensions) by [CokePokes](https://github.com/CokePokes/).
 
 - [theos team](https://github.com/theos/theos) for theos & theos-jailed.
+
+- Thanks to all the translators who have contributed to CercubePlus. Your contribution is highly appreciated!
 
 # Features
 
@@ -87,16 +91,16 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- For AltStore user: [Open in AltStore (v17.26.2-5.3.10)](https://tinyurl.com/mr3ftnfv) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v17.30.3-5.3.10)](https://tinyurl.com/p7mx8ypy) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Jul 17)_
+- Version info: _(Aug 05)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 17.26.2 | ✖︎ |
+| **YouTube** | Google Inc | 17.30.3 | ✖︎ |
 | **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.10 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
@@ -123,6 +127,12 @@ any many more...
 
 - Paypal: https://poomsmart.github.io/
 
+</details>
+
+<details>
+  <summary>Bandar Alruwaili (BandarHL)</summary>
+
+- Paypal: https://www.paypal.com/paypalme/BandarHL
 </details>
 
 <details>
