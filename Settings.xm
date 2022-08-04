@@ -48,6 +48,15 @@ extern BOOL hideNotificationButton();
     YTSettingsViewController *delegate = [self valueForKey:@"_dataDelegate"];
     NSBundle *tweakBundle = CercubePlusBundle();
 
+    YTSettingsSectionItem *killApp = [%c(YTSettingsSectionItem) // https://github.com/PoomSmart/YTABConfig/blob/b74d7f28151c407cffc21cce12908c49e9e65999/Tweak.x#L76
+    itemWithTitle:LOC(@"KILL_APP")
+    titleDescription:LOC(@"KILL_APP_DESC")
+    accessibilityIdentifier:nil
+    detailTextBlock:nil
+    selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+        exit(0);
+    }];
+
     YTSettingsSectionItem *hideNotificationButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"HIDE_NOTIFICATION_BUTTON") titleDescription:LOC(@"HIDE_NOTIFICATION_BUTTON_DESC")];
     hideNotificationButton.hasSwitch = YES;
     hideNotificationButton.switchVisible = YES;
@@ -219,7 +228,7 @@ extern BOOL hideNotificationButton();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[autoFull, ytMiniPlayer, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[killApp, autoFull, ytMiniPlayer, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 

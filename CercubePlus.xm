@@ -168,8 +168,8 @@ BOOL hideNotificationButton() {
     if (hidePreviousAndNextButton()) { 
 	    MSHookIvar<YTMainAppControlsOverlayView *>(self, "_nextButton").hidden = YES;
     	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;
-    	// MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
-    	// MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
+    	MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
+    	MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
     }
 }
 %end
@@ -198,11 +198,9 @@ BOOL hideNotificationButton() {
 // YTABGoodies - https://poomsmart.github.io/repo/depictions/ytabgoodies.html
 // YouAreThere - https://poomsmart.github.io/repo/depictions/youarethere.html
 // YouRememberCaption - https://poomsmart.github.io/repo/depictions/youremembercaption.html
-// YTSystemAppearance: https://poomsmart.github.io/repo/depictions/ytsystemappearance.html
 %hook YTColdConfig
 - (BOOL)enableYouthereCommandsOnIos { return NO; }
 - (BOOL)respectDeviceCaptionSetting { return NO; }
-- (BOOL)shouldUseAppThemeSetting { return YES; }
 %end
 
 %hook YTYouThereController
@@ -359,7 +357,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 - (UIColor *)raisedBackground {
     if (self.pageStyle == 1) {
-        return raisedColor;
+        return [UIColor blackColor];
     }
         return %orig;
 }
@@ -522,11 +520,11 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 - (void)didMoveToWindow {
     %orig;
     if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = raisedColor; }
+        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = [UIColor clearColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.backgroundColor = [UIColor blackColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.backgroundColor = raisedColor; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.backgroundColor = [UIColor clearColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.filter_chip_bar"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = [UIColor blackColor]; }
