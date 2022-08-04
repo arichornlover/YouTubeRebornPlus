@@ -29,6 +29,7 @@ extern BOOL hideShorts();
 extern BOOL hidePreviousAndNextButton();
 extern BOOL hidePaidPromotionCard();
 extern BOOL hideNotificationButton();
+extern BOOL ytDisableHighContrastIcons();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -56,6 +57,15 @@ extern BOOL hideNotificationButton();
     selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         exit(0);
     }];
+
+    YTSettingsSectionItem *ytDisableHighContrastIcons = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Revert The High Contrast Icons (YTDisableHighContrastIcons)" titleDescription:@"App restart is required."];
+    ytDisableHighContrastIcons.hasSwitch = YES;
+    ytDisableHighContrastIcons.switchVisible = YES;
+    ytDisableHighContrastIcons.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"ytDisableHighContrastIcons_enabled"];
+    ytDisableHighContrastIcons.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+         [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytDisableHighContrastIcons_enabled"];
+         return YES;
+     };
 
     YTSettingsSectionItem *hideNotificationButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"HIDE_NOTIFICATION_BUTTON") titleDescription:LOC(@"HIDE_NOTIFICATION_BUTTON_DESC")];
     hideNotificationButton.hasSwitch = YES;
@@ -228,7 +238,7 @@ extern BOOL hideNotificationButton();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[killApp, autoFull, ytMiniPlayer, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[killApp, autoFull, ytMiniPlayer, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore, ytDisableHighContrastIcons]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 
