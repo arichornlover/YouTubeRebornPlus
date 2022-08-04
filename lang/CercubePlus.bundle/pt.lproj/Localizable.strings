@@ -1,0 +1,58 @@
+// Settings
+
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Ocultar botão Anterior e Próximo";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Oculta o botão Anterior e Próximo na sobreposição de controles de vídeo.";
+
+"HIDE_SHORTS_VIDEOS" = "Ocultar vídeos de Shorts";
+"HIDE_SHORTS_VIDEOS_DESC" = "Ocultar vídeos de Shorts na Página inicial, Recomendado...";
+
+"YT_MINIPLAYER" = "Ative o Miniplayer para todos os vídeos do YouTube";
+"YT_MINIPLAYER_DESC" = "Vídeos infantis, por exemplo.";
+
+"HIDE_CERCUBE_BUTTON" = "Ocultar o botão Cercube na barra de navegação";
+"HIDE_CERCUBE_BUTTON_DESC" = "";
+
+"HIDE_CERCUBE_PIP_BUTTON" = "Ocultar o botão PiP do Cercube";
+"HIDE_CERCUBE_PIP_BUTTON_DESC" = "Oculta o botão PiP do Cercube na sobreposição de controles de vídeo.";
+
+"HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Ocultar o botão Download do Cercube";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Oculta o botão Download do Cercube na sobreposição de controles de vídeo.";
+
+"HIDE_CAST_BUTTON" = "Ocultar Botão de transmissão";
+"HIDE_CAST_BUTTON_DESC" = "A reinicialização do app é necessária.";
+
+"HIDE_WATERMARKS" = "Ocultar Marcas d'água";
+"HIDE_WATERMARKS_DESC" = "Oculta as marcas d'água do canal na sobreposição de controles de vídeo.";
+
+"HIDE_HOVER_CARD" = "Ocultar Cartões flutuantes de telas finais (YTNoHoverCards)";
+"HIDE_HOVER_CARD_DESC" = "Oculta telas finais do criador (miniaturas) no final dos vídeos.";
+
+"NEW_MINIPLAYER_STYLE" = "Novo estilo de barra de miniplayer (BigYTMiniPlayer)";
+"NEW_MINIPLAYER_STYLE_DESC" = "A reinicialização do app é necessária.";
+
+"YT_RE_EXPLORE" = "Substituir a guia Shorts pela guia Explorar (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "A reinicialização do app é necessária.";
+
+"HIDE_SUBTITLES_BUTTON" = "Ocultar botão de Legendas";
+"HIDE_SUBTITLES_BUTTON_DESC" = "Oculta o botão de Legendas na sobreposição de controles de vídeo.";
+
+"HIDE_AUTOPLAY_SWITCH" = "Ocultar interruptor de Reprodução automática";
+"HIDE_AUTOPLAY_SWITCH_DESC" = "Oculta o interruptor de Reprodução automática na sobreposição de controles de vídeo.";
+
+"AUTO_FULLSCREEN" = "Tela cheia automática (YTAutoFullScreen)";
+"AUTO_FULLSCREEN_DESC" = "Reproduz videos em tela cheia automaticamente.";
+
+"HIDE_HUD_MESSAGES" = "Ocultar Mensagens do HUD";
+"HIDE_HUD_MESSAGES_DESC" = "Exemplo: Legendas/CC ativadas/desativadas, A repetição do vídeo está ativada,...";
+
+"OLED_DARKMODE" = "Modo escuro OLED (Experimental)";
+"OLED_DARKMODE_DESC" = "Pode não funcionar corretamente em alguns casos. A reinicialização do app é necessária após você ativar/desativar essa opção.";
+
+"OLED_KEYBOARD" = "Teclado OLED (Experimental)";
+"OLED_KEYBOARD_DESC" = "Pode não funcionar corretamente em alguns casos. A reinicialização do app é necessária.";
+
+"HIDE_PAID_PROMOTION_CARDS" = "Ocultar Banner de promoção paga";
+"HIDE_PAID_PROMOTION_CARDS_DESC" = "Oculta o banner 'Contém promoção paga' em alguns vídeos.";
+
+"HIDE_NOTIFICATION_BUTTON" = "Ocultar botão de notificação na Barra de navegação";
+"HIDE_NOTIFICATION_BUTTON_DESC" = "";
