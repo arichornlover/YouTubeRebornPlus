@@ -11,6 +11,9 @@
 //
 // Settings
 
+"KILL_APP" = "Close YouTube";
+"KILL_APP_DESC" = "Tap here to close YouTube!";
+
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Hide Previous and Next button";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
 

@@ -1,12 +1,15 @@
 // Settings
 
+"KILL_APP" = "Đóng ứng dụng";
+"KILL_APP_DESC" = "Chạm để đóng YouTube!";
+
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Ẩn nút Next và nút Previous";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Ẩn nút Next và nút Previous trong trình phát video.";
 
 "HIDE_SHORTS_VIDEOS" = "Ẩn video Shorts";
 "HIDE_SHORTS_VIDEOS_DESC" = "Ẩn các video Shorts trong tab Trang chủ, tab Đề xuất cho bạn...";
 
-"YT_MINIPLAYER" = "Cho phép trình phát thu nhỏ chạy với mọi video";
+"YT_MINIPLAYER" = "Cho phép sử dụng trình phát thu nhỏ với mọi video";
 "YT_MINIPLAYER_DESC" = "Ví dụ: Video cho trẻ em.";
 
 "HIDE_CERCUBE_BUTTON" = "Ẩn nút Setting của Cercube trong thanh điều hướng";
@@ -25,7 +28,7 @@
 "HIDE_WATERMARKS_DESC" = "Ẩn logo watermark của kênh trong trình phát video.";
 
 "HIDE_HOVER_CARD" = "Ẩn video dạng thumbnails (YTNoHoverCards)";
-"HIDE_HOVER_CARD_DESC" = "Ẩn các video dạng thu nhỏ (thumbnails) xuất hiện ở gần cuối video.";
+"HIDE_HOVER_CARD_DESC" = "Ẩn thumbnail của các video đề xuất xuất hiện ở cuối video.";
 
 "NEW_MINIPLAYER_STYLE" = "Giao diện trình phát thu nhỏ kiểu mới (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "Cần khởi động lại ứng dụng.";
@@ -36,23 +39,23 @@
 "HIDE_SUBTITLES_BUTTON" = "Ẩn nút bật Phụ đề";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Ẩn nút bật phụ đề trong trình phát video.";
 
-"HIDE_AUTOPLAY_SWITCH" = "Ẩn công tắc Tự động phát";
+"HIDE_AUTOPLAY_SWITCH" = "Ẩn nút tắc Tự động phát";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "Ẩn công tắc Tự động phát trong trình phát video.";
 
 "AUTO_FULLSCREEN" = "Tự động toàn màn hình (YTAutoFullScreen)";
 "AUTO_FULLSCREEN_DESC" = "Tự động phát video ở chế độ toàn màn hình.";
 
-"HIDE_HUD_MESSAGES" = "Ẩn tin nhắn HUD";
+"HIDE_HUD_MESSAGES" = "Ẩn thông báo HUD";
 "HIDE_HUD_MESSAGES_DESC" = "Ví dụ: Đã bật/tắt phụ đề, Tính năng phát video lặp lại đang bật,...";
 
-"OLED_DARKMODE" = "Chế độ tối OLED (Thử nghiệm)";
-"OLED_DARKMODE_DESC" = "Cần khởi động lại ứng dụng nếu bạn bật/tắt tính năng này, nhưng không cần khởi động lại ứng dụng nếu chuyển giữa chế độ Sáng và chế độ Tối.";
+"OLED_DARKMODE" = "Chế độ tối cho màn OLED (Thử nghiệm)";
+"OLED_DARKMODE_DESC" = "Có thể không hoạt động tốt trong một số trường hợp. Cần khởi động lại ứng dụng nếu bạn bật/tắt tính năng này, nhưng không cần khởi động lại ứng dụng nếu chuyển giữa chế độ Sáng và chế độ Tối.";
 
-"OLED_KEYBOARD" = "Bàn phím OLED (Thử nghiệm)";
-"OLED_KEYBOARD_DESC" = "Tính năng này có thể không hoạt động tốt trong một vài trường hợp. Cần khởi động lại ứng dụng.";
+"OLED_KEYBOARD" = "Bàn phím tối cho màn OLED (Thử nghiệm)";
+"OLED_KEYBOARD_DESC" = "Có thể không hoạt động tốt trong một vài trường hợp. Cần khởi động lại ứng dụng.";
 
-"HIDE_PAID_PROMOTION_CARDS" = "Ẩn popup quảng cáo được trả tiền";
-"HIDE_PAID_PROMOTION_CARDS_DESC" = "Ẩn popup 'Chứa nội dung được trả tiền để quảng cáo' trong một số video.";
+"HIDE_PAID_PROMOTION_CARDS" = "Ẩn banner quảng cáo được trả tiền";
+"HIDE_PAID_PROMOTION_CARDS_DESC" = "Ẩn banner 'Chứa nội dung được trả tiền để quảng cáo' trong một số video.";
 
 "HIDE_NOTIFICATION_BUTTON" = "Ẩn nút thông báo trong thanh điều hướng";
 "HIDE_NOTIFICATION_BUTTON_DESC" = "";
