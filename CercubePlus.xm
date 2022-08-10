@@ -257,9 +257,13 @@ BOOL ytDisableHighContrastIcons () {
 }
 %end
 
-// Enable scroll bar in Shorts videos - credit @level3tjg - https://reddit.com/r/jailbreak/comments/v29yvk/_/iasl1l0/
+// Enable Shorts scroll bar - @PoomSmart & @level3tjg
 %hook YTReelPlayerViewController
-- (BOOL)shouldEnablePlayerBar { return YES; }
+- (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
+%end
+
+%hook YTInlinePlayerBarContainerView
+- (void)setUserInteractionEnabled:(BOOL)enabled { %orig(YES); }
 %end
 
 // Hide Paid Promotion Card
