@@ -5,6 +5,10 @@
 #define YT_NAME @"YouTube"
 
 // CercubePlus
+@interface YTPlayabilityResolutionUserActionUIController : NSObject // Skips content warning before playing *some videos - @PoomSmart
+- (void)confirmAlertDidPressConfirm;
+@end 
+
 @interface YTMainAppControlsOverlayView: UIView
 @end
 

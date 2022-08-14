@@ -16,7 +16,6 @@
 #import "Tweaks/YouTubeHeader/YTPlayerOverlay.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlayProvider.h"
 
-// Tweak's bundle
 NSBundle *CercubePlusLegacyBundle() {
     static NSBundle *bundle = nil;
     static dispatch_once_t onceToken;
@@ -28,7 +27,6 @@ NSBundle *CercubePlusLegacyBundle() {
 }
 NSBundle *tweakBundle = CercubePlusLegacyBundle();
 
-//
 BOOL hideHUD() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
 }
@@ -91,6 +89,17 @@ BOOL hideNotificationButton() {
 }
 
 # pragma mark - Tweaks
+// Enable Reorder videos from playlist while on the Watch page - @PoomSmart
+%hook YTIPlaylistPanelVideoRenderer 
+%new 
+- (BOOL)canReorder { return YES; }
+%end
+
+// Skips content warning before playing *some videos - @PoomSmart
+%hook YTPlayabilityResolutionUserActionUIController
+- (void)showConfirmAlert { [self confirmAlertDidPressConfirm]; }
+%end
+
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
 %hook YTWatchMiniBarViewController
 - (void)updateMiniBarPlayerStateFromRenderer {
@@ -164,8 +173,8 @@ BOOL hideNotificationButton() {
     if (hidePreviousAndNextButton()) { 
 	    MSHookIvar<YTMainAppControlsOverlayView *>(self, "_nextButton").hidden = YES;
     	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;
-    	// MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
-    	// MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
+    	MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
+    	MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
     }
 }
 %end
@@ -194,7 +203,6 @@ BOOL hideNotificationButton() {
 // YTABGoodies - https://poomsmart.github.io/repo/depictions/ytabgoodies.html
 // YouAreThere - https://poomsmart.github.io/repo/depictions/youarethere.html
 // YouRememberCaption - https://poomsmart.github.io/repo/depictions/youremembercaption.html
-// YTSystemAppearance: https://poomsmart.github.io/repo/depictions/ytsystemappearance.html
 %hook YTColdConfig
 - (BOOL)enableYouthereCommandsOnIos { return NO; }
 - (BOOL)respectDeviceCaptionSetting { return NO; }
@@ -244,18 +252,23 @@ BOOL hideNotificationButton() {
 // YTNoHoverCards 0.0.3: https://github.com/level3tjg/YTNoHoverCards
 %hook YTCreatorEndscreenView
 - (void)setHidden:(BOOL)hidden {
-	if (hideHoverCard())
-	hidden = YES;
-	%orig;
+    if (hideHoverCard()) {
+        hidden = YES;
+        %orig;
+    }
 }
 %end
 
-// Enable scroll bar in Shorts videos - credit @level3tjg - https://reddit.com/r/jailbreak/comments/v29yvk/_/iasl1l0/
+// Enable Shorts scroll bar - @PoomSmart & @level3tjg
 %hook YTReelPlayerViewController
-- (BOOL)shouldEnablePlayerBar { return YES; }
+- (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
 %end
 
-// YTNoPaidPromo - https://github.com/PoomSmart/YTNoPaidPromo/
+%hook YTInlinePlayerBarContainerView
+- (void)setUserInteractionEnabled:(BOOL)enabled { %orig(YES); }
+%end
+
+// Hide Paid Promotion Card
 %hook YTMainAppVideoPlayerOverlayViewController
 - (void)setPaidContentWithPlayerData:(id)data {
     if (hidePaidPromotionCard()) {}
@@ -330,7 +343,7 @@ BOOL hideNotificationButton() {
 %end
 
 # pragma mark - OLED dark mode by BandarHL
-UIColor* raisedColor = [UIColor colorWithRed:0.02 green:0.02 blue:0.02 alpha:1.0];
+UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:1.0];
 %group gOLED
 %hook YTCommonColorPalette
 - (UIColor *)brandBackgroundSolid {
@@ -353,7 +366,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.02 green:0.02 blue:0.02 alpha:1.0
 }
 - (UIColor *)raisedBackground {
     if (self.pageStyle == 1) {
-        return raisedColor;
+        return [UIColor blackColor];
     }
         return %orig;
 }
@@ -516,11 +529,11 @@ UIColor* raisedColor = [UIColor colorWithRed:0.02 green:0.02 blue:0.02 alpha:1.0
 - (void)didMoveToWindow {
     %orig;
     if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = raisedColor; }
+        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = [UIColor clearColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.backgroundColor = [UIColor blackColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.backgroundColor = raisedColor; }
+        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.backgroundColor = [UIColor clearColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.filter_chip_bar"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = [UIColor blackColor]; }
@@ -561,7 +574,8 @@ UIColor* raisedColor = [UIColor colorWithRed:0.02 green:0.02 blue:0.02 alpha:1.0
 %end
 %end
 
-%group gOLEDKB // OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
+# pragma mark - OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
+%group gOLEDKB
 %hook UIPredictionViewController
 - (void)loadView {
     %orig;
@@ -578,15 +592,15 @@ UIColor* raisedColor = [UIColor colorWithRed:0.02 green:0.02 blue:0.02 alpha:1.0
 
 %hook UIKeyboardDockView
 - (void)didMoveToWindow {
-    self.backgroundColor = [UIColor blackColor];
     %orig;
+    self.backgroundColor = [UIColor blackColor];
 }
 %end
 
 %hook UIKeyboardLayoutStar 
 - (void)didMoveToWindow {
-    self.backgroundColor = [UIColor blackColor];
     %orig;
+    self.backgroundColor = [UIColor blackColor];
 }
 %end
 
@@ -633,10 +647,10 @@ static void replaceTab(YTIGuideResponse *response) {
 %group Main
 %hook YTWatchMiniBarView
 - (void)setWatchMiniPlayerLayout:(int)arg1 {
-	%orig(1);
+    %orig(1);
 }
 - (int)watchMiniPlayerLayout {
-	return 1;
+    return 1;
 }
 - (void)layoutSubviews {
     %orig;
@@ -676,21 +690,22 @@ static void replaceTab(YTIGuideResponse *response) {
 }
 %end
 
+# pragma mark - ctor
 %ctor {
     %init;
     if (oled()) {
-		%init(gOLED);
+       %init(gOLED);
     }
-	if (oledKB()) {
-		%init(gOLEDKB);
-	}
-	if (reExplore()) {
-        %init(gReExplore);
-	}
-	if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
-        %init(Main);
-	}
+    if (oledKB()) {
+       %init(gOLEDKB);
+    }
+    if (reExplore()) {
+       %init(gReExplore);
+    }
+    if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
+       %init(Main);
+    }
     if (hideCastButton()) {
-        %init(gHideCastButton);
+       %init(gHideCastButton);
     }
 }

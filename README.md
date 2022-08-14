@@ -13,19 +13,21 @@
 
 
 # Credits
-- [Majd Alfhaily](https://twitter.com/freemanrepo?s=21) for [Cercube](https://apt.alfhaily.me/depiction/FDXO5R).
+- [Majd Alfhaily](https://twitter.com/freemanrepo) for [Cercube](https://apt.alfhaily.me/depiction/FDXO5R).
 
-- [Galactic-Dev](https://github.com/Galactic-Dev) and [Luewii](https://github.com/Luewii) for [iSponsorBlockLegacy](https://github.com/Galactic-Dev/iSponsorBlockLegacy) and [BigYTMiniPlayer](https://github.com/Galactic-Dev/BigYTMiniPlayer).
+- [Galactic-Dev](https://github.com/Galactic-Dev) and [Luewii](https://github.com/Luewii) for [iSponsorBlock](https://github.com/Galactic-Dev/iSponsorBlock).
 
 - [HASHBANG Productions](https://github.com/hbang) for [Alderis Color Picker](https://github.com/hbang/Alderis) - a dependency of iSponsorBlock.
 
-- [PoomSmart](https://twitter.com/poomsmart?s=21) - the developer of many tweaks that are used by CercubePlus, such as [YTABGoodies](https://poomsmart.github.io/repo/depictions/ytabgoodies.html), [NOYTPremium](https://poomsmart.github.io/repo/depictions/noytpremium.html), [YTClassicVideoQuality](https://poomsmart.github.io/repo/depictions/ytclassicvideoquality.html), [YTAutoFullScreen](https://github.com/PoomSmart/YTAutoFullScreen/), [YTReExplore](https://github.com/PoomSmart/YTReExplore/), and [Return YouTube Dislike](https://github.com/PoomSmart/Return-YouTube-Dislikes)
+- [PoomSmart](https://twitter.com/poomsmart) - the developer of many tweaks used by CercubePlus, see [Version info - Download](#download) for more details.
 
-- [level3tjg](https://twitter.com/level3tjg) - for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards) and [YTMiniplayerEnabler](https://github.com/level3tjg/YTMiniplayerEnabler).
+- [level3tjg](https://twitter.com/level3tjg) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards) and [YTMiniplayerEnabler](https://github.com/level3tjg/YTMiniplayerEnabler).
+
+- [BandarHL](https://twitter.com/bandarhl) for a bunch of improvements.
 
 - [MiRO92](https://twitter.com/miro92) for [YTNoShorts](https://github.com/MiRO92/YTNoShorts/blob/main/Tweak.h).
 
-- [Al4ise](https://github.com/Al4ise) for [Azule](https://github.com/Al4ise/Azule), a tool used to inject jailbreak tweaks into jailed iOS apps.
+- [YouTube Extensions](https://github.com/CokePokes/YoutubeExtensions) by [CokePokes](https://github.com/CokePokes/).
 
 - [theos team](https://github.com/theos/theos) for theos & theos-jailed.
 
@@ -84,29 +86,30 @@
 - Older versions can be found [here](https://27man-my.sharepoint.com/:f:/g/personal/qn____27man_onmicrosoft_com/EoHq5P3wr8ZIs0HT2PLv-fEBIMQucxNFLokbPOZdVEwQPQ?e=dyqH9Y).
 
 - For AltStore user: 
-  - My official AtlStore repo: https://qnblackcat.github.io/AltStore/
+  - My official AtlStore repo: https://qnblackcat.github.io/AltStore/ (You can't install the app directly but you still can download the IPA normally).
 
-  - **CercubePlus (Legacy)**: [Open in AltStore (v17.25.1-5.3.10)](https://tinyurl.com/4eue598h) - It will take a while to install because AltStore needs to download the IPA.
+  - **CercubePlus (Legacy)**: [Open in AltStore (v17.31.4-5.3.10)](https://tinyurl.com/23k3vtpk) - It will take a while to install because AltStore needs to download the IPA.
 
-- Version info: _(Jul 04)_
+- Version info: _(Aug 14)_
 <details>
   <summary>Expand:</summary>
   
-| **Tweaks/App** | **Version** | **Open source** |
-| :------------: | :----------:| :-------------: |
-| **YouTube** | 17.25.1 | ✖︎ |
-| **Cercube** | 5.3.10 | ✖︎ |
-| **Return YouTube Dislike** | 1.6.5 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
-| **iSponsorBlockLegacy** | 1.0-13~ios12b2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
-| **Alderis Color Picker** | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
-| **YTABGoodies** | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
-| **NoYTPremium** | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
-| **YTClassicVideoQuality** | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
-| **YTNoHoverCards** | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
-| **YTAutoFullScreen** | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen/) |
-| **YTReExplore** | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
-| **BigYTMiniPlayer** | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
-| **YTNoShorts** | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
+| **Tweaks/App** | **Developer** | **Version** | **Open source** |
+| - | - | :-: | :-:  |
+| **YouTube** | Google Inc | 17.31.4 | ✖︎ |
+| **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.10 | ✖︎ |
+| **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
+| **iSponsorBlockLegacy** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
+| **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
+| **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
+| **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
+| **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
+| **YTReExplore** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
+| **NoYTPremium** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
+| **YTABGoodies** | [PoomSmart](https://twitter.com/poomsmart) | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
+| **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
+| **YTClassicVideoQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
+| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.6.6 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 
 </details>
 
