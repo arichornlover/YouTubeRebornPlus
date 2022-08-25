@@ -95,6 +95,11 @@ BOOL hideNotificationButton() {
 - (BOOL)canReorder { return YES; }
 %end
 
+// Skips content warning before playing *some videos - @PoomSmart
+%hook YTPlayabilityResolutionUserActionUIController
+- (void)showConfirmAlert { [self confirmAlertDidPressConfirm]; }
+%end
+
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
 %hook YTWatchMiniBarViewController
 - (void)updateMiniBarPlayerStateFromRenderer {
@@ -333,6 +338,23 @@ BOOL hideNotificationButton() {
         return YT_BUNDLE_ID;
     if ([key isEqualToString:@"CFBundleDisplayName"] || [key isEqualToString:@"CFBundleName"])
         return YT_NAME;
+    return %orig;
+}
+%end
+
+// Fix "You can't sign in to this app because Google can't confirm that it's safe" warning when signing in. by julioverne & PoomSmart
+// https://gist.github.com/PoomSmart/ef5b172fd4c5371764e027bea2613f93
+// https://github.com/qnblackcat/uYouPlus/pull/398
+%hook SSOService
++ (id)fetcherWithRequest:(NSMutableURLRequest *)request configuration:(id)configuration {
+    if ([request isKindOfClass:[NSMutableURLRequest class]] && request.HTTPBody) {
+        NSError *error = nil;
+        NSMutableDictionary *body = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:NSJSONReadingMutableContainers error:&error];
+        if (!error && [body isKindOfClass:[NSMutableDictionary class]]) {
+            [body removeObjectForKey:@"device_challenge_request"];
+            request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:kNilOptions error:&error];
+        }
+    }
     return %orig;
 }
 %end
