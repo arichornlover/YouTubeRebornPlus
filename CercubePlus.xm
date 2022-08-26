@@ -27,6 +27,25 @@ NSBundle *CercubePlusBundle() {
 }
 NSBundle *tweakBundle = CercubePlusBundle();
 
+// Keychain fix
+static NSString *accessGroupID() {
+    NSDictionary *query = [NSDictionary dictionaryWithObjectsAndKeys:
+                           (__bridge NSString *)kSecClassGenericPassword, (__bridge NSString *)kSecClass,
+                           @"bundleSeedID", kSecAttrAccount,
+                           @"", kSecAttrService,
+                           (id)kCFBooleanTrue, kSecReturnAttributes,
+                           nil];
+    CFDictionaryRef result = nil;
+    OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)query, (CFTypeRef *)&result);
+    if (status == errSecItemNotFound)
+        status = SecItemAdd((__bridge CFDictionaryRef)query, (CFTypeRef *)&result);
+        if (status != errSecSuccess)
+            return nil;
+    NSString *accessGroup = [(__bridge NSDictionary *)result objectForKey:(__bridge NSString *)kSecAttrAccessGroup];
+
+    return accessGroup;
+}
+
 BOOL hideHUD() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
 }
@@ -96,6 +115,11 @@ BOOL ytDisableHighContrastIcons () {
 %hook YTIPlaylistPanelVideoRenderer 
 %new 
 - (BOOL)canReorder { return YES; }
+%end
+
+// Skips content warning before playing *some videos - @PoomSmart
+%hook YTPlayabilityResolutionUserActionUIController
+- (void)showConfirmAlert { [self confirmAlertDidPressConfirm]; }
 %end
 
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
@@ -337,6 +361,47 @@ BOOL ytDisableHighContrastIcons () {
     if ([key isEqualToString:@"CFBundleDisplayName"] || [key isEqualToString:@"CFBundleName"])
         return YT_NAME;
     return %orig;
+}
+%end
+
+// Fix "You can't sign in to this app because Google can't confirm that it's safe" warning when signing in. by julioverne & PoomSmart
+// https://gist.github.com/PoomSmart/ef5b172fd4c5371764e027bea2613f93
+// https://github.com/qnblackcat/uYouPlus/pull/398
+%hook SSOService
++ (id)fetcherWithRequest:(NSMutableURLRequest *)request configuration:(id)configuration {
+    if ([request isKindOfClass:[NSMutableURLRequest class]] && request.HTTPBody) {
+        NSError *error = nil;
+        NSMutableDictionary *body = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:NSJSONReadingMutableContainers error:&error];
+        if (!error && [body isKindOfClass:[NSMutableDictionary class]]) {
+            [body removeObjectForKey:@"device_challenge_request"];
+            request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:kNilOptions error:&error];
+        }
+    }
+    return %orig;
+}
+%end
+
+// Fix login for YouTube 17.33.2 and higher - @BandarHL
+// https://gist.github.com/BandarHL/492d50de46875f9ac7a056aad084ac10
+%hook SSOKeychainCore
++ (NSString *)accessGroup {
+    return accessGroupID();
+}
+
++ (NSString *)sharedAccessGroup {
+    return accessGroupID();
+}
+%end
+
+// Fix App Group Directory by move it to document directory
+%hook NSFileManager
+- (NSURL *)containerURLForSecurityApplicationGroupIdentifier:(NSString *)groupIdentifier {
+    if (groupIdentifier != nil) {
+        NSArray *paths = [[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask];
+        NSURL *documentsURL = [paths lastObject];
+        return [documentsURL URLByAppendingPathComponent:@"AppGroup"];
+    }
+    return %orig(groupIdentifier);
 }
 %end
 

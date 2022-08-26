@@ -25,6 +25,8 @@
 
 - [BandarHL](https://twitter.com/bandarhl) for a bunch of improvements.
 
+- [Julioverne](https://twitter.com/ijulioverne) for the solution to skip Google's safety warning when logging in.
+
 - [MiRO92](https://twitter.com/miro92) for [YTNoShorts](https://github.com/MiRO92/YTNoShorts/blob/main/Tweak.h).
 
 - [YouTube Extensions](https://github.com/CokePokes/YoutubeExtensions) by [CokePokes](https://github.com/CokePokes/).
@@ -91,16 +93,16 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- For AltStore user: [Open in AltStore (v17.31.4-5.3.10)](https://tinyurl.com/ycyje6yw) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v17.33.2-5.3.10)](https://tinyurl.com/2p8k7fzw) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Aug 12)_
+- Version info: _(Aug 26)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 17.31.4 | ✖︎ |
+| **YouTube** | Google Inc | 17.33.2 | ✖︎ |
 | **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.10 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
@@ -146,9 +148,7 @@ any many more...
 <details>
   <summary>MiRO92</summary>
   
-- CashApp: https://cash.app/$MiRO92M
- 
-- Other payment methods are available in uYou's settings.
+- https://github.com/MiRO92/uYou-for-YouTube#support
 </details>
 
 # Building (optional)

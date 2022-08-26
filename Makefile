@@ -14,7 +14,7 @@ CercubePlus_INJECT_DYLIBS = Tweaks/Cercube/Library/MobileSubstrate/DynamicLibrar
 CercubePlus_FILES = CercubePlus.xm Settings.xm
 CercubePlus_IPA = ./tmp/Payload/YouTube.app
 CercubePlus_CFLAGS = -fobjc-arc
-CercubePlus_FRAMEWORKS = UIKit
+CercubePlus_FRAMEWORKS = UIKit Security
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/tweak.mk
