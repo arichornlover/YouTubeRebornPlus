@@ -93,17 +93,17 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- For AltStore user: [Open in AltStore (v17.33.2-5.3.10)](https://tinyurl.com/2p8k7fzw) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v17.34.3-5.3.11)](https://tinyurl.com/yc7bw3s4) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Aug 26)_
+- Version info: _(Sep 01)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 17.33.2 | ✖︎ |
-| **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.10 | ✖︎ |
+| **YouTube** | Google Inc | 17.34.3 | ✖︎ |
+| **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -111,7 +111,7 @@ any many more...
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
 | **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.9 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.7 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.9 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
@@ -123,34 +123,14 @@ any many more...
 </details>
 
 # Support the developers
-
-<details>
-  <summary>Poomsmart</summary>
-
-- Paypal: https://poomsmart.github.io/
-
-</details>
-
-<details>
-  <summary>Bandar Alruwaili (BandarHL)</summary>
-
-- Paypal: https://www.paypal.com/paypalme/BandarHL
-</details>
-
-<details>
-  <summary>Galactic-dev</summary>
-  
-- Paypal: https://www.paypal.com/paypalme/DBrett684 
-
-- Venmo: https://venmo.com/u/DavidBrett
-</details>
-
-<details>
-  <summary>MiRO92</summary>
-  
-- https://github.com/MiRO92/uYou-for-YouTube#support
-</details>
+- [**MiRO92**](https://twitter.com/miro92): https://github.com/MiRO92/uYou-for-YouTube#support
+- [**Poomsmart**](https://twitter.com/poomsmart): https://poomsmart.github.io
+- [**level3tjg**](https://twitter.com/level3tjg): https://ko-fi.com/level3tjg
+- [**BandarHL**](https://twitter.com/bandarhl): https://www.paypal.com/paypalme/BandarHL
+- [**julioverne**](https://twitter.com/ijulioverne): https://www.patreon.com/julioverne
+- [**Galactic-dev**](https://twitter.com/dev_galactic):   
+  - Paypal: https://www.paypal.com/paypalme/DBrett684 
+  - Venmo: https://venmo.com/u/DavidBrett
 
 # Building (optional)
-
 See [Building - Wiki](https://github.com/qnblackcat/CercubePlus/wiki/Building)
