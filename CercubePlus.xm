@@ -106,6 +106,12 @@ BOOL hidePaidPromotionCard() {
 BOOL hideNotificationButton() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideNotificationButton_enabled"];
 }
+BOOL fixGoogleSigin() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"fixGoogleSigin_enabled"];
+}
+BOOL replacePreviousAndNextButton() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"replacePreviousAndNextButton_enabled"];
+}
 
 # pragma mark - Tweaks
 // Enable Reorder videos from playlist while on the Watch page - @PoomSmart
@@ -177,7 +183,7 @@ BOOL hideNotificationButton() {
 }
 %end
 
-// Hide CC / Autoplay switch / Next & Previous button
+// Hide CC / Autoplay switch
 %hook YTMainAppControlsOverlayView
 - (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC button
     if (hideCC()) { return %orig(NO); }   
@@ -187,15 +193,22 @@ BOOL hideNotificationButton() {
     if (hideAutoplaySwitch()) {}
     else { return %orig; }
 }
-- (void)layoutSubviews { // hide Next & Previous button
-    %orig;
-    if (hidePreviousAndNextButton()) { 
-	    MSHookIvar<YTMainAppControlsOverlayView *>(self, "_nextButton").hidden = YES;
-    	MSHookIvar<YTMainAppControlsOverlayView *>(self, "_previousButton").hidden = YES;
-    	MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").hidden = YES;
-    	MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").hidden = YES;
-    }
-}
+%end
+
+// Hide Next & Previous button
+%group gHidePreviousAndNextButton
+%hook YTColdConfig
+- (BOOL)removeNextPaddleForSingletonVideos { return YES; }
+- (BOOL)removePreviousPaddleForSingletonVideos { return YES; }
+%end
+%end
+
+// Replace Next & Previous button with Fast forward & Rewind button
+%group gReplacePreviousAndNextButton
+%hook YTColdConfig
+- (BOOL)replaceNextPaddleWithFastForwardButtonForSingletonVods { return YES; }
+- (BOOL)replacePreviousPaddleWithRewindButtonForSingletonVods { return YES; }
+%end
 %end
 
 // Hide HUD Messages
@@ -225,6 +238,7 @@ BOOL hideNotificationButton() {
 %hook YTColdConfig
 - (BOOL)enableYouthereCommandsOnIos { return NO; }
 - (BOOL)respectDeviceCaptionSetting { return NO; }
+- (BOOL)isLandscapeEngagementPanelSwipeRightToDismissEnabled { return YES; }
 %end
 
 %hook YTYouThereController
@@ -372,6 +386,7 @@ BOOL hideNotificationButton() {
 // Fix "You can't sign in to this app because Google can't confirm that it's safe" warning when signing in. by julioverne & PoomSmart
 // https://gist.github.com/PoomSmart/ef5b172fd4c5371764e027bea2613f93
 // https://github.com/qnblackcat/uYouPlus/pull/398
+%group gDevice_challenge_request_hack
 %hook SSOService
 + (id)fetcherWithRequest:(NSMutableURLRequest *)request configuration:(id)configuration {
     if ([request isKindOfClass:[NSMutableURLRequest class]] && request.HTTPBody) {
@@ -384,6 +399,7 @@ BOOL hideNotificationButton() {
     }
     return %orig;
 }
+%end
 %end
 
 // Fix login for YouTube 17.33.2 and higher - @BandarHL
@@ -774,5 +790,14 @@ static void replaceTab(YTIGuideResponse *response) {
     }
     if (hideCastButton()) {
        %init(gHideCastButton);
+    }
+    if (hidePreviousAndNextButton()) {
+        %init(gHidePreviousAndNextButton);
+    }
+    if (replacePreviousAndNextButton()) {
+        %init(gReplacePreviousAndNextButton);
+    }
+    if (!fixGoogleSigin()) {
+        %init(gDevice_challenge_request_hack);
     }
 }

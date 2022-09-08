@@ -29,6 +29,8 @@ extern BOOL hideShorts();
 extern BOOL hidePreviousAndNextButton();
 extern BOOL hidePaidPromotionCard();
 extern BOOL hideNotificationButton();
+extern BOOL fixGoogleSigin();
+extern BOOL replacePreviousAndNextButton();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -56,6 +58,24 @@ extern BOOL hideNotificationButton();
     selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         exit(0);
     }];
+
+    YTSettingsSectionItem *replacePreviousAndNextButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON") titleDescription:LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON_DESC")];
+    replacePreviousAndNextButton.hasSwitch = YES;
+    replacePreviousAndNextButton.switchVisible = YES;
+    replacePreviousAndNextButton.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"replacePreviousAndNextButton_enabled"];
+    replacePreviousAndNextButton.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"replacePreviousAndNextButton_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *fixGoogleSigin = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"FIX_GOOGLE_SIGNIN") titleDescription:LOC(@"FIX_GOOGLE_SIGNIN_DESC")];
+    fixGoogleSigin.hasSwitch = YES;
+    fixGoogleSigin.switchVisible = YES;
+    fixGoogleSigin.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"fixGoogleSigin_enabled"];
+    fixGoogleSigin.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"fixGoogleSigin_enabled"];
+        return YES;
+    };
 
     YTSettingsSectionItem *hideNotificationButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"HIDE_NOTIFICATION_BUTTON") titleDescription:LOC(@"HIDE_NOTIFICATION_BUTTON_DESC")];
     hideNotificationButton.hasSwitch = YES;
@@ -228,7 +248,7 @@ extern BOOL hideNotificationButton();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[killApp, autoFull, ytMiniPlayer, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[killApp, autoFull, ytMiniPlayer, fixGoogleSigin, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, replacePreviousAndNextButton, reExplore]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 
