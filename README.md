@@ -93,16 +93,16 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- For AltStore user: [Open in AltStore (v17.34.3-5.3.11)](https://tinyurl.com/yc7bw3s4) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v17.35.3-5.3.11)](https://tinyurl.com/4bt4ksb8) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Sep 01)_
+- Version info: _(Sep 08)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 17.34.3 | ✖︎ |
+| **YouTube** | Google Inc | 17.35.3 | ✖︎ |
 | **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
@@ -118,7 +118,7 @@ any many more...
 | **YTABGoodies** | [PoomSmart](https://twitter.com/poomsmart) | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
 | **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YTClassicVideoQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
-| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.6.6 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.6.7 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 
 </details>
 
