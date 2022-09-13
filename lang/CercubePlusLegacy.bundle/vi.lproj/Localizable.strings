@@ -1,5 +1,11 @@
 // Settings
 
+"REPLACE_PREVIOUS_NEXT_BUTTON" = "Thay thế nút chuyển video";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Thay thế nút chuyển video bằng nút tua nhanh. Cần khởi động lại ứng dụng.";
+
+"FIX_GOOGLE_SIGNIN" = "Sửa lỗi không thể đăng nhập tài khoản Google";
+"FIX_GOOGLE_SIGNIN_DESC" = "Lưu ý rằng tính năng này chỉ hoạt động khi ứng dụng được cài đặt bằng TrollStore: Bật tính năng này để sửa lỗi không thể đăng nhập bằng tài khoản Google. Cần khởi động lại ứng dụng.";
+
 "KILL_APP" = "Đóng ứng dụng";
 "KILL_APP_DESC" = "Chạm để đóng YouTube!";
 

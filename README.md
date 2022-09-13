@@ -1,4 +1,6 @@
 # ⚠️⚠️⚠️ This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa) ⚠️⚠️⚠️
+### ☞ Because YouTube v17.36.3 drops iOS 12 & 13 supports. This will be the last release of CercubePlus Legacy!
+### ☞ _[How to sign in to YouTube](https://github.com/qnblackcat/uYouPlus/discussions/447)_
 ### ☞ _Expected bugs because I cannot test the IPA my self!_
 ### ☞ _YTUHD is removed because most iOS 12 devices don't support VP9 codec (Hardware restriction)._
 ### ☞ _iOS 12 doesn't have the built-in Picture in Picture mode like iOS 14+, so YouPiP must be removed as well._
@@ -25,12 +27,11 @@
 
 - [BandarHL](https://twitter.com/bandarhl) for a bunch of improvements.
 
+- [Julioverne](https://twitter.com/ijulioverne) for the solution to skip Google's safety warning when logging in.
+
 - [MiRO92](https://twitter.com/miro92) for [YTNoShorts](https://github.com/MiRO92/YTNoShorts/blob/main/Tweak.h).
 
-- [YouTube Extensions](https://github.com/CokePokes/YoutubeExtensions) by [CokePokes](https://github.com/CokePokes/).
-
 - [theos team](https://github.com/theos/theos) for theos & theos-jailed.
-
 
 # Features
 
@@ -66,18 +67,6 @@
 7. **NOYTPremium:** remove YouTube Premium upsell alerts.
 </details>
 
-
-# Known issues
-
-1. **Cercube**: Hide Cast button is not working.
-
-2. **Not a bug**: 
-
-- The app won't be able to receive push notifications if you use a free developer account to sideload it. 
-
-- It's impossible to fix deep-link (a.k.a Open in the YouTube app). However, you can use this [Shortcuts](https://shortcutsgallery.com/shortcuts/open-in-youtube/) as a workaround (tested on iOS 14). **Credit:** RandomAccessMemories#5025
-
-
 # Download (IPA)
 ### ⚠️⚠️⚠️ DO NOT DOWNLOAD THE IPA FROM THE RELEASE TAB!!! ⚠️⚠️⚠️
 
@@ -85,18 +74,15 @@
 
 - Older versions can be found [here](https://27man-my.sharepoint.com/:f:/g/personal/qn____27man_onmicrosoft_com/EoHq5P3wr8ZIs0HT2PLv-fEBIMQucxNFLokbPOZdVEwQPQ?e=dyqH9Y).
 
-- For AltStore user: 
-  - My official AtlStore repo: https://qnblackcat.github.io/AltStore/ (You can't install the app directly but you still can download the IPA normally).
+- For AltStore user: [Open in AltStore (v17.35.3-5.3.11)](https://tinyurl.com/4bt4ksb8) - It will take a while to install because AltStore needs to download the IPA first.
 
-  - **CercubePlus (Legacy)**: [Open in AltStore (v17.31.4-5.3.10)](https://tinyurl.com/23k3vtpk) - It will take a while to install because AltStore needs to download the IPA.
-
-- Version info: _(Aug 14)_
+- Version info: _(Sep 13)_
 <details>
   <summary>Expand:</summary>
   
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 17.31.4 | ✖︎ |
+| **YouTube** | Google Inc | 17.35.3 | ✖︎ |
 | **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.10 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlockLegacy** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
@@ -109,34 +95,19 @@
 | **YTABGoodies** | [PoomSmart](https://twitter.com/poomsmart) | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
 | **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YTClassicVideoQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
-| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.6.6 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.6.8 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 
 </details>
 
 # Support the developers
-
-<details>
-  <summary>Poomsmart</summary>
-
-- Paypal: https://poomsmart.github.io/
-
-</details>
-
-<details>
-  <summary>Galactic-dev</summary>
-  
-- Paypal: https://www.paypal.com/paypalme/DBrett684 
-
-- Venmo: https://venmo.com/u/DavidBrett
-</details>
-
-<details>
-  <summary>MiRO92</summary>
-  
-- CashApp: https://cash.app/$MiRO92M
- 
-- Other payment methods are available in uYou's settings.
-</details>
+- [**MiRO92**](https://twitter.com/miro92): https://github.com/MiRO92/uYou-for-YouTube#support
+- [**Poomsmart**](https://twitter.com/poomsmart): https://poomsmart.github.io
+- [**level3tjg**](https://twitter.com/level3tjg): https://ko-fi.com/level3tjg
+- [**BandarHL**](https://twitter.com/bandarhl): https://www.paypal.com/paypalme/BandarHL
+- [**julioverne**](https://twitter.com/ijulioverne): https://www.patreon.com/julioverne
+- [**Galactic-dev**](https://twitter.com/dev_galactic):   
+  - Paypal: https://www.paypal.com/paypalme/DBrett684 
+  - Venmo: https://venmo.com/u/DavidBrett
 
 # Building (optional)
 
