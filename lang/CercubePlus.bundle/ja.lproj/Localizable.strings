@@ -1,0 +1,67 @@
+// Settings
+
+"REPLACE_PREVIOUS_NEXT_BUTTON" = "前へ、次へボタンを置き換える";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "前へ、次へボタンを早送り、巻き戻しボタンに置き換えます。アプリの再起動が必要です。";
+
+"FIX_GOOGLE_SIGNIN" = "Googleサインインを修正する (TrollStoreを使用している場合のみ)";
+"FIX_GOOGLE_SIGNIN_DESC" = "アプリがTrollStore経由でインストールされた場合にのみ機能します： このオプションをオンにすると、Googleアカウントでサインインができます。アプリの再起動が必要です。";
+
+"KILL_APP" = "YouTubeを閉じる";
+"KILL_APP_DESC" = "ここをタップしてYouTubeを閉じます！";
+
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "前へ、次へボタンを非表示";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "ビデオコントロールオーバーレイの前へ、次へボタンを非表示にします。";
+
+"HIDE_SHORTS_VIDEOS" = "ショートを非表示";
+"HIDE_SHORTS_VIDEOS_DESC" = "ホームページからショートを非表示にします, 推奨…";
+
+"YT_MINIPLAYER" = "全てのYouTubeのビデオにミニプレーヤーを有効化";
+"YT_MINIPLAYER_DESC" = "子供向け動画など…";
+
+"HIDE_CERCUBE_BUTTON" = "ナビゲーションバーのCercubeボタンを非表示";
+"HIDE_CERCUBE_BUTTON_DESC" = "";
+
+"HIDE_CERCUBE_PIP_BUTTON" = "CercubeのPiPボタンを非表示";
+"HIDE_CERCUBE_PIP_BUTTON_DESC" = "ビデオコントロールオーバーレイでCercubeのPiPボタンを非表示にします。";
+
+"HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Cercubeのダウンロードボタンを非表示";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "ビデオコントロールオーバーレイでCercubeのダウンロードボタンを非表示にします。";
+
+"HIDE_CAST_BUTTON" = "キャストボタンを非表示";
+"HIDE_CAST_BUTTON_DESC" = "アプリの再起動が必要です。";
+
+"HIDE_WATERMARKS" = "ウォーターマークを非表示";
+"HIDE_WATERMARKS_DESC" = "ビデオコントロールオーバーレイでチャンネルのウォーターマークを非表示にします。";
+
+"HIDE_HOVER_CARD" = "終了画面のホバーカードを非表示 (YTNoHoverCards)";
+"HIDE_HOVER_CARD_DESC" = "ビデオ終了時のクリエーターの終了画面(サムネイル)を非表示にします。";
+
+"NEW_MINIPLAYER_STYLE" = "新しいミニプレーヤースタイル (BigYTMiniPlayer)";
+"NEW_MINIPLAYER_STYLE_DESC" = "アプリの再起動が必要です。";
+
+"YT_RE_EXPLORE" = "ショートタブを探索タブに置き換える (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "アプリの再起動が必要です。";
+
+"HIDE_SUBTITLES_BUTTON" = "字幕ボタンを非表示";
+"HIDE_SUBTITLES_BUTTON_DESC" = "ビデオコントロールオーバーレイの字幕ボタンを非表示にします。";
+
+"HIDE_AUTOPLAY_SWITCH" = "自動再生スイッチを非表示";
+"HIDE_AUTOPLAY_SWITCH_DESC" = "ビデオコントロールオーバーレイの自動再生スイッチを非表示にします。";
+
+"AUTO_FULLSCREEN" = "自動フルスクリーン (YTAutoFullScreen)";
+"AUTO_FULLSCREEN_DESC" = "フルスクリーンでビデオを自動再生します。";
+
+"HIDE_HUD_MESSAGES" = "HUDメッセージを非表示";
+"HIDE_HUD_MESSAGES_DESC" = "例: CCはオン/オフです, ビデオループはオンです,…";
+
+"OLED_DARKMODE" = "OLEDダークモード (実験的)";
+"OLED_DARKMODE_DESC" = "正しく動作しない場合がございます。このオプションを有効化/無効化した後にアプリの再起動が必要です。";
+
+"OLED_KEYBOARD" = "OLEDキーボード (実験的)";
+"OLED_KEYBOARD_DESC" = "正しく動作しない場合がございます。アプリの再起動が必要です。";
+
+"HIDE_PAID_PROMOTION_CARDS" = "有料プロモーションカードを非表示";
+"HIDE_PAID_PROMOTION_CARDS_DESC" = "一部の動画の「有料プロモーションを含みます」カードを非表示にします。";
+
+"HIDE_NOTIFICATION_BUTTON" = "ナビゲーションバーの通知ボタンを非表示";
+"HIDE_NOTIFICATION_BUTTON_DESC" = "";
