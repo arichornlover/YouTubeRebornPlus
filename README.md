@@ -70,7 +70,7 @@
 # Download (IPA)
 ### ⚠️⚠️⚠️ DO NOT DOWNLOAD THE IPA FROM THE RELEASE TAB!!! ⚠️⚠️⚠️
 
-- **CercubePlus (Legacy)** requires iOS & iPadOS 12.0. Get the latest IPA [here](https://27man-my.sharepoint.com/:u:/g/personal/qn____27man_onmicrosoft_com/EQ-83y5qflZJu0rNVOct1UkBRfiKnJMfqnnhk39ctuoD_g?download=1). 
+- **CercubePlus (Legacy)** requires iOS & iPadOS 12.0. Get the latest IPA [here](https://27man-my.sharepoint.com/:u:/g/personal/qn____27man_onmicrosoft_com/Eeeh0Cxz3nFLh9DKqUIs3C0BIbPTA60ipOgEPW4O78qfqQ?download=1). 
 
 - Older versions can be found [here](https://27man-my.sharepoint.com/:f:/g/personal/qn____27man_onmicrosoft_com/EoHq5P3wr8ZIs0HT2PLv-fEBIMQucxNFLokbPOZdVEwQPQ?e=dyqH9Y).
 
