@@ -1,5 +1,5 @@
 # ⚠️⚠️⚠️ This version is made for iOS 12 user. Get the IPA in the [Download section](#download-ipa) ⚠️⚠️⚠️
-### ☞ Because YouTube v17.36.3 drops iOS 12 & 13 supports. This will be the last release of CercubePlus Legacy!
+### ~~☞ Because YouTube v17.36.3 drops iOS 12 & 13 supports. This will be the last release of CercubePlus Legacy!~~
 ### ☞ _[How to sign in to YouTube](https://github.com/qnblackcat/uYouPlus/discussions/447)_
 ### ☞ _Expected bugs because I cannot test the IPA my self!_
 ### ☞ _YTUHD is removed because most iOS 12 devices don't support VP9 codec (Hardware restriction)._
@@ -74,15 +74,15 @@
 
 - Older versions can be found [here](https://27man-my.sharepoint.com/:f:/g/personal/qn____27man_onmicrosoft_com/EoHq5P3wr8ZIs0HT2PLv-fEBIMQucxNFLokbPOZdVEwQPQ?e=dyqH9Y).
 
-- For AltStore user: [Open in AltStore (v17.35.3-5.3.11)](https://tinyurl.com/5aj3w768) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v17.36.4-5.3.11)](https://tinyurl.com/4zk94ux3) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Sep 13)_
+- Version info: _(Sep 17)_
 <details>
   <summary>Expand:</summary>
   
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 17.35.3 | ✖︎ |
+| **YouTube** | Google Inc | 17.36.4 | ✖︎ |
 | **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.11 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlockLegacy** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
