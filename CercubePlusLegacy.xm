@@ -650,6 +650,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 - (void)didMoveToWindow {
     %orig;
     if (isDarkMode()) { 
+        self.backgroundColor = raisedColor;
         self.subviews[1].backgroundColor = raisedColor;
         self.superview.backgroundColor = raisedColor;
     }
@@ -800,3 +801,4 @@ static void replaceTab(YTIGuideResponse *response) {
     if (!fixGoogleSigin()) {
         %init(gDevice_challenge_request_hack);
     }
+}

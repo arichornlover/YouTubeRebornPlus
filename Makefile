@@ -11,7 +11,7 @@ BUNDLE_ID = com.google.ios.youtube
 
 CercubePlusLegacy_INJECT_DYLIBS = Tweaks/Cercube/Library/MobileSubstrate/DynamicLibraries/Cercube.dylib .theos/obj/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YouTubeDislikesReturn.dylib 
 CercubePlusLegacy_FILES = CercubePlusLegacy.xm Settings.xm
-CercubePlusLegacy_IPA = /System/Volumes/Data/Volumes/Data_Macintosh/Sideloads/IPAs/YouTube_17.35.3_Qn_.ipa
+CercubePlusLegacy_IPA = /System/Volumes/Data/Volumes/Data_Macintosh/Sideloads/IPAs/YouTube_17.36.4_Qn_.ipa
 ### Important: edit the path to your decrypted YouTube IPA!!! 
 CercubePlusLegacy_CFLAGS = -fobjc-arc
 CercubePlusLegacy_FRAMEWORKS = UIKit Security
