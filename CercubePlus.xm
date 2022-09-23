@@ -106,8 +106,8 @@ BOOL hidePaidPromotionCard() {
 BOOL hideNotificationButton() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideNotificationButton_enabled"];
 }
-BOOL fixGoogleSigin() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"fixGoogleSigin_enabled"];
+BOOL fixGoogleSignIn() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"fixGoogleSignIn_enabled"];
 }
 BOOL replacePreviousAndNextButton() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"replacePreviousAndNextButton_enabled"];
@@ -383,9 +383,34 @@ BOOL replacePreviousAndNextButton() {
 }
 %end
 
+// Fix "Google couldn't confirm this attempt to sign in is safe. If you think this is a mistake, you can close and try again to sign in" - qnblackcat/uYouPlus#420
+// Thanks to @AhmedBafkir and @kkirby - https://github.com/qnblackcat/uYouPlus/discussions/447#discussioncomment-3672881
+%group gFixGoogleSignIn
+%hook SSORPCService
++ (id)URLFromURL:(id)arg1 withAdditionalFragmentParameters:(NSDictionary *)arg2 {
+    NSURL *orig = %orig;
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:orig resolvingAgainstBaseURL:NO];
+    NSMutableArray *newQueryItems = [urlComponents.queryItems mutableCopy];
+    for (NSURLQueryItem *queryItem in urlComponents.queryItems) {
+        if ([queryItem.name isEqualToString:@"system_version"]
+         || [queryItem.name isEqualToString:@"app_version"]
+         || [queryItem.name isEqualToString:@"kdlc"]
+         || [queryItem.name isEqualToString:@"kss"]
+         || [queryItem.name isEqualToString:@"lib_ver"]
+         || [queryItem.name isEqualToString:@"device_model"]) {
+            [newQueryItems removeObject:queryItem];
+        }
+    }
+    urlComponents.queryItems = [newQueryItems copy];
+    return urlComponents.URL;
+}
+%end
+%end
+
 // Fix "You can't sign in to this app because Google can't confirm that it's safe" warning when signing in. by julioverne & PoomSmart
 // https://gist.github.com/PoomSmart/ef5b172fd4c5371764e027bea2613f93
 // https://github.com/qnblackcat/uYouPlus/pull/398
+/* 
 %group gDevice_challenge_request_hack
 %hook SSOService
 + (id)fetcherWithRequest:(NSMutableURLRequest *)request configuration:(id)configuration {
@@ -401,6 +426,7 @@ BOOL replacePreviousAndNextButton() {
 }
 %end
 %end
+*/ 
 
 // Fix login for YouTube 17.33.2 and higher - @BandarHL
 // https://gist.github.com/BandarHL/492d50de46875f9ac7a056aad084ac10
@@ -798,7 +824,7 @@ static void replaceTab(YTIGuideResponse *response) {
     if (replacePreviousAndNextButton()) {
        %init(gReplacePreviousAndNextButton);
     }
-    if (!fixGoogleSigin()) {
-       %init(gDevice_challenge_request_hack);
+    if (!fixGoogleSignIn()) {
+       %init(gFixGoogleSignIn);
     }
 }
