@@ -1,3 +1,5 @@
+#import <CoreData/CoreData.h>
+#import <UIKit/UIKit.h>
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
@@ -34,14 +36,17 @@
 // BigYTMiniPlayer
 @interface YTMainAppVideoPlayerOverlayView : UIView
 - (UIViewController *)_viewControllerForAncestor;
++ (CGFloat)topButtonAdditionalPadding;
 @end
 
 @interface YTWatchMiniBarView : UIView
 @end
 
 // YTAutoFullscreen
-@interface YTPlayerViewController (YTAFS)
+@interface YTPlayerViewController (YTPlayerViewControllerCategory)
 - (void)autoFullscreen;
+- (id)activeVideoPlayerOverlay;
+- (id)playerView;
 @end
 
 // YTNoShorts
@@ -86,3 +91,25 @@
 
 @interface UIPredictionViewController : UIViewController
 @end
+
+// DontEatMyContent
+@interface YTPlayerView : UIView
+- (BOOL)zoomToFill;
+- (id)renderingView;
+- (id)playerView;
+@end
+
+@interface MLHAMSBDLSampleBufferRenderingView : UIView
+@end
+
+@interface YTMainAppVideoPlayerOverlayViewController : UIViewController
+- (BOOL)isFullscreen;
+- (id)videoPlayerOverlayView;
+- (id)activeVideoPlayerOverlay;
+@end
+
+NSString* deviceName();
+BOOL isDeviceSupported();
+void activate(); 
+void deactivate();
+void center();
