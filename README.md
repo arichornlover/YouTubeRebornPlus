@@ -93,16 +93,16 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 13.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- For AltStore user: [Open in AltStore (v17.36.4-5.3.11)](https://tinyurl.com/yn6c6uh9) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v17.37.3-5.3.11)](https://tinyurl.com/ynsrpwex) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Sep 17)_
+- Version info: _(Sep 25)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 17.36.4 | ✖︎ |
+| **YouTube** | Google Inc | 17.37.3 | ✖︎ |
 | **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
@@ -110,7 +110,7 @@ any many more...
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
-| **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.10 | [✔︎](https://github.com/PoomSmart/YTUHD) |
+| **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.3.0 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.9 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
