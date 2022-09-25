@@ -31,6 +31,8 @@ extern BOOL hidePaidPromotionCard();
 extern BOOL hideNotificationButton();
 extern BOOL fixGoogleSignIn();
 extern BOOL replacePreviousAndNextButton();
+extern BOOL dontEatMyContent();
+extern BOOL ytDisableHighContrastUI();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -58,6 +60,24 @@ extern BOOL replacePreviousAndNextButton();
     selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         exit(0);
     }];
+
+    YTSettingsSectionItem *ytDisableHighContrastUI = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Revert The High Contrast UI (YTDisableHighContrastUI)" titleDescription:@"App restart is required."];
+    ytDisableHighContrastUI.hasSwitch = YES;
+    ytDisableHighContrastUI.switchVisible = YES;
+    ytDisableHighContrastUI.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"ytDisableHighContrastUI_enabled"];
+    ytDisableHighContrastUI.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytDisableHighContrastUI_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *dontEatMyContent = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"Do Not Eat My Content") titleDescription:LOC(@"Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube")];
+    dontEatMyContent.hasSwitch = YES;
+    dontEatMyContent.switchVisible = YES;
+    dontEatMyContent.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"dontEatMyContent_enabled"];
+    dontEatMyContent.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"dontEatMyContent_enabled"];
+        return YES;
+    };
 
     YTSettingsSectionItem *replacePreviousAndNextButton = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON") titleDescription:LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON_DESC")];
     replacePreviousAndNextButton.hasSwitch = YES;
@@ -248,7 +268,7 @@ extern BOOL replacePreviousAndNextButton();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[killApp, autoFull, ytMiniPlayer, fixGoogleSignIn, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, replacePreviousAndNextButton, reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[killApp, autoFull, ytMiniPlayer, fixGoogleSignIn, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, replacePreviousAndNextButton, dontEatMyContent, reExplore, ytDisableHighContrastUI]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 
