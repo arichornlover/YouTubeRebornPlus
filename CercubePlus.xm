@@ -114,12 +114,6 @@ BOOL replacePreviousAndNextButton() {
 }
 
 # pragma mark - Tweaks
-// Enable Reorder videos from playlist while on the Watch page - @PoomSmart
-%hook YTIPlaylistPanelVideoRenderer 
-%new 
-- (BOOL)canReorder { return YES; }
-%end
-
 // Skips content warning before playing *some videos - @PoomSmart
 %hook YTPlayabilityResolutionUserActionUIController
 - (void)showConfirmAlert { [self confirmAlertDidPressConfirm]; }
