@@ -56,6 +56,28 @@
 - (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
+// DontEatMyContent
+NSString* deviceName();
+BOOL isDeviceSupported();
+void activate(); 
+void deactivate();
+void center();
+
+@interface YTPlayerView : UIView
+- (BOOL)zoomToFill;
+- (id)renderingView;
+- (id)playerView;
+@end
+
+@interface MLHAMSBDLSampleBufferRenderingView : UIView
+@end
+
+@interface YTMainAppVideoPlayerOverlayViewController : UIViewController
+- (BOOL)isFullscreen;
+- (id)videoPlayerOverlayView;
+- (id)activeVideoPlayerOverlay;
+@end
+
 // OLED Darkmode
 @interface ASWAppSwitcherCollectionViewCell: UIView
 @end

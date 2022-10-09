@@ -1,4 +1,6 @@
 // Settings
+"DONT_EAT_MY_CONTENT" = "Ẩn tai thỏ/Dynamic Island (DontEatMyContent)";
+"DONT_EAT_MY_CONTENT_DESC" = "Ẩn tai thỏ/Dynamic Island chèn vào các video có tỷ lệ 2:1. Cần khởi động lại ứng dụng.";
 
 "REPLACE_PREVIOUS_NEXT_BUTTON" = "Thay thế nút chuyển video";
 "REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Thay thế nút chuyển video bằng nút tua nhanh. Cần khởi động lại ứng dụng.";
