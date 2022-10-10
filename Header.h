@@ -3,6 +3,8 @@
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
 #define YT_NAME @"YouTube"
+#define UNSUPPORTED_DEVICES @[@"iPhone14,3", @"iPhone14,6", @"iPhone14,8"] // DontEatMycontent
+#define THRESHOLD 1.99 // DontEatMycontent
 
 // CercubePlus
 @interface YTPlayabilityResolutionUserActionUIController : NSObject // Skips content warning before playing *some videos - @PoomSmart
@@ -42,6 +44,8 @@
 // YTAutoFullscreen
 @interface YTPlayerViewController (YTAFS)
 - (void)autoFullscreen;
+- (id)activeVideoPlayerOverlay; // DontEatMycontent
+- (id)playerView; // DontEatMycontent
 @end
 
 // YTNoShorts
@@ -54,6 +58,28 @@
 
 @interface YTAsyncCollectionView : UICollectionView
 - (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath;
+@end
+
+// DontEatMyContent
+NSString* deviceName();
+BOOL isDeviceSupported();
+void activate(); 
+void deactivate();
+void center();
+
+@interface YTPlayerView : UIView
+- (BOOL)zoomToFill;
+- (id)renderingView;
+- (id)playerView;
+@end
+
+@interface MLHAMSBDLSampleBufferRenderingView : UIView
+@end
+
+@interface YTMainAppVideoPlayerOverlayViewController : UIViewController
+- (BOOL)isFullscreen;
+- (id)videoPlayerOverlayView;
+- (id)activeVideoPlayerOverlay;
 @end
 
 // OLED Darkmode

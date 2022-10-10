@@ -27,6 +27,10 @@
 
 - [Julioverne](https://twitter.com/ijulioverne) for the solution to skip Google's safety warning when logging in.
 
+- [Lyvendia](https://github.com/Lyvendia/) for [YTSpeed](https://github.com/Lyvendia/YTSpeed/)
+
+- [therealFoxster](https://github.com/therealFoxster) for [DontEatMyContent](https://github.com/therealFoxster/DontEatMyContent).
+
 - [MiRO92](https://twitter.com/miro92) for [YTNoShorts](https://github.com/MiRO92/YTNoShorts/blob/main/Tweak.h).
 
 - [YouTube Extensions](https://github.com/CokePokes/YoutubeExtensions) by [CokePokes](https://github.com/CokePokes/).
@@ -72,6 +76,12 @@
 
 9. **NOYTPremium:** remove YouTube Premium upsell alerts.
 
+10. **YTSpeed**: add 2.25, 2.5, 2.75, and 3x playback speed
+
+11. **YTMiniplayerEnabler**: enable Miniplayer for all YouTube videos.
+
+12. **DontEatMyContent**: Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube.
+
 any many more...
 </details>
 
@@ -110,6 +120,8 @@ any many more...
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
+| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.2 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
+| **YTSpeed** | [Lyvendia](https://github.com/Lyvendia) | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.3.1 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.11 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
