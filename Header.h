@@ -6,6 +6,30 @@
 #define UNSUPPORTED_DEVICES @[@"iPhone14,3", @"iPhone14,6", @"iPhone14,8"] // DontEatMycontent
 #define THRESHOLD 1.99 // DontEatMycontent
 
+// YTSpeed
+@interface YTVarispeedSwitchControllerOption : NSObject
+- (id)initWithTitle:(id)title rate:(float)rate;
+@end
+
+@interface MLHAMQueuePlayer : NSObject
+@property id playerEventCenter;
+@property id delegate;
+- (void)setRate:(float)rate;
+- (void)internalSetRate;
+@end
+
+@interface MLPlayerStickySettings : NSObject
+- (void)setRate:(float)rate;
+@end
+
+@interface MLPlayerEventCenter : NSObject
+- (void)broadcastRateChange:(float)rate;
+@end
+
+@interface HAMPlayerInternal : NSObject
+- (void)setRate:(float)rate;
+@end
+
 // CercubePlus
 @interface YTPlayabilityResolutionUserActionUIController : NSObject // Skips content warning before playing *some videos - @PoomSmart
 - (void)confirmAlertDidPressConfirm;
