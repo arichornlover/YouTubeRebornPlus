@@ -23,7 +23,10 @@ NSBundle *CercubePlusBundle() {
     static dispatch_once_t onceToken;
  	dispatch_once(&onceToken, ^{
         NSString *tweakBundlePath = [[NSBundle mainBundle] pathForResource:@"CercubePlus" ofType:@"bundle"];
-        bundle = [NSBundle bundleWithPath:tweakBundlePath];
+        if (tweakBundlePath)
+            bundle = [NSBundle bundleWithPath:tweakBundlePath];
+        else
+            bundle = [NSBundle bundleWithPath:@"/Library/Application Support/CercubePlus.bundle"];
     });
     return bundle;
 }
@@ -882,54 +885,52 @@ NSLayoutConstraint *widthConstraint, *heightConstraint, *centerXConstraint, *cen
 
 // DontEatMycontent - detecting device model
 // https://stackoverflow.com/a/11197770/19227228
- NSString* deviceName() {
-     struct utsname systemInfo;
-     uname(&systemInfo);
-     return [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
- }
+NSString* deviceName() {
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    return [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
+}
 
- BOOL isDeviceSupported() {
-     NSString *identifier = deviceName();
-     NSArray *unsupportedDevices = UNSUPPORTED_DEVICES;
+BOOL isDeviceSupported() {
+    NSString *identifier = deviceName();
+    NSArray *unsupportedDevices = UNSUPPORTED_DEVICES;
 
-     for (NSString *device in unsupportedDevices) {
-         if ([device isEqualToString:identifier]) {
-             return NO;
-         }
-     }
+    for (NSString *device in unsupportedDevices) {
+        if ([device isEqualToString:identifier]) {
+            return NO;
+        }
+    }
+    if ([identifier containsString:@"iPhone"]) {
+        NSString *model = [identifier stringByReplacingOccurrencesOfString:@"iPhone" withString:@""];
+        model = [model stringByReplacingOccurrencesOfString:@"," withString:@"."];
+        if ([identifier isEqualToString:@"iPhone13,1"]) { // iPhone 12 mini
+            return YES; 
+        } else if ([model floatValue] >= 14.0) { // iPhone 13 series and newer
+            return YES;
+        } else return NO;
+    } else return NO;
+}
+void activate() {
+    if (aspectRatio < THRESHOLD || zoomedToFill) return;
+    // NSLog(@"activate");
+    center();
+    renderingView.translatesAutoresizingMaskIntoConstraints = NO;
+    widthConstraint.active = YES;
+    heightConstraint.active = YES;
+}
 
-     if ([identifier containsString:@"iPhone"]) {
-         NSString *model = [identifier stringByReplacingOccurrencesOfString:@"iPhone" withString:@""];
-         model = [model stringByReplacingOccurrencesOfString:@"," withString:@"."];
-         if ([identifier isEqualToString:@"iPhone13,1"]) { // iPhone 12 mini
-             return YES; 
-         } else if ([model floatValue] >= 14.0) { // iPhone 13 series and newer
-             return YES;
-         } else return NO;
-     } else return NO;
- }
+void deactivate() {
+    // NSLog(@"deactivate");
+    center();
+    renderingView.translatesAutoresizingMaskIntoConstraints = YES;
+    widthConstraint.active = NO;
+    heightConstraint.active = NO;
+}
 
- void activate() {
-     if (aspectRatio < THRESHOLD || zoomedToFill) return;
-     // NSLog(@"activate");
-     center();
-     renderingView.translatesAutoresizingMaskIntoConstraints = NO;
-     widthConstraint.active = YES;
-     heightConstraint.active = YES;
- }
-
- void deactivate() {
-     // NSLog(@"deactivate");
-     center();
-     renderingView.translatesAutoresizingMaskIntoConstraints = YES;
-     widthConstraint.active = NO;
-     heightConstraint.active = NO;
- }
-
- void center() {
-     centerXConstraint.active = YES;
-     centerYConstraint.active = YES;
- }
+void center() {
+    centerXConstraint.active = YES;
+    centerYConstraint.active = YES;
+}
 
 // YTNoShorts: https://github.com/MiRO92/YTNoShorts
 %hook YTAsyncCollectionView
@@ -950,6 +951,53 @@ NSLayoutConstraint *widthConstraint, *heightConstraint, *centerXConstraint, *cen
 %new
 - (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
     [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+}
+%end
+
+// YTSpeed - https://github.com/Lyvendia/YTSpeed
+%hook YTVarispeedSwitchController
+- (id)init {
+	id result = %orig;
+
+	const int size = 12;
+	float speeds[] = {0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0};
+	id varispeedSwitchControllerOptions[size];
+
+	for (int i = 0; i < size; ++i) {
+		id title = [NSString stringWithFormat:@"%.2fx", speeds[i]];
+		varispeedSwitchControllerOptions[i] = [[%c(YTVarispeedSwitchControllerOption) alloc] initWithTitle:title rate:speeds[i]];
+	}
+
+	NSUInteger count = sizeof(varispeedSwitchControllerOptions) / sizeof(id);
+	NSArray *varispeedArray = [NSArray arrayWithObjects:varispeedSwitchControllerOptions count:count];
+	MSHookIvar<NSArray *>(self, "_options") = varispeedArray;
+
+	return result;
+}
+%end
+
+%hook MLHAMQueuePlayer
+- (void)setRate:(float)rate {
+	MSHookIvar<float>(self, "_rate") = rate;
+	MSHookIvar<float>(self, "_preferredRate") = rate;
+
+	id player = MSHookIvar<HAMPlayerInternal *>(self, "_player");
+	[player setRate: rate];
+	
+	id stickySettings = MSHookIvar<MLPlayerStickySettings *>(self, "_stickySettings");
+	[stickySettings setRate: rate];
+
+	[self.playerEventCenter broadcastRateChange: rate];
+
+	YTSingleVideoController *singleVideoController = self.delegate;
+	[singleVideoController playerRateDidChange: rate];
+}
+%end 
+
+%hook YTPlayerViewController
+%property float playbackRate;
+- (void)singleVideo:(id)video playbackRateDidChange:(float)rate {
+	%orig;
 }
 %end
 
