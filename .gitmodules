@@ -26,11 +26,11 @@
 	path = Tweaks/PSHeader
 	url = https://github.com/PoomSmart/PSHeader.git
 	branch = master
-[submodule "Tweaks/YTSpeed"]
-	path = Tweaks/YTSpeed
-	url = https://github.com/qnblackcat/YTSpeed.git
-	branch = main
 [submodule "Extensions"]
 	path = Extensions
 	url = https://github.com/CokePokes/YoutubeExtensions.git
+	branch = main
+[submodule "Tweaks/YTABConfig"]
+	path = Tweaks/YTABConfig
+	url = https://github.com/PoomSmart/YTABConfig.git
 	branch = main
