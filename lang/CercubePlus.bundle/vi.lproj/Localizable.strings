@@ -1,4 +1,7 @@
 // Settings
+"VERSION" = "Phiên bản của CercubePlus: %@";
+"VERSION_CHECK" = "Chạm để kiểm tra bản cập nhật!";
+
 "DONT_EAT_MY_CONTENT" = "Ẩn tai thỏ/Dynamic Island (DontEatMyContent)";
 "DONT_EAT_MY_CONTENT_DESC" = "Ẩn tai thỏ/Dynamic Island chèn vào các video có tỷ lệ 2:1. Cần khởi động lại ứng dụng.";
 
