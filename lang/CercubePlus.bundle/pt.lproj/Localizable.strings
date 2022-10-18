@@ -1,4 +1,6 @@
 // Settings
+"VERSION" = "Versão do CercubePlus: %@";
+"VERSION_CHECK" = "Toque para verificar se há atualização!";
 
 "DONT_EAT_MY_CONTENT" = "Evitar o notch/Island em conteúdo de vídeo 2:1 (DontEatMyContent)";
 "DONT_EAT_MY_CONTENT_DESC" = "Evita que o notch/Dynamic Island coma conteúdo de vídeo 2:1 no YouTube. A reinicialização do app é necessária.";
