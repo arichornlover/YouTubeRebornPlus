@@ -25,8 +25,11 @@ NSBundle *CercubePlusBundle() {
         NSString *tweakBundlePath = [[NSBundle mainBundle] pathForResource:@"CercubePlus" ofType:@"bundle"];
         if (tweakBundlePath)
             bundle = [NSBundle bundleWithPath:tweakBundlePath];
-        else
+        else {
             bundle = [NSBundle bundleWithPath:@"/Library/Application Support/CercubePlus.bundle"];
+            if (!bundle)
+                bundle = [NSBundle bundleWithPath:@"/var/jb/Library/Application Support/CercubePlus.bundle"];
+        }
     });
     return bundle;
 }
@@ -294,13 +297,29 @@ BOOL dontEatMyContent() {
 }
 %end
 
-// Enable Shorts scroll bar - @PoomSmart & @level3tjg
+// YTShortsProgress - @PoomSmart - https://github.com/PoomSmart/YTShortsProgress
 %hook YTReelPlayerViewController
+- (BOOL)shouldEnablePlayerBar { return YES; }
 - (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
+- (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
+%end
+
+%hook YTReelPlayerViewControllerSub
+- (BOOL)shouldEnablePlayerBar { return YES; }
+- (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
+- (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
 %end
 
 %hook YTInlinePlayerBarContainerView
 - (void)setUserInteractionEnabled:(BOOL)enabled { %orig(YES); }
+%end
+
+%hook YTColdConfig
+- (BOOL)iosEnableVideoPlayerScrubber { return YES; }
+%end
+
+%hook YTHotConfig
+- (BOOL)enablePlayerBarForVerticalVideoWhenControlsHiddenInFullscreen { return YES; }
 %end
 
 // Hide Paid Promotion Card
