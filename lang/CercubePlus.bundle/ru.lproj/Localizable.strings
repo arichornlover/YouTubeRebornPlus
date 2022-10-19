@@ -1,4 +1,9 @@
 // Settings
+"VERSION" = "CercubePlus's version: %@";
+"VERSION_CHECK" = "Tap to check for update!";
+
+"DONT_EAT_MY_CONTENT" = "Prevent Notch/Island on 2:1 Video Content (DontEatMyContent)";
+"DONT_EAT_MY_CONTENT_DESC" = "Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube. App restart is required.";
 
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Скрыть «Пред.» и «След.»";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Убирает кнопки переключения видео «Следующий» и «Предыдущий» с плеера.";

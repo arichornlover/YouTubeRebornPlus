@@ -1,4 +1,6 @@
 // Settings
+"VERSION" = "CercubePlus's version: %@";
+"VERSION_CHECK" = "Tap to check for update!";
 
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "إخفاء زر التقدم والرجوع";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "لإخفاء زر التقدم والرجوع في مشغل الفيديو";

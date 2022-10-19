@@ -1,4 +1,7 @@
 // Settings
+"VERSION" = "CercubePlus's version: %@";
+"VERSION_CHECK" = "Tap to check for update!";
+
 "DONT_EAT_MY_CONTENT" = "2:1比率の動画とノッチ/Dynamic Islandの最適化 (DontEatMyContent)";
 "DONT_EAT_MY_CONTENT_DESC" = "2:1比率の動画とノッチ/Dynamic Islandが干渉することを防ぎます。アプリの再起動が必要です。";
 
@@ -7,9 +10,6 @@
 
 "FIX_GOOGLE_SIGNIN" = "Googleサインインを修正する (TrollStoreを使用している場合のみ)";
 "FIX_GOOGLE_SIGNIN_DESC" = "アプリがTrollStore経由でインストールされた場合にのみ機能します： このオプションをオンにすると、Googleアカウントでサインインができます。アプリの再起動が必要です。";
-
-"KILL_APP" = "YouTubeを閉じる";
-"KILL_APP_DESC" = "ここをタップしてYouTubeを閉じます！";
 
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "前後の動画を再生するボタンを非表示";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "動画コントロールのオーバーレイで次の動画と前の動画を再生するボタンを非表示にします。";

@@ -11,9 +11,6 @@
 "FIX_GOOGLE_SIGNIN" = "Sửa lỗi không thể đăng nhập tài khoản Google";
 "FIX_GOOGLE_SIGNIN_DESC" = "Chỉ bật tính năng này khi bạn không thể đăng nhập tài khoản Google và ứng dụng được cài qua TrollStore. Nếu bạn có thể đăng nhập bình thường thì hãy tắt tính năng này. Cần khởi động lại ứng dụng.";
 
-"KILL_APP" = "Đóng ứng dụng";
-"KILL_APP_DESC" = "Chạm để đóng YouTube!";
-
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Ẩn nút Next và nút Previous";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Ẩn nút Next và nút Previous trong trình phát video.";
 

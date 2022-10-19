@@ -11,9 +11,6 @@
 "FIX_GOOGLE_SIGNIN" = "Fix Google Sign in (for TrollStore user only)";
 "FIX_GOOGLE_SIGNIN_DESC" = "Turn on this option only when you can't sign in with your Google account and the app was installed via TrollStore. If you can log in normally, keep it disabled. App restart is required.";
 
-"KILL_APP" = "Close YouTube";
-"KILL_APP_DESC" = "Tap here to close YouTube!";
-
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Hide Previous and Next button";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
 
