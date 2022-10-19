@@ -123,6 +123,27 @@ BOOL replacePreviousAndNextButton() {
 BOOL dontEatMyContent() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"dontEatMyContent_enabled"];
 }
+BOOL ytDisableHighContrastUI () {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"ytDisableHighContrastUI_enabled"];
+}
+BOOL BlueUI () {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"BlueUI_enabled"];
+}
+BOOL RedUI () {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"RedUI_enabled"];
+}
+BOOL OrangeUI () {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"OrangeUI_enabled"];
+}
+BOOL PinkUI () {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"PinkUI_enabled"];
+}
+BOOL PurpleUI () {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"PurpleUI_enabled"];
+}
+BOOL GreenUI () {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"GreenUI_enabled"];
+}
 
 # pragma mark - Tweaks
 // Skips content warning before playing *some videos - @PoomSmart
@@ -221,6 +242,11 @@ BOOL dontEatMyContent() {
 - (id)initWithMessage:(id)arg1 dismissHandler:(id)arg2 {
     return hideHUD() ? nil : %orig;
 }
+%end
+
+// Hide Force-Update Dialog Menu
+%hook YTGlobalConfig
+- (BOOL)shouldBlockUpgradeDialog { return YES;}
 %end
 
 // YTAutoFullScreen: https://github.com/PoomSmart/YTAutoFullScreen/
@@ -951,6 +977,167 @@ void center() {
     centerYConstraint.active = YES;
 }
 
+%group gYTDisableHighContrastUI
+%hook YTCommonColorPalette
+- (UIColor *)textPrimary {
+     if (self.pageStyle == 1) {
+         return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
+     }
+         return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00];
+ }
+- (UIColor *)textSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
+     }
+        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00];
+ }
+ %end
+
+ %hook UIColor
+ + (UIColor *)whiteColor {
+          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
+ }
+ %end
+ %end
+
+%group gBlueUI
+%hook YTCommonColorPalette
+- (UIColor *)textPrimary {
+     if (self.pageStyle == 1) {
+         return [UIColor colorWithRed: 0.26 green: 0.43 blue: 0.48 alpha: 1.00];
+     }
+         return [UIColor colorWithRed: 0.36 green: 0.56 blue: 0.62 alpha: 1.00];
+ }
+- (UIColor *)textSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithRed: 0.26 green: 0.43 blue: 0.48 alpha: 1.00];
+     }
+        return [UIColor colorWithRed: 0.36 green: 0.56 blue: 0.62 alpha: 1.00];
+ }
+%end
+
+%hook UIColor
++ (UIColor *)whiteColor {
+        return [UIColor colorWithRed: 0.26 green: 0.43 blue: 0.48 alpha: 1.00];
+}
+%end
+%end
+
+%group gRedUI
+%hook YTCommonColorPalette
+- (UIColor *)textPrimary {
+     if (self.pageStyle == 1) {
+         return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
+     }
+         return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00];
+ }
+- (UIColor *)textSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
+     }
+        return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00];
+ }
+%end
+
+%hook UIColor
++ (UIColor *)whiteColor {
+        return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
+}
+%end
+%end
+
+%group gOrangeUI
+%hook YTCommonColorPalette
+- (UIColor *)textPrimary {
+     if (self.pageStyle == 1) {
+         return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
+     }
+         return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00];
+ }
+- (UIColor *)textSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
+     }
+        return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00];
+ }
+%end
+
+%hook UIColor
++ (UIColor *)whiteColor {
+        return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
+}
+%end
+%end
+
+%group gPinkUI
+%hook YTCommonColorPalette
+- (UIColor *)textPrimary {
+     if (self.pageStyle == 1) {
+         return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
+     }
+         return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00];
+ }
+- (UIColor *)textSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
+     }
+        return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00];
+ }
+%end
+
+%hook UIColor
++ (UIColor *)whiteColor {
+        return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
+}
+%end
+%end
+
+%group gPurpleUI
+%hook YTCommonColorPalette
+- (UIColor *)textPrimary {
+     if (self.pageStyle == 1) {
+         return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+     }
+         return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00];
+ }
+- (UIColor *)textSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+     }
+        return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00];
+ }
+%end
+
+%hook UIColor
++ (UIColor *)whiteColor {
+        return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+}
+%end
+%end
+
+%group gGreenUI
+%hook YTCommonColorPalette
+- (UIColor *)textPrimary {
+     if (self.pageStyle == 1) {
+         return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
+     }
+         return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00];
+ }
+- (UIColor *)textSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
+     }
+        return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00];
+ }
+%end
+
+%hook UIColor
++ (UIColor *)whiteColor {
+        return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
+}
+%end
+%end
+
 // YTNoShorts: https://github.com/MiRO92/YTNoShorts
 %hook YTAsyncCollectionView
 - (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -1044,10 +1231,31 @@ void center() {
     if (replacePreviousAndNextButton()) {
        %init(gReplacePreviousAndNextButton);
     }
-	if (dontEatMyContent() && isDeviceSupported()) {
+    if (dontEatMyContent() && isDeviceSupported()) {
        %init(gDontEatMyContent);
-	}
+    }
     if (!fixGoogleSignIn()) {
        %init(gFixGoogleSignIn);
+    }
+    if (ytDisableHighContrastUI()) {
+       %init(gYTDisableHighContrastUI);
+    }
+    if (BlueUI()) {
+       %init(gBlueUI);
+    }
+    if (RedUI()) {
+       %init(gRedUI);
+    }
+    if (OrangeUI()) {
+       %init(gOrangeUI);
+    }
+    if (PinkUI()) {
+       %init(gPinkUI);
+    }
+    if (PurpleUI()) {
+       %init(gPurpleUI);
+    }
+    if (GreenUI()) {
+       %init(gGreenUI);
     }
 }
