@@ -54,6 +54,7 @@ static NSString *accessGroupID() {
     return accessGroup;
 }
 
+//
 BOOL hideHUD() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
 }
@@ -244,6 +245,7 @@ BOOL dontEatMyContent() {
 - (BOOL)enableYouthereCommandsOnIos { return NO; }
 - (BOOL)respectDeviceCaptionSetting { return NO; }
 - (BOOL)isLandscapeEngagementPanelSwipeRightToDismissEnabled { return YES; }
+- (BOOL)enableSwipeToRemoveInPlaylistWatchEp { return YES; } // Enable swipe right to remove video in Playlist. 
 %end
 
 %hook YTYouThereController
@@ -310,12 +312,9 @@ BOOL dontEatMyContent() {
 - (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
 %end
 
-%hook YTInlinePlayerBarContainerView
-- (void)setUserInteractionEnabled:(BOOL)enabled { %orig(YES); }
-%end
-
 %hook YTColdConfig
 - (BOOL)iosEnableVideoPlayerScrubber { return YES; }
+- (BOOL)mobileShortsTabInlined { return YES; }
 %end
 
 %hook YTHotConfig
@@ -545,6 +544,16 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
+// Sub?
+%hook ELMView
+- (void)didMoveToWindow {
+    %orig;
+    if (isDarkMode()) {
+        self.subviews[0].backgroundColor = [UIColor blackColor]
+    }
+}
+%end
+
 // iSponsorBlock
 %hook SponsorBlockSettingsController
 - (void)viewDidLoad {
@@ -702,6 +711,11 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
         self.superview.backgroundColor = raisedColor;
     }
 }
+%end
+
+// Incompatibility with the new YT Dark theme
+%hook YTColdConfig
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
 %end
 %end
 
