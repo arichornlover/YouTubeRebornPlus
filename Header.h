@@ -107,7 +107,7 @@ void center();
 @end
 
 // OLED Darkmode
-@interface ELView: UIView
+@interface ELMView: UIView
 @end
 
 @interface ASWAppSwitcherCollectionViewCell: UIView

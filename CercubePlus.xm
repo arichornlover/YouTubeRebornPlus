@@ -549,7 +549,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 - (void)didMoveToWindow {
     %orig;
     if (isDarkMode()) {
-        self.subviews[0].backgroundColor = [UIColor blackColor]
+        self.subviews[0].backgroundColor = [UIColor blackColor];
     }
 }
 %end
