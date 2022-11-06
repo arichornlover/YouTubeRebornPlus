@@ -43,7 +43,6 @@ then
 	rm -rf tmp/Payload/YouTube.app/PlugIns/*.appex
 	cp -R Extensions/*.appex tmp/Payload/YouTube.app/PlugIns 
 	make package FINALPACKAGE=1
-	echo -e  "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
 	open packages
 else
 	echo "This is not an ipa/app!"
@@ -53,3 +52,4 @@ fi
 	tput setaf 1 && echo -e "==> \033[1mCleaning up...\033[0m"
 	find Tweaks/Cercube -mindepth 1 ! -name "me.alfhaily.cercube_5.3.11_iphoneos-arm.deb" ! -name ".gitkeep" -exec rm -rf {} \; 2>/dev/null
 	rm -rf tmp/ Resources .theos/_/Payload
+	echo -e  "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
