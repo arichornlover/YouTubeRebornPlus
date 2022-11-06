@@ -86,7 +86,8 @@
 
 // DontEatMyContent
 NSString* deviceName();
-BOOL isDeviceSupported();
+void aspectRatioChanged(CGFloat arg);
+BOOL deviceIsSupported();
 void activate(); 
 void deactivate();
 void center();

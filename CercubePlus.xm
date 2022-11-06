@@ -822,7 +822,6 @@ NSLayoutConstraint *widthConstraint, *heightConstraint, *centerXConstraint, *cen
 
 %group gDontEatMyContent
 %hook YTPlayerViewController
-
 - (void)viewDidAppear:(BOOL)animated {
     YTPlayerView *playerView = [self playerView];
     UIView *renderingViewContainer = MSHookIvar<UIView *>(playerView, "_renderingViewContainer");
@@ -834,7 +833,7 @@ NSLayoutConstraint *widthConstraint, *heightConstraint, *centerXConstraint, *cen
     heightConstraint = [renderingView.heightAnchor constraintEqualToAnchor:renderingViewContainer.safeAreaLayoutGuide.heightAnchor constant:constant];
     centerXConstraint = [renderingView.centerXAnchor constraintEqualToAnchor:renderingViewContainer.centerXAnchor];
     centerYConstraint = [renderingView.centerYAnchor constraintEqualToAnchor:renderingViewContainer.centerYAnchor];
-
+    
     // playerView.backgroundColor = [UIColor greenColor];
     // renderingViewContainer.backgroundColor = [UIColor redColor];
     // renderingView.backgroundColor = [UIColor blueColor];
@@ -847,38 +846,46 @@ NSLayoutConstraint *widthConstraint, *heightConstraint, *centerXConstraint, *cen
     } else {
         center();
     }
+
     %orig(animated);
 }
 - (void)didPressToggleFullscreen {  
     YTMainAppVideoPlayerOverlayViewController *activeVideoPlayerOverlay = [self activeVideoPlayerOverlay];
-
     if (![activeVideoPlayerOverlay isFullscreen]) // Entering fullscreen
         activate();
     else // Exiting fullscreen
         deactivate();
-
+    
     %orig;
 }
-- (void)didSwipeToEnterFullscreen { 
-    %orig; activate(); 
-}
-- (void)didSwipeToExitFullscreen { 
-    %orig; deactivate();
-}
-// Get video aspect ratio; doesn't work for some users; see -(void)resetForVideoWithAspectRatio:(double)
+- (void)didSwipeToEnterFullscreen { %orig; activate(); }
+- (void)didSwipeToExitFullscreen { %orig; deactivate(); }
+
+// Retrieve video aspect ratio (1) (no longer works but kept for backwards compatibility)
 - (void)singleVideo:(id)arg1 aspectRatioDidChange:(CGFloat)arg2 {
-    aspectRatio = arg2;
-    if (aspectRatio == 0.0) { 
-        // App backgrounded
-    } else if (aspectRatio < THRESHOLD) {
-        deactivate();
-    } else {
-        activate();
-    }
     %orig(arg1, arg2);
+    aspectRatioChanged(arg2);
 }
 %end
 
+// Retrieve video aspect ratio (2) (no longer works but kept for backwards compatibility)
+%hook YTVideoZoomOverlayController
+- (void)resetForVideoWithAspectRatio:(double)arg1 {
+    %orig(arg1);
+    aspectRatioChanged(arg1);
+}
+%end
+
+// Retrieve video aspect ratio (3)
+%hook YTPlayerView
+- (void)setAspectRatio:(CGFloat)arg1 {
+    %orig(arg1);
+    aspectRatioChanged(arg1);
+    // %log((CGFloat) aspectRatio);
+}
+%end
+
+// Detect pinch gesture (1) (no longer works but kept for backwards compatibility)
 %hook YTVideoZoomOverlayView
 - (void)didRecognizePinch:(UIPinchGestureRecognizer *)pinchGestureRecognizer {
     // %log((CGFloat) [pinchGestureRecognizer scale], (CGFloat) [pinchGestureRecognizer velocity]);
@@ -889,32 +896,24 @@ NSLayoutConstraint *widthConstraint, *heightConstraint, *centerXConstraint, *cen
         zoomedToFill = true;
         deactivate();
     }
-
     %orig(pinchGestureRecognizer);
 }
-- (void)flashAndHideSnapIndicator {}
-
-// https://github.com/lgariv/UniZoom/blob/master/Tweak.xm
-- (void)setSnapIndicatorVisible:(bool)arg1 {
-    %orig(NO);
-}
 %end
 
-%hook YTVideoZoomOverlayController
-// Get video aspect ratio; fallback for -(void)singleVideo:(id)aspectRatioDidChange:(CGFloat)
-- (void)resetForVideoWithAspectRatio:(double)arg1 {
-    aspectRatio = arg1;
-    %log;
-    if (aspectRatio == 0.0) {} 
-    else if (aspectRatio < THRESHOLD) {
-        deactivate();
-    } else {
+// Detect pinch gesture (2)
+%hook YTVideoFreeZoomOverlayView
+- (void)didRecognizePinch:(UIPinchGestureRecognizer *)pinchGestureRecognizer {
+    if ([pinchGestureRecognizer velocity] <= 0.0) { // >>Zoom out<<
+        zoomedToFill = false;
         activate();
+    } else if ([pinchGestureRecognizer velocity] > 0.0) { // <<Zoom in>>
+        zoomedToFill = true;
+        deactivate();
     }
-    %orig(arg1);
+    %orig(pinchGestureRecognizer);
 }
 %end
-%end // gDonEatMyContent
+%end // gDontEatMyContent
 
 // DontEatMycontent - detecting device model
 // https://stackoverflow.com/a/11197770/19227228
@@ -924,15 +923,16 @@ NSString* deviceName() {
     return [NSString stringWithCString:systemInfo.machine encoding:NSUTF8StringEncoding];
 }
 
-BOOL isDeviceSupported() {
+BOOL deviceIsSupported() {
     NSString *identifier = deviceName();
     NSArray *unsupportedDevices = UNSUPPORTED_DEVICES;
-
+    
     for (NSString *device in unsupportedDevices) {
         if ([device isEqualToString:identifier]) {
             return NO;
         }
     }
+
     if ([identifier containsString:@"iPhone"]) {
         NSString *model = [identifier stringByReplacingOccurrencesOfString:@"iPhone" withString:@""];
         model = [model stringByReplacingOccurrencesOfString:@"," withString:@"."];
@@ -943,6 +943,18 @@ BOOL isDeviceSupported() {
         } else return NO;
     } else return NO;
 }
+
+void aspectRatioChanged(CGFloat arg) {
+    aspectRatio = arg;
+    if (aspectRatio == 0.0) {
+        // App backgrounded or something went wrong
+    } else if (aspectRatio < THRESHOLD) {
+        deactivate();
+    } else {
+        activate();
+    }
+}
+
 void activate() {
     if (aspectRatio < THRESHOLD || zoomedToFill) return;
     // NSLog(@"activate");
@@ -1058,7 +1070,7 @@ void center() {
     if (replacePreviousAndNextButton()) {
        %init(gReplacePreviousAndNextButton);
     }
-	if (dontEatMyContent() && isDeviceSupported()) {
+    if (dontEatMyContent() && deviceIsSupported()) {
        %init(gDontEatMyContent);
 	}
     if (!fixGoogleSignIn()) {
