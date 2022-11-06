@@ -28,20 +28,23 @@ fi
 	read -e -p "==> Path to the decrypted YouTube.ipa or YouTube.app: " PATHTOYT
 if 	[[ $PATHTOYT == *.ipa ]]
 then 
-	unzip -q "$PATHTOYT" -d ./tmp
-	rm -rf ./tmp/Payload/YouTube.app/PlugIns/*.appex
+	unzip -q "$PATHTOYT" -d tmp
+	rm -rf tmp/Payload/YouTube.app/_CodeSignature/CodeResources
+	rm -rf tmp/Payload/YouTube.app/PlugIns/*.appex
 	cp -R Extensions/*.appex tmp/Payload/YouTube.app/PlugIns 
-	make package
-	open ./packages
+	make package FINALPACKAGE=1
+	open packages
 
 elif	[[ $PATHTOYT == *.app ]]
 then
 	mkdir -p ./tmp/Payload/
-	cp -R "$PATHTOYT" ./tmp/Payload 2>/dev/null
-	rm -rf ./tmp/Payload/YouTube.app/PlugIns/*.appex
+	cp -R "$PATHTOYT" tmp/Payload 2>/dev/null
+	rm -rf tmp/Payload/YouTube.app/_CodeSignature/CodeResources
+	rm -rf tmp/Payload/YouTube.app/PlugIns/*.appex
 	cp -R Extensions/*.appex tmp/Payload/YouTube.app/PlugIns 
-	make package
-	open ./packages
+	make package FINALPACKAGE=1
+	echo -e  "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
+	open packages
 else
 	echo "This is not an ipa/app!"
 fi
