@@ -113,7 +113,7 @@ jobs:
           make package FINALPACKAGE=1
           (mv "packages/$(ls -t packages | head -n1)" "packages/CercubePlus_${{ env.YOUTUBE_VERSION }}_${{ env.CERCUBE_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
-          echo "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
+          echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
         env:
           THEOS: ${{ github.workspace }}/theos
           CERCUBE_VERSION: ${{ inputs.cercube_version }}
