@@ -87,31 +87,33 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Download Cercube & prepare YouTube iPA
+      - name: Download Cercube & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl "https://apt.alfhaily.me/files/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "./main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
-          wget "$YOUTUBE_URL" --no-verbose -O ./main/YouTube.ipa
-          dpkg-deb -x "./main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" ./main/Tweaks/Cercube/
-          unzip -q ./main/YouTube.ipa -d ./main/tmp
-          rm -rf ./main/tmp/Payload/YouTube.app/PlugIns/*
-          cp -R ./main/Extensions/*.appex ./main/tmp/Payload/YouTube.app/PlugIns
+          curl "https://apt.alfhaily.me/files/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
+          wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
+          dpkg-deb -x "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" main/Tweaks/Cercube/
+          unzip -q main/YouTube.ipa -d main/tmp
+          rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
+          rm -rf main/tmp/Payload/YouTube.app/PlugIns/*
+          cp -R main/Extensions/*.appex main/tmp/Payload/YouTube.app/PlugIns
 
         env:
           THEOS: ${{ github.workspace }}/theos
           CERCUBE_VERSION: ${{ inputs.cercube_version }}
           YOUTUBE_URL: ${{ inputs.decrypted_youtube_url }}
 
-      - name: Fix Compiling && Build Package
+      - name: Fix Compiling & Build Package
         id: build_package
         run: |
           (echo 'THEOS_IGNORE_PARALLEL_BUILDING_NOTICE = yes' >> ~/.theosrc)
           cd ${{ github.workspace }}/main
-          (cd ${{ github.workspace }}/main/Tweaks/YouPiP && sed -i '' "14s/$/ AVFoundation UIKit/" Makefile)
+          (cd ${{ github.workspace }}/main/Tweaks/YouPiP && sed -i '' "13s/$/ AVFoundation UIKit/" Makefile)
           (cd ${{ github.workspace }}/main/Tweaks/YTABConfig && sed -i '' "12s#.*#YTABConfig_FRAMEWORKS = UIKit#g" Makefile)
           make package FINALPACKAGE=1
           (mv "packages/$(ls -t packages | head -n1)" "packages/CercubePlus_${{ env.YOUTUBE_VERSION }}_${{ env.CERCUBE_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
+          echo "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
         env:
           THEOS: ${{ github.workspace }}/theos
           CERCUBE_VERSION: ${{ inputs.cercube_version }}
@@ -138,5 +140,5 @@ jobs:
         with:
           tag_name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
           name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
-          files: ./main/packages/*.ipa
+          files: main/packages/*.ipa
           draft: ${{ env.DRAFT }}
