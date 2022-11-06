@@ -1,11 +1,11 @@
-TARGET = iphone:clang:latest:13.0
+TARGET = iphone:clang:latest:14.0
 CercubePlus_USE_FLEX = 0
 CercubePlus_USE_FISHHOOK = 0
 ARCHS = arm64
 MODULES = jailed
 FINALPACKAGE = 1
 CODESIGN_IPA = 0
-PACKAGE_VERSION = 17.42.7-5.3.11
+PACKAGE_VERSION = 17.43.1-5.3.11
 
 TWEAK_NAME = CercubePlus
 DISPLAY_NAME = YouTube
