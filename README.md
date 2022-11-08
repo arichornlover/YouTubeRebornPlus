@@ -76,26 +76,26 @@
 
 - For AltStore user: [Open in AltStore (v17.36.4-5.3.11)](https://tinyurl.com/4zk94ux3) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Sep 17)_
+- Version info: _(Nov 08)_
 <details>
   <summary>Expand:</summary>
   
-| **Tweaks/App** | **Developer** | **Version** | **Open source** |
-| - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 17.36.4 | ✖︎ |
+| **YouTube** | Google Inc | 17.43.1 | ✖︎ |
 | **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.11 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
-| **iSponsorBlockLegacy** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlockLegacy) |
+| **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
+| **YTABConfig** | [PoomSmart](https://twitter.com/poomsmart) | 1.4.4 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTABGoodies** | [PoomSmart](https://twitter.com/poomsmart) | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
 | **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
-| **YTClassicVideoQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.1 | [✔︎](https://github.com/PoomSmart/YTClassicVideoQuality) |
-| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.6.8 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **YTAutoFullScreen** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen) |
+| **YTShortsProgress** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTShortsProgress) |
+| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 
 </details>
 

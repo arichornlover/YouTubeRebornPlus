@@ -4,6 +4,30 @@
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
 #define YT_NAME @"YouTube"
 
+// YTSpeed
+@interface YTVarispeedSwitchControllerOption : NSObject
+- (id)initWithTitle:(id)title rate:(float)rate;
+@end
+
+@interface MLHAMQueuePlayer : NSObject
+@property id playerEventCenter;
+@property id delegate;
+- (void)setRate:(float)rate;
+- (void)internalSetRate;
+@end
+
+@interface MLPlayerStickySettings : NSObject
+- (void)setRate:(float)rate;
+@end
+
+@interface MLPlayerEventCenter : NSObject
+- (void)broadcastRateChange:(float)rate;
+@end
+
+@interface HAMPlayerInternal : NSObject
+- (void)setRate:(float)rate;
+@end
+
 // CercubePlus
 @interface YTPlayabilityResolutionUserActionUIController : NSObject // Skips content warning before playing *some videos - @PoomSmart
 - (void)confirmAlertDidPressConfirm;
@@ -13,10 +37,6 @@
 @end
 
 @interface YTTransportControlsButtonView : UIView
-@end
-
-// IAmYouTube
-@interface SSOConfiguration : NSObject
 @end
 
 // Cercube button in Nav bar
@@ -31,6 +51,10 @@
 @property YTQTMButton *notificationButton;
 @end
 
+// IAmYouTube
+@interface SSOConfiguration : NSObject
+@end
+
 // BigYTMiniPlayer
 @interface YTMainAppVideoPlayerOverlayView : UIView
 - (UIViewController *)_viewControllerForAncestor;
@@ -42,9 +66,14 @@
 // YTAutoFullscreen
 @interface YTPlayerViewController (YTAFS)
 - (void)autoFullscreen;
+- (id)activeVideoPlayerOverlay; // DontEatMycontent
+- (id)playerView; // DontEatMycontent
 @end
 
 // YTNoShorts
+@interface ELMCellNode
+@end
+
 @interface _ASCollectionViewCell : UICollectionViewCell
 - (id)node;
 @end
@@ -54,7 +83,10 @@
 @end
 
 // OLED Darkmode
-@interface ASWAppSwitcherCollectionViewCell : UIView
+@interface ELMView: UIView
+@end
+
+@interface ASWAppSwitcherCollectionViewCell: UIView
 @end
 
 @interface ASScrollView : UIView
@@ -72,7 +104,7 @@
 @interface YTCommentDetailHeaderCell : UIView
 @end
 
-@interface SponsorBlockSettingsController : UITableViewController
+@interface SponsorBlockSettingsController : UITableViewController 
 @end
 
 @interface SponsorBlockViewController : UIViewController

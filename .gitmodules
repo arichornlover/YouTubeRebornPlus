@@ -18,3 +18,7 @@
 	path = Tweaks/iSponsorBlockLegacy
 	url = https://github.com/qnblackcat/iSponsorBlockLegacy.git
 	branch = master
+[submodule "Tweaks/YTABConfig"]
+	path = Tweaks/YTABConfig
+	url = https://github.com/PoomSmart/YTABConfig.git
+	branch = main

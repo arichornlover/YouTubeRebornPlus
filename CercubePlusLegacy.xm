@@ -46,6 +46,7 @@ static NSString *accessGroupID() {
     return accessGroup;
 }
 
+//
 BOOL hideHUD() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
 }
@@ -106,20 +107,14 @@ BOOL hidePaidPromotionCard() {
 BOOL hideNotificationButton() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideNotificationButton_enabled"];
 }
-BOOL fixGoogleSigin() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"fixGoogleSigin_enabled"];
+BOOL fixGoogleSignIn() {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"fixGoogleSignIn_enabled"];
 }
 BOOL replacePreviousAndNextButton() {
     return [[NSUserDefaults standardUserDefaults] boolForKey:@"replacePreviousAndNextButton_enabled"];
 }
 
 # pragma mark - Tweaks
-// Enable Reorder videos from playlist while on the Watch page - @PoomSmart
-%hook YTIPlaylistPanelVideoRenderer 
-%new 
-- (BOOL)canReorder { return YES; }
-%end
-
 // Skips content warning before playing *some videos - @PoomSmart
 %hook YTPlayabilityResolutionUserActionUIController
 - (void)showConfirmAlert { [self confirmAlertDidPressConfirm]; }
@@ -292,13 +287,26 @@ BOOL replacePreviousAndNextButton() {
 }
 %end
 
-// Enable Shorts scroll bar - @PoomSmart & @level3tjg
+// YTShortsProgress - @PoomSmart - https://github.com/PoomSmart/YTShortsProgress
 %hook YTReelPlayerViewController
+- (BOOL)shouldEnablePlayerBar { return YES; }
 - (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
+- (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
 %end
 
-%hook YTInlinePlayerBarContainerView
-- (void)setUserInteractionEnabled:(BOOL)enabled { %orig(YES); }
+%hook YTReelPlayerViewControllerSub
+- (BOOL)shouldEnablePlayerBar { return YES; }
+- (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
+- (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
+%end
+
+%hook YTColdConfig
+- (BOOL)iosEnableVideoPlayerScrubber { return YES; }
+- (BOOL)mobileShortsTabInlined { return YES; }
+%end
+
+%hook YTHotConfig
+- (BOOL)enablePlayerBarForVerticalVideoWhenControlsHiddenInFullscreen { return YES; }
 %end
 
 // Hide Paid Promotion Card
@@ -383,9 +391,34 @@ BOOL replacePreviousAndNextButton() {
 }
 %end
 
+// Fix "Google couldn't confirm this attempt to sign in is safe. If you think this is a mistake, you can close and try again to sign in" - qnblackcat/uYouPlus#420
+// Thanks to @AhmedBafkir and @kkirby - https://github.com/qnblackcat/uYouPlus/discussions/447#discussioncomment-3672881
+%group gFixGoogleSignIn
+%hook SSORPCService
++ (id)URLFromURL:(id)arg1 withAdditionalFragmentParameters:(NSDictionary *)arg2 {
+    NSURL *orig = %orig;
+    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:orig resolvingAgainstBaseURL:NO];
+    NSMutableArray *newQueryItems = [urlComponents.queryItems mutableCopy];
+    for (NSURLQueryItem *queryItem in urlComponents.queryItems) {
+        if ([queryItem.name isEqualToString:@"system_version"]
+         || [queryItem.name isEqualToString:@"app_version"]
+         || [queryItem.name isEqualToString:@"kdlc"]
+         || [queryItem.name isEqualToString:@"kss"]
+         || [queryItem.name isEqualToString:@"lib_ver"]
+         || [queryItem.name isEqualToString:@"device_model"]) {
+            [newQueryItems removeObject:queryItem];
+        }
+    }
+    urlComponents.queryItems = [newQueryItems copy];
+    return urlComponents.URL;
+}
+%end
+%end
+
 // Fix "You can't sign in to this app because Google can't confirm that it's safe" warning when signing in. by julioverne & PoomSmart
 // https://gist.github.com/PoomSmart/ef5b172fd4c5371764e027bea2613f93
 // https://github.com/qnblackcat/uYouPlus/pull/398
+/* 
 %group gDevice_challenge_request_hack
 %hook SSOService
 + (id)fetcherWithRequest:(NSMutableURLRequest *)request configuration:(id)configuration {
@@ -401,6 +434,7 @@ BOOL replacePreviousAndNextButton() {
 }
 %end
 %end
+*/ 
 
 // Fix login for YouTube 17.33.2 and higher - @BandarHL
 // https://gist.github.com/BandarHL/492d50de46875f9ac7a056aad084ac10
@@ -494,6 +528,16 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if (isDarkMode() && [self.nextResponder isKindOfClass:%c(_ASDisplayView)]) { 
         self.superview.backgroundColor = [UIColor blackColor];
+    }
+}
+%end
+
+// Sub?
+%hook ELMView
+- (void)didMoveToWindow {
+    %orig;
+    if (isDarkMode()) {
+        self.subviews[0].backgroundColor = [UIColor blackColor];
     }
 }
 %end
@@ -656,6 +700,11 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     }
 }
 %end
+
+// Incompatibility with the new YT Dark theme
+%hook YTColdConfig
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
+%end
 %end
 
 # pragma mark - OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
@@ -752,25 +801,50 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 %end
 
-// YTNoShorts: https://github.com/MiRO92/YTNoShorts
-%hook YTAsyncCollectionView
-- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-        UICollectionViewCell *cell = %orig;
-        if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
-            _ASCollectionViewCell *cell = %orig;
-            if ([cell respondsToSelector:@selector(node)]) {
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"] && hideShorts()) { [self removeShortsCellAtIndexPath:indexPath]; }
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
-            }
-        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && hideShorts()) {
-            [self removeShortsCellAtIndexPath:indexPath];
-        }
-        return %orig;
+// YTSpeed - https://github.com/Lyvendia/YTSpeed
+%hook YTVarispeedSwitchController
+- (id)init {
+	id result = %orig;
+
+	const int size = 12;
+	float speeds[] = {0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0};
+	id varispeedSwitchControllerOptions[size];
+
+	for (int i = 0; i < size; ++i) {
+		id title = [NSString stringWithFormat:@"%.2fx", speeds[i]];
+		varispeedSwitchControllerOptions[i] = [[%c(YTVarispeedSwitchControllerOption) alloc] initWithTitle:title rate:speeds[i]];
+	}
+
+	NSUInteger count = sizeof(varispeedSwitchControllerOptions) / sizeof(id);
+	NSArray *varispeedArray = [NSArray arrayWithObjects:varispeedSwitchControllerOptions count:count];
+	MSHookIvar<NSArray *>(self, "_options") = varispeedArray;
+
+	return result;
 }
-%new
-- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
-    [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+%end
+
+%hook MLHAMQueuePlayer
+- (void)setRate:(float)rate {
+	MSHookIvar<float>(self, "_rate") = rate;
+	MSHookIvar<float>(self, "_preferredRate") = rate;
+
+	id player = MSHookIvar<HAMPlayerInternal *>(self, "_player");
+	[player setRate: rate];
+	
+	id stickySettings = MSHookIvar<MLPlayerStickySettings *>(self, "_stickySettings");
+	[stickySettings setRate: rate];
+
+	[self.playerEventCenter broadcastRateChange: rate];
+
+	YTSingleVideoController *singleVideoController = self.delegate;
+	[singleVideoController playerRateDidChange: rate];
+}
+%end 
+
+%hook YTPlayerViewController
+%property float playbackRate;
+- (void)singleVideo:(id)video playbackRateDidChange:(float)rate {
+	%orig;
 }
 %end
 
@@ -793,12 +867,12 @@ static void replaceTab(YTIGuideResponse *response) {
        %init(gHideCastButton);
     }
     if (hidePreviousAndNextButton()) {
-        %init(gHidePreviousAndNextButton);
+       %init(gHidePreviousAndNextButton);
     }
     if (replacePreviousAndNextButton()) {
-        %init(gReplacePreviousAndNextButton);
+       %init(gReplacePreviousAndNextButton);
     }
-    if (!fixGoogleSigin()) {
-        %init(gDevice_challenge_request_hack);
+    if (!fixGoogleSignIn()) {
+       %init(gFixGoogleSignIn);
     }
 }
