@@ -801,6 +801,28 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 %end
 
+// YTNoShorts: https://github.com/MiRO92/YTNoShorts
+%hook YTAsyncCollectionView
+- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+        UICollectionViewCell *cell = %orig;
+        if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
+            _ASCollectionViewCell *cell = %orig;
+            if ([cell respondsToSelector:@selector(node)]) {
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"] && hideShorts()) { [self removeShortsCellAtIndexPath:indexPath]; }
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
+            }
+        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && hideShorts()) {
+            [self removeShortsCellAtIndexPath:indexPath];
+        }
+        return %orig;
+}
+%new
+- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
+    [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+}
+%end
+
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
 %hook YTVarispeedSwitchController
 - (id)init {

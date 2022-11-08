@@ -66,8 +66,6 @@
 // YTAutoFullscreen
 @interface YTPlayerViewController (YTAFS)
 - (void)autoFullscreen;
-- (id)activeVideoPlayerOverlay; // DontEatMycontent
-- (id)playerView; // DontEatMycontent
 @end
 
 // YTNoShorts
