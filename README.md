@@ -2,6 +2,24 @@
 
 ![IMG_3425](https://user-images.githubusercontent.com/52943116/179364947-760ffb4d-a280-4203-9a9d-b2b7462a3c69.PNG)
 
+---
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20iPadOS%2014.0%2B-yellow" alt="Badge"/>  
+</p>
+
+<p align="center">
+    <a href="https://github.com/qnblackcat/CercubePlus/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/qnblackcat/CercubePlus?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
+    <a href="https://github.com/qnblackcat/CercubePlus/releases/latest"><img src="https://img.shields.io/github/downloads/qnblackcat/CercubePlus/total?label=Download" alt="Badge"></img></a>
+    <a href="https://github.com/qnblackcat/CercubePlus/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/qnblackcat/CercubePlus?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
+</p>
+
+<p align="center">
+   <img src="https://img.shields.io/github/stars/qnblackcat/CercubePlus?style=social" alt="Badge"/>
+   <img src="https://img.shields.io/github/forks/qnblackcat/CercubePlus?style=social" alt="Badge"/>
+   <a href="https://github.com/qnblackcat/CercubePlus#support-the-developers"><img src="https://img.shields.io/badge/-Support-lightgrey?style=social&logo=paypal" alt="Badge"></img></a>
+</p>
+
 # Table of Contents
 
 * [Credits](#credits)
@@ -13,31 +31,109 @@
 
 # Credits
 
-- [Majd Alfhaily](https://twitter.com/freemanrepo) for [Cercube](https://apt.alfhaily.me/depiction/FDXO5R).
+# Credits
+- Special thanks to all the developers who have contributed to CercubePlus! 
 
-- [Galactic-Dev](https://github.com/Galactic-Dev) and [Luewii](https://github.com/Luewii) for [iSponsorBlock](https://github.com/Galactic-Dev/iSponsorBlock).
-
-- [HASHBANG Productions](https://github.com/hbang) for [Alderis Color Picker](https://github.com/hbang/Alderis) - a dependency of iSponsorBlock.
-
-- [PoomSmart](https://twitter.com/poomsmart) - the developer of many tweaks used by CercubePlus, see [Version info - Download](#download) for more details.
-
-- [level3tjg](https://twitter.com/level3tjg) for [YTNoHoverCards](https://github.com/level3tjg/YTNoHoverCards) and [YTMiniplayerEnabler](https://github.com/level3tjg/YTMiniplayerEnabler).
-
-- [BandarHL](https://twitter.com/bandarhl) for a bunch of improvements.
-
-- [Julioverne](https://twitter.com/ijulioverne) for the solution to skip Google's safety warning when logging in.
-
-- [Lyvendia](https://github.com/Lyvendia/) for [YTSpeed](https://github.com/Lyvendia/YTSpeed/)
-
-- [therealFoxster](https://github.com/therealFoxster) for [DontEatMyContent](https://github.com/therealFoxster/DontEatMyContent).
-
-- [MiRO92](https://twitter.com/miro92) for [YTNoShorts](https://github.com/MiRO92/YTNoShorts/blob/main/Tweak.h).
-
-- [YouTube Extensions](https://github.com/CokePokes/YoutubeExtensions) by [CokePokes](https://github.com/CokePokes/).
-
-- [theos team](https://github.com/theos/theos) for theos & theos-jailed.
-
-- Thanks to all the translators who have contributed to CercubePlus. Your contribution is highly appreciated!
+<table id='credit'>
+<tr>
+<td id='majd'>
+<a href='https://github.com/majd'>
+<img src='https://github.com/majd.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://github.com/majd'>Majd Alfhaily</a></h4>
+</td>
+<td id='poomsmart'>
+<a href='https://github.com/PoomSmart'>
+<img src='https://github.com/PoomSmart.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/poomsmart'>PoomSmart</a></h4>
+</td>
+<td id='level3tjg'>
+<a href='https://github.com/level3tjg'>
+<img src='https://github.com/level3tjg.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/level3tjg'>level3tjg</a></h4>
+</td>
+<td id='bandarHL'>
+<a href='https://github.com/BandarHL'>
+<img src='https://github.com/BandarHL.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/bandarhl'>BandarHelal</a></h4>
+</td>
+<td id='galactic-dev'>
+<a href='https://github.com/Galactic-Dev'>
+<img src='https://github.com/Galactic-Dev.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/dev_galactic'>galactic</a></h4>
+</td>
+</tr>
+  
+<tr>
+<td id='miro92'>
+<a href='https://github.com/MiRO92'>
+<img src='https://github.com/MiRO92.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/miro92'>MiRO92</a></h4>
+</td>
+<td id='hbang'>
+<a href='https://github.com/hbang'>
+<img src='https://github.com/hbang.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/hashbang'>HASHBANG</a></h4>
+</td>
+<td id='lyvendia'>
+<a href='https://github.com/Lyvendia'>
+<img src='https://github.com/Lyvendia.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://github.com/Lyvendia'>Lyvendia</a></h4>
+</td>
+<td id='foxster'>
+<a href='https://github.com/therealFoxster'>
+<img src='https://github.com/therealFoxster.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/therealFoxster'>Foxster</a></h4>
+</td>
+<td id='julioverne'>
+<a href='https://github.com/julioverne'>
+<img src='https://github.com/julioverne.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/ijulioverne'>julioverne</a></h4>
+</td>
+</tr>
+  
+<tr>
+<td id='ichitaso'>
+<a href='https://github.com/ichitaso'>
+<img src='https://github.com/ichitaso.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/ichitaso'>ichitaso</a></h4>
+</td>
+<td id='ahmed-bafkir'>
+<a href='https://github.com/AhmedBafkir'>
+<img src='https://github.com/AhmedBafkir.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/Peaceful_0'>Ahmed Bafkir</a></h4>
+</td>
+<td id='cokepokes'>
+<a href='https://github.com/CokePokes'>
+<img src='https://github.com/CokePokes.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://twitter.com/cokepokes'>CokePokes</a></h4>
+</td>
+<td id='isnackable'>
+<a href='https://github.com/ISnackable'>
+<img src='https://github.com/ISnackable.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://isnackable.me/'>Tommy Teo</a></h4>
+</td>
+<td id='theos-team'>
+<a href='https://github.com/theos/theos'>
+<img src='https://github.com/theos.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://theos.dev'>theos</a></h4>
+</td>
+</tr>
+</table>
 
 # Features
 
@@ -131,7 +227,7 @@ any many more...
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
-| **YTABGoodies** | [PoomSmart](https://twitter.com/poomsmart) | 1.0 | [✔︎](https://github.com/PoomSmart/YTABGoodies) |
+| **YTABGoodies** | [PoomSmart](https://twitter.com/poomsmart) | 1.0 | [✔︎](https://poomsmart.github.io/repo/depictions/ytabgoodies.html) |
 | **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YTAutoFullScreen** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen) |
 | **YTShortsProgress** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTShortsProgress) |
