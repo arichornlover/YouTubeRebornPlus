@@ -85,12 +85,11 @@
 @end
 
 // DontEatMyContent
-NSString* deviceName();
-void aspectRatioChanged(CGFloat arg);
-BOOL deviceIsSupported();
-void activate(); 
-void deactivate();
-void center();
+NSString* DEMC_getDeviceModelIdentifier();
+BOOL DEMC_deviceIsSupported();
+void DEMC_activate();
+void DEMC_deactivate(); 
+void DEMC_centerRenderingView();
 
 @interface YTPlayerView : UIView
 - (BOOL)zoomToFill;
