@@ -30,8 +30,6 @@
 * [Building (optional)](#building-optional)
 
 # Credits
-
-# Credits
 - Special thanks to all the developers who have contributed to CercubePlus! 
 
 <table id='credit'>
