@@ -34,6 +34,13 @@ extern BOOL hideNotificationButton();
 extern BOOL fixGoogleSignIn();
 extern BOOL replacePreviousAndNextButton();
 extern BOOL dontEatMyContent();
+extern BOOL lowContrastMode();
+extern BOOL RedUI();
+extern BOOL BlueUI();
+extern BOOL GreenUI();
+extern BOOL OrangeUI();
+extern BOOL PurpleUI();
+extern BOOL PinkUI();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -81,6 +88,69 @@ extern BOOL dontEatMyContent();
     selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/qnblackcat/CercubePlus/releases/latest"]];
     }];
+
+    YTSettingsSectionItem *PinkUI = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Pink UI" titleDescription:@"Pink UI (have every other ui colors off) App restart is required."];
+    PinkUI.hasSwitch = YES;
+    PinkUI.switchVisible = YES;
+    PinkUI.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"PinkUI_enabled"];
+    PinkUI.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"PinkUI_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *PurpleUI = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Purple UI" titleDescription:@"Purple UI (have every other ui colors off) App restart is required."];
+    PurpleUI.hasSwitch = YES;
+    PurpleUI.switchVisible = YES;
+    PurpleUI.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"PurpleUI_enabled"];
+    PurpleUI.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"PurpleUI_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *OrangeUI = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Orange UI" titleDescription:@"Orange UI (have every other ui colors off) App restart is required."];
+    OrangeUI.hasSwitch = YES;
+    OrangeUI.switchVisible = YES;
+    OrangeUI.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"OrangeUI_enabled"];
+    OrangeUI.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"OrangeUI_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *GreenUI = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Green UI" titleDescription:@"Green UI (have every other ui colors off) App restart is required."];
+    GreenUI.hasSwitch = YES;
+    GreenUI.switchVisible = YES;
+    GreenUI.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"GreenUI_enabled"];
+    GreenUI.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"GreenUI_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *BlueUI = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"Blue UI") titleDescription:LOC(@"Blue UI (have every other ui colors off) App restart is required.")];
+    BlueUI.hasSwitch = YES;
+    BlueUI.switchVisible = YES;
+    BlueUI.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"BlueUI_enabled"];
+    BlueUI.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"BlueUI_enabled"];
+        return YES;
+    };
+
+    YTSettingsSectionItem *RedUI = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Red UI" titleDescription:@"Red UI (have every other ui colors off) App restart is required."];
+    RedUI.hasSwitch = YES;
+    RedUI.switchVisible = YES;
+    RedUI.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"RedUI_enabled"];
+    RedUI.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"RedUI_enabled"];
+        return YES;
+    };
+    
+    YTSettingsSectionItem *lowContrastMode = [[%c(YTSettingsSectionItem) alloc] initWithTitle:@"Low Contrast Mode" titleDescription:@"this will Low Contrast texts and buttons just like how the old YouTube Interface did. App restart is required."];
+    lowContrastMode.hasSwitch = YES;
+    lowContrastMode.switchVisible = YES;
+    lowContrastMode.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"lowContrastMode_enabled"];
+    lowContrastMode.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"lowContrastMode_enabled"];
+        return YES;
+    };
 
     YTSettingsSectionItem *dontEatMyContent = [[%c(YTSettingsSectionItem) alloc] initWithTitle:LOC(@"DONT_EAT_MY_CONTENT") titleDescription:LOC(@"DONT_EAT_MY_CONTENT_DESC")];
     dontEatMyContent.hasSwitch = YES;
@@ -280,7 +350,7 @@ extern BOOL dontEatMyContent();
         return YES;
     };
  
-    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[version, autoFull, ytMiniPlayer, fixGoogleSignIn, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, dontEatMyContent, replacePreviousAndNextButton, reExplore]];
+    NSMutableArray <YTSettingsSectionItem *> *sectionItems = [NSMutableArray arrayWithArray:@[version, autoFull, ytMiniPlayer, fixGoogleSignIn, hideAutoplaySwitch, hideCercubeButton, hideCercubePiP, hideCercubeDownload, hideCastButton, hideCC, hideHUD, hideHoverCard, hideNotificationButton, hideShorts, hidePaidPromotionCard, hidePreviousAndNextButton, hideWatermarks, bigYTMiniPlayer, oledDarkMode, oledKeyBoard, dontEatMyContent, replacePreviousAndNextButton, reExplore, lowContrastMode, RedUI, BlueUI, GreenUI, OrangeUI, PurpleUI, PinkUI]];
     [delegate setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:nil headerHidden:NO];
 }
 
