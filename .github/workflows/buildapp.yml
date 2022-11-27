@@ -34,7 +34,7 @@ concurrency:
 jobs:
   build:
     name: Build CercubePlus
-    runs-on: macos-latest
+    runs-on: macos-11
     permissions:
       contents: write
 
