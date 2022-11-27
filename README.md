@@ -1,6 +1,6 @@
 ## Cercube with extra features!
 
-![IMG_3425](https://user-images.githubusercontent.com/52943116/179364947-760ffb4d-a280-4203-9a9d-b2b7462a3c69.PNG)
+![51B4E2E8-E7AE-42BA-9660-7F15F3FF43A1](https://user-images.githubusercontent.com/78001398/194680300-97e8d791-9fe5-42c2-b403-0490a78e1ea8.png)
 
 ---
 
@@ -10,13 +10,13 @@
 
 <p align="center">
     <a href="https://github.com/arichorn/CercubePlus/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/CercubePlus?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
-    <a href="https://github.com/qnblackcat/CercubePlus/releases/latest"><img src="https://img.shields.io/github/downloads/qnblackcat/CercubePlus/total?label=Download" alt="Badge"></img></a>
-    <a href="https://github.com/qnblackcat/CercubePlus/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/qnblackcat/CercubePlus?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/CercubePlus/releases/latest"><img src="https://img.shields.io/github/downloads/arichorn/CercubePlus/total?label=Download" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/CercubePlus/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/qnblackcat/CercubePlus?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
 </p>
 
 <p align="center">
-   <img src="https://img.shields.io/github/stars/qnblackcat/CercubePlus?style=social" alt="Badge"/>
-   <img src="https://img.shields.io/github/forks/qnblackcat/CercubePlus?style=social" alt="Badge"/>
+   <img src="https://img.shields.io/github/stars/arichorn/CercubePlus?style=social" alt="Badge"/>
+   <img src="https://img.shields.io/github/forks/arichorn/CercubePlus?style=social" alt="Badge"/>
    <a href="https://github.com/qnblackcat/CercubePlus#support-the-developers"><img src="https://img.shields.io/badge/-Support-lightgrey?style=social&logo=paypal" alt="Badge"></img></a>
 </p>
 
