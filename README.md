@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/qnblackcat/CercubePlus/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/qnblackcat/CercubePlus?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/CercubePlus/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/CercubePlus?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
     <a href="https://github.com/qnblackcat/CercubePlus/releases/latest"><img src="https://img.shields.io/github/downloads/qnblackcat/CercubePlus/total?label=Download" alt="Badge"></img></a>
     <a href="https://github.com/qnblackcat/CercubePlus/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/qnblackcat/CercubePlus?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
 </p>
