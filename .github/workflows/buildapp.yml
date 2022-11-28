@@ -21,6 +21,16 @@ on:
         default: ""
         required: true
         type: string
+      bundle_id:
+        description: "Modify the bundle ID. Not recommended"
+        default: "com.google.ios.youtube"
+        required: true
+        type: string
+      app_name:
+        description: "Modify the name of the app on the Home Screen. Not recommended"
+        default: "YouTube"
+        required: true
+        type: string
       create_release:
         description: "Create a draft release"
         default: true
@@ -108,16 +118,19 @@ jobs:
         run: |
           (echo 'THEOS_IGNORE_PARALLEL_BUILDING_NOTICE = yes' >> ~/.theosrc)
           cd ${{ github.workspace }}/main
-          (cd ${{ github.workspace }}/main/Tweaks/YouPiP && sed -i '' "13s/$/ AVFoundation UIKit/" Makefile)
-          (cd ${{ github.workspace }}/main/Tweaks/YTABConfig && sed -i '' "12s#.*#YTABConfig_FRAMEWORKS = UIKit#g" Makefile)
+          sed -i '' "12s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
+          sed -i '' "11s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
           make package FINALPACKAGE=1
           (mv "packages/$(ls -t packages | head -n1)" "packages/CercubePlus_${{ env.YOUTUBE_VERSION }}_${{ env.CERCUBE_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
           echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
+          echo -e "==> \033[1mBundle ID: ${{ env.BUNDLE_ID }}\033[0m"
         env:
           THEOS: ${{ github.workspace }}/theos
           CERCUBE_VERSION: ${{ inputs.cercube_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
+          BUNDLE_ID: ${{ inputs.bundle_id }}
+          APP_NAME: ${{ inputs.app_name }}
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
