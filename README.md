@@ -9,15 +9,15 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/arichorn/CercubePlus/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/CercubePlus?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/CercubePlus/releases/latest"><img src="https://img.shields.io/github/downloads/arichorn/CercubePlus/total?label=Download" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/CercubePlus/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/qnblackcat/CercubePlus?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/CercubePlusExtra/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/CercubePlusExtra?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/CercubePlusExtra/releases/latest"><img src="https://img.shields.io/github/downloads/arichorn/CercubePlusExtra/total?label=Download" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/CercubePlusExtra/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/CercubePlusExtra?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
 </p>
 
 <p align="center">
-   <img src="https://img.shields.io/github/stars/arichorn/CercubePlus?style=social" alt="Badge"/>
-   <img src="https://img.shields.io/github/forks/arichorn/CercubePlus?style=social" alt="Badge"/>
-   <a href="https://github.com/qnblackcat/CercubePlus#support-the-developers"><img src="https://img.shields.io/badge/-Support-lightgrey?style=social&logo=paypal" alt="Badge"></img></a>
+   <img src="https://img.shields.io/github/stars/arichorn/CercubePlusExtra?style=social" alt="Badge"/>
+   <img src="https://img.shields.io/github/forks/arichorn/CercubePlusExtra?style=social" alt="Badge"/>
+   <a href="https://github.com/qnblackcat/uYouPlus#support-the-developers"><img src="https://img.shields.io/badge/-Support-lightgrey?style=social&logo=paypal" alt="Badge"></img></a>
 </p>
 
 # Table of Contents
@@ -211,7 +211,7 @@ any many more...
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
 | **YouTube** | Google Inc | 17.43.1 | ✖︎ |
-| **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.11 | ✖︎ |
+| **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.12 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -221,7 +221,8 @@ any many more...
 | **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.3 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
 | **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.3.4 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.15 | [✔︎](https://github.com/PoomSmart/YouPiP) |
-| **YTABConfig** | [PoomSmart](https://twitter.com/poomsmart) | 1.4.4 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
+| **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.0 | [✔︎](https://github.com/PoomSmart/YouMute) |
+| **YTABConfig** | [PoomSmart](https://twitter.com/poomsmart) | 1.4.6 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
@@ -229,7 +230,7 @@ any many more...
 | **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YTAutoFullScreen** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen) |
 | **YTShortsProgress** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTShortsProgress) |
-| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.8.0-1 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 
 </details>
 
