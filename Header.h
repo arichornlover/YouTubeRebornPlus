@@ -85,25 +85,33 @@
 @end
 
 // DontEatMyContent
-NSString* DEMC_getDeviceModelIdentifier();
 BOOL DEMC_deviceIsSupported();
 void DEMC_activate();
 void DEMC_deactivate(); 
 void DEMC_centerRenderingView();
 
 @interface YTPlayerView : UIView
-- (BOOL)zoomToFill;
 - (id)renderingView;
-- (id)playerView;
-@end
-
-@interface MLHAMSBDLSampleBufferRenderingView : UIView
 @end
 
 @interface YTMainAppVideoPlayerOverlayViewController : UIViewController
 - (BOOL)isFullscreen;
-- (id)videoPlayerOverlayView;
-- (id)activeVideoPlayerOverlay;
+@end
+
+@interface HAMSBDLSampleBufferRenderingView : UIView
+@end
+
+@interface MLHAMSBDLSampleBufferRenderingView : HAMSBDLSampleBufferRenderingView
+@end
+
+@interface YTMainAppEngagementPanelViewController : UIViewController
+- (BOOL)isLandscapeEngagementPanel;
+- (BOOL)isPeekingSupported;
+@end
+
+@interface YTEngagementPanelContainerViewController : UIViewController
+- (BOOL)isLandscapeEngagementPanel;
+- (BOOL)isPeekingSupported;
 @end
 
 // OLED Darkmode
