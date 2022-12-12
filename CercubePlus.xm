@@ -18,6 +18,7 @@
 #import "Tweaks/YouTubeHeader/ASCollectionView.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlay.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlayProvider.h"
+#import "Tweaks/YouTubeHeader/YTIElementRenderer.h"
 
 NSBundle *CercubePlusBundle() {
     static NSBundle *bundle = nil;
@@ -971,15 +972,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-// %hook QTMIcon
-// - (UIColor *)imageWithName {
-//          return [UIColor whiteColor];
-// }
-// - (UIColor *)tintImage {
-//          return [UIColor whiteColor];
-// }
-// %end
-
 %hook YTCreateCommentTextView
 - (void)setTintColor:(UIColor *)color { 
     if (isDarkMode()) {
@@ -1059,48 +1051,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
         return %orig;
 }
 %end
-
-%hook SponsorBlockSettingsController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.tableView.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook SponsorBlockViewController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.view.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook MBProgressHUD // changes texts and buttons exclusively on the iSponsorBlock Tweak.
-- (UIColor *)contentColor {
-         return [UIColor whiteColor];
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.tintColor = [UIColor whiteColor]; }
-    }
-}
-%end
 %end
 
 %group gRedUI
@@ -1145,66 +1095,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if (isDarkMode()) {
         self.subviews[0].tintColor = [UIColor whiteColor];
-    }
-}
-%end
-
-%hook YTBackstageCreateRepostDetailView
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook YTFormattedStringLabel
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook SponsorBlockSettingsController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.tableView.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook SponsorBlockViewController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.view.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook MBProgressHUD // changes texts and buttons exclusively on the iSponsorBlock Tweak.
-- (UIColor *)contentColor {
-         return [UIColor whiteColor];
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.tintColor = [UIColor whiteColor]; }
     }
 }
 %end
@@ -1255,66 +1145,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     }
 }
 %end
-
-%hook YTBackstageCreateRepostDetailView
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook YTFormattedStringLabel
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook SponsorBlockSettingsController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.tableView.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook SponsorBlockViewController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.view.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook MBProgressHUD // changes texts and buttons exclusively on the iSponsorBlock Tweak.
-- (UIColor *)contentColor {
-         return [UIColor whiteColor];
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.tintColor = [UIColor whiteColor]; }
-    }
-}
-%end
 %end
 
 %group gPinkUI
@@ -1359,66 +1189,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if (isDarkMode()) {
         self.subviews[0].tintColor = [UIColor whiteColor];
-    }
-}
-%end
-
-%hook YTBackstageCreateRepostDetailView
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook YTFormattedStringLabel
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook SponsorBlockSettingsController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.tableView.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook SponsorBlockViewController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.view.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook MBProgressHUD // changes texts and buttons exclusively on the iSponsorBlock Tweak.
-- (UIColor *)contentColor {
-         return [UIColor whiteColor];
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.tintColor = [UIColor whiteColor]; }
     }
 }
 %end
@@ -1469,66 +1239,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     }
 }
 %end
-
-%hook YTBackstageCreateRepostDetailView
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook YTFormattedStringLabel
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook SponsorBlockSettingsController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.tableView.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook SponsorBlockViewController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.view.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook MBProgressHUD // changes texts and buttons exclusively on the iSponsorBlock Tweak.
-- (UIColor *)contentColor {
-         return [UIColor whiteColor];
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.tintColor = [UIColor whiteColor]; }
-    }
-}
-%end
 %end
 
 %group gGreenUI
@@ -1573,66 +1283,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if (isDarkMode()) {
         self.subviews[0].tintColor = [UIColor whiteColor];
-    }
-}
-%end
-
-%hook YTBackstageCreateRepostDetailView
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook YTFormattedStringLabel
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook SponsorBlockSettingsController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.tableView.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook SponsorBlockViewController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.view.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook MBProgressHUD // changes texts and buttons exclusively on the iSponsorBlock Tweak.
-- (UIColor *)contentColor {
-         return [UIColor whiteColor];
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.tintColor = [UIColor whiteColor]; }
     }
 }
 %end
@@ -1683,68 +1333,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     }
 }
 %end
-
-%hook YTBackstageCreateRepostDetailView
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
 %end
-
-%hook YTFormattedStringLabel
-- (void)setTintColor:(UIColor *)color {
-    if (isDarkMode()) {
-        return %orig([UIColor whiteColor]);
-    }
-        return %orig;
-}
-%end
-
-%hook SponsorBlockSettingsController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.tableView.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook SponsorBlockViewController
-- (void)viewDidLoad {
-    if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-        %orig;
-        self.view.tintColor = [UIColor whiteColor];
-    } else { return %orig; }
-}
-%end
-
-%hook MBProgressHUD // changes texts and buttons exclusively on the iSponsorBlock Tweak.
-- (UIColor *)contentColor {
-         return [UIColor whiteColor];
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if (isDarkMode()) {
-        if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.ui.cancel.button"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.tintColor = [UIColor whiteColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.tintColor = [UIColor whiteColor]; }
-    }
-}
-%end
-%end
-
 
 // YTReExplore: https://github.com/PoomSmart/YTReExplore/
 %group gReExplore
@@ -2006,27 +1595,40 @@ void DEMC_centerRenderingView() {
     centerYConstraint.active = YES;
 }
 
-// YTNoShorts: https://github.com/MiRO92/YTNoShorts
-%hook YTAsyncCollectionView
-- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-        UICollectionViewCell *cell = %orig;
-        if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
-            _ASCollectionViewCell *cell = %orig;
-            if ([cell respondsToSelector:@selector(node)]) {
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"] && hideShorts()) { [self removeShortsCellAtIndexPath:indexPath]; }
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
-            }
-        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && hideShorts()) {
-            [self removeShortsCellAtIndexPath:indexPath];
-        }
-        return %orig;
+
+// YTUnShorts - https://github.com/PoomSmart/YTUnShorts
+BOOL didLateHook = NO;
+
+%group LateHook
+
+%hook YTIElementRenderer
+
+- (NSData *)elementData {
+    NSString *description = [self description];
+    if ([description containsString:@"shorts_shelf.eml"] || [description containsString:@"#shorts"])
+        return nil;
+    return %orig;
 }
-%new
-- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
-    [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
-}
+
 %end
+
+%end
+
+%hook YTSectionListViewController
+
+- (void)loadWithModel:(id)model {
+    if (!didLateHook) {
+        %init(LateHook);
+        didLateHook = YES;
+    }
+    %orig;
+}
+
+%end
+
+%ctor {
+    %init;
+} // YTUnShorts
 
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
 %hook YTVarispeedSwitchController
