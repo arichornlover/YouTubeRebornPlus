@@ -50,7 +50,7 @@ jobs:
 
     steps:
       - name: Checkout Main
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.2.0
         with:
           path: main
           submodules: recursive
@@ -59,7 +59,7 @@ jobs:
         run: brew install ldid dpkg
 
       - name: Setup Theos
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.2.0
         with:
           repository: theos/theos
           ref: master
@@ -84,7 +84,7 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
 
       - name: Setup Theos Jailed
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3.2.0
         with:
           repository: qnblackcat/theos-jailed
           ref: master
@@ -133,7 +133,7 @@ jobs:
           APP_NAME: ${{ inputs.app_name }}
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3.1.1
         env:
           CERCUBE_VERSION: ${{ inputs.cercube_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
