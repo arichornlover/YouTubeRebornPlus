@@ -27,7 +27,7 @@
 "HIDE_CERCUBE_PIP_BUTTON_DESC" = "Ẩn nút PiP của Cercube trong trình phát video.";
 
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Ẩn nút Tải xuống của Cercube";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Ẩn nút Tải xuống của Cercube trong trình phát video.";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Tùy chọn ẩn nút Tải xuống của Cercube đã được bật theo mặc định. bởi vì hiện tại bạn không thể tải xuống bất kỳ thứ gì vì Máy chủ tải xuống của Cercube đã biến mất.";
 
 "HIDE_CAST_BUTTON" = "Ẩn nút Cast video";
 "HIDE_CAST_BUTTON_DESC" = "Cần khởi động lại ứng dụng.";

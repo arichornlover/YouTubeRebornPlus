@@ -27,7 +27,7 @@
 "HIDE_CERCUBE_PIP_BUTTON_DESC" = "ビデオコントロールオーバーレイでCercubeのPiPボタンを非表示にします。";
 
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Cercubeのダウンロードボタンを非表示";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "ビデオコントロールオーバーレイでCercubeのダウンロードボタンを非表示にします。";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Cercube のダウンロード ボタンを非表示にするオプションは、デフォルトで有効になっています。 Cercube のダウンロード サーバーがなくなったため、現在何もダウンロードできないためです。";
 
 "HIDE_CAST_BUTTON" = "キャストボタンを非表示";
 "HIDE_CAST_BUTTON_DESC" = "アプリの再起動が必要です。";

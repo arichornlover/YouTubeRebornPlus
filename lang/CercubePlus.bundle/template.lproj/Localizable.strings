@@ -45,7 +45,7 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_CERCUBE_PIP_BUTTON_DESC" = "Hide the PiP button of Cercube in video controls overlay.";
 
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Hide Cercube's Download button";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Hide the Download button of Cercube in video controls overlay.";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Option to hide Cercube's Download button has been enabled by default. because you are unable to download anything now since Cercube's Download Servers are gone.";
 
 "HIDE_CAST_BUTTON" = "Hide Cast button";
 "HIDE_CAST_BUTTON_DESC" = "App restart is required.";

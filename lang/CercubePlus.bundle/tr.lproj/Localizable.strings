@@ -27,7 +27,7 @@
 "HIDE_CERCUBE_PIP_BUTTON_DESC" = "Video kontrolleri katmanındaki Cercube'ün PiP düğmesini gizler.";
 
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Cercube'ün İndir düğmesini gizle";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Video kontrolleri katmanında Cercube'un İndir düğmesini gizler.";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Cercube'ün İndir düğmesini gizleme seçeneği varsayılan olarak etkindir. çünkü Cercube'ün İndirme Sunucuları gittiğinden beri hiçbir şey indiremezsiniz.";
 
 "HIDE_CAST_BUTTON" = "Yayınla düğmesini gizle";
 "HIDE_CAST_BUTTON_DESC" = "Uygulamanın yeniden başlatılması gerekir.";

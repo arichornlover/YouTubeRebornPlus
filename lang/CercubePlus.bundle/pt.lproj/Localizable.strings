@@ -27,7 +27,7 @@
 "HIDE_CERCUBE_BUTTON_DESC" = "";
 
 "HIDE_CERCUBE_PIP_BUTTON" = "Ocultar o botão PiP do Cercube";
-"HIDE_CERCUBE_PIP_BUTTON_DESC" = "Oculta o botão PiP do Cercube na sobreposição de controles de vídeo.";
+"HIDE_CERCUBE_PIP_BUTTON_DESC" = "A opção para ocultar o botão Download do Cercube foi ativada por padrão. porque você não pode baixar nada agora, já que os servidores de download do Cercube se foram.";
 
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Ocultar o botão Download do Cercube";
 "HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Oculta o botão Download do Cercube na sobreposição de controles de vídeo.";

@@ -21,7 +21,7 @@
 "HIDE_CERCUBE_PIP_BUTTON_DESC" = "Скрывает кнопку Картинка-в-Картинке твика «Cercube», отображаемую поверх плеера.";
 
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Скрыть кнопку Скачать от «Cercube»";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Скрывает кнопку Скачать твика «Cercube», отображаемую поверх плеера.";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Возможность скрыть кнопку загрузки Cercube включена по умолчанию. потому что вы не можете ничего скачать сейчас, так как серверы загрузки Cercube исчезли.";
 
 "HIDE_CAST_BUTTON" = "Скрыть кнопку «Транслировать»";
 "HIDE_CAST_BUTTON_DESC" = "Потребуется перезагрузка.";

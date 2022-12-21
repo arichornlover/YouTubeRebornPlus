@@ -18,7 +18,7 @@
 "HIDE_CERCUBE_PIP_BUTTON_DESC" = "لإخفاء الزر في مشغل الفيديو";
 
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "إخفاء زر التنزيل الخاص بسيركيوب";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "لإخفاء زر التنزيل في مشغل الفيديو";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "تم تمكين خيار إخفاء زر تنزيل Cercube افتراضيًا لأنك غير قادر على تنزيل أي شيء الآن منذ اختفاء خوادم تنزيل Cercube";
 
 "HIDE_CAST_BUTTON" = "إخفاء زر الكاست";
 "HIDE_CAST_BUTTON_DESC" = "تحتاج لإغلاق التطبيق وإعادة فتحه";
