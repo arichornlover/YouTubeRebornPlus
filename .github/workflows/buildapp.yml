@@ -8,7 +8,7 @@ on:
     inputs:
       cercube_version:
         description: "The version of Cercube"
-        default: "5.3.12"
+        default: "5.3.11"
         required: true
         type: string
       decrypted_youtube_url:
