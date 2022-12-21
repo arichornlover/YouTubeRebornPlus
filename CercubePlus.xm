@@ -1595,6 +1595,22 @@ void DEMC_centerRenderingView() {
     centerYConstraint.active = YES;
 }
 
+// YTNoShorts: https://github.com/MiRO92/YTNoShorts
+%hook YTAsyncCollectionView
+- (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+        UICollectionViewCell *cell = %orig;
+        if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
+            _ASCollectionViewCell *cell = %orig;
+            if ([cell respondsToSelector:@selector(node)]) {
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"] && hideShorts()) { [self removeShortsCellAtIndexPath:indexPath]; }
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
+            }
+        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && hideShorts()) {
+            [self removeShortsCellAtIndexPath:indexPath];
+        }
+        return %orig;
+
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
 %hook YTVarispeedSwitchController
 - (id)init {
@@ -1643,36 +1659,6 @@ void DEMC_centerRenderingView() {
 %end
 
 # pragma mark - ctor
-// YTUnShorts - https://github.com/PoomSmart/YTUnShorts
-BOOL didLateHook = NO;
-
-%group LateHook
-
-%hook YTIElementRenderer
-
-- (NSData *)elementData {
-    NSString *description = [self description];
-    if ([description containsString:@"shorts_shelf.eml"] || [description containsString:@"#shorts"])
-        return nil;
-    return %orig;
-}
-
-%end
-
-%end
-
-%hook YTSectionListViewController
-
-- (void)loadWithModel:(id)model {
-    if (!didLateHook) {
-        %init(LateHook);
-        didLateHook = YES;
-    }
-    %orig;
-}
-
-%end // YTUnShorts
-
 %ctor {
     %init;
     if (oled()) {
