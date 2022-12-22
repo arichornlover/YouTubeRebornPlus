@@ -257,7 +257,7 @@ extern BOOL PinkUI();
     hideCercubeDownload.switchVisible = NO;
     hideCercubeDownload.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeDownload_enabled"];
     hideCercubeDownload.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideCercubeDownload_enabled"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hideCercubeDownload_enabled"];
         return YES;
     };
 
@@ -372,5 +372,3 @@ extern BOOL PinkUI();
     %orig;
 }
 %end
-
-[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hideCercubeDownload"]; // hideCercubeDownload Disabled - Reason was due because it no longer works.
