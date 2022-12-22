@@ -1610,6 +1610,12 @@ void DEMC_centerRenderingView() {
             [self removeShortsCellAtIndexPath:indexPath];
         }
         return %orig;
+}
+%new
+- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
+    [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+}
+%end
 
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
 %hook YTVarispeedSwitchController
