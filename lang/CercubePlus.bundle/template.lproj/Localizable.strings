@@ -17,17 +17,91 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "VERSION" = "CercubePlus's version: %@";
 "VERSION_CHECK" = "Tap to check for update!";
 
+// Video player options
+"VIDEO_PLAYER_OPTIONS" = "Video Player Options";
+
+"SNAP_TO_CHAPTER" = "Disable snap to chapter";
+"SNAP_TO_CHAPTER_DESC" = "Disable auto snap to chapter when seeking in videos. App restart is required.";
+
+"PINCH_TO_ZOOM" = "Disable pinch to zoom";
+"PINCH_TO_ZOOM_DESC" = "App restart is required.";
+
+// Video controls overlay options
+"VIDEO_CONTROLS_OVERLAY_OPTIONS" = "Video Controls Overlay Options";
+
+"HIDE_CHANNEL_WATERMARK" = "Hide Channel Watermark";
+"HIDE_CHANNEL_WATERMARK_DESC" = "Hide channel's watermark in video controls overlay. App restart is required.";
+
+"RED_PROGRESS_BAR" = "Red progress bar";
+"RED_PROGRESS_BAR_DESC" = "Bring back the red progress bar. App restart is required.";
+
 "DONT_EAT_MY_CONTENT" = "Prevent Notch/Island on 2:1 Video Content (DontEatMyContent)";
 "DONT_EAT_MY_CONTENT_DESC" = "Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube. App restart is required.";
 
-"REPLACE_PREVIOUS_NEXT_BUTTON" = "Replace Previous and Next Button";
-"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next Button with Fast forward and Rewind button. App restart is required.";
+// Shorts controls overlay options
+"SHORTS_CONTROLS_OVERLAY_OPTIONS" = "Shorts Controls Overlay Options";
+
+"HIDE_SHORTS_CHANNEL_AVATAR" = "Hide Shorts channel's avatar";
+"HIDE_SHORTS_CHANNEL_AVATAR_DESC" = "";
+
+"HIDE_SHORTS_DISLIKE_BUTTON" = "Hide Shorts dislike button";
+"HIDE_SHORTS_DISLIKE_BUTTON_DESC" = "";
+
+"HIDE_SHORTS_COMMENT_BUTTON" = "Hide Shorts comment button";
+"HIDE_SHORTS_COMMENT_BUTTON_DESC" = "";
+
+"HIDE_SHORTS_REMIX_BUTTON" = "Hide Shorts remix button";
+"HIDE_SHORTS_REMIX_BUTTON_DESC" = "";
+
+"HIDE_SHORTS_SHARE_BUTTON" = "Hide Shorts share button";
+"HIDE_SHORTS_SHARE_BUTTON_DESC" = "";
+
+"HIDE_SUPER_THANKS" = "Hide 'Buy Super Thanks' banner";
+"HIDE_SUPER_THANKS_DESC" = "Hide the 'Buy Super Thanks' banner in Shorts.";
+
+"DISABLE_RESUME_TO_SHORTS" = "Disable resume to Shorts";
+"DISABLE_RESUME_TO_SHORTS_DESC" = "If you close YouTube while watching Shorts, Shorts won‘t automatically play next time you launch YouTube.";
+
+// Theme
+"THEME_OPTIONS" = "Theme Options";
+
+"OLED_DARK_THEME" = "OLED dark theme (Experimental)";
+"OLED_DARK_THEME_2" = "OLED dark theme";
+"OLED_DARK_THEME_DESC" = "True dark theme. Might not work correctly in some cases. App restart is required after you enable/disable this option.";
+
+"OLD_DARK_THEME" = "Old dark theme";
+"OLD_DARK_THEME_DESC" = "Old YouTube's dark theme (grey theme). App restart is required.";
+
+"DEFAULT_THEME" = "Defaut";
+"DEFAULT_THEME_DESC" = "Default dark(er) theme of YouTube. App restart is required.";
+
+"OLED_KEYBOARD" = "OLED Keyboard (Experimental)";
+"OLED_KEYBOARD_DESC" = "Might not work correctly in some cases. App restart is required.";
+
+// Miscellaneous
+"MISCELLANEOUS" = "Miscellaneous";
+
+"CAST_CONFIRM" = "Confirm alert before casting (YTCastConfirm)";
+"CAST_CONFIRM_DESC" = "Show a confirm alert before casting to prevent accidentally hijacking TV.";
+"CASTING" = "Castings";
+"MSG_ARE_YOU_SURE" = "Are you sure you want to start casting?";
+"MSG_YES" = "Yes";
+"MSG_CANCEL" = "Cancel";
+
+"DISABLE_HINTS" = "Disable hints";
+"DISABLE_HINTS_DESC" = "Disable feature hints from YouTube that usually display when the app is freshly installed.";
 
 "FIX_GOOGLE_SIGNIN" = "Fix Google Sign in (for TrollStore user only)";
-"FIX_GOOGLE_SIGNIN_DESC" = "Turn on this option only when you can't sign in with your Google account and the app was installed via TrollStore. If you can log in normally, keep it disabled. App restart is required.";
+"FIX_GOOGLE_SIGNIN_DESC" = "Only turn on this option when you can't sign in with your Google account and the app was installed via TrollStore. If you can log in normally, keep it disabled. App restart is required.";
 
-"KILL_APP" = "Close YouTube";
-"KILL_APP_DESC" = "Tap here to close YouTube!";
+"NEW_MINIPLAYER_STYLE" = "New mini player bar style (BigYTMiniPlayer)";
+"NEW_MINIPLAYER_STYLE_DESC" = "App restart is required.";
+
+"YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "App restart is required.";
+
+"REPLACE_PREVIOUS_NEXT_BUTTON" = "Replace Previous and Next Button";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next Button with Fast forward and Rewind button. App restart is required.";
 
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Hide Previous and Next button";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
@@ -59,9 +133,6 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "NEW_MINIPLAYER_STYLE" = "New miniplayer bar style (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "App restart is required.";
 
-"YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
-"YT_RE_EXPLORE_DESC" = "App restart is required.";
-
 "HIDE_SUBTITLES_BUTTON" = "Hide Subtitles button";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Hide the Subtitles button in video controls overlay.";
 
@@ -73,12 +144,6 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "HIDE_HUD_MESSAGES" = "Hide HUD Messages";
 "HIDE_HUD_MESSAGES_DESC" = "Example: CC is turned on/off, Video loop is on,...";
-
-"OLED_DARKMODE" = "OLED Dark mode (Experimental)";
-"OLED_DARKMODE_DESC" = "Might not working correctly in some cases. App restart is required after you enable/disable this option.";
-
-"OLED_KEYBOARD" = "OLED Keyboard (Experimental)";
-"OLED_KEYBOARD_DESC" = "Might not working correctly in some cases. App restart is required.";
 
 "HIDE_PAID_PROMOTION_CARDS" = "Hide Paid Promotion cards";
 "HIDE_PAID_PROMOTION_CARDS_DESC" = "Hide the 'Includes Paid Promotions' card in some videos.";

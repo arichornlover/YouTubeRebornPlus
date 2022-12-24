@@ -57,98 +57,14 @@ static NSString *accessGroupID() {
 }
 
 //
-BOOL hideHUD() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHUD_enabled"];
-}
-BOOL oled() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"oled_enabled"];
-}
-BOOL oledKB() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"oledKeyBoard_enabled"];
-}
-BOOL isDarkMode() {
+static BOOL isDarkMode() {
     return ([[NSUserDefaults standardUserDefaults] integerForKey:@"page_style"] == 1);
 }
-BOOL autoFullScreen() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"autoFull_enabled"];
+static BOOL oledDarkTheme() {
+    return ([[NSUserDefaults standardUserDefaults] integerForKey:@"appTheme"] == 1);
 }
-BOOL hideHoverCard() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideHoverCard_enabled"];
-}
-BOOL reExplore() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"reExplore_enabled"];
-}
-BOOL bigYTMiniPlayer() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"bigYTMiniPlayer_enabled"];
-}
-BOOL hideCC() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCC_enabled"];
-}
-BOOL hideAutoplaySwitch() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideAutoplaySwitch_enabled"];
-}
-BOOL hideCercubeButton() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeButton_enabled"];
-}
-BOOL hideCercubePiP() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubePiP_enabled"];
-}
-BOOL hideCercubeDownload() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCercubeDownload_enabled"];
-}
-BOOL hideCastButton () {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideCastButton_enabled"];
-}
-BOOL hideWatermarks() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideWatermarks_enabled"];
-}
-BOOL ytMiniPlayer() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"ytMiniPlayer_enabled"];
-}
-BOOL hideShorts() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideShorts_enabled"];
-}
-BOOL hidePreviousAndNextButton() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hidePreviousAndNextButton_enabled"];
-}
-BOOL hidePaidPromotionCard() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hidePaidPromotionCard_enabled"];
-}
-BOOL hideNotificationButton() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideNotificationButton_enabled"];
-}
-BOOL fixGoogleSignIn() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"fixGoogleSignIn_enabled"];
-}
-BOOL replacePreviousAndNextButton() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"replacePreviousAndNextButton_enabled"];
-}
-BOOL dontEatMyContent() {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"dontEatMyContent_enabled"];
-}
-BOOL lowContrastMode () {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"lowContrastMode_enabled"];
-}
-BOOL BlueUI () {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"BlueUI_enabled"];
-}
-BOOL RedUI () {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"RedUI_enabled"];
-}
-BOOL OrangeUI () {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"OrangeUI_enabled"];
-}
-BOOL PinkUI () {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"PinkUI_enabled"];
-}
-BOOL PurpleUI () {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"PurpleUI_enabled"];
-}
-BOOL GreenUI () {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"GreenUI_enabled"];
-}
-BOOL YellowUI () {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"YellowUI_enabled"];
+static BOOL oldDarkTheme() {
+    return ([[NSUserDefaults standardUserDefaults] integerForKey:@"appTheme"] == 2);
 }
 
 # pragma mark - Tweaks
@@ -160,7 +76,7 @@ BOOL YellowUI () {
 // YTMiniPlayerEnabler: https://github.com/level3tjg/YTMiniplayerEnabler/
 %hook YTWatchMiniBarViewController
 - (void)updateMiniBarPlayerStateFromRenderer {
-    if (ytMiniPlayer()) {}
+    if (IsEnabled(@"ytMiniPlayer_enabled")) {}
     else { return %orig; }
 }
 %end
@@ -185,10 +101,10 @@ BOOL YellowUI () {
 %hook UIStackView
 - (void)didMoveToWindow {
     %orig;
-    if (hideCercubePiP() && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
+    if (IsEnabled(@"hideCercubePiP_enabled")) && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
         self.subviews[0].hidden = YES;
     }
-    if (hideCercubeDownload() && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
+    if (IsEnabled(@"hideCercubeDownload_enabled")) && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
         self.subviews[1].hidden = YES;
     }
 }
@@ -207,22 +123,31 @@ BOOL YellowUI () {
 %end
 %end
 
-// Hide Watermarks
+// Hide Watermark
 %hook YTAnnotationsViewController
 - (void)loadFeaturedChannelWatermark {
-    if (hideWatermarks()) {}
+    if (IsEnabled(@"hideChannelWatermark_enabled")) {}
     else { return %orig; }
+}
+%end
+
+%hook _ASDisplayView
+- (void)didMoveToWindow {
+    %orig;
+      if ((IsEnabled(@"hideBuySuperThanks_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.suggested_action"])) { self.hidden = YES; }
 }
 %end
 
 // Hide CC / Autoplay switch
 %hook YTMainAppControlsOverlayView
 - (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC button
-    if (hideCC()) { return %orig(NO); }   
+    if (IsEnabled(@"hideCC_enabled")) { 
+        return %orig(NO); 
+    }   
     else { return %orig; }
 }
 - (void)setAutoplaySwitchButtonRenderer:(id)arg1 { // hide Autoplay
-    if (hideAutoplaySwitch()) {}
+    if (IsEnabled(@"hideAutoplaySwitch_enabled")) {}
     else { return %orig; }
 }
 %end
@@ -235,17 +160,25 @@ BOOL YellowUI () {
 %end
 %end
 
+// Old dark theme (gray)
+%group gOldDarkTheme
+%hook YTColdConfig
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
+- (BOOL)enableCinematicContainerOnClient { return NO; }
+%end
+%end
+
 // Disabled App Breaking Dialog Flags - @PoomSmart
 %hook YTColdConfig
 - (BOOL)commercePlatformClientEnablePopupWebviewInWebviewDialogController { return NO;}
-- (BOOL)isQuickPreviewDialogEnabled { return NO;}
 %end
 
 %hook YTHotConfig
 - (BOOL)iosEnableShortsPlayerSplitViewController { return NO;} // uYou Buttons in Shorts Fix
 %end
 
-// Hide Update Dialog: https://github.com/PoomSmart/YouTubeHeader/blob/main/YTGlobalConfig.h
+// Hide Upgrade Dialog
 %hook YTGlobalConfig
 - (BOOL)shouldBlockUpgradeDialog { return YES;}
 - (BOOL)shouldForceUpgrade { return NO;}
@@ -278,7 +211,7 @@ BOOL YellowUI () {
 // Hide HUD Messages
 %hook YTHUDMessageView
 - (id)initWithMessage:(id)arg1 dismissHandler:(id)arg2 {
-    return hideHUD() ? nil : %orig;
+    return IsEnabled(@"hideHUD_enabled") ? nil : %orig;
 }
 %end
 
@@ -286,7 +219,7 @@ BOOL YellowUI () {
 %hook YTPlayerViewController
 - (void)loadWithPlayerTransition:(id)arg1 playbackConfig:(id)arg2 {
     %orig;
-    if (autoFullScreen())
+    if (IsEnabled(@"autoFull_enabled"))
         [NSTimer scheduledTimerWithTimeInterval:0.75 target:self selector:@selector(autoFullscreen) userInfo:nil repeats:NO];
 }
 %new
@@ -347,13 +280,12 @@ BOOL YellowUI () {
 }
 %end
 
-// YTNoHoverCards 0.0.3: https://github.com/level3tjg/YTNoHoverCards
+// YTNoHoverCards: https://github.com/level3tjg/YTNoHoverCards
 %hook YTCreatorEndscreenView
 - (void)setHidden:(BOOL)hidden {
-    if (hideHoverCard()) {
+    if (IsEnabled(@"hideHoverCards_enabled"))
         hidden = YES;
-        %orig;
-    }
+    %orig;
 }
 %end
 
@@ -379,21 +311,21 @@ BOOL YellowUI () {
 - (BOOL)enablePlayerBarForVerticalVideoWhenControlsHiddenInFullscreen { return YES; }
 %end
 
-// Hide Paid Promotion Card
+/// YTNoPaidPromo: https://github.com/PoomSmart/YTNoPaidPromo
 %hook YTMainAppVideoPlayerOverlayViewController
 - (void)setPaidContentWithPlayerData:(id)data {
-    if (hidePaidPromotionCard()) {}
+    if (IsEnabled(@"hidePaidPromotionCard_enabled")) {}
     else { return %orig; }
 }
 - (void)playerOverlayProvider:(YTPlayerOverlayProvider *)provider didInsertPlayerOverlay:(YTPlayerOverlay *)overlay {
-    if ([[overlay overlayIdentifier] isEqualToString:@"player_overlay_paid_content"] && hidePaidPromotionCard()) return;
+    if ([[overlay overlayIdentifier] isEqualToString:@"player_overlay_paid_content"] && IsEnabled(@"hidePaidPromotionCard_enabled")) return;
     %orig;
 }
 %end
 
 %hook YTInlineMutedPlaybackPlayerOverlayViewController
 - (void)setPaidContentWithPlayerData:(id)data {
-    if (hidePaidPromotionCard()) {}
+    if (IsEnabled(@"hidePaidPromotionCard_enabled")) {}
     else { return %orig; }
 }
 %end
@@ -530,7 +462,7 @@ BOOL YellowUI () {
 }
 %end
 
-# pragma mark - OLED dark mode by BandarHL
+// OLED dark mode by BandarHL
 UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:1.0];
 %group gOLED
 %hook YTCommonColorPalette
@@ -777,8 +709,8 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-# pragma mark - OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
-%group gOLEDKB
+// OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
+%group gOLEDKB 
 %hook UIPredictionViewController
 - (void)loadView {
     %orig;
@@ -812,7 +744,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gLowContrastMode // Low Contrast Mode v1.1.0 (Compatible with only v15.02.1-v17.39.5)
+%group gLowContrastMode // Low Contrast Mode v1.2.0 (Compatible with only v15.02.1-present)
 %hook UIColor // Changes the whiteColor Method to be YouTube's old ui and also effects Icons & Text under Videos, Comment Section & Shorts caused by whiteColor (Deprecated by YouTube as of v17.40.5-Newer)
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
@@ -849,7 +781,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-// Additional LowContrastMode Code
 %hook UIView // changes some of the texts around the YouTube App.
 - (UIColor *)tintColor {
          return [UIColor whiteColor];
@@ -1664,58 +1595,180 @@ void DEMC_centerRenderingView() {
 }
 %end
 
+// Old dark theme (gray)
+%group gOldDarkTheme
+%hook YTColdConfig
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
+- (BOOL)enableCinematicContainerOnClient { return NO; }
+%end
+
+%hook _ASDisplayView
+- (void)didMoveToWindow {
+    %orig;
+    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = [UIColor clearColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = [UIColor clearColor]; }
+}
+%end
+
+%hook ASCollectionView
+- (void)didMoveToWindow {
+    %orig;
+    self.superview.backgroundColor = [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+}
+%end
+%end
+
+// Disable Pinch to zoom
+%hook YTColdConfig
+- (BOOL)videoZoomFreeZoomEnabledGlobalConfig { 
+    if (IsEnabled(@"pinchToZoom_enabled")) { return NO; }
+    else { return %orig; }
+}
+%end
+
+// Disable snap to chapter
+%hook YTSegmentableInlinePlayerBarView
+- (void)didMoveToWindow {
+    %orig;
+    if (IsEnabled(@"snapToChapter_enabled")) {
+        self.enableSnapToChapter = NO;
+    }
+}
+%end
+
+// Hide Watermark
+%hook YTAnnotationsViewController
+- (void)loadFeaturedChannelWatermark {
+    if (IsEnabled(@"hideChannelWatermark_enabled")) {}
+    else { return %orig; }
+}
+%end
+
+// Disable hints - https://github.com/LillieH001/YouTube-Reborn/blob/v4/
+%group gDisableHints
+%hook YTSettings
+- (BOOL)areHintsDisabled {
+	return YES;
+}
+- (void)setHintsDisabled:(BOOL)arg1 {
+    %orig(YES);
+}
+%end
+%hook YTUserDefaults
+- (BOOL)areHintsDisabled {
+	return YES;
+}
+- (void)setHintsDisabled:(BOOL)arg1 {
+    %orig(YES);
+}
+%end
+%end
+
+// Bring back the red progress bar
+%hook YTColdConfig
+- (BOOL)segmentablePlayerBarUpdateColors { 
+    if (IsEnabled(@"redProgressBar_enabled")) { return NO; }
+    else { return %orig; }
+}
+%end
+
+// Shorts options
+%hook YTReelWatchPlaybackOverlayView
+- (void)setNativePivotButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsChannelAvatar_enabled")) {}
+    else { return %orig; }
+}
+- (void)setReelDislikeButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsDislikeButton_enabled")) {}
+    else { return %orig; }
+}
+- (void)setViewCommentButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsCommentButton_enabled")) {}
+    else { return %orig; }
+}
+- (void)setRemixButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsRemixButton_enabled")) {}
+    else { return %orig; }
+}
+- (void)setShareButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsShareButton_enabled")) {}
+    else { return %orig; }
+}
+%end
+
+%hook _ASDisplayView
+- (void)didMoveToWindow {
+    %orig;
+      if ((IsEnabled(@"hideBuySuperThanks_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.suggested_action"])) { self.hidden = YES; }
+}
+%end
+
+%hook YTColdConfig
+- (BOOL)enableResumeToShorts {
+    if (IsEnabled(@"disableResumeToShorts")) { return NO; }
+    else { return %orig; }
+}
+%end
+
 # pragma mark - ctor
 %ctor {
     %init;
-    if (oled()) {
-       %init(gOLED);
-    }
-    if (oledKB()) {
-       %init(gOLEDKB);
-    }
-    if (reExplore()) {
+    if (IsEnabled(@"reExplore_enabled")) {
        %init(gReExplore);
     }
-    if (bigYTMiniPlayer() && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
+    if (IsEnabled(@"bigYTMiniPlayer_enabled") && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
        %init(Main);
     }
     if (hideCastButton()) {
        %init(gHideCastButton);
     }
-    if (hidePreviousAndNextButton()) {
+    if (IsEnabled(@"hidePreviousAndNextButton_enabled")) {
        %init(gHidePreviousAndNextButton);
     }
-    if (replacePreviousAndNextButton()) {
+    if (IsEnabled(@"replacePreviousAndNextButton_enabled")) {
        %init(gReplacePreviousAndNextButton);
     }
     if (dontEatMyContent() && DEMC_deviceIsSupported()) {
        %init(gDontEatMyContent);
     }
-    if (!fixGoogleSignIn()) {
+    if (!IsEnabled(@"fixGoogleSignIn_enabled")) {
        %init(gFixGoogleSignIn);
     }
-    if (lowContrastMode()) {
+    if (IsEnabled(@"lowContrastMode_enabled")) {
        %init(gLowContrastMode);
     }
-    if (BlueUI()) {
-       %init(gBlueUI);
-    }
-    if (RedUI()) {
+    if (IsEnabled(@"RedUI_enabled")) {
        %init(gRedUI);
     }
-    if (OrangeUI()) {
-       %init(gOrangeUI);
+    if (IsEnabled(@"BlueUI_enabled")) {
+       %init(gBlueUI);
     }
-    if (PinkUI()) {
-       %init(gPinkUI);
-    }
-    if (PurpleUI()) {
-       %init(gPurpleUI);
-    }
-    if (GreenUI()) {
+    if (IsEnabled(@"GreenUI_enabled")) {
        %init(gGreenUI);
     }
-    if (YellowUI()) {
+    if (IsEnabled(@"YellowUI_enabled")) {
        %init(gYellowUI);
+    }
+    if (IsEnabled(@"OrangeUI_enabled")) {
+       %init(gOrangeUI);
+    }
+    if (IsEnabled(@"PurpleUI_enabled")) {
+       %init(gPurpleUI);
+    }
+    if (IsEnabled(@"PinkUI_enabled")) {
+       %init(gPinkUI);
+    }
+    if (oldDarkTheme()) {
+        %init(gOldDarkTheme)
+    }
+    if (oledDarkTheme()) {
+        %init(gOLED)
+    }
+    if (IsEnabled(@"oledKeyBoard_enabled")) {
+       %init(gOLEDKB);
+    }
+    if (IsEnabled(@"disableHints_enabled")) {
+        %init(gDisableHints);
     }
 }
