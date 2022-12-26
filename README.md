@@ -30,9 +30,19 @@
 * [Building (optional)](#building-optional)
 
 # Credits
-- Special thanks to all the developers who have contributed to CercubePlus! 
+
+<table id='maintainer credit'>
+Special thanks to this (very not good at it) developer who kept maintaining support toward CercubePlus!
+<tr>
+<td id='arichorn'>
+<a href='https://github.com/arichorn'>
+<img src='https://github.com/arichorn.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://github.com/majd'>arichorn</a></h4>
+</td>
 
 <table id='credit'>
+Special thanks to all the developers who have contributed to CercubePlus!
 <tr>
 <td id='majd'>
 <a href='https://github.com/majd'>
@@ -180,6 +190,10 @@
 
 14. **YTABConfig**: allow user to control over YouTube A/B testing flags.
 
+15. **YouMute**: Mute/unmute videos in iOS YouTube directly.
+
+16. **LowContrastMode**: makes the YouTube Interface Low Contrast as possible to make it easier on the eyes.
+
 any many more...
 </details>
 
@@ -187,11 +201,13 @@ any many more...
 
 1. **Cercube**: Hide Cast button is not working. (Workaround: Hide cast button in CercubePlus settings)
 
-2. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
+2. **LowContrastMode**: For some reason the tweak doesn't work with every ui element caused by YouTube's New UI update.
 
-3. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
+3. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
 
-4. **Not a bug**: 
+4. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
+
+5. **Not a bug**: 
 
 - The app won't be able to receive push notifications if you use a free developer account to sideload it. 
 
@@ -210,7 +226,7 @@ any many more...
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 17.43.1 | ✖︎ |
+| **YouTube** | Google Inc | 17.49.6 | ✖︎ |
 | **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.12 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
@@ -218,9 +234,10 @@ any many more...
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
-| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.3 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
+| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.5 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
+| **LowContrastMode** | [arichorn](https://twitter.com/LilithAcc) | 1.2.0 | [✔︎](https://github.com/arichorn/LowContrastMode) |
 | **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.3.4 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.15 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.16 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.0 | [✔︎](https://github.com/PoomSmart/YouMute) |
 | **YTABConfig** | [PoomSmart](https://twitter.com/poomsmart) | 1.4.6 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
@@ -230,7 +247,7 @@ any many more...
 | **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YTAutoFullScreen** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen) |
 | **YTShortsProgress** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTShortsProgress) |
-| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.8.0-1 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.10.1 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 
 </details>
 
