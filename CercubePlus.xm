@@ -157,15 +157,6 @@ static BOOL oldDarkTheme() {
 %end
 %end
 
-// Old dark theme (gray)
-%group gOldDarkTheme
-%hook YTColdConfig
-- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
-- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
-- (BOOL)enableCinematicContainerOnClient { return NO; }
-%end
-%end
-
 // Disabled App Breaking Dialog Flags - @PoomSmart
 %hook YTColdConfig
 - (BOOL)commercePlatformClientEnablePopupWebviewInWebviewDialogController { return NO;}
