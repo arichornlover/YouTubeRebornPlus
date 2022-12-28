@@ -501,6 +501,16 @@ extern NSBundle *CercubePlusBundle();
                     return YES;
                 }
                 settingItemId:0], 
+		
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"iPad Layout")
+                titleDescription:LOC(@"only use this if you want to have the iPad Layout on your current device. App restart is required.")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"iPadLayout_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"iPadLayout_enabled"];
+                    return YES;
+                }
+                settingItemId:0], 
         ];        
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"MISCELLANEOUS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
         [settingsViewController pushViewController:picker];
