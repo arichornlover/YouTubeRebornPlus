@@ -142,6 +142,29 @@ static BOOL oldDarkTheme() {
 %end
 %end
 
+%group giPadLayout // https://github.com/LillieH001/YouTube-Reborn
+%hook UIDevice
+- (long long)userInterfaceIdiom {
+    return YES;
+} 
+%end
+%hook UIStatusBarStyleAttributes
+- (long long)idiom {
+    return NO;
+} 
+%end
+%hook UIKBTree
+- (long long)nativeIdiom {
+    return NO;
+} 
+%end
+%hook UIKBRenderer
+- (long long)assetIdiom {
+    return NO;
+} 
+%end
+%end
+
 // Disabled App Breaking Dialog Flags - @PoomSmart
 %hook YTColdConfig
 - (BOOL)commercePlatformClientEnablePopupWebviewInWebviewDialogController { return NO;}
@@ -1692,6 +1715,9 @@ void DEMC_centerRenderingView() {
     }
     if (IsEnabled(@"hideCastButton_enabled")) {
        %init(gHideCastButton);
+    }
+    if (IsEnabled(@"iPadLayout_enabled")) {
+       %init(giPadLayout);
     }
     if (IsEnabled(@"reExplore_enabled")) {
        %init(gReExplore);
