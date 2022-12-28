@@ -1506,7 +1506,7 @@ void DEMC_centerRenderingView() {
         if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
             _ASCollectionViewCell *cell = %orig;
             if ([cell respondsToSelector:@selector(node)]) {
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"] && hideShorts()) { [self removeShortsCellAtIndexPath:indexPath]; }
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"] && (IsEnabled(@"hideShorts_enabled")) { [self removeShortsCellAtIndexPath:indexPath]; }
                 if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
                 if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
             }
