@@ -1546,6 +1546,7 @@ void DEMC_centerRenderingView() {
         [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
 }
 %end
+%end
 
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
 %hook YTVarispeedSwitchController
