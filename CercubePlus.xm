@@ -82,13 +82,13 @@ static BOOL oldDarkTheme() {
 %hook YTRightNavigationButtons
 - (void)didMoveToWindow {
     %orig;
-    if (IsEnabled(@"hideCercubeButton")) { 
+    if (IsEnabled(@"hideCercubeButton_enabled")) { 
         self.cercubeButton.hidden = YES; 
     }
 }
 - (void)layoutSubviews {
     %orig;
-    if (IsEnabled(@"hideNotificationButton")) {
+    if (IsEnabled(@"hideNotificationButton_enabled")) {
         self.notificationButton.hidden = YES;
     }
 }
@@ -1713,6 +1713,9 @@ void DEMC_centerRenderingView() {
     %init;
     if (!IsEnabled(@"fixGoogleSignIn_enabled")) {
        %init(gFixGoogleSignIn);
+    }
+    if (IsEnabled(@"hideCastButton_enabled")) {
+       %init(gHideCastButton);
     }
     if (IsEnabled(@"reExplore_enabled")) {
        %init(gReExplore);
