@@ -120,21 +120,6 @@ static BOOL oldDarkTheme() {
 %end
 %end
 
-// Hide Watermark
-%hook YTAnnotationsViewController
-- (void)loadFeaturedChannelWatermark {
-    if (IsEnabled(@"hideChannelWatermark_enabled")) {}
-    else { return %orig; }
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-      if ((IsEnabled(@"hideBuySuperThanks_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.suggested_action"])) { self.hidden = YES; }
-}
-%end
-
 // Hide CC / Autoplay switch
 %hook YTMainAppControlsOverlayView
 - (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC button
