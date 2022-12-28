@@ -1523,24 +1523,27 @@ void DEMC_centerRenderingView() {
 }
 
 // YTNoShorts: https://github.com/MiRO92/YTNoShorts
+%group gHideShorts
 %hook YTAsyncCollectionView
 - (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-        UICollectionViewCell *cell = %orig;
-        if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
-            _ASCollectionViewCell *cell = %orig;
-            if ([cell respondsToSelector:@selector(node)]) {
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"] && hideShorts()) { [self removeShortsCellAtIndexPath:indexPath]; }
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
+    UICollectionViewCell *cell = %orig;
+
+    if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
+        _ASCollectionViewCell *cell = %orig;
+        if ([cell respondsToSelector:@selector(node)]) {
+            if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"]) {
+                [self removeShortsCellAtIndexPath:indexPath];
             }
-        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && hideShorts()) {
-            [self removeShortsCellAtIndexPath:indexPath];
         }
-        return %orig;
+    } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
+        [self removeShortsCellAtIndexPath:indexPath];
+    }
+    return %orig;
 }
+
 %new
 - (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
-    [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+        [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
 }
 %end
 
@@ -1721,6 +1724,9 @@ void DEMC_centerRenderingView() {
     }
     if (IsEnabled(@"reExplore_enabled")) {
        %init(gReExplore);
+    }
+    if (IsEnabled(@"hideShorts_enabled")) {
+       %init(gHideShorts);
     }
     if (IsEnabled(@"bigYTMiniPlayer_enabled") && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
        %init(Main);
