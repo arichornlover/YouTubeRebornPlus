@@ -82,13 +82,13 @@ static BOOL oldDarkTheme() {
 %hook YTRightNavigationButtons
 - (void)didMoveToWindow {
     %orig;
-    if (hideCercubeButton()) { 
+    if (IsEnabled(@"hideCercubeButton")) { 
         self.cercubeButton.hidden = YES; 
     }
 }
 - (void)layoutSubviews {
     %orig;
-    if (hideNotificationButton()) {
+    if (IsEnabled(@"hideNotificationButton")) {
         self.notificationButton.hidden = YES;
     }
 }
@@ -1534,7 +1534,7 @@ void DEMC_centerRenderingView() {
                 if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
                 if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
             }
-        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && hideShorts()) {
+        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && (IsEnabled(@"hideShorts_enabled")) {
             [self removeShortsCellAtIndexPath:indexPath];
         }
         return %orig;
@@ -1711,26 +1711,23 @@ void DEMC_centerRenderingView() {
 # pragma mark - ctor
 %ctor {
     %init;
+    if (!IsEnabled(@"fixGoogleSignIn_enabled")) {
+       %init(gFixGoogleSignIn);
+    }
     if (IsEnabled(@"reExplore_enabled")) {
        %init(gReExplore);
     }
     if (IsEnabled(@"bigYTMiniPlayer_enabled") && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
        %init(Main);
     }
-    if (hideCastButton()) {
-       %init(gHideCastButton);
+    if (IsEnabled(@"dontEatMyContent_enabled") && DEMC_deviceIsSupported()) {
+       %init(gDontEatMyContent);
     }
     if (IsEnabled(@"hidePreviousAndNextButton_enabled")) {
        %init(gHidePreviousAndNextButton);
     }
     if (IsEnabled(@"replacePreviousAndNextButton_enabled")) {
        %init(gReplacePreviousAndNextButton);
-    }
-    if (dontEatMyContent() && DEMC_deviceIsSupported()) {
-       %init(gDontEatMyContent);
-    }
-    if (!IsEnabled(@"fixGoogleSignIn_enabled")) {
-       %init(gFixGoogleSignIn);
     }
     if (IsEnabled(@"lowContrastMode_enabled")) {
        %init(gLowContrastMode);
