@@ -217,9 +217,9 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
 
-- For AltStore user: [Open in AltStore (v17.43.1-5.3.11)](https://tinyurl.com/357hrwsh) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v17.49.6-5.3.11)](https://tinyurl.com/ycxxbdnp) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Nov 06)_
+- Version info: _(Dec 29 2022)_
 
 <details>
   <summary>Expand!</summary>
@@ -227,7 +227,7 @@ any many more...
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
 | **YouTube** | Google Inc | 17.49.6 | ✖︎ |
-| **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.12 | ✖︎ |
+| **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
