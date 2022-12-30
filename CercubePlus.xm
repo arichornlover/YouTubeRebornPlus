@@ -182,8 +182,14 @@ static BOOL oldDarkTheme() {
 - (BOOL)shouldShowUpgradeDialog { return NO;}
 %end
 
-// Disabled Rounded & Modernize Flags (Disabled by Default for uYouPlusExtra to fix Low Contrast Mode) only works with YouTube v17.40.5-present
-%hook YTGlobalConfig
+// YTNoModernUI - arichorn
+%group gYTNoModernUI
+%hook YTColdConfig
+// Disable Modern Content - YTNoModernUI
+- (BOOL)creatorClientConfigEnableStudioModernizedMdeThumbnailPickerForClient { return NO; }
+- (BOOL)cxClientEnableModernizedActionSheet { return NO; }
+- (BOOL)enableClientShortsSheetsModernization { return NO; }
+- (BOOL)enableTimestampModernizationForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedThumbnailsForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedThumbnailsForNativeLongTail { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedTimestampForNative { return NO; }
@@ -191,9 +197,24 @@ static BOOL oldDarkTheme() {
 - (BOOL)uiSystemsClientGlobalConfigEnableModernButtonsForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableModernButtonsForNativeLongTail { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableModernTabsForNative { return NO; }
+- (BOOL)uiSystemsClientGlobalConfigIosEnableSnackbarModernization { return NO; }
+- (BOOL)mainAppCoreClientIosEnableModernOssPage { return NO; }
+// Disable Darker Dark Mode - YTNoModernUI
+- (BOOL)enableDarkerDarkMode { return NO; }
 - (BOOL)modernizeElementsTextColor { return NO; }
 - (BOOL)modernizeElementsBgColor { return NO; }
 - (BOOL)modernizeCollectionLockups { return NO; }
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
+// 16.42.3 Styled YouTube Channel Page Interface - YTNoModernUI
+- (BOOL)channelsClientConfigIosChannelNavRestructuring { return NO; }
+%end
+%end
+
+// Hide YouTube Heatwaves in Video Player (YouTube v17.19.2-present) - @level3tjg - https://www.reddit.com/r/jailbreak/comments/v29yvk/
+%group gHideHeatwaves
+%hook YTInlinePlayerBarContainerView
+- (BOOL)canShowHeatwave { return NO; }
+%end
 %end
 
 // Replace Next & Previous button with Fast forward & Rewind button
@@ -1346,7 +1367,7 @@ static NSLayoutConstraint *widthConstraint, *heightConstraint, *centerXConstrain
     renderingView = [playerView renderingView];
 
     // Making renderingView a bit larger since constraining to safe area leaves a gap between the notch and video
-    CGFloat constant = 24.5; // Tested on iPhone 13 mini
+    CGFloat constant = 22.0; // Tested on iPhone 13 mini & 14 Pro Max
 
     widthConstraint = [renderingView.widthAnchor constraintEqualToAnchor:renderingViewContainer.safeAreaLayoutGuide.widthAnchor constant:constant];
     heightConstraint = [renderingView.heightAnchor constraintEqualToAnchor:renderingViewContainer.safeAreaLayoutGuide.heightAnchor constant:constant];
@@ -1740,6 +1761,12 @@ void DEMC_centerRenderingView() {
     }
     if (IsEnabled(@"replacePreviousAndNextButton_enabled")) {
        %init(gReplacePreviousAndNextButton);
+    }
+    if (IsEnabled(@"hideHeatwaves_enabled")) {
+       %init(gHideHeatwaves);
+    }
+    if (IsEnabled(@"ytNoModernUI_enabled")) {
+       %init(gYTNoModernUI);
     }
     if (IsEnabled(@"lowContrastMode_enabled")) {
        %init(gLowContrastMode);
