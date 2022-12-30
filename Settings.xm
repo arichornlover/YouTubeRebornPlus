@@ -6,6 +6,15 @@
 #import "Tweaks/YouTubeHeader/YTSettingsPickerViewController.h"
 #import "Header.h"
 
+static BOOL IsEnabled(NSString *key) {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:key];
+}
+static BOOL IsDisabled(NSString *key) {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:key];
+}
+static int GetSelection(NSString *key) {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:key];
+}
 static const NSInteger CercubePlusSection = 500;
 
 @interface YTSettingsSectionItemManager (CercubePlus)
@@ -196,6 +205,15 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],  
 
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Hide Heatwaves (HideHeatwaves)")
+                titleDescription:LOC(@"Should hide the Heatwaves in the video player. App restart is required.")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideHeatwaves_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideHeatwaves_enabled"];
+                    return YES;
+                }
+                settingItemId:0],  
         ];        
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"VIDEO_CONTROLS_OVERLAY_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
         [settingsViewController pushViewController:picker];
@@ -209,7 +227,7 @@ extern NSBundle *CercubePlusBundle();
 	    [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SHORTS_VIDEOS")
                 titleDescription:LOC(@"HIDE_SHORTS_VIDEOS_DESC")
                 accessibilityIdentifier:nil
-                switchOn:@"hideShorts"
+                switchOn:IsEnabled(@"hideShorts_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShorts"];
                     return YES;
@@ -501,6 +519,16 @@ extern NSBundle *CercubePlusBundle();
                     return YES;
                 }
                 settingItemId:0], 
+		
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Remove Modern Interface (YTNoModernUI)")
+                titleDescription:LOC(@"Toggle this on to remove any Modern Element added to YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"ytNoModernUI_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytNoModernUI_enabled"];
+                    return YES;
+                }
+                settingItemId:0],  		
 		
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"iPad Layout")
                 titleDescription:LOC(@"only use this if you want to have the iPad Layout on your current device. App restart is required.")
