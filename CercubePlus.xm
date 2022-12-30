@@ -18,7 +18,11 @@
 #import "Tweaks/YouTubeHeader/ASCollectionView.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlay.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlayProvider.h"
-#import "Tweaks/YouTubeHeader/YTIElementRenderer.h"
+#import "Tweaks/YouTubeHeader/YTReelWatchPlaybackOverlayView.h"
+#import "Tweaks/YouTubeHeader/YTReelPlayerBottomButton.h"
+#import "Tweaks/YouTubeHeader/YTReelPlayerViewController.h"
+#import "Tweaks/YouTubeHeader/YTAlertView.h"
+#import "Tweaks/YouTubeHeader/YTISectionListRenderer.h"
 
 NSBundle *CercubePlusBundle() {
     static NSBundle *bundle = nil;
@@ -54,6 +58,9 @@ static NSString *accessGroupID() {
 }
 
 //
+static BOOL IsEnabled(NSString *key) {
+    return [[NSUserDefaults standardUserDefaults] boolForKey:key];
+}
 static BOOL isDarkMode() {
     return ([[NSUserDefaults standardUserDefaults] integerForKey:@"page_style"] == 1);
 }
@@ -95,19 +102,26 @@ static BOOL oldDarkTheme() {
 %end
 
 // Hide Cercube PiP & Download button
+%group gHideCercubePiP
 %hook UIStackView
 - (void)didMoveToWindow {
     %orig;
-    if (IsEnabled(@"hideCercubePiP_enabled")) && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
-        self.subviews[0].hidden = YES;
+    if ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)]) {
+        self.subviews[0].hidden = YES; 
     }
-    if (IsEnabled(@"hideCercubeDownload_enabled")) && ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)])) {
+}
+%end
+%end
+
+%hook UIStackView // Hide Cercube Download Button (remove this in your Forked Repo if you want this back on.)
+- (void)didMoveToWindows {
+    if ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)]) {
         self.subviews[1].hidden = YES;
     }
 }
 %end
 
-//Hide Cast Button since Cercube's option is not working
+// Hide Cast Button since Cercube's option is not working
 %group gHideCastButton
 %hook MDXPlaybackRouteButtonController
 - (BOOL)isPersistentCastIconEnabled { return NO; }
@@ -1740,6 +1754,9 @@ void DEMC_centerRenderingView() {
     }
     if (IsEnabled(@"hideCastButton_enabled")) {
        %init(gHideCastButton);
+    }
+    if (IsEnabled(@"hideCercubePiP_enabled")) {
+       %init(gHideCercubePiP);
     }
     if (IsEnabled(@"iPadLayout_enabled")) {
        %init(giPadLayout);

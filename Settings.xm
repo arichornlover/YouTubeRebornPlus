@@ -9,9 +9,6 @@
 static BOOL IsEnabled(NSString *key) {
     return [[NSUserDefaults standardUserDefaults] boolForKey:key];
 }
-static BOOL IsDisabled(NSString *key) {
-    return [[NSUserDefaults standardUserDefaults] boolForKey:key];
-}
 static int GetSelection(NSString *key) {
     return [[NSUserDefaults standardUserDefaults] integerForKey:key];
 }
@@ -503,8 +500,8 @@ extern NSBundle *CercubePlusBundle();
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_CERCUBE_DOWNLOAD_BUTTON")
                 titleDescription:LOC(@"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC")
                 accessibilityIdentifier:nil
-                switchOn:IsDisabled(@"hideCercubeDownload_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL YES) {
+                switchOn:IsEnabled(@"hideCercubeDownload_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL disabled) {
                     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hideCercubeDownload_enabled"];
                     return YES;
                 }

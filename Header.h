@@ -1,4 +1,5 @@
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
+#import "Tweaks/YouTubeHeader/YTQTMButton.h"
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
@@ -47,9 +48,6 @@
 
 // Cercube button in Nav bar
 @interface MDCButton : UIButton
-@end
-
-@interface YTQTMButton : UIButton
 @end
 
 @interface YTRightNavigationButtons : UIView
