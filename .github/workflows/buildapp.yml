@@ -101,7 +101,9 @@ jobs:
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
           curl "https://apt.alfhaily.me/files/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
+          echo -e "==> Cercube v${{ env.CERCUBE_VERSION }} downloaded!"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
+          echo -e "==> YouTube v${{ inputs.youtube_version }} downloaded!"
           dpkg-deb -x "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" main/Tweaks/Cercube/
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
@@ -111,6 +113,7 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
           CERCUBE_VERSION: ${{ inputs.cercube_version }}
+          YOUTUBE_VERSION: ${{ inputs.youtube_version }}
           YOUTUBE_URL: ${{ inputs.decrypted_youtube_url }}
 
       - name: Fix Compiling & Build Package
