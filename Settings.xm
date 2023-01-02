@@ -190,7 +190,17 @@ extern NSBundle *CercubePlusBundle();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideHoverCards_enabled"];
                     return YES;
                 }
-                settingItemId:0],  
+                settingItemId:0],
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_RIGHT_PANEL")
+                titleDescription:LOC(@"HIDE_RIGHT_PANEL_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideRightPanel_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideRightPanel_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"DONT_EAT_MY_CONTENT")
                 titleDescription:LOC(@"DONT_EAT_MY_CONTENT_DESC")
