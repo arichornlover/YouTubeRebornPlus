@@ -116,7 +116,13 @@ void DEMC_centerRenderingView();
 - (BOOL)isPeekingSupported;
 @end
 
-// OLED Darkmode
+// App Theme
+@interface YTFullscreenEngagementOverlayView : UIView
+@end
+
+@interface YTRelatedVideosView : UIView
+@end
+
 @interface ELMView: UIView
 @end
 
