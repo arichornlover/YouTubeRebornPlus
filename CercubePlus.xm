@@ -134,7 +134,7 @@ static BOOL oldDarkTheme() {
 %end
 %end
 
-// Hide CC / Autoplay switch
+// Hide CC / Autoplay switch / Disable the right panel in fullscreen mode
 %hook YTMainAppControlsOverlayView
 - (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC button
     if (IsEnabled(@"hideCC_enabled")) { 
@@ -144,6 +144,13 @@ static BOOL oldDarkTheme() {
 }
 - (void)setAutoplaySwitchButtonRenderer:(id)arg1 { // hide Autoplay
     if (IsEnabled(@"hideAutoplaySwitch_enabled")) {}
+    else { return %orig; }
+}
+%end
+
+%hook YTColdConfig
+- (BOOL)isLandscapeEngagementPanelEnabled { 
+    if (IsEnabled(@"hideRightPanel_enabled")) { return NO; }
     else { return %orig; }
 }
 %end
@@ -204,6 +211,12 @@ static BOOL oldDarkTheme() {
 - (BOOL)cxClientEnableModernizedActionSheet { return NO; }
 - (BOOL)enableClientShortsSheetsModernization { return NO; }
 - (BOOL)enableTimestampModernizationForNative { return NO; }
+- (BOOL)mainAppCoreClientIosEnableModernOssPage { return NO; }
+// Disable Rounded Content - YTNoModernUI
+- (BOOL)iosEnableRoundedSearchBar { return NO; }
+- (BOOL)enableIosRoundedSearchBar { return NO; }
+- (BOOL)iosDownloadsPageRoundedThumbs { return NO; }
+- (BOOL)iosRoundedSearchBarSuggestZeroPadding { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedThumbnailsForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedThumbnailsForNativeLongTail { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedTimestampForNative { return NO; }
@@ -212,13 +225,17 @@ static BOOL oldDarkTheme() {
 - (BOOL)uiSystemsClientGlobalConfigEnableModernButtonsForNativeLongTail { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableModernTabsForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigIosEnableSnackbarModernization { return NO; }
-- (BOOL)mainAppCoreClientIosEnableModernOssPage { return NO; }
 // Disable Darker Dark Mode - YTNoModernUI
 - (BOOL)enableDarkerDarkMode { return NO; }
 - (BOOL)modernizeElementsTextColor { return NO; }
 - (BOOL)modernizeElementsBgColor { return NO; }
 - (BOOL)modernizeCollectionLockups { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
+// Disable Ambient Mode
+- (BOOL)enableCinematicContainer { return NO; }
+- (BOOL)enableCinematicContainerOnClient { return NO; }
+- (BOOL)iosCinematicContainerClientImprovement { return NO; }
 // 16.42.3 Styled YouTube Channel Page Interface - YTNoModernUI
 - (BOOL)channelsClientConfigIosChannelNavRestructuring { return NO; }
 %end
