@@ -1647,6 +1647,7 @@ void DEMC_centerRenderingView() {
 }
 %end
 
+// Theme Options
 // Old dark theme (gray)
 %group gOldDarkTheme
 %hook YTColdConfig
@@ -1667,6 +1668,20 @@ void DEMC_centerRenderingView() {
 - (void)didMoveToWindow {
     %orig;
     self.superview.backgroundColor = [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+}
+%end
+
+%hook YTFullscreenEngagementOverlayView
+- (void)didMoveToWindow {
+    %orig;
+    self.subviews[0].backgroundColor = [UIColor clearColor];
+}
+%end
+
+%hook YTRelatedVideosView
+- (void)didMoveToWindow {
+    %orig;
+    self.subviews[0].backgroundColor = [UIColor clearColor];
 }
 %end
 %end
