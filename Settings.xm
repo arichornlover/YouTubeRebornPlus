@@ -345,9 +345,19 @@ extern NSBundle *CercubePlusBundle();
         }];
     [sectionItems addObject:themeGroup];
 	
-# pragma mark - LowContrastMode Options
-    YTSettingsSectionItem *LowContrastModeGroup = [YTSettingsSectionItemClass itemWithTitle:@"LowContrastMode Options" accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+# pragma mark - Customization Options
+    YTSettingsSectionItem *CustomizationGroup = [YTSettingsSectionItemClass itemWithTitle:@"Customization Options" accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             NSArray <YTSettingsSectionItem *> *rows = @[
+	        [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Hide YouTube Logo")
+                titleDescription:LOC(@"this will Hide the YouTube Logo on the top left of the Interface. App restart is required.")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideYouTubeLogo_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideYouTubeLogo_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+		
                 [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Low Contrast Mode")
                 titleDescription:LOC(@"this will Low Contrast texts and buttons just like how the old YouTube Interface did. App restart is required.")
                 accessibilityIdentifier:nil
@@ -428,11 +438,11 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
             ];
-            YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:@"LowContrastMode Options" pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"UITheme") parentResponder:[self parentResponder]];
+            YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:@"Customization Options" pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"UITheme") parentResponder:[self parentResponder]];
             [settingsViewController pushViewController:picker];
             return YES;
         }];
-    [sectionItems addObject:LowContrastModeGroup];
+    [sectionItems addObject:CustomizationGroup];
 
 # pragma mark - Miscellaneous
     YTSettingsSectionItem *miscellaneousGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"MISCELLANEOUS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
