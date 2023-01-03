@@ -1778,6 +1778,15 @@ void DEMC_centerRenderingView() {
 }
 %end
 
+// Hide YouTube Logo
+%group gHideYouTubeLogo
+%hook YTHeaderLogoController
+- (YTHeaderLogoController *)init {
+    return NULL;
+}
+%end
+%end
+
 # pragma mark - ctor
 %ctor {
     %init;
@@ -1816,6 +1825,9 @@ void DEMC_centerRenderingView() {
     }
     if (IsEnabled(@"ytNoModernUI_enabled")) {
        %init(gYTNoModernUI);
+    }
+    if (IsEnabled(@"hideYouTubeLogo_enabled")) {
+       %init(gHideYouTubeLogo);
     }
     if (IsEnabled(@"lowContrastMode_enabled")) {
        %init(gLowContrastMode);
