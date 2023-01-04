@@ -72,7 +72,7 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "OLD_DARK_THEME" = "Old dark theme";
 "OLD_DARK_THEME_DESC" = "Old YouTube's dark theme (grey theme). App restart is required.";
 
-"DEFAULT_THEME" = "Defaut";
+"DEFAULT_THEME" = "Default";
 "DEFAULT_THEME_DESC" = "Default dark(er) theme of YouTube. App restart is required.";
 
 "OLED_KEYBOARD" = "OLED Keyboard (Experimental)";
