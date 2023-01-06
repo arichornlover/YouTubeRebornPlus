@@ -285,16 +285,6 @@ static BOOL oldDarkTheme() {
 }
 %end
 
-// YTABGoodies - https://poomsmart.github.io/repo/depictions/ytabgoodies.html
-// YouAreThere - https://poomsmart.github.io/repo/depictions/youarethere.html
-// YouRememberCaption - https://poomsmart.github.io/repo/depictions/youremembercaption.html
-%hook YTColdConfig
-- (BOOL)enableYouthereCommandsOnIos { return NO; }
-- (BOOL)respectDeviceCaptionSetting { return NO; }
-- (BOOL)isLandscapeEngagementPanelSwipeRightToDismissEnabled { return YES; }
-- (BOOL)enableSwipeToRemoveInPlaylistWatchEp { return YES; } // Enable swipe right to remove video in Playlist. 
-%end
-
 %hook YTYouThereController
 - (BOOL)shouldShowYouTherePrompt { return NO; }
 %end
