@@ -251,6 +251,16 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SHORTS_LIKE_BUTTON")
+                titleDescription:LOC(@"HIDE_SHORTS_LIKE_BUTTON_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideShortsLikeButton_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShortsLikeButton_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SHORTS_DISLIKE_BUTTON")
                 titleDescription:LOC(@"HIDE_SHORTS_DISLIKE_BUTTON_DESC")
                 accessibilityIdentifier:nil
@@ -348,6 +358,16 @@ extern NSBundle *CercubePlusBundle();
 # pragma mark - Customization Options
     YTSettingsSectionItem *CustomizationGroup = [YTSettingsSectionItemClass itemWithTitle:@"Customization Options" accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             NSArray <YTSettingsSectionItem *> *rows = @[
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Remove Modern Interface (YTNoModernUI)")
+                titleDescription:LOC(@"Toggle this on to remove any Modern Element added to YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"ytNoModernUI_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytNoModernUI_enabled"];
+                    return YES;
+                }
+                settingItemId:0],  	
+
 	        [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Hide YouTube Logo")
                 titleDescription:LOC(@"this will Hide the YouTube Logo on the top left of the Interface. App restart is required.")
                 accessibilityIdentifier:nil
@@ -535,17 +555,7 @@ extern NSBundle *CercubePlusBundle();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"reExplore_enabled"];
                     return YES;
                 }
-                settingItemId:0], 
-		
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Remove Modern Interface (YTNoModernUI)")
-                titleDescription:LOC(@"Toggle this on to remove any Modern Element added to YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"ytNoModernUI_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytNoModernUI_enabled"];
-                    return YES;
-                }
-                settingItemId:0],  		
+                settingItemId:0], 	
 		
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"iPad Layout")
                 titleDescription:LOC(@"only use this if you want to have the iPad Layout on your current device. App restart is required.")
