@@ -44,6 +44,9 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_SHORTS_CHANNEL_AVATAR" = "Hide Shorts channel's avatar";
 "HIDE_SHORTS_CHANNEL_AVATAR_DESC" = "";
 
+"HIDE_SHORTS_LIKE_BUTTON" = "Hide Shorts like button";
+"HIDE_SHORTS_LIKE_BUTTON_DESC" = "";
+
 "HIDE_SHORTS_DISLIKE_BUTTON" = "Hide Shorts dislike button";
 "HIDE_SHORTS_DISLIKE_BUTTON_DESC" = "";
 
