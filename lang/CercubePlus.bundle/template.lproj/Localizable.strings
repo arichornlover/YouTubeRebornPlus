@@ -97,6 +97,9 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "FIX_GOOGLE_SIGNIN" = "Fix Google Sign in (for TrollStore user only)";
 "FIX_GOOGLE_SIGNIN_DESC" = "Only turn on this option when you can't sign in with your Google account and the app was installed via TrollStore. If you can log in normally, keep it disabled. App restart is required.";
 
+"HIDE_CHIP_BAR" = "Hide the Upper bar";
+"HIDE_CHIP_BAR" = "Hide Upper bar in the Home feeds (Trends, Music, Gaming...) and Subcription feeds (All videos, Continue watching...).";
+
 "NEW_MINIPLAYER_STYLE" = "New mini player bar style (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "App restart is required.";
 

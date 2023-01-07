@@ -1688,20 +1688,13 @@ void DEMC_centerRenderingView() {
 %hook MLHAMQueuePlayer
 - (void)setRate:(float)rate {
 	MSHookIvar<float>(self, "_rate") = rate;
-	MSHookIvar<float>(self, "_preferredRate") = rate;
 
-	id player = MSHookIvar<HAMPlayerInternal *>(self, "_player");
-	[player setRate: rate];
-	
-	id stickySettings = MSHookIvar<MLPlayerStickySettings *>(self, "_stickySettings");
-	[stickySettings setRate: rate];
+	id ytPlayer = MSHookIvar<HAMPlayerInternal *>(self, "_player");
+	[ytPlayer setRate:rate];
 
 	[self.playerEventCenter broadcastRateChange: rate];
-
-	YTSingleVideoController *singleVideoController = self.delegate;
-	[singleVideoController playerRateDidChange: rate];
 }
-%end 
+%end
 
 %hook YTPlayerViewController
 %property float playbackRate;
@@ -1775,32 +1768,21 @@ void DEMC_centerRenderingView() {
 }
 %end
 
-// Disable hints - https://github.com/LillieH001/YouTube-Reborn/blob/v4/
-%group gDisableHints
-%hook YTSettings
-- (BOOL)areHintsDisabled {
-	return YES;
-}
-- (void)setHintsDisabled:(BOOL)arg1 {
-    %orig(YES);
-}
-%end
-%hook YTUserDefaults
-- (BOOL)areHintsDisabled {
-	return YES;
-}
-- (void)setHintsDisabled:(BOOL)arg1 {
-    %orig(YES);
-}
-%end
-%end
-
 // Bring back the red progress bar
 %hook YTColdConfig
 - (BOOL)segmentablePlayerBarUpdateColors { 
     if (IsEnabled(@"redProgressBar_enabled")) { return NO; }
     else { return %orig; }
 }
+%end
+
+// Hide YouTube Logo
+%group gHideYouTubeLogo
+%hook YTHeaderLogoController
+- (YTHeaderLogoController *)init {
+    return NULL;
+}
+%end
 %end
 
 // Shorts options
@@ -1845,13 +1827,48 @@ void DEMC_centerRenderingView() {
 }
 %end
 
-// Hide YouTube Logo
-%group gHideYouTubeLogo
-%hook YTHeaderLogoController
-- (YTHeaderLogoController *)init {
-    return NULL;
+// Miscellaneous
+// Disable hints - https://github.com/LillieH001/YouTube-Reborn/blob/v4/
+%group gDisableHints
+%hook YTSettings
+- (BOOL)areHintsDisabled {
+	return YES;
+}
+- (void)setHintsDisabled:(BOOL)arg1 {
+    %orig(YES);
 }
 %end
+%hook YTUserDefaults
+- (BOOL)areHintsDisabled {
+	return YES;
+}
+- (void)setHintsDisabled:(BOOL)arg1 {
+    %orig(YES);
+}
+%end
+%end
+
+// Hide the Chip Bar (Upper Bar) in Home feed
+%group gHideChipBar
+%hook YTMySubsFilterHeaderView 
+- (void)setChipFilterView:(id)arg1 {}
+%end
+
+%hook YTHeaderContentComboView
+- (void)enableSubheaderBarWithView:(id)arg1 {}
+%end
+
+%hook YTHeaderContentComboView
+- (void)setFeedHeaderScrollMode:(int)arg1 { %orig(0); }
+%end
+
+// Hide the chip bar under the video player?
+// %hook YTChipCloudCell // 
+// - (void)didMoveToWindow {
+//     %orig;
+//     self.hidden = YES;
+// }
+// %end
 %end
 
 # pragma mark - ctor
@@ -1921,15 +1938,18 @@ void DEMC_centerRenderingView() {
        %init(gPinkUI);
     }
     if (oldDarkTheme()) {
-        %init(gOldDarkTheme)
+       %init(gOldDarkTheme)
     }
     if (oledDarkTheme()) {
-        %init(gOLED)
+       %init(gOLED)
     }
     if (IsEnabled(@"oledKeyBoard_enabled")) {
        %init(gOLEDKB);
     }
     if (IsEnabled(@"disableHints_enabled")) {
         %init(gDisableHints);
+    }
+    if (IsEnabled(@"hideChipBar_enabled")) {
+       %init(gHideChipBar);
     }
 }
