@@ -20,7 +20,7 @@
 	branch = main
 [submodule "Tweaks/Alderis"]
 	path = Tweaks/Alderis
-	url = https://github.com/arichorn/Alderis.git
+	url = https://github.com/qnblackcat/Alderis.git
 	branch = master
 [submodule "Tweaks/PSHeader"]
 	path = Tweaks/PSHeader
