@@ -212,8 +212,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],  
 
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Hide Heatwaves (HideHeatwaves)")
-                titleDescription:LOC(@"Should hide the Heatwaves in the video player. App restart is required.")
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_HEATWAVES")
+                titleDescription:LOC(@"HIDE_HEATWAVES_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"hideHeatwaves_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -356,10 +356,10 @@ extern NSBundle *CercubePlusBundle();
     [sectionItems addObject:themeGroup];
 	
 # pragma mark - Customization Options
-    YTSettingsSectionItem *CustomizationGroup = [YTSettingsSectionItemClass itemWithTitle:@"Customization Options" accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+    YTSettingsSectionItem *CustomizationGroup = [YTSettingsSectionItemClass itemWithTitle:@"CUSTOMIZATION_OPTIONS" accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             NSArray <YTSettingsSectionItem *> *rows = @[
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Remove Modern Interface (YTNoModernUI)")
-                titleDescription:LOC(@"Toggle this on to remove any Modern Element added to YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.")
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_MODERN_INTERFACE")
+                titleDescription:LOC(@"HIDE_MODERN_INTERFACE_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"ytNoModernUI_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -368,8 +368,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],  	
 
-	        [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Hide YouTube Logo")
-                titleDescription:LOC(@"this will Hide the YouTube Logo on the top left of the Interface. App restart is required.")
+	        [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_YOUTUBE_LOGO")
+                titleDescription:LOC(@"HIDE_YOUTUBE_LOGO_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"hideYouTubeLogo_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -378,8 +378,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 		
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Low Contrast Mode")
-                titleDescription:LOC(@"this will Low Contrast texts and buttons just like how the old YouTube Interface did. App restart is required.")
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"LOW_CONTRAST_MODE")
+                titleDescription:LOC(@"LOW_CONTRAST_MODE_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"lowContrastMode_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -388,8 +388,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Red UI")
-                titleDescription:LOC(@"(turn other UI Options off) App restart is required.")
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"RED_UI")
+                titleDescription:LOC(@"RED_UI_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"RedUI_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -398,8 +398,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Blue UI")
-                titleDescription:LOC(@"(turn other UI Options off) App restart is required.")
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"BLUE_UI")
+                titleDescription:LOC(@"BLUE_UI_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"BlueUI_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -408,8 +408,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Green UI")
-                titleDescription:LOC(@"(turn other UI Options off) App restart is required.")
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"GREEN_UI")
+                titleDescription:LOC(@"GREEN_UI_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"GreenUI_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -418,8 +418,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Yellow UI")
-                titleDescription:LOC(@"(turn other UI Options off) App restart is required.")
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"YELLOW_UI")
+                titleDescription:LOC(@"YELLOW_UI_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"YellowUI_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -428,8 +428,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Orange UI")
-                titleDescription:LOC(@"(turn other UI Options off) App restart is required.")
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ORANGE_UI")
+                titleDescription:LOC(@"ORANGE_UI_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"OrangeUI_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -438,8 +438,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Purple UI")
-                titleDescription:LOC(@"(turn other UI Options off) App restart is required.")
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"PURPLE_UI")
+                titleDescription:LOC(@"PURPLE_UI_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"PurpleUI_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -448,8 +448,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Pink UI")
-                titleDescription:LOC(@"(turn other UI Options off) App restart is required.")
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"PINK_UI")
+                titleDescription:LOC(@"PINK_UI_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"PinkUI_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
@@ -458,7 +458,7 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
             ];
-            YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:@"Customization Options" pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"UITheme") parentResponder:[self parentResponder]];
+            YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:@"CUSTOMIZATION_OPTIONS" pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"UITheme") parentResponder:[self parentResponder]];
             [settingsViewController pushViewController:picker];
             return YES;
         }];
@@ -567,8 +567,8 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0], 	
 		
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"iPad Layout")
-                titleDescription:LOC(@"only use this if you want to have the iPad Layout on your current device. App restart is required.")
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"IPAD_LAYOUT")
+                titleDescription:LOC(@"IPAD_LAYOUT_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"iPadLayout_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {

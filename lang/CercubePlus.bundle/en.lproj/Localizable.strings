@@ -23,6 +23,9 @@
 "DONT_EAT_MY_CONTENT" = "Prevent Notch/Island on 2:1 Video Content (DontEatMyContent)";
 "DONT_EAT_MY_CONTENT_DESC" = "Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube. App restart is required.";
 
+"HIDE_HEATWAVES" = "Hide Heatwaves";
+"HIDE_HEATWAVES_DESC" = "Hides the Heatwaves in the video player. App restart is required.";
+
 // Shorts controls overlay options
 "SHORTS_CONTROLS_OVERLAY_OPTIONS" = "Shorts Controls Overlay Options";
 
@@ -66,6 +69,39 @@
 "OLED_KEYBOARD" = "OLED Keyboard (Experimental)";
 "OLED_KEYBOARD_DESC" = "Might not work correctly in some cases. App restart is required.";
 
+// Customization Options
+"CUSTOMIZATION_OPTIONS" = "Customization Options";
+
+"HIDE_MODERN_INTERFACE" = "Hide Modern Interface (YTNoModernUI)";
+"HIDE_MODERN_INTERFACE_DESC" = "Toggle this on to hide any Modern Element added by YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.";
+
+"HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
+"HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
+
+"LOW_CONTRAST_MODE" = "Low Contrast Mode";
+"LOW_CONTRAST_MODE_DESC" = "this will Low Contrast texts and buttons just like how the old YouTube Interface was. App restart is required.";
+
+"RED_UI" = "Red UI";
+"RED_UI_DESC" = "Red UI (have every other ui colors off) App restart is required.";
+
+"BLUE_UI" = "Blue UI";
+"BLUE_UI_DESC" = "Blue UI (have every other ui colors off) App restart is required.";
+
+"GREEN_UI" = "Green UI";
+"GREEN_UI_DESC" = "Green UI (have every other ui colors off) App restart is required.";
+
+"YELLOW_UI" = "Yellow UI";
+"YELLOW_UI_DESC" = "Yellow UI (have every other ui colors off) App restart is required.";
+
+"ORANGE_UI" = "Orange UI";
+"ORANGE_UI_DESC" = "Orange UI (have every other ui colors off) App restart is required.";
+
+"PURPLE_UI" = "Purple UI";
+"PURPLE_UI_DESC" = "Purple UI (have every other ui colors off) App restart is required.";
+
+"PINK_UI" = "Pink UI";
+"PINK_UI_DESC" = "Pink UI (have every other ui colors off) App restart is required.";
+
 // Miscellaneous
 "MISCELLANEOUS" = "Miscellaneous";
 
@@ -87,9 +123,6 @@
 
 "NEW_MINIPLAYER_STYLE" = "New mini player bar style (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "App restart is required.";
-
-"YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
-"YT_RE_EXPLORE_DESC" = "App restart is required.";
 
 "REPLACE_PREVIOUS_NEXT_BUTTON" = "Replace Previous and Next Button";
 "REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next Button with Fast forward and Rewind button. App restart is required.";
@@ -144,3 +177,9 @@
 
 "HIDE_NOTIFICATION_BUTTON" = "Hide Notifcation button in the Navigation bar";
 "HIDE_NOTIFICATION_BUTTON_DESC" = "";
+
+"YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "App restart is required.";
+
+"IPAD_LAYOUT" = "iPad Layout";
+"IPAD_LAYOUT_DESC" = "only use this if you want to have the iPad Layout on your current device. App restart is required.";
