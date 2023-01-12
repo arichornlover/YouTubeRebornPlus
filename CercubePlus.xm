@@ -795,13 +795,10 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
-+ (UIColor *)tintColor {
++ (UIColor *)textColor {
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
-+ (UIColor *)_ASDisplayView {
-         return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
-}
-+ (UIColor *)ELMAnimatedVectorView {
++ (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
 %end
@@ -809,30 +806,30 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %hook YTColorPalette // Changes Texts & Icons in YouTube Bottom Bar + Text Icons under Video Player
 - (UIColor *)textPrimary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00]; // Dark Mode
+        return [UIColor whiteColor]; // Dark Theme
     }
-        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00]; // Light Mode
+        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00]; // Light Theme
 }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
     }
-        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00];
+        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00]; // Light Theme
 }
 %end
 
 %hook YTCommonColorPalette // Changes Texts & Icons in YouTube Bottom Bar (Doesn't change Texts & Icons under the video player)
 - (UIColor *)textPrimary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00]; // Dark Mode
+        return [UIColor whiteColor]; // Dark Theme
     }
-        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00]; // Light Mode
+        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00]; // Light Theme
 }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
     }
-        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00];
+        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00]; // Light Theme
 }
 %end
 
@@ -871,13 +868,10 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
 }
-+ (UIColor *)tintColor {
++ (UIColor *)textColor {
          return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
 }
-+ (UIColor *)_ASDisplayView {
-         return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
-}
-+ (UIColor *)ELMAnimatedVectorView {
++ (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
 }
 %end
@@ -885,30 +879,30 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %hook YTColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00];
+         return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00];
+        return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00]; // Light Theme
  }
 %end
 
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00];
+         return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00];
+        return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00]; // Light Theme
  }
 %end
 
@@ -944,13 +938,10 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00];
 }
-+ (UIColor *)tintColor {
++ (UIColor *)textColor {
          return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00];
 }
-+ (UIColor *)_ASDisplayView {
-         return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00];
-}
-+ (UIColor *)ELMAnimatedVectorView {
++ (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00];
 }
 %end
@@ -958,30 +949,30 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %hook YTColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00]; // Dark Mode
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00]; // Light Mode
+         return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00];
+        return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00]; // Light Theme
  }
 %end
 
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00]; // Dark Mode
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00]; // Light Mode
+         return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00];
+        return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00]; // Light Theme
  }
 %end
 
@@ -1017,13 +1008,10 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
 }
-+ (UIColor *)tintColor {
++ (UIColor *)textColor {
          return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
 }
-+ (UIColor *)_ASDisplayView {
-         return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
-}
-+ (UIColor *)ELMAnimatedVectorView {
++ (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
 }
 %end
@@ -1031,30 +1019,30 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %hook YTColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00];
+         return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00];
+        return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00]; // Light Theme
  }
 %end
 
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00];
+         return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00];
+        return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00]; // Light Theme
  }
 %end
 
@@ -1090,13 +1078,10 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
 }
-+ (UIColor *)tintColor {
++ (UIColor *)textColor {
          return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
 }
-+ (UIColor *)_ASDisplayView {
-         return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
-}
-+ (UIColor *)ELMAnimatedVectorView {
++ (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
 }
 %end
@@ -1104,30 +1089,30 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %hook YTColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00];
+         return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00];
+        return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00]; // Light Theme
  }
 %end
 
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00];
+         return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00];
+        return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00]; // Light Theme
  }
 %end
 
@@ -1163,13 +1148,10 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
 }
-+ (UIColor *)tintColor {
++ (UIColor *)textColor {
          return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
 }
-+ (UIColor *)_ASDisplayView {
-         return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
-}
-+ (UIColor *)ELMAnimatedVectorView {
++ (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
 }
 %end
@@ -1177,30 +1159,30 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %hook YTColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00];
+         return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00];
+        return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00]; // Light Theme
  }
 %end
 
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00];
+         return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00];
+        return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00]; // Light Theme
  }
 %end
 
@@ -1236,13 +1218,10 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
 }
-+ (UIColor *)tintColor {
++ (UIColor *)textColor {
          return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
 }
-+ (UIColor *)_ASDisplayView {
-         return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
-}
-+ (UIColor *)ELMAnimatedVectorView {
++ (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
 }
 %end
@@ -1250,30 +1229,30 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %hook YTColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00];
+         return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00];
+        return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00]; // Light Theme
  }
 %end
 
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00];
+         return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00];
+        return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00]; // Light Theme
  }
 %end
 
@@ -1309,13 +1288,10 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
 }
-+ (UIColor *)tintColor {
++ (UIColor *)textColor {
          return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
 }
-+ (UIColor *)_ASDisplayView {
-         return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
-}
-+ (UIColor *)ELMAnimatedVectorView {
++ (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
 }
 %end
@@ -1323,30 +1299,30 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %hook YTColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00];
+         return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00];
+        return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00]; // Light Theme
  }
 %end
 
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
-         return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
+         return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00];
+         return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
-        return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
+        return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00];
+        return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00]; // Light Theme
  }
 %end
 
@@ -1649,7 +1625,7 @@ void DEMC_centerRenderingView() {
                 if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
                 if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
             }
-        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && hideShorts()) {
+        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
             [self removeShortsCellAtIndexPath:indexPath];
         }
         return %orig;
