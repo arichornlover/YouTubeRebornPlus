@@ -19,6 +19,7 @@ static const NSInteger CercubePlusSection = 500;
 @end
 
 extern NSBundle *CercubePlusBundle();
+extern BOOL hideShorts();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -40,7 +41,7 @@ extern NSBundle *CercubePlusBundle();
 	Class YTSettingsSectionItemClass = %c(YTSettingsSectionItem);
     YTSettingsViewController *settingsViewController = [self valueForKey:@"_settingsViewControllerDelegate"];
 
-    YTSettingsSectionItem *version = [%c(YTSettingsSectionItem)
+    YTSettingsSectionItem *main = [%c(YTSettingsSectionItem)
     itemWithTitle:[NSString stringWithFormat:LOC(@"VERSION"), @(OS_STRINGIFY(TWEAK_VERSION))]
     titleDescription:LOC(@"VERSION_CHECK")
     accessibilityIdentifier:nil
@@ -48,7 +49,16 @@ extern NSBundle *CercubePlusBundle();
     selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/arichorn/CercubePlusExtra/releases/latest"]];
     }];
-	[sectionItems addObject:version];
+	
+	YTSettingsSectionItem *hideShorts = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_SHORTS_VIDEOS") titleDescription:LOC(@"HIDE_SHORTS_VIDEOS_DESC")];
+    hideShorts.hasSwitch = YES;
+    hideShorts.switchVisible = YES;
+    hideShorts.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideShorts_enabled"];
+    hideShorts.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
+        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShorts_enabled"];
+        return YES;
+    };
+    [sectionItems addObject:main];
 
 # pragma mark - VideoPlayer
     YTSettingsSectionItem *videoPlayerGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"VIDEO_PLAYER_OPTIONS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
@@ -231,16 +241,6 @@ extern NSBundle *CercubePlusBundle();
 # pragma mark - Shorts Controls Overlay Options
     YTSettingsSectionItem *shortsControlOverlayGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"SHORTS_CONTROLS_OVERLAY_OPTIONS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         NSArray <YTSettingsSectionItem *> *rows = @[
-	    [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SHORTS_VIDEOS")
-                titleDescription:LOC(@"HIDE_SHORTS_VIDEOS_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideShorts_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShorts"];
-                    return YES;
-                }
-                settingItemId:0],
-		
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SHORTS_CHANNEL_AVATAR")
                 titleDescription:LOC(@"HIDE_SHORTS_CHANNEL_AVATAR_DESC")
                 accessibilityIdentifier:nil
@@ -356,7 +356,7 @@ extern NSBundle *CercubePlusBundle();
     [sectionItems addObject:themeGroup];
 	
 # pragma mark - Customization Options
-    YTSettingsSectionItem *CustomizationGroup = [YTSettingsSectionItemClass itemWithTitle:@"CUSTOMIZATION_OPTIONS" accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+    YTSettingsSectionItem *CustomizationGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"CUSTOMIZATION_OPTIONS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             NSArray <YTSettingsSectionItem *> *rows = @[
                 [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_MODERN_INTERFACE")
                 titleDescription:LOC(@"HIDE_MODERN_INTERFACE_DESC")
@@ -458,7 +458,7 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
             ];
-            YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:@"CUSTOMIZATION_OPTIONS" pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"UITheme") parentResponder:[self parentResponder]];
+            YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"CUSTOMIZATION_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"UITheme") parentResponder:[self parentResponder]];
             [settingsViewController pushViewController:picker];
             return YES;
         }];
