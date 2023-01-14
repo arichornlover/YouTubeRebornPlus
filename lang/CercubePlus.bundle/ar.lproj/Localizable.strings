@@ -145,7 +145,7 @@
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "إخفاء زر تنزيل Cercube";
 "HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "تم تمكين خيار إخفاء زر تنزيل Cercube افتراضيًا. لأنك غير قادر على تنزيل أي شيء الآن منذ اختفاء خوادم تنزيل Cercube";
 
-"HIDE_CAST_BUTTON" = "Hide Cast button";
+"HIDE_CAST_BUTTON" = "زر "إخفاء الإرسال";
 "HIDE_CAST_BUTTON_DESC" = "مطلوب إعادة تشغيل التطبيق";
 
 "HIDE_HOVER_CARD" = "إخفاء بطاقات التمرير لشاشات النهاية (YTNoHoverCards)";
