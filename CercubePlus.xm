@@ -1813,10 +1813,12 @@ void DEMC_centerRenderingView() {
 }
 %end
 
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ((IsEnabled(@"hideShortsSubscriptions_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.module_framework"])) { self.hidden = YES;  }
+// Won't Work
+// %hook _ASDisplayView
+// - (void)didMoveToWindow {
+//     %orig;
+//     if ((IsEnabled(@"hideShortsSubscriptions_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.module_framework"])) { self.hidden = YES;  }
+// %end
 
 %hook YTColdConfig
 - (BOOL)enableResumeToShorts {
