@@ -1,6 +1,6 @@
 ## Cercube with extra features!
 
-![51B4E2E8-E7AE-42BA-9660-7F15F3FF43A1](https://user-images.githubusercontent.com/78001398/194680300-97e8d791-9fe5-42c2-b403-0490a78e1ea8.png)
+![IMAGE_CERCUBEPLUS_PREVIEW](https://user-images.githubusercontent.com/78001398/213068038-b6051a0a-9158-4023-9c89-6a14f5c57f29.png)
 
 ---
 
