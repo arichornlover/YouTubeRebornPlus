@@ -1,6 +1,6 @@
 // Settings
-"VERSION" = "CercubePlus's version: %@";
-"VERSION_CHECK" = "Tap to check for update!";
+"VERSION" = "نسخة CercubePlus: %@";
+"VERSION_CHECK" = "انقر للتحقق من وجود تحديث";
 
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "خيارات مشغل الفيديو";
@@ -77,6 +77,9 @@
 
 "HIDE_YOUTUBE_LOGO" = "إخفاء شعار يوتيوب";
 "HIDE_YOUTUBE_LOGO_DESC" = "سيؤدي هذا إلى إخفاء شعار YouTube في الجزء العلوي الأيسر من الواجهة. مطلوب إعادة تشغيل التطبيق";
+
+"HIDE_TAB_BAR_LABELS" = "إخفاء التسميات في شريط علامات التبويب";
+"HIDE_TAB_BAR_LABELS_DESC" = "سيؤدي هذا إلى إخفاء كافة التسميات الموجودة في شريط علامات التبويب. مطلوب إعادة تشغيل التطبيق";
 
 "LOW_CONTRAST_MODE" = "وضع التباين المنخفض";
 "LOW_CONTRAST_MODE_DESC" = "سيؤدي ذلك إلى ظهور نصوص وأزرار منخفضة التباين تمامًا مثل واجهة YouTube القديمة. مطلوب إعادة تشغيل التطبيق";

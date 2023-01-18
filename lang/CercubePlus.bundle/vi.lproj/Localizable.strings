@@ -1,6 +1,6 @@
 // Settings
-"VERSION" = "CercubePlus's version: %@";
-"VERSION_CHECK" = "Tap to check for update!";
+"VERSION" = "Phiên bản của CercubePlus: %@";
+"VERSION_CHECK" = "Nhấn để kiểm tra cập nhật!";
 
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "Tùy chọn trình phát video";
@@ -77,6 +77,9 @@
 
 "HIDE_YOUTUBE_LOGO" = "Ẩn biểu trưng YouTube";
 "HIDE_YOUTUBE_LOGO_DESC" = "thao tác này sẽ Ẩn Logo YouTube ở trên cùng bên trái của Giao diện. Khởi động lại ứng dụng là bắt buộc.";
+
+"HIDE_TAB_BAR_LABELS" = "Ẩn Nhãn trong Thanh Tab";
+"HIDE_TAB_BAR_LABELS_DESC" = "điều này sẽ Ẩn tất cả các nhãn trong Thanh tab. Khởi động lại ứng dụng là bắt buộc.";
 
 "LOW_CONTRAST_MODE" = "Chế độ tương phản thấp";
 "LOW_CONTRAST_MODE_DESC" = "điều này sẽ tạo ra các văn bản và nút có độ tương phản thấp giống như Giao diện YouTube cũ. Khởi động lại ứng dụng là bắt buộc.";

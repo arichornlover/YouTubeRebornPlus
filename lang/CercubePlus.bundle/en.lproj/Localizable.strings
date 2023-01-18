@@ -78,6 +78,9 @@
 "HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
 "HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
 
+"HIDE_TAB_BAR_LABELS" = "Hide Labels in the Tab Bar";
+"HIDE_TAB_BAR_LABELS_DESC" = "this will Hide all of the labels in the Tab Bar. App restart is required.";
+
 "LOW_CONTRAST_MODE" = "Low Contrast Mode";
 "LOW_CONTRAST_MODE_DESC" = "this will Low Contrast texts and buttons just like how the old YouTube Interface was. App restart is required.";
 
