@@ -377,6 +377,16 @@ extern BOOL hideShorts();
                     return YES;
                 }
                 settingItemId:0],
+				
+	        [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_TAB_BAR_LABELS")
+                titleDescription:LOC(@"HIDE_TAB_BAR_LABELS_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideTabBarLabels_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideTabBarLabels_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
 		
                 [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"LOW_CONTRAST_MODE")
                 titleDescription:LOC(@"LOW_CONTRAST_MODE_DESC")

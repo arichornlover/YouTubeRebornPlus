@@ -166,6 +166,16 @@ BOOL hideShorts() {
 %end
 %end
 
+%group gHideTabBarLabels // https://github.com/LillieH001/YouTube-Reborn
+%hook YTPivotBarItemView
+- (void)layoutSubviews {
+    %orig();
+    [[self navigationButton] setTitle:@"" forState:UIControlStateNormal];
+    [[self navigationButton] setTitle:@"" forState:UIControlStateSelected];
+}
+%end
+%end
+
 %group giPadLayout // https://github.com/LillieH001/YouTube-Reborn
 %hook UIDevice
 - (long long)userInterfaceIdiom {
@@ -1662,14 +1672,21 @@ void DEMC_centerRenderingView() {
 
 %hook MLHAMQueuePlayer
 - (void)setRate:(float)rate {
-	MSHookIvar<float>(self, "_rate") = rate;
+    MSHookIvar<float>(self, "_rate") = rate;
+	MSHookIvar<float>(self, "_preferredRate") = rate;
 
-	id ytPlayer = MSHookIvar<HAMPlayerInternal *>(self, "_player");
-	[ytPlayer setRate:rate];
+	id player = MSHookIvar<HAMPlayerInternal *>(self, "_player");
+	[player setRate: rate];
+
+	id stickySettings = MSHookIvar<MLPlayerStickySettings *>(self, "_stickySettings");
+	[stickySettings setRate: rate];
 
 	[self.playerEventCenter broadcastRateChange: rate];
+
+	YTSingleVideoController *singleVideoController = self.delegate;
+	[singleVideoController playerRateDidChange: rate];
 }
-%end
+%end 
 
 %hook YTPlayerViewController
 %property float playbackRate;
@@ -1795,6 +1812,11 @@ void DEMC_centerRenderingView() {
 }
 %end
 
+%hook _ASDisplayView
+- (void)didMoveToWindow {
+    %orig;
+    if ((IsEnabled(@"hideShortsSubscriptions_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.module_framework"])) { self.hidden = YES;  }
+
 %hook YTColdConfig
 - (BOOL)enableResumeToShorts {
     if (IsEnabled(@"disableResumeToShorts")) { return NO; }
@@ -1885,6 +1907,9 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"hideYouTubeLogo_enabled")) {
        %init(gHideYouTubeLogo);
     }
+	if (IsEnabled(@"hideTabBarLabels_enabled")) {
+	   %init(gHideTabBarLabels);
+	}
     if (IsEnabled(@"lowContrastMode_enabled")) {
        %init(gLowContrastMode);
     }
