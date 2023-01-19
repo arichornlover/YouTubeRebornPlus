@@ -118,17 +118,20 @@
 "DISABLE_HINTS" = "Disable hints";
 "DISABLE_HINTS_DESC" = "Disable feature hints from YouTube that usually display when the app is freshly installed.";
 
+"ENABLE_FLEX" = "Enable FLEX";
+"ENABLE_FLEX_DESC" = "Enable FLEX for debugging (not recommended). Leave this off unless you know what you are doing.";
+
 "FIX_GOOGLE_SIGNIN" = "Fix Google Sign in (for TrollStore user only)";
 "FIX_GOOGLE_SIGNIN_DESC" = "Only turn on this option when you can't sign in with your Google account and the app was installed via TrollStore. If you can log in normally, keep it disabled. App restart is required.";
 
 "HIDE_CHIP_BAR" = "Hide the Upper bar";
-"HIDE_CHIP_BAR_DESC" = "Hide Upper bar in the Home feeds (Trends, Music, Gaming...) and Subcription feeds (All videos, Continue watching...).";
+"HIDE_CHIP_BAR_DESC" = "Hide Upper bar in the Home feeds (Trends, Music, Gaming...) and Subscription feeds (All videos, Continue watching...).";
 
 "NEW_MINIPLAYER_STYLE" = "New mini player bar style (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "App restart is required.";
 
 "REPLACE_PREVIOUS_NEXT_BUTTON" = "Replace Previous and Next Button";
-"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next Button with Fast forward and Rewind button. App restart is required.";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next buttons with Fast forward and Rewind buttons. App restart is required.";
 
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Hide Previous and Next button";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
