@@ -120,6 +120,9 @@ void DEMC_centerRenderingView();
 @end
 
 // App Theme
+@interface YCHLiveChatView : UIView
+@end
+
 @interface YTFullscreenEngagementOverlayView : UIView
 @end
 
