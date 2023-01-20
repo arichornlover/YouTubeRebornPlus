@@ -4,7 +4,7 @@ ARCHS = arm64
 MODULES = jailed
 FINALPACKAGE = 1
 CODESIGN_IPA = 0
-PACKAGE_VERSION = 18.01.6-5.3.11
+PACKAGE_VERSION = 18.02.3-5.3.11
 
 TWEAK_NAME = CercubePlus
 DISPLAY_NAME = YouTube
@@ -15,7 +15,7 @@ EXTRA_CFLAGS := $(addprefix -I,$(shell find Tweaks/FLEX -name '*.h' -exec dirnam
 CercubePlus_INJECT_DYLIBS = Tweaks/Cercube/Library/MobileSubstrate/DynamicLibraries/Cercube.dylib .theos/obj/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YTUHD.dylib .theos/obj/YouPiP.dylib .theos/obj/YouTubeDislikesReturn.dylib .theos/obj/YTABConfig.dylib .theos/obj/YouMute.dylib
 CercubePlus_FILES = CercubePlus.xm Settings.xm $(shell find Tweaks/FLEX -type f \( -iname \*.c -o -iname \*.m -o -iname \*.mm \))
 CercubePlus_IPA = ./tmp/Payload/YouTube.app
-CercubePlus_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -Wno-unsupported-availability-guard -DTWEAK_VERSION=$(PACKAGE_VERSION) $(EXTRA_CFLAGS)
+CercubePlus_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -Wno-unsupported-availability-guard -Wno-unused-but-set-variable -DTWEAK_VERSION=$(PACKAGE_VERSION) $(EXTRA_CFLAGS)
 CercubePlus_FRAMEWORKS = UIKit Security
 
 include $(THEOS)/makefiles/common.mk
