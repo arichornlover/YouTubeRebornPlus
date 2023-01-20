@@ -81,7 +81,6 @@ static BOOL didFinishLaunching;
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
     didFinishLaunching = %orig;
-    self.downloadsVC = [self.downloadsVC init];
 
     if (IsEnabled(@"flex_enabled")) {
         [[FLEXManager sharedManager] showExplorer];
