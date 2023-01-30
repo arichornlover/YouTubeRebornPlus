@@ -477,6 +477,26 @@ extern BOOL hideShorts();
 # pragma mark - Miscellaneous
     YTSettingsSectionItem *miscellaneousGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"MISCELLANEOUS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         NSArray <YTSettingsSectionItem *> *rows = @[
+		    [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"FIX_GOOGLE_SIGNIN")
+                titleDescription:LOC(@"FIX_GOOGLE_SIGNIN_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"fixGoogleSignIn_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"fixGoogleSignIn_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+				
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_CHIP_BAR")
+                titleDescription:LOC(@"HIDE_CHIP_BAR_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideChipBar_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideChipBar_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+				
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"CAST_CONFIRM")
                 titleDescription:LOC(@"CAST_CONFIRM_DESC")
                 accessibilityIdentifier:nil
@@ -497,36 +517,6 @@ extern BOOL hideShorts();
                 }
                 settingItemId:0],
 
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_FLEX")
-                titleDescription:LOC(@"ENABLE_FLEX_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"flex_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"flex_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"FIX_GOOGLE_SIGNIN")
-                titleDescription:LOC(@"FIX_GOOGLE_SIGNIN_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"fixGoogleSignIn_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"fixGoogleSignIn_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_CHIP_BAR")
-                titleDescription:LOC(@"HIDE_CHIP_BAR_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideChipBar_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideChipBar_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"NEW_MINIPLAYER_STYLE")
                 titleDescription:LOC(@"NEW_MINIPLAYER_STYLE_DESC")
                 accessibilityIdentifier:nil
@@ -537,22 +527,22 @@ extern BOOL hideShorts();
                 }
                 settingItemId:0],
 
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_NOTIFICATION_BUTTON")
-                titleDescription:LOC(@"HIDE_NOTIFICATION_BUTTON_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideNotificationButton_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideNotificationButton_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_CAST_BUTTON")
                 titleDescription:LOC(@"HIDE_CAST_BUTTON_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"hideCastButton_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideCastButton_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_NOTIFICATION_BUTTON")
+                titleDescription:LOC(@"HIDE_NOTIFICATION_BUTTON_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideNotificationButton_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideNotificationButton_enabled"];
                     return YES;
                 }
                 settingItemId:0],
@@ -606,6 +596,26 @@ extern BOOL hideShorts();
                     return YES;
                 }
                 settingItemId:0], 
+				
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"IPHONE_LAYOUT")
+                titleDescription:LOC(@"IPHONE_LAYOUT_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"iPhoneLayout_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"iPhoneLayout_enabled"];
+                    return YES;
+                }
+                settingItemId:0], 
+				
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_FLEX")
+                titleDescription:LOC(@"ENABLE_FLEX_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"flex_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"flex_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
         ];        
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"MISCELLANEOUS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
         [settingsViewController pushViewController:picker];

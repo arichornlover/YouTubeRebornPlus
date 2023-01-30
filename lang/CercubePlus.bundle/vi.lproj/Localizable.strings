@@ -185,4 +185,7 @@
 "YT_RE_EXPLORE_DESC" = "Khởi động lại ứng dụng là bắt buộc.";
 
 "IPAD_LAYOUT" = "Bố cục iPad";
-"IPAD_LAYOUT_DESC" = "chỉ sử dụng cái này nếu bạn muốn có Bố cục iPad trên thiết bị hiện tại của mình. Khởi động lại ứng dụng là bắt buộc.";
+"IPAD_LAYOUT_DESC" = "استخدم هذا فقط إذا كنت ترغب في الحصول على iPad Layout على جهاز iPhone / iPod الحالي. مطلوب إعادة تشغيل التطبيق.";
+
+"IPHONE_LAYOUT" = "تخطيط iPhone";
+"IPHONE_LAYOUT_DESC" = "استخدم هذا فقط إذا كنت ترغب في الحصول على iPhone Layout على جهاز iPad الحالي. مطلوب إعادة تشغيل التطبيق.";

@@ -217,6 +217,29 @@ static BOOL didFinishLaunching;
 %end
 %end
 
+%group giPhoneLayout // https://github.com/LillieH001/YouTube-Reborn
+%hook UIDevice
+- (long long)userInterfaceIdiom {
+    return YES;
+} 
+%end
+%hook UIStatusBarStyleAttributes
+- (long long)idiom {
+    return YES;
+} 
+%end
+%hook UIKBTree
+- (long long)nativeIdiom {
+    return YES;
+} 
+%end
+%hook UIKBRenderer
+- (long long)assetIdiom {
+    return YES;
+} 
+%end
+%end
+
 // %group gHideSponsorBlockButton
 // %hook YTRightNavigationButtons
 // %property (retain, nonatomic) YTQTMButton *sponsorBlockButton;
@@ -795,9 +818,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gLowContrastMode // Low Contrast Mode v1.2.0 (Compatible with only v15.02.1-present)
+%group gLowContrastMode // Low Contrast Mode v1.2.1 (Compatible with only v15.02.1-present)
 %hook UIColor
-+ (UIColor *)whiteColor {
++ (UIColor *)whiteColor { // Dark Theme Color
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
 + (UIColor *)textColor {
@@ -838,6 +861,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
+%hook YTCollectionView  // Changes Live Chat Texts
+ - (void)setTintColor:(UIColor *)color { 
+     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+ }
+ %end
+
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
@@ -864,6 +893,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
 }
 %end
 %end
@@ -934,6 +964,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
+	if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
 }
 %end
 %end
@@ -1004,6 +1035,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
 }
 %end
 %end
@@ -1074,6 +1106,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
 }
 %end
 %end
@@ -1144,6 +1177,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
 }
 %end
 %end
@@ -1214,6 +1248,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
 }
 %end
 %end
@@ -1284,6 +1319,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
 }
 %end
 %end
@@ -1354,6 +1390,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     %orig;
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
     if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
 }
 %end
 %end
@@ -1875,6 +1912,9 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"iPadLayout_enabled")) {
        %init(giPadLayout);
     }
+	if (IsEnabled(@"iPhoneLayout_enabled")) {
+       %init(giPhoneLayout);
+    }
     if (IsEnabled(@"reExplore_enabled")) {
        %init(gReExplore);
     }
@@ -1940,8 +1980,17 @@ void DEMC_centerRenderingView() {
     }
     if (IsEnabled(@"hideChipBar_enabled")) {
        %init(gHideChipBar);
-  //   }
+    }
   //   if (IsEnabled(@"hideSponsorBlockButton_enabled")) {
   //      %init(gHideSponsorBlockButton);
+  //   }
+
+	// Change the default value of some options
+    NSArray *allKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys];
+    if (![allKeys containsObject:@"RYD-ENABLED"]) { 
+       [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"RYD-ENABLED"]; 
     }
+    if (![allKeys containsObject:@"YouPiPEnabled"]) { 
+       [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"YouPiPEnabled"]; 
+	}
 }
