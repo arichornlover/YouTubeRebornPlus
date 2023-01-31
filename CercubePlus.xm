@@ -220,7 +220,7 @@ static BOOL didFinishLaunching;
 %group giPhoneLayout // https://github.com/LillieH001/YouTube-Reborn
 %hook UIDevice
 - (long long)userInterfaceIdiom {
-    return YES;
+    return NO;
 } 
 %end
 %hook UIStatusBarStyleAttributes
@@ -941,6 +941,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
  }
 %end
 
+%hook YTCollectionView  // Changes Live Chat Texts
+- (void)setTintColor:(UIColor *)color { 
+    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
+%end
+
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
@@ -1010,6 +1016,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
      }
         return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00]; // Light Theme
  }
+%end
+
+%hook YTCollectionView  // Changes Live Chat Texts
+- (void)setTintColor:(UIColor *)color { 
+    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
 %end
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
@@ -1083,6 +1095,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
  }
 %end
 
+%hook YTCollectionView  // Changes Live Chat Texts
+- (void)setTintColor:(UIColor *)color { 
+    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
+%end
+
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
@@ -1152,6 +1170,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
      }
         return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00]; // Light Theme
  }
+%end
+
+%hook YTCollectionView  // Changes Live Chat Texts
+- (void)setTintColor:(UIColor *)color { 
+    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
 %end
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
@@ -1225,6 +1249,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
  }
 %end
 
+%hook YTCollectionView  // Changes Live Chat Texts
+- (void)setTintColor:(UIColor *)color { 
+    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
+%end
+
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
@@ -1296,6 +1326,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
  }
 %end
 
+%hook YTCollectionView  // Changes Live Chat Texts
+- (void)setTintColor:(UIColor *)color { 
+    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
+%end
+
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
@@ -1365,6 +1401,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
      }
         return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00]; // Light Theme
  }
+%end
+
+%hook YTCollectionView  // Changes Live Chat Texts
+- (void)setTintColor:(UIColor *)color { 
+    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
 %end
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
@@ -1912,7 +1954,7 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"iPadLayout_enabled")) {
        %init(giPadLayout);
     }
-	if (IsEnabled(@"iPhoneLayout_enabled")) {
+    if (IsEnabled(@"iPhoneLayout_enabled")) {
        %init(giPhoneLayout);
     }
     if (IsEnabled(@"reExplore_enabled")) {
@@ -1939,9 +1981,9 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"hideYouTubeLogo_enabled")) {
        %init(gHideYouTubeLogo);
     }
-	if (IsEnabled(@"hideTabBarLabels_enabled")) {
-	   %init(gHideTabBarLabels);
-	}
+    if (IsEnabled(@"hideTabBarLabels_enabled")) {
+       %init(gHideTabBarLabels);
+    }
     if (IsEnabled(@"lowContrastMode_enabled")) {
        %init(gLowContrastMode);
     }
@@ -1985,7 +2027,7 @@ void DEMC_centerRenderingView() {
   //      %init(gHideSponsorBlockButton);
   //   }
 
-	// Change the default value of some options
+    // Change the default value of some options
     NSArray *allKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys];
     if (![allKeys containsObject:@"RYD-ENABLED"]) { 
        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"RYD-ENABLED"]; 
