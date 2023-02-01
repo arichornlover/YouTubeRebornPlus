@@ -274,6 +274,11 @@ static BOOL didFinishLaunching;
 - (BOOL)shouldShowUpgradeDialog { return NO;}
 %end
 
+// Disabled - Autoplay Settings Section - qnblackcat
+%hook YTSettingsSectionItemManager
+- (void)updateAutoplaySectionWithEntry:(id)arg1 {}
+%end
+
 // YTNoModernUI - arichorn
 %group gYTNoModernUI
 %hook YTColdConfig
