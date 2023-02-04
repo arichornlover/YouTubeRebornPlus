@@ -181,6 +181,9 @@
 "HIDE_NOTIFICATION_BUTTON" = "Hide Notifcation button in the Navigation bar";
 "HIDE_NOTIFICATION_BUTTON_DESC" = "";
 
+"HIDE_SPONSORBLOCK_BUTTON" = "Hide iSponsorBlock button in the Navigation bar";
+"HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
+
 "YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "App restart is required.";
 
