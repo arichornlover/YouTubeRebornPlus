@@ -15,11 +15,10 @@ static int GetSelection(NSString *key) {
 static const NSInteger CercubePlusSection = 500;
 
 @interface YTSettingsSectionItemManager (CercubePlus)
-- (void)updateTweakSectionWithEntry:(id)entry;
+- (void)updateCercubePlusSectionWithEntry:(id)entry;
 @end
 
 extern NSBundle *CercubePlusBundle();
-extern BOOL hideShorts();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -33,12 +32,20 @@ extern BOOL hideShorts();
 }
 %end
 
+%hook YTSettingsSectionController
+
+- (void)setSelectedItem:(NSUInteger)selectedItem {
+    if (selectedItem != NSNotFound) %orig;
+}
+
+%end
+
 %hook YTSettingsSectionItemManager
 %new(v@:@)
-- (void)updateTweakSectionWithEntry:(id)entry {
+- (void)updateCercubePlusSectionWithEntry:(id)entry {
     NSMutableArray *sectionItems = [NSMutableArray array];
     NSBundle *tweakBundle = CercubePlusBundle();
-	Class YTSettingsSectionItemClass = %c(YTSettingsSectionItem);
+    Class YTSettingsSectionItemClass = %c(YTSettingsSectionItem);
     YTSettingsViewController *settingsViewController = [self valueForKey:@"_settingsViewControllerDelegate"];
 
     YTSettingsSectionItem *main = [%c(YTSettingsSectionItem)
@@ -49,15 +56,6 @@ extern BOOL hideShorts();
     selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/arichorn/CercubePlusExtra/releases/latest"]];
     }];
-	
-	YTSettingsSectionItem *hideShorts = [[%c(YTSettingsSectionItem) alloc]initWithTitle:LOC(@"HIDE_SHORTS_VIDEOS") titleDescription:LOC(@"HIDE_SHORTS_VIDEOS_DESC")];
-    hideShorts.hasSwitch = YES;
-    hideShorts.switchVisible = YES;
-    hideShorts.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"hideShorts_enabled"];
-    hideShorts.switchBlock = ^BOOL (YTSettingsCell *cell, BOOL enabled) {
-        [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShorts_enabled"];
-        return YES;
-    };
     [sectionItems addObject:main];
 
 # pragma mark - VideoPlayer
@@ -91,7 +89,7 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"pinchToZoom_enabled"];
                     return YES;
                 }
-                settingItemId:0],   
+                settingItemId:0],
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"YT_MINIPLAYER")
                 titleDescription:LOC(@"YT_MINIPLAYER_DESC")
@@ -101,12 +99,12 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytMiniPlayer_enabled"];
                     return YES;
                 }
-                settingItemId:0],
-        ];        
+                settingItemId:0]
+        ];
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"VIDEO_PLAYER_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
         [settingsViewController pushViewController:picker];
-		return YES;
-		    }];
+        return YES;
+    }];
     [sectionItems addObject:videoPlayerGroup];
 
 # pragma mark - Video Controls Overlay Options
@@ -170,7 +168,7 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hidePreviousAndNextButton_enabled"];
                     return YES;
                 }
-                settingItemId:0],            
+                settingItemId:0],
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON")
                 titleDescription:LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON_DESC")
@@ -180,7 +178,7 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"replacePreviousAndNextButton_enabled"];
                     return YES;
                 }
-                settingItemId:0],    
+                settingItemId:0],
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"RED_PROGRESS_BAR")
                 titleDescription:LOC(@"RED_PROGRESS_BAR_DESC")
@@ -190,7 +188,7 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"redProgressBar_enabled"];
                     return YES;
                 }
-                settingItemId:0],    
+                settingItemId:0],
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_HOVER_CARD")
                 titleDescription:LOC(@"HIDE_HOVER_CARD_DESC")
@@ -220,7 +218,7 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"dontEatMyContent_enabled"];
                     return YES;
                 }
-                settingItemId:0],  
+                settingItemId:0],
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_HEATWAVES")
                 titleDescription:LOC(@"HIDE_HEATWAVES_DESC")
@@ -230,7 +228,7 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideHeatwaves_enabled"];
                     return YES;
                 }
-                settingItemId:0],  
+                settingItemId:0]
         ];        
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"VIDEO_CONTROLS_OVERLAY_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
         [settingsViewController pushViewController:picker];
@@ -241,6 +239,16 @@ extern BOOL hideShorts();
 # pragma mark - Shorts Controls Overlay Options
     YTSettingsSectionItem *shortsControlOverlayGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"SHORTS_CONTROLS_OVERLAY_OPTIONS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         NSArray <YTSettingsSectionItem *> *rows = @[
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SHORTS_VIDEOS")
+                titleDescription:LOC(@"HIDE_SHORTS_VIDEOS_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideShorts_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShorts_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SHORTS_CHANNEL_AVATAR")
                 titleDescription:LOC(@"HIDE_SHORTS_CHANNEL_AVATAR_DESC")
                 accessibilityIdentifier:nil
@@ -299,7 +307,7 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShortsShareButton_enabled"];
                     return YES;
                 }
-                settingItemId:0],            
+                settingItemId:0]
         ];        
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"SHORTS_CONTROLS_OVERLAY_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
         [settingsViewController pushViewController:picker];
@@ -354,7 +362,7 @@ extern BOOL hideShorts();
             return YES;
         }];
     [sectionItems addObject:themeGroup];
-	
+
 # pragma mark - Customization Options
     YTSettingsSectionItem *CustomizationGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"CUSTOMIZATION_OPTIONS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             NSArray <YTSettingsSectionItem *> *rows = @[
@@ -366,9 +374,9 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytNoModernUI_enabled"];
                     return YES;
                 }
-                settingItemId:0],  	
+                settingItemId:0],
 
-	        [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_YOUTUBE_LOGO")
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_YOUTUBE_LOGO")
                 titleDescription:LOC(@"HIDE_YOUTUBE_LOGO_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"hideYouTubeLogo_enabled")
@@ -377,8 +385,8 @@ extern BOOL hideShorts();
                     return YES;
                 }
                 settingItemId:0],
-				
-	        [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_TAB_BAR_LABELS")
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_TAB_BAR_LABELS")
                 titleDescription:LOC(@"HIDE_TAB_BAR_LABELS_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"hideTabBarLabels_enabled")
@@ -387,7 +395,7 @@ extern BOOL hideShorts();
                     return YES;
                 }
                 settingItemId:0],
-		
+
                 [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"LOW_CONTRAST_MODE")
                 titleDescription:LOC(@"LOW_CONTRAST_MODE_DESC")
                 accessibilityIdentifier:nil
@@ -466,7 +474,7 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"PinkUI_enabled"];
                     return YES;
                 }
-                settingItemId:0],
+                settingItemId:0]
             ];
             YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"CUSTOMIZATION_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"UITheme") parentResponder:[self parentResponder]];
             [settingsViewController pushViewController:picker];
@@ -477,7 +485,7 @@ extern BOOL hideShorts();
 # pragma mark - Miscellaneous
     YTSettingsSectionItem *miscellaneousGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"MISCELLANEOUS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         NSArray <YTSettingsSectionItem *> *rows = @[
-		    [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"FIX_GOOGLE_SIGNIN")
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"FIX_GOOGLE_SIGNIN")
                 titleDescription:LOC(@"FIX_GOOGLE_SIGNIN_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"fixGoogleSignIn_enabled")
@@ -486,7 +494,7 @@ extern BOOL hideShorts();
                     return YES;
                 }
                 settingItemId:0],
-				
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_CHIP_BAR")
                 titleDescription:LOC(@"HIDE_CHIP_BAR_DESC")
                 accessibilityIdentifier:nil
@@ -496,7 +504,7 @@ extern BOOL hideShorts();
                     return YES;
                 }
                 settingItemId:0],
-				
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"CAST_CONFIRM")
                 titleDescription:LOC(@"CAST_CONFIRM_DESC")
                 accessibilityIdentifier:nil
@@ -547,6 +555,16 @@ extern BOOL hideShorts();
                 }
                 settingItemId:0],
 
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SPONSORBLOCK_BUTTON")
+                titleDescription:LOC(@"HIDE_SPONSORBLOCK_BUTTON_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideSponsorBlockButton_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideSponsorBlockButton_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_CERCUBE_BUTTON")
                 titleDescription:LOC(@"")
                 accessibilityIdentifier:nil
@@ -586,7 +604,7 @@ extern BOOL hideShorts();
                     return YES;
                 }
                 settingItemId:0], 	
-		
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"IPAD_LAYOUT")
                 titleDescription:LOC(@"IPAD_LAYOUT_DESC")
                 accessibilityIdentifier:nil
@@ -596,7 +614,7 @@ extern BOOL hideShorts();
                     return YES;
                 }
                 settingItemId:0], 
-				
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"IPHONE_LAYOUT")
                 titleDescription:LOC(@"IPHONE_LAYOUT_DESC")
                 accessibilityIdentifier:nil
@@ -605,8 +623,8 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"iPhoneLayout_enabled"];
                     return YES;
                 }
-                settingItemId:0], 
-				
+                settingItemId:0],
+                
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_FLEX")
                 titleDescription:LOC(@"ENABLE_FLEX_DESC")
                 accessibilityIdentifier:nil
@@ -615,20 +633,20 @@ extern BOOL hideShorts();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"flex_enabled"];
                     return YES;
                 }
-                settingItemId:0],
-        ];        
+                settingItemId:0]
+        ];
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"MISCELLANEOUS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
         [settingsViewController pushViewController:picker];
         return YES;
     }];
     [sectionItems addObject:miscellaneousGroup];
-	
+
     [settingsViewController setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:LOC(@"TITLE DESCRIPTION") headerHidden:YES];
 }
 
 - (void)updateSectionForCategory:(NSUInteger)category withEntry:(id)entry {
     if (category == CercubePlusSection) {
-        [self updateTweakSectionWithEntry:entry];
+        [self updateCercubePlusSectionWithEntry:entry];
         return;
     }
     %orig;
