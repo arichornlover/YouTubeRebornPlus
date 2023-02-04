@@ -123,6 +123,9 @@ static BOOL didFinishLaunching;
     if (IsEnabled(@"hideNotificationButton_enabled")) {
         self.notificationButton.hidden = YES;
     }
+    if (IsEnabled(@"hideSponsorBlockButton_enabled")) { 
+        self.sponsorBlockButton.hidden = YES;
+    }
 }
 %end
 
