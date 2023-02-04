@@ -56,6 +56,7 @@
 @interface YTRightNavigationButtons : UIView
 @property (nonatomic, strong, readwrite) MDCButton *cercubeButton;
 @property YTQTMButton *notificationButton;
+@property YTQTMButton *sponsorBlockButton;
 @end
 
 // IAmYouTube
