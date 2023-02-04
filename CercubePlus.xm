@@ -72,9 +72,6 @@ static BOOL oledDarkTheme() {
 static BOOL oldDarkTheme() {
     return ([[NSUserDefaults standardUserDefaults] integerForKey:@"appTheme"] == 2);
 }
-BOOL hideShorts() { // This is not necessary since you already have IsEnabled bool in 63-65 lines
-    return [[NSUserDefaults standardUserDefaults] boolForKey:@"hideShorts_enabled"];
-}
 
 static BOOL didFinishLaunching;
 %hook YTAppDelegate
