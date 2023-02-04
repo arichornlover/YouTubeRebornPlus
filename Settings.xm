@@ -1,9 +1,9 @@
-#import "../YouTubeHeader/YTSettingsViewController.h"
-#import "../YouTubeHeader/YTSearchableSettingsViewController.h"
-#import "../YouTubeHeader/YTSettingsSectionItem.h"
-#import "../YouTubeHeader/YTSettingsSectionItemManager.h"
-#import "../YouTubeHeader/YTUIUtils.h"
-#import "../YouTubeHeader/YTSettingsPickerViewController.h"
+#import "Tweaks/YouTubeHeader/YTSettingsViewController.h"
+#import "Tweaks/YouTubeHeader/YTSearchableSettingsViewController.h"
+#import "Tweaks/YouTubeHeader/YTSettingsSectionItem.h"
+#import "Tweaks/YouTubeHeader/YTSettingsSectionItemManager.h"
+#import "Tweaks/YouTubeHeader/YTUIUtils.h"
+#import "Tweaks/YouTubeHeader/YTSettingsPickerViewController.h"
 #import "Header.h"
 
 static BOOL IsEnabled(NSString *key) {
