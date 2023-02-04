@@ -623,6 +623,16 @@ extern NSBundle *CercubePlusBundle();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"iPhoneLayout_enabled"];
                     return YES;
                 }
+                settingItemId:0],
+                
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_FLEX")
+                titleDescription:LOC(@"ENABLE_FLEX_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"flex_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"flex_enabled"];
+                    return YES;
+                }
                 settingItemId:0]
         ];
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"MISCELLANEOUS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
