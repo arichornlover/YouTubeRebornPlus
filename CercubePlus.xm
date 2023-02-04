@@ -1708,22 +1708,26 @@ void DEMC_centerRenderingView() {
 // YTNoShorts: https://github.com/MiRO92/YTNoShorts
 %hook YTAsyncCollectionView
 - (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (IsEnabled(@"hideShorts_enabled")) {
         UICollectionViewCell *cell = %orig;
         if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
             _ASCollectionViewCell *cell = %orig;
             if ([cell respondsToSelector:@selector(node)]) {
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"] && hideShorts()) { [self removeShortsCellAtIndexPath:indexPath]; }
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"statement_banner.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"compact.view"]) { [self removeShortsCellAtIndexPath:indexPath]; }            
+                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"]) {
+                    [self removeShortsCellAtIndexPath:indexPath];
+                }
             }
-        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")] && hideShorts()) {
+        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
             [self removeShortsCellAtIndexPath:indexPath];
         }
         return %orig;
+    }
+        return %orig;
 }
+
 %new
 - (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
-    [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+        [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
 }
 %end
 
