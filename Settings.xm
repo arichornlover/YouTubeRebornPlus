@@ -19,7 +19,7 @@ static const NSInteger CercubePlusSection = 500;
 @end
 
 extern NSBundle *CercubePlusBundle();
-extern BOOL hideShorts();
+extern BOOL hideShorts(); // this is also not necessary since you have IsEnabled bool in 9-11 lines
 
 // Settings
 %hook YTAppSettingsPresentationData
