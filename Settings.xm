@@ -588,7 +588,7 @@ extern NSBundle *CercubePlusBundle();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideTabBarLabels_enabled"];
                     return YES;
                 }
-                settingItemId:0]
+                settingItemId:0],
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"YT_RE_EXPLORE")
                 titleDescription:LOC(@"YT_RE_EXPLORE_DESC")
