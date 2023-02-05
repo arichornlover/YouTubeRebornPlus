@@ -447,15 +447,15 @@ extern NSBundle *CercubePlusBundle();
         }];
     [sectionItems addObject:themeGroup];
 
-# pragma mark - Customization Options
-    YTSettingsSectionItem *CustomizationGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"CUSTOMIZATION_OPTIONS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-            NSArray <YTSettingsSectionItem *> *rows = @[
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_MODERN_INTERFACE")
-                titleDescription:LOC(@"HIDE_MODERN_INTERFACE_DESC")
+# pragma mark - Miscellaneous
+    YTSettingsSectionItem *miscellaneousGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"MISCELLANEOUS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+        NSArray <YTSettingsSectionItem *> *rows = @[
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"FIX_GOOGLE_SIGNIN")
+                titleDescription:LOC(@"FIX_GOOGLE_SIGNIN_DESC")
                 accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"ytNoModernUI_enabled")
+                switchOn:IsEnabled(@"fixGoogleSignIn_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytNoModernUI_enabled"];
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"fixGoogleSignIn_enabled"];
                     return YES;
                 }
                 settingItemId:0],
@@ -470,41 +470,22 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_TAB_BAR_LABELS")
-                titleDescription:LOC(@"HIDE_TAB_BAR_LABELS_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideTabBarLabels_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideTabBarLabels_enabled"];
-                    return YES;
-                }
-                settingItemId:0]
-            ];
-            YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"CUSTOMIZATION_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"UITheme") parentResponder:[self parentResponder]];
-            [settingsViewController pushViewController:picker];
-            return YES;
-        }];
-    [sectionItems addObject:CustomizationGroup];
-
-# pragma mark - Miscellaneous
-    YTSettingsSectionItem *miscellaneousGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"MISCELLANEOUS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-        NSArray <YTSettingsSectionItem *> *rows = @[
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"FIX_GOOGLE_SIGNIN")
-                titleDescription:LOC(@"FIX_GOOGLE_SIGNIN_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"fixGoogleSignIn_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"fixGoogleSignIn_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_CHIP_BAR")
                 titleDescription:LOC(@"HIDE_CHIP_BAR_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"hideChipBar_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideChipBar_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+                
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_MODERN_INTERFACE")
+                titleDescription:LOC(@"HIDE_MODERN_INTERFACE_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"ytNoModernUI_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytNoModernUI_enabled"];
                     return YES;
                 }
                 settingItemId:0],
@@ -598,6 +579,16 @@ extern NSBundle *CercubePlusBundle();
                     return YES;
                 }
                 settingItemId:0],
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_TAB_BAR_LABELS")
+                titleDescription:LOC(@"HIDE_TAB_BAR_LABELS_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideTabBarLabels_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideTabBarLabels_enabled"];
+                    return YES;
+                }
+                settingItemId:0]
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"YT_RE_EXPLORE")
                 titleDescription:LOC(@"YT_RE_EXPLORE_DESC")
