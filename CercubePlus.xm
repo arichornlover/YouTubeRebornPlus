@@ -72,6 +72,33 @@ static BOOL oledDarkTheme() {
 static BOOL oldDarkTheme() {
     return ([[NSUserDefaults standardUserDefaults] integerForKey:@"appTheme"] == 2);
 }
+static int colorContrastMode() {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"lcmColor"];
+}
+static BOOL defaultContrastMode() {
+    return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 0;
+}
+static BOOL redContrastMode() {
+    return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 1;
+}
+static BOOL blueContrastMode() {
+    return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 2;
+}
+static BOOL greenContrastMode() {
+    return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 3;
+}
+static BOOL yellowContrastMode() {
+    return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 4;
+}
+static BOOL orangeContrastMode() {
+    return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 5;
+}
+static BOOL purpleContrastMode() {
+    return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 6;
+}
+static BOOL pinkContrastMode() {
+    return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 7;
+}
 
 static BOOL didFinishLaunching;
 %hook YTAppDelegate
@@ -1993,28 +2020,28 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"hideTabBarLabels_enabled")) {
        %init(gHideTabBarLabels);
     }
-    if (IsEnabled(@"lowContrastMode_enabled")) {
+    if (defaultContrastMode()) {
        %init(gLowContrastMode);
     }
-    if (IsEnabled(@"RedUI_enabled")) {
+    if (redContrastMode()) {
        %init(gRedUI);
     }
-    if (IsEnabled(@"BlueUI_enabled")) {
+    if (blueContrastMode()) {
        %init(gBlueUI);
     }
-    if (IsEnabled(@"GreenUI_enabled")) {
+    if (greenContrastMode()) {
        %init(gGreenUI);
     }
-    if (IsEnabled(@"YellowUI_enabled")) {
+    if (yellowContrastMode()) {
        %init(gYellowUI);
     }
-    if (IsEnabled(@"OrangeUI_enabled")) {
+    if (orangeContrastMode()) {
        %init(gOrangeUI);
     }
-    if (IsEnabled(@"PurpleUI_enabled")) {
+    if (purpleContrastMode()) {
        %init(gPurpleUI);
     }
-    if (IsEnabled(@"PinkUI_enabled")) {
+    if (pinkContrastMode()) {
        %init(gPinkUI);
     }
     if (oldDarkTheme()) {

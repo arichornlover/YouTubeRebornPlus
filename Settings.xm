@@ -12,6 +12,9 @@ static BOOL IsEnabled(NSString *key) {
 static int GetSelection(NSString *key) {
     return [[NSUserDefaults standardUserDefaults] integerForKey:key];
 }
+static int colorContrastMode() {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"lcmColor"];
+}
 static const NSInteger CercubePlusSection = 500;
 
 @interface YTSettingsSectionItemManager (CercubePlus)
@@ -315,6 +318,78 @@ extern NSBundle *CercubePlusBundle();
     }];
     [sectionItems addObject:shortsControlOverlayGroup];
 
+# pragma mark - LowContrastMode
+    YTSettingsSectionItem *lowContrastModeSection = [YTSettingsSectionItemClass itemWithTitle:LOC(@"LCM_CHOOSE_COLOR")
+        accessibilityIdentifier:nil
+        detailTextBlock:^NSString *() {
+            switch (colorContrastMode()) {
+                case 1:
+                    return LOC(@"RED_UI");
+                case 2:
+                    return LOC(@"BLUE_UI");
+                case 3:
+                    return LOC(@"GREEN_UI");
+                case 4:
+                    return LOC(@"YELLOW_UI");
+                case 5:
+                    return LOC(@"ORANGE_UI");
+                case 6:
+                    return LOC(@"PURPLE_UI");
+                case 7:
+                    return LOC(@"PINK_UI");
+                case 0:
+                default:
+                    return LOC(@"DEFAULT_UI");
+            }
+        }
+        selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+            NSArray <YTSettingsSectionItem *> *rows = @[
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"DEFAULT_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                    [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"lcmColor"];
+                    [settingsViewController reloadData];
+                    return YES;
+                }],
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"RED_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                    [[NSUserDefaults standardUserDefaults] setInteger:1 forKey:@"lcmColor"];
+                    [settingsViewController reloadData];
+                    return YES;
+                }],
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"BLUE_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                    [[NSUserDefaults standardUserDefaults] setInteger:2 forKey:@"lcmColor"];
+                    [settingsViewController reloadData];
+                    return YES;
+                }],
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"GREEN_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                    [[NSUserDefaults standardUserDefaults] setInteger:3 forKey:@"lcmColor"];
+                    [settingsViewController reloadData];
+                    return YES;
+                }],
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"YELLOW_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                    [[NSUserDefaults standardUserDefaults] setInteger:4 forKey:@"lcmColor"];
+                    [settingsViewController reloadData];
+                    return YES;
+                }],
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"ORANGE_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                    [[NSUserDefaults standardUserDefaults] setInteger:5 forKey:@"lcmColor"];
+                    [settingsViewController reloadData];
+                    return YES;
+                }],
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"PURPLE_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                    [[NSUserDefaults standardUserDefaults] setInteger:6 forKey:@"lcmColor"];
+                    [settingsViewController reloadData];
+                    return YES;
+                }],
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"PINK_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                    [[NSUserDefaults standardUserDefaults] setInteger:7 forKey:@"lcmColor"];
+                    [settingsViewController reloadData];
+                    return YES;
+                }]
+            ];
+            YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"LCM_CHOOSE_COLOR") pickerSectionTitle:nil rows:rows selectedItemIndex:colorContrastMode() parentResponder:[self parentResponder]];
+            [settingsViewController pushViewController:picker];
+            return YES;
+        }];
+
 # pragma mark - Theme
     YTSettingsSectionItem *themeGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"THEME_OPTIONS")
         accessibilityIdentifier:nil
@@ -355,8 +430,17 @@ extern NSBundle *CercubePlusBundle();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"oledKeyBoard_enabled"];
                     return YES;
                 }
-                settingItemId:0]
-            ];
+                settingItemId:0],
+
+                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"LOW_CONTRAST_MODE")
+                titleDescription:LOC(@"LOW_CONTRAST_MODE_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"lowContrastMode_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"lowContrastMode_enabled"];
+                    return YES;
+                }
+                settingItemId:0], lowContrastModeSection];
             YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"THEME_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"appTheme") parentResponder:[self parentResponder]];
             [settingsViewController pushViewController:picker];
             return YES;
@@ -392,86 +476,6 @@ extern NSBundle *CercubePlusBundle();
                 switchOn:IsEnabled(@"hideTabBarLabels_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideTabBarLabels_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"LOW_CONTRAST_MODE")
-                titleDescription:LOC(@"LOW_CONTRAST_MODE_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"lowContrastMode_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"lowContrastMode_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"RED_UI")
-                titleDescription:LOC(@"RED_UI_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"RedUI_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"RedUI_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"BLUE_UI")
-                titleDescription:LOC(@"BLUE_UI_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"BlueUI_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"BlueUI_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"GREEN_UI")
-                titleDescription:LOC(@"GREEN_UI_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"GreenUI_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"GreenUI_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"YELLOW_UI")
-                titleDescription:LOC(@"YELLOW_UI_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"YellowUI_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"YellowUI_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ORANGE_UI")
-                titleDescription:LOC(@"ORANGE_UI_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"OrangeUI_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"OrangeUI_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"PURPLE_UI")
-                titleDescription:LOC(@"PURPLE_UI_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"PurpleUI_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"PurpleUI_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-                [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"PINK_UI")
-                titleDescription:LOC(@"PINK_UI_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"PinkUI_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"PinkUI_enabled"];
                     return YES;
                 }
                 settingItemId:0]
