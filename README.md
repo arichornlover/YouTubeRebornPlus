@@ -38,7 +38,13 @@ Special thanks to this (not very good at it) developer who kept maintaining Cerc
 <a href='https://github.com/arichorn'>
 <img src='https://github.com/arichorn.png' width='140px;'>
 </a>
-<h4 align='center'><a href='https://github.com/majd'>arichorn</a></h4>
+<h4 align='center'><a href='https://github.com/arichorn'>dayanch96</a></h4>
+</td>
+<td id='dayanch96'>
+<a href='https://github.com/dayanch96'>
+<img src='https://github.com/dayanch96.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://github.com/dayanch96'>arichorn</a></h4>
 </td>
 
 <table id='credit'>
@@ -215,18 +221,18 @@ any many more...
 
 # Download (IPA)
 
-- **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/qnblackcat/CercubePlus/releases).
+- **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/arichorn/CercubePlusExtra/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.02.3-5.3.11)](https://tinyurl.com/sx4fsyr3) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.04.3-5.3.11)](https://tinyurl.com/4hjeex6z) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Jan 20 2023)_
+- Version info: _(Feb 4 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.02.3 | ✖︎ |
+| **YouTube** | Google Inc | 18.04.3 | ✖︎ |
 | **Cercube** | [Majd Alfhaily](https://twitter.com/freemanrepo) | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
@@ -235,7 +241,7 @@ any many more...
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
 | **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.6 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
-| **LowContrastMode** | [arichorn](https://twitter.com/LilithAcc) | 1.2.1-3 | [✔︎](https://github.com/arichorn/LowContrastMode) |
+| **LowContrastMode** | [arichorn](https://twitter.com/LilithAcc) | 1.2.1-4 | [✔︎](https://github.com/arichorn/LowContrastMode) |
 | **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.3.5 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.19 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.0 | [✔︎](https://github.com/PoomSmart/YouMute) |
