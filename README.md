@@ -38,13 +38,13 @@ Special thanks to this (not very good at it) developer who kept maintaining Cerc
 <a href='https://github.com/arichorn'>
 <img src='https://github.com/arichorn.png' width='140px;'>
 </a>
-<h4 align='center'><a href='https://github.com/arichorn'>dayanch96</a></h4>
+<h4 align='center'><a href='https://github.com/arichorn'>arichorn</a></h4>
 </td>
 <td id='dayanch96'>
 <a href='https://github.com/dayanch96'>
 <img src='https://github.com/dayanch96.png' width='140px;'>
 </a>
-<h4 align='center'><a href='https://github.com/dayanch96'>arichorn</a></h4>
+<h4 align='center'><a href='https://github.com/dayanch96'>dayanch96</a></h4>
 </td>
 
 <table id='credit'>
