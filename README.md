@@ -1,6 +1,7 @@
 ## Cercube with extra features!
 
-![IMAGE_CERCUBEPLUS_PREVIEW](https://user-images.githubusercontent.com/78001398/213068038-b6051a0a-9158-4023-9c89-6a14f5c57f29.png)
+
+![IMAGE_CERCUBEPLUS_PREVIEW](https://user-images.githubusercontent.com/78001398/217129808-4efa2213-9e01-4fa4-a9d4-04c90e7fa88b.png)
 
 ---
 
@@ -32,7 +33,7 @@
 # Credits
 
 <table id='maintainer credit'>
-Special thanks to this (not very good at it) developer who kept maintaining CercubePlus!
+Special thanks to these developer(s) for maintaining and improving CercubePlus!
 <tr>
 <td id='arichorn'>
 <a href='https://github.com/arichorn'>
