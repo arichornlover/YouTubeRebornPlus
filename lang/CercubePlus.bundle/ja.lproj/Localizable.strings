@@ -5,10 +5,10 @@
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "ビデオプレーヤーの設定";
 
-"SNAP_TO_CHAPTER" = "チャプターへのスナップを無効にする";
+"SNAP_TO_CHAPTER" = "チャプターへのスナップを無効化";
 "SNAP_TO_CHAPTER_DESC" = "動画でシークする際にチャプターへの自動スナップを無効にします。アプリの再起動が必要です。";
 
-"PINCH_TO_ZOOM" = "ピンチで拡大を無効にする";
+"PINCH_TO_ZOOM" = "ピンチで拡大を無効化";
 "PINCH_TO_ZOOM_DESC" = "アプリの再起動が必要です。";
 
 // Video controls overlay options
@@ -21,7 +21,7 @@
 "RED_PROGRESS_BAR_DESC" = "赤いプログレスバーを復活させます。アプリの再起動が必要です。";
 
 "DONT_EAT_MY_CONTENT" = "2:1比率の動画とノッチ/Dynamic Islandの最適化 (DontEatMyContent)";
-"DONT_EAT_MY_CONTENT_DESC" = "2:1比率の動画とノッチ/Dynamic Islandが干渉することを防ぎます。アプリの再起動が必要です。";
+"DONT_EAT_MY_CONTENT_DESC" = "2:1比率の動画とノッチ/Dynamic Islandが干渉するのを防ぎます。アプリの再起動が必要です。";
 
 "HIDE_HEATWAVES" = "ヒートウェーブを非表示";
 "HIDE_HEATWAVES_DESC" = "ビデオプレーヤーでヒートウェーブを非表示にします。アプリの再起動が必要です。";
@@ -48,7 +48,7 @@
 "HIDE_SHORTS_SHARE_BUTTON_DESC" = "";
 
 "HIDE_SUPER_THANKS" = "Super Thanks を購入のバナーを非表示";
-"HIDE_SUPER_THANKS_DESC" = "Hide the 'Buy Super Thanks' banner in Shorts.";
+"HIDE_SUPER_THANKS_DESC" = "ショートの「スーパーサンクス」バナーを非表示にします。";
 
 "DISABLE_RESUME_TO_SHORTS" = "ショートの再開を無効化";
 "DISABLE_RESUME_TO_SHORTS_DESC" = "ショートを視聴中にアプリを終了した後、再度アプリを開いた際にショートから再開されるのを防ぎます。";
@@ -70,7 +70,7 @@
 "OLED_KEYBOARD_DESC" = "正常に動作しない可能性があります。アプリの再起動が必要です。";
 
 "LOW_CONTRAST_MODE" = "低コントラストモード";
-"LOW_CONTRAST_MODE_DESC" = "このオプションは、テキストとボタンのコントラストを、以前のYouTubeインターフェイスのように低くします。アプリの再起動が必要です。";
+"LOW_CONTRAST_MODE_DESC" = "このオプションは、テキストとボタンのコントラストを以前のYouTubeインターフェイスのように低くします。アプリの再起動が必要です。";
 
 "LCM_CHOOSE_COLOR" = "低コントラストのテキストカラー";
 "DEFAULT_UI" = "デフォルト";
@@ -137,7 +137,7 @@
 "REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "次の動画と前の動画を再生するボタンをそれぞれ早送りと巻き戻しボタンに置き換えます。アプリの再起動が必要です。";
 
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "前後の動画を再生するボタンを非表示";
-"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "動画コントロールのオーバーレイで次の動画と前の動画を再生するボタンを非表示にします。";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "動画コントロールのオーバーレイで前の動画と次の動画を再生するボタンを非表示にします。";
 
 "HIDE_SHORTS_VIDEOS" = "ショートを非表示";
 "HIDE_SHORTS_VIDEOS_DESC" = "ホームページからショートを非表示にします, 推奨…";
@@ -146,13 +146,13 @@
 "YT_MINIPLAYER_DESC" = "例えば子供向け動画など";
 
 "HIDE_CERCUBE_BUTTON" = "ナビゲーションバーのCercubeボタンを非表示";
-"HIDE_CERCUBE_BUTTON_DESC" = "ナビゲーションバーからCercubeボタンを非表示にします。";
+"HIDE_CERCUBE_BUTTON_DESC" = "";
 
 "HIDE_CERCUBE_PIP_BUTTON" = "CercubeのPiPボタンを非表示";
 "HIDE_CERCUBE_PIP_BUTTON_DESC" = "ビデオコントロールオーバーレイでCercubeのPiPボタンを非表示にします。";
 
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Cercubeのダウンロードボタンを非表示";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Cercubeのダウンロードボタンを非表示にするオプションは、デフォルトで有効になっています。 Cercubeのダウンロードサーバーがなくなったので、現在何もダウンロードできないからです。";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Cercubeのダウンロードボタンを非表示にするオプションはデフォルトで有効になっています。 Cercubeのダウンロードサーバーがなくなったので、現在何もダウンロードできないからです。";
 
 "HIDE_CAST_BUTTON" = "キャストボタンを非表示";
 "HIDE_CAST_BUTTON_DESC" = "アプリの再起動が必要です。";
@@ -176,7 +176,7 @@
 "AUTO_FULLSCREEN_DESC" = "フルスクリーンでビデオを自動再生します。";
 
 "HIDE_HUD_MESSAGES" = "HUDメッセージを非表示";
-"HIDE_HUD_MESSAGES_DESC" = "例: CCはオン/オフです, ビデオループはオンです等";
+"HIDE_HUD_MESSAGES_DESC" = "例: CCはオン/オフです, 動画のループ再生はオンです等";
 
 "HIDE_PAID_PROMOTION_CARDS" = "有料プロモーションカードを非表示";
 "HIDE_PAID_PROMOTION_CARDS_DESC" = "一部の動画の「有料プロモーションを含みます」カードを非表示にします。";
