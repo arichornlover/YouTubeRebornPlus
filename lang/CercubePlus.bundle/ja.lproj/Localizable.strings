@@ -1,15 +1,140 @@
 // Settings
-"VERSION" = "CercubePlus's version: %@";
-"VERSION_CHECK" = "Tap to check for update!";
+"VERSION" = "CercubePlusのバージョン: %@";
+"VERSION_CHECK" = "タップして更新をチェック!";
+
+// Video player options
+"VIDEO_PLAYER_OPTIONS" = "ビデオプレーヤーの設定";
+
+"SNAP_TO_CHAPTER" = "チャプターへのスナップを無効にする";
+"SNAP_TO_CHAPTER_DESC" = "動画でシークする際にチャプターへの自動スナップを無効にします。アプリの再起動が必要です。";
+
+"PINCH_TO_ZOOM" = "ピンチで拡大を無効にする";
+"PINCH_TO_ZOOM_DESC" = "アプリの再起動が必要です。";
+
+// Video controls overlay options
+"VIDEO_CONTROLS_OVERLAY_OPTIONS" = "ビデオコントロールオーバーレイの設定";
+
+"HIDE_CHANNEL_WATERMARK" = "チャンネルウォーターマークを非表示";
+"HIDE_CHANNEL_WATERMARK_DESC" = "ビデオコントロールオーバーレイでチャンネルのウォーターマークを非表示にします。アプリの再起動が必要です。";
+
+"RED_PROGRESS_BAR" = "赤いプログレスバー";
+"RED_PROGRESS_BAR_DESC" = "赤いプログレスバーを復活させます。アプリの再起動が必要です。";
 
 "DONT_EAT_MY_CONTENT" = "2:1比率の動画とノッチ/Dynamic Islandの最適化 (DontEatMyContent)";
 "DONT_EAT_MY_CONTENT_DESC" = "2:1比率の動画とノッチ/Dynamic Islandが干渉することを防ぎます。アプリの再起動が必要です。";
 
-"REPLACE_PREVIOUS_NEXT_BUTTON" = "前後の動画を再生するボタンを置き換える";
-"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "次の動画と前の動画を再生するボタンをそれぞれ早送りと巻き戻しボタンに置き換えます。アプリの再起動が必要です。";
+"HIDE_HEATWAVES" = "ヒートウェーブを非表示";
+"HIDE_HEATWAVES_DESC" = "ビデオプレーヤーでヒートウェーブを非表示にします。アプリの再起動が必要です。";
+
+// Shorts controls overlay options
+"SHORTS_CONTROLS_OVERLAY_OPTIONS" = "ショートのコントロールオーバーレイの設定";
+
+"HIDE_SHORTS_CHANNEL_AVATAR" = "ショートチャンネルのアバターを非表示";
+"HIDE_SHORTS_CHANNEL_AVATAR_DESC" = "";
+
+"HIDE_SHORTS_LIKE_BUTTON" = "ショートの高評価ボタンを非表示";
+"HIDE_SHORTS_LIKE_BUTTON_DESC" = "";
+
+"HIDE_SHORTS_DISLIKE_BUTTON" = "ショートの低評価ボタンを非表示";
+"HIDE_SHORTS_DISLIKE_BUTTON_DESC" = "";
+
+"HIDE_SHORTS_COMMENT_BUTTON" = "ショートのコメントのボタンを非表示";
+"HIDE_SHORTS_COMMENT_BUTTON_DESC" = "";
+
+"HIDE_SHORTS_REMIX_BUTTON" = "ショートのリミックスボタンを非表示";
+"HIDE_SHORTS_REMIX_BUTTON_DESC" = "";
+
+"HIDE_SHORTS_SHARE_BUTTON" = "ショートの共有ボタンを非表示";
+"HIDE_SHORTS_SHARE_BUTTON_DESC" = "";
+
+"HIDE_SUPER_THANKS" = "Super Thanks を購入のバナーを非表示";
+"HIDE_SUPER_THANKS_DESC" = "Hide the 'Buy Super Thanks' banner in Shorts.";
+
+"DISABLE_RESUME_TO_SHORTS" = "ショートの再開を無効化";
+"DISABLE_RESUME_TO_SHORTS_DESC" = "ショートを視聴中にアプリを終了した後、再度アプリを開いた際にショートから再開されるのを防ぎます。";
+
+// Theme
+"THEME_OPTIONS" = "テーマオプション";
+
+"OLED_DARK_THEME" = "OLEDダークテーマ(実験的)";
+"OLED_DARK_THEME_2" = "OLEDダークテーマ";
+"OLED_DARK_THEME_DESC" = "真のダークテーマです。正しく動作しない場合があります。このオプションを有効/無効にした後はアプリの再起動が必要です。";
+
+"OLD_DARK_THEME" = "古いダークモード";
+"OLD_DARK_THEME_DESC" = "以前のダークモードです。(グレー) アプリの再起動が必要です。";
+
+"DEFAULT_THEME" = "デフォルト";
+"DEFAULT_THEME_DESC" = "デフォルトのダークモードです。アプリの再起動が必要です。";
+
+"OLED_KEYBOARD" = "OLEDキーボード(実験的)";
+"OLED_KEYBOARD_DESC" = "正常に動作しない可能性があります。アプリの再起動が必要です。";
+
+"LOW_CONTRAST_MODE" = "低コントラストモード";
+"LOW_CONTRAST_MODE_DESC" = "このオプションは、テキストとボタンのコントラストを、以前のYouTubeインターフェイスのように低くします。アプリの再起動が必要です。";
+
+"LCM_CHOOSE_COLOR" = "低コントラストのテキストカラー";
+"DEFAULT_UI" = "デフォルト";
+
+"RED_UI" = "赤色のUI";
+"RED_UI_DESC" = "赤色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
+
+"BLUE_UI" = "青色のUI";
+"BLUE_UI_DESC" = "青色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
+
+"GREEN_UI" = "緑色のUI";
+"GREEN_UI_DESC" = "緑色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
+
+"YELLOW_UI" = "黄色のUI";
+"YELLOW_UI_DESC" = "黄色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
+
+"ORANGE_UI" = "オレンジ色のUI";
+"ORANGE_UI_DESC" = "オレンジ色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
+
+"PURPLE_UI" = "紫色のUI";
+"PURPLE_UI_DESC" = "紫色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
+
+"PINK_UI" = "ピンク色のUI";
+"PINK_UI_DESC" = "ピンク色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
+
+// Customization Options
+"CUSTOMIZATION_OPTIONS" = "カスタマイズ オプション";
+
+"HIDE_MODERN_INTERFACE" = "モダンインターフェイスを非表示 (YTNoModernUI)";
+"HIDE_MODERN_INTERFACE_DESC" = "YouTubeによって追加されたモダンな要素を隠すためにこれをトグルしてください。アンビエントモード,丸みを帯びたデザインなどを削除します。アプリの再起動が必要です。";
+
+"HIDE_YOUTUBE_LOGO" = "YouTubeロゴを非表示";
+"HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です。";
+
+"HIDE_TAB_BAR_LABELS" = "タブバーのラベルを非表示";
+"HIDE_TAB_BAR_LABELS_DESC" = "タブバーのラベルをすべて非表示にします。アプリの再起動が必要です。";
+
+// Miscellaneous
+"MISCELLANEOUS" = "その他";
+
+"CAST_CONFIRM" = "キャストする前に確認する (YTCastConfirm)";
+"CAST_CONFIRM_DESC" = "誤ってテレビにキャストしないように、確認の警告を表示します。";
+"CASTING" = "キャスト";
+"MSG_ARE_YOU_SURE" = "本当にキャストを開始しますか？";
+"MSG_YES" = "はい";
+"MSG_CANCEL" = "いいえ";
+
+"DISABLE_HINTS" = "ヒントを無効化";
+"DISABLE_HINTS_DESC" = "アプリが再インストールされた際に表示される機能の使い方を非表示にします。";
+
+"ENABLE_FLEX" = "FLEXを有効化";
+"ENABLE_FLEX_DESC" = "デバッグ用のFLEXを有効化します(推奨しません) 何をやっているのか分からない場合はオフにします。";
 
 "FIX_GOOGLE_SIGNIN" = "Googleサインインを修正する (TrollStoreを使用している場合のみ)";
-"FIX_GOOGLE_SIGNIN_DESC" = "アプリがTrollStore経由でインストールされた場合にのみ機能します： このオプションをオンにすると、Googleアカウントでサインインができます。アプリの再起動が必要です。";
+"FIX_GOOGLE_SIGNIN_DESC" = "アプリがTrollStore経由でインストールされた場合にのみ機能します： このオプションをオンにすると、Googleアカウントでサインインできます。アプリの再起動が必要です。";
+
+"HIDE_CHIP_BAR" = "トップバーを非表示;
+"HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム...)とサブスクリプション(すべてのビデオ、視聴を続ける...)リボンのトップバーを非表示にします。アプリの再起動が必要です。";
+
+"NEW_MINIPLAYER_STYLE" = "新しいミニプレーヤーバー (BigYTMiniPlayer)";
+"NEW_MINIPLAYER_STYLE_DESC" = "アプリの再起動が必要です。";
+
+"REPLACE_PREVIOUS_NEXT_BUTTON" = "前後の動画を再生するボタンを置き換える";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "次の動画と前の動画を再生するボタンをそれぞれ早送りと巻き戻しボタンに置き換えます。アプリの再起動が必要です。";
 
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "前後の動画を再生するボタンを非表示";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "動画コントロールのオーバーレイで次の動画と前の動画を再生するボタンを非表示にします。";
@@ -18,31 +143,28 @@
 "HIDE_SHORTS_VIDEOS_DESC" = "ホームページからショートを非表示にします, 推奨…";
 
 "YT_MINIPLAYER" = "全てのYouTubeのビデオにミニプレーヤーを有効化";
-"YT_MINIPLAYER_DESC" = "子供向け動画など…";
+"YT_MINIPLAYER_DESC" = "例えば子供向け動画など";
 
 "HIDE_CERCUBE_BUTTON" = "ナビゲーションバーのCercubeボタンを非表示";
-"HIDE_CERCUBE_BUTTON_DESC" = "";
+"HIDE_CERCUBE_BUTTON_DESC" = "ナビゲーションバーからCercubeボタンを非表示にします。";
 
 "HIDE_CERCUBE_PIP_BUTTON" = "CercubeのPiPボタンを非表示";
 "HIDE_CERCUBE_PIP_BUTTON_DESC" = "ビデオコントロールオーバーレイでCercubeのPiPボタンを非表示にします。";
 
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Cercubeのダウンロードボタンを非表示";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Cercube のダウンロード ボタンを非表示にするオプションは、デフォルトで有効になっています。 Cercube のダウンロード サーバーがなくなったため、現在何もダウンロードできないためです。";
+"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Cercubeのダウンロードボタンを非表示にするオプションは、デフォルトで有効になっています。 Cercubeのダウンロードサーバーがなくなったので、現在何もダウンロードできないからです。";
 
 "HIDE_CAST_BUTTON" = "キャストボタンを非表示";
 "HIDE_CAST_BUTTON_DESC" = "アプリの再起動が必要です。";
 
-"HIDE_WATERMARKS" = "ウォーターマークを非表示";
-"HIDE_WATERMARKS_DESC" = "ビデオコントロールオーバーレイでチャンネルのウォーターマークを非表示にします。";
-
 "HIDE_HOVER_CARD" = "終了画面のホバーカードを非表示 (YTNoHoverCards)";
 "HIDE_HOVER_CARD_DESC" = "ビデオ終了時のクリエーターの終了画面(サムネイル)を非表示にします。";
 
+"HIDE_RIGHT_PANEL" = "フルスクリーンモードで右パネルを非表示";
+"HIDE_RIGHT_PANEL_DESC" = "アプリの再起動が必要です。";
+
 "NEW_MINIPLAYER_STYLE" = "新しいミニプレーヤースタイル (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "アプリの再起動が必要です。";
-
-"YT_RE_EXPLORE" = "ショートタブを探索タブに置き換える (YTReExplore)";
-"YT_RE_EXPLORE_DESC" = "アプリの再起動が必要です。";
 
 "HIDE_SUBTITLES_BUTTON" = "字幕ボタンを非表示";
 "HIDE_SUBTITLES_BUTTON_DESC" = "ビデオコントロールオーバーレイの字幕ボタンを非表示にします。";
@@ -54,16 +176,22 @@
 "AUTO_FULLSCREEN_DESC" = "フルスクリーンでビデオを自動再生します。";
 
 "HIDE_HUD_MESSAGES" = "HUDメッセージを非表示";
-"HIDE_HUD_MESSAGES_DESC" = "例: CCはオン/オフです, ビデオループはオンです,…";
-
-"OLED_DARKMODE" = "OLEDダークモード (実験的)";
-"OLED_DARKMODE_DESC" = "正常に動作しない可能性があります。この設定を変更した場合、アプリの再起動が必要です。";
-
-"OLED_KEYBOARD" = "OLEDキーボード (実験的)";
-"OLED_KEYBOARD_DESC" = "正常に動作しない可能性があります。この設定を変更した場合、アプリの再起動が必要です。";
+"HIDE_HUD_MESSAGES_DESC" = "例: CCはオン/オフです, ビデオループはオンです等";
 
 "HIDE_PAID_PROMOTION_CARDS" = "有料プロモーションカードを非表示";
 "HIDE_PAID_PROMOTION_CARDS_DESC" = "一部の動画の「有料プロモーションを含みます」カードを非表示にします。";
 
 "HIDE_NOTIFICATION_BUTTON" = "ナビゲーションバーの通知ボタンを非表示";
 "HIDE_NOTIFICATION_BUTTON_DESC" = "";
+
+"HIDE_SPONSORBLOCK_BUTTON" = "ナビゲーションバーのiSponsorBlockボタンを非表示";
+"HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
+
+"YT_RE_EXPLORE" = "ショートタブを探索タブに置き換える (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "アプリの再起動が必要です。";
+
+"IPAD_LAYOUT" = "iPadレイアウト";
+"IPAD_LAYOUT_DESC" = "現在使用しているiPhone/iPodでiPadのレイアウトを使用したい場合にのみ使用します。アプリの再起動が必要です。";
+
+"IPHONE_LAYOUT" = "iPhoneレイアウト";
+"IPHONE_LAYOUT_DESC" = "現在使用しているiPadでiPhoneのレイアウトを使用したい場合にのみ使用します。アプリの再起動が必要です。";
