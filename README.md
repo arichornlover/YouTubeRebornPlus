@@ -268,4 +268,4 @@ any many more...
   - Venmo: https://venmo.com/u/DavidBrett
 
 # Building (optional)
-See [Building - Wiki](https://github.com/qnblackcat/CercubePlus/wiki/Building)
+See [Building - Wiki](https://github.com/qnblackcat/uYouPlus/wiki/Building)
