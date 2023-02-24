@@ -45,6 +45,9 @@
 @interface YTTransportControlsButtonView : UIView
 @end
 
+@interface YTPlaybackButton : UIControl
+@end
+
 @interface YTSegmentableInlinePlayerBarView
 @property (nonatomic, assign, readwrite) BOOL enableSnapToChapter;
 @end
