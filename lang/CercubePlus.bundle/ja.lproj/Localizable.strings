@@ -17,6 +17,12 @@
 "HIDE_CHANNEL_WATERMARK" = "チャンネルウォーターマークを非表示";
 "HIDE_CHANNEL_WATERMARK_DESC" = "ビデオコントロールオーバーレイでチャンネルのウォーターマークを非表示にします。アプリの再起動が必要です。";
 
+"HIDE_SHADOW_OVERLAY_BUTTONS" = "Hide Shadow Overlay Buttons"
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Hide the Shadow Overlay on the Play/Pause, Previous & Next Buttons"
+
+"HIDE_DARK_OVERLAY_BACKGROUND" = "Hide Dark Overlay Background"
+"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "Hide video player's dark overlay background."
+
 "RED_PROGRESS_BAR" = "赤いプログレスバー";
 "RED_PROGRESS_BAR_DESC" = "赤いプログレスバーを復活させます。アプリの再起動が必要です。";
 
@@ -74,39 +80,13 @@
 
 "LCM_CHOOSE_COLOR" = "低コントラストのテキストカラー";
 "DEFAULT_UI" = "デフォルト";
-
 "RED_UI" = "赤色のUI";
-"RED_UI_DESC" = "赤色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
-
 "BLUE_UI" = "青色のUI";
-"BLUE_UI_DESC" = "青色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
-
 "GREEN_UI" = "緑色のUI";
-"GREEN_UI_DESC" = "緑色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
-
 "YELLOW_UI" = "黄色のUI";
-"YELLOW_UI_DESC" = "黄色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
-
 "ORANGE_UI" = "オレンジ色のUI";
-"ORANGE_UI_DESC" = "オレンジ色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
-
 "PURPLE_UI" = "紫色のUI";
-"PURPLE_UI_DESC" = "紫色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
-
 "PINK_UI" = "ピンク色のUI";
-"PINK_UI_DESC" = "ピンク色のUI (他の全ての色のUIをオフにしてください) アプリの再起動が必要です。";
-
-// Customization Options
-"CUSTOMIZATION_OPTIONS" = "カスタマイズ オプション";
-
-"HIDE_MODERN_INTERFACE" = "モダンインターフェイスを非表示 (YTNoModernUI)";
-"HIDE_MODERN_INTERFACE_DESC" = "YouTubeによって追加されたモダンな要素を隠すためにこれをトグルしてください。アンビエントモード,丸みを帯びたデザインなどを削除します。アプリの再起動が必要です。";
-
-"HIDE_YOUTUBE_LOGO" = "YouTubeロゴを非表示";
-"HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です。";
-
-"HIDE_TAB_BAR_LABELS" = "タブバーのラベルを非表示";
-"HIDE_TAB_BAR_LABELS_DESC" = "タブバーのラベルをすべて非表示にします。アプリの再起動が必要です。";
 
 // Miscellaneous
 "MISCELLANEOUS" = "その他";
@@ -120,9 +100,6 @@
 
 "DISABLE_HINTS" = "ヒントを無効化";
 "DISABLE_HINTS_DESC" = "アプリが再インストールされた際に表示される機能の使い方を非表示にします。";
-
-"ENABLE_FLEX" = "FLEXを有効化";
-"ENABLE_FLEX_DESC" = "デバッグ用のFLEXを有効化します(推奨しません) 何をやっているのか分からない場合はオフにします。";
 
 "FIX_GOOGLE_SIGNIN" = "Googleサインインを修正する (TrollStoreを使用している場合のみ)";
 "FIX_GOOGLE_SIGNIN_DESC" = "アプリがTrollStore経由でインストールされた場合にのみ機能します： このオプションをオンにすると、Googleアカウントでサインインできます。アプリの再起動が必要です。";
@@ -187,6 +164,15 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "ナビゲーションバーのiSponsorBlockボタンを非表示";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
+"HIDE_MODERN_INTERFACE" = "モダンインターフェイスを非表示 (YTNoModernUI)";
+"HIDE_MODERN_INTERFACE_DESC" = "YouTubeによって追加されたモダンな要素を隠すためにこれをトグルしてください。アンビエントモード,丸みを帯びたデザインなどを削除します。アプリの再起動が必要です。";
+
+"HIDE_YOUTUBE_LOGO" = "YouTubeロゴを非表示";
+"HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です。";
+
+"HIDE_TAB_BAR_LABELS" = "タブバーのラベルを非表示";
+"HIDE_TAB_BAR_LABELS_DESC" = "タブバーのラベルをすべて非表示にします。アプリの再起動が必要です。";
+
 "YT_RE_EXPLORE" = "ショートタブを探索タブに置き換える (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "アプリの再起動が必要です。";
 
@@ -195,3 +181,6 @@
 
 "IPHONE_LAYOUT" = "iPhoneレイアウト";
 "IPHONE_LAYOUT_DESC" = "現在使用しているiPadでiPhoneのレイアウトを使用したい場合にのみ使用します。アプリの再起動が必要です。";
+
+"ENABLE_FLEX" = "FLEXを有効化";
+"ENABLE_FLEX_DESC" = "デバッグ用のFLEXを有効化します(推奨しません) 何をやっているのか分からない場合はオフにします。";

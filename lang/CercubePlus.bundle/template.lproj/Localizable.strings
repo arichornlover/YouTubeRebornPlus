@@ -84,20 +84,11 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "OLED_KEYBOARD" = "OLED Keyboard (Experimental)";
 "OLED_KEYBOARD_DESC" = "Might not work correctly in some cases. App restart is required.";
 
-// Customization Options
-"CUSTOMIZATION_OPTIONS" = "Customization Options";
-
-"HIDE_MODERN_INTERFACE" = "Hide Modern Interface (YTNoModernUI)";
-"HIDE_MODERN_INTERFACE_DESC" = "Toggle this on to hide any Modern Element added by YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.";
-
-"HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
-"HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
-
-"HIDE_TAB_BAR_LABELS" = "Hide Labels in the Tab Bar";
-"HIDE_TAB_BAR_LABELS_DESC" = "this will Hide all of the labels in the Tab Bar. App restart is required.";
-
 "LOW_CONTRAST_MODE" = "Low Contrast Mode";
-"LOW_CONTRAST_MODE_DESC" = "this will Low Contrast texts and buttons just like how the old YouTube Interface was. App restart is required.";
+"LOW_CONTRAST_MODE_DESC" = "This option will Low Contrast of the texts and buttons just like how the old YouTube Interface was. App restart is required.";
+
+"LCM_CHOOSE_COLOR" = "Low contrast text color";
+"DEFAULT_UI" = "Default";
 
 "RED_UI" = "Red UI";
 "RED_UI_DESC" = "Red UI (have every other ui colors off) App restart is required.";
@@ -119,6 +110,18 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "PINK_UI" = "Pink UI";
 "PINK_UI_DESC" = "Pink UI (have every other ui colors off) App restart is required.";
+
+// Customization Options
+"CUSTOMIZATION_OPTIONS" = "Customization Options";
+
+"HIDE_MODERN_INTERFACE" = "Hide Modern Interface (YTNoModernUI)";
+"HIDE_MODERN_INTERFACE_DESC" = "Toggle this on to hide any Modern Element added by YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.";
+
+"HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
+"HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
+
+"HIDE_TAB_BAR_LABELS" = "Hide Labels in the Tab Bar";
+"HIDE_TAB_BAR_LABELS_DESC" = "this will Hide all of the labels in the Tab Bar. App restart is required.";
 
 // Miscellaneous
 "MISCELLANEOUS" = "Miscellaneous";
@@ -195,6 +198,9 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "HIDE_NOTIFICATION_BUTTON" = "Hide Notifcation button in the Navigation bar";
 "HIDE_NOTIFICATION_BUTTON_DESC" = "";
+
+"HIDE_SPONSORBLOCK_BUTTON" = "Hide iSponsorBlock button in the Navigation bar";
+"HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
 "YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "App restart is required.";
