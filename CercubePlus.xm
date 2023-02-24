@@ -211,6 +211,25 @@ static BOOL didFinishLaunching;
 %end
 %end
 
+%group gHideOverlayDarkBackground
+%hook YTMainAppVideoPlayerOverlayView
+- (void)setBackgroundVisible:(BOOL)arg1 {
+    %orig(NO);
+}
+%end
+%end
+
+%group gHideVideoPlayerShadowOverlayButtons
+%hook YTMainAppControlsOverlayView
+- (void)layoutSubviews {
+	%orig();
+    MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").backgroundColor = nil;
+    MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").backgroundColor = nil;
+    	MSHookIvar<YTPlaybackButton *>(self, "_playPauseButton").backgroundColor = nil;
+}
+%end
+%end
+
 %group gHideTabBarLabels // https://github.com/LillieH001/YouTube-Reborn
 %hook YTPivotBarItemView
 - (void)layoutSubviews {
@@ -266,15 +285,6 @@ static BOOL didFinishLaunching;
 } 
 %end
 %end
-
-// %group gHideSponsorBlockButton
-// %hook YTRightNavigationButtons
-// %property (retain, nonatomic) YTQTMButton *sponsorBlockButton;
-// - (void)layoutSubviews {
-//     self.sponsorBlockButton.hidden = YES;
-// }
-// %end
-// %end
 
 // A/B flags
 %hook YTColdConfig 
@@ -905,12 +915,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook UIView // Changes some of the texts around the YouTube App.
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-%end
-
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
 - (UIColor *)_ASDisplayView {
          return [UIColor whiteColor];
@@ -930,7 +934,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gRedUI
+%group gRedContrastMode // Red Contrast Mode
 %hook UIColor
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
@@ -973,19 +977,13 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
  }
 %end
 
-%hook YTCollectionView  // Changes Live Chat Texts
+%hook YTCollectionView // Changes Live Chat Texts
 - (void)setTintColor:(UIColor *)color { 
     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-%end
-
-%hook UIView // Changes some of the texts around the YouTube App.
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
@@ -1007,7 +1005,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gBlueUI
+%group gBlueContrastMode // Blue Contrast Mode
 %hook UIColor
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00];
@@ -1062,12 +1060,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook UIView // Changes some of the texts around the YouTube App.
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-%end
-
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
 - (UIColor *)_ASDisplayView {
          return [UIColor whiteColor];
@@ -1084,7 +1076,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gGreenUI
+%group gGreenContrastMode // Green Contrast Mode
 %hook UIColor
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
@@ -1139,12 +1131,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook UIView // Changes some of the texts around the YouTube App.
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-%end
-
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
 - (UIColor *)_ASDisplayView {
          return [UIColor whiteColor];
@@ -1161,7 +1147,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gYellowUI
+%group gYellowContrastMode // Yellow Contrast Mode
 %hook UIColor
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
@@ -1216,12 +1202,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook UIView // Changes some of the texts around the YouTube App.
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-%end
-
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
 - (UIColor *)_ASDisplayView {
          return [UIColor whiteColor];
@@ -1238,7 +1218,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gOrangeUI
+%group gOrangeContrastMode // Orange Contrast Mode
 %hook UIColor
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
@@ -1293,12 +1273,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook UIView // Changes some of the texts around the YouTube App.
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-%end
-
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
 - (UIColor *)_ASDisplayView {
          return [UIColor whiteColor];
@@ -1315,7 +1289,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gPurpleUI
+%group gPurpleContrastMode // Purple Contrast Mode
 %hook UIColor
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
@@ -1370,12 +1344,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook UIView // Changes some of the texts around the YouTube App.
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-%end
-
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
 - (UIColor *)_ASDisplayView {
          return [UIColor whiteColor];
@@ -1392,7 +1360,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gPinkUI
+%group gPinkContrastMode // Pink Contrast Mode
 %hook UIColor
 + (UIColor *)whiteColor {
          return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
@@ -1442,12 +1410,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-%end
-
-%hook UIView // Changes some of the texts around the YouTube App.
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
@@ -2008,6 +1970,12 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"replacePreviousAndNextButton_enabled")) {
        %init(gReplacePreviousAndNextButton);
     }
+    if (IsEnabled(@"hideOverlayDarkBackground_enabled")) {
+       %init(gHideOverlayDarkBackground);
+    }
+    if (IsEnabled(@"hideVideoPlayerShadowOverlayButtons_enabled")) {
+       %init(gHideVideoPlayerShadowOverlayButtons);
+    }
     if (IsEnabled(@"hideHeatwaves_enabled")) {
        %init(gHideHeatwaves);
     }
@@ -2024,25 +1992,25 @@ void DEMC_centerRenderingView() {
        %init(gLowContrastMode);
     }
     if (redContrastMode()) {
-       %init(gRedUI);
+       %init(gRedContrastMode);
     }
     if (blueContrastMode()) {
-       %init(gBlueUI);
+       %init(gBlueContrastMode);
     }
     if (greenContrastMode()) {
-       %init(gGreenUI);
+       %init(gGreenContrastMode);
     }
     if (yellowContrastMode()) {
-       %init(gYellowUI);
+       %init(gYellowContrastMode);
     }
     if (orangeContrastMode()) {
-       %init(gOrangeUI);
+       %init(gOrangeContrastMode);
     }
     if (purpleContrastMode()) {
-       %init(gPurpleUI);
+       %init(gPurpleContrastMode);
     }
     if (pinkContrastMode()) {
-       %init(gPinkUI);
+       %init(gPinkContrastMode);
     }
     if (oldDarkTheme()) {
        %init(gOldDarkTheme)
@@ -2059,9 +2027,6 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"hideChipBar_enabled")) {
        %init(gHideChipBar);
     }
-  //   if (IsEnabled(@"hideSponsorBlockButton_enabled")) {
-  //      %init(gHideSponsorBlockButton);
-  //   }
 
     // Change the default value of some options
     NSArray *allKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys];
