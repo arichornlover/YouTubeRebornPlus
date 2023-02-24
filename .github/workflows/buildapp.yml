@@ -8,7 +8,7 @@ on:
     inputs:
       cercube_version:
         description: "The version of Cercube"
-        default: "5.3.13"
+        default: "5.3.11"
         required: true
         type: string
       decrypted_youtube_url:
@@ -100,7 +100,7 @@ jobs:
       - name: Download Cercube & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl "https://dl.dropboxusercontent.com/s/3qv0q3v4n96tm28/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
+          curl "https://dl.dropboxusercontent.com/s/b01erqbp3ajc5e2/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
           echo -e "==> \033[1mCercube v${{ inputs.cercube_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
