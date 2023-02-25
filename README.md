@@ -267,5 +267,7 @@ any many more...
   - Paypal: https://www.paypal.com/paypalme/DBrett684 
   - Venmo: https://venmo.com/u/DavidBrett
 
-# Building (optional)
-See [Building - Wiki](https://github.com/arichorn/CercubePlusExtra/wiki/Building)
+# Building(s) (optional)
+See [CercubePlusExtra/Building - Wiki](https://github.com/arichorn/CercubePlusExtra/wiki/Building)
+or Another Version [uYouPlus/Building - Wiki](https://github.com/qnblackcat/uYouPlus/wiki/Building)
+
