@@ -208,7 +208,7 @@ any many more...
 
 1. **Cercube**: Hide Cast button is not working. (Workaround: Hide cast button in CercubePlus settings)
 
-2. **LowContrastMode**: For some reason the tweak doesn't work with every ui element caused by YouTube's New UI update.
+2. **LowContrastMode**: this tweak doesn't work everywhere with every ui element on the YouTube App.
 
 3. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
 
@@ -224,16 +224,16 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/arichorn/CercubePlusExtra/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.07.5-5.3.11)](https://tinyurl.com/yc3va6sx) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.08.1-5.3.11)](https://tinyurl.com/3ymb9h8z) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Feb 23 2023)_
+- Version info: _(Feb 28 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.07.5 | ✖︎ |
+| **YouTube** | Google Inc | 18.08.1 | ✖︎ |
 | **Cercube** | Majd Alfhaily | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
