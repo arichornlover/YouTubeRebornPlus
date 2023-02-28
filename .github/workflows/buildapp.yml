@@ -56,7 +56,7 @@ jobs:
           submodules: recursive
 
       - name: Install Dependencies
-        run: brew install ldid dpkg
+        run: brew install ldid dpkg make
 
       - name: Setup Theos
         uses: actions/checkout@v3.3.0
@@ -119,7 +119,7 @@ jobs:
       - name: Fix Compiling & Build Package
         id: build_package
         run: |
-          (echo 'THEOS_IGNORE_PARALLEL_BUILDING_NOTICE = yes' >> ~/.theosrc)
+          (echo PATH=\"$(brew --prefix make)/libexec/gnubin:\$PATH\" >> ~/.zprofile)
           cd ${{ github.workspace }}/main
           sed -i '' "12s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
           sed -i '' "11s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
