@@ -101,8 +101,8 @@
 "DISABLE_HINTS" = "ヒントを無効化";
 "DISABLE_HINTS_DESC" = "アプリが再インストールされた際に表示される機能の使い方を非表示にします。";
 
-"FIX_GOOGLE_SIGNIN" = "Googleサインインを修正する (TrollStoreを使用している場合のみ)";
-"FIX_GOOGLE_SIGNIN_DESC" = "アプリがTrollStore経由でインストールされた場合にのみ機能します： このオプションをオンにすると、Googleアカウントでサインインできます。アプリの再起動が必要です。";
+"ENABLE_YT_STARTUP_ANIMATION" = "Enable YouTube startup animation";
+"ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
 
 "HIDE_CHIP_BAR" = "トップバーを非表示;
 "HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム...)とサブスクリプション(すべてのビデオ、視聴を続ける...)リボンのトップバーを非表示にします。アプリの再起動が必要です。";

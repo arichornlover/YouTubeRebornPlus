@@ -101,8 +101,8 @@
 "DISABLE_HINTS" = "Disable hints";
 "DISABLE_HINTS_DESC" = "Disable feature hints from YouTube that usually display when the app is freshly installed.";
 
-"FIX_GOOGLE_SIGNIN" = "Fix Google Sign in (for TrollStore user only)";
-"FIX_GOOGLE_SIGNIN_DESC" = "Only turn on this option when you can't sign in with your Google account and the app was installed via TrollStore. If you can log in normally, keep it disabled. App restart is required.";
+"ENABLE_YT_STARTUP_ANIMATION" = "Enable YouTube startup animation";
+"ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
 
 "HIDE_CHIP_BAR" = "Hide the Upper bar";
 "HIDE_CHIP_BAR_DESC" = "Hide Upper bar in the Home feeds (Trends, Music, Gaming...) and Subscription feeds (All videos, Continue watching...).";

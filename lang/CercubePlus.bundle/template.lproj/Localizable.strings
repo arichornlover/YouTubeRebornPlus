@@ -32,6 +32,12 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_CHANNEL_WATERMARK" = "Hide Channel Watermark";
 "HIDE_CHANNEL_WATERMARK_DESC" = "Hide channel's watermark in video controls overlay. App restart is required.";
 
+"HIDE_SHADOW_OVERLAY_BUTTONS" = "Hide Shadow Overlay Buttons"
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Hide the Shadow Overlay on the Play/Pause, Previous & Next Buttons"
+
+"HIDE_DARK_OVERLAY_BACKGROUND" = "Hide Dark Overlay Background"
+"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "Hide video player's dark overlay background."
+
 "RED_PROGRESS_BAR" = "Red progress bar";
 "RED_PROGRESS_BAR_DESC" = "Bring back the red progress bar. App restart is required.";
 
@@ -89,39 +95,13 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "LCM_CHOOSE_COLOR" = "Low contrast text color";
 "DEFAULT_UI" = "Default";
-
 "RED_UI" = "Red UI";
-"RED_UI_DESC" = "Red UI (have every other ui colors off) App restart is required.";
-
 "BLUE_UI" = "Blue UI";
-"BLUE_UI_DESC" = "Blue UI (have every other ui colors off) App restart is required.";
-
 "GREEN_UI" = "Green UI";
-"GREEN_UI_DESC" = "Green UI (have every other ui colors off) App restart is required.";
-
 "YELLOW_UI" = "Yellow UI";
-"YELLOW_UI_DESC" = "Yellow UI (have every other ui colors off) App restart is required.";
-
 "ORANGE_UI" = "Orange UI";
-"ORANGE_UI_DESC" = "Orange UI (have every other ui colors off) App restart is required.";
-
 "PURPLE_UI" = "Purple UI";
-"PURPLE_UI_DESC" = "Purple UI (have every other ui colors off) App restart is required.";
-
 "PINK_UI" = "Pink UI";
-"PINK_UI_DESC" = "Pink UI (have every other ui colors off) App restart is required.";
-
-// Customization Options
-"CUSTOMIZATION_OPTIONS" = "Customization Options";
-
-"HIDE_MODERN_INTERFACE" = "Hide Modern Interface (YTNoModernUI)";
-"HIDE_MODERN_INTERFACE_DESC" = "Toggle this on to hide any Modern Element added by YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.";
-
-"HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
-"HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
-
-"HIDE_TAB_BAR_LABELS" = "Hide Labels in the Tab Bar";
-"HIDE_TAB_BAR_LABELS_DESC" = "this will Hide all of the labels in the Tab Bar. App restart is required.";
 
 // Miscellaneous
 "MISCELLANEOUS" = "Miscellaneous";
@@ -136,11 +116,8 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "DISABLE_HINTS" = "Disable hints";
 "DISABLE_HINTS_DESC" = "Disable feature hints from YouTube that usually display when the app is freshly installed.";
 
-"ENABLE_FLEX" = "Enable FLEX";
-"ENABLE_FLEX_DESC" = "Enable FLEX for debugging (not recommended). Leave this off unless you know what you are doing.";
-
-"FIX_GOOGLE_SIGNIN" = "Fix Google Sign in (for TrollStore user only)";
-"FIX_GOOGLE_SIGNIN_DESC" = "Only turn on this option when you can't sign in with your Google account and the app was installed via TrollStore. If you can log in normally, keep it disabled. App restart is required.";
+"ENABLE_YT_STARTUP_ANIMATION" = "Enable YouTube startup animation";
+"ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
 
 "HIDE_CHIP_BAR" = "Hide the Upper bar";
 "HIDE_CHIP_BAR_DESC" = "Hide Upper bar in the Home feeds (Trends, Music, Gaming...) and Subscription feeds (All videos, Continue watching...).";
@@ -202,6 +179,15 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_SPONSORBLOCK_BUTTON" = "Hide iSponsorBlock button in the Navigation bar";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
+"HIDE_MODERN_INTERFACE" = "Hide Modern Interface (YTNoModernUI)";
+"HIDE_MODERN_INTERFACE_DESC" = "Toggle this on to hide any Modern Element added by YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.";
+
+"HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
+"HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
+
+"HIDE_TAB_BAR_LABELS" = "Hide Labels in the Tab Bar";
+"HIDE_TAB_BAR_LABELS_DESC" = "this will Hide all of the labels in the Tab Bar. App restart is required.";
+
 "YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "App restart is required.";
 
@@ -210,3 +196,6 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "IPHONE_LAYOUT" = "iPhone Layout";
 "IPHONE_LAYOUT_DESC" = "only use this if you want to have the iPhone Layout on your current iPad. App restart is required.";
+
+"ENABLE_FLEX" = "Enable FLEX";
+"ENABLE_FLEX_DESC" = "Enable FLEX for debugging (not recommended). Leave this off unless you know what you are doing.";
