@@ -240,62 +240,11 @@ static BOOL didFinishLaunching;
 %end
 %end
 
-%group giPadLayout // https://github.com/LillieH001/YouTube-Reborn
-%hook UIDevice
-- (long long)userInterfaceIdiom {
-    return YES;
-} 
-%end
-%hook UIStatusBarStyleAttributes
-- (long long)idiom {
-    return NO;
-} 
-%end
-%hook UIKBTree
-- (long long)nativeIdiom {
-    return NO;
-} 
-%end
-%hook UIKBRenderer
-- (long long)assetIdiom {
-    return NO;
-} 
-%end
-%end
-
-%group giPhoneLayout // https://github.com/LillieH001/YouTube-Reborn
-%hook UIDevice
-- (long long)userInterfaceIdiom {
-    return NO;
-} 
-%end
-%hook UIStatusBarStyleAttributes
-- (long long)idiom {
-    return YES;
-} 
-%end
-%hook UIKBTree
-- (long long)nativeIdiom {
-    return YES;
-} 
-%end
-%hook UIKBRenderer
-- (long long)assetIdiom {
-    return YES;
-} 
-%end
-%end
-
 // A/B flags
 %hook YTColdConfig 
 - (BOOL)respectDeviceCaptionSetting { return NO; } // YouRememberCaption: https://poomsmart.github.io/repo/depictions/youremembercaption.html
 - (BOOL)isLandscapeEngagementPanelSwipeRightToDismissEnabled { return YES; } // Swipe right to dismiss the right panel in fullscreen mode
 - (BOOL)mainAppCoreClientIosTransientVisualGlitchInPivotBarFix { return NO; } // Fix uYou's label glitching - qnblackcat/uYouPlus#552
-- (BOOL)enableSwipeToRemoveInPlaylistWatchEp { return YES; } // Enable swipe right to remove video in Playlist.
-%end
-
-%hook YTHotConfig
-- (BOOL)iosEnableShortsPlayerSplitViewController { return NO;} // uYou Buttons in Shorts Fix
 %end
 
 // Disabled App Breaking Dialog Flags - @PoomSmart
@@ -542,52 +491,14 @@ static BOOL didFinishLaunching;
         return YT_NAME;
     return %orig;
 }
-%end
-
-// Fix "Google couldn't confirm this attempt to sign in is safe. If you think this is a mistake, you can close and try again to sign in" - qnblackcat/uYouPlus#420
-// Thanks to @AhmedBafkir and @kkirby - https://github.com/qnblackcat/uYouPlus/discussions/447#discussioncomment-3672881
-%group gFixGoogleSignIn
-%hook SSORPCService
-+ (id)URLFromURL:(id)arg1 withAdditionalFragmentParameters:(NSDictionary *)arg2 {
-    NSURL *orig = %orig;
-    NSURLComponents *urlComponents = [[NSURLComponents alloc] initWithURL:orig resolvingAgainstBaseURL:NO];
-    NSMutableArray *newQueryItems = [urlComponents.queryItems mutableCopy];
-    for (NSURLQueryItem *queryItem in urlComponents.queryItems) {
-        if ([queryItem.name isEqualToString:@"system_version"]
-         || [queryItem.name isEqualToString:@"app_version"]
-         || [queryItem.name isEqualToString:@"kdlc"]
-         || [queryItem.name isEqualToString:@"kss"]
-         || [queryItem.name isEqualToString:@"lib_ver"]
-         || [queryItem.name isEqualToString:@"device_model"]) {
-            [newQueryItems removeObject:queryItem];
-        }
-    }
-    urlComponents.queryItems = [newQueryItems copy];
-    return urlComponents.URL;
+// Fix Google Sign in by @PoomSmart and @level3tjg (qnblackcat/uYouPlus#684)
+- (NSDictionary *)infoDictionary {
+    NSMutableDictionary *info = %orig.mutableCopy;
+    NSString *altBundleIdentifier = info[@"ALTBundleIdentifier"];
+    if (altBundleIdentifier) info[@"CFBundleIdentifier"] = altBundleIdentifier;
+    return info;
 }
 %end
-%end
-
-// Fix "You can't sign in to this app because Google can't confirm that it's safe" warning when signing in. by julioverne & PoomSmart
-// https://gist.github.com/PoomSmart/ef5b172fd4c5371764e027bea2613f93
-// https://github.com/qnblackcat/uYouPlus/pull/398
-/* 
-%group gDevice_challenge_request_hack
-%hook SSOService
-+ (id)fetcherWithRequest:(NSMutableURLRequest *)request configuration:(id)configuration {
-    if ([request isKindOfClass:[NSMutableURLRequest class]] && request.HTTPBody) {
-        NSError *error = nil;
-        NSMutableDictionary *body = [NSJSONSerialization JSONObjectWithData:request.HTTPBody options:NSJSONReadingMutableContainers error:&error];
-        if (!error && [body isKindOfClass:[NSMutableDictionary class]]) {
-            [body removeObjectForKey:@"device_challenge_request"];
-            request.HTTPBody = [NSJSONSerialization dataWithJSONObject:body options:kNilOptions error:&error];
-        }
-    }
-    return %orig;
-}
-%end
-%end
-*/ 
 
 // Fix login for YouTube 17.33.2 and higher - @BandarHL
 // https://gist.github.com/BandarHL/492d50de46875f9ac7a056aad084ac10
@@ -636,16 +547,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     return self.pageStyle == 1 ? [UIColor blackColor] : %orig;
 }
 %end
-
-// Account view controller
-// %hook YTAccountPanelBodyViewController
-// - (UIColor *)backgroundColor:(NSInteger)pageStyle {
-//     if (pageStyle == 1) { 
-//         return [UIColor greenColor]; 
-//     }
-//         return %orig;
-// }
-// %end
 
 // Explore
 %hook ASScrollView 
@@ -791,6 +692,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
         if ([self.accessibilityIdentifier isEqualToString:@"id.comment.guidelines_text"]) { self.superview.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_bottom_sheet_container"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.comment.channel_guidelines_entry_banner_container"]) { self.backgroundColor = [UIColor blackColor]; }
+		if ([self.accessibilityIdentifier isEqualToString:@"id.comment.comment_group_detail_container"]) { self.backgroundColor = [UIColor clearColor]; }
     }
 }
 %end
@@ -1691,7 +1593,7 @@ void DEMC_centerRenderingView() {
     centerYConstraint.active = YES;
 }
 
-// YTNoShorts: https://github.com/MiRO92/YTNoShorts
+// Hide YouTube annoying banner in Home page? - @MiRO92 - YTNoShorts: https://github.com/MiRO92/YTNoShorts
 %hook YTAsyncCollectionView
 - (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (IsEnabled(@"hideShorts_enabled")) {
@@ -1875,7 +1777,9 @@ void DEMC_centerRenderingView() {
 %hook _ASDisplayView
 - (void)didMoveToWindow {
     %orig;
-      if ((IsEnabled(@"hideBuySuperThanks_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.suggested_action"])) { self.hidden = YES; }
+    if ((IsEnabled(@"hideBuySuperThanks_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.suggested_action"])) { 
+        self.hidden = YES; 
+    }
 }
 %end
 
@@ -1937,12 +1841,62 @@ void DEMC_centerRenderingView() {
 // %end
 %end
 
+%group giPadLayout // https://github.com/LillieH001/YouTube-Reborn
+%hook UIDevice
+- (long long)userInterfaceIdiom {
+    return YES;
+} 
+%end
+%hook UIStatusBarStyleAttributes
+- (long long)idiom {
+    return NO;
+} 
+%end
+%hook UIKBTree
+- (long long)nativeIdiom {
+    return NO;
+} 
+%end
+%hook UIKBRenderer
+- (long long)assetIdiom {
+    return NO;
+} 
+%end
+%end
+
+%group giPhoneLayout // https://github.com/LillieH001/YouTube-Reborn
+%hook UIDevice
+- (long long)userInterfaceIdiom {
+    return NO;
+} 
+%end
+%hook UIStatusBarStyleAttributes
+- (long long)idiom {
+    return YES;
+} 
+%end
+%hook UIKBTree
+- (long long)nativeIdiom {
+    return NO;
+} 
+%end
+%hook UIKBRenderer
+- (long long)assetIdiom {
+    return NO;
+} 
+%end
+%end
+
+// YT startup animation
+%hook YTColdConfig
+- (BOOL)mainAppCoreClientIosEnableStartupAnimation {
+    return IsEnabled(@"ytStartupAnimation_enabled") ? YES : NO;
+}
+%end
+
 # pragma mark - ctor
 %ctor {
     %init;
-    if (!IsEnabled(@"fixGoogleSignIn_enabled")) {
-       %init(gFixGoogleSignIn);
-    }
     if (IsEnabled(@"hideCastButton_enabled")) {
        %init(gHideCastButton);
     }

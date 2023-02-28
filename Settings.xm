@@ -470,12 +470,12 @@ extern NSBundle *CercubePlusBundle();
 # pragma mark - Miscellaneous
     YTSettingsSectionItem *miscellaneousGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"MISCELLANEOUS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         NSArray <YTSettingsSectionItem *> *rows = @[
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"FIX_GOOGLE_SIGNIN")
-                titleDescription:LOC(@"FIX_GOOGLE_SIGNIN_DESC")
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_YT_STARTUP_ANIMATION")
+                titleDescription:LOC(@"ENABLE_YT_STARTUP_ANIMATION_DESC")
                 accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"fixGoogleSignIn_enabled")
+                switchOn:IsEnabled(@"ytStartupAnimation_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"fixGoogleSignIn_enabled"];
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytStartupAnimation_enabled"];
                     return YES;
                 }
                 settingItemId:0],
@@ -506,6 +506,26 @@ extern NSBundle *CercubePlusBundle();
                 switchOn:IsEnabled(@"ytNoModernUI_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytNoModernUI_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"IPAD_LAYOUT")
+                titleDescription:LOC(@"IPAD_LAYOUT_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"iPadLayout_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"iPadLayout_enabled"];
+                    return YES;
+                }
+                settingItemId:0], 
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"IPHONE_LAYOUT")
+                titleDescription:LOC(@"IPHONE_LAYOUT_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"iPhoneLayout_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"iPhoneLayout_enabled"];
                     return YES;
                 }
                 settingItemId:0],
@@ -619,26 +639,6 @@ extern NSBundle *CercubePlusBundle();
                     return YES;
                 }
                 settingItemId:0], 	
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"IPAD_LAYOUT")
-                titleDescription:LOC(@"IPAD_LAYOUT_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"iPadLayout_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"iPadLayout_enabled"];
-                    return YES;
-                }
-                settingItemId:0], 
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"IPHONE_LAYOUT")
-                titleDescription:LOC(@"IPHONE_LAYOUT_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"iPhoneLayout_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"iPhoneLayout_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
                 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_FLEX")
                 titleDescription:LOC(@"ENABLE_FLEX_DESC")
