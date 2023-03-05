@@ -17,11 +17,11 @@
 "HIDE_CHANNEL_WATERMARK" = "チャンネルウォーターマークを非表示";
 "HIDE_CHANNEL_WATERMARK_DESC" = "ビデオコントロールオーバーレイでチャンネルのウォーターマークを非表示にします。アプリの再起動が必要です。";
 
-"HIDE_SHADOW_OVERLAY_BUTTONS" = "Hide Shadow Overlay Buttons"
-"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Hide the Shadow Overlay on the Play/Pause, Previous & Next Buttons"
+"HIDE_SHADOW_OVERLAY_BUTTONS" = "シャドウオーバーレイボタンを非表示"
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "再生/一時停止,前,次ボタンのシャドーオーバーレイを非表示にする"
 
-"HIDE_DARK_OVERLAY_BACKGROUND" = "Hide Dark Overlay Background"
-"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "Hide video player's dark overlay background."
+"HIDE_DARK_OVERLAY_BACKGROUND" = "ダークオーバーレイの背景を非表示"
+"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "ビデオプレーヤーのダークオーバーレイの背景を非表示にする。"
 
 "RED_PROGRESS_BAR" = "赤いプログレスバー";
 "RED_PROGRESS_BAR_DESC" = "赤いプログレスバーを復活させます。アプリの再起動が必要です。";
@@ -101,7 +101,7 @@
 "DISABLE_HINTS" = "ヒントを無効化";
 "DISABLE_HINTS_DESC" = "アプリが再インストールされた際に表示される機能の使い方を非表示にします。";
 
-"ENABLE_YT_STARTUP_ANIMATION" = "Enable YouTube startup animation";
+"ENABLE_YT_STARTUP_ANIMATION" = "YouTube起動時のアニメーションを有効にする";
 "ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
 
 "HIDE_CHIP_BAR" = "トップバーを非表示;
