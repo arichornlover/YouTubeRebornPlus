@@ -74,6 +74,16 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Disable tap to skip")
+                titleDescription:LOC(@"Disable tap to skip functions in the video player. App restart is required.")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"tapToSkip_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"tapToSkip_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"SNAP_TO_CHAPTER")
                 titleDescription:LOC(@"SNAP_TO_CHAPTER_DESC")
                 accessibilityIdentifier:nil
@@ -620,12 +630,12 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_TAB_BAR_LABELS")
-                titleDescription:LOC(@"HIDE_TAB_BAR_LABELS_DESC")
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"DISABLE_WIFI_RELATED_SETTINGS")
+                titleDescription:LOC(@"DISABLE_WIFI_RELATED_SETTINGS_DESC")
                 accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideTabBarLabels_enabled")
+                switchOn:IsEnabled(@"disableWifiRelatedSettings_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideTabBarLabels_enabled"];
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"disableWifiRelatedSettings_enabled"];
                     return YES;
                 }
                 settingItemId:0],

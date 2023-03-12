@@ -230,16 +230,6 @@ static BOOL didFinishLaunching;
 %end
 %end
 
-%group gHideTabBarLabels // https://github.com/LillieH001/YouTube-Reborn
-%hook YTPivotBarItemView
-- (void)layoutSubviews {
-    %orig();
-    [[self navigationButton] setTitle:@"" forState:UIControlStateNormal];
-    [[self navigationButton] setTitle:@"" forState:UIControlStateSelected];
-}
-%end
-%end
-
 // A/B flags
 %hook YTColdConfig 
 - (BOOL)respectDeviceCaptionSetting { return NO; } // YouRememberCaption: https://poomsmart.github.io/repo/depictions/youremembercaption.html
@@ -263,6 +253,66 @@ static BOOL didFinishLaunching;
 // Disabled - Autoplay Settings Section - qnblackcat
 %hook YTSettingsSectionItemManager
 - (void)updateAutoplaySectionWithEntry:(id)arg1 {}
+%end
+
+%group gDisableWifiRelatedSettings
+%hook YTSettingsSectionItemManager
+- (void)updatePurchasesandmembershipsSectionWithEntry:(id)arg1 {} // Purchases and memberships
+- (void)updateNotificationsSectionWithEntry:(id)arg1 {} // Notifications
+- (void)updateConnectedappsSectionWithEntry:(id)arg1 {} // Connected apps
+- (void)updateManageallhistorySectionWithEntry:(id)arg1 {} // Manage all history
+- (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
+- (void)updateLivechatSectionWithEntry:(id)arg1 {} // Live chat
+%end
+%end
+
+// NOYTPremium - https://github.com/PoomSmart/NoYTPremium/
+%hook YTCommerceEventGroupHandler
+- (void)addEventHandlers {}
+%end
+
+%hook YTInterstitialPromoEventGroupHandler
+- (void)addEventHandlers {}
+%end
+
+%hook YTPromosheetEventGroupHandler
+- (void)addEventHandlers {}
+%end
+
+%hook YTPromoThrottleController
+- (BOOL)canShowThrottledPromo { return NO; }
+- (BOOL)canShowThrottledPromoWithFrequencyCap:(id)arg1 { return NO; }
+- (BOOL)canShowThrottledPromoWithFrequencyCaps:(id)arg1 { return NO; }
+%end
+
+%hook YTIShowFullscreenInterstitialCommand
+- (BOOL)shouldThrottleInterstitial { return YES; }
+%end
+
+%hook YTSurveyController
+- (void)showSurveyWithRenderer:(id)arg1 surveyParentResponder:(id)arg2 {}
+%end
+
+// YTShortsProgress - @PoomSmart - https://github.com/PoomSmart/YTShortsProgress
+%hook YTReelPlayerViewController
+- (BOOL)shouldEnablePlayerBar { return YES; }
+- (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
+- (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
+%end
+
+%hook YTReelPlayerViewControllerSub
+- (BOOL)shouldEnablePlayerBar { return YES; }
+- (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
+- (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
+%end
+
+%hook YTColdConfig
+- (BOOL)iosEnableVideoPlayerScrubber { return YES; }
+- (BOOL)mobileShortsTabInlined { return YES; }
+%end
+
+%hook YTHotConfig
+- (BOOL)enablePlayerBarForVerticalVideoWhenControlsHiddenInFullscreen { return YES; }
 %end
 
 // YTNoModernUI - arichorn
@@ -387,28 +437,6 @@ static BOOL didFinishLaunching;
         hidden = YES;
     %orig;
 }
-%end
-
-// YTShortsProgress - @PoomSmart - https://github.com/PoomSmart/YTShortsProgress
-%hook YTReelPlayerViewController
-- (BOOL)shouldEnablePlayerBar { return YES; }
-- (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
-- (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
-%end
-
-%hook YTReelPlayerViewControllerSub
-- (BOOL)shouldEnablePlayerBar { return YES; }
-- (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
-- (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
-%end
-
-%hook YTColdConfig
-- (BOOL)iosEnableVideoPlayerScrubber { return YES; }
-- (BOOL)mobileShortsTabInlined { return YES; }
-%end
-
-%hook YTHotConfig
-- (BOOL)enablePlayerBarForVerticalVideoWhenControlsHiddenInFullscreen { return YES; }
 %end
 
 /// YTNoPaidPromo: https://github.com/PoomSmart/YTNoPaidPromo
@@ -1703,6 +1731,13 @@ void DEMC_centerRenderingView() {
     self.subviews[0].backgroundColor = [UIColor clearColor];
 }
 %end
+%end
+
+// Disable tap to skip
+%hook YTDoubleTapToSeekController
+- (void)enableDoubleTapToSeek:(bool) {
+    return IsEnabled(@"tapToSkip_enabled") ? NO : %orig;
+}
 %end
 
 // Disable Pinch to zoom
