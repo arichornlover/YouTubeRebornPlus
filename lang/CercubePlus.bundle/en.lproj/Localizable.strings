@@ -5,6 +5,9 @@
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "Video Player Options";
 
+"TAP_TO_SKIP" = "Disable tap to skip";
+"TAP_TO_SKIP_DESC" = "Disable the tap to skip feature in the video player. App restart is required.";
+
 "SNAP_TO_CHAPTER" = "Disable snap to chapter";
 "SNAP_TO_CHAPTER_DESC" = "Disable auto snap to chapter when seeking in videos. App restart is required.";
 
@@ -17,11 +20,11 @@
 "HIDE_CHANNEL_WATERMARK" = "Hide Channel Watermark";
 "HIDE_CHANNEL_WATERMARK_DESC" = "Hide channel's watermark in video controls overlay. App restart is required.";
 
-"HIDE_SHADOW_OVERLAY_BUTTONS" = "Hide Shadow Overlay Buttons"
-"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Hide the Shadow Overlay on the Play/Pause, Previous & Next Buttons"
+"HIDE_SHADOW_OVERLAY_BUTTONS" = "Hide Shadow Overlay Buttons";
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Hide the Shadow Overlay on the Play/Pause, Previous & Next Buttons";
 
-"HIDE_DARK_OVERLAY_BACKGROUND" = "Hide Dark Overlay Background"
-"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "Hide video player's dark overlay background."
+"HIDE_DARK_OVERLAY_BACKGROUND" = "Hide Dark Overlay Background";
+"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "Hide video player's dark overlay background.";
 
 "RED_PROGRESS_BAR" = "Red progress bar";
 "RED_PROGRESS_BAR_DESC" = "Bring back the red progress bar. App restart is required.";
@@ -170,8 +173,8 @@
 "HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
 "HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
 
-"HIDE_TAB_BAR_LABELS" = "Hide Labels in the Tab Bar";
-"HIDE_TAB_BAR_LABELS_DESC" = "this will Hide all of the labels in the Tab Bar. App restart is required.";
+"DISABLE_WIFI_RELATED_SETTINGS" = "Disable Wifi Related Settings";
+"DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Disable Wifi Related Sections (Notfications, Connected apps, Privacy & Live Chat, etc.) in the Settings Menu. App restart is required.";
 
 "YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "App restart is required.";

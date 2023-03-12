@@ -5,6 +5,9 @@
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "ビデオプレーヤーの設定";
 
+"TAP_TO_SKIP" = "Disable tap to skip";
+"TAP_TO_SKIP_DESC" = "Disable the tap to skip feature in the video player. App restart is required.";
+
 "SNAP_TO_CHAPTER" = "チャプターへのスナップを無効化";
 "SNAP_TO_CHAPTER_DESC" = "動画でシークする際にチャプターへの自動スナップを無効にします。アプリの再起動が必要です。";
 
@@ -17,11 +20,11 @@
 "HIDE_CHANNEL_WATERMARK" = "チャンネルウォーターマークを非表示";
 "HIDE_CHANNEL_WATERMARK_DESC" = "ビデオコントロールオーバーレイでチャンネルのウォーターマークを非表示にします。アプリの再起動が必要です。";
 
-"HIDE_SHADOW_OVERLAY_BUTTONS" = "シャドウオーバーレイボタンを非表示"
-"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "再生/一時停止,前,次ボタンのシャドーオーバーレイを非表示にする"
+"HIDE_SHADOW_OVERLAY_BUTTONS" = "シャドウオーバーレイボタンを非表示";
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "再生/一時停止,前,次ボタンのシャドーオーバーレイを非表示にする";
 
-"HIDE_DARK_OVERLAY_BACKGROUND" = "ダークオーバーレイの背景を非表示"
-"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "ビデオプレーヤーのダークオーバーレイの背景を非表示にする。"
+"HIDE_DARK_OVERLAY_BACKGROUND" = "ダークオーバーレイの背景を非表示";
+"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "ビデオプレーヤーのダークオーバーレイの背景を非表示にする。";
 
 "RED_PROGRESS_BAR" = "赤いプログレスバー";
 "RED_PROGRESS_BAR_DESC" = "赤いプログレスバーを復活させます。アプリの再起動が必要です。";
@@ -170,8 +173,8 @@
 "HIDE_YOUTUBE_LOGO" = "YouTubeロゴを非表示";
 "HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です。";
 
-"HIDE_TAB_BAR_LABELS" = "タブバーのラベルを非表示";
-"HIDE_TAB_BAR_LABELS_DESC" = "タブバーのラベルをすべて非表示にします。アプリの再起動が必要です。";
+"DISABLE_WIFI_RELATED_SETTINGS" = "Disable Wifi Related Settings";
+"DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Disable Wifi Related Sections (Notfications, Connected apps, Privacy & Live Chat, etc.) in the Settings Menu. App restart is required.";
 
 "YT_RE_EXPLORE" = "ショートタブを探索タブに置き換える (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "アプリの再起動が必要です。";
