@@ -1965,6 +1965,9 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"hideVideoPlayerShadowOverlayButtons_enabled")) {
        %init(gHideVideoPlayerShadowOverlayButtons);
     }
+    if (IsEnabled(@"disableWifiRelatedSettings_enabled")) {
+       %init(gDisableWifiRelatedSettings);
+    }
     if (IsEnabled(@"hideHeatwaves_enabled")) {
        %init(gHideHeatwaves);
     }
@@ -1973,9 +1976,6 @@ void DEMC_centerRenderingView() {
     }
     if (IsEnabled(@"hideYouTubeLogo_enabled")) {
        %init(gHideYouTubeLogo);
-    }
-    if (IsEnabled(@"hideTabBarLabels_enabled")) {
-       %init(gHideTabBarLabels);
     }
     if (defaultContrastMode()) {
        %init(gLowContrastMode);
