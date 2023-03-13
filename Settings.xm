@@ -73,16 +73,16 @@ extern NSBundle *CercubePlusBundle();
                     return YES;
                 }
                 settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"Disable tap to skip")
-                titleDescription:LOC(@"Disable tap to skip functions in the video player. App restart is required.")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"tapToSkip_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"tapToSkip_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
+// Tap To Skip Option is disabled until it works.
+//            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"TAP_TO_SKIP")
+//                titleDescription:LOC(@"TAP_TO_SKIP_DESC")
+//                accessibilityIdentifier:nil
+//                switchOn:IsEnabled(@"tapToSkip_enabled")
+//                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+//                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"tapToSkip_enabled"];
+//                    return YES;
+//                }
+//                settingItemId:0],
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"SNAP_TO_CHAPTER")
                 titleDescription:LOC(@"SNAP_TO_CHAPTER_DESC")

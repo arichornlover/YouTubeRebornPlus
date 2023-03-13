@@ -393,30 +393,6 @@ static BOOL didFinishLaunching;
 - (BOOL)shouldShowYouTherePrompt { return NO; }
 %end
 
-// Alert
-%hook YTCommerceEventGroupHandler
-- (void)addEventHandlers {}
-%end
-
-// Full-screen
-%hook YTInterstitialPromoEventGroupHandler
-- (void)addEventHandlers {}
-%end
-
-%hook YTPromosheetEventGroupHandler
-- (void)addEventHandlers {}
-%end
-
-%hook YTPromoThrottleController
-- (BOOL)canShowThrottledPromo { return NO; }
-- (BOOL)canShowThrottledPromoWithFrequencyCap:(id)arg1 { return NO; }
-- (BOOL)canShowThrottledPromoWithFrequencyCaps:(id)arg1 { return NO; }
-%end
-
-%hook YTIShowFullscreenInterstitialCommand
-- (BOOL)shouldThrottleInterstitial { return YES; }
-%end
-
 // YTNOCheckLocalNetWork - https://poomsmart.github.io/repo/depictions/ytnochecklocalnetwork.html
 %hook YTHotConfig
 - (BOOL)isPromptForLocalNetworkPermissionsEnabled { return NO; }
@@ -1733,13 +1709,6 @@ void DEMC_centerRenderingView() {
 %end
 %end
 
-// Disable tap to skip
-%hook YTDoubleTapToSeekController
-- (void)enableDoubleTapToSeek:(bool) {
-    return IsEnabled(@"tapToSkip_enabled") ? NO : %orig;
-}
-%end
-
 // Disable Pinch to zoom
 %hook YTColdConfig
 - (BOOL)videoZoomFreeZoomEnabledGlobalConfig {
@@ -1771,6 +1740,13 @@ void DEMC_centerRenderingView() {
     return IsEnabled(@"redProgressBar_enabled") ? NO : %orig;
 }
 %end
+
+// Disable tap to skip - Code Disabled since it does not work!
+// %group gDisableTapToSkip
+// %hook YTDoubleTapToSeekController
+// - (void)enableDoubleTapToSeek:(bool) {}
+// %end
+// %end
 
 // Hide YouTube Logo
 %group gHideYouTubeLogo
@@ -1947,6 +1923,9 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"reExplore_enabled")) {
        %init(gReExplore);
     }
+//    if (IsEnabled(@"tapToSkip_enabled")) {
+//       %init(gDisableTapToSkip);
+//	}
     if (IsEnabled(@"bigYTMiniPlayer_enabled") && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
        %init(Main);
     }
