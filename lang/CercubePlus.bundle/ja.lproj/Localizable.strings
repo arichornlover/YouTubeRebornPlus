@@ -173,8 +173,8 @@
 "HIDE_YOUTUBE_LOGO" = "YouTubeロゴを非表示";
 "HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です。";
 
-"DISABLE_WIFI_RELATED_SETTINGS" = "Disable Wifi Related Settings";
-"DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Disable Wifi Related Sections (Notfications, Connected apps, Privacy & Live Chat, etc.) in the Settings Menu. App restart is required.";
+"DISABLE_WIFI_RELATED_SETTINGS" = "Wi-Fi関連の設定を無効にする";
+"DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Wifi関連項目を無効化します。(通知,接続済みのアプリ,プライバシー,チャットなど) 設定メニューから選択してください。アプリの再起動が必要です。";
 
 "YT_RE_EXPLORE" = "ショートタブを探索タブに置き換える (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "アプリの再起動が必要です。";
