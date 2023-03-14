@@ -5,8 +5,8 @@
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "ビデオプレーヤーの設定";
 
-"TAP_TO_SKIP" = "Disable tap to skip";
-"TAP_TO_SKIP_DESC" = "Disable the tap to skip feature in the video player. App restart is required.";
+"TAP_TO_SKIP" = "タップしてスキップする機能を無効化";
+"TAP_TO_SKIP_DESC" = "ビデオプレーヤーでタップしてスキップする機能を無効にします。アプリの再起動が必要です。";
 
 "SNAP_TO_CHAPTER" = "チャプターへのスナップを無効化";
 "SNAP_TO_CHAPTER_DESC" = "動画でシークする際にチャプターへの自動スナップを無効にします。アプリの再起動が必要です。";
