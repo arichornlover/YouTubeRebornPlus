@@ -8,7 +8,7 @@ on:
     inputs:
       cercube_version:
         description: "The version of Cercube"
-        default: "5.3.11"
+        default: "5.3.13"
         required: true
         type: string
       decrypted_youtube_url:
@@ -50,7 +50,7 @@ jobs:
 
     steps:
       - name: Checkout Main
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.4.0
         with:
           path: main
           submodules: recursive
@@ -59,7 +59,7 @@ jobs:
         run: brew install ldid dpkg make
 
       - name: Setup Theos
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.4.0
         with:
           repository: theos/theos
           ref: master
@@ -68,7 +68,7 @@ jobs:
 
       - name: Caching
         id: SDK
-        uses: actions/cache@v3.2.5
+        uses: actions/cache@v3.3.1
         env:
           cache-name: iOS-15.5-SDK
         with:
@@ -84,7 +84,7 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
 
       - name: Setup Theos Jailed
-        uses: actions/checkout@v3.3.0
+        uses: actions/checkout@v3.4.0
         with:
           repository: qnblackcat/theos-jailed
           ref: master
@@ -100,15 +100,17 @@ jobs:
       - name: Download Cercube & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl "https://dl.dropboxusercontent.com/s/b01erqbp3ajc5e2/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
+          curl "https://dl.dropboxusercontent.com/s/vsoyhdwfzmqu6sg/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
           echo -e "==> \033[1mCercube v${{ inputs.cercube_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          dpkg-deb -x "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" main/Tweaks/Cercube/
+          cd main/Tweaks/Cercube && tar -xf "me.alfhaily.cercube_5.3.13_iphoneos-arm.deb" && tar -xf data.tar.* && cd ../../..
+          echo -e "==> \033[1mCercube v${{ inputs.cercube_version }} unpacked! \033[0m"
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
           rm -rf main/tmp/Payload/YouTube.app/PlugIns/*
           cp -R main/Extensions/*.appex main/tmp/Payload/YouTube.app/PlugIns
+          echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} unpacked! \033[0m"
 
         env:
           THEOS: ${{ github.workspace }}/theos
