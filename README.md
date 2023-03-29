@@ -47,9 +47,15 @@ Special thanks to these developer(s) for maintaining and improving CercubePlus!
 </a>
 <h4 align='center'><a href='https://github.com/dayanch96'>dayanch96</a></h4>
 </td>
+<td id='ssuesskind'>
+<a href='https://github.com/ssuesskind'>
+<img src='https://github.com/ssuesskind.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://github.com/ssuesskind'>ssuesskind</a></h4>
+</td>
 
 <table id='credit'>
-Special thanks to all the developers who have contributed to CercubePlus!
+Special thanks to all the developers who have contributed to CercubePlus/CercubePlusExtra!
 <tr>
 <td id='majd'>
 <a href='https://github.com/majd'>
@@ -57,11 +63,11 @@ Special thanks to all the developers who have contributed to CercubePlus!
 </a>
 <h4 align='center'><a href='https://github.com/majd'>Majd Alfhaily</a></h4>
 </td>
-<td id='poomsmart'>
-<a href='https://github.com/PoomSmart'>
-<img src='https://github.com/PoomSmart.png' width='140px;'>
+<td id='miro92'>
+<a href='https://github.com/MiRO92'>
+<img src='https://github.com/MiRO92.png' width='140px;'>
 </a>
-<h4 align='center'><a href='https://twitter.com/poomsmart'>PoomSmart</a></h4>
+<h4 align='center'><a href='https://twitter.com/miro92'>MiRO92</a></h4>
 </td>
 <td id='level3tjg'>
 <a href='https://github.com/level3tjg'>
@@ -84,12 +90,6 @@ Special thanks to all the developers who have contributed to CercubePlus!
 </tr>
   
 <tr>
-<td id='miro92'>
-<a href='https://github.com/MiRO92'>
-<img src='https://github.com/MiRO92.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://twitter.com/miro92'>MiRO92</a></h4>
-</td>
 <td id='hbang'>
 <a href='https://github.com/hbang'>
 <img src='https://github.com/hbang.png' width='140px;'>
@@ -114,15 +114,15 @@ Special thanks to all the developers who have contributed to CercubePlus!
 </a>
 <h4 align='center'><a href='https://twitter.com/ijulioverne'>julioverne</a></h4>
 </td>
-</tr>
-  
-<tr>
 <td id='ichitaso'>
 <a href='https://github.com/ichitaso'>
 <img src='https://github.com/ichitaso.png' width='140px;'>
 </a>
 <h4 align='center'><a href='https://twitter.com/ichitaso'>ichitaso</a></h4>
 </td>
+</tr>
+  
+<tr>
 <td id='ahmed-bafkir'>
 <a href='https://github.com/AhmedBafkir'>
 <img src='https://github.com/AhmedBafkir.png' width='140px;'>
@@ -140,6 +140,12 @@ Special thanks to all the developers who have contributed to CercubePlus!
 <img src='https://github.com/ISnackable.png' width='140px;'>
 </a>
 <h4 align='center'><a href='https://isnackable.me/'>Tommy Teo</a></h4>
+</td>
+<td id='SKIEDs'>
+<a href='https://github.com/SKEIDs'>
+<img src='https://github.com/SKEIDs.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://github.com/SKEIDs'>SKIEDs</a></h4>
 </td>
 <td id='theos-team'>
 <a href='https://github.com/theos/theos'>
@@ -224,17 +230,17 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/arichorn/CercubePlusExtra/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.09.4-5.3.11)](https://tinyurl.com/5x65e3eu) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.11.2-5.3.13)](https://tinyurl.com/5n8552ye) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Mar 13 2023)_
+- Version info: _(Mar 28 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.09.4 | ✖︎ |
-| **Cercube** | Majd Alfhaily | 5.3.11 | ✖︎ |
+| **YouTube** | Google Inc | 18.11.2 | ✖︎ |
+| **Cercube** | Majd Alfhaily | 5.3.13 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
