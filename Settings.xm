@@ -112,6 +112,16 @@ extern NSBundle *CercubePlusBundle();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytMiniPlayer_enabled"];
                     return YES;
                 }
+                settingItemId:0],
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"STOCK_VOLUME_HUD")
+                titleDescription:LOC(@"STOCK_VOLUME_HUD_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"stockVolumeHUD_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"stockVolumeHUD_enabled"];
+                    return YES;
+                }
                 settingItemId:0]
         ];
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"VIDEO_PLAYER_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
@@ -338,6 +348,26 @@ extern NSBundle *CercubePlusBundle();
                 switchOn:IsEnabled(@"hideShortsShareButton_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideShortsShareButton_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SUPER_THANKS")
+                titleDescription:LOC(@"HIDE_SUPER_THANKS_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideBuySuperThanks_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideBuySuperThanks_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SUBSCRIPTIONS")
+                titleDescription:LOC(@"HIDE_SUBSCRIPTIONS_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideSubscriptions_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideSubscriptions_enabled"];
                     return YES;
                 }
                 settingItemId:0]
