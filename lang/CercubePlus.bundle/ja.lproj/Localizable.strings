@@ -14,6 +14,12 @@
 "PINCH_TO_ZOOM" = "ピンチで拡大を無効化";
 "PINCH_TO_ZOOM_DESC" = "アプリの再起動が必要です。";
 
+"YT_MINIPLAYER" = "全てのYouTubeのビデオにミニプレーヤーを有効化";
+"YT_MINIPLAYER_DESC" = "例えば子供向け動画など";
+
+"STOCK_VOLUME_HUD" = "Use iOS stock volume HUD";
+"STOCK_VOLUME_HUD_DESC" = "";
+
 // Video controls overlay options
 "VIDEO_CONTROLS_OVERLAY_OPTIONS" = "ビデオコントロールオーバーレイの設定";
 
@@ -55,6 +61,9 @@
 
 "HIDE_SHORTS_SHARE_BUTTON" = "ショートの共有ボタンを非表示";
 "HIDE_SHORTS_SHARE_BUTTON_DESC" = "";
+
+"HIDE_SUBSCRIPTIONS" = "Hide Subscriptions button";
+"HIDE_SUBSCRIPTIONS_DESC" = "Hide Subscriptions button which shows up when paused.";
 
 "HIDE_SUPER_THANKS" = "Super Thanks を購入のバナーを非表示";
 "HIDE_SUPER_THANKS_DESC" = "ショートの「スーパーサンクス」バナーを非表示にします。";
@@ -122,9 +131,6 @@
 "HIDE_SHORTS_VIDEOS" = "ショートを非表示";
 "HIDE_SHORTS_VIDEOS_DESC" = "ホームページからショートを非表示にします, 推奨…";
 
-"YT_MINIPLAYER" = "全てのYouTubeのビデオにミニプレーヤーを有効化";
-"YT_MINIPLAYER_DESC" = "例えば子供向け動画など";
-
 "HIDE_CERCUBE_BUTTON" = "ナビゲーションバーのCercubeボタンを非表示";
 "HIDE_CERCUBE_BUTTON_DESC" = "";
 
@@ -142,9 +148,6 @@
 
 "HIDE_RIGHT_PANEL" = "フルスクリーンモードで右パネルを非表示";
 "HIDE_RIGHT_PANEL_DESC" = "アプリの再起動が必要です。";
-
-"NEW_MINIPLAYER_STYLE" = "新しいミニプレーヤースタイル (BigYTMiniPlayer)";
-"NEW_MINIPLAYER_STYLE_DESC" = "アプリの再起動が必要です。";
 
 "HIDE_SUBTITLES_BUTTON" = "字幕ボタンを非表示";
 "HIDE_SUBTITLES_BUTTON_DESC" = "ビデオコントロールオーバーレイの字幕ボタンを非表示にします。";

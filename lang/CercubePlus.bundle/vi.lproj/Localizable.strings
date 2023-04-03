@@ -11,6 +11,12 @@
 "PINCH_TO_ZOOM" = "Vô hiệu hóa chụm để thu phóng";
 "PINCH_TO_ZOOM_DESC" = "Khởi động lại ứng dụng là bắt buộc.";
 
+"YT_MINIPLAYER" = "全てのYouTubeのビデオにミニプレーヤーを有効化";
+"YT_MINIPLAYER_DESC" = "例えば子供向け動画など";
+
+"STOCK_VOLUME_HUD" = "Use iOS stock volume HUD";
+"STOCK_VOLUME_HUD_DESC" = "";
+
 // Video controls overlay options
 "VIDEO_CONTROLS_OVERLAY_OPTIONS" = "Tùy chọn lớp phủ điều khiển video";
 
@@ -46,6 +52,9 @@
 
 "HIDE_SHORTS_SHARE_BUTTON" = "Ẩn nút chia sẻ Shorts";
 "HIDE_SHORTS_SHARE_BUTTON_DESC" = "";
+
+"HIDE_SUBSCRIPTIONS" = "Hide Subscriptions button";
+"HIDE_SUBSCRIPTIONS_DESC" = "Hide Subscriptions button which shows up when paused.";
 
 "HIDE_SUPER_THANKS" = "Ẩn biểu ngữ Mua hàng Vô cùng cảm ơn";
 "HIDE_SUPER_THANKS_DESC" = "Ẩn biểu ngữ Mua hàng Vô cùng cảm ơn trong Shorts.";
@@ -139,9 +148,6 @@
 "HIDE_SHORTS_VIDEOS" = "Ẩn video ngắn";
 "HIDE_SHORTS_VIDEOS_DESC" = "Ẩn video ngắn trong Trang chủ, được đề xuất...";
 
-"YT_MINIPLAYER" = "Bật Trình phát thu nhỏ cho tất cả các video trên YouTube";
-"YT_MINIPLAYER_DESC" = "Video dành cho trẻ em chẳng hạn.";
-
 "HIDE_CERCUBE_BUTTON" = "Ẩn nút Cercube trong thanh Điều hướng";
 "HIDE_CERCUBE_BUTTON_DESC" = "";
 
@@ -159,9 +165,6 @@
 
 "HIDE_RIGHT_PANEL" = "Ẩn bảng điều khiển bên phải ở chế độ toàn màn hình";
 "HIDE_RIGHT_PANEL_DESC" = "Khởi động lại ứng dụng là bắt buộc.";
-
-"NEW_MINIPLAYER_STYLE" = "Phong cách thanh miniplayer mới (BigYTMiniPlayer)";
-"NEW_MINIPLAYER_STYLE_DESC" = "Khởi động lại ứng dụng là bắt buộc.";
 
 "HIDE_SUBTITLES_BUTTON" = "Ẩn nút phụ đề";
 "HIDE_SUBTITLES_BUTTON_DESC" = "Ẩn nút Phụ đề trong lớp phủ điều khiển video.";
