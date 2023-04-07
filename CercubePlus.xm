@@ -413,7 +413,7 @@ static BOOL didFinishLaunching;
 }
 %end
 
-/// YTNoPaidPromo: https://github.com/PoomSmart/YTNoPaidPromo
+// YTNoPaidPromo: https://github.com/PoomSmart/YTNoPaidPromo
 %hook YTMainAppVideoPlayerOverlayViewController
 - (void)setPaidContentWithPlayerData:(id)data {
     if (IsEnabled(@"hidePaidPromotionCard_enabled")) {}
@@ -1754,12 +1754,12 @@ void DEMC_centerRenderingView() {
 }
 %end
 
-// Disable tap to skip - Code Disabled since it does not work!
-// %group gDisableTapToSkip
-// %hook YTDoubleTapToSeekController
-// - (void)enableDoubleTapToSeek:(bool) {}
-// %end
-// %end
+// Disable tap to skip
+%hook YTDoubleTapToSeekController
+ - (void)enableDoubleTapToSeek:(BOOL)arg1 {
+     return IsEnabled(@"tapToSkip_disabled") ? %orig(NO) : %orig;
+ }
+ %end
 
 // Hide YouTube Logo
 %group gHideYouTubeLogo
@@ -1813,13 +1813,6 @@ void DEMC_centerRenderingView() {
     else { return %orig; }
 }
 %end
-
-// Won't Work
-// %hook _ASDisplayView
-// - (void)didMoveToWindow {
-//     %orig;
-//     if ((IsEnabled(@"hideShortsSubscriptions_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.module_framework"])) { self.hidden = YES;  }
-// %end
 
 %hook YTColdConfig
 - (BOOL)enableResumeToShorts {
@@ -1943,9 +1936,6 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"reExplore_enabled")) {
        %init(gReExplore);
     }
-//    if (IsEnabled(@"tapToSkip_enabled")) {
-//       %init(gDisableTapToSkip);
-//	}
     if (IsEnabled(@"bigYTMiniPlayer_enabled") && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
        %init(Main);
     }
