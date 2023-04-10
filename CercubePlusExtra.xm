@@ -224,7 +224,9 @@ static BOOL didFinishLaunching;
 	%orig();
     MSHookIvar<YTTransportControlsButtonView *>(self, "_previousButtonView").backgroundColor = nil;
     MSHookIvar<YTTransportControlsButtonView *>(self, "_nextButtonView").backgroundColor = nil;
-    	MSHookIvar<YTPlaybackButton *>(self, "_playPauseButton").backgroundColor = nil;
+    MSHookIvar<YTTransportControlsButtonView *>(self, "_seekBackwardAccessibilityButtonView").backgroundColor = nil;
+    MSHookIvar<YTTransportControlsButtonView *>(self, "_seekForwardAccessibilityButtonView").backgroundColor = nil;
+    MSHookIvar<YTPlaybackButton *>(self, "_playPauseButton").backgroundColor = nil;
 }
 %end
 %end
@@ -502,6 +504,16 @@ static BOOL didFinishLaunching;
 }
 %end
 
+// Fix login for YouTube 18.13.2 and higher
+%hook SSOKeychainHelper
++ (NSString *)accessGroup {
+    return accessGroupID();
+}
++ (NSString *)sharedAccessGroup {
+    return accessGroupID();
+}
+%end
+
 // Fix login for YouTube 17.33.2 and higher - @BandarHL
 // https://gist.github.com/BandarHL/492d50de46875f9ac7a056aad084ac10
 %hook SSOKeychainCore
@@ -524,6 +536,45 @@ static BOOL didFinishLaunching;
     }
     return %orig(groupIdentifier);
 }
+%end
+
+// Theme Options
+// Old dark theme (gray)
+%group gOldDarkTheme
+%hook YTColdConfig
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
+- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
+- (BOOL)enableCinematicContainerOnClient { return NO; }
+%end
+
+%hook _ASDisplayView
+- (void)didMoveToWindow {
+    %orig;
+    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = [UIColor clearColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = [UIColor clearColor]; }
+}
+%end
+
+%hook ASCollectionView
+- (void)didMoveToWindow {
+    %orig;
+    self.superview.backgroundColor = [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+}
+%end
+
+%hook YTFullscreenEngagementOverlayView
+- (void)didMoveToWindow {
+    %orig;
+    self.subviews[0].backgroundColor = [UIColor clearColor];
+}
+%end
+
+%hook YTRelatedVideosView
+- (void)didMoveToWindow {
+    %orig;
+    self.subviews[0].backgroundColor = [UIColor clearColor];
+}
+%end
 %end
 
 // OLED dark mode by BandarHL
@@ -764,7 +815,58 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 %end
 
-%group gLowContrastMode // Low Contrast Mode v1.2.1 (Compatible with only v15.02.1-present)
+// Shorts Controls Overlay Options
+%hook YTReelWatchPlaybackOverlayView
+- (void)setNativePivotButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsChannelAvatar_enabled")) {}
+    else { return %orig; }
+}
+- (void)setReelLikeButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsLikeButton_enabled")) {}
+    else { return %orig; }
+}
+- (void)setReelDislikeButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsDislikeButton_enabled")) {}
+    else { return %orig; }
+}
+- (void)setViewCommentButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsCommentButton_enabled")) {}
+    else { return %orig; }
+}
+- (void)setRemixButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsRemixButton_enabled")) {}
+    else { return %orig; }
+}
+- (void)setShareButton:(id)arg1 {
+    if (IsEnabled(@"hideShortsShareButton_enabled")) {}
+    else { return %orig; }
+}
+%end
+
+%hook _ASDisplayView
+- (void)didMoveToWindow {
+    %orig;
+    if ((IsEnabled(@"hideBuySuperThanks_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.suggested_action"])) { 
+        self.hidden = YES; 
+    }
+}
+%end
+
+%hook YTReelWatchRootViewController
+- (void)setPausedStateCarouselView {
+    if (IsEnabled(@"hideSubscriptions_enabled")) {}
+    else { return %orig; }
+}
+%end
+
+%hook YTColdConfig
+- (BOOL)enableResumeToShorts {
+    if (IsEnabled(@"disableResumeToShorts")) { return NO; }
+    else { return %orig; }
+}
+%end
+
+%group gLowContrastMode // Low Contrast Mode v1.2.2 (Compatible with only v15.02.1-present)
 %hook UIColor
 + (UIColor *)whiteColor { // Dark Theme Color
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
@@ -825,15 +927,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 - (UIColor *)ELMAnimatedVectorView {
          return [UIColor whiteColor];
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
 }
 %end
 %end
@@ -1668,45 +1761,6 @@ void DEMC_centerRenderingView() {
 }
 %end
 
-// Theme Options
-// Old dark theme (gray)
-%group gOldDarkTheme
-%hook YTColdConfig
-- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
-- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
-- (BOOL)enableCinematicContainerOnClient { return NO; }
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.backgroundColor = [UIColor clearColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.backgroundColor = [UIColor clearColor]; }
-}
-%end
-
-%hook ASCollectionView
-- (void)didMoveToWindow {
-    %orig;
-    self.superview.backgroundColor = [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
-}
-%end
-
-%hook YTFullscreenEngagementOverlayView
-- (void)didMoveToWindow {
-    %orig;
-    self.subviews[0].backgroundColor = [UIColor clearColor];
-}
-%end
-
-%hook YTRelatedVideosView
-- (void)didMoveToWindow {
-    %orig;
-    self.subviews[0].backgroundColor = [UIColor clearColor];
-}
-%end
-%end
-
 // Disable snap to chapter
 %hook YTSegmentableInlinePlayerBarView
 - (void)didMoveToWindow {
@@ -1768,57 +1822,6 @@ void DEMC_centerRenderingView() {
     return NULL;
 }
 %end
-%end
-
-// Shorts options
-%hook YTReelWatchPlaybackOverlayView
-- (void)setNativePivotButton:(id)arg1 {
-    if (IsEnabled(@"hideShortsChannelAvatar_enabled")) {}
-    else { return %orig; }
-}
-- (void)setReelLikeButton:(id)arg1 {
-    if (IsEnabled(@"hideShortsLikeButton_enabled")) {}
-    else { return %orig; }
-}
-- (void)setReelDislikeButton:(id)arg1 {
-    if (IsEnabled(@"hideShortsDislikeButton_enabled")) {}
-    else { return %orig; }
-}
-- (void)setViewCommentButton:(id)arg1 {
-    if (IsEnabled(@"hideShortsCommentButton_enabled")) {}
-    else { return %orig; }
-}
-- (void)setRemixButton:(id)arg1 {
-    if (IsEnabled(@"hideShortsRemixButton_enabled")) {}
-    else { return %orig; }
-}
-- (void)setShareButton:(id)arg1 {
-    if (IsEnabled(@"hideShortsShareButton_enabled")) {}
-    else { return %orig; }
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ((IsEnabled(@"hideBuySuperThanks_enabled")) && ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.suggested_action"])) { 
-        self.hidden = YES; 
-    }
-}
-%end
-
-%hook YTReelWatchRootViewController
-- (void)setPausedStateCarouselView {
-    if (IsEnabled(@"hideSubscriptions_enabled")) {}
-    else { return %orig; }
-}
-%end
-
-%hook YTColdConfig
-- (BOOL)enableResumeToShorts {
-    if (IsEnabled(@"disableResumeToShorts")) { return NO; }
-    else { return %orig; }
-}
 %end
 
 // Miscellaneous
@@ -1922,88 +1925,88 @@ void DEMC_centerRenderingView() {
 %ctor {
     %init;
     if (IsEnabled(@"hideCastButton_enabled")) {
-       %init(gHideCastButton);
+        %init(gHideCastButton);
     }
     if (IsEnabled(@"hideCercubePiP_enabled")) {
-       %init(gHideCercubePiP);
+        %init(gHideCercubePiP);
     }
     if (IsEnabled(@"iPadLayout_enabled")) {
-       %init(giPadLayout);
+        %init(giPadLayout);
     }
     if (IsEnabled(@"iPhoneLayout_enabled")) {
-       %init(giPhoneLayout);
+        %init(giPhoneLayout);
     }
     if (IsEnabled(@"reExplore_enabled")) {
-       %init(gReExplore);
+        %init(gReExplore);
     }
     if (IsEnabled(@"bigYTMiniPlayer_enabled") && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
-       %init(Main);
+        %init(Main);
     }
     if (IsEnabled(@"dontEatMyContent_enabled") && DEMC_deviceIsSupported()) {
-       %init(gDontEatMyContent);
+        %init(gDontEatMyContent);
     }
     if (IsEnabled(@"hidePreviousAndNextButton_enabled")) {
-       %init(gHidePreviousAndNextButton);
+        %init(gHidePreviousAndNextButton);
     }
     if (IsEnabled(@"replacePreviousAndNextButton_enabled")) {
        %init(gReplacePreviousAndNextButton);
     }
     if (IsEnabled(@"hideOverlayDarkBackground_enabled")) {
-       %init(gHideOverlayDarkBackground);
+        %init(gHideOverlayDarkBackground);
     }
     if (IsEnabled(@"hideVideoPlayerShadowOverlayButtons_enabled")) {
-       %init(gHideVideoPlayerShadowOverlayButtons);
+        %init(gHideVideoPlayerShadowOverlayButtons);
     }
     if (IsEnabled(@"disableWifiRelatedSettings_enabled")) {
-       %init(gDisableWifiRelatedSettings);
+        %init(gDisableWifiRelatedSettings);
     }
     if (IsEnabled(@"hideHeatwaves_enabled")) {
-       %init(gHideHeatwaves);
+        %init(gHideHeatwaves);
     }
     if (IsEnabled(@"ytNoModernUI_enabled")) {
-       %init(gYTNoModernUI);
+        %init(gYTNoModernUI);
     }
     if (IsEnabled(@"hideYouTubeLogo_enabled")) {
-       %init(gHideYouTubeLogo);
+        %init(gHideYouTubeLogo);
     }
     if (defaultContrastMode()) {
-       %init(gLowContrastMode);
+        %init(gLowContrastMode);
     }
     if (redContrastMode()) {
-       %init(gRedContrastMode);
+        %init(gRedContrastMode);
     }
     if (blueContrastMode()) {
-       %init(gBlueContrastMode);
+        %init(gBlueContrastMode);
     }
     if (greenContrastMode()) {
-       %init(gGreenContrastMode);
+        %init(gGreenContrastMode);
     }
     if (yellowContrastMode()) {
-       %init(gYellowContrastMode);
+        %init(gYellowContrastMode);
     }
     if (orangeContrastMode()) {
-       %init(gOrangeContrastMode);
+        %init(gOrangeContrastMode);
     }
     if (purpleContrastMode()) {
-       %init(gPurpleContrastMode);
+        %init(gPurpleContrastMode);
     }
     if (pinkContrastMode()) {
-       %init(gPinkContrastMode);
+        %init(gPinkContrastMode);
     }
     if (oldDarkTheme()) {
-       %init(gOldDarkTheme)
+        %init(gOldDarkTheme)
     }
     if (oledDarkTheme()) {
-       %init(gOLED)
+        %init(gOLED)
     }
     if (IsEnabled(@"oledKeyBoard_enabled")) {
-       %init(gOLEDKB);
+        %init(gOLEDKB);
     }
     if (IsEnabled(@"disableHints_enabled")) {
         %init(gDisableHints);
     }
     if (IsEnabled(@"hideChipBar_enabled")) {
-       %init(gHideChipBar);
+        %init(gHideChipBar);
     }
     if (IsEnabled(@"stockVolumeHUD_enabled")) {
         %init(gStockVolumeHUD);
