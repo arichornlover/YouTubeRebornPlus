@@ -315,7 +315,7 @@ static BOOL didFinishLaunching;
 - (BOOL)enablePlayerBarForVerticalVideoWhenControlsHiddenInFullscreen { return YES; }
 %end
 
-// YTNoModernUI - arichorn
+// YTNoModernUI - @arichorn
 %group gYTNoModernUI
 %hook YTColdConfig
 // Disable Modern Content - YTNoModernUI
@@ -344,12 +344,26 @@ static BOOL didFinishLaunching;
 - (BOOL)modernizeCollectionLockups { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
-// Disable Ambient Mode
+// Disable Ambient Mode - YTNoModernUI
 - (BOOL)enableCinematicContainer { return NO; }
 - (BOOL)enableCinematicContainerOnClient { return NO; }
 - (BOOL)iosCinematicContainerClientImprovement { return NO; }
 // 16.42.3 Styled YouTube Channel Page Interface - YTNoModernUI
 - (BOOL)channelsClientConfigIosChannelNavRestructuring { return NO; }
+%end
+%end
+
+// Disable Video Player Zoom - @arichorn
+%group gDisableVideoPlayerZoom
+%hook YTColdConfig
+- (BOOL)enableFreeZoomHaptics { return NO; }
+- (BOOL)enableFreeZoomInPotraitOrientation { return NO; }
+- (BOOL)isVideoZoomEnabled { return NO; }
+- (BOOL)uiSystemsClientGlobalConfigEnableDisplayZoomMenuBugFix { return NO; }
+- (BOOL)videoZoomFreeZoomEnabledGlobalConfig { return NO; }
+- (BOOL)videoZoomFreeZoomIndicatorPersistentGlobalConfig { return NO; }
+- (BOOL)videoZoomFreeZoomIndicatorTopGlobalConfig { return NO; }
+- (BOOL)deprecateTabletPinchFullscreenGestures { return NO; } // <-- this is an iPad Exclusive Flag
 %end
 %end
 
@@ -1715,12 +1729,13 @@ void DEMC_centerRenderingView() {
 %end
 
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
+%group gYTSpeed
 %hook YTVarispeedSwitchController
 - (id)init {
 	id result = %orig;
 
-	const int size = 16;
-	float speeds[] = {0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0};
+	const int size = 17;
+	float speeds[] = {0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 5.0};
 	id varispeedSwitchControllerOptions[size];
 
 	for (int i = 0; i < size; ++i) {
@@ -1759,6 +1774,7 @@ void DEMC_centerRenderingView() {
 - (void)singleVideo:(id)video playbackRateDidChange:(float)rate {
 	%orig;
 }
+%end
 %end
 
 // Disable snap to chapter
@@ -1966,6 +1982,9 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"ytNoModernUI_enabled")) {
         %init(gYTNoModernUI);
     }
+    if (IsEnabled(@"disableVideoPlayerZoom_enabled")) {
+        %init(gDisableVideoPlayerZoom);
+    }
     if (IsEnabled(@"hideYouTubeLogo_enabled")) {
         %init(gHideYouTubeLogo);
     }
@@ -2008,9 +2027,15 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"hideChipBar_enabled")) {
         %init(gHideChipBar);
     }
+    if (IsEnabled(ytSpeed_enabled")) {
+        %init(gYTSpeed);
+    }
     if (IsEnabled(@"stockVolumeHUD_enabled")) {
         %init(gStockVolumeHUD);
     }
+
+    // Default values
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ytSpeed_enabled"];
 
     // Change the default value of some options
     NSArray *allKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys];
