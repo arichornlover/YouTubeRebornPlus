@@ -5,6 +5,9 @@
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "Video Player Options";
 
+"AUTO_FULLSCREEN" = "Auto Full Screen (YTAutoFullScreen)";
+"AUTO_FULLSCREEN_DESC" = "Autoplay videos at full screen.";
+
 "TAP_TO_SKIP" = "Disable tap to skip";
 "TAP_TO_SKIP_DESC" = "Disable the tap to skip feature in the video player. App restart is required.";
 
@@ -23,17 +26,41 @@
 // Video controls overlay options
 "VIDEO_CONTROLS_OVERLAY_OPTIONS" = "Video Controls Overlay Options";
 
+"HIDE_AUTOPLAY_SWITCH" = "Hide Autoplay switch";
+"HIDE_AUTOPLAY_SWITCH_DESC" = "Hide the Autoplay switch in video controls overlay.";
+
+"HIDE_SUBTITLES_BUTTON" = "Hide Subtitles button";
+"HIDE_SUBTITLES_BUTTON_DESC" = "Hide the Subtitles button in video controls overlay.";
+
+"HIDE_HUD_MESSAGES" = "Hide HUD Messages";
+"HIDE_HUD_MESSAGES_DESC" = "Example: CC is turned on/off, Video loop is on,...";
+
+"HIDE_PAID_PROMOTION_CARDS" = "Hide Paid Promotion cards";
+"HIDE_PAID_PROMOTION_CARDS_DESC" = "Hide the 'Includes Paid Promotions' card in some videos.";
+
 "HIDE_CHANNEL_WATERMARK" = "Hide Channel Watermark";
 "HIDE_CHANNEL_WATERMARK_DESC" = "Hide channel's watermark in video controls overlay. App restart is required.";
 
 "HIDE_SHADOW_OVERLAY_BUTTONS" = "Hide Shadow Overlay Buttons";
-"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Hide the Shadow Overlay on the Play/Pause, Previous & Next Buttons";
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Hide the Shadow Overlay on the Play/Pause, Previous, Next, Forward & Rewind Buttons.";
 
-"HIDE_DARK_OVERLAY_BACKGROUND" = "Hide Dark Overlay Background";
-"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "Hide video player's dark overlay background.";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Hide Previous and Next button";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
+
+"REPLACE_PREVIOUS_NEXT_BUTTON" = "Replace Previous and Next Button";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next buttons with Fast forward and Rewind buttons. App restart is required.";
 
 "RED_PROGRESS_BAR" = "Red progress bar";
 "RED_PROGRESS_BAR_DESC" = "Bring back the red progress bar. App restart is required.";
+
+"DISABLE_VIDEO_PLAYER_ZOOM" = "Disable the Zoom Feature in the Video Player. App restart is required.";
+"DISABLE_VIDEO_PLAYER_ZOOM_DESC" = "Disables the Zoom Feature on both iPhone & iPad.";
+
+"HIDE_HOVER_CARD" = "Hide End screens hover cards (YTNoHoverCards)";
+"HIDE_HOVER_CARD_DESC" = "Hide creator End screens (thumbnails) at the end of videos.";
+
+"HIDE_RIGHT_PANEL" = "Hide the right panel in fullscreen mode";
+"HIDE_RIGHT_PANEL_DESC" = "App restart is required.";
 
 "DONT_EAT_MY_CONTENT" = "Prevent Notch/Island on 2:1 Video Content (DontEatMyContent)";
 "DONT_EAT_MY_CONTENT_DESC" = "Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube. App restart is required.";
@@ -41,8 +68,14 @@
 "HIDE_HEATWAVES" = "Hide Heatwaves";
 "HIDE_HEATWAVES_DESC" = "Hides the Heatwaves in the video player. App restart is required.";
 
+"HIDE_DARK_OVERLAY_BACKGROUND" = "Hide Dark Overlay Background";
+"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "Hide video player's dark overlay background.";
+
 // Shorts controls overlay options
 "SHORTS_CONTROLS_OVERLAY_OPTIONS" = "Shorts Controls Overlay Options";
+
+"HIDE_SHORTS_VIDEOS" = "Hide Shorts videos";
+"HIDE_SHORTS_VIDEOS_DESC" = "Hide Shorts videos in Homepage, Recommended...";
 
 "HIDE_SHORTS_CHANNEL_AVATAR" = "Hide Shorts channel's avatar";
 "HIDE_SHORTS_CHANNEL_AVATAR_DESC" = "";
@@ -62,14 +95,11 @@
 "HIDE_SHORTS_SHARE_BUTTON" = "Hide Shorts share button";
 "HIDE_SHORTS_SHARE_BUTTON_DESC" = "";
 
-"HIDE_SUBSCRIPTIONS" = "Hide Subscriptions button";
-"HIDE_SUBSCRIPTIONS_DESC" = "Hide Subscriptions button which shows up when paused.";
-
 "HIDE_SUPER_THANKS" = "Hide 'Buy Super Thanks' banner";
 "HIDE_SUPER_THANKS_DESC" = "Hide the 'Buy Super Thanks' banner in Shorts.";
 
-"DISABLE_RESUME_TO_SHORTS" = "Disable resume to Shorts";
-"DISABLE_RESUME_TO_SHORTS_DESC" = "If you close YouTube while watching Shorts, Shorts won‘t automatically play next time you launch YouTube.";
+"HIDE_SUBSCRIPTIONS" = "Hide Subscriptions button";
+"HIDE_SUBSCRIPTIONS_DESC" = "Hide Subscriptions button which shows up when paused.";
 
 // Theme
 "THEME_OPTIONS" = "Theme Options";
@@ -98,10 +128,29 @@
 "YELLOW_UI" = "Yellow UI";
 "ORANGE_UI" = "Orange UI";
 "PURPLE_UI" = "Purple UI";
+"VIOLET_UI" = "Violet UI";
 "PINK_UI" = "Pink UI";
 
 // Miscellaneous
 "MISCELLANEOUS" = "Miscellaneous";
+
+"ENABLE_YT_STARTUP_ANIMATION" = "Enable YouTube startup animation";
+"ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
+
+"HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
+"HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
+
+"HIDE_CHIP_BAR" = "Hide the Upper bar";
+"HIDE_CHIP_BAR_DESC" = "Hide Upper bar in the Home feeds (Trends, Music, Gaming...) and Subscription feeds (All videos, Continue watching...).";
+
+"HIDE_MODERN_INTERFACE" = "Hide Modern Interface (YTNoModernUI)";
+"HIDE_MODERN_INTERFACE_DESC" = "Toggle this on to hide any Modern Element added by YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.";
+
+"IPAD_LAYOUT" = "iPad Layout";
+"IPAD_LAYOUT_DESC" = "only use this if you want to have the iPad Layout on your current iPhone/iPod. App restart is required.";
+
+"IPHONE_LAYOUT" = "iPhone Layout";
+"IPHONE_LAYOUT_DESC" = "only use this if you want to have the iPhone Layout on your current iPad. App restart is required.";
 
 "CAST_CONFIRM" = "Confirm alert before casting (YTCastConfirm)";
 "CAST_CONFIRM_DESC" = "Show a confirm alert before casting to prevent accidentally hijacking TV.";
@@ -113,23 +162,17 @@
 "DISABLE_HINTS" = "Disable hints";
 "DISABLE_HINTS_DESC" = "Disable feature hints from YouTube that usually display when the app is freshly installed.";
 
-"ENABLE_YT_STARTUP_ANIMATION" = "Enable YouTube startup animation";
-"ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
-
-"HIDE_CHIP_BAR" = "Hide the Upper bar";
-"HIDE_CHIP_BAR_DESC" = "Hide Upper bar in the Home feeds (Trends, Music, Gaming...) and Subscription feeds (All videos, Continue watching...).";
-
 "NEW_MINIPLAYER_STYLE" = "New mini player bar style (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "App restart is required.";
 
-"REPLACE_PREVIOUS_NEXT_BUTTON" = "Replace Previous and Next Button";
-"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next buttons with Fast forward and Rewind buttons. App restart is required.";
+"HIDE_CAST_BUTTON" = "Hide Cast button";
+"HIDE_CAST_BUTTON_DESC" = "App restart is required.";
 
-"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Hide Previous and Next button";
-"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
+"HIDE_NOTIFICATION_BUTTON" = "Hide Notifcation button in the Navigation bar";
+"HIDE_NOTIFICATION_BUTTON_DESC" = "";
 
-"HIDE_SHORTS_VIDEOS" = "Hide Shorts videos";
-"HIDE_SHORTS_VIDEOS_DESC" = "Hide Shorts videos in Homepage, Recommended...";
+"HIDE_SPONSORBLOCK_BUTTON" = "Hide iSponsorBlock button in the Navigation bar";
+"HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
 "HIDE_CERCUBE_BUTTON" = "Hide Cercube button in the Navigation bar";
 "HIDE_CERCUBE_BUTTON_DESC" = "";
@@ -140,53 +183,14 @@
 "HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Hide Cercube's Download button";
 "HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Option to hide Cercube's Download button has been enabled by default. because you are unable to download anything now since Cercube's Download Servers are gone.";
 
-"HIDE_CAST_BUTTON" = "Hide Cast button";
-"HIDE_CAST_BUTTON_DESC" = "App restart is required.";
-
-"HIDE_HOVER_CARD" = "Hide End screens hover cards (YTNoHoverCards)";
-"HIDE_HOVER_CARD_DESC" = "Hide creator End screens (thumbnails) at the end of videos.";
-
-"HIDE_RIGHT_PANEL" = "Hide the right panel in fullscreen mode";
-"HIDE_RIGHT_PANEL_DESC" = "App restart is required.";
-
-"HIDE_SUBTITLES_BUTTON" = "Hide Subtitles button";
-"HIDE_SUBTITLES_BUTTON_DESC" = "Hide the Subtitles button in video controls overlay.";
-
-"HIDE_AUTOPLAY_SWITCH" = "Hide Autoplay switch";
-"HIDE_AUTOPLAY_SWITCH_DESC" = "Hide the Autoplay switch in video controls overlay.";
-
-"AUTO_FULLSCREEN" = "Auto Full Screen (YTAutoFullScreen)";
-"AUTO_FULLSCREEN_DESC" = "Autoplay videos at full screen.";
-
-"HIDE_HUD_MESSAGES" = "Hide HUD Messages";
-"HIDE_HUD_MESSAGES_DESC" = "Example: CC is turned on/off, Video loop is on,...";
-
-"HIDE_PAID_PROMOTION_CARDS" = "Hide Paid Promotion cards";
-"HIDE_PAID_PROMOTION_CARDS_DESC" = "Hide the 'Includes Paid Promotions' card in some videos.";
-
-"HIDE_NOTIFICATION_BUTTON" = "Hide Notifcation button in the Navigation bar";
-"HIDE_NOTIFICATION_BUTTON_DESC" = "";
-
-"HIDE_SPONSORBLOCK_BUTTON" = "Hide iSponsorBlock button in the Navigation bar";
-"HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
-
-"HIDE_MODERN_INTERFACE" = "Hide Modern Interface (YTNoModernUI)";
-"HIDE_MODERN_INTERFACE_DESC" = "Toggle this on to hide any Modern Element added by YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.";
-
-"HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
-"HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
-
 "DISABLE_WIFI_RELATED_SETTINGS" = "Disable Wifi Related Settings";
 "DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Disable Wifi Related Sections (Notfications, Connected apps, Privacy & Live Chat, etc.) in the Settings Menu. App restart is required.";
 
 "YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "App restart is required.";
 
-"IPAD_LAYOUT" = "iPad Layout";
-"IPAD_LAYOUT_DESC" = "only use this if you want to have the iPad Layout on your current iPhone/iPod. App restart is required.";
-
-"IPHONE_LAYOUT" = "iPhone Layout";
-"IPHONE_LAYOUT_DESC" = "only use this if you want to have the iPhone Layout on your current iPad. App restart is required.";
+"YT_SPEED" = "Enable YTSpeed";
+"YT_SPEED_DESC" = "Enable YTSpeed to have more Playback Speed Options. App restart is required.";
 
 "ENABLE_FLEX" = "Enable FLEX";
 "ENABLE_FLEX_DESC" = "Enable FLEX for debugging (not recommended). Leave this off unless you know what you are doing.";
