@@ -42,7 +42,7 @@
 "HIDE_CHANNEL_WATERMARK_DESC" = "ビデオコントロールオーバーレイで、チャンネルのウォーターマークを非表示にします。アプリの再起動が必要です";
 
 "HIDE_SHADOW_OVERLAY_BUTTONS" = "シャドウオーバーレイボタンを非表示";
-"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Hide the Shadow Overlay on the Play/Pause, Previous, Next, Forward & Rewind Buttons.";
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "再生/一時停止、前へ、次へ、進む、巻き戻しボタンのシャドウ オーバーレイを非表示にします";
 
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "前後の動画を再生するボタンを非表示";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "動画コントロールのオーバーレイで、前の動画と次の動画を再生するボタンを非表示にします";
@@ -128,7 +128,7 @@
 "YELLOW_UI" = "黄色のUI";
 "ORANGE_UI" = "オレンジ色のUI";
 "PURPLE_UI" = "紫色のUI";
-"VIOLET_UI" = "Violet UI";
+"VIOLET_UI" = "バイオレットUI";
 "PINK_UI" = "ピンク色のUI";
 
 // Miscellaneous
