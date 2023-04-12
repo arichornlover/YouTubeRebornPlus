@@ -222,6 +222,16 @@ extern NSBundle *CercubePlusBundle();
                     return YES;
                 }
                 settingItemId:0],
+				
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"DISABLE_VIDEO_PLAYER_ZOOM")
+                titleDescription:LOC(@"DISABLE_VIDEO_PLAYER_ZOOM")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"disableVideoPlayerZoom_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"disableVideoPlayerZoom_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_HOVER_CARD")
                 titleDescription:LOC(@"HIDE_HOVER_CARD_DESC")
@@ -396,6 +406,8 @@ extern NSBundle *CercubePlusBundle();
                 case 6:
                     return LOC(@"PURPLE_UI");
                 case 7:
+                    return LOC(@"VIOLET_UI");
+                case 8:
                     return LOC(@"PINK_UI");
                 case 0:
                 default:
@@ -439,8 +451,13 @@ extern NSBundle *CercubePlusBundle();
                     [settingsViewController reloadData];
                     return YES;
                 }],
-                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"PINK_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"VIOLET_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
                     [[NSUserDefaults standardUserDefaults] setInteger:7 forKey:@"lcmColor"];
+                    [settingsViewController reloadData];
+                    return YES;
+                }],
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:LOC(@"PINK_UI") titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                    [[NSUserDefaults standardUserDefaults] setInteger:8 forKey:@"lcmColor"];
                     [settingsViewController reloadData];
                     return YES;
                 }]
@@ -678,7 +695,17 @@ extern NSBundle *CercubePlusBundle();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"reExplore_enabled"];
                     return YES;
                 }
-                settingItemId:0], 	
+                settingItemId:0],
+
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"YT_SPEED")
+                titleDescription:LOC(@"YT_SPEED_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"ytSpeed_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"ytSpeed_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
                 
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_FLEX")
                 titleDescription:LOC(@"ENABLE_FLEX_DESC")

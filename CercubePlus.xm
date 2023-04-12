@@ -13,7 +13,6 @@
 #import "Tweaks/YouTubeHeader/YTIPivotBarSupportedRenderers.h"
 #import "Tweaks/YouTubeHeader/YTIPivotBarRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIBrowseRequest.h"
-#import "Tweaks/YouTubeHeader/YTColorPalette.h"
 #import "Tweaks/YouTubeHeader/YTCommonColorPalette.h"
 #import "Tweaks/YouTubeHeader/ASCollectionView.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlay.h"
@@ -95,8 +94,11 @@ static BOOL orangeContrastMode() {
 static BOOL purpleContrastMode() {
     return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 6;
 }
-static BOOL pinkContrastMode() {
+static BOOL violetContrastMode() {
     return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 7;
+}
+static BOOL pinkContrastMode() {
+    return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 8;
 }
 
 static BOOL didFinishLaunching;
@@ -238,12 +240,12 @@ static BOOL didFinishLaunching;
 - (BOOL)mainAppCoreClientIosTransientVisualGlitchInPivotBarFix { return NO; } // Fix uYou's label glitching - qnblackcat/uYouPlus#552
 %end
 
-// Disabled App Breaking Dialog Flags - @PoomSmart
+// Disabled App Breaking Dialog Flags - @arichorn
 %hook YTColdConfig
 - (BOOL)commercePlatformClientEnablePopupWebviewInWebviewDialogController { return NO;}
 %end
 
-// Hide Upgrade Dialog
+// Hide Upgrade Dialog - @arichorn
 %hook YTGlobalConfig
 - (BOOL)shouldBlockUpgradeDialog { return YES;}
 - (BOOL)shouldForceUpgrade { return NO;}
@@ -251,13 +253,15 @@ static BOOL didFinishLaunching;
 - (BOOL)shouldShowUpgradeDialog { return NO;}
 %end
 
-// Disabled - Autoplay Settings Section - qnblackcat
-%hook YTSettingsSectionItemManager
-- (void)updateAutoplaySectionWithEntry:(id)arg1 {}
+// Disable YouTube Ads - @arichorn
+%hook YTHotConfig
+- (BOOL)disableAfmaIdfaCollection { return NO; }
 %end
 
+// Disable Wifi Related Settings - @arichorn
 %group gDisableWifiRelatedSettings
 %hook YTSettingsSectionItemManager
+- (void)updateAutoplaySectionWithEntry:(id)arg1 {} // Autoplay
 - (void)updateNotificationSectionWithEntry:(id)arg1 {} // Notifications
 - (void)updateHistorySectionWithEntry:(id)arg1 {} // History
 - (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
@@ -880,7 +884,7 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%group gLowContrastMode // Low Contrast Mode v1.2.2 (Compatible with only v15.02.1-present)
+%group gLowContrastMode // Low Contrast Mode v1.2.3 (Compatible with only v15.02.1-present)
 %hook UIColor
 + (UIColor *)whiteColor { // Dark Theme Color
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
@@ -891,20 +895,8 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
-%end
-
-%hook YTColorPalette // Changes Texts & Icons in YouTube Bottom Bar + Text Icons under Video Player
-- (UIColor *)textPrimary {
-    if (self.pageStyle == 1) {
-        return [UIColor whiteColor]; // Dark Theme
-    }
-        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00]; // Light Theme
-}
-- (UIColor *)textSecondary {
-    if (self.pageStyle == 1) {
-        return [UIColor whiteColor]; // Dark Theme
-    }
-        return [UIColor colorWithRed: 0.38 green: 0.38 blue: 0.38 alpha: 1.00]; // Light Theme
+- (YTQTMButton *)overflowButton {
+         return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
 %end
 
@@ -926,8 +918,8 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %hook YTCollectionView  // Changes Live Chat Texts
  - (void)setTintColor:(UIColor *)color { 
      return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
- }
- %end
+}
+%end
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
@@ -956,21 +948,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
 }
-%end
-
-%hook YTColorPalette
-- (UIColor *)textPrimary {
-     if (self.pageStyle == 1) {
-         return [UIColor whiteColor]; // Dark Theme
-     }
-         return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00]; // Light Theme
- }
-- (UIColor *)textSecondary {
-    if (self.pageStyle == 1) {
-        return [UIColor whiteColor]; // Dark Theme
-     }
-        return [UIColor colorWithRed: 0.84 green: 0.25 blue: 0.23 alpha: 1.00]; // Light Theme
- }
 %end
 
 %hook YTCommonColorPalette
@@ -1029,21 +1006,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook YTColorPalette
-- (UIColor *)textPrimary {
-     if (self.pageStyle == 1) {
-         return [UIColor whiteColor]; // Dark Theme
-     }
-         return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00]; // Light Theme
- }
-- (UIColor *)textSecondary {
-    if (self.pageStyle == 1) {
-        return [UIColor whiteColor]; // Dark Theme
-     }
-        return [UIColor colorWithRed: 0.04 green: 0.41 blue: 0.62 alpha: 1.00]; // Light Theme
- }
-%end
-
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
@@ -1098,21 +1060,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
 }
-%end
-
-%hook YTColorPalette
-- (UIColor *)textPrimary {
-     if (self.pageStyle == 1) {
-         return [UIColor whiteColor]; // Dark Theme
-     }
-         return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00]; // Light Theme
- }
-- (UIColor *)textSecondary {
-    if (self.pageStyle == 1) {
-        return [UIColor whiteColor]; // Dark Theme
-     }
-        return [UIColor colorWithRed: 0.00 green: 0.50 blue: 0.13 alpha: 1.00]; // Light Theme
- }
 %end
 
 %hook YTCommonColorPalette
@@ -1171,21 +1118,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook YTColorPalette
-- (UIColor *)textPrimary {
-     if (self.pageStyle == 1) {
-         return [UIColor whiteColor]; // Dark Theme
-     }
-         return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00]; // Light Theme
- }
-- (UIColor *)textSecondary {
-    if (self.pageStyle == 1) {
-        return [UIColor whiteColor]; // Dark Theme
-     }
-        return [UIColor colorWithRed: 0.77 green: 0.71 blue: 0.14 alpha: 1.00]; // Light Theme
- }
-%end
-
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
@@ -1242,21 +1174,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook YTColorPalette
-- (UIColor *)textPrimary {
-     if (self.pageStyle == 1) {
-         return [UIColor whiteColor]; // Dark Theme
-     }
-         return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00]; // Light Theme
- }
-- (UIColor *)textSecondary {
-    if (self.pageStyle == 1) {
-        return [UIColor whiteColor]; // Dark Theme
-     }
-        return [UIColor colorWithRed: 0.80 green: 0.49 blue: 0.05 alpha: 1.00]; // Light Theme
- }
-%end
-
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
      if (self.pageStyle == 1) {
@@ -1303,29 +1220,14 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %group gPurpleContrastMode // Purple Contrast Mode
 %hook UIColor
 + (UIColor *)whiteColor {
-         return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+         return [UIColor colorWithRed: 0.42 green: 0.18 blue: 0.68 alpha: 1.00];
 }
 + (UIColor *)textColor {
-         return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+         return [UIColor colorWithRed: 0.42 green: 0.18 blue: 0.68 alpha: 1.00];
 }
 + (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 0.62 green: 0.01 blue: 0.73 alpha: 1.00];
+         return [UIColor colorWithRed: 0.42 green: 0.18 blue: 0.68 alpha: 1.00];
 }
-%end
-
-%hook YTColorPalette
-- (UIColor *)textPrimary {
-     if (self.pageStyle == 1) {
-         return [UIColor whiteColor]; // Dark Theme
-     }
-         return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00]; // Light Theme
- }
-- (UIColor *)textSecondary {
-    if (self.pageStyle == 1) {
-        return [UIColor whiteColor]; // Dark Theme
-     }
-        return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00]; // Light Theme
- }
 %end
 
 %hook YTCommonColorPalette
@@ -1333,13 +1235,69 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
      if (self.pageStyle == 1) {
          return [UIColor whiteColor]; // Dark Theme
      }
-         return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00]; // Light Theme
+         return [UIColor colorWithRed: 0.42 green: 0.05 blue: 0.68 alpha: 1.00]; // Light Theme
  }
 - (UIColor *)textSecondary {
     if (self.pageStyle == 1) {
         return [UIColor whiteColor]; // Dark Theme
      }
-        return [UIColor colorWithRed: 0.44 green: 0.00 blue: 0.52 alpha: 1.00]; // Light Theme
+        return [UIColor colorWithRed: 0.42 green: 0.05 blue: 0.68 alpha: 1.00]; // Light Theme
+ }
+%end
+
+%hook YTCollectionView  // Changes Live Chat Texts
+- (void)setTintColor:(UIColor *)color { 
+    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
+%end
+
+%hook YTQTMButton // Changes Tweak Icons/Texts/Images
+- (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+%end
+
+%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
+- (UIColor *)_ASDisplayView {
+         return [UIColor whiteColor];
+}
+%end
+
+%hook _ASDisplayView
+- (void)didMoveToWindow {
+    %orig;
+    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
+    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
+}
+%end
+%end
+
+%group gVioletContrastMode // Violet Contrast Mode
+%hook UIColor
++ (UIColor *)whiteColor {
+         return [UIColor colorWithRed: 0.50 green: 0.00 blue: 1.00 alpha: 1.00];
+}
++ (UIColor *)textColor {
+         return [UIColor colorWithRed: 0.50 green: 0.00 blue: 1.00 alpha: 1.00];
+}
++ (UIColor *)dynamicLabelColor {
+         return [UIColor colorWithRed: 0.50 green: 0.00 blue: 1.00 alpha: 1.00];
+}
+%end
+
+%hook YTCommonColorPalette
+- (UIColor *)textPrimary {
+     if (self.pageStyle == 1) {
+         return [UIColor whiteColor]; // Dark Theme
+     }
+         return [UIColor colorWithRed: 0.29 green: 0.00 blue: 0.51 alpha: 1.00]; // Light Theme
+ }
+- (UIColor *)textSecondary {
+    if (self.pageStyle == 1) {
+        return [UIColor whiteColor]; // Dark Theme
+     }
+        return [UIColor colorWithRed: 0.29 green: 0.00 blue: 0.51 alpha: 1.00]; // Light Theme
  }
 %end
 
@@ -1382,21 +1340,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
 }
-%end
-
-%hook YTColorPalette
-- (UIColor *)textPrimary {
-     if (self.pageStyle == 1) {
-         return [UIColor whiteColor]; // Dark Theme
-     }
-         return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00]; // Light Theme
- }
-- (UIColor *)textSecondary {
-    if (self.pageStyle == 1) {
-        return [UIColor whiteColor]; // Dark Theme
-     }
-        return [UIColor colorWithRed: 0.81 green: 0.56 blue: 0.71 alpha: 1.00]; // Light Theme
- }
 %end
 
 %hook YTCommonColorPalette
@@ -1988,6 +1931,27 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"hideYouTubeLogo_enabled")) {
         %init(gHideYouTubeLogo);
     }
+	if (IsEnabled(@"disableHints_enabled")) {
+        %init(gDisableHints);
+    }
+    if (IsEnabled(@"hideChipBar_enabled")) {
+        %init(gHideChipBar);
+    }
+    if (IsEnabled("ytSpeed_enabled")) {
+        %init(gYTSpeed);
+    }
+    if (IsEnabled(@"stockVolumeHUD_enabled")) {
+        %init(gStockVolumeHUD);
+	}
+    if (IsEnabled(@"oledKeyBoard_enabled")) {
+        %init(gOLEDKB);
+	}
+	if (oledDarkTheme()) {
+        %init(gOLED)
+	}
+	if (oldDarkTheme()) {
+        %init(gOldDarkTheme)
+    }
     if (defaultContrastMode()) {
         %init(gLowContrastMode);
     }
@@ -2009,29 +1973,11 @@ void DEMC_centerRenderingView() {
     if (purpleContrastMode()) {
         %init(gPurpleContrastMode);
     }
+    if (violetContrastMode()) {
+        %init(gVioletContrastMode);
+    }
     if (pinkContrastMode()) {
         %init(gPinkContrastMode);
-    }
-    if (oldDarkTheme()) {
-        %init(gOldDarkTheme)
-    }
-    if (oledDarkTheme()) {
-        %init(gOLED)
-    }
-    if (IsEnabled(@"oledKeyBoard_enabled")) {
-        %init(gOLEDKB);
-    }
-    if (IsEnabled(@"disableHints_enabled")) {
-        %init(gDisableHints);
-    }
-    if (IsEnabled(@"hideChipBar_enabled")) {
-        %init(gHideChipBar);
-    }
-    if (IsEnabled(ytSpeed_enabled")) {
-        %init(gYTSpeed);
-    }
-    if (IsEnabled(@"stockVolumeHUD_enabled")) {
-        %init(gStockVolumeHUD);
     }
 
     // Default values
