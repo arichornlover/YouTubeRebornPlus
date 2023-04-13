@@ -895,9 +895,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 + (UIColor *)dynamicLabelColor {
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
-- (YTQTMButton *)overflowButton {
-         return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
-}
 %end
 
 %hook YTCommonColorPalette // Changes Texts & Icons in YouTube Bottom Bar (Doesn't change Texts & Icons under the video player)
@@ -923,6 +920,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+- (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
 %end
@@ -973,6 +973,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+- (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
 %end
@@ -1031,6 +1034,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
+- (UIColor *)overflowButton {
+         return [UIColor whiteColor];
+}
 %end
 
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
@@ -1085,6 +1091,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+- (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
 %end
@@ -1143,6 +1152,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
+- (UIColor *)overflowButton {
+         return [UIColor whiteColor];
+}
 %end
 
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
@@ -1197,6 +1209,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+- (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
 %end
@@ -1255,6 +1270,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
+- (UIColor *)overflowButton {
+         return [UIColor whiteColor];
+}
 %end
 
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
@@ -1311,6 +1329,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
+- (UIColor *)overflowButton {
+         return [UIColor whiteColor];
+}
 %end
 
 %hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
@@ -1365,6 +1386,9 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+- (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
 %end
@@ -1713,7 +1737,7 @@ void DEMC_centerRenderingView() {
 %end 
 
 %hook YTPlayerViewController
-%property float playbackRate;
+%property (nonatomic, assign) float playbackRate;
 - (void)singleVideo:(id)video playbackRateDidChange:(float)rate {
 	%orig;
 }
@@ -1937,7 +1961,7 @@ void DEMC_centerRenderingView() {
     if (IsEnabled(@"hideChipBar_enabled")) {
         %init(gHideChipBar);
     }
-    if (IsEnabled("ytSpeed_enabled")) {
+    if (IsEnabled(@"ytSpeed_enabled")) {
         %init(gYTSpeed);
     }
     if (IsEnabled(@"stockVolumeHUD_enabled")) {
