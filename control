@@ -1,8 +1,0 @@
-Package: com.arichorn.cercubeplusextra
-Name: CercubePlusExtra
-Architecture: iphoneos-arm
-Description: Modified version of Cercube/CercubePlus 
-Maintainer: arichorn
-Author: arichorn
-Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000), com.galacticdev.isponsorblock, com.ps.youpip, com.ps.ytabconfig, com.ps.ytuhd, com.ps.youmute, libflex, weeb.lillie.youtubedislikesreturn
