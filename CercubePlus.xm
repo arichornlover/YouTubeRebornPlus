@@ -2004,9 +2004,6 @@ void DEMC_centerRenderingView() {
         %init(gPinkContrastMode);
     }
 
-    // Default values
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"ytSpeed_enabled"];
-
     // Change the default value of some options
     NSArray *allKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys];
     if (![allKeys containsObject:@"RYD-ENABLED"]) { 
