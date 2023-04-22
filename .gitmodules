@@ -40,3 +40,6 @@
 [submodule "Tweaks/FLEXing"]
 	path = Tweaks/FLEXing
 	url = https://github.com/NSExceptional/FLEXing
+[submodule "Tweaks/RemoteLog"]
+	path = Tweaks/RemoteLog
+	url = https://github.com/Muirey03/RemoteLog.git
