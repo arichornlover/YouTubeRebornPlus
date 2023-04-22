@@ -58,6 +58,9 @@ jobs:
       - name: Install Dependencies
         run: brew install ldid dpkg make
 
+      - name: Set PATH environment variable
+        run: echo "$(brew --prefix make)/libexec/gnubin" >> $GITHUB_PATH 
+
       - name: Setup Theos
         uses: actions/checkout@v3.4.0
         with:
@@ -97,31 +100,18 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Download Cercube & Prepare YouTube iPA
+      - name: Download YouTube iPA
         run: |
-          curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl "https://dl.dropboxusercontent.com/s/vsoyhdwfzmqu6sg/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
-          echo -e "==> \033[1mCercube v${{ inputs.cercube_version }} downloaded! \033[0m"
-          wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
-          echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Cercube && tar -xf "me.alfhaily.cercube_5.3.13_iphoneos-arm.deb" && tar -xf data.tar.* && cd ../../..
-          echo -e "==> \033[1mCercube v${{ inputs.cercube_version }} unpacked! \033[0m"
-          unzip -q main/YouTube.ipa -d main/tmp
-          rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
-          rm -rf main/tmp/Payload/YouTube.app/PlugIns/*
-          cp -R main/Extensions/*.appex main/tmp/Payload/YouTube.app/PlugIns
-          echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} unpacked! \033[0m"
+          wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa && echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
 
         env:
           THEOS: ${{ github.workspace }}/theos
-          CERCUBE_VERSION: ${{ inputs.cercube_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
           YOUTUBE_URL: ${{ inputs.decrypted_youtube_url }}
 
       - name: Fix Compiling & Build Package
         id: build_package
         run: |
-          (echo PATH=\"$(brew --prefix make)/libexec/gnubin:\$PATH\" >> ~/.zprofile)
           cd ${{ github.workspace }}/main
           sed -i '' "12s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
           sed -i '' "11s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
