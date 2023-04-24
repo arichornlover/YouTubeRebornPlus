@@ -84,7 +84,7 @@ static BOOL didFinishLaunching;
     didFinishLaunching = %orig;
 
     if (IsEnabled(@"flex_enabled")) {
-        [[%c(FLEXManager) performSelector:@selector(sharedManager)] performSelector:@selector(showExplorer)];
+        [[FLEXManager sharedManager] showExplorer];
     }
 
     return didFinishLaunching;
@@ -92,7 +92,7 @@ static BOOL didFinishLaunching;
 - (void)appWillResignActive:(id)arg1 {
     %orig;
         if (IsEnabled(@"flex_enabled")) {
-        [[%c(FLEXManager) performSelector:@selector(sharedManager)] performSelector:@selector(showExplorer)];
+        [[FLEXManager sharedManager] showExplorer];
     }
 }
 %end
