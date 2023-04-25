@@ -37,7 +37,7 @@ $(TWEAK_NAME)_EMBED_EXTENSIONS = $(wildcard Extensions/*.appex)
 
 include $(THEOS)/makefiles/common.mk
 ifneq ($(JAILBROKEN),1)
-SUBPROJECTS += Tweaks/Alderis Tweaks/FLEXing/libflex Tweaks/iSponsorBlock Tweaks/Return-YouTube-Dislikes Tweaks/YouPiP Tweaks/YTABConfig Tweaks/YTUHD Tweaks/YouMute
+SUBPROJECTS += Tweaks/Alderis Tweaks/FLEX Tweaks/iSponsorBlock Tweaks/Return-YouTube-Dislikes Tweaks/YouPiP Tweaks/YTABConfig Tweaks/YTUHD Tweaks/YouMute
 include $(THEOS_MAKE_PATH)/aggregate.mk
 endif
 include $(THEOS_MAKE_PATH)/tweak.mk
@@ -64,7 +64,7 @@ before-all::
  	curl -s https://dl.dropboxusercontent.com/s/vsoyhdwfzmqu6sg/me.alfhaily.cercube_$(CERCUBE_VERSION)_iphoneos-arm.deb -o $(CERCUBE_DEB); \
  	fi; \
 	if [[ ! -f $(CERCUBE_DYLIB) || ! -d $(CERCUBE_BUNDLE) ]]; then \
-		tar -xf Tweaks/Cercube/me.alfhaily.cercube_$(CERCUBE_VERSION)_iphoneos-arm.deb -C Tweaks/Cercube; tar -xf Tweaks/Cercube/data.tar* -C Tweaks/Cercube; \
+		tar -xf Tweaks/Cercube/me.alfhaily.cercube_$(CERCUBE_VERSION)_iphoneos-arm.deb -C Tweaks/Cercube; tar -xf Tweaks/Cercube/data.tar.xz* -C Tweaks/Cercube; \
 		if [[ ! -f $(CERCUBE_DYLIB) || ! -d $(CERCUBE_BUNDLE) ]]; then \
 			$(PRINT_FORMAT_ERROR) "Failed to extract Cercube"; exit 1; \
 		fi; \
