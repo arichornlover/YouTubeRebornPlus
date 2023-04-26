@@ -558,6 +558,12 @@ static BOOL didFinishLaunching;
 // Theme Options
 // Old dark theme (gray)
 %group gOldDarkTheme
+%hook YTInnerTubeCollectionViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor clearColor] : %orig;
+}
+%end
+
 %hook YTColdConfig
 - (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
