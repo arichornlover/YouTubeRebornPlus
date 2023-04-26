@@ -7,6 +7,7 @@
 #import <sys/utsname.h>
 #import <substrate.h>
 #import <rootless.h>
+#import "Tweaks/FLEX/FLEX.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 #import "Tweaks/YouTubeHeader/YTWatchController.h"
