@@ -620,3 +620,4 @@ static BOOL pinkContrastMode() {
     if (pinkContrastMode()) {
         %init(gPinkContrastMode);
     }
+}
