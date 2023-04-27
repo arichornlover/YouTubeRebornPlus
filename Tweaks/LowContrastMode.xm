@@ -70,6 +70,9 @@ static BOOL pinkContrastMode() {
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
+- (UIColor *)tintColor {
+         return [UIColor whiteColor];
+}
 - (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
@@ -121,6 +124,9 @@ static BOOL pinkContrastMode() {
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+- (UIColor *)tintColor {
          return [UIColor whiteColor];
 }
 - (UIColor *)overflowButton {
@@ -182,6 +188,9 @@ static BOOL pinkContrastMode() {
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
+- (UIColor *)tintColor {
+         return [UIColor whiteColor];
+}
 - (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
@@ -239,6 +248,9 @@ static BOOL pinkContrastMode() {
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+- (UIColor *)tintColor {
          return [UIColor whiteColor];
 }
 - (UIColor *)overflowButton {
@@ -300,6 +312,9 @@ static BOOL pinkContrastMode() {
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
+- (UIColor *)tintColor {
+         return [UIColor whiteColor];
+}
 - (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
@@ -357,6 +372,9 @@ static BOOL pinkContrastMode() {
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+- (UIColor *)tintColor {
          return [UIColor whiteColor];
 }
 - (UIColor *)overflowButton {
@@ -418,6 +436,9 @@ static BOOL pinkContrastMode() {
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
+- (UIColor *)tintColor {
+         return [UIColor whiteColor];
+}
 - (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
@@ -477,6 +498,9 @@ static BOOL pinkContrastMode() {
 - (UIColor *)whiteColor {
          return [UIColor whiteColor];
 }
+- (UIColor *)tintColor {
+         return [UIColor whiteColor];
+}
 - (UIColor *)overflowButton {
          return [UIColor whiteColor];
 }
@@ -534,6 +558,9 @@ static BOOL pinkContrastMode() {
 
 %hook YTQTMButton // Changes Tweak Icons/Texts/Images
 - (UIColor *)whiteColor {
+         return [UIColor whiteColor];
+}
+- (UIColor *)tintColor {
          return [UIColor whiteColor];
 }
 - (UIColor *)overflowButton {
