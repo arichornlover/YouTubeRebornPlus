@@ -1154,50 +1154,67 @@ void DEMC_centerRenderingView() {
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
 %group gYTSpeed
 %hook YTVarispeedSwitchController
-- (id)init {
-	id result = %orig;
+- (void *)init {
+    void *ret = (void *)%orig;
 
-	const int size = 17;
-	float speeds[] = {0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 5.0};
-	id varispeedSwitchControllerOptions[size];
+    NSMutableArray *ytSpeedOptions = [NSMutableArray new];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"0.1x" rate:0.1]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"0.25x" rate:0.25]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"0.5x" rate:0.5]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"0.75x" rate:0.75]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"Normal" rate:1]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"1.25x" rate:1.25]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"1.5x" rate:1.5]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"1.75x" rate:1.75]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"2x" rate:2]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"2.25x" rate:2.25]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"2.5x" rate:2.5]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"2.75x" rate:2.75]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"3x" rate:3]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"3.25x" rate:3.25]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"3.5x" rate:3.5]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"3.75x" rate:3.75]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"4x" rate:4]];
+    [ytSpeedOptions addObject:[[NSClassFromString(@"YTVarispeedSwitchControllerOption") alloc] initWithTitle:@"5x" rate:5]];
+    MSHookIvar<NSArray *>(self, "_options") = [ytSpeedOptions copy];
 
-	for (int i = 0; i < size; ++i) {
-		id title = [NSString stringWithFormat:@"%.2fx", speeds[i]];
-		varispeedSwitchControllerOptions[i] = [[%c(YTVarispeedSwitchControllerOption) alloc] initWithTitle:title rate:speeds[i]];
-	}
-
-	NSUInteger count = sizeof(varispeedSwitchControllerOptions) / sizeof(id);
-	NSArray *varispeedArray = [NSArray arrayWithObjects:varispeedSwitchControllerOptions count:count];
-	MSHookIvar<NSArray *>(self, "_options") = varispeedArray;
-
-	return result;
+    return ret;
 }
 %end
+
+// Deprecated Code (still works on newer versions but sometimes it'll not work)
+//
+// %hook YTVarispeedSwitchController
+// - (id)init {
+// 	id result = %orig;
+//
+//	const int size = 17;
+//	float speeds[] = {0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 5.0};
+//	id varispeedSwitchControllerOptions[size];
+//
+//	for (int i = 0; i < size; ++i) {
+//		id title = [NSString stringWithFormat:@"%.2fx", speeds[i]];
+//		varispeedSwitchControllerOptions[i] = [[%c(YTVarispeedSwitchControllerOption) alloc] initWithTitle:title rate:speeds[i]];
+//	}
+//
+//	NSUInteger count = sizeof(varispeedSwitchControllerOptions) / sizeof(id);
+//	NSArray *varispeedArray = [NSArray arrayWithObjects:varispeedSwitchControllerOptions count:count];
+//	MSHookIvar<NSArray *>(self, "_options") = varispeedArray;
+//
+//	return result;
+// }
+// %end
 
 %hook MLHAMQueuePlayer
 - (void)setRate:(float)rate {
-    MSHookIvar<float>(self, "_rate") = rate;
-	MSHookIvar<float>(self, "_preferredRate") = rate;
+	MSHookIvar<float>(self, "_rate") = rate;
 
-	id player = MSHookIvar<HAMPlayerInternal *>(self, "_player");
-	[player setRate: rate];
+	id ytPlayer = MSHookIvar<HAMPlayerInternal *>(self, "_player");
+	[ytPlayer setRate:rate];
 
-	id stickySettings = MSHookIvar<MLPlayerStickySettings *>(self, "_stickySettings");
-	[stickySettings setRate: rate];
-
-	[self.playerEventCenter broadcastRateChange: rate];
-
-	YTSingleVideoController *singleVideoController = self.delegate;
-	[singleVideoController playerRateDidChange: rate];
+	[self.playerEventCenter broadcastRateChange:rate];
 }
 %end 
-
-%hook YTPlayerViewController
-%property (nonatomic, assign) float playbackRate;
-- (void)singleVideo:(id)video playbackRateDidChange:(float)rate {
-	%orig;
-}
-%end
 %end
 
 // Disable snap to chapter
