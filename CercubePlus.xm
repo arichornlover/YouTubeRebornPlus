@@ -267,6 +267,10 @@ static BOOL didFinishLaunching;
 
 // YTNoModernUI - @arichorn
 %group gYTNoModernUI
+%hook YTQTMButton
+- (BOOL)buttonModernizationEnabled { return NO; }
+%end
+
 %hook YTColdConfig
 // Disable Modern Content - YTNoModernUI
 - (BOOL)creatorClientConfigEnableStudioModernizedMdeThumbnailPickerForClient { return NO; }
@@ -528,9 +532,36 @@ static BOOL didFinishLaunching;
 // Theme Options
 // Old dark theme (gray)
 %group gOldDarkTheme
+%hook YTHeaderView
+- (UIColor *)backgroundColor {
+         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+}
+- (UIColor *)barTintColor {
+         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+}
+%end
+
 %hook YTInnerTubeCollectionViewController
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
-    return pageStyle == 1 ? [UIColor clearColor] : %orig;
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
+}
+%end
+
+%hook YTWatchMiniBarView
+- (UIColor *)backgroundColor {
+         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+}
+%end
+
+%hook YTNavigationBar
+- (UIColor *)backgroundColor {
+         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+}
+%end
+
+%hook UIView
+- (UIColor *)backgroundColor {
+         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
 }
 %end
 
@@ -594,9 +625,36 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
+%hook YTHeaderView
+- (UIColor *)backgroundColor {
+         return [UIColor blackColor];
+}
+- (UIColor *)barTintColor {
+         return [UIColor blackColor];
+}
+%end
+
 %hook YTInnerTubeCollectionViewController
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
     return pageStyle == 1 ? [UIColor blackColor] : %orig;
+}
+%end
+
+%hook YTWatchMiniBarView
+- (UIColor *)backgroundColor {
+         return [UIColor blackColor];
+}
+%end
+
+%hook YTNavigationBar
+- (UIColor *)backgroundColor {
+         return [UIColor blackColor];
+}
+%end
+
+%hook UIView
+- (UIColor *)backgroundColor {
+         return [UIColor blackColor];
 }
 %end
 
