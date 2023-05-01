@@ -271,6 +271,10 @@ static BOOL didFinishLaunching;
 - (BOOL)buttonModernizationEnabled { return NO; }
 %end
 
+%hook YTSearchBarView
+- (BOOL)_roundedSearchBarEnabled { return NO; }
+%end
+
 %hook YTColdConfig
 // Disable Modern Content - YTNoModernUI
 - (BOOL)creatorClientConfigEnableStudioModernizedMdeThumbnailPickerForClient { return NO; }
@@ -547,13 +551,19 @@ static BOOL didFinishLaunching;
 }
 %end
 
-%hook YTWatchMiniBarView
+%hook YTNavigationBar
 - (UIColor *)backgroundColor {
          return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
 }
 %end
 
-%hook YTNavigationBar
+%hook YTSearchView
+- (UIColor *)backgroundColor {
+         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+}
+%end
+
+%hook YTWatchMiniBarView
 - (UIColor *)backgroundColor {
          return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
 }
@@ -640,13 +650,19 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook YTWatchMiniBarView
+%hook YTNavigationBar
 - (UIColor *)backgroundColor {
          return [UIColor blackColor];
 }
 %end
 
-%hook YTNavigationBar
+%hook YTSearchView
+- (UIColor *)backgroundColor {
+         return [UIColor blackColor];
+}
+%end
+
+%hook YTWatchMiniBarView
 - (UIColor *)backgroundColor {
          return [UIColor blackColor];
 }
