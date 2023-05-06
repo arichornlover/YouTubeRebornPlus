@@ -536,12 +536,36 @@ static BOOL didFinishLaunching;
 // Theme Options
 // Old dark theme (gray)
 %group gOldDarkTheme
-%hook YTHeaderView
+%hook YTAppViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
+}
+%end
+
+%hook YTCollectionViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
+}
+%end
+
+%hook YTChannelMobileHeaderViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
+}
+%end
+
+%hook YTELMView
 - (UIColor *)backgroundColor {
          return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
 }
-- (UIColor *)barTintColor {
-         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+%end
+
+%hook YTHeaderViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
+}
+- (UIColor *)barTintColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
 }
 %end
 
@@ -551,27 +575,27 @@ static BOOL didFinishLaunching;
 }
 %end
 
-%hook YTNavigationBar
-- (UIColor *)backgroundColor {
-         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+%hook YTSearchViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
 }
 %end
 
-%hook YTSearchView
-- (UIColor *)backgroundColor {
-         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+%hook YTSectionListViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
 }
 %end
 
-%hook YTWatchMiniBarView
-- (UIColor *)backgroundColor {
-         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+%hook YTWatchMiniBarViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
 }
 %end
 
-%hook UIView
-- (UIColor *)backgroundColor {
-         return [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0];
+%hook YTWrapperSplitViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
 }
 %end
 
@@ -635,12 +659,36 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook YTHeaderView
+%hook YTAppViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
+}
+%end
+
+%hook YTCollectionViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
+}
+%end
+
+%hook YTChannelMobileHeaderViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
+}
+%end
+
+%hook YTELMView
 - (UIColor *)backgroundColor {
          return [UIColor blackColor];
 }
-- (UIColor *)barTintColor {
-         return [UIColor blackColor];
+%end
+
+%hook YTHeaderViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
+}
+- (UIColor *)barTintColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
 }
 %end
 
@@ -650,27 +698,27 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
-%hook YTNavigationBar
-- (UIColor *)backgroundColor {
-         return [UIColor blackColor];
+%hook YTSearchViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
 }
 %end
 
-%hook YTSearchView
-- (UIColor *)backgroundColor {
-         return [UIColor blackColor];
+%hook YTSectionListViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
 }
 %end
 
-%hook YTWatchMiniBarView
-- (UIColor *)backgroundColor {
-         return [UIColor blackColor];
+%hook YTWatchMiniBarViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
 }
 %end
 
-%hook UIView
-- (UIColor *)backgroundColor {
-         return [UIColor blackColor];
+%hook YTWrapperSplitViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
 }
 %end
 
