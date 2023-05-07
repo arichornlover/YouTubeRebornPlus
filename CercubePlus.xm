@@ -177,6 +177,12 @@ static BOOL didFinishLaunching;
     MSHookIvar<YTPlaybackButton *>(self, "_playPauseButton").backgroundColor = nil;
 }
 %end
+
+%hook YTPlayBackButton
+- (UIColor *)backgroundColor {
+         return [UIColor colorWithRed: 0.00 green: 0.00 blue: 0.00 alpha: 0.00];
+}
+%end
 %end
 
 // A/B flags
