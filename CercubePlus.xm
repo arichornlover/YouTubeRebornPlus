@@ -47,11 +47,10 @@ static BOOL oldDarkTheme() {
     return ([[NSUserDefaults standardUserDefaults] integerForKey:@"appTheme"] == 2);
 }
 
-static BOOL didFinishLaunching;
 %hook YTAppDelegate
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
-    didFinishLaunching = %orig;
+    BOOL didFinishLaunching = %orig;
 
     if (IsEnabled(@"flex_enabled")) {
         [[FLEXManager sharedManager] showExplorer];
