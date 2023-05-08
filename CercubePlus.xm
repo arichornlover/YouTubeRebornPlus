@@ -184,6 +184,43 @@ static BOOL oldDarkTheme() {
 %end
 %end
 
+// Cercube Dark Theme Fix
+%hook q2I98226 // UIView
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
+}
+%end
+
+%hook x2gQgjZo // UIView
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
+}
+%end
+
+%hook o26tSz86 // UIView
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
+}
+%end
+
+%hook a26MIAOJ
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
+}
+%end
+
+%hook o3maiBvk
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
+}
+%end
+
+%hook u9oIREwy
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
+}
+%end
+
 // A/B flags
 %hook YTColdConfig 
 - (BOOL)respectDeviceCaptionSetting { return NO; } // YouRememberCaption: https://poomsmart.github.io/repo/depictions/youremembercaption.html
@@ -547,6 +584,12 @@ static BOOL oldDarkTheme() {
 }
 %end
 
+%hook YTAsyncCollectionView
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
+}
+%end
+
 %hook YTCollectionViewController
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
     return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
@@ -575,6 +618,12 @@ static BOOL oldDarkTheme() {
 %end
 
 %hook YTInnerTubeCollectionViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
+}
+%end
+
+%hook YTSettingsCell
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
     return pageStyle == 1 ? [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:1.0] : %orig;
 }
@@ -670,6 +719,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
+%hook YTAsyncCollectionView
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
+}
+%end
+
 %hook YTCollectionViewController
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
     return pageStyle == 1 ? [UIColor blackColor] : %orig;
@@ -698,6 +753,12 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 %end
 
 %hook YTInnerTubeCollectionViewController
+- (UIColor *)backgroundColor:(NSInteger)pageStyle {
+    return pageStyle == 1 ? [UIColor blackColor] : %orig;
+}
+%end
+
+%hook YTSettingsCell
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
     return pageStyle == 1 ? [UIColor blackColor] : %orig;
 }
