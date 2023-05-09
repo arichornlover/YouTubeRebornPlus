@@ -26,6 +26,12 @@
 // Video controls overlay options
 "VIDEO_CONTROLS_OVERLAY_OPTIONS" = "ビデオコントロールオーバーレイの設定";
 
+"ENABLE_SHARE_BUTTON" = "Enable Share Button";
+"ENABLE_SHARE_BUTTON_DESC" = "Enable the Share Button in video controls overlay.";
+
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "Enable 'Save To Playlist' Button";
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "Enable the 'Save To Playlist' Button in video controls overlay.";
+
 "HIDE_AUTOPLAY_SWITCH" = "自動再生スイッチを非表示";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "ビデオコントロールオーバーレイの自動再生スイッチを非表示にします";
 
