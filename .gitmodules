@@ -1,7 +1,3 @@
-[submodule "Tweaks/iSponsorBlock"]
-	path = Tweaks/iSponsorBlock
-	url = https://github.com/qnblackcat/iSponsorBlock.git
-	branch = master
 [submodule "Tweaks/YTUHD"]
 	path = Tweaks/YTUHD
 	url = https://github.com/PoomSmart/YTUHD.git
@@ -43,3 +39,6 @@
 [submodule "Tweaks/FLEX"]
 	path = Tweaks/FLEX
 	url = https://github.com/qnblackcat/FLEX-Classes.git
+[submodule "Tweaks/iSponsorBlock"]
+	path = Tweaks/iSponsorBlock
+	url = https://github.com/Galactic-Dev/iSponsorBlock.git
