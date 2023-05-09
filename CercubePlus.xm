@@ -132,17 +132,26 @@ static BOOL oldDarkTheme() {
 %end
 %end
 
-// Hide CC / Autoplay switch / Disable the right panel in fullscreen mode
+// Hide CC / Hide Autoplay switch / Enable Share Button / Enable Save to Playlist Button
 %hook YTMainAppControlsOverlayView
 - (void)setClosedCaptionsOrSubtitlesButtonAvailable:(BOOL)arg1 { // hide CC button
     return IsEnabled(@"hideCC_enabled") ? %orig(NO) : %orig;
 }
-- (void)setAutoplaySwitchButtonRenderer:(id)arg1 { // hide Autoplay
+- (void)setAutoplaySwitchButtonRenderer:(id)arg1 { // hide Autoplay switch
     if (IsEnabled(@"hideAutoplaySwitch_enabled")) {}
+    else { return %orig; }
+}
+- (void)setShareButtonAvailable:(BOOL)arg1 { // enable Share Button
+    if (IsEnabled(@"enableShareButton_enabled")) {}
+    else { return %orig; }
+}
+- (void)setAddToButtonAvailable:(BOOL)arg1 { // enable Save to Playlist Button
+    if (IsEnabled(@"enableSaveToButton_enabled")) {}
     else { return %orig; }
 }
 %end
 
+// Disable the right panel in fullscreen mode
 %hook YTColdConfig
 - (BOOL)isLandscapeEngagementPanelEnabled {
     return IsEnabled(@"hideRightPanel_enabled") ? NO : %orig;
