@@ -1,6 +1,6 @@
 TARGET = iphone:clang:15.5:14.0
 CercubePlus_USE_FISHHOOK = 0
-ARCHS = arm64
+ARCHS = arm64 arm64e
 MODULES = jailed
 FINALPACKAGE = 1
 CODESIGN_IPA = 0
