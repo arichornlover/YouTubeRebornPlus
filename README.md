@@ -234,17 +234,24 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/arichorn/CercubePlusExtra/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.16.2-5.3.13)](https://tinyurl.com/ysbzr8ye) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.18.2-5.3.11)](https://tinyurl.com/5a5jn7ra) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Apr 25 2023)_
+<details>
+  <summary>Alternative Download</summary>
+  
+[Open in AltStore (v18.14.1-5.3.11-F2)](https://tinyurl.com/4exxknn8) - This is the **v18.14.1-5.3.11-F2** release. only use this to resolve the OLED/OLD Dark Mode Problem.
+
+</details>
+
+- Version info: _(May 9 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.16.2 | ✖︎ |
-| **Cercube** | Majd Alfhaily | 5.3.13 | ✖︎ |
+| **YouTube** | Google Inc | 18.18.2 | ✖︎ |
+| **Cercube** | Majd Alfhaily | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
