@@ -134,7 +134,7 @@ extern NSBundle *CercubePlusBundle();
     YTSettingsSectionItem *videoControlOverlayGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"VIDEO_CONTROLS_OVERLAY_OPTIONS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
         NSArray <YTSettingsSectionItem *> *rows = @[
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_SHARE_BUTTON")
-                titleDescription:LOC(@"ENABLE_SHARE_BUTTOON_DESC")
+                titleDescription:LOC(@"ENABLE_SHARE_BUTTON_DESC")
                 accessibilityIdentifier:nil
                 switchOn:IsEnabled(@"enableShareButton_enabled")
                 switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
