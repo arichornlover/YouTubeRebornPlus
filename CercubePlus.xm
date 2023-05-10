@@ -251,8 +251,22 @@ static BOOL oldDarkTheme() {
 %end
 
 // Disable YouTube Ads - @arichorn
+%group gRemoveAds
 %hook YTHotConfig
 - (BOOL)disableAfmaIdfaCollection { return NO; }
+%end
+
+%hook YTIElementRenderer
+- (NSData *)elementData {
+    if (self.hasCompatibilityOptions && self.compatibilityOptions.hasAdLoggingData)
+        return nil;
+    NSString *description = [self description];
+    // product_carousel.eml product_engagement_panel.eml product_item.eml
+    if ([description containsString:@"brand_promo"] || [description containsString:@"statement_banner"])
+        return [NSData data];
+    return %orig;
+}
+%end
 %end
 
 // Disable Wifi Related Settings - @arichorn
@@ -1616,6 +1630,9 @@ void DEMC_centerRenderingView() {
     }
     if (IsEnabled(@"ytSpeed_enabled")) {
         %init(gYTSpeed);
+    }
+    if (IsEnabled(@"removeAds_enabled")) {
+        %init(gRemoveAds);
     }
     if (IsEnabled(@"stockVolumeHUD_enabled")) {
         %init(gStockVolumeHUD);
