@@ -80,14 +80,8 @@ static BOOL oldDarkTheme() {
 }
 %end
 
-# pragma mark - Hide Cercube Button && Notification Button
+# pragma mark - Notification Button
 %hook YTRightNavigationButtons
-- (void)didMoveToWindow {
-    %orig;
-    if (IsEnabled(@"hideCercubeButton_enabled")) { 
-        self.cercubeButton.hidden = YES; 
-    }
-}
 - (void)layoutSubviews {
     %orig;
     if (IsEnabled(@"hideNotificationButton_enabled")) {
@@ -99,27 +93,7 @@ static BOOL oldDarkTheme() {
 }
 %end
 
-// Hide Cercube PiP & Download button
-%group gHideCercubePiP
-%hook UIStackView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)]) {
-        self.subviews[0].hidden = YES; 
-    }
-}
-%end
-%end
-
-%hook UIStackView // Hide Cercube Download Button (remove this in your Forked Repo if you want this back on.)
-- (void)didMoveToWindows {
-    if ([self.nextResponder isKindOfClass:%c(YTMainAppVideoPlayerOverlayView)]) {
-        self.subviews[1].hidden = YES;
-    }
-}
-%end
-
-// Hide Cast Button since Cercube's option is not working
+// Hide Cast Button
 %group gHideCastButton
 %hook MDXPlaybackRouteButtonController
 - (BOOL)isPersistentCastIconEnabled { return NO; }
@@ -141,11 +115,11 @@ static BOOL oldDarkTheme() {
     if (IsEnabled(@"hideAutoplaySwitch_enabled")) {}
     else { return %orig; }
 }
-- (void)setShareButtonAvailable:(BOOL)arg1 { // enable Share Button
++ (void)setShareButtonAvailable:(BOOL)arg1 { // enable Share Button
     if (IsEnabled(@"enableShareButton_enabled")) {}
     else { return %orig; }
 }
-- (void)setAddToButtonAvailable:(BOOL)arg1 { // enable Save to Playlist Button
++ (void)setAddToButtonAvailable:(BOOL)arg1 { // enable Save to Playlist Button
     if (IsEnabled(@"enableSaveToButton_enabled")) {}
     else { return %orig; }
 }
@@ -193,53 +167,11 @@ static BOOL oldDarkTheme() {
 %end
 %end
 
-// Cercube Dark Theme Fix
-%hook q2I98226 // UIView
-- (UIColor *)backgroundColor:(NSInteger)pageStyle {
-    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
-}
-%end
-
-%hook x2gQgjZo // UIView
-- (UIColor *)backgroundColor:(NSInteger)pageStyle {
-    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
-}
-%end
-
-%hook o26tSz86 // UIView
-- (UIColor *)backgroundColor:(NSInteger)pageStyle {
-    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
-}
-%end
-
-%hook a26MIAOJ
-- (UIColor *)backgroundColor:(NSInteger)pageStyle {
-    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
-}
-%end
-
-%hook o3maiBvk
-- (UIColor *)backgroundColor:(NSInteger)pageStyle {
-    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
-}
-%end
-
-%hook u9oIREwy
-- (UIColor *)backgroundColor:(NSInteger)pageStyle {
-    return pageStyle == 1 ? [UIColor colorWithRed: 0.06 green: 0.06 blue: 0.06 alpha: 1.00] : %orig;
-}
-%end
-
 // A/B flags
 %hook YTColdConfig 
 - (BOOL)respectDeviceCaptionSetting { return NO; } // YouRememberCaption: https://poomsmart.github.io/repo/depictions/youremembercaption.html
 - (BOOL)isLandscapeEngagementPanelSwipeRightToDismissEnabled { return YES; } // Swipe right to dismiss the right panel in fullscreen mode
-- (BOOL)mainAppCoreClientIosTransientVisualGlitchInPivotBarFix { return NO; } // Fix uYou's label glitching - qnblackcat/uYouPlus#552
-%end
-
-// Disabled App Breaking Dialog Flags - @arichorn
-%hook YTColdConfig
-- (BOOL)commercePlatformClientEnablePopupWebviewInWebviewDialogController { return NO;}
+- (BOOL)commercePlatformClientEnablePopupWebviewInWebviewDialogController { return NO;} // Disable In-App Website in the App
 %end
 
 // Hide Upgrade Dialog - @arichorn
@@ -983,11 +915,6 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
     }
 }
 %end
-
-// Incompatibility with the new YT Dark theme
-%hook YTColdConfig
-- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
-%end
 %end
 
 // OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
@@ -1455,6 +1382,13 @@ void DEMC_centerRenderingView() {
 %hook YTInlinePlayerBarContainerView
 - (id)quietProgressBarColor {
     return IsEnabled(@"redProgressBar_enabled") ? [UIColor redColor] : %orig;
+}
+%end
+
+// Bring back the old buffered progress bar - @dayanch96
+%hook YTSegmentableInlinePlayerBarView
+- (UIColor *)_unbufferedProgressBarColor {
+return IsEnabled(@"oldBufferedProgressBar_enabled") ? [UIColor colorWithRed: 0.65 green: 0.65 blue: 0.65 alpha: 0.60] : %orig;
 }
 %end
 
