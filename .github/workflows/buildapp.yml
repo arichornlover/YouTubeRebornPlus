@@ -1,14 +1,14 @@
 # Original idea by @ISnackable. Many thanks to him for handling the most hardest parts!
 # https://github.com/ISnackable/CercubePlus/blob/main/.github/workflows/Build.yml
 
-name: Build and Release CercubePlus
+name: Build and Release YouTubeRebornPlus
 
 on:
   workflow_dispatch:
     inputs:
-      cercube_version:
-        description: "The version of Cercube"
-        default: "5.3.11"
+      reborn_version:
+        description: "The version of YouTube Reborn"
+        default: "4.0.10"
         required: true
         type: string
       decrypted_youtube_url:
@@ -43,7 +43,7 @@ concurrency:
 
 jobs:
   build:
-    name: Build CercubePlus
+    name: Build YouTubeRebornPlus
     runs-on: macos-latest
     permissions:
       contents: write
@@ -97,24 +97,26 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Download Cercube & Prepare YouTube iPA
+      - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl "https://dl.dropboxusercontent.com/s/b01erqbp3ajc5e2/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
-          echo -e "==> \033[1mCercube v${{ inputs.cercube_version }} downloaded! \033[0m"
+          curl "https://dl.dropboxusercontent.com/s/8xv1vota8elfoml/YouTube.Reborn.v4.0.9.deb" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.0.9.deb"
+          echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Cercube && tar -xf "me.alfhaily.cercube_5.3.11_iphoneos-arm.deb" && tar -xf data.tar.* && cd ../../..
-          echo -e "==> \033[1mCercube v${{ inputs.cercube_version }} unpacked! \033[0m"
+          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.0.9.deb" && tar -xf data.tar.* && cd ../../..
+          echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} unpacked! \033[0m"
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
           rm -rf main/tmp/Payload/YouTube.app/PlugIns/*
           cp -R main/Extensions/*.appex main/tmp/Payload/YouTube.app/PlugIns
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} unpacked! \033[0m"
+          dpkg-deb --build main com.arichorn.youtuberebornplus.deb
+          echo -e "==> \033[1mDeb has been built! \033[0m"
 
         env:
           THEOS: ${{ github.workspace }}/theos
-          CERCUBE_VERSION: ${{ inputs.cercube_version }}
+          REBORN_VERSION: ${{ inputs.reborn_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
           YOUTUBE_URL: ${{ inputs.decrypted_youtube_url }}
 
@@ -126,13 +128,13 @@ jobs:
           sed -i '' "12s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
           sed -i '' "11s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
           make package FINALPACKAGE=1
-          (mv "packages/$(ls -t packages | head -n1)" "packages/CercubePlus_${{ env.YOUTUBE_VERSION }}_${{ env.CERCUBE_VERSION }}.ipa")
+          (mv "packages/$(ls -t packages | head -n1)" "packages/YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
           echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
           echo -e "==> \033[1mBundle ID: ${{ env.BUNDLE_ID }}\033[0m"
         env:
           THEOS: ${{ github.workspace }}/theos
-          CERCUBE_VERSION: ${{ inputs.cercube_version }}
+          REBORN_VERSION: ${{ inputs.reborn_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
           BUNDLE_ID: ${{ inputs.bundle_id }}
           APP_NAME: ${{ inputs.app_name }}
@@ -140,10 +142,10 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v3.1.2
         env:
-          CERCUBE_VERSION: ${{ inputs.cercube_version }}
+          REBORN_VERSION: ${{ inputs.reborn_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
         with:
-          name: CercubePlus_${{ env.YOUTUBE_VERSION }}_${{ env.CERCUBE_VERSION }}
+          name: YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
 
@@ -152,11 +154,11 @@ jobs:
         uses: softprops/action-gh-release@v0.1.15
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CERCUBE_VERSION: ${{ inputs.CERCUBE_VERSION }}
+          REBORN_VERSION: ${{ inputs.REBORN_VERSION }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
           DRAFT: ${{ inputs.create_release }}
         with:
-          tag_name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
-          name: v${{ env.YOUTUBE_VERSION }}-${{ env.CERCUBE_VERSION }}-(${{ github.run_number }})
+          tag_name: v${{ env.YOUTUBE_VERSION }}-${{ env.REBORN_VERSION }}-(${{ github.run_number }})
+          name: v${{ env.YOUTUBE_VERSION }}-${{ env.REBORN_VERSION }}-(${{ github.run_number }})
           files: main/packages/*.ipa
           draft: ${{ env.DRAFT }}
