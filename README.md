@@ -1,7 +1,7 @@
-## Cercube with extra features!
+## YouTube Reborn but with more features!
 
 
-![IMAGE_CERCUBEPLUS_PREVIEW](https://user-images.githubusercontent.com/78001398/217129808-4efa2213-9e01-4fa4-a9d4-04c90e7fa88b.png)
+![IMAGE_YOUTUBEREBORNPLUS_PREVIEW](https://user-images.githubusercontent.com/78001398/217129808-4efa2213-9e01-4fa4-a9d4-04c90e7fa88b.png)
 
 ---
 
@@ -33,7 +33,7 @@
 # Credits
 
 <table id='maintainer credit'>
-Special thanks to these developer(s) for maintaining and improving CercubePlus!
+Special thanks to these developer(s) for maintaining and improving YouTubeRebornPlus!
 <tr>
 <td id='arichorn'>
 <a href='https://github.com/arichorn'>
@@ -55,7 +55,7 @@ Special thanks to these developer(s) for maintaining and improving CercubePlus!
 </td>
 
 <table id='credit'>
-Special thanks to all the developers who have contributed to CercubePlus/CercubePlusExtra!
+Special thanks to all the developers who have contributed to CercubePlus/YouTubeRebornPlus!
 <tr>
 <td id='majd'>
 <a href='https://github.com/majd'>
@@ -158,13 +158,17 @@ Special thanks to all the developers who have contributed to CercubePlus/Cercube
 
 # Features
 
-1. **Cercube:**
+1. **YouTube Reborn:**
 
-- Block all advertisements & Enable background playback.
+- Block all advertisements, Enable background playback & etc. (Video Options)
 
 - Set default player quality on WiFi & Celullar.
 
-- Save videos in high resolution, save videos as audio-only, save public playlists (beta).
+- Tons of Options such as Video Options, Overlay Options, Tab Bar Options, PiP Options, Shorts Options & etc.
+
+- Customize the background color of Dark/Light theme. (Colour Options)
+
+- Download videos in high resolution, also download videos as audio-only.
 
 - And many more...
 
@@ -212,11 +216,11 @@ any many more...
 
 # Known issues
 
-1. **Cercube**: 
+1. **YouTube Reborn**: 
 
-- Hide Cast button is not working. (Workaround: Hide cast button in CercubePlus settings)
+- Downloading videos/audio not working. (probably a Client-Side change, don't know why this happened.)
 
-- The Updated Dark Mode in the YouTube App is not Present or Working in Cercube v5.3.13 & older versions
+- The Colour Options not working in the YouTube App when using YouTube v18.15.1 & newer versions.
 
 2. **LowContrastMode**: this tweak doesn't work everywhere with every ui element on the YouTube App.
 
@@ -232,26 +236,19 @@ any many more...
 
 # Download (IPA)
 
-- **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/arichorn/CercubePlusExtra/releases/latest).
+- **YouTubeRebornPlus** (or you can call it YouTubeReborn+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/arichorn/YouTubeRebornPlus/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.18.2-5.3.11)](https://tinyurl.com/5a5jn7ra) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.14.1-4.0.10)](https://tinyurl.com/47mr2xd7) - It will take a while to install because AltStore needs to download the IPA first.
 
-<details>
-  <summary>Alternative Download</summary>
-  
-[Open in AltStore (v18.14.1-5.3.11-F2)](https://tinyurl.com/4exxknn8) - This is the **v18.14.1-5.3.11-F2** release. only use this to resolve the OLED/OLD Dark Mode Problem.
-
-</details>
-
-- Version info: _(May 9 2023)_
+- Version info: _(May 15 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.18.2 | ✖︎ |
-| **Cercube** | Majd Alfhaily | 5.3.11 | ✖︎ |
+| **YouTube** | Google Inc | 18.14.1 | ✖︎ |
+| **YouTube Reborm** | LillieH1000 | 4.0.10 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -284,6 +281,6 @@ any many more...
   - Venmo: https://venmo.com/u/DavidBrett
 
 # Building(s) (optional)
-See [CercubePlusExtra/Building - Wiki](https://github.com/arichorn/CercubePlusExtra/wiki/Building)
+See [YouTubeRebornPlus/Building - Wiki](https://github.com/arichorn/YouTubeRebornPlus/wiki/Building)
 or Another Version [uYouPlus/Building - Wiki](https://github.com/qnblackcat/uYouPlus/wiki/Building)
 
