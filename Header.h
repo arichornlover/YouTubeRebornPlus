@@ -57,7 +57,7 @@
 - (void)setRate:(float)rate;
 @end
 
-// CercubePlus
+// YouTubeRebornPlus
 @interface YTChipCloudCell : UIView
 @end
 
@@ -78,7 +78,7 @@
 @property (nonatomic, assign, readwrite) BOOL enableSnapToChapter;
 @end
 
-// Cercube button in Nav bar
+// Navigation Buttons
 @interface MDCButton : UIButton
 @end
 
@@ -86,6 +86,7 @@
 @property (nonatomic, strong, readwrite) MDCButton *cercubeButton;
 @property YTQTMButton *notificationButton;
 @property YTQTMButton *sponsorBlockButton;
+@property YTQTMButton *youtubeRebornButton;
 @end
 
 // IAmYouTube
