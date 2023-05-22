@@ -42,3 +42,6 @@
 [submodule "Tweaks/iSponsorBlock"]
 	path = Tweaks/iSponsorBlock
 	url = https://github.com/Galactic-Dev/iSponsorBlock.git
+[submodule "Tweaks/DontEatMyContent"]
+	path = Tweaks/DontEatMyContent
+	url = https://github.com/therealFoxster/DontEatMyContent
