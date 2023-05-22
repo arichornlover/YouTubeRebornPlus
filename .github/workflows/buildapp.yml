@@ -8,7 +8,7 @@ on:
     inputs:
       reborn_version:
         description: "The version of YouTube Reborn"
-        default: "4.0.10"
+        default: "4.0.12"
         required: true
         type: string
       decrypted_youtube_url:
