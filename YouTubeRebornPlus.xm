@@ -1344,9 +1344,6 @@ return IsEnabled(@"oldBufferedProgressBar_enabled") ? [UIColor colorWithRed: 0.6
     if (IsEnabled(@"ytSpeed_enabled")) {
         %init(gYTSpeed);
     }
-    if (IsEnabled(@"removeAds_enabled")) {
-        %init(gRemoveAds);
-    }
     if (IsEnabled(@"stockVolumeHUD_enabled")) {
         %init(gStockVolumeHUD);
     }
