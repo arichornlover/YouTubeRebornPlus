@@ -332,6 +332,22 @@ static BOOL oldDarkTheme() {
 
 // YTNoModernUI - @arichorn
 %group gYTNoModernUI
+%hook YTVersionUtils // YTNoModernUI Version
++ (NSString *)appVersion { return @"16.42.3"; }
+%end
+
+%hook YTInlinePlayerBarContainerView // Red Progress Bar - YTNoModernUI
+- (id)quietProgressBarColor {
+    return [UIColor redColor];
+}
+%end
+
+%hook YTSegmentableInlinePlayerBarView // Old Buffer Bar - YTNoModernUI
+- (void)setBufferedProgressBarColor:(id)arg1 {
+     [UIColor colorWithRed:0.65 green:0.65 blue:0.65 alpha:0.60];
+}
+%end
+
 %hook YTQTMButton
 - (BOOL)buttonModernizationEnabled { return NO; }
 %end
