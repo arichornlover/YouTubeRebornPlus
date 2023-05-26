@@ -287,3 +287,4 @@ any many more...
 See [CercubePlusExtra/Building - Wiki](https://github.com/arichorn/CercubePlusExtra/wiki/Building)
 or Another Version [uYouPlus/Building - Wiki](https://github.com/qnblackcat/uYouPlus/wiki/Building)
 
+![IMAGE CERCUBEPLUS LOGO](https://github.com/arichorn/YouTubeRebornPlus/assets/78001398/57051dbb-82e1-4a45-ae28-a6dc741f3393)
