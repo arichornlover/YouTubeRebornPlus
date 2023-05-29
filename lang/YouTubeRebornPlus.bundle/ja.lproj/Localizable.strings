@@ -26,11 +26,11 @@
 // Video controls overlay options
 "VIDEO_CONTROLS_OVERLAY_OPTIONS" = "ビデオコントロールオーバーレイの設定";
 
-"ENABLE_SHARE_BUTTON" = "Enable Share Button";
-"ENABLE_SHARE_BUTTON_DESC" = "Enable the Share Button in video controls overlay.";
+"ENABLE_SHARE_BUTTON" = "共有ボタンを有効化";
+"ENABLE_SHARE_BUTTON_DESC" = "ビデオコントロールオーバーレイの共有ボタンを有効にします";
 
-"ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "Enable 'Save To Playlist' Button";
-"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "Enable the 'Save To Playlist' Button in video controls overlay.";
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "「再生リストに保存」ボタンを有効化";
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "ビデオコントロールオーバーレイの「再生リストに保存」ボタンを有効にします";
 
 "HIDE_AUTOPLAY_SWITCH" = "自動再生スイッチを非表示";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "ビデオコントロールオーバーレイの自動再生スイッチを非表示にします";
@@ -39,7 +39,7 @@
 "HIDE_SUBTITLES_BUTTON_DESC" = "ビデオコントロールオーバーレイの字幕ボタンを非表示にします";
 
 "HIDE_HUD_MESSAGES" = "HUDメッセージを非表示";
-"HIDE_HUD_MESSAGES_DESC" = "例: CCはオン/オフです, 動画のループ再生はオンです等";
+"HIDE_HUD_MESSAGES_DESC" = "例: CCはオン/オフです, 動画のループ再生はオンですなど";
 
 "HIDE_PAID_PROMOTION_CARDS" = "有料プロモーションカードを非表示";
 "HIDE_PAID_PROMOTION_CARDS_DESC" = "一部の動画の「有料プロモーションを含みます」カードを非表示にします";
@@ -147,7 +147,7 @@
 "HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です";
 
 "HIDE_CHIP_BAR" = "トップバーを非表示";
-"HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム 等)と\n登録チャンネル(すべてのビデオ,視聴を続ける 等)リボンのトップバーを非表示にします。\nアプリの再起動が必要です";
+"HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム など)と\n登録チャンネル(すべてのビデオ,視聴を続ける など)リボンのトップバーを非表示にします。\nアプリの再起動が必要です";
 
 "HIDE_MODERN_INTERFACE" = "モダンインターフェイスを非表示 (YTNoModernUI)";
 "HIDE_MODERN_INTERFACE_DESC" = "YouTubeによって追加されたモダンな要素を隠すにはこれを有効にしてください。アンビエントモード,丸みを帯びたデザインなどを削除します。\nアプリの再起動が必要です";
