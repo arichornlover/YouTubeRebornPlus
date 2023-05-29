@@ -141,11 +141,11 @@ static BOOL oldDarkTheme() {
     if (IsEnabled(@"hideAutoplaySwitch_enabled")) {}
     else { return %orig; }
 }
-- (void)setShareButtonAvailable:(BOOL)arg1 { // enable Share Button
+- (void)setShareButtonAvailable:(BOOL)arg2 { // enable Share Button
     if (IsEnabled(@"enableShareButton_enabled")) {}
     else { return %orig; }
 }
-- (void)setAddToButtonAvailable:(BOOL)arg1 { // enable Save to Playlist Button
+- (void)setAddToButtonAvailable:(BOOL)arg2 { // enable Save to Playlist Button
     if (IsEnabled(@"enableSaveToButton_enabled")) {}
     else { return %orig; }
 }
