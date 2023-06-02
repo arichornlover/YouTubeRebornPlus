@@ -2,6 +2,7 @@
 #import "Tweaks/YouTubeHeader/YTQTMButton.h" // Header.h
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <CaptainHook/CaptainHook.h>
 #import <objc/runtime.h>
 #import <dlfcn.h>
 #import <sys/utsname.h>
@@ -126,6 +127,7 @@ void DEMC_deactivate();
 void DEMC_centerRenderingView();
 
 @interface YTPlayerView : UIView
+- (void)downloadVideo;
 - (id)renderingView;
 @end
 
