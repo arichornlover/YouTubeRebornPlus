@@ -66,29 +66,64 @@ static BOOL pinkContrastMode() {
 }
 %end
 
-%hook YTCollectionView  // Changes Live Chat Texts
+%hook YTCollectionView
  - (void)setTintColor:(UIColor *)color { 
      return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
-%hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)tintColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)overflowButton {
-         return [UIColor whiteColor];
+%hook ASTextNode
+- (NSAttributedString *)attributedString {
+    NSAttributedString *originalAttributedString = %orig;
+
+    NSMutableAttributedString *newAttributedString = [originalAttributedString mutableCopy];
+    [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
+
+    return newAttributedString;
 }
 %end
 
-%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
-- (UIColor *)_ASDisplayView {
-         return [UIColor whiteColor];
+%hook UIButton 
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+    %log;
+    color = [UIColor whiteColor];
+    %orig(color, state);
 }
-- (UIColor *)ELMAnimatedVectorView {
+%end
+
+%hook UILabel
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextField
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextView
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook VideoTitleLabel
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook _ASDisplayView
+- (UIColor *)textColor {
          return [UIColor whiteColor];
 }
 %end
@@ -122,36 +157,65 @@ static BOOL pinkContrastMode() {
  }
 %end
 
-%hook YTCollectionView // Changes Live Chat Texts
-- (void)setTintColor:(UIColor *)color { 
-    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+%hook YTCollectionView
+ - (void)setTintColor:(UIColor *)color { 
+     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
-%hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)tintColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)overflowButton {
-         return [UIColor whiteColor];
+%hook ASTextNode
+- (NSAttributedString *)attributedString {
+    NSAttributedString *originalAttributedString = %orig;
+
+    NSMutableAttributedString *newAttributedString = [originalAttributedString mutableCopy];
+    [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
+
+    return newAttributedString;
 }
 %end
 
-%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
-- (UIColor *)_ASDisplayView {
-         return [UIColor whiteColor];
+%hook UIButton 
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+    %log;
+    color = [UIColor whiteColor];
+    %orig(color, state);
+}
+%end
+
+%hook UILabel
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextField
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextView
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook VideoTitleLabel
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
 }
 %end
 
 %hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-	if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
+- (UIColor *)textColor {
+         return [UIColor whiteColor];
 }
 %end
 %end
@@ -184,36 +248,65 @@ static BOOL pinkContrastMode() {
  }
 %end
 
-%hook YTCollectionView  // Changes Live Chat Texts
-- (void)setTintColor:(UIColor *)color { 
-    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+%hook YTCollectionView
+ - (void)setTintColor:(UIColor *)color { 
+     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
-%hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)tintColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)overflowButton {
-         return [UIColor whiteColor];
+%hook ASTextNode
+- (NSAttributedString *)attributedString {
+    NSAttributedString *originalAttributedString = %orig;
+
+    NSMutableAttributedString *newAttributedString = [originalAttributedString mutableCopy];
+    [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
+
+    return newAttributedString;
 }
 %end
 
-%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
-- (UIColor *)_ASDisplayView {
-         return [UIColor whiteColor];
+%hook UIButton 
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+    %log;
+    color = [UIColor whiteColor];
+    %orig(color, state);
+}
+%end
+
+%hook UILabel
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextField
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextView
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook VideoTitleLabel
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
 }
 %end
 
 %hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
+- (UIColor *)textColor {
+         return [UIColor whiteColor];
 }
 %end
 %end
@@ -246,36 +339,65 @@ static BOOL pinkContrastMode() {
  }
 %end
 
-%hook YTCollectionView  // Changes Live Chat Texts
-- (void)setTintColor:(UIColor *)color { 
-    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+%hook YTCollectionView
+ - (void)setTintColor:(UIColor *)color { 
+     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
-%hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)tintColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)overflowButton {
-         return [UIColor whiteColor];
+%hook ASTextNode
+- (NSAttributedString *)attributedString {
+    NSAttributedString *originalAttributedString = %orig;
+
+    NSMutableAttributedString *newAttributedString = [originalAttributedString mutableCopy];
+    [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
+
+    return newAttributedString;
 }
 %end
 
-%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
-- (UIColor *)_ASDisplayView {
-         return [UIColor whiteColor];
+%hook UIButton 
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+    %log;
+    color = [UIColor whiteColor];
+    %orig(color, state);
+}
+%end
+
+%hook UILabel
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextField
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextView
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook VideoTitleLabel
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
 }
 %end
 
 %hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
+- (UIColor *)textColor {
+         return [UIColor whiteColor];
 }
 %end
 %end
@@ -308,36 +430,65 @@ static BOOL pinkContrastMode() {
  }
 %end
 
-%hook YTCollectionView  // Changes Live Chat Texts
-- (void)setTintColor:(UIColor *)color { 
-    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+%hook YTCollectionView
+ - (void)setTintColor:(UIColor *)color { 
+     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
-%hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)tintColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)overflowButton {
-         return [UIColor whiteColor];
+%hook ASTextNode
+- (NSAttributedString *)attributedString {
+    NSAttributedString *originalAttributedString = %orig;
+
+    NSMutableAttributedString *newAttributedString = [originalAttributedString mutableCopy];
+    [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
+
+    return newAttributedString;
 }
 %end
 
-%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
-- (UIColor *)_ASDisplayView {
-         return [UIColor whiteColor];
+%hook UIButton 
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+    %log;
+    color = [UIColor whiteColor];
+    %orig(color, state);
+}
+%end
+
+%hook UILabel
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextField
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextView
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook VideoTitleLabel
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
 }
 %end
 
 %hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
+- (UIColor *)textColor {
+         return [UIColor whiteColor];
 }
 %end
 %end
@@ -370,36 +521,65 @@ static BOOL pinkContrastMode() {
  }
 %end
 
-%hook YTCollectionView  // Changes Live Chat Texts
-- (void)setTintColor:(UIColor *)color { 
-    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+%hook YTCollectionView
+ - (void)setTintColor:(UIColor *)color { 
+     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
-%hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)tintColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)overflowButton {
-         return [UIColor whiteColor];
+%hook ASTextNode
+- (NSAttributedString *)attributedString {
+    NSAttributedString *originalAttributedString = %orig;
+
+    NSMutableAttributedString *newAttributedString = [originalAttributedString mutableCopy];
+    [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
+
+    return newAttributedString;
 }
 %end
 
-%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
-- (UIColor *)_ASDisplayView {
-         return [UIColor whiteColor];
+%hook UIButton 
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+    %log;
+    color = [UIColor whiteColor];
+    %orig(color, state);
+}
+%end
+
+%hook UILabel
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextField
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextView
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook VideoTitleLabel
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
 }
 %end
 
 %hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
+- (UIColor *)textColor {
+         return [UIColor whiteColor];
 }
 %end
 %end
@@ -432,36 +612,65 @@ static BOOL pinkContrastMode() {
  }
 %end
 
-%hook YTCollectionView  // Changes Live Chat Texts
-- (void)setTintColor:(UIColor *)color { 
-    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+%hook YTCollectionView
+ - (void)setTintColor:(UIColor *)color { 
+     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
-%hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)tintColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)overflowButton {
-         return [UIColor whiteColor];
+%hook ASTextNode
+- (NSAttributedString *)attributedString {
+    NSAttributedString *originalAttributedString = %orig;
+
+    NSMutableAttributedString *newAttributedString = [originalAttributedString mutableCopy];
+    [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
+
+    return newAttributedString;
 }
 %end
 
-%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
-- (UIColor *)_ASDisplayView {
-         return [UIColor whiteColor];
+%hook UIButton 
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+    %log;
+    color = [UIColor whiteColor];
+    %orig(color, state);
+}
+%end
+
+%hook UILabel
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextField
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextView
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook VideoTitleLabel
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
 }
 %end
 
 %hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
+- (UIColor *)textColor {
+         return [UIColor whiteColor];
 }
 %end
 %end
@@ -494,36 +703,65 @@ static BOOL pinkContrastMode() {
  }
 %end
 
-%hook YTCollectionView  // Changes Live Chat Texts
-- (void)setTintColor:(UIColor *)color { 
-    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+%hook YTCollectionView
+ - (void)setTintColor:(UIColor *)color { 
+     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
-%hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)tintColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)overflowButton {
-         return [UIColor whiteColor];
+%hook ASTextNode
+- (NSAttributedString *)attributedString {
+    NSAttributedString *originalAttributedString = %orig;
+
+    NSMutableAttributedString *newAttributedString = [originalAttributedString mutableCopy];
+    [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
+
+    return newAttributedString;
 }
 %end
 
-%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
-- (UIColor *)_ASDisplayView {
-         return [UIColor whiteColor];
+%hook UIButton
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+    %log;
+    color = [UIColor whiteColor];
+    %orig(color, state);
+}
+%end
+
+%hook UILabel
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextField
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextView
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook VideoTitleLabel
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
 }
 %end
 
 %hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
+- (UIColor *)textColor {
+         return [UIColor whiteColor];
 }
 %end
 %end
@@ -556,36 +794,65 @@ static BOOL pinkContrastMode() {
  }
 %end
 
-%hook YTCollectionView  // Changes Live Chat Texts
-- (void)setTintColor:(UIColor *)color { 
-    return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+%hook YTCollectionView
+ - (void)setTintColor:(UIColor *)color { 
+     return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
 }
 %end
 
-%hook YTQTMButton // Changes Tweak Icons/Texts/Images
-- (UIColor *)whiteColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)tintColor {
-         return [UIColor whiteColor];
-}
-- (UIColor *)overflowButton {
-         return [UIColor whiteColor];
+%hook ASTextNode
+- (NSAttributedString *)attributedString {
+    NSAttributedString *originalAttributedString = %orig;
+
+    NSMutableAttributedString *newAttributedString = [originalAttributedString mutableCopy];
+    [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
+
+    return newAttributedString;
 }
 %end
 
-%hook ELMAnimatedVectorView // Changes the Like Button Animation Color. 
-- (UIColor *)_ASDisplayView {
-         return [UIColor whiteColor];
+%hook UIButton 
+- (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
+    %log;
+    color = [UIColor whiteColor];
+    %orig(color, state);
+}
+%end
+
+%hook UILabel
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextField
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UITextView
+- (void)setTextColor:(UIColor *)textColor {
+    %log;
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook VideoTitleLabel
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
 }
 %end
 
 %hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.comment_composer"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"id.elements.components.video_list_entry"]) { self.tintColor = [UIColor whiteColor]; }
-    if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.tintColor = [UIColor whiteColor]; }
+- (UIColor *)textColor {
+         return [UIColor whiteColor];
 }
 %end
 %end
