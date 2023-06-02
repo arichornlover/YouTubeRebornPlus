@@ -32,7 +32,7 @@ before-package::
 	@cp -R Tweaks/YTABConfig/layout/Library/Application\ Support/YTABC.bundle Resources/
 	@cp -R Tweaks/YouMute/layout/Library/Application\ Support/YouMute.bundle Resources/
 	@cp -R Tweaks/DontEatMyContent/layout/Library/Application\ Support/DontEatMyContent.bundle Resources/
-	@cp -R Tweaks/iSponsorBlock/layout/Library/Application\ Support/iSponsorBlock Resources/
+	@cp -R Tweaks/iSponsorBlock/layout/Library/Application\ Support/iSponsorBlock.bundle Resources/
 	@cp -R Tweaks/Reborn/Library/Application\ Support/YouTubeReborn.bundle Resources/
 	@cp -R lang/YouTubeRebornPlus.bundle Resources/
 	@echo -e "==> \033[1mChanging the installation path of dylibs...\033[0m"
