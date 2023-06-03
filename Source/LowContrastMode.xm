@@ -141,8 +141,6 @@ static BOOL pinkContrastMode() {
     [super setTextColor:[UIColor blueColor]]; // Replace blueColor with your desired text color.
 }
 @end
-
-%end
 %end
 
 
