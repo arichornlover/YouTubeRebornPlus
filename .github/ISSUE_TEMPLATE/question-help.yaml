@@ -5,8 +5,16 @@ labels: question
 body:
 - type: checkboxes
   attributes:
+    label: Have you read the FAQ?
+    description: _Make sure you actually visit the [**FAQ**](https://github.com/qnblackcat/uYouPlus/wiki/FAQ) page!
+    options:
+    - label: Yes, I did read the FAQ
+      required: true
+
+- type: checkboxes
+  attributes:
     label: Is there an existing issue/question for this?
-    description: _Please search to see if an issue already exists for the bug you encountered. **I DON\'T MAKE THIS TICK BOX FOR COSMETIC.**_
+    description: _Please search to see if an issue already exists for the bug you encountered.
     options:
     - label: I have searched the existing issues
       required: true
