@@ -238,9 +238,9 @@ any many more...
 
 - **YouTubeRebornPlus** (or you can call it YouTubeReborn+) requires iOS & iPadOS 14.0 and later. The latest version of **YouTubeRebornPlus** can be found in the [Release tab](https://github.com/arichorn/YouTubeRebornPlus/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.20.3-4.0.12)](https://tinyurl.com/yy967ynk) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.21.3-4.0.13)](https://tinyurl.com/5ernvecm) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(May 22 2023)_
+- Version info: _(June 2 2023)_
 
 <details>
   <summary>Expand!</summary>
@@ -248,16 +248,16 @@ any many more...
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
 | **YouTube** | Google Inc | 18.14.1 | ✖︎ |
-| **YouTube Reborm** | LillieH1000 | 4.0.12 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
+| **YouTube Reborm** | LillieH1000 | 4.0.13 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
-| **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
+| **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
-| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.8 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
+| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.10 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
 | **LowContrastMode** | arichorn | 1.2.3 | [✔︎](https://github.com/arichorn/LowContrastMode) |
-| **YTUHD** | PoomSmart | 1.3.5-1 | [✔︎](https://github.com/PoomSmart/YTUHD) |
+| **YTUHD** | PoomSmart | 1.4.0 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | PoomSmart | 1.7.19-2 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YouMute** | PoomSmart | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YouMute) |
 | **YTABConfig** | PoomSmart | 1.5.0-1 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
