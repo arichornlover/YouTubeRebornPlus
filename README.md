@@ -238,9 +238,9 @@ any many more...
 
 - **YouTubeRebornPlus** (or you can call it YouTubeReborn+) requires iOS & iPadOS 14.0 and later. The latest version of **YouTubeRebornPlus** can be found in the [Release tab](https://github.com/arichorn/YouTubeRebornPlus/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.21.3-4.0.13)](https://tinyurl.com/5ernvecm) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.21.3-4.1.0-beta)](https://tinyurl.com/4jepehsx) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(June 2 2023)_
+- Version info: _(June 4 2023)_
 
 <details>
   <summary>Expand!</summary>
@@ -248,7 +248,7 @@ any many more...
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
 | **YouTube** | Google Inc | 18.14.1 | ✖︎ |
-| **YouTube Reborm** | LillieH1000 | 4.0.13 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
+| **YouTube Reborm** | LillieH1000 | 4.1.0 (Beta) | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
