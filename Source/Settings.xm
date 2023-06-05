@@ -57,7 +57,7 @@ extern NSBundle *CercubePlusBundle();
     accessibilityIdentifier:nil
     detailTextBlock:nil
     selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-        return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/arichorn/CercubePlusExtra/releases/latest"]];
+        return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/Balackburn/CercubePlusExtra/releases/latest"]];
     }];
     [sectionItems addObject:main];
 

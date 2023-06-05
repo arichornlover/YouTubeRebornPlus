@@ -10,9 +10,9 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/arichorn/CercubePlusExtra/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/CercubePlusExtra?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/CercubePlusExtra/releases/latest"><img src="https://img.shields.io/github/downloads/arichorn/CercubePlusExtra/total?label=Download" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/CercubePlusExtra/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/CercubePlusExtra?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
+    <a href="https://github.com/Balackburn/CercubePlusExtra/releases/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/CercubePlusExtra?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
+    <a href="https://github.com/Balackburn/CercubePlusExtra/releases/latest"><img src="https://img.shields.io/github/downloads/arichorn/CercubePlusExtra/total?label=Download" alt="Badge"></img></a>
+    <a href="https://github.com/Balackburn/CercubePlusExtra/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/CercubePlusExtra?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
 </p>
 
 <p align="center">
@@ -232,7 +232,7 @@ any many more...
 
 # Download (IPA)
 
-- **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/arichorn/CercubePlusExtra/releases/latest).
+- **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/Balackburn/CercubePlusExtra/releases/latest).
 
 - For AltStore user: [Open in AltStore (v18.18.2-5.3.11)](https://tinyurl.com/5a5jn7ra) - It will take a while to install because AltStore needs to download the IPA first.
 
@@ -284,7 +284,5 @@ any many more...
   - Venmo: https://venmo.com/u/DavidBrett
 
 # Building(s) (optional)
-See [CercubePlusExtra/Building - Wiki](https://github.com/arichorn/CercubePlusExtra/wiki/Building)
+See [CercubePlusExtra/Building - Wiki](https://github.com/Balackburn/CercubePlusExtra/wiki/Building)
 or Another Version [uYouPlus/Building - Wiki](https://github.com/qnblackcat/uYouPlus/wiki/Building)
-
-![IMAGE CERCUBEPLUS LOGO](https://github.com/arichorn/YouTubeRebornPlus/assets/78001398/57051dbb-82e1-4a45-ae28-a6dc741f3393)

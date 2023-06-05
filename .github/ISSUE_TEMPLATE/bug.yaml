@@ -59,7 +59,7 @@ body:
 - type: dropdown
   attributes:
     label: Are you using the newest version of CercubePlus? If not, why?
-    description: _Developers spend time and effort to fix bugs & add improvements with every release. Why don't you update to the [latest version](https://github.com/arichorn/CercubePlusExtra/releases/latest) before reporting about an issue?_
+    description: _Developers spend time and effort to fix bugs & add improvements with every release. Why don't you update to the [latest version](https://github.com/Balackburn/CercubePlusExtra/releases/latest) before reporting about an issue?_
     multiple: false
     options:
       - ✅ Yes, I'm using the latest version of CercubePlus right now
