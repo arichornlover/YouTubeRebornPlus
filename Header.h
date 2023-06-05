@@ -2,6 +2,7 @@
 #import "Tweaks/YouTubeHeader/YTQTMButton.h" // Header.h
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
+#import <CaptainHook/CaptainHook.h>
 #import <objc/runtime.h>
 #import <dlfcn.h>
 #import <sys/utsname.h>
@@ -30,6 +31,8 @@
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
 #define YT_NAME @"YouTube"
+#define DEMC_UNSUPPORTED_DEVICES @[@"iPhone14,3", @"iPhone14,6", @"iPhone14,8"] // DontEatMycontent
+#define DEMC_THRESHOLD 1.99 // DontEatMycontent
 
 // YTSpeed
 @interface YTVarispeedSwitchControllerOption : NSObject
@@ -55,7 +58,7 @@
 - (void)setRate:(float)rate;
 @end
 
-// YouTubeRebornPlus
+// CercubePlus
 @interface YTChipCloudCell : UIView
 @end
 
@@ -76,7 +79,7 @@
 @property (nonatomic, assign, readwrite) BOOL enableSnapToChapter;
 @end
 
-// Navigation Buttons
+// Cercube button in Nav bar
 @interface MDCButton : UIButton
 @end
 
@@ -84,7 +87,6 @@
 @property (nonatomic, strong, readwrite) MDCButton *cercubeButton;
 @property YTQTMButton *notificationButton;
 @property YTQTMButton *sponsorBlockButton;
-@property YTQTMButton *youtubeRebornButton;
 @end
 
 // IAmYouTube
@@ -116,6 +118,37 @@
 
 @interface YTAsyncCollectionView : UICollectionView
 - (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath;
+@end
+
+// DontEatMyContent
+BOOL DEMC_deviceIsSupported();
+void DEMC_activate();
+void DEMC_deactivate(); 
+void DEMC_centerRenderingView();
+
+@interface YTPlayerView : UIView
+- (void)downloadVideo;
+- (id)renderingView;
+@end
+
+@interface YTMainAppVideoPlayerOverlayViewController : UIViewController
+- (BOOL)isFullscreen;
+@end
+
+@interface HAMSBDLSampleBufferRenderingView : UIView
+@end
+
+@interface MLHAMSBDLSampleBufferRenderingView : HAMSBDLSampleBufferRenderingView
+@end
+
+@interface YTMainAppEngagementPanelViewController : UIViewController
+- (BOOL)isLandscapeEngagementPanel;
+- (BOOL)isPeekingSupported;
+@end
+
+@interface YTEngagementPanelContainerViewController : UIViewController
+- (BOOL)isLandscapeEngagementPanel;
+- (BOOL)isPeekingSupported;
 @end
 
 // App Theme

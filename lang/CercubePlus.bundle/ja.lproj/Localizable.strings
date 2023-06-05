@@ -1,5 +1,5 @@
 // Settings
-"VERSION" = "YouTubeRebornPlusのバージョン: %@";
+"VERSION" = "CercubePlusのバージョン: %@";
 "VERSION_CHECK" = "タップして更新をチェック!";
 
 // Video player options
@@ -147,7 +147,7 @@
 "HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です";
 
 "HIDE_CHIP_BAR" = "トップバーを非表示";
-"HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム など)と\n登録チャンネル(すべてのビデオ,視聴を続ける など)リボンのトップバーを非表示にします。\nアプリの再起動が必要です";
+"HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム など)と\n登録チャンネル(すべてのビデオ,視聴を続ける 等)リボンのトップバーを非表示にします。\nアプリの再起動が必要です";
 
 "HIDE_MODERN_INTERFACE" = "モダンインターフェイスを非表示 (YTNoModernUI)";
 "HIDE_MODERN_INTERFACE_DESC" = "YouTubeによって追加されたモダンな要素を隠すにはこれを有効にしてください。アンビエントモード,丸みを帯びたデザインなどを削除します。\nアプリの再起動が必要です";

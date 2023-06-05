@@ -15,13 +15,13 @@ static int GetSelection(NSString *key) {
 static int colorContrastMode() {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"lcmColor"];
 }
-static const NSInteger YouTubeRebornPlusSection = 500;
+static const NSInteger CercubePlusSection = 500;
 
-@interface YTSettingsSectionItemManager (YouTubeRebornPlus)
-- (void)updateYouTubeRebornPlusSectionWithEntry:(id)entry;
+@interface YTSettingsSectionItemManager (CercubePlus)
+- (void)updateCercubePlusSectionWithEntry:(id)entry;
 @end
 
-extern NSBundle *YouTubeRebornPlusBundle();
+extern NSBundle *CercubePlusBundle();
 
 // Settings
 %hook YTAppSettingsPresentationData
@@ -30,7 +30,7 @@ extern NSBundle *YouTubeRebornPlusBundle();
     NSMutableArray *mutableOrder = [order mutableCopy];
     NSUInteger insertIndex = [order indexOfObject:@(1)];
     if (insertIndex != NSNotFound)
-        [mutableOrder insertObject:@(YouTubeRebornPlusSection) atIndex:insertIndex + 1];
+        [mutableOrder insertObject:@(CercubePlusSection) atIndex:insertIndex + 1];
     return mutableOrder;
 }
 %end
@@ -45,9 +45,9 @@ extern NSBundle *YouTubeRebornPlusBundle();
 
 %hook YTSettingsSectionItemManager
 %new(v@:@)
-- (void)updateYouTubeRebornPlusSectionWithEntry:(id)entry {
+- (void)updateCercubePlusSectionWithEntry:(id)entry {
     NSMutableArray *sectionItems = [NSMutableArray array];
-    NSBundle *tweakBundle = YouTubeRebornPlusBundle();
+    NSBundle *tweakBundle = CercubePlusBundle();
     Class YTSettingsSectionItemClass = %c(YTSettingsSectionItem);
     YTSettingsViewController *settingsViewController = [self valueForKey:@"_settingsViewControllerDelegate"];
 
@@ -57,7 +57,7 @@ extern NSBundle *YouTubeRebornPlusBundle();
     accessibilityIdentifier:nil
     detailTextBlock:nil
     selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-        return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/arichorn/YouTubeRebornPlus/releases/latest"]];
+        return [%c(YTUIUtils) openURL:[NSURL URLWithString:@"https://github.com/arichorn/CercubePlusExtra/releases/latest"]];
     }];
     [sectionItems addObject:main];
 
@@ -543,12 +543,12 @@ extern NSBundle *YouTubeRebornPlusBundle();
     }];
     [sectionItems addObject:miscellaneousGroup];
 
-    [settingsViewController setSectionItems:sectionItems forCategory:YouTubeRebornPlusSection title:@"YouTubeRebornPlus" titleDescription:LOC(@"TITLE DESCRIPTION") headerHidden:YES];
+    [settingsViewController setSectionItems:sectionItems forCategory:CercubePlusSection title:@"CercubePlus" titleDescription:LOC(@"TITLE DESCRIPTION") headerHidden:YES];
 }
 
 - (void)updateSectionForCategory:(NSUInteger)category withEntry:(id)entry {
-    if (category == YouTubeRebornPlusSection) {
-        [self updateYouTubeRebornPlusSectionWithEntry:entry];
+    if (category == CercubePlusSection) {
+        [self updateCercubePlusSectionWithEntry:entry];
         return;
     }
     %orig;
