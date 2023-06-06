@@ -45,3 +45,6 @@
 [submodule "Tweaks/YTHoldForSpeed"]
 	path = Tweaks/YTHoldForSpeed
 	url = https://github.com/joshuaseltzer/YTHoldForSpeed.git
+[submodule "Tweaks/DontEatMyContent"]
+	path = Tweaks/DontEatMyContent
+	url = https://github.com/therealFoxster/DontEatMyContent.git
