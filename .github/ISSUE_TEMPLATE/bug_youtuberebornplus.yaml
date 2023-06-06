@@ -27,7 +27,7 @@ body:
         - iOS/iPadOS version:
         - Device model:
         - Sideload tool (AltStore, SideStore, Sideloadly, TrollStore,...):
-        - The specific version of CercubePlusExtra (**latest** or **newest** is **NOT** a version number!):
+        - The specific version of YouTubeRebornPlus (**latest** or **newest** is **NOT** a version number!):
   validations:
     required: true
 
