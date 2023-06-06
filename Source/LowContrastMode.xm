@@ -127,22 +127,7 @@ static BOOL pinkContrastMode() {
          return [UIColor whiteColor];
 }
 %end
-@interface YTTitleLabel_subclass : YTTitleLabel
-@end
-
-@implementation YTTitleLabel_subclass
-- (void)setTextColor:(UIColor *)textColor {
-    [super setTextColor:[UIColor redColor]]; // Replace redColor with your desired text color.
-}
-@end
-
-@implementation YTSubtitleLabel_subclass
-- (void)setTextColor:(UIColor *)textColor {
-    [super setTextColor:[UIColor blueColor]]; // Replace blueColor with your desired text color.
-}
-@end
 %end
-
 
 %group gRedContrastMode // Red Contrast Mode
 %hook UIColor
