@@ -120,36 +120,10 @@
 - (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
-// DontEatMyContent
-BOOL DEMC_deviceIsSupported();
-void DEMC_activate();
-void DEMC_deactivate(); 
-void DEMC_centerRenderingView();
-
 @interface YTPlayerView : UIView
 - (void)downloadVideo;
-- (id)renderingView;
 @end
 
-@interface YTMainAppVideoPlayerOverlayViewController : UIViewController
-- (BOOL)isFullscreen;
-@end
-
-@interface HAMSBDLSampleBufferRenderingView : UIView
-@end
-
-@interface MLHAMSBDLSampleBufferRenderingView : HAMSBDLSampleBufferRenderingView
-@end
-
-@interface YTMainAppEngagementPanelViewController : UIViewController
-- (BOOL)isLandscapeEngagementPanel;
-- (BOOL)isPeekingSupported;
-@end
-
-@interface YTEngagementPanelContainerViewController : UIViewController
-- (BOOL)isLandscapeEngagementPanel;
-- (BOOL)isPeekingSupported;
-@end
 
 // App Theme
 @interface YCHLiveChatView : UIView
