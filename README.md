@@ -205,7 +205,9 @@ Special thanks to all the developers who have contributed to CercubePlus/Cercube
 
 15. **YouMute**: Mute/unmute videos in the YouTube Video Player directly.
 
-16. **LowContrastMode**: makes the YouTube Interface Low Contrast as possible to make it easier on the eyes.
+16. **YTHoldForSpeed**: that adds a hold gesture on the video player to quickly toggle the playback speed.
+
+17. **LowContrastMode**: makes the YouTube Interface Low Contrast as possible to make it easier on the eyes.
 
 any many more...
 </details>
@@ -234,27 +236,20 @@ any many more...
 
 - **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/arichorn/CercubePlusExtra/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.18.2-5.3.11)](https://tinyurl.com/5a5jn7ra) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.22.9-5.3.11)](https://tinyurl.com/v7m2tk9e) - It will take a while to install because AltStore needs to download the IPA first.
 
-<details>
-  <summary>Alternative Download</summary>
-  
-[Open in AltStore (v18.14.1-5.3.11-F2)](https://tinyurl.com/4exxknn8) - This is the **v18.14.1-5.3.11-F2** release. only use this to resolve the OLED/OLD Dark Mode Problem.
-
-</details>
-
-- Version info: _(May 9 2023)_
+- Version info: _(June 6th 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.21.3 | ✖︎ |
+| **YouTube** | Google Inc | 18.22.9 | ✖︎ |
 | **Cercube** | Majd Alfhaily | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
-| **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-15 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
+| **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
@@ -267,8 +262,9 @@ any many more...
 | **IAmYouTube** | PoomSmart | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | PoomSmart | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | PoomSmart | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
-| **YTNoPaidPromo** | PoomSmart | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YTAutoFullScreen** | PoomSmart | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen) |
+| **YTHoldForSpeed** | joshuaseltzer | 1.0.3 | [✔︎](https://github.com/joshuaseltzer/YTHoldForSpeed) |
+| **YTNoPaidPromo** | PoomSmart | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YTShortsProgress** | PoomSmart | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTShortsProgress) |
 | **Return YouTube Dislike** | PoomSmart | 1.11.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 
