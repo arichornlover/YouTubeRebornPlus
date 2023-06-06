@@ -273,16 +273,6 @@ extern NSBundle *CercubePlusBundle();
                 }
                 settingItemId:0],
 
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"DONT_EAT_MY_CONTENT")
-                titleDescription:LOC(@"DONT_EAT_MY_CONTENT_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"dontEatMyContent_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"dontEatMyContent_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_HEATWAVES")
                 titleDescription:LOC(@"HIDE_HEATWAVES_DESC")
                 accessibilityIdentifier:nil
