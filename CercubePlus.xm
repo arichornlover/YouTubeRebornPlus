@@ -193,6 +193,11 @@ static BOOL oldDarkTheme() {
 %end
 %end
 
+// New YouTube Version
+%hook YTVersionUtils
++ (NSString *)appVersion { return @"18.22.9"; }
+%end
+
 // A/B flags
 %hook YTColdConfig 
 - (BOOL)respectDeviceCaptionSetting { return NO; } // YouRememberCaption: https://poomsmart.github.io/repo/depictions/youremembercaption.html
