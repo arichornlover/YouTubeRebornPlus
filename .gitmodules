@@ -1,6 +1,3 @@
-[submodule "Tweaks/DontEatMyContent"]
-	path = Tweaks/DontEatMyContent
-	url = https://github.com/therealFoxster/DontEatMyContent
 [submodule "Tweaks/YTUHD"]
 	path = Tweaks/YTUHD
 	url = https://github.com/PoomSmart/YTUHD.git
@@ -37,3 +34,9 @@
 [submodule "Extensions"]
 	path = Extensions
 	url = https://github.com/CokePokes/YoutubeExtensions.git
+[submodule "Tweaks/YTHoldForSpeed"]
+	path = Tweaks/YTHoldForSpeed
+	url = https://github.com/arichorn/YTHoldForSpeed.git
+[submodule "Tweaks/DontEatMyContent"]
+	path = Tweaks/DontEatMyContent
+	url = https://github.com/therealFoxster/DontEatMyContent.git
