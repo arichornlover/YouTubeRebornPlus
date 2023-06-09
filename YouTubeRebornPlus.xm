@@ -167,11 +167,6 @@ static BOOL oldDarkTheme() {
 %end
 %end
 
-// New YouTube Version
-%hook YTVersionUtils
-+ (NSString *)appVersion { return @"18.22.9"; }
-%end
-
 // A/B flags
 %hook YTColdConfig 
 - (BOOL)respectDeviceCaptionSetting { return NO; } // YouRememberCaption: https://poomsmart.github.io/repo/depictions/youremembercaption.html
@@ -262,7 +257,7 @@ static BOOL oldDarkTheme() {
 
 %hook YTSegmentableInlinePlayerBarView // Old Buffer Bar - YTNoModernUI
 - (void)setBufferedProgressBarColor:(id)arg1 {
-     [UIColor colorWithRed:0.65 green:0.65 blue:0.65 alpha:0.60];
+     [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:0.60];
 }
 %end
 
