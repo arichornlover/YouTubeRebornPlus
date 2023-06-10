@@ -715,16 +715,65 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 }
 %end
 
+%hook YTAppView
+
+- (void)setBackgroundColor:(UIColor *)color {
+    %orig([UIColor blackColor]);
+}
+
+%end
+
+%hook YTPivotBarView
+
+- (void)setBackgroundColor:(UIColor *)color {
+    %orig([UIColor blackColor]);
+}
+
+%end
+
+%hook YTAsyncCollectionView
+
+- (void)setBackgroundColor:(UIColor *)color {
+    %orig([UIColor blackColor]);
+}
+
+%end
+
 %hook YTAppViewController
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
     return pageStyle == 1 ? [UIColor blackColor] : %orig;
 }
 %end
 
-%hook YTAsyncCollectionView
+%hook YTNavigationBar
 - (UIColor *)backgroundColor:(NSInteger)pageStyle {
     return pageStyle == 1 ? [UIColor blackColor] : %orig;
 }
+%end
+
+BOOL areColorsEqual(UIColor *color1, UIColor *color2, CGFloat tolerance) {
+    CGFloat r1, g1, b1, a1, r2, g2, b2, a2;
+    [color1 getRed:&r1 green:&g1 blue:&b1 alpha:&a1];
+    [color2 getRed:&r2 green:&g2 blue:&b2 alpha:&a2];
+
+    return (fabs(r1 - r2) <= tolerance) &&
+           (fabs(g1 - g2) <= tolerance) &&
+           (fabs(b1 - b2) <= tolerance) &&
+           (fabs(a1 - a2) <= tolerance);
+}
+
+%hook UIView
+
+- (void)setBackgroundColor:(UIColor *)color {
+    UIColor *targetColor = [UIColor colorWithRed:0.0588235 green:0.0588235 blue:0.0588235 alpha:1];
+    CGFloat tolerance = 0.01; // Adjust this value as needed
+
+    if (areColorsEqual(color, targetColor, tolerance)) {
+        color = [UIColor blackColor];
+    }
+    %orig(color);
+}
+
 %end
 
 %hook YTCollectionViewController
