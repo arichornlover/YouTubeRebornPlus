@@ -296,7 +296,7 @@ static BOOL oldDarkTheme() {
 // YTNoModernUI - @arichorn
 %group gYTNoModernUI
 %hook YTVersionUtils // YTNoModernUI Version
-+ (NSString *)appVersion { return @"18.22.9"; }
++ (NSString *)appVersion { return @"16.42.3"; }
 %end
 
 %hook YTInlinePlayerBarContainerView // Red Progress Bar - YTNoModernUI
