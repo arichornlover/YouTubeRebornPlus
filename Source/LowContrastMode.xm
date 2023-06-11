@@ -487,11 +487,21 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+// Unfinished ⬇
 %hook _ASDisplayView
-- (UIColor *)textColor {
-         return [UIColor whiteColor];
+- (void)setAttributedText:(NSAttributedString *)attributedText {
+    %orig;
+
+    if ([self.superview isKindOfClass:NSClassFromString(@"CLASS_HERE")]) { // no class found at the moment. this is a template.
+        UIColor *newColor = [UIColor redColor]; // Use the color of your choice here
+        NSMutableAttributedString *newAttributedText = [attributedText mutableCopy];
+        NSRange range = NSMakeRange(0, [newAttributedText length]);
+        [newAttributedText addAttribute:NSForegroundColorAttributeName value:newColor range:range];
+        [self setAttributedText:newAttributedText];
+    }
 }
 %end
+// Unfinished ⬆️
 %end
 
 %group gYellowContrastMode // Yellow Contrast Mode
