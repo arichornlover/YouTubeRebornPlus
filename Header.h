@@ -31,8 +31,6 @@
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
 #define YT_NAME @"YouTube"
-#define DEMC_UNSUPPORTED_DEVICES @[@"iPhone14,3", @"iPhone14,6", @"iPhone14,8"] // DontEatMycontent
-#define DEMC_THRESHOLD 1.99 // DontEatMycontent
 
 // YTSpeed
 @interface YTVarispeedSwitchControllerOption : NSObject
@@ -104,8 +102,6 @@
 // YTAutoFullscreen
 @interface YTPlayerViewController (YTAFS)
 - (void)autoFullscreen;
-- (id)activeVideoPlayerOverlay; // DontEatMycontent
-- (id)playerView; // DontEatMycontent
 @end
 
 // YTNoShorts
