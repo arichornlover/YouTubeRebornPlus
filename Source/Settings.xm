@@ -358,7 +358,7 @@ extern NSBundle *YouTubeRebornPlusBundle();
         }];
 
 # pragma mark - VersionSpoofer
-    YTSettingsSectionItem *versionSpooferSection = [YTSettingsSectionItemClass itemWithTitle:@"App Version Spoofer"
+    YTSettingsSectionItem *versionSpooferSection = [YTSettingsSectionItemClass itemWithTitle:@"VERSION_SPOOFER_TITLE"
         accessibilityIdentifier:nil
         detailTextBlock:^NSString *() {
             switch (appVersionSpoofer()) {
@@ -548,7 +548,13 @@ extern NSBundle *YouTubeRebornPlusBundle();
                     [[NSUserDefaults standardUserDefaults] setInteger:25 forKey:@"versionSpoofer"];
                     [settingsViewController reloadData];
                     return YES;
-                }];
+                }]
+            ];
+            YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"VERSION_SPOOFER_TITLE") pickerSectionTitle:nil rows:rows selectedItemIndex:colorContrastMode() parentResponder:[self parentResponder]];
+            [settingsViewController pushViewController:picker];
+            return YES;
+        }];
+
 
 # pragma mark - Theme
     YTSettingsSectionItem *themeGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"THEME_OPTIONS")
