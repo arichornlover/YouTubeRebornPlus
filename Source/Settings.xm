@@ -15,6 +15,9 @@ static int GetSelection(NSString *key) {
 static int colorContrastMode() {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"lcmColor"];
 }
+static int appVersionSpoofer() {
+    return [[NSUserDefaults standardUserDefaults] integerForKey:@"versionSpoofer"];
+}
 static const NSInteger YouTubeRebornPlusSection = 500;
 
 @interface YTSettingsSectionItemManager (YouTubeRebornPlus)
@@ -554,7 +557,6 @@ extern NSBundle *YouTubeRebornPlusBundle();
             [settingsViewController pushViewController:picker];
             return YES;
         }];
-
 
 # pragma mark - Theme
     YTSettingsSectionItem *themeGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"THEME_OPTIONS")
