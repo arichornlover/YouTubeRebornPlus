@@ -748,7 +748,6 @@ extern NSBundle *YouTubeRebornPlusBundle();
                     return YES;
                 }
                 settingItemId:0], versionSpooferSection];
-        ];
         YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"MISCELLANEOUS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
         [settingsViewController pushViewController:picker];
         return YES;
