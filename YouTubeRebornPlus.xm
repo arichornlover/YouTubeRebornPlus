@@ -37,9 +37,6 @@ static NSString *accessGroupID() {
 static BOOL IsEnabled(NSString *key) {
     return [[NSUserDefaults standardUserDefaults] boolForKey:key];
 }
-static BOOL isDarkMode() {
-    return ([[NSUserDefaults standardUserDefaults] integerForKey:@"page_style"] == 1);
-}
 
 %hook YTAppDelegate
 - (BOOL)application:(UIApplication *)application
