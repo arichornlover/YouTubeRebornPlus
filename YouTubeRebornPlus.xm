@@ -176,6 +176,7 @@ static BOOL IsEnabled(NSString *key) {
 // Disable Wifi Related Settings - @arichorn
 %group gDisableWifiRelatedSettings
 %hook YTSettingsSectionItemManager
+- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {} // Try New Features
 - (void)updateAutoplaySectionWithEntry:(id)arg1 {} // Autoplay
 - (void)updateNotificationSectionWithEntry:(id)arg1 {} // Notifications
 - (void)updateHistorySectionWithEntry:(id)arg1 {} // History
