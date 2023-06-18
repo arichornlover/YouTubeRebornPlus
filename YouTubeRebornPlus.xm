@@ -249,7 +249,7 @@ static BOOL IsEnabled(NSString *key) {
 
 %hook YTSegmentableInlinePlayerBarView // Old Buffer Bar - YTNoModernUI
 - (void)setBufferedProgressBarColor:(id)arg1 {
-     [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:0.60];
+     [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:0.90];
 }
 %end
 
