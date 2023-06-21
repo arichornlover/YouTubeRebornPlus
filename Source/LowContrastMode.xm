@@ -77,6 +77,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -188,6 +195,13 @@ static BOOL pinkContrastMode() {
 %hook YTCollectionView
  - (void)setTintColor:(UIColor *)color { 
      return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
+%end
+
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
 }
 %end
 
@@ -305,6 +319,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -416,6 +437,13 @@ static BOOL pinkContrastMode() {
 %hook YTCollectionView
  - (void)setTintColor:(UIColor *)color { 
      return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
+%end
+
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
 }
 %end
 
@@ -533,6 +561,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -644,6 +679,13 @@ static BOOL pinkContrastMode() {
 %hook YTCollectionView
  - (void)setTintColor:(UIColor *)color { 
      return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
+%end
+
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
 }
 %end
 
@@ -761,6 +803,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -875,6 +924,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -986,6 +1042,13 @@ static BOOL pinkContrastMode() {
 %hook YTCollectionView
  - (void)setTintColor:(UIColor *)color { 
      return isDarkMode() ? %orig([UIColor whiteColor]) : %orig;
+}
+%end
+
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
 }
 %end
 
