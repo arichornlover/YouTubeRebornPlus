@@ -38,7 +38,7 @@ static BOOL pinkContrastMode() {
     return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 8;
 }
 
-%group gLowContrastMode // Low Contrast Mode v1.2.3 (Compatible with only v15.02.1-present)
+%group gLowContrastMode // Low Contrast Mode v1.3.0 (Compatible with only v15.02.1-present)
 %hook UIColor
 + (UIColor *)whiteColor { // Dark Theme Color
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
@@ -46,12 +46,17 @@ static BOOL pinkContrastMode() {
 + (UIColor *)textColor {
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
-+ (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
+%end
+
+%hook UILabel
++ (void)load {
+    @autoreleasepool {
+        [[UILabel appearance] setTextColor:[UIColor whiteColor]];
+    }
 }
 %end
 
-%hook YTCommonColorPalette // Changes Texts & Icons in YouTube Bottom Bar (Doesn't change Texts & Icons under the video player)
+%hook YTCommonColorPalette
 - (UIColor *)textPrimary {
     if (self.pageStyle == 1) {
         return [UIColor whiteColor]; // Dark Theme
@@ -72,6 +77,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -80,6 +92,24 @@ static BOOL pinkContrastMode() {
     [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
 
     return newAttributedString;
+}
+%end
+
+%hook ASTextFieldNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASTextView
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASButtonNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
 }
 %end
 
@@ -137,8 +167,13 @@ static BOOL pinkContrastMode() {
 + (UIColor *)textColor {
          return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
 }
-+ (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 1.00 green: 0.31 blue: 0.27 alpha: 1.00];
+%end
+
+%hook UILabel
++ (void)load {
+    @autoreleasepool {
+        [[UILabel appearance] setTextColor:[UIColor whiteColor]];
+    }
 }
 %end
 
@@ -163,6 +198,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -171,6 +213,24 @@ static BOOL pinkContrastMode() {
     [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
 
     return newAttributedString;
+}
+%end
+
+%hook ASTextFieldNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASTextView
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASButtonNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
 }
 %end
 
@@ -228,8 +288,13 @@ static BOOL pinkContrastMode() {
 + (UIColor *)textColor {
          return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00];
 }
-+ (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 0.04 green: 0.47 blue: 0.72 alpha: 1.00];
+%end
+
+%hook UILabel
++ (void)load {
+    @autoreleasepool {
+        [[UILabel appearance] setTextColor:[UIColor whiteColor]];
+    }
 }
 %end
 
@@ -254,6 +319,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -262,6 +334,24 @@ static BOOL pinkContrastMode() {
     [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
 
     return newAttributedString;
+}
+%end
+
+%hook ASTextFieldNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASTextView
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASButtonNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
 }
 %end
 
@@ -319,8 +409,13 @@ static BOOL pinkContrastMode() {
 + (UIColor *)textColor {
          return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
 }
-+ (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 0.01 green: 0.66 blue: 0.18 alpha: 1.00];
+%end
+
+%hook UILabel
++ (void)load {
+    @autoreleasepool {
+        [[UILabel appearance] setTextColor:[UIColor whiteColor]];
+    }
 }
 %end
 
@@ -345,6 +440,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -353,6 +455,24 @@ static BOOL pinkContrastMode() {
     [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
 
     return newAttributedString;
+}
+%end
+
+%hook ASTextFieldNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASTextView
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASButtonNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
 }
 %end
 
@@ -410,8 +530,13 @@ static BOOL pinkContrastMode() {
 + (UIColor *)textColor {
          return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
 }
-+ (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 0.89 green: 0.82 blue: 0.20 alpha: 1.00];
+%end
+
+%hook UILabel
++ (void)load {
+    @autoreleasepool {
+        [[UILabel appearance] setTextColor:[UIColor whiteColor]];
+    }
 }
 %end
 
@@ -436,6 +561,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -444,6 +576,24 @@ static BOOL pinkContrastMode() {
     [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
 
     return newAttributedString;
+}
+%end
+
+%hook ASTextFieldNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASTextView
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASButtonNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
 }
 %end
 
@@ -501,8 +651,13 @@ static BOOL pinkContrastMode() {
 + (UIColor *)textColor {
          return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
 }
-+ (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 0.73 green: 0.45 blue: 0.05 alpha: 1.00];
+%end
+
+%hook UILabel
++ (void)load {
+    @autoreleasepool {
+        [[UILabel appearance] setTextColor:[UIColor whiteColor]];
+    }
 }
 %end
 
@@ -527,6 +682,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -535,6 +697,24 @@ static BOOL pinkContrastMode() {
     [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
 
     return newAttributedString;
+}
+%end
+
+%hook ASTextFieldNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASTextView
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASButtonNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
 }
 %end
 
@@ -592,8 +772,13 @@ static BOOL pinkContrastMode() {
 + (UIColor *)textColor {
          return [UIColor colorWithRed: 0.42 green: 0.18 blue: 0.68 alpha: 1.00];
 }
-+ (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 0.42 green: 0.18 blue: 0.68 alpha: 1.00];
+%end
+
+%hook UILabel
++ (void)load {
+    @autoreleasepool {
+        [[UILabel appearance] setTextColor:[UIColor whiteColor]];
+    }
 }
 %end
 
@@ -618,6 +803,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -626,6 +818,24 @@ static BOOL pinkContrastMode() {
     [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
 
     return newAttributedString;
+}
+%end
+
+%hook ASTextFieldNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASTextView
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASButtonNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
 }
 %end
 
@@ -683,8 +893,13 @@ static BOOL pinkContrastMode() {
 + (UIColor *)textColor {
          return [UIColor colorWithRed: 0.50 green: 0.00 blue: 1.00 alpha: 1.00];
 }
-+ (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 0.50 green: 0.00 blue: 1.00 alpha: 1.00];
+%end
+
+%hook UILabel
++ (void)load {
+    @autoreleasepool {
+        [[UILabel appearance] setTextColor:[UIColor whiteColor]];
+    }
 }
 %end
 
@@ -709,6 +924,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -717,6 +939,24 @@ static BOOL pinkContrastMode() {
     [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
 
     return newAttributedString;
+}
+%end
+
+%hook ASTextFieldNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASTextView
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASButtonNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
 }
 %end
 
@@ -774,8 +1014,13 @@ static BOOL pinkContrastMode() {
 + (UIColor *)textColor {
          return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
 }
-+ (UIColor *)dynamicLabelColor {
-         return [UIColor colorWithRed: 0.74 green: 0.02 blue: 0.46 alpha: 1.00];
+%end
+
+%hook UILabel
++ (void)load {
+    @autoreleasepool {
+        [[UILabel appearance] setTextColor:[UIColor whiteColor]];
+    }
 }
 %end
 
@@ -800,6 +1045,13 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook LOTAnimationView
+- (void) setTintColor:(UIColor *)tintColor {
+    tintColor = [UIColor whiteColor];
+    %orig(tintColor);
+}
+%end
+
 %hook ASTextNode
 - (NSAttributedString *)attributedString {
     NSAttributedString *originalAttributedString = %orig;
@@ -808,6 +1060,24 @@ static BOOL pinkContrastMode() {
     [newAttributedString addAttribute:NSForegroundColorAttributeName value:[UIColor whiteColor] range:NSMakeRange(0, newAttributedString.length)];
 
     return newAttributedString;
+}
+%end
+
+%hook ASTextFieldNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASTextView
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
+}
+%end
+
+%hook ASButtonNode
+- (void)setTextColor:(UIColor *)textColor {
+   %orig([UIColor whiteColor]);
 }
 %end
 
