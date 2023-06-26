@@ -152,7 +152,11 @@ static BOOL pinkContrastMode() {
 }
 %end
 
-%hook _ASDisplayView
+@interface MyASDisplayView : _ASDisplayView
+- (UILabel *)findLabelInSubviews:(NSArray *)subviews;
+@end
+
+@implementation MyASDisplayView
 - (void)didMoveToWindow {
     %orig;
     UILabel *label = [self findLabelInSubviews:self.subviews];
@@ -171,6 +175,16 @@ static BOOL pinkContrastMode() {
         }
     }
     return nil;
+}
+@end
+
+%hook _ASDisplayView
+- (id)initWithFrame:(CGRect)frame {
+    id view = %orig;
+    if ([view isKindOfClass:[_ASDisplayView class]]) {
+        return [[MyASDisplayView alloc] initWithFrame:frame];
+    }
+    return view;
 }
 %end
 %end
@@ -286,28 +300,6 @@ static BOOL pinkContrastMode() {
 - (void)setTextColor:(UIColor *)textColor {
     textColor = [UIColor whiteColor];
     %orig(textColor);
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    UILabel *label = [self findLabelInSubviews:self.subviews];
-    if (label) {
-        label.textColor = [UIColor whiteColor];
-    }
-}
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            return (UILabel *)subview;
-        }
-        UILabel *label = [self findLabelInSubviews:subview.subviews];
-        if (label) {
-            return label;
-        }
-    }
-    return nil;
 }
 %end
 %end
@@ -546,28 +538,6 @@ static BOOL pinkContrastMode() {
     %orig(textColor);
 }
 %end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    UILabel *label = [self findLabelInSubviews:self.subviews];
-    if (label) {
-        label.textColor = [UIColor whiteColor];
-    }
-}
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            return (UILabel *)subview;
-        }
-        UILabel *label = [self findLabelInSubviews:subview.subviews];
-        if (label) {
-            return label;
-        }
-    }
-    return nil;
-}
-%end
 %end
 
 %group gYellowContrastMode // Yellow Contrast Mode
@@ -681,28 +651,6 @@ static BOOL pinkContrastMode() {
 - (void)setTextColor:(UIColor *)textColor {
     textColor = [UIColor whiteColor];
     %orig(textColor);
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    UILabel *label = [self findLabelInSubviews:self.subviews];
-    if (label) {
-        label.textColor = [UIColor whiteColor];
-    }
-}
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            return (UILabel *)subview;
-        }
-        UILabel *label = [self findLabelInSubviews:subview.subviews];
-        if (label) {
-            return label;
-        }
-    }
-    return nil;
 }
 %end
 %end
@@ -820,28 +768,6 @@ static BOOL pinkContrastMode() {
     %orig(textColor);
 }
 %end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    UILabel *label = [self findLabelInSubviews:self.subviews];
-    if (label) {
-        label.textColor = [UIColor whiteColor];
-    }
-}
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            return (UILabel *)subview;
-        }
-        UILabel *label = [self findLabelInSubviews:subview.subviews];
-        if (label) {
-            return label;
-        }
-    }
-    return nil;
-}
-%end
 %end
 
 %group gPurpleContrastMode // Purple Contrast Mode
@@ -955,28 +881,6 @@ static BOOL pinkContrastMode() {
 - (void)setTextColor:(UIColor *)textColor {
     textColor = [UIColor whiteColor];
     %orig(textColor);
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    UILabel *label = [self findLabelInSubviews:self.subviews];
-    if (label) {
-        label.textColor = [UIColor whiteColor];
-    }
-}
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            return (UILabel *)subview;
-        }
-        UILabel *label = [self findLabelInSubviews:subview.subviews];
-        if (label) {
-            return label;
-        }
-    }
-    return nil;
 }
 %end
 %end
@@ -1094,28 +998,6 @@ static BOOL pinkContrastMode() {
     %orig(textColor);
 }
 %end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    UILabel *label = [self findLabelInSubviews:self.subviews];
-    if (label) {
-        label.textColor = [UIColor whiteColor];
-    }
-}
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            return (UILabel *)subview;
-        }
-        UILabel *label = [self findLabelInSubviews:subview.subviews];
-        if (label) {
-            return label;
-        }
-    }
-    return nil;
-}
-%end
 %end
 
 %group gPinkContrastMode // Pink Contrast Mode
@@ -1229,28 +1111,6 @@ static BOOL pinkContrastMode() {
 - (void)setTextColor:(UIColor *)textColor {
     textColor = [UIColor whiteColor];
     %orig(textColor);
-}
-%end
-
-%hook _ASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    UILabel *label = [self findLabelInSubviews:self.subviews];
-    if (label) {
-        label.textColor = [UIColor whiteColor];
-    }
-}
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            return (UILabel *)subview;
-        }
-        UILabel *label = [self findLabelInSubviews:subview.subviews];
-        if (label) {
-            return label;
-        }
-    }
-    return nil;
 }
 %end
 %end
