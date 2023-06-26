@@ -153,8 +153,24 @@ static BOOL pinkContrastMode() {
 %end
 
 %hook _ASDisplayView
-- (UIColor *)textColor {
-         return [UIColor whiteColor];
+- (void)didMoveToWindow {
+    %orig;
+    UILabel *label = [self findLabelInSubviews:self.subviews];
+    if (label) {
+        label.textColor = [UIColor whiteColor];
+    }
+}
+- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
+    for (UIView *subview in subviews) {
+        if ([subview isKindOfClass:[UILabel class]]) {
+            return (UILabel *)subview;
+        }
+        UILabel *label = [self findLabelInSubviews:subview.subviews];
+        if (label) {
+            return label;
+        }
+    }
+    return nil;
 }
 %end
 %end
