@@ -38,7 +38,7 @@ static BOOL pinkContrastMode() {
     return IsEnabled(@"lowContrastMode_enabled") && colorContrastMode() == 8;
 }
 
-%group gLowContrastMode // Low Contrast Mode v1.3.1 (Compatible with only v16.05.7-v17.38.10)
+%group gLowContrastMode // Low Contrast Mode v1.3.0 (Compatible with only YouTube v16.05.7-v17.38.10)
 %hook UIColor
 + (UIColor *)whiteColor { // Dark Theme Color
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
@@ -149,42 +149,6 @@ static BOOL pinkContrastMode() {
 - (void)setTextColor:(UIColor *)textColor {
     textColor = [UIColor whiteColor];
     %orig(textColor);
-}
-%end
-
-@interface MyASDisplayView : _ASDisplayView
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews;
-@end
-
-@implementation MyASDisplayView
-- (void)didMoveToWindow {
-    %orig;
-    UILabel *label = [self findLabelInSubviews:self.subviews];
-    if (label) {
-        label.textColor = [UIColor whiteColor];
-    }
-}
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            return (UILabel *)subview;
-        }
-        UILabel *label = [self findLabelInSubviews:subview.subviews];
-        if (label) {
-            return label;
-        }
-    }
-    return nil;
-}
-@end
-
-%hook _ASDisplayView
-- (id)initWithFrame:(CGRect)frame {
-    id view = %orig;
-    if ([view isKindOfClass:[_ASDisplayView class]]) {
-        return [[MyASDisplayView alloc] initWithFrame:frame];
-    }
-    return view;
 }
 %end
 %end
