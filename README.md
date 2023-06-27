@@ -284,3 +284,5 @@ any many more...
 See [YouTubeRebornPlus/Building - Wiki](https://github.com/arichorn/YouTubeRebornPlus/wiki/Building)
 or Another Version [uYouPlus/Building - Wiki](https://github.com/qnblackcat/uYouPlus/wiki/Building)
 
+## CercubePlusExtra
+https://balackburn.github.io/CercubePlusExtra/
