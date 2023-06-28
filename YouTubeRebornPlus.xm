@@ -106,18 +106,18 @@ static BOOL IsEnabled(NSString *key) {
     if (IsEnabled(@"hideAutoplaySwitch_enabled")) {}
     else { return %orig; }
 }
-+ (void)setShareButtonAvailable:(BOOL)arg1 {
+- (void)setShareButtonAvailable:(BOOL)arg1 {
     if (IsEnabled(@"enableShareButton_enabled")) {
         %orig(arg1);
     } else {
-        %orig(NO);
+        %orig(YES);
     }
 }
-+ (void)setAddToButtonAvailable:(BOOL)arg1 {
+- (void)setAddToButtonAvailable:(BOOL)arg1 {
     if (IsEnabled(@"enableSaveToButton_enabled")) {
         %orig(arg1);
     } else {
-        %orig(NO);
+        %orig(YES);
     }
 }
 %end
