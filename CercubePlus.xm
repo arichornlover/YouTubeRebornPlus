@@ -132,13 +132,19 @@ static BOOL IsEnabled(NSString *key) {
     if (IsEnabled(@"hideAutoplaySwitch_enabled")) {}
     else { return %orig; }
 }
-- (void)setShareButtonAvailable:(BOOL)arg2 { // enable Share Button
-    if (IsEnabled(@"enableShareButton_enabled")) {}
-    else { return %orig; }
+- (void)setShareButtonAvailable:(BOOL)arg1 {
+    if (IsEnabled(@"enableShareButton_enabled")) {
+        %orig(arg1);
+    } else {
+        %orig(YES);
+    }
 }
-- (void)setAddToButtonAvailable:(BOOL)arg2 { // enable Save to Playlist Button
-    if (IsEnabled(@"enableSaveToButton_enabled")) {}
-    else { return %orig; }
+- (void)setAddToButtonAvailable:(BOOL)arg1 {
+    if (IsEnabled(@"enableSaveToButton_enabled")) {
+        %orig(arg1);
+    } else {
+        %orig(YES);
+    }
 }
 %end
 
@@ -174,12 +180,6 @@ static BOOL IsEnabled(NSString *key) {
     MSHookIvar<YTTransportControlsButtonView *>(self, "_seekBackwardAccessibilityButtonView").backgroundColor = nil;
     MSHookIvar<YTTransportControlsButtonView *>(self, "_seekForwardAccessibilityButtonView").backgroundColor = nil;
     MSHookIvar<YTPlaybackButton *>(self, "_playPauseButton").backgroundColor = nil;
-}
-%end
-
-%hook YTPlayBackButton
-- (UIColor *)backgroundColor {
-         return [UIColor colorWithRed: 0.00 green: 0.00 blue: 0.00 alpha: 0.00];
 }
 %end
 %end
@@ -222,7 +222,7 @@ static BOOL IsEnabled(NSString *key) {
 %end
 %end
 
-// NOYTPremium - https://github.com/PoomSmart/NoYTPremium/
+// NOYTPremium - @PoomSmart - https://github.com/PoomSmart/NoYTPremium/
 %hook YTCommerceEventGroupHandler
 - (void)addEventHandlers {}
 %end
@@ -247,6 +247,13 @@ static BOOL IsEnabled(NSString *key) {
 
 %hook YTSurveyController
 - (void)showSurveyWithRenderer:(id)arg1 surveyParentResponder:(id)arg2 {}
+%end
+
+%hook YTIOfflineabilityFormat
+%new
+- (int)availabilityType { return 1; }
+%new
+- (BOOL)savedSettingShouldExpire { return NO; }
 %end
 
 // YTShortsProgress - @PoomSmart - https://github.com/PoomSmart/YTShortsProgress
@@ -274,7 +281,7 @@ static BOOL IsEnabled(NSString *key) {
 // YTNoModernUI - @arichorn
 %group gYTNoModernUI
 %hook YTVersionUtils // YTNoModernUI Version
-+ (NSString *)appVersion { return @"16.42.3"; }
++ (NSString *)appVersion { return @"17.11.2"; } // Spoofs YouTube to v17.11.2
 %end
 
 %hook YTInlinePlayerBarContainerView // Red Progress Bar - YTNoModernUI
@@ -780,14 +787,21 @@ static void replaceTab(YTIGuideResponse *response) {
 }
 %end
 
-// Bring back the red progress bar
+// Bring back the Red Progress Bar
 %hook YTInlinePlayerBarContainerView
 - (id)quietProgressBarColor {
     return IsEnabled(@"redProgressBar_enabled") ? [UIColor redColor] : %orig;
 }
 %end
 
-// Disable tap to skip
+// Bring back the Gray Progress Buffer - @dayanch96 - (https://github.com/dayanch96/YTLite)
+%hook YTSegmentableInlinePlayerBarView
+- (UIColor *)_unbufferedProgressBarColor {
+return IsEnabled(@"oldBufferedProgressBar_enabled") ? [UIColor colorWithRed: 0.65 green: 0.65 blue: 0.65 alpha: 0.90] : %orig;
+}
+%end
+
+// Disable double tap to skip
 %hook YTDoubleTapToSeekController
  - (void)enableDoubleTapToSeek:(BOOL)arg1 {
      return IsEnabled(@"tapToSkip_disabled") ? %orig(NO) : %orig;
@@ -821,6 +835,13 @@ static void replaceTab(YTIGuideResponse *response) {
 - (void)setHintsDisabled:(BOOL)arg1 {
     %orig(YES);
 }
+%end
+%end
+
+// Stick Navigation bar
+%group gStickNavigationBar
+%hook YTHeaderView
+- (BOOL)stickyNavHeaderEnabled { return YES; } 
 %end
 %end
 
@@ -948,8 +969,11 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IsEnabled(@"hideYouTubeLogo_enabled")) {
         %init(gHideYouTubeLogo);
     }
-	if (IsEnabled(@"disableHints_enabled")) {
+    if (IsEnabled(@"disableHints_enabled")) {
         %init(gDisableHints);
+    }
+    if (IsEnabled(@"stickNavigationBar_enabled")) {
+        %init(gStickNavigationBar);
     }
     if (IsEnabled(@"hideChipBar_enabled")) {
         %init(gHideChipBar);
