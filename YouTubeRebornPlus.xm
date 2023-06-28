@@ -106,13 +106,19 @@ static BOOL IsEnabled(NSString *key) {
     if (IsEnabled(@"hideAutoplaySwitch_enabled")) {}
     else { return %orig; }
 }
-+ (void)setShareButtonAvailable:(BOOL)arg1 { // enable Share Button
-    if (IsEnabled(@"enableShareButton_enabled")) {}
-    else { return %orig; }
++ (void)setShareButtonAvailable:(BOOL)arg1 {
+    if (IsEnabled(@"enableShareButton_enabled")) {
+        %orig(arg1);
+    } else {
+        %orig(NO);
+    }
 }
-+ (void)setAddToButtonAvailable:(BOOL)arg1 { // enable Save to Playlist Button
-    if (IsEnabled(@"enableSaveToButton_enabled")) {}
-    else { return %orig; }
++ (void)setAddToButtonAvailable:(BOOL)arg1 {
+    if (IsEnabled(@"enableSaveToButton_enabled")) {
+        %orig(arg1);
+    } else {
+        %orig(NO);
+    }
 }
 %end
 
@@ -150,12 +156,6 @@ static BOOL IsEnabled(NSString *key) {
     MSHookIvar<YTPlaybackButton *>(self, "_playPauseButton").backgroundColor = nil;
 }
 %end
-
-%hook YTPlayBackButton
-- (UIColor *)backgroundColor {
-         return [UIColor colorWithRed: 0.00 green: 0.00 blue: 0.00 alpha: 0.00];
-}
-%end
 %end
 
 // A/B flags
@@ -186,7 +186,7 @@ static BOOL IsEnabled(NSString *key) {
 %end
 %end
 
-// NOYTPremium - https://github.com/PoomSmart/NoYTPremium/
+// NOYTPremium - @PoomSmart - https://github.com/PoomSmart/NoYTPremium/
 %hook YTCommerceEventGroupHandler
 - (void)addEventHandlers {}
 %end
@@ -211,6 +211,13 @@ static BOOL IsEnabled(NSString *key) {
 
 %hook YTSurveyController
 - (void)showSurveyWithRenderer:(id)arg1 surveyParentResponder:(id)arg2 {}
+%end
+
+%hook YTIOfflineabilityFormat
+%new
+- (int)availabilityType { return 1; }
+%new
+- (BOOL)savedSettingShouldExpire { return NO; }
 %end
 
 // YTShortsProgress - @PoomSmart - https://github.com/PoomSmart/YTShortsProgress
@@ -238,7 +245,7 @@ static BOOL IsEnabled(NSString *key) {
 // YTNoModernUI - @arichorn
 %group gYTNoModernUI
 %hook YTVersionUtils // YTNoModernUI Version
-+ (NSString *)appVersion { return @"16.42.3"; }
++ (NSString *)appVersion { return @"17.11.2"; } // Spoofs YouTube to v17.11.2
 %end
 
 %hook YTInlinePlayerBarContainerView // Red Progress Bar - YTNoModernUI
@@ -744,35 +751,12 @@ static void replaceTab(YTIGuideResponse *response) {
 }
 %end
 
-// Bring back the red progress bar
-%hook YTInlinePlayerBarContainerView
-- (id)quietProgressBarColor {
-    return IsEnabled(@"redProgressBar_enabled") ? [UIColor redColor] : %orig;
-}
-%end
-
-// Bring back the old buffered progress bar - @dayanch96
-%hook YTSegmentableInlinePlayerBarView
-- (UIColor *)_unbufferedProgressBarColor {
-return IsEnabled(@"oldBufferedProgressBar_enabled") ? [UIColor colorWithRed: 0.65 green: 0.65 blue: 0.65 alpha: 0.60] : %orig;
-}
-%end
-
-// Disable tap to skip
+// Disable double tap to skip
 %hook YTDoubleTapToSeekController
  - (void)enableDoubleTapToSeek:(BOOL)arg1 {
      return IsEnabled(@"tapToSkip_disabled") ? %orig(NO) : %orig;
  }
  %end
-
-// Hide YouTube Logo
-%group gHideYouTubeLogo
-%hook YTHeaderLogoController
-- (YTHeaderLogoController *)init {
-    return NULL;
-}
-%end
-%end
 
 // Miscellaneous
 // Disable hints - https://github.com/LillieH001/YouTube-Reborn/blob/v4/
@@ -792,6 +776,13 @@ return IsEnabled(@"oldBufferedProgressBar_enabled") ? [UIColor colorWithRed: 0.6
 - (void)setHintsDisabled:(BOOL)arg1 {
     %orig(YES);
 }
+%end
+%end
+
+// Stick Navigation bar
+%group gStickNavigationBar
+%hook YTHeaderView
+- (BOOL)stickyNavHeaderEnabled { return YES; } 
 %end
 %end
 
@@ -913,11 +904,11 @@ return IsEnabled(@"oldBufferedProgressBar_enabled") ? [UIColor colorWithRed: 0.6
     if (IsEnabled(@"disableVideoPlayerZoom_enabled")) {
         %init(gDisableVideoPlayerZoom);
     }
-    if (IsEnabled(@"hideYouTubeLogo_enabled")) {
-        %init(gHideYouTubeLogo);
-    }
     if (IsEnabled(@"disableHints_enabled")) {
         %init(gDisableHints);
+    }
+    if (IsEnabled(@"stickNavigationBar_enabled")) {
+        %init(gStickNavigationBar);
     }
     if (IsEnabled(@"hideChipBar_enabled")) {
         %init(gHideChipBar);
