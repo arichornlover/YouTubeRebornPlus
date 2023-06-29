@@ -121,6 +121,14 @@ static BOOL pinkContrastMode() {
 }
 %end
 
+%hook UIBarButtonItem
+- (void)setTitleTextAttributes:(NSDictionary *)attributes forState:(UIControlState)state {
+    NSMutableDictionary *modifiedAttributes = [NSMutableDictionary dictionaryWithDictionary:attributes];
+    [modifiedAttributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    %orig(modifiedAttributes, state);
+}
+%end
+
 %hook UILabel
 - (void)setTextColor:(UIColor *)textColor {
     %log;
@@ -142,6 +150,21 @@ static BOOL pinkContrastMode() {
     %log;
     textColor = [UIColor whiteColor];
     %orig(textColor);
+}
+%end
+
+%hook UISearchBar
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [UIColor whiteColor];
+    %orig(textColor);
+}
+%end
+
+%hook UISegmentedControl
+- (void)setTitleTextAttributes:(NSDictionary *)attributes forState:(UIControlState)state {
+    NSMutableDictionary *modifiedAttributes = [NSMutableDictionary dictionaryWithDictionary:attributes];
+    [modifiedAttributes setObject:[UIColor whiteColor] forKey:NSForegroundColorAttributeName];
+    %orig(modifiedAttributes, state);
 }
 %end
 
