@@ -149,7 +149,7 @@ static BOOL isDarkMode() {
 # pragma mark - ctor
 %ctor {
     %init;
-    if (lowContrastMode()) {
+    if (IsEnabled(@"lowContrastMode_enabled")) {
         %init(gLowContrastMode);
     }
 }
