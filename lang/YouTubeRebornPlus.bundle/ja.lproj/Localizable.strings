@@ -8,8 +8,8 @@
 "AUTO_FULLSCREEN" = "自動フルスクリーン (YTAutoFullScreen)";
 "AUTO_FULLSCREEN_DESC" = "フルスクリーンでビデオを自動再生します";
 
-"TAP_TO_SKIP" = "タップしてスキップする機能を無効化";
-"TAP_TO_SKIP_DESC" = "ビデオプレーヤーでタップしてスキップする機能を無効にします。アプリの再起動が必要です";
+"DISABLE_DOUBLE_TAP_TO_SKIP" = "Disable double tap to skip";
+"DISABLE_DOUBLE_TAP_TO_SKIP_DESC" = "Disables the double tap to skip gestures in the video player. App restart is required.";
 
 "SNAP_TO_CHAPTER" = "チャプターへのスナップを無効化";
 "SNAP_TO_CHAPTER_DESC" = "動画でシークする際にチャプターへの自動スナップを無効にします。アプリの再起動が必要です";
@@ -68,9 +68,6 @@
 "HIDE_RIGHT_PANEL" = "フルスクリーンモードで右パネルを非表示";
 "HIDE_RIGHT_PANEL_DESC" = "アプリの再起動が必要です";
 
-"DONT_EAT_MY_CONTENT" = "2:1比率の動画とノッチ/Dynamic Islandの最適化 (DontEatMyContent)";
-"DONT_EAT_MY_CONTENT_DESC" = "2:1比率の動画とノッチ/Dynamic Islandが干渉するのを防ぎます。アプリの再起動が必要です";
-
 "HIDE_HEATWAVES" = "ヒートウェーブを非表示";
 "HIDE_HEATWAVES_DESC" = "ビデオプレーヤーでヒートウェーブを非表示にします。アプリの再起動が必要です";
 
@@ -83,29 +80,10 @@
 "HIDE_SHORTS_VIDEOS" = "ショートを非表示";
 "HIDE_SHORTS_VIDEOS_DESC" = "ホームページからショートを非表示にします(推奨)";
 
-"HIDE_SHORTS_CHANNEL_AVATAR" = "ショートチャンネルのアバターを非表示";
-"HIDE_SHORTS_CHANNEL_AVATAR_DESC" = "";
-
-"HIDE_SHORTS_LIKE_BUTTON" = "ショートの高評価ボタンを非表示";
-"HIDE_SHORTS_LIKE_BUTTON_DESC" = "";
-
-"HIDE_SHORTS_DISLIKE_BUTTON" = "ショートの低評価ボタンを非表示";
-"HIDE_SHORTS_DISLIKE_BUTTON_DESC" = "";
-
-"HIDE_SHORTS_COMMENT_BUTTON" = "ショートのコメントのボタンを非表示";
-"HIDE_SHORTS_COMMENT_BUTTON_DESC" = "";
-
-"HIDE_SHORTS_REMIX_BUTTON" = "ショートのリミックスボタンを非表示";
-"HIDE_SHORTS_REMIX_BUTTON_DESC" = "";
-
-"HIDE_SHORTS_SHARE_BUTTON" = "ショートの共有ボタンを非表示";
-"HIDE_SHORTS_SHARE_BUTTON_DESC" = "";
-
-"HIDE_SUPER_THANKS" = "Super Thanks を購入のバナーを非表示";
-"HIDE_SUPER_THANKS_DESC" = "ショートの「Super Thanks」バナーを非表示にします";
-
-"HIDE_SUBSCRIPTIONS" = "チャンネル登録ボタンを非表示";
-"HIDE_SUBSCRIPTIONS_DESC" = "一時停止時に表示されるチャンネル登録ボタンを非表示にします";
+// Version Spoofer
+"APP_VERSION_SPOOFER" = "Enable App Version Spoofer";
+"APP_VERSION_SPOOFER_DESC" = "Enable this to use the Version Spoofer and select your perferred version below. App restart is required.";
+"VERSION_SPOOFER_TITLE" = "Version Spoofer Picker";
 
 // Theme
 "THEME_OPTIONS" = "テーマオプション";
@@ -126,25 +104,14 @@
 "LOW_CONTRAST_MODE" = "低コントラストモード";
 "LOW_CONTRAST_MODE_DESC" = "このオプションは、テキストとボタンのコントラストを以前のYouTubeインターフェイスのように低くします。アプリの再起動が必要です";
 
-"LCM_CHOOSE_COLOR" = "低コントラストのテキストカラー";
-"DEFAULT_UI" = "デフォルト";
-"RED_UI" = "赤色のUI";
-"BLUE_UI" = "青色のUI";
-"GREEN_UI" = "緑色のUI";
-"YELLOW_UI" = "黄色のUI";
-"ORANGE_UI" = "オレンジ色のUI";
-"PURPLE_UI" = "紫色のUI";
-"VIOLET_UI" = "バイオレットUI";
-"PINK_UI" = "ピンク色のUI";
-
 // Miscellaneous
 "MISCELLANEOUS" = "その他";
 
 "ENABLE_YT_STARTUP_ANIMATION" = "YouTube起動時のアニメーションを有効化";
 "ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
 
-"HIDE_YOUTUBE_LOGO" = "YouTubeロゴを非表示";
-"HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です";
+"STICK_NAVIGATION_BAR" = "Stick Navigation Bar";
+"STICK_NAVIGATION_BAR_DESC" = "Enable to make the Navigation Bar stay on the App when scrolling.";
 
 "HIDE_CHIP_BAR" = "トップバーを非表示";
 "HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム など)と\n登録チャンネル(すべてのビデオ,視聴を続ける など)リボンのトップバーを非表示にします。\nアプリの再起動が必要です";
@@ -179,15 +146,6 @@
 
 "HIDE_SPONSORBLOCK_BUTTON" = "ナビゲーションバーのiSponsorBlockボタンを非表示";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
-
-"HIDE_CERCUBE_BUTTON" = "ナビゲーションバーのCercubeボタンを非表示";
-"HIDE_CERCUBE_BUTTON_DESC" = "";
-
-"HIDE_CERCUBE_PIP_BUTTON" = "CercubeのPiPボタンを非表示";
-"HIDE_CERCUBE_PIP_BUTTON_DESC" = "ビデオコントロールオーバーレイでCercubeのPiPボタンを非表示にします";
-
-"HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Cercubeのダウンロードボタンを非表示";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Cercubeのダウンロードボタンを非表示にするオプションはデフォルトで有効になっています。 Cercubeのダウンロードサーバーがなくなったので、現在何もダウンロードできないからです";
 
 "DISABLE_WIFI_RELATED_SETTINGS" = "Wi-Fi関連の設定を無効化";
 "DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Wifi関連項目を無効化します。(通知,接続済みのアプリ,プライバシー,チャットなど) 設定メニューから選択してください。アプリの再起動が必要です";

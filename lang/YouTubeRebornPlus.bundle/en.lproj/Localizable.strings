@@ -8,8 +8,8 @@
 "AUTO_FULLSCREEN" = "Auto Full Screen (YTAutoFullScreen)";
 "AUTO_FULLSCREEN_DESC" = "Autoplay videos at full screen.";
 
-"TAP_TO_SKIP" = "Disable tap to skip";
-"TAP_TO_SKIP_DESC" = "Disable the tap to skip feature in the video player. App restart is required.";
+"DISABLE_DOUBLE_TAP_TO_SKIP" = "Disable double tap to skip";
+"DISABLE_DOUBLE_TAP_TO_SKIP_DESC" = "Disables the double tap to skip gestures in the video player. App restart is required.";
 
 "SNAP_TO_CHAPTER" = "Disable snap to chapter";
 "SNAP_TO_CHAPTER_DESC" = "Disable auto snap to chapter when seeking in videos. App restart is required.";
@@ -68,9 +68,6 @@
 "HIDE_RIGHT_PANEL" = "Hide the right panel in fullscreen mode";
 "HIDE_RIGHT_PANEL_DESC" = "App restart is required.";
 
-"DONT_EAT_MY_CONTENT" = "Prevent Notch/Island on 2:1 Video Content (DontEatMyContent)";
-"DONT_EAT_MY_CONTENT_DESC" = "Prevent the notch/Dynamic Island from munching on 2:1 video content in YouTube. App restart is required.";
-
 "HIDE_HEATWAVES" = "Hide Heatwaves";
 "HIDE_HEATWAVES_DESC" = "Hides the Heatwaves in the video player. App restart is required.";
 
@@ -83,29 +80,10 @@
 "HIDE_SHORTS_VIDEOS" = "Hide Shorts videos";
 "HIDE_SHORTS_VIDEOS_DESC" = "Hide Shorts videos in Homepage, Recommended...";
 
-"HIDE_SHORTS_CHANNEL_AVATAR" = "Hide Shorts channel's avatar";
-"HIDE_SHORTS_CHANNEL_AVATAR_DESC" = "";
-
-"HIDE_SHORTS_LIKE_BUTTON" = "Hide Shorts like button";
-"HIDE_SHORTS_LIKE_BUTTON_DESC" = "";
-
-"HIDE_SHORTS_DISLIKE_BUTTON" = "Hide Shorts dislike button";
-"HIDE_SHORTS_DISLIKE_BUTTON_DESC" = "";
-
-"HIDE_SHORTS_COMMENT_BUTTON" = "Hide Shorts comment button";
-"HIDE_SHORTS_COMMENT_BUTTON_DESC" = "";
-
-"HIDE_SHORTS_REMIX_BUTTON" = "Hide Shorts remix button";
-"HIDE_SHORTS_REMIX_BUTTON_DESC" = "";
-
-"HIDE_SHORTS_SHARE_BUTTON" = "Hide Shorts share button";
-"HIDE_SHORTS_SHARE_BUTTON_DESC" = "";
-
-"HIDE_SUPER_THANKS" = "Hide 'Buy Super Thanks' banner";
-"HIDE_SUPER_THANKS_DESC" = "Hide the 'Buy Super Thanks' banner in Shorts.";
-
-"HIDE_SUBSCRIPTIONS" = "Hide Subscriptions button";
-"HIDE_SUBSCRIPTIONS_DESC" = "Hide Subscriptions button which shows up when paused.";
+// Version Spoofer
+"APP_VERSION_SPOOFER" = "Enable App Version Spoofer";
+"APP_VERSION_SPOOFER_DESC" = "Enable this to use the Version Spoofer and select your perferred version below. App restart is required.";
+"VERSION_SPOOFER_TITLE" = "Version Spoofer Picker";
 
 // Theme
 "THEME_OPTIONS" = "Theme Options";
@@ -126,25 +104,14 @@
 "LOW_CONTRAST_MODE" = "Low Contrast Mode";
 "LOW_CONTRAST_MODE_DESC" = "This option will Low Contrast of the texts and buttons just like how the old YouTube Interface was. App restart is required.";
 
-"LCM_CHOOSE_COLOR" = "Low contrast text color";
-"DEFAULT_UI" = "Default";
-"RED_UI" = "Red UI";
-"BLUE_UI" = "Blue UI";
-"GREEN_UI" = "Green UI";
-"YELLOW_UI" = "Yellow UI";
-"ORANGE_UI" = "Orange UI";
-"PURPLE_UI" = "Purple UI";
-"VIOLET_UI" = "Violet UI";
-"PINK_UI" = "Pink UI";
-
 // Miscellaneous
 "MISCELLANEOUS" = "Miscellaneous";
 
 "ENABLE_YT_STARTUP_ANIMATION" = "Enable YouTube startup animation";
 "ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
 
-"HIDE_YOUTUBE_LOGO" = "Hide YouTube Logo";
-"HIDE_YOUTUBE_LOGO_DESC" = "this will Hide the YouTube Logo on the top left of the Interface. App restart is required.";
+"STICK_NAVIGATION_BAR" = "Stick Navigation Bar";
+"STICK_NAVIGATION_BAR_DESC" = "Enable to make the Navigation Bar stay on the App when scrolling.";
 
 "HIDE_CHIP_BAR" = "Hide the Upper bar";
 "HIDE_CHIP_BAR_DESC" = "Hide Upper bar in the Home feeds (Trends, Music, Gaming...) and Subscription feeds (All videos, Continue watching...).";
@@ -179,15 +146,6 @@
 
 "HIDE_SPONSORBLOCK_BUTTON" = "Hide iSponsorBlock button in the Navigation bar";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
-
-"HIDE_CERCUBE_BUTTON" = "Hide Cercube button in the Navigation bar";
-"HIDE_CERCUBE_BUTTON_DESC" = "";
-
-"HIDE_CERCUBE_PIP_BUTTON" = "Hide Cercube's PiP button";
-"HIDE_CERCUBE_PIP_BUTTON_DESC" = "Hide the PiP button of Cercube in video controls overlay.";
-
-"HIDE_CERCUBE_DOWNLOAD_BUTTON" = "Hide Cercube's Download button";
-"HIDE_CERCUBE_DOWNLOAD_BUTTON_DESC" = "Option to hide Cercube's Download button has been enabled by default. because you are unable to download anything now since Cercube's Download Servers are gone.";
 
 "DISABLE_WIFI_RELATED_SETTINGS" = "Disable Wifi Related Settings";
 "DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Disable Wifi Related Sections (Notfications, Connected apps, Privacy & Live Chat, etc.) in the Settings Menu. App restart is required.";
