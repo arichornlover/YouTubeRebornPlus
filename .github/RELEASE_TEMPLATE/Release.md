@@ -5,13 +5,11 @@ CercubePlus but adds Additional Features that should’ve been added to the nati
 <details>
 <summary>More Features...</summary>
 
-**LowContrastModeColors:** for users who doesn’t use gray will get a set of colors to switch which changes and improves the UI Customization. (Add-on added for LowContrastMode)
-
-**YTNoHeatwaves:** Turns off the Heatwaves Feature in the video player. `(CercubePlus/VideoPlayerOverlayControls)`
+**YTNoHeatwaves:** Turns off the Heatwaves Feature in the video player. `(Settings/CercubePlus/Video Player Overlay Controls)`
 
 **YTNoUpgradeDialog:** Disables the Upgrade Dialog so you won’t be prompt to update the app.
 
-**YouMute:** Mute/unmute videos in YouTube directly.
+**YouMute:** Mute/unmute videos in YouTube directly. `(Settings/YouMute)`
 
 **iPadLayout:** Gives iPhone users the ability to use the iPad’s Interface and the ability to use the some of the YouTube features that are not on iPhone.
 
@@ -28,7 +26,7 @@ CercubePlus but adds Additional Features that should’ve been added to the nati
 
 # [YOUR_TWEAK_NAME] Release Information
 Current YouTube IPA: `TEMPLATE`
-Current Cercube Version: `v5.3.13`
+Current Cercube Version: `v5.3.11`
 Current App Compatibility: `iOS/iPadOS 14.0` or later
 
 **RELEASE F1:**
