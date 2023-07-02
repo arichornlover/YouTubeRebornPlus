@@ -12,9 +12,6 @@ static BOOL IsEnabled(NSString *key) {
 static int GetSelection(NSString *key) {
     return [[NSUserDefaults standardUserDefaults] integerForKey:key];
 }
-static int colorContrastMode() {
-    return [[NSUserDefaults standardUserDefaults] integerForKey:@"lcmColor"];
-}
 static int appVersionSpoofer() {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"versionSpoofer"];
 }
