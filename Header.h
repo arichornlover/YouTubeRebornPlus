@@ -29,7 +29,6 @@
 #import "Tweaks/YouTubeHeader/YTIMenuConditionalServiceItemRenderer.h"
 #import "Tweaks/YouTubeHeader/YTPivotBarItemView.h"
 #import "Tweaks/YouTubeHeader/YTVideoWithContextNode.h"
-#import "Tweaks/YouTubeHeader/ELMCellNode.h"
 #import "Tweaks/YouTubeHeader/ELMNodeController.h"
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
