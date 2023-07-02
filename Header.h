@@ -111,9 +111,6 @@
 @end
 
 // YTNoShorts
-@interface ELMCellNode
-@end
-
 @interface _ASCollectionViewCell : UICollectionViewCell
 - (id)node;
 @end
