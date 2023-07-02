@@ -8,8 +8,8 @@
 "AUTO_FULLSCREEN" = "自動フルスクリーン (YTAutoFullScreen)";
 "AUTO_FULLSCREEN_DESC" = "フルスクリーンでビデオを自動再生します";
 
-"TAP_TO_SKIP" = "タップしてスキップする機能を無効化";
-"TAP_TO_SKIP_DESC" = "ビデオプレーヤーでタップしてスキップする機能を無効にします。アプリの再起動が必要です";
+"DISABLE_DOUBLE_TAP_TO_SKIP" = "Disable double tap to skip";
+"DISABLE_DOUBLE_TAP_TO_SKIP_DESC" = "Disables the double tap to skip gestures in the video player. App restart is required.";
 
 "SNAP_TO_CHAPTER" = "チャプターへのスナップを無効化";
 "SNAP_TO_CHAPTER_DESC" = "動画でシークする際にチャプターへの自動スナップを無効にします。アプリの再起動が必要です";
@@ -68,9 +68,6 @@
 "HIDE_RIGHT_PANEL" = "フルスクリーンモードで右パネルを非表示";
 "HIDE_RIGHT_PANEL_DESC" = "アプリの再起動が必要です";
 
-"DONT_EAT_MY_CONTENT" = "2:1比率の動画とノッチ/Dynamic Islandの最適化 (DontEatMyContent)";
-"DONT_EAT_MY_CONTENT_DESC" = "2:1比率の動画とノッチ/Dynamic Islandが干渉するのを防ぎます。アプリの再起動が必要です";
-
 "HIDE_HEATWAVES" = "ヒートウェーブを非表示";
 "HIDE_HEATWAVES_DESC" = "ビデオプレーヤーでヒートウェーブを非表示にします。アプリの再起動が必要です";
 
@@ -107,6 +104,11 @@
 "HIDE_SUBSCRIPTIONS" = "チャンネル登録ボタンを非表示";
 "HIDE_SUBSCRIPTIONS_DESC" = "一時停止時に表示されるチャンネル登録ボタンを非表示にします";
 
+// Version Spoofer
+"APP_VERSION_SPOOFER" = "Enable App Version Spoofer";
+"APP_VERSION_SPOOFER_DESC" = "Enable this to use the Version Spoofer and select your perferred version below. App restart is required.";
+"VERSION_SPOOFER_TITLE" = "Version Spoofer Picker";
+
 // Theme
 "THEME_OPTIONS" = "テーマオプション";
 
@@ -126,28 +128,20 @@
 "LOW_CONTRAST_MODE" = "低コントラストモード";
 "LOW_CONTRAST_MODE_DESC" = "このオプションは、テキストとボタンのコントラストを以前のYouTubeインターフェイスのように低くします。アプリの再起動が必要です";
 
-"LCM_CHOOSE_COLOR" = "低コントラストのテキストカラー";
-"DEFAULT_UI" = "デフォルト";
-"RED_UI" = "赤色のUI";
-"BLUE_UI" = "青色のUI";
-"GREEN_UI" = "緑色のUI";
-"YELLOW_UI" = "黄色のUI";
-"ORANGE_UI" = "オレンジ色のUI";
-"PURPLE_UI" = "紫色のUI";
-"VIOLET_UI" = "バイオレットUI";
-"PINK_UI" = "ピンク色のUI";
-
 // Miscellaneous
 "MISCELLANEOUS" = "その他";
 
 "ENABLE_YT_STARTUP_ANIMATION" = "YouTube起動時のアニメーションを有効化";
 "ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
 
-"HIDE_YOUTUBE_LOGO" = "YouTubeロゴを非表示";
-"HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です";
+"STICK_NAVIGATION_BAR" = "Stick Navigation Bar";
+"STICK_NAVIGATION_BAR_DESC" = "Enable to make the Navigation Bar stay on the App when scrolling.";
 
 "HIDE_CHIP_BAR" = "トップバーを非表示";
 "HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム など)と\n登録チャンネル(すべてのビデオ,視聴を続ける 等)リボンのトップバーを非表示にします。\nアプリの再起動が必要です";
+
+"HIDE_YOUTUBE_LOGO" = "YouTubeロゴを非表示";
+"HIDE_YOUTUBE_LOGO_DESC" = "インターフェイスの左上にあるYouTubeロゴを非表示にします。アプリの再起動が必要です";
 
 "HIDE_MODERN_INTERFACE" = "モダンインターフェイスを非表示 (YTNoModernUI)";
 "HIDE_MODERN_INTERFACE_DESC" = "YouTubeによって追加されたモダンな要素を隠すにはこれを有効にしてください。アンビエントモード,丸みを帯びたデザインなどを削除します。\nアプリの再起動が必要です";
