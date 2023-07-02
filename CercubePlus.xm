@@ -809,11 +809,11 @@ return IsEnabled(@"oldBufferedProgressBar_enabled") ? [UIColor colorWithRed: 0.6
 %end
 
 // Disable double tap to skip
-%hook YTDoubleTapToSeekController
- - (void)enableDoubleTapToSeek:(BOOL)arg1 {
-     return IsEnabled(@"tapToSkip_disabled") ? %orig(NO) : %orig;
- }
- %end
+%hook YTMainAppVideoPlayerOverlayViewController
+- (BOOL)allowDoubleTapToSeekGestureRecognizer {
+     return IsEnabled(@"disableDoubleTapToSkip_enabled") ? NO : %orig;
+}
+%end
 
 // Hide YouTube Logo
 %group gHideYouTubeLogo
