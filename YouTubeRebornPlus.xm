@@ -108,14 +108,14 @@ static BOOL IsEnabled(NSString *key) {
 }
 - (void)setShareButtonAvailable:(BOOL)arg1 {
     if (IsEnabled(@"enableShareButton_enabled")) {
-        %orig(arg1);
+        %orig(YES);
     } else {
         %orig(NO);
     }
 }
 - (void)setAddToButtonAvailable:(BOOL)arg1 {
     if (IsEnabled(@"enableSaveToButton_enabled")) {
-        %orig(arg1);
+        %orig(YES);
     } else {
         %orig(NO);
     }
