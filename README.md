@@ -53,6 +53,12 @@ Special thanks to these developer(s) for maintaining and improving YouTubeReborn
 </a>
 <h4 align='center'><a href='https://github.com/ssuesskind'>ssuesskind</a></h4>
 </td>
+<td id='Balackburn'>
+<a href='https://github.com/Balackburn'>
+<img src='https://github.com/Balackburn.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://github.com/Balackburn'>Balackburn</a></h4>
+</td>
 
 <table id='credit'>
 Special thanks to all the developers who have contributed to CercubePlus/YouTubeRebornPlus!
