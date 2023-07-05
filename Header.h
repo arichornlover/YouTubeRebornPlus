@@ -116,7 +116,7 @@
 @end
 
 @interface YTAsyncCollectionView : UICollectionView
-- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath;
+- (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
 // App Theme
