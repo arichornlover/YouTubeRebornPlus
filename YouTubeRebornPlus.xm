@@ -643,30 +643,30 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 %end
 
-// Hide YouTube annoying banner in Home page? - @MiRO92 - YTNoShorts: https://github.com/MiRO92/YTNoShorts
+// Hide YouTube annoying shorts banner in Home page & search page? - @MiRO92 - YTNoShorts: https://github.com/MiRO92/YTNoShorts
+%group gHideShorts
 %hook YTAsyncCollectionView
 - (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (IsEnabled(@"hideShorts_enabled")) {
-        UICollectionViewCell *cell = %orig;
-        if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
-            _ASCollectionViewCell *cell = %orig;
-            if ([cell respondsToSelector:@selector(node)]) {
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"]) {
-                    [self removeShortsCellAtIndexPath:indexPath];
-                }
-            }
-        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
-            [self removeShortsCellAtIndexPath:indexPath];
-        }
-        return %orig;
-    }
-        return %orig;
-}
+    UICollectionViewCell *cell = %orig;
 
-%new
-- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
-        [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+    if ([cell isKindOfClass:objc_lookUpClass("_ASCollectionViewCell")]) {
+        _ASCollectionViewCell *asCell = (_ASCollectionViewCell *)cell;
+        if ([asCell respondsToSelector:@selector(node)]) {
+            NSString *idToRemove = [[asCell node] accessibilityIdentifier];
+            if ([idToRemove isEqualToString:@"eml.shorts-grid"] || [idToRemove isEqualToString:@"eml.shorts-shelf"]) {
+                [self removeCellsAtIndexPath:indexPath];
+            }
+        }
+    } else if ([cell isKindOfClass:objc_lookUpClass("YTReelShelfCell")]) {
+        [self removeCellsAtIndexPath:indexPath];
+    }
+    return %orig;
 }
+%new
+- (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath {
+    [self deleteItemsAtIndexPaths:@[indexPath]];
+}
+%end
 %end
 
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
@@ -886,6 +886,9 @@ static void replaceTab(YTIGuideResponse *response) {
     }
     if (IsEnabled(@"bigYTMiniPlayer_enabled") && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
         %init(Main);
+    }
+    if (IsEnabled(@"hideShorts_enabled")) {
+        %init(gHideShorts);
     }
     if (IsEnabled(@"hidePreviousAndNextButton_enabled")) {
         %init(gHidePreviousAndNextButton);
