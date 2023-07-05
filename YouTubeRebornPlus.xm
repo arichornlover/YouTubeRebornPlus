@@ -650,9 +650,9 @@ static void replaceTab(YTIGuideResponse *response) {
     UICollectionViewCell *cell = %orig;
 
     if ([cell isKindOfClass:objc_lookUpClass("_ASCollectionViewCell")]) {
-        _ASCollectionViewCell *asCell = (_ASCollectionViewCell *)cell;
-        if ([asCell respondsToSelector:@selector(node)]) {
-            NSString *idToRemove = [[asCell node] accessibilityIdentifier];
+        _ASCollectionViewCell *cell = %orig;
+        if ([cell respondsToSelector:@selector(node)]) {
+            NSString *idToRemove = [[cell node] accessibilityIdentifier];
             if ([idToRemove isEqualToString:@"eml.shorts-grid"] || [idToRemove isEqualToString:@"eml.shorts-shelf"]) {
                 [self removeCellsAtIndexPath:indexPath];
             }
@@ -662,6 +662,7 @@ static void replaceTab(YTIGuideResponse *response) {
     }
     return %orig;
 }
+
 %new
 - (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath {
     [self deleteItemsAtIndexPaths:@[indexPath]];
