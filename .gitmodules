@@ -45,3 +45,6 @@
 [submodule "Tweaks/DontEatMyContent"]
 	path = Tweaks/DontEatMyContent
 	url = https://github.com/therealFoxster/DontEatMyContent
+[submodule "Tweaks/YTNoCommunityPosts"]
+	path = Tweaks/YTNoCommunityPosts
+	url = https://github.com/arichorn/YTNoCommunityPosts.git
