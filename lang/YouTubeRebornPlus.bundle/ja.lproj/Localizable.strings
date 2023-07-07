@@ -82,7 +82,7 @@
 
 // Version Spoofer
 "APP_VERSION_SPOOFER" = "アプリのバージョン偽装を有効にする";
-"APP_VERSION_SPOOFER_DESC" = "この機能を有効にするとバージョン偽装を使用し、以下で好みのバージョンを選択できます。アプリの再起動が必要です。";
+"APP_VERSION_SPOOFER_DESC" = "この機能を有効にするとバージョン偽装を使用し、以下で好みのバージョンを選択できます。アプリの再起動が必要です";
 "VERSION_SPOOFER_TITLE" = "偽装バージョンの選択";
 
 // Theme
