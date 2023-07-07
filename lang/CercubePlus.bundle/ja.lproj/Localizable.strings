@@ -8,8 +8,8 @@
 "AUTO_FULLSCREEN" = "自動フルスクリーン (YTAutoFullScreen)";
 "AUTO_FULLSCREEN_DESC" = "フルスクリーンでビデオを自動再生します";
 
-"DISABLE_DOUBLE_TAP_TO_SKIP" = "Disable double tap to skip";
-"DISABLE_DOUBLE_TAP_TO_SKIP_DESC" = "Disables the double tap to skip gestures in the video player. App restart is required.";
+"DISABLE_DOUBLE_TAP_TO_SKIP" = "ダブルタップでスキップを無効にする";
+"DISABLE_DOUBLE_TAP_TO_SKIP_DESC" = "ビデオプレーヤーでのダブルタップによるスキップジェスチャーを無効にします。アプリの再起動が必要です";
 
 "SNAP_TO_CHAPTER" = "チャプターへのスナップを無効化";
 "SNAP_TO_CHAPTER_DESC" = "動画でシークする際にチャプターへの自動スナップを無効にします。アプリの再起動が必要です";
@@ -20,7 +20,7 @@
 "YT_MINIPLAYER" = "全てのYouTubeのビデオにミニプレーヤーを有効化";
 "YT_MINIPLAYER_DESC" = "例えば子供向け動画など";
 
-"STOCK_VOLUME_HUD" = "iOSのstockボリュームHUDを利用する";
+"STOCK_VOLUME_HUD" = "iOSの標準ボリュームHUDを利用する";
 "STOCK_VOLUME_HUD_DESC" = "";
 
 // Video controls overlay options
@@ -105,9 +105,9 @@
 "HIDE_SUBSCRIPTIONS_DESC" = "一時停止時に表示されるチャンネル登録ボタンを非表示にします";
 
 // Version Spoofer
-"APP_VERSION_SPOOFER" = "Enable App Version Spoofer";
-"APP_VERSION_SPOOFER_DESC" = "Enable this to use the Version Spoofer and select your perferred version below. App restart is required.";
-"VERSION_SPOOFER_TITLE" = "Version Spoofer Picker";
+"APP_VERSION_SPOOFER" = "アプリのバージョン偽装を有効にする";
+"APP_VERSION_SPOOFER_DESC" = "この機能を有効にするとバージョン偽装を使用し、以下で好みのバージョンを選択できます。アプリの再起動が必要です";
+"VERSION_SPOOFER_TITLE" = "偽装バージョンの選択";
 
 // Theme
 "THEME_OPTIONS" = "テーマオプション";
@@ -134,8 +134,8 @@
 "ENABLE_YT_STARTUP_ANIMATION" = "YouTube起動時のアニメーションを有効化";
 "ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
 
-"STICK_NAVIGATION_BAR" = "Stick Navigation Bar";
-"STICK_NAVIGATION_BAR_DESC" = "Enable to make the Navigation Bar stay on the App when scrolling.";
+"STICK_NAVIGATION_BAR" = "ナビゲーションバーを固定する";
+"STICK_NAVIGATION_BAR_DESC" = "スクロール時にナビゲーションバーをアプリ上に固定するために有効にします";
 
 "HIDE_CHIP_BAR" = "トップバーを非表示";
 "HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム など)と\n登録チャンネル(すべてのビデオ,視聴を続ける 等)リボンのトップバーを非表示にします。\nアプリの再起動が必要です";
