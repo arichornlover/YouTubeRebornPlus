@@ -134,16 +134,16 @@ static BOOL IsEnabled(NSString *key) {
 }
 - (void)setShareButtonAvailable:(BOOL)arg1 {
     if (IsEnabled(@"enableShareButton_enabled")) {
-        %orig(arg1);
-    } else {
         %orig(YES);
+    } else {
+        %orig(NO);
     }
 }
 - (void)setAddToButtonAvailable:(BOOL)arg1 {
     if (IsEnabled(@"enableSaveToButton_enabled")) {
-        %orig(arg1);
-    } else {
         %orig(YES);
+    } else {
+        %orig(NO);
     }
 }
 %end
@@ -715,29 +715,30 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 
 // Hide YouTube annoying banner in Home page? - @MiRO92 - YTNoShorts: https://github.com/MiRO92/YTNoShorts
+%group gHideShorts
 %hook YTAsyncCollectionView
 - (id)cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (IsEnabled(@"hideShorts_enabled")) {
-        UICollectionViewCell *cell = %orig;
-        if ([cell isKindOfClass:NSClassFromString(@"_ASCollectionViewCell")]) {
-            _ASCollectionViewCell *cell = %orig;
-            if ([cell respondsToSelector:@selector(node)]) {
-                if ([[[cell node] accessibilityIdentifier] isEqualToString:@"eml.shorts-shelf"]) {
-                    [self removeShortsCellAtIndexPath:indexPath];
-                }
+    UICollectionViewCell *cell = %orig;
+
+    if ([cell isKindOfClass:objc_lookUpClass("_ASCollectionViewCell")]) {
+        _ASCollectionViewCell *cell = %orig;
+        if ([cell respondsToSelector:@selector(node)]) {
+            NSString *idToRemove = [[cell node] accessibilityIdentifier];
+            if ([idToRemove isEqualToString:@"eml.shorts-grid"] || [idToRemove isEqualToString:@"eml.shorts-shelf"]) {
+                [self removeCellsAtIndexPath:indexPath];
             }
-        } else if ([cell isKindOfClass:NSClassFromString(@"YTReelShelfCell")]) {
-            [self removeShortsCellAtIndexPath:indexPath];
         }
-        return %orig;
+    } else if ([cell isKindOfClass:objc_lookUpClass("YTReelShelfCell")]) {
+        [self removeCellsAtIndexPath:indexPath];
     }
-        return %orig;
+    return %orig;
 }
 
 %new
-- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath {
-        [self deleteItemsAtIndexPaths:[NSArray arrayWithObject:indexPath]];
+- (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath {
+    [self deleteItemsAtIndexPaths:@[indexPath]];
 }
+%end
 %end
 
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
@@ -983,6 +984,9 @@ return IsEnabled(@"oldBufferedProgressBar_enabled") ? [UIColor colorWithRed: 0.6
     }
     if (IsEnabled(@"bigYTMiniPlayer_enabled") && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
         %init(Main);
+    }
+    if (IsEnabled(@"hideShorts_enabled")) {
+        %init(gHideShorts);
     }
     if (IsEnabled(@"hidePreviousAndNextButton_enabled")) {
         %init(gHidePreviousAndNextButton);
