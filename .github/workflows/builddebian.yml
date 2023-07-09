@@ -1,0 +1,84 @@
+# This has been created by @arichorn
+# Enjoy making debs!
+
+name: Build the YouTubeRebornPlus deb
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v2
+
+    - name: Install Dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y dpkg-dev build-essential debhelper devscripts dh-make fakeroot
+
+    - name: Create DEBIAN directory
+      run: |
+        mkdir -p dist/DEBIAN
+        chmod 755 dist/DEBIAN
+
+    - name: Move control file
+      run: |
+        mv control dist/DEBIAN/control
+   
+    - name: Create compat file
+      run: |
+        echo "12" > dist/DEBIAN/compat
+
+    - name: Create Library Folder
+      run: mkdir -p dist/Library/YouTubeRebornPlus
+
+    - name: Copy Modified Files to Applications
+      run: |
+        mkdir -p dist/Applications/YouTube.app/
+        cp -r ./Tweak.xm dist/Library/YouTubeRebornPlus/
+        cp -r ./Header.h dist/Library/YouTubeRebornPlus/
+        cp -r ./YouTubeRebornPlus.plist dist/Library/YouTubeRebornPlus/
+        cp -r ./Makefile dist/Library/YouTubeRebornPlus/
+
+    - name: Build Debian Package
+      run: |
+        dpkg-deb --build dist YouTubeRebornPlus.4.1.1.deb
+
+    - name: List files in dist directory
+      run: ls -l dist
+
+    - name: List files in current directory
+      run: ls -l
+
+    - name: Upload Debian Package
+      uses: actions/upload-artifact@v2
+      with:
+        name: com.arichorn.youtuberebornplus
+        path: YouTubeRebornPlus.4.1.1.deb
+
+    - name: Debug Upload Debian Package
+      run: echo ${{ steps.upload_debian_package.outputs }}
+
+    - name: Create Release
+      id: create_release
+      uses: softprops/action-gh-release@v0.1.15
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        files: YouTubeRebornPlus.4.1.1.deb
+        tag_name: v4.1.0
+        name: YouTubeRebornPlus v4.1.1
+        draft: true
+
+    - name: Upload DEB to Release
+      uses: actions/upload-release-asset@v1.0.1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: YouTubeRebornPlus.4.1.1.deb
+        asset_name: com.arichorn.youtuberebornplus
+        asset_content_type: application/vnd.debian.binary-package
