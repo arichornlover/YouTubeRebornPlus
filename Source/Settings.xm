@@ -535,12 +535,12 @@ extern NSBundle *YouTubeRebornPlusBundle();
                     return @"v16.05.7";
                 case 0:
                 default:
-                    return @"v18.23.3";
+                    return @"latest - (Client-Side)";
             }
         }
         selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
             NSArray <YTSettingsSectionItem *> *rows = @[
-                [YTSettingsSectionItemClass checkmarkItemWithTitle:@"v18.23.3" titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
+                [YTSettingsSectionItemClass checkmarkItemWithTitle:@"latest - (Client-Side)" titleDescription:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
                     [[NSUserDefaults standardUserDefaults] setInteger:0 forKey:@"versionSpoofer"];
                     [settingsViewController reloadData];
                     return YES;
