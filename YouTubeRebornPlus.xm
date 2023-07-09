@@ -176,9 +176,11 @@ static BOOL IsEnabled(NSString *key) {
 // Disable Wifi Related Settings - @arichorn
 %group gDisableWifiRelatedSettings
 %hook YTSettingsSectionItemManager
-- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {} // Try New Features
+- (void)updateSubscriptionProductsSectionWithEntry:(id)arg1 {} // Purchases and memberships
 - (void)updateAutoplaySectionWithEntry:(id)arg1 {} // Autoplay
+- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {} // Try new features
 - (void)updateNotificationSectionWithEntry:(id)arg1 {} // Notifications
+- (void)updateGamingThirdPartySectionWithEntry:(id)arg1 {} // Connected apps
 - (void)updateHistorySectionWithEntry:(id)arg1 {} // History
 - (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
 - (void)updateHistoryAndPrivacySectionWithEntry:(id)arg1 {} // History & Privacy
