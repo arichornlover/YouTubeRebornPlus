@@ -33,9 +33,6 @@
 [submodule "Tweaks/YouMute"]
 	path = Tweaks/YouMute
 	url = https://github.com/PoomSmart/YouMute.git
-[submodule "Tweaks/RemoteLog"]
-	path = Tweaks/RemoteLog
-	url = https://github.com/Muirey03/RemoteLog.git
 [submodule "Tweaks/FLEX"]
 	path = Tweaks/FLEX
 	url = https://github.com/qnblackcat/FLEX-Classes.git
@@ -48,3 +45,12 @@
 [submodule "Tweaks/DontEatMyContent"]
 	path = Tweaks/DontEatMyContent
 	url = https://github.com/therealFoxster/DontEatMyContent.git
+[submodule "Tweaks/YTNoCommunityPosts"]
+	path = Tweaks/YTNoCommunityPosts
+	url = https://github.com/arichorn/YTNoCommunityPosts.git
+[submodule "Tweaks/YouQuality"]
+	path = Tweaks/YouQuality
+	url = https://github.com/PoomSmart/YouQuality.git
+[submodule "Tweaks/YTVideoOverlay"]
+	path = Tweaks/YTVideoOverlay
+	url = https://github.com/PoomSmart/YTVideoOverlay.git
