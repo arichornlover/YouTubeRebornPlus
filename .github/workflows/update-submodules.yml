@@ -14,18 +14,7 @@ jobs:
       - name: Set up Git
         run: |
            git config --global user.email "actions@github.com"
-           git config --global user.name "GitHub Actions"
-
-      - name: Add submodules
-        run: |
-          git submodule add https://github.com/arichorn/YTNoCommunityPosts.git Tweaks/YTNoCommunityPosts
-          git submodule add https://github.com/PoomSmart/YouQuality.git Tweaks/YouQuality
-          git submodule add https://github.com/PoomSmart/YTVideoOverlay.git Tweaks/YTVideoOverlay
-          git submodule deinit Tweaks/RemoteLog
-          git rm Tweaks/RemoteLog
-          git add .
-          git commit -m "add submodules"
-          git push origin
+           git config --global user.name "GitHub 
 
       - name: Update submodules
         run: |
