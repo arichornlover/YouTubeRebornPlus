@@ -12,7 +12,7 @@ BUNDLE_ID = com.google.ios.youtube
 
 EXTRA_CFLAGS := $(addprefix -I,$(shell find Tweaks/FLEX -name '*.h' -exec dirname {} \;))
 
-YouTubeRebornPlus_INJECT_DYLIBS = Tweaks/Reborn/Library/MobileSubstrate/DynamicLibraries/YouTubeReborn.dylib .theos/obj/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YTUHD.dylib .theos/obj/YouPiP.dylib .theos/obj/YouTubeDislikesReturn.dylib .theos/obj/YTABConfig.dylib .theos/obj/DontEatMyContent.dylib .theos/obj/YouMute.dylib .theos/obj/YTNoCommunityPosts.dylib
+YouTubeRebornPlus_INJECT_DYLIBS = Tweaks/Reborn/Library/MobileSubstrate/DynamicLibraries/YouTubeReborn.dylib .theos/obj/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YTUHD.dylib .theos/obj/YouPiP.dylib .theos/obj/YouTubeDislikesReturn.dylib .theos/obj/YTABConfig.dylib .theos/obj/DontEatMyContent.dylib .theos/obj/YTNoCommunityPosts.dylib .theos/obj/YTVideoOverlay.dylib .theos/obj/YouMute.dylib .theos/obj/YouQuality.dylib
 YouTubeRebornPlus_FILES = YouTubeRebornPlus.xm $(shell find Source -name '*.xm' -o -name '*.x' -o -name '*.m') $(shell find Tweaks/FLEX -type f \( -iname \*.c -o -iname \*.m -o -iname \*.mm \))
 YouTubeRebornPlus_IPA = ./tmp/Payload/YouTube.app
 YouTubeRebornPlus_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -Wno-unsupported-availability-guard -Wno-unused-but-set-variable -DTWEAK_VERSION=$(PACKAGE_VERSION) $(EXTRA_CFLAGS)
@@ -20,7 +20,7 @@ YouTubeRebornPlus_FRAMEWORKS = UIKit Security
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/tweak.mk
-SUBPROJECTS += Tweaks/Alderis Tweaks/iSponsorBlock Tweaks/YTUHD Tweaks/YouPiP Tweaks/Return-YouTube-Dislikes Tweaks/YTABConfig Tweaks/DontEatMyContent Tweaks/YouMute Tweaks/YTNoCommunityPosts
+SUBPROJECTS += Tweaks/Alderis Tweaks/iSponsorBlock Tweaks/YTUHD Tweaks/YouPiP Tweaks/Return-YouTube-Dislikes Tweaks/YTABConfig Tweaks/DontEatMyContent Tweaks/YTNoCommunityPosts Tweaks/YTVideoOverlay Tweaks/YouMute Tweaks/YouQuality
 include $(THEOS_MAKE_PATH)/aggregate.mk
 
 before-package::
@@ -30,8 +30,10 @@ before-package::
 	@cp -R Tweaks/YouPiP/layout/Library/Application\ Support/YouPiP.bundle Resources/
 	@cp -R Tweaks/Return-YouTube-Dislikes/layout/Library/Application\ Support/RYD.bundle Resources/
 	@cp -R Tweaks/YTABConfig/layout/Library/Application\ Support/YTABC.bundle Resources/
-	@cp -R Tweaks/YouMute/layout/Library/Application\ Support/YouMute.bundle Resources/
 	@cp -R Tweaks/DontEatMyContent/layout/Library/Application\ Support/DontEatMyContent.bundle Resources/
+	@cp -R Tweaks/YTVideoOverlay/layout/Library/Application\ Support/YTVideoOverlay.bundle Resources/
+	@cp -R Tweaks/YouMute/layout/Library/Application\ Support/YouMute.bundle Resources/
+	@cp -R Tweaks/YouQuality/layout/Library/Application\ Support/YouQuality.bundle Resources/
 	@cp -R Tweaks/iSponsorBlock/layout/Library/Application\ Support/iSponsorBlock.bundle Resources/
 	@cp -R Tweaks/Reborn/Library/Application\ Support/YouTubeReborn.bundle Resources/
 	@cp -R lang/YouTubeRebornPlus.bundle Resources/
