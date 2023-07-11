@@ -226,6 +226,8 @@ BOOL isAd(id node) {
             || [description containsString:@"product_engagement_panel"]
             || [description containsString:@"product_item"]
             || [description containsString:@"text_search_ad"]
+            || [description containsString:@"text_image_button_layout"]
+            || [description containsString:@"carousel_headered_layout"]
             || [description containsString:@"square_image_layout"] // install app ad
             || [description containsString:@"feed_ad_metadata"])
             return YES;
