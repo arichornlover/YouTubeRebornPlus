@@ -153,6 +153,21 @@ Special thanks to all the developers who have contributed to CercubePlus/YouTube
 </a>
 <h4 align='center'><a href='https://github.com/SKEIDs'>SKIEDs</a></h4>
 </td>
+<td id='poomsmart'>
+<a href='https://github.com/PoomSmart'>
+<img src='https://github.com/PoomSmart.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://github.com/PoomSmart'>PoomSmart</a></h4>
+</td>
+</tr>
+
+<tr>
+<td id='qnblackcat'>
+<a href='https://github.com/qnblackcat'>
+<img src='https://github.com/qnblackcat.png' width='140px;'>
+</a>
+<h4 align='center'><a href='https://github.com/qnblackcat'>qnblackcat</a></h4>
+</td>
 <td id='theos-team'>
 <a href='https://github.com/theos/theos'>
 <img src='https://github.com/theos.png' width='140px;'>
