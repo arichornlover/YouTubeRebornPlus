@@ -80,6 +80,9 @@
 "HIDE_SHORTS_VIDEOS" = "Hide Shorts videos";
 "HIDE_SHORTS_VIDEOS_DESC" = "Hide Shorts videos in Homepage, Recommended...";
 
+"YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "App restart is required.";
+
 // Theme
 "THEME_OPTIONS" = "Theme Options";
 
@@ -144,9 +147,6 @@
 
 "DISABLE_WIFI_RELATED_SETTINGS" = "Disable Wifi Related Settings";
 "DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Disable Wifi Related Sections (Notfications, Connected apps, Privacy & Live Chat, etc.) in the Settings Menu. App restart is required.";
-
-"YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
-"YT_RE_EXPLORE_DESC" = "App restart is required.";
 
 "YT_SPEED" = "Enable YTSpeed";
 "YT_SPEED_DESC" = "Enable YTSpeed to have more Playback Speed Options. App restart is required.";
