@@ -150,7 +150,8 @@
 @end
 
 @interface YTPivotBarIndicatorView : UIView
-@property (nonatomic, assign) BOOL hidden;
+@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
+@property (nonatomic, assign, readwrite) CGFloat alpha;
 @end
 
 @interface YTCommentDetailHeaderCell : UIView
