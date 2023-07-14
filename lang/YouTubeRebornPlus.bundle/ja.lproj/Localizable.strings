@@ -147,6 +147,9 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "ナビゲーションバーのiSponsorBlockボタンを非表示";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
+"HIDE_YOUTUBE_REBORN_BUTTON" = "Hide YouTube Reborn button in the Navigation bar";
+"HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
+
 "DISABLE_WIFI_RELATED_SETTINGS" = "Wi-Fi関連の設定を無効化";
 "DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Wifi関連項目を無効化します。(通知,接続済みのアプリ,プライバシー,チャットなど) 設定メニューから選択してください。アプリの再起動が必要です";
 
