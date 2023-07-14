@@ -1337,6 +1337,16 @@ extern NSBundle *YouTubeRebornPlusBundle();
                 }
                 settingItemId:0],
 
+            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_YOUTUBE_REBORN_BUTTON")
+                titleDescription:LOC(@"HIDE_YOUTUBE_REBORN_BUTTON_DESC")
+                accessibilityIdentifier:nil
+                switchOn:IsEnabled(@"hideYouTubeRebornButton_enabled")
+                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
+                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideYouTubeRebornButton_enabled"];
+                    return YES;
+                }
+                settingItemId:0],
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"DISABLE_WIFI_RELATED_SETTINGS")
                 titleDescription:LOC(@"DISABLE_WIFI_RELATED_SETTINGS_DESC")
                 accessibilityIdentifier:nil
