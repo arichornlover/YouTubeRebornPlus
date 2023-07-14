@@ -145,6 +145,9 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "Masquer le bouton iSponsorBlock dans la barre de navigation";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
+"HIDE_YOUTUBE_REBORN_BUTTON" = "Masquer le bouton YouTube Reborn dans la barre de navigation";
+"HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
+
 "DISABLE_WIFI_RELATED_SETTINGS" = "Désactiver les paramètres liés au Wi-Fi";
 "DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Désactivez les sections liées au Wi-Fi (notifications, applications connectées, confidentialité et chat en direct, etc.) dans le menu Paramètres. Le redémarrage de l'application est requis.";
 
