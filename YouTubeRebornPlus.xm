@@ -71,7 +71,7 @@ static BOOL IsEnabled(NSString *key) {
 }
 %end
 
-# pragma mark - Notification Button
+# pragma mark - Navigation Bar Buttons
 %hook YTRightNavigationButtons
 - (void)layoutSubviews {
     %orig;
@@ -80,6 +80,9 @@ static BOOL IsEnabled(NSString *key) {
     }
     if (IsEnabled(@"hideSponsorBlockButton_enabled")) { 
         self.sponsorBlockButton.hidden = YES;
+    }
+    if (IsEnabled(@"hideYouTubeRebornButton_enabled")) { 
+        self.youtubeRebornButton.hidden = YES;
     }
 }
 %end
