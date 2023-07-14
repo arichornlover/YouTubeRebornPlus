@@ -145,6 +145,9 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "Hide iSponsorBlock button in the Navigation bar";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
+"HIDE_YOUTUBE_REBORN_BUTTON" = "Hide YouTube Reborn button in the Navigation bar";
+"HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
+
 "DISABLE_WIFI_RELATED_SETTINGS" = "Disable Wifi Related Settings";
 "DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Disable Wifi Related Sections (Notfications, Connected apps, Privacy & Live Chat, etc.) in the Settings Menu. App restart is required.";
 
