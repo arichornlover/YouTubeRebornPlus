@@ -18,7 +18,7 @@ jobs:
 
       - name: Added YTHoldForSpeed submodule
         run: |
-          git submodule add https://github.com/joshuaseltzer/YTHoldForSpeed Tweaks/YTHoldForSpeed
+          git submodule add https://github.com/arichorn/YTHoldForSpeed.git Tweaks/YTHoldForSpeed
           git add .
           git commit -m "added YTHoldForSpeed submodule"
           git push origin
