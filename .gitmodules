@@ -51,3 +51,6 @@
 [submodule "Tweaks/YTVideoOverlay"]
 	path = Tweaks/YTVideoOverlay
 	url = https://github.com/PoomSmart/YTVideoOverlay.git
+[submodule "Tweaks/YTHoldForSpeed"]
+	path = Tweaks/YTHoldForSpeed
+	url = https://github.com/arichorn/YTHoldForSpeed.git
