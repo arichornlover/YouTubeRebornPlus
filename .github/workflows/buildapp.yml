@@ -149,6 +149,12 @@ jobs:
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
 
+      - name: Prepare Release Notes
+        run: |
+          export TODAY=$(date '+%Y-%m-%d')
+          sed "s/%reborn_version%/${{ inputs.reborn_version }}/g; s/%youtube_version%/${{ inputs.youtube_version }}/g; s/%date%/$TODAY/g" \
+          main/.github/RELEASE_TEMPLATE/Release.md > ${{ github.workspace }}/release_notes.md
+
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v0.1.15
