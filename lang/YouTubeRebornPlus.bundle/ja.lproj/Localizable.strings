@@ -147,7 +147,7 @@
 "HIDE_SPONSORBLOCK_BUTTON" = "ナビゲーションバーのiSponsorBlockボタンを非表示";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
 
-"HIDE_YOUTUBE_REBORN_BUTTON" = "Hide YouTube Reborn button in the Navigation bar";
+"HIDE_YOUTUBE_REBORN_BUTTON" = "ナビゲーションバーのYouTube Rebornボタンを非表示";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
 "DISABLE_WIFI_RELATED_SETTINGS" = "Wi-Fi関連の設定を無効化";
