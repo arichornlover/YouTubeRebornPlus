@@ -129,26 +129,21 @@ static BOOL isDarkMode() {
 %hook _ASDisplayView
 - (void)didMoveToWindow {
     %orig;
-    UILabel *label = [self findLabelInSubviews:self.subviews];
-    if (label) {
-        [self customizeLabel:label];
-    }
-}
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews {
-    for (UIView *subview in subviews) {
-        if ([subview isKindOfClass:[UILabel class]]) {
-            return (UILabel *)subview;
+    if ([self isKindOfClass:NSClassFromString(@"ASDisplayNode")]) {
+        UILabel *titleLabel = [self valueForKey:@"accessibilityLabel"];
+        UIView *superview = [self valueForKey:@"superview"];
+        if ([titleLabel isKindOfClass:[UILabel class]]) {
+            titleLabel.textColor = [UIColor whiteColor];
+        } 
+        if ([superview isKindOfClass:[UIView class]]) {
+            for (UIView *subview in superview.subviews) {
+                if ([subview isKindOfClass:[UILabel class]]) {
+                    UILabel *textView = (UILabel *)subview;
+                    textView.textColor = [UIColor whiteColor];
+                }
+            }
         }
-        UILabel *label = [self findLabelInSubviews:subview.subviews];
-        if (label) {
-            return label;
-        }
     }
-    return nil;
-}
-- (void)customizeLabel:(UILabel *)label {
-    label.textColor = [UIColor whiteColor];
-    // Add any additional customizations you want for the label here
 }
 %end
 %end
