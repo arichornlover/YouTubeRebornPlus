@@ -30,7 +30,7 @@
 "ENABLE_SHARE_BUTTON_DESC" = "ビデオコントロールオーバーレイの共有ボタンを有効にします";
 
 "ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "「再生リストに保存」ボタンを有効化";
-"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "ビデオコントロールオーバーレイの「再生リストに保存」ボタンを有効にします";
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "ビデオコントロールオーバーレイの\n「再生リストに保存」ボタンを有効にします";
 
 "HIDE_AUTOPLAY_SWITCH" = "自動再生スイッチを非表示";
 "HIDE_AUTOPLAY_SWITCH_DESC" = "ビデオコントロールオーバーレイの自動再生スイッチを非表示にします";
@@ -39,16 +39,16 @@
 "HIDE_SUBTITLES_BUTTON_DESC" = "ビデオコントロールオーバーレイの字幕ボタンを非表示にします";
 
 "HIDE_HUD_MESSAGES" = "HUDメッセージを非表示";
-"HIDE_HUD_MESSAGES_DESC" = "例: CCはオン/オフです, 動画のループ再生はオンですなど";
+"HIDE_HUD_MESSAGES_DESC" = "例: CCはオン/オフです,動画のループ再生はオンですなど";
 
 "HIDE_PAID_PROMOTION_CARDS" = "有料プロモーションカードを非表示";
 "HIDE_PAID_PROMOTION_CARDS_DESC" = "一部の動画の「有料プロモーションを含みます」カードを非表示にします";
 
 "HIDE_CHANNEL_WATERMARK" = "チャンネルウォーターマークを非表示";
-"HIDE_CHANNEL_WATERMARK_DESC" = "ビデオコントロールオーバーレイで、チャンネルのウォーターマークを非表示にします。アプリの再起動が必要です";
+"HIDE_CHANNEL_WATERMARK_DESC" = "ビデオコントロールオーバーレイで、チャンネルのウォーターマークを非表示にします。\nアプリの再起動が必要です";
 
 "HIDE_SHADOW_OVERLAY_BUTTONS" = "シャドウオーバーレイボタンを非表示";
-"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "再生/一時停止、前へ、次へ、進む、巻き戻しボタンのシャドウ オーバーレイを非表示にします";
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "再生/一時停止,前へ,次へ,進む,巻き戻しボタンのシャドウオーバーレイを非表示にします";
 
 "HIDE_PREVIOUS_AND_NEXT_BUTTON" = "前後の動画を再生するボタンを非表示";
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "動画コントロールのオーバーレイで、前の動画と次の動画を再生するボタンを非表示にします";
@@ -57,10 +57,10 @@
 "REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "次の動画と前の動画を再生するボタンを、それぞれ早送りと巻き戻しボタンに置き換えます。\nアプリの再起動が必要です";
 
 "RED_PROGRESS_BAR" = "赤いプログレスバー";
-"RED_PROGRESS_BAR_DESC" = "赤いプログレスバーを復活させます。\nアプリの再起動が必要です";
+"RED_PROGRESS_BAR_DESC" = "赤いプログレスバーを復活させます。アプリの再起動が必要です";
 
 "DISABLE_VIDEO_PLAYER_ZOOM" = "ズーム機能を無効化";
-"DISABLE_VIDEO_PLAYER_ZOOM_DESC" = "iPhoneとiPadの両方で動画プレーヤーのズーム機能を無効化します。\nアプリの再起動が必要です";
+"DISABLE_VIDEO_PLAYER_ZOOM_DESC" = "iPhoneとiPadの両方で動画プレーヤーのズーム機能を無効化します。アプリの再起動が必要です";
 
 "HIDE_HOVER_CARD" = "終了画面のホバーカードを非表示 (YTNoHoverCards)";
 "HIDE_HOVER_CARD_DESC" = "ビデオ終了時のクリエーターの終了画面(サムネイル)を非表示にします";
