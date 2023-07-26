@@ -75,7 +75,7 @@
 "HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "ビデオプレーヤーのダークオーバーレイの背景を非表示にします";
 
 // Shorts controls overlay options
-"SHORTS_CONTROLS_OVERLAY_OPTIONS" = "ショートのコントロールオーバーレイの設定";
+"SHORTS_OPTIONS" = "ショートの設定";
 
 "HIDE_SHORTS_VIDEOS" = "ショートを非表示";
 "HIDE_SHORTS_VIDEOS_DESC" = "ホームページからショートを非表示にします(推奨)";
@@ -86,7 +86,7 @@
 "VERSION_SPOOFER_TITLE" = "偽装バージョンの選択";
 
 // Theme
-"THEME_OPTIONS" = "テーマオプション";
+"THEME_OPTIONS" = "テーマの設定";
 
 "OLED_DARK_THEME" = "OLEDダークテーマ(実験的)";
 "OLED_DARK_THEME_2" = "OLEDダークテーマ";
@@ -105,7 +105,7 @@
 "LOW_CONTRAST_MODE_DESC" = "このオプションは、テキストとボタンのコントラストを以前のYouTubeインターフェイスのように低くします。アプリの再起動が必要です";
 
 // Miscellaneous
-"MISCELLANEOUS" = "その他";
+"MISCELLANEOUS" = "その他の設定";
 
 "ENABLE_YT_STARTUP_ANIMATION" = "YouTube起動時のアニメーションを有効化";
 "ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
