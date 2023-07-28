@@ -125,8 +125,8 @@ jobs:
         run: |
           (echo PATH=\"$(brew --prefix make)/libexec/gnubin:\$PATH\" >> ~/.zprofile)
           cd ${{ github.workspace }}/main
-          sed -i '' "12s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
-          sed -i '' "11s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
+          sed -i '' "11s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
+          sed -i '' "10s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
           make package FINALPACKAGE=1
           (mv "packages/$(ls -t packages | head -n1)" "packages/YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
