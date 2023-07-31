@@ -364,9 +364,6 @@ UIColor *customColor = [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alpha:
         if ([responder isKindOfClass:NSClassFromString(@"YTEditSheetControllerElementsContentViewController")]) {
             self.backgroundColor = customColor;
         }
-        if ([responder isKindOfClass:NSClassFromString(@"YTMainAppEngagementPanelViewController")]) {
-            self.backgroundColor = customColor;
-        }
         responder = [responder nextResponder];
       }
    }
@@ -744,9 +741,6 @@ UIColor* raisedColor = [UIColor blackColor];
             self.backgroundColor = [UIColor blackColor];
         }
         if ([responder isKindOfClass:NSClassFromString(@"YTEditSheetControllerElementsContentViewController")]) {
-            self.backgroundColor = [UIColor blackColor];
-        }
-        if ([responder isKindOfClass:NSClassFromString(@"YTMainAppEngagementPanelViewController")]) {
             self.backgroundColor = [UIColor blackColor];
         }
         responder = [responder nextResponder];
