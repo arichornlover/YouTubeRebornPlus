@@ -44,7 +44,7 @@
 	url = https://github.com/therealFoxster/DontEatMyContent
 [submodule "Tweaks/YTNoCommunityPosts"]
 	path = Tweaks/YTNoCommunityPosts
-	url = https://github.com/arichorn/YTNoCommunityPosts.git
+	url = https://github.com/michael-winay/YTNoCommunityPosts.git
 [submodule "Tweaks/YouQuality"]
 	path = Tweaks/YouQuality
 	url = https://github.com/PoomSmart/YouQuality.git
