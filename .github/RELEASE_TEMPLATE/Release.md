@@ -1,7 +1,7 @@
 # YouTubeRebornPlus Features
 YouTubeRebornPlus that adds new Features and improvements to the YouTube Reborn Tweak.
 
-**YTAppVersionSpoofer:** this granrs the ability to spoof/simulate the App Version of the YouTube App to any version. (v16.05.7-v18.23.3) and this tweak can be used to fix change the UI, Features, A/B Flags and possibly fix other tweaks like LowContrastMode, YTSpeed & etc. `(Settings > YouTubeRebornPlus > Miscellaneous)`
+**YTAppVersionSpoofer:** this grants the ability to spoof/simulate the YouTube App to any version from all the way down to **v16.05.7** all the way up to **v18.23.3** and this tweak can be used to fix change the UI, Features, A/B Flags and possibly fix other tweaks like LowContrastMode, YTSpeed & etc. `(Settings > YouTubeRebornPlus > Miscellaneous)`
 
 <details>
 <summary>More Features...</summary>
