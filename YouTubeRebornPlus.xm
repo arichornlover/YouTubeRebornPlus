@@ -230,8 +230,19 @@ static BOOL IsEnabled(NSString *key) {
 
 // YTNoModernUI - @arichorn
 %group gYTNoModernUI
-%hook YTVersionUtils // YTNoModernUI Version
-+ (NSString *)appVersion { return @"17.11.2"; } // Spoofs YouTube to v17.11.2
+%hook YTVersionUtils // YTNoModernUI Original Version
++ (NSString *)appVersion { return @"17.38.10"; }
+%end
+
+%hook YTSettingsCell // made by Dayanch96
+- (void)setDetailText:(id)arg1 {
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    NSString *appVersion = infoDictionary[@"CFBundleShortVersionString"];
+
+    if ([arg1 isEqualToString:@"17.38.10"]) {
+        arg1 = appVersion;
+    } %orig(arg1);
+}
 %end
 
 %hook YTInlinePlayerBarContainerView // Red Progress Bar - YTNoModernUI
@@ -270,9 +281,6 @@ static BOOL IsEnabled(NSString *key) {
 - (BOOL)uiSystemsClientGlobalConfigEnableModernTabsForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigIosEnableSnackbarModernization { return NO; }
 // Disable Rounded Content - YTNoModernUI
-- (BOOL)iosEnableRoundedSearchBar { return NO; }
-- (BOOL)enableIosRoundedSearchBar { return NO; }
-- (BOOL)enableIosSearchBar { return NO; }
 - (BOOL)iosDownloadsPageRoundedThumbs { return NO; }
 - (BOOL)iosRoundedSearchBarSuggestZeroPadding { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedThumbnailsForNative { return NO; }
