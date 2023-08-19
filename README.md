@@ -265,17 +265,17 @@ any many more...
 
 - **YouTubeRebornPlus** (or you can call it YouTubeReborn+) requires iOS & iPadOS 14.0 and later. The latest version of **YouTubeRebornPlus** can be found in the [Release tab](https://github.com/arichorn/YouTubeRebornPlus/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.25.1-4.1.1)](https://tinyurl.com/57e64ncc) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.29.1-4.2.0)](https://tinyurl.com/3dpmyynx) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(July 2nd 2023)_
+- Version info: _(July 25th 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.25.1 | ✖︎ |
-| **YouTube Reborm** | LillieH1000 | 4.1.1 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
+| **YouTube** | Google Inc | 18.29.1 | ✖︎ |
+| **YouTube Reborm** | LillieH1000 | 4.2.0 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -283,8 +283,8 @@ any many more...
 | **YTNoCommunityPosts** | [michael-winay](https://github.com/michael-winay) | 0.0.1 | [✔︎](https://github.com/michael-winay/YTNoCommunityPosts) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
-| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.10 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
-| **LowContrastMode** | arichorn | 1.2.3 | [✔︎](https://github.com/arichorn/LowContrastMode) |
+| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.11 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
+| **LowContrastMode** | arichorn | 1.3.1 | [✔︎](https://github.com/arichorn/LowContrastMode) |
 | **YTUHD** | PoomSmart | 1.4.0 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | PoomSmart | 1.7.20 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YouMute** | PoomSmart | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YouMute) |
@@ -312,5 +312,5 @@ any many more...
 See [YouTubeRebornPlus/Building - Wiki](https://github.com/arichorn/YouTubeRebornPlus/wiki/Building)
 or Another Version [uYouPlus/Building - Wiki](https://github.com/qnblackcat/uYouPlus/wiki/Building)
 
-## CercubePlusExtra
-https://balackburn.github.io/CercubePlusExtra/
+## Balackburn's YTLitePlus
+https://balackburn.github.io/YTLitePlus/
