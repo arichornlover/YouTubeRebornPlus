@@ -1,10 +1,10 @@
-TARGET = iphone:clang:15.5:14.0
+TARGET = iphone:clang:16.2:14.0
 CercubePlus_USE_FISHHOOK = 0
 ARCHS = arm64
 MODULES = jailed
 FINALPACKAGE = 1
 CODESIGN_IPA = 0
-PACKAGE_VERSION = 18.29.1-4.2.0
+PACKAGE_VERSION = 18.31.4-4.2.1
 
 TWEAK_NAME = YouTubeRebornPlus
 DISPLAY_NAME = YouTube
