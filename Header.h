@@ -73,6 +73,14 @@
 @interface YTTransportControlsButtonView : UIView
 @end
 
+@interface _ASCollectionViewCell : UICollectionViewCell
+- (id)node;
+@end
+
+@interface YTAsyncCollectionView : UICollectionView
+- (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath;
+@end
+
 @interface YTPlaybackButton : UIControl
 @end
 
@@ -110,15 +118,6 @@
 - (id)playerView; // DontEatMycontent
 @end
 
-// YTNoShorts
-@interface _ASCollectionViewCell : UICollectionViewCell
-- (id)node;
-@end
-
-@interface YTAsyncCollectionView : UICollectionView
-- (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath;
-@end
-
 // App Theme
 @interface YCHLiveChatView : UIView
 @end
@@ -127,6 +126,9 @@
 @end
 
 @interface YTRelatedVideosView : UIView
+@end
+
+@interface YTTopAlignedView : UIView
 @end
 
 @interface ELMView: UIView
@@ -145,13 +147,9 @@
 @end
 
 @interface _ASDisplayView : UIView
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews;
-- (void)customizeLabel:(UILabel *)label;
 @end
 
 @interface YTPivotBarIndicatorView : UIView
-@property (nonatomic, assign, readwrite, getter=isHidden) BOOL hidden;
-@property (nonatomic, assign, readwrite) CGFloat alpha;
 @end
 
 @interface YTCommentDetailHeaderCell : UIView
@@ -167,4 +165,14 @@
 @end
 
 @interface UIPredictionViewController : UIViewController
+@end
+
+@interface FRPreferences : UITableViewController
+@end
+
+@interface FRPSelectListTable : UITableViewController
+@end
+
+@interface settingsReorderTable : UIViewController
+@property(nonatomic, strong) UITableView *tableView;
 @end
