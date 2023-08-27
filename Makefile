@@ -1,10 +1,10 @@
 TARGET = iphone:clang:16.2:14.0
-CercubePlus_USE_FISHHOOK = 0
+YouTubeRebornPlus_USE_FISHHOOK = 0
 ARCHS = arm64
 MODULES = jailed
 FINALPACKAGE = 1
 CODESIGN_IPA = 0
-PACKAGE_VERSION = 18.31.4-4.2.1
+PACKAGE_VERSION = 18.33.2-4.2.1
 
 TWEAK_NAME = YouTubeRebornPlus
 DISPLAY_NAME = YouTube
@@ -16,7 +16,7 @@ YouTubeRebornPlus_INJECT_DYLIBS = Tweaks/Reborn/Library/MobileSubstrate/DynamicL
 YouTubeRebornPlus_FILES = YouTubeRebornPlus.xm $(shell find Source -name '*.xm' -o -name '*.x' -o -name '*.m') $(shell find Tweaks/FLEX -type f \( -iname \*.c -o -iname \*.m -o -iname \*.mm \))
 YouTubeRebornPlus_IPA = ./tmp/Payload/YouTube.app
 YouTubeRebornPlus_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -Wno-unsupported-availability-guard -Wno-unused-but-set-variable -DTWEAK_VERSION=$(PACKAGE_VERSION) $(EXTRA_CFLAGS)
-YouTubeRebornPlus_FRAMEWORKS = UIKit Security
+YouTubeRebornPlus_FRAMEWORKS = UIKit Security Foundation AVFoundation AVKit Photos Accelerate CoreMotion CoreServices MobileCoreServices GameController VideoToolbox
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/tweak.mk
