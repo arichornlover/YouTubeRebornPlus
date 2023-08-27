@@ -6,7 +6,7 @@ YouTubeRebornPlus that adds new Features and improvements to the YouTube Reborn 
 <details>
 <summary>More Features...</summary>
 
-**YTNoModernUI:** This tweak changes and removes some newer UI elements from the app such as Rounded Buttons, Old Progress Bar, Gray Buffer Progress & the v17.11.2 App Version Number. `(Settings > YouTubeRebornPlus > Miscellaneous)`
+**YTNoModernUI:** This tweak changes and removes some newer UI elements from the app such as Rounded Buttons, Old Progress Bar, Gray Buffer Progress & the v17.38.10 App Version Number. `(Settings > YouTubeRebornPlus > Miscellaneous)`
 
 **LowContrastMode:** This tweak dims the new YouTube UI changes on labels and icons that was first introduced way back in 2020 August/September, which can be such an eyesore when navigating the YouTube app. (Tweak made by arichorn) `(Settings> YouTubeRebornPlus > Theme Options)`
 
@@ -39,5 +39,5 @@ Current App Compatibility: `iOS/iPadOS 14.0` or later
 - Updated Youtube
 
 ### Issues in this Release:
-- LowContrastMode not fully working correctly. (only works way better in YouTube v17.38.10 or older)
+- LowContrastMode not working correctly. (only works in YouTube v17.38.10 or older)
 - YTSpeed not working. (Spoof the app version to `v18.18.2` in order to temporary fix the problem)
