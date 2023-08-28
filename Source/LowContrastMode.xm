@@ -8,12 +8,12 @@ static BOOL isDarkMode() {
     return ([[NSUserDefaults standardUserDefaults] integerForKey:@"page_style"] == 1);
 }
 
-%group gLowContrastMode // Low Contrast Mode v1.4.0 (Compatible with only YouTube v16.05.7-v17.38.10)
+%group gLowContrastMode // Low Contrast Mode v1.4.2 (Compatible with only YouTube v16.05.7-v17.38.10)
 %hook UIColor
 + (UIColor *)whiteColor { // Dark Theme Color
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
-+ (UIColor *)darkTextColor {
++ (UIColor *)lightTextColor {
          return [UIColor colorWithRed: 0.56 green: 0.56 blue: 0.56 alpha: 1.00];
 }
 + (UIColor *)placeholderTextColor {
@@ -34,31 +34,45 @@ static BOOL isDarkMode() {
 %end
 %hook YTCommonColorPalette
 - (UIColor *)textPrimary {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig; // Dark Theme
+    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
 }
 - (UIColor *)textSecondary {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig; // Dark Theme
+    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
 }
 - (UIColor *)overlayTextPrimary {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig; // Dark Theme
+    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
 }
 - (UIColor *)overlayTextSecondary {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig; // Dark Theme
+    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
 }
 - (UIColor *)iconActive {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig; // Dark Theme
+    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
 }
 - (UIColor *)iconActiveOther {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig; // Dark Theme
+    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
 }
 - (UIColor *)brandIconActive {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig; // Dark Theme
+    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
 }
 - (UIColor *)staticBrandWhite {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig; // Dark Theme
+    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
 }
 - (UIColor *)overlayIconActiveOther {
-    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig; // Dark Theme
+    return self.pageStyle == 1 ? [UIColor whiteColor] : %orig;
+}
+%end
+%hook YTColor
+- (UIColor *)white2 {
+    return [UIColor whiteColor];
+}
+- (UIColor *)white3 {
+    return [UIColor whiteColor];
+}
+- (UIColor *)white4 {
+    return [UIColor whiteColor];
+}
+- (UIColor *)white5 {
+    return [UIColor whiteColor];
 }
 %end
 %hook QTMColorGroup
@@ -98,6 +112,12 @@ static BOOL isDarkMode() {
     UIImage *currentImage = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self setTintColor:[UIColor whiteColor]];
     %orig(currentImage);
+}
+%end
+%hook UIExtendedSRGColorSpace
+- (void)setTextColor:(UIColor *)textColor {
+    textColor = [[UIColor whiteColor] colorWithAlphaComponent:0.9];
+    %orig();
 }
 %end
 %hook VideoTitleLabel
