@@ -4,9 +4,6 @@
 static BOOL IsEnabled(NSString *key) {
     return [[NSUserDefaults standardUserDefaults] boolForKey:key];
 }
-static BOOL isDarkMode() {
-    return ([[NSUserDefaults standardUserDefaults] integerForKey:@"page_style"] == 1);
-}
 
 %group gLowContrastMode // Low Contrast Mode v1.4.2 (Compatible with only YouTube v16.05.7-v17.38.10)
 %hook UIColor
