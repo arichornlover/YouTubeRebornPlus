@@ -157,21 +157,6 @@ static BOOL IsEnabled(NSString *key) {
 - (BOOL)shouldShowUpgradeDialog { return NO;}
 %end
 
-// Disable Wifi Related Settings - @arichorn
-%group gDisableWifiRelatedSettings
-%hook YTSettingsSectionItemManager
-- (void)updateSubscriptionProductsSectionWithEntry:(id)arg1 {} // Purchases and memberships
-- (void)updateAutoplaySectionWithEntry:(id)arg1 {} // Autoplay
-- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {} // Try new features
-- (void)updateNotificationSectionWithEntry:(id)arg1 {} // Notifications
-- (void)updateGamingThirdPartySectionWithEntry:(id)arg1 {} // Connected apps
-- (void)updateHistorySectionWithEntry:(id)arg1 {} // History
-- (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
-- (void)updateHistoryAndPrivacySectionWithEntry:(id)arg1 {} // History & Privacy
-- (void)updateLiveChatSectionWithEntry:(id)arg1 {} // Live Chat
-%end
-%end
-
 // NOYTPremium - @PoomSmart - https://github.com/PoomSmart/NoYTPremium/
 %hook YTCommerceEventGroupHandler
 - (void)addEventHandlers {}
@@ -221,7 +206,6 @@ static BOOL IsEnabled(NSString *key) {
 
 %hook YTColdConfig
 - (BOOL)iosEnableVideoPlayerScrubber { return YES; }
-- (BOOL)mobileShortsTabInlined { return YES; }
 %end
 
 %hook YTHotConfig
@@ -416,13 +400,6 @@ static BOOL IsEnabled(NSString *key) {
 }
 %end
 
-// Remove “Play next in queue” from the menu (@PoomSmart)
-%hook YTMenuItemVisibilityHandler
-- (BOOL)shouldShowServiceItemRenderer:(YTIMenuConditionalServiceItemRenderer *)renderer {
-    return renderer.icon.iconType == 251 ? NO : %orig;
-}
-%end
-
 // YTReExplore: https://github.com/PoomSmart/YTReExplore/
 %group gReExplore
 static void replaceTab(YTIGuideResponse *response) {
@@ -598,12 +575,63 @@ static void replaceTab(YTIGuideResponse *response) {
 }
 %end
 
-// Disable double tap to skip
+// Disable double tap to seek
 %hook YTMainAppVideoPlayerOverlayViewController
 - (BOOL)allowDoubleTapToSeekGestureRecognizer {
      return IsEnabled(@"disableDoubleTapToSkip_enabled") ? NO : %orig;
  }
  %end
+
+// App Settings Overlay Options
+%group gDisableDontEatMyContentSection
+%hook YTSettingsSectionItemManager
+- (void)updateDEMCSectionWithEntry:(id)arg1 {} // DontEatMyContent
+%end
+%end
+
+%group gDisableReturnYouTubeDislikeSection
+%hook YTSettingsSectionItemManager
+- (void)updateRYDSectionWithEntry:(id)arg1 {} // Return YouTube Dislike
+%end
+%end
+
+%group gDisableYouPiPSection
+%hook YTSettingsSectionItemManager
+- (void)updateYouPiPSectionWithEntry:(id)arg1 {} // YouPiP
+%end
+%end
+
+%group gDisableTryNewFeaturesSection
+%hook YTSettingsSectionItemManager
+- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {} // Try New Features
+%end
+%end
+
+%group gDisableAutoplaySection
+%hook YTSettingsSectionItemManager
+- (void)updateAutoplaySectionWithEntry:(id)arg1 {} // Autoplay
+%end
+%end
+
+%group gDisableNotificationsSection
+%hook YTSettingsSectionItemManager
+- (void)updateNotificationSectionWithEntry:(id)arg1 {} // Notifications
+%end
+%end
+
+%group gDisableHistoryAndPrivacySection
+%hook YTSettingsSectionItemManager
+- (void)updateHistoryAndPrivacySectionWithEntry:(id)arg1 {} // History And Privacy
+- (void)updateHistorySectionWithEntry:(id)arg1 {} // History
+- (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
+%end
+%end
+
+%group gDisableLiveChatSection
+%hook YTSettingsSectionItemManager
+- (void)updateLiveChatSectionWithEntry:(id)arg1 {} // Live chat
+%end
+%end
 
 // Miscellaneous
 // Disable hints - https://github.com/LillieH001/YouTube-Reborn/blob/v4/
@@ -742,9 +770,6 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IsEnabled(@"hideVideoPlayerShadowOverlayButtons_enabled")) {
         %init(gHideVideoPlayerShadowOverlayButtons);
     }
-    if (IsEnabled(@"disableWifiRelatedSettings_enabled")) {
-        %init(gDisableWifiRelatedSettings);
-    }
     if (IsEnabled(@"hideHeatwaves_enabled")) {
         %init(gHideHeatwaves);
     }
@@ -768,6 +793,30 @@ static void replaceTab(YTIGuideResponse *response) {
     }
     if (IsEnabled(@"stockVolumeHUD_enabled")) {
         %init(gStockVolumeHUD);
+    }
+    if (IsEnabled(@"disableDontEatMyContentSection_enabled")) {
+        %init(gDisableDontEatMyContentSection);
+    }
+    if (IsEnabled(@"disableReturnYouTubeDislikeSection_enabled")) {
+        %init(gDisableReturnYouTubeDislikeSection);
+    }
+    if (IsEnabled(@"disableYouPiPSection_enabled")) {
+        %init(gDisableYouPiPSection);
+    }
+    if (IsEnabled(@"disableTryNewFeaturesSection_enabled")) {
+        %init(gDisableTryNewFeaturesSection);
+    }
+    if (IsEnabled(@"disableAutoplaySection_enabled")) {
+        %init(gDisableAutoplaySection);
+    }
+    if (IsEnabled(@"disableNotificationsSection_enabled")) {
+        %init(gDisableNotificationsSection);
+    }
+    if (IsEnabled(@"disableHistoryAndPrivacySection_enabled")) {
+        %init(gDisableHistoryAndPrivacySection);
+    }
+    if (IsEnabled(@"disableLiveChatSection_enabled")) {
+        %init(gDisableLiveChatSection);
     }
 
     // Change the default value of some options
