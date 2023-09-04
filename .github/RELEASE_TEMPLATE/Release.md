@@ -30,8 +30,8 @@ YouTubeRebornPlus that adds new Features and improvements to the YouTube Reborn 
 </details>
 
 # YouTubeRebornPlus Release Information
-Current YouTube IPA: `%youtube_version%`
-Current YouTube Reborn Version: `%reborn_version%`
+Current YouTube IPA: `%youtube_version%`<br>
+Current YouTube Reborn Version: `%reborn_version%`<br>
 Current App Compatibility: `iOS/iPadOS 14.0` or later
 
 **RELEASE %youtube_version%-%reborn_version%:** (%date%)
