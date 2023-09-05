@@ -6,8 +6,11 @@ For example: <ru.lproj> for Russia. For more details, visit: https://en.wikipedi
 3. Translate each line below after each =
 4. Open a Pull Request
 
-- You can also add your localization to YTABConfig, YouPiP, YTUHD, Return YouTube Dislike. The process is the same:
+- You can also add your localization to YTABConfig, YTVideoOverlay, YouMute, YouQuality, YouPiP, YTUHD, Return YouTube Dislike. The process is the same:
 https://github.com/PoomSmart/YTABConfig/tree/main/layout/Library/Application%20Support/YTABC.bundle
+https://github.com/PoomSmart/YTVideoOverlay/tree/main/layout/Library/Application%20Support/YTVideoOverlay.bundle
+https://github.com/PoomSmart/YouMute/tree/main/layout/Library/Application%20Support/YouMute.bundle
+https://github.com/PoomSmart/YouQuality/tree/main/layout/Library/Application%20Support/YouQuality.bundle
 https://github.com/PoomSmart/YouPiP/tree/main/layout/Library/Application%20Support/YouPiP.bundle
 https://github.com/PoomSmart/YTUHD/tree/master/layout/Library/Application%20Support/YTUHD.bundle
 https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Application%20Support/RYD.bundle
@@ -95,6 +98,18 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_SHORTS_VIDEOS" = "Hide Shorts videos";
 "HIDE_SHORTS_VIDEOS_DESC" = "Hide Shorts videos in Homepage, Recommended...";
 
+// App settings overlay options
+"APP_SETTINGS_OVERLAY_OPTIONS" = "App Settings Overlay Options";
+
+"HIDE_DONTEATMYCONTENT_SECTION" = "Hide `DontEatMyContent` Section";
+"HIDE_YOUTUBERETURNDISLIKE_SECTION" = "Hide `YouTube Return Dislike` Section";
+"HIDE_YOUPIP_SECTION" = "Hide `YouPiP` Section";
+"HIDE_TRYNEWFEATURES_SECTION" = "Hide `Try New Features` Section";
+"HIDE_AUTOPLAY_SECTION" = "Hide `Autoplay` Section";
+"HIDE_NOTIFICATIONS_SECTION" = "Hide `Notifications` Section";
+"HIDE_HISTORYANDPRIVACY_SECTION" = "Hide `History And Privacy` Section";
+"HIDE_LIVECHAT_SECTION" = "Hide `Live Chat` Section";
+
 // Version Spoofer
 "APP_VERSION_SPOOFER" = "Enable App Version Spoofer";
 "APP_VERSION_SPOOFER_DESC" = "Enable this to use the Version Spoofer and select your perferred version below. App restart is required.";
@@ -118,6 +133,9 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "LOW_CONTRAST_MODE" = "Low Contrast Mode";
 "LOW_CONTRAST_MODE_DESC" = "This option will Low Contrast of the texts and buttons just like how the old YouTube Interface was. App restart is required.";
+"LCM_SELECTOR" = "Low contrast mode selection";
+"DEFAULT_LOWCONTRASTMODE" = "(Default) LowContrastMode";
+"CUSTOM_LOWCONTRASTMODE" = "(Custom Color) LowContrastMode";
 
 // Miscellaneous
 "MISCELLANEOUS" = "Miscellaneous";
@@ -165,9 +183,6 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_YOUTUBE_REBORN_BUTTON" = "Hide YouTube Reborn button in the Navigation bar";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
-"DISABLE_WIFI_RELATED_SETTINGS" = "Disable Wifi Related Settings";
-"DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Disable Wifi Related Sections (Notfications, Connected apps, Privacy & Live Chat, etc.) in the Settings Menu. App restart is required.";
-
 "YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "App restart is required.";
 
@@ -176,3 +191,6 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "ENABLE_FLEX" = "Enable FLEX";
 "ENABLE_FLEX_DESC" = "Enable FLEX for debugging (not recommended). Leave this off unless you know what you are doing.";
+
+// Other Localization
+"APP_RESTART_DESC" = "App restart is required.";
