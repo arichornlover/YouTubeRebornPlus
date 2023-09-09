@@ -92,8 +92,8 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_DARK_OVERLAY_BACKGROUND" = "Hide Dark Overlay Background";
 "HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "Hide video player's dark overlay background.";
 
-// Shorts controls overlay options
-"SHORTS_CONTROLS_OVERLAY_OPTIONS" = "Shorts Controls Overlay Options";
+// Shorts options
+"SHORTS_OPTIONS" = "Shorts Options";
 
 "HIDE_SHORTS_VIDEOS" = "Hide Shorts videos";
 "HIDE_SHORTS_VIDEOS_DESC" = "Hide Shorts videos in Homepage, Recommended...";
