@@ -409,6 +409,7 @@ extern NSBundle *YouTubeRebornPlusBundle();
             [settingsViewController pushViewController:picker];
             return YES;
         }];
+    [sectionItems addObject:lowContrastModeSection];
 
 # pragma mark - VersionSpoofer
     YTSettingsSectionItem *versionSpooferSection = [YTSettingsSectionItemClass itemWithTitle:LOC(@"VERSION_SPOOFER_TITLE")
