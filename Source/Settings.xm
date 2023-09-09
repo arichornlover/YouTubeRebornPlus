@@ -409,7 +409,6 @@ extern NSBundle *YouTubeRebornPlusBundle();
             [settingsViewController pushViewController:picker];
             return YES;
         }];
-    [sectionItems addObject:lowContrastModeSection];
 
 # pragma mark - VersionSpoofer
     YTSettingsSectionItem *versionSpooferSection = [YTSettingsSectionItemClass itemWithTitle:LOC(@"VERSION_SPOOFER_TITLE")
@@ -1394,8 +1393,7 @@ extern NSBundle *YouTubeRebornPlusBundle();
                     [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"lowContrastMode_enabled"];
                     return YES;
                 }
-                settingItemId:0]
-            ];
+                settingItemId:0], lowContrastModeSection];
             YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"THEME_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:GetSelection(@"appTheme") parentResponder:[self parentResponder]];
             [settingsViewController pushViewController:picker];
             return YES;
