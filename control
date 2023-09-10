@@ -1,10 +1,10 @@
 Package: com.arichorn.youtuberebornplus
 Name: YouTubeRebornPlus
-Architecture: iphoneos-arm
-Description: Modified version of YouTube Reborn 
-Maintainer: arichorn
-Author: arichorn
+Version: 18.34.5
 Section: Tweaks
-Depends: mobilesubstrate (>= 0.9.5000), h.ryan.youtubereborn
+Architecture: iphoneos-arm
+Description: YouTubeRebornPlus Tweak with some useful features.
+Maintainer: arichorn
+Depends: mobilesubstrate (>= 0.9.5000), firmware (>= 14.0)
 Conflicts: com.level3tjg.ytminiplayerenabler, com.level3tjg.ytnohovercards, com.devvix.ytcastconfirm, com.ps.ytclassicvideoquality, com.ps.noytpremium, com.ps.ytnopaidpromo, com.ps.ytreexplore, com.galacticdev.bigytminiplayer, me.foxster.donteatmycontent, com.lyvendia.ytspeed, com.lilacvibes.ytstockvolumehud, net.sarahh12099.youtubereborn, com.twickd.sarahh12099.youtube-reborn, h.ryan.youtubereborn, weeb.lillie.enhancerforyoutubepremium, com.ps.uyoucompat, com.ichitaso.uyouplus
-Recommends: com.ps.youmute, com.ps.youpip, com.ps.youquality, com.ps.ytabconfig, com.ps.ytvideooverlay, libflex, weeb.lillie.youtubedislikesreturn
+Recommends: com.ps.youpip, com.ps.ytabconfig, libflex, weeb.lillie.youtubedislikesreturn, com.arichorn.lowcontrastmode
