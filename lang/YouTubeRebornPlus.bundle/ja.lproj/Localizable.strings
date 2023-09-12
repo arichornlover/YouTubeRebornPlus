@@ -74,11 +74,23 @@
 "HIDE_DARK_OVERLAY_BACKGROUND" = "ダークオーバーレイの背景を非表示";
 "HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "ビデオプレーヤーのダークオーバーレイの背景を非表示にします";
 
-// Shorts controls overlay options
+// Shorts options
 "SHORTS_OPTIONS" = "ショートの設定";
 
 "HIDE_SHORTS_VIDEOS" = "ショートを非表示";
 "HIDE_SHORTS_VIDEOS_DESC" = "ホームページからショートを非表示にします(推奨)";
+
+// App settings overlay options
+"APP_SETTINGS_OVERLAY_OPTIONS" = "App Settings Overlay Options";
+
+"HIDE_DONTEATMYCONTENT_SECTION" = "Hide `DontEatMyContent` Section";
+"HIDE_YOUTUBERETURNDISLIKE_SECTION" = "Hide `YouTube Return Dislike` Section";
+"HIDE_YOUPIP_SECTION" = "Hide `YouPiP` Section";
+"HIDE_TRYNEWFEATURES_SECTION" = "Hide `Try New Features` Section";
+"HIDE_AUTOPLAY_SECTION" = "Hide `Autoplay` Section";
+"HIDE_NOTIFICATIONS_SECTION" = "Hide `Notifications` Section";
+"HIDE_HISTORYANDPRIVACY_SECTION" = "Hide `History And Privacy` Section";
+"HIDE_LIVECHAT_SECTION" = "Hide `Live Chat` Section";
 
 // Version Spoofer
 "APP_VERSION_SPOOFER" = "アプリのバージョン偽装を有効にする";
@@ -103,6 +115,9 @@
 
 "LOW_CONTRAST_MODE" = "低コントラストモード";
 "LOW_CONTRAST_MODE_DESC" = "このオプションは、テキストとボタンのコントラストを以前のYouTubeインターフェイスのように低くします。アプリの再起動が必要です";
+"LCM_SELECTOR" = "Low contrast mode selection";
+"DEFAULT_LOWCONTRASTMODE" = "(Default) LowContrastMode";
+"CUSTOM_LOWCONTRASTMODE" = "(Custom Color) LowContrastMode";
 
 // Miscellaneous
 "MISCELLANEOUS" = "その他の設定";
@@ -150,9 +165,6 @@
 "HIDE_YOUTUBE_REBORN_BUTTON" = "ナビゲーションバーのYouTube Rebornボタンを非表示";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
-"DISABLE_WIFI_RELATED_SETTINGS" = "Wi-Fi関連の設定を無効化";
-"DISABLE_WIFI_RELATED_SETTINGS_DESC" = "Wifi関連項目を無効化します。(通知,接続済みのアプリ,プライバシー,チャットなど) 設定メニューから選択してください。アプリの再起動が必要です";
-
 "YT_RE_EXPLORE" = "ショートタブを探索タブに置き換える (YTReExplore)";
 "YT_RE_EXPLORE_DESC" = "アプリの再起動が必要です";
 
@@ -161,3 +173,6 @@
 
 "ENABLE_FLEX" = "FLEXを有効化";
 "ENABLE_FLEX_DESC" = "デバッグ用のFLEXを有効化します(推奨しません) \n何をやっているのか分からない場合はオフにしてください";
+
+// Other Localization
+"APP_RESTART_DESC" = "App restart is required.";
