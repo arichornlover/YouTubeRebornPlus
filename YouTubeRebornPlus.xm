@@ -594,7 +594,7 @@ static void replaceTab(YTIGuideResponse *response) {
 - (void)updateDEMCSectionWithEntry:(id)arg1 { // DontEatMyContent
     %orig;
     NSMutableArray *sectionItems = [self valueForKey:@"_sectionItems"];
-    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title == %@", @"Return YouTube Dislike"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title == %@", @"DontEatMyContent"];
     NSArray *itemsToRemove = [sectionItems filteredArrayUsingPredicate:predicate];
     [sectionItems removeObjectsInArray:itemsToRemove];
 }
