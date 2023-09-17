@@ -114,11 +114,6 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_PRIVACY_SECTION" = "Hide `Privacy` Section";
 "HIDE_LIVECHAT_SECTION" = "Hide `Live Chat` Section";
 
-// Version Spoofer
-"APP_VERSION_SPOOFER" = "Enable App Version Spoofer";
-"APP_VERSION_SPOOFER_DESC" = "Enable this to use the Version Spoofer and select your perferred version below. App restart is required.";
-"VERSION_SPOOFER_TITLE" = "Version Spoofer Picker";
-
 // Theme
 "THEME_OPTIONS" = "Theme Options";
 
@@ -195,6 +190,11 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "ENABLE_FLEX" = "Enable FLEX";
 "ENABLE_FLEX_DESC" = "Enable FLEX for debugging (not recommended). Leave this off unless you know what you are doing.";
+
+// Version Spoofer
+"APP_VERSION_SPOOFER" = "Enable App Version Spoofer";
+"APP_VERSION_SPOOFER_DESC" = "Enable this to use the Version Spoofer and select your perferred version below. App restart is required.";
+"VERSION_SPOOFER_TITLE" = "Version Spoofer Picker";
 
 // Other Localization
 "APP_RESTART_DESC" = "App restart is required.";
