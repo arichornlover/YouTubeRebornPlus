@@ -583,27 +583,45 @@ static void replaceTab(YTIGuideResponse *response) {
  %end
 
 // App Settings Overlay Options
+%group gDisableAccountSection
+%hook YTSettingsSectionItemManager
+- (void)updateAccountSwitcherSectionWithEntry:(id)arg1 {} // Account
+%end
+%end
+
 %group gDisableDontEatMyContentSection
 %hook YTSettingsSectionItemManager
-- (void)updateDEMCSectionWithEntry:(id)arg1 {} // DontEatMyContent
+- (void)updateDEMCSectionWithEntry:(id)arg1 { // DontEatMyContent
+    %orig;
+    NSMutableArray *sectionItems = [self valueForKey:@"_sectionItems"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title == %@", @"Return YouTube Dislike"];
+    NSArray *itemsToRemove = [sectionItems filteredArrayUsingPredicate:predicate];
+    [sectionItems removeObjectsInArray:itemsToRemove];
+}
 %end
 %end
 
 %group gDisableReturnYouTubeDislikeSection
 %hook YTSettingsSectionItemManager
-- (void)updateRYDSectionWithEntry:(id)arg1 {} // Return YouTube Dislike
+- (void)updateRYDSectionWithEntry:(id)arg1 { // Return YouTube Dislike
+    %orig;
+    NSMutableArray *sectionItems = [self valueForKey:@"_sectionItems"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title == %@", @"Return YouTube Dislike"];
+    NSArray *itemsToRemove = [sectionItems filteredArrayUsingPredicate:predicate];
+    [sectionItems removeObjectsInArray:itemsToRemove];
+}
 %end
 %end
 
 %group gDisableYouPiPSection
 %hook YTSettingsSectionItemManager
-- (void)updateYouPiPSectionWithEntry:(id)arg1 {} // YouPiP
-%end
-%end
-
-%group gDisableTryNewFeaturesSection
-%hook YTSettingsSectionItemManager
-- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {} // Try New Features
+- (void)updateYouPiPSectionWithEntry:(id)arg1 { // YouPiP
+    %orig;
+    NSMutableArray *sectionItems = [self valueForKey:@"_sectionItems"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"title == %@", @"YouPiP"];
+    NSArray *itemsToRemove = [sectionItems filteredArrayUsingPredicate:predicate];
+    [sectionItems removeObjectsInArray:itemsToRemove];
+}
 %end
 %end
 
@@ -613,16 +631,38 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 %end
 
+%group gDisableTryNewFeaturesSection
+%hook YTSettingsSectionItemManager
+- (void)updatePremiumEarlyAccessSectionWithEntry:(id)arg1 {} // Try new features
+%end
+%end
+
+%group gDisableVideoQualityPreferencesSection
+%hook YTSettingsSectionItemManager
+- (void)updateVideoQualitySectionWithEntry:(id)arg1 {} // Video quality preferences
+%end
+%end
+
 %group gDisableNotificationsSection
 %hook YTSettingsSectionItemManager
 - (void)updateNotificationSectionWithEntry:(id)arg1 {} // Notifications
 %end
 %end
 
-%group gDisableHistoryAndPrivacySection
+%group gDisableManageAllHistorySection
 %hook YTSettingsSectionItemManager
-- (void)updateHistoryAndPrivacySectionWithEntry:(id)arg1 {} // History And Privacy
-- (void)updateHistorySectionWithEntry:(id)arg1 {} // History
+- (void)updateHistorySectionWithEntry:(id)arg1 {} // Manage all history
+%end
+%end
+
+%group gDisableYourDataInYouTubeSection
+%hook YTSettingsSectionItemManager
+- (void)updateYourDataSectionWithEntry:(id)arg1 {} // Your data in YouTube
+%end
+%end
+
+%group gDisablePrivacySection
+%hook YTSettingsSectionItemManager
 - (void)updatePrivacySectionWithEntry:(id)arg1 {} // Privacy
 %end
 %end
@@ -794,6 +834,9 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IsEnabled(@"stockVolumeHUD_enabled")) {
         %init(gStockVolumeHUD);
     }
+    if (IsEnabled(@"disableAccountSection_enabled")) {
+        %init(gDisableAccountSection);
+    }
     if (IsEnabled(@"disableDontEatMyContentSection_enabled")) {
         %init(gDisableDontEatMyContentSection);
     }
@@ -803,17 +846,26 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IsEnabled(@"disableYouPiPSection_enabled")) {
         %init(gDisableYouPiPSection);
     }
+    if (IsEnabled(@"disableAutoplaySection_enabled")) {
+        %init(gDisableAutoplaySection);
+    }
     if (IsEnabled(@"disableTryNewFeaturesSection_enabled")) {
         %init(gDisableTryNewFeaturesSection);
     }
-    if (IsEnabled(@"disableAutoplaySection_enabled")) {
-        %init(gDisableAutoplaySection);
+    if (IsEnabled(@"disableVideoQualityPreferencesSection_enabled")) {
+        %init(gDisableVideoQualityPreferencesSection);
     }
     if (IsEnabled(@"disableNotificationsSection_enabled")) {
         %init(gDisableNotificationsSection);
     }
-    if (IsEnabled(@"disableHistoryAndPrivacySection_enabled")) {
-        %init(gDisableHistoryAndPrivacySection);
+    if (IsEnabled(@"disableManageAllHistorySection_enabled")) {
+        %init(gDisableManageAllHistorySection);
+    }
+    if (IsEnabled(@"disableYourDataInYouTubeSection_enabled")) {
+        %init(gDisableYourDataInYouTubeSection);
+    }
+    if (IsEnabled(@"disablePrivacySection_enabled")) {
+        %init(gDisablePrivacySection);
     }
     if (IsEnabled(@"disableLiveChatSection_enabled")) {
         %init(gDisableLiveChatSection);
