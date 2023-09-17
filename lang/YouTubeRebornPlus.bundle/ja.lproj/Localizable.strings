@@ -83,19 +83,18 @@
 // App settings overlay options
 "APP_SETTINGS_OVERLAY_OPTIONS" = "App Settings Overlay Options";
 
+"HIDE_ACCOUNT_SECTION" = "Hide `Account` Section";
 "HIDE_DONTEATMYCONTENT_SECTION" = "Hide `DontEatMyContent` Section";
 "HIDE_YOUTUBERETURNDISLIKE_SECTION" = "Hide `YouTube Return Dislike` Section";
 "HIDE_YOUPIP_SECTION" = "Hide `YouPiP` Section";
-"HIDE_TRYNEWFEATURES_SECTION" = "Hide `Try New Features` Section";
 "HIDE_AUTOPLAY_SECTION" = "Hide `Autoplay` Section";
+"HIDE_TRYNEWFEATURES_SECTION" = "Hide `Try New Features` Section";
+"HIDE_VIDEOQUALITYPREFERENCES_SECTION" = "Hide `Video quality preferences`";
 "HIDE_NOTIFICATIONS_SECTION" = "Hide `Notifications` Section";
-"HIDE_HISTORYANDPRIVACY_SECTION" = "Hide `History And Privacy` Section";
+"HIDE_MANAGEALLHISTORY_SECTION" = "Hide `Manage all history` Section";
+"HIDE_YOURDATAINYOUTUBE_SECTION" = "Hide `Your data in YouTube` Section";
+"HIDE_PRIVACY_SECTION" = "Hide `Privacy` Section";
 "HIDE_LIVECHAT_SECTION" = "Hide `Live Chat` Section";
-
-// Version Spoofer
-"APP_VERSION_SPOOFER" = "アプリのバージョン偽装を有効にする";
-"APP_VERSION_SPOOFER_DESC" = "この機能を有効にするとバージョン偽装を使用し、以下で好みのバージョンを選択できます。アプリの再起動が必要です";
-"VERSION_SPOOFER_TITLE" = "偽装バージョンの選択";
 
 // Theme
 "THEME_OPTIONS" = "テーマの設定";
@@ -173,6 +172,11 @@
 
 "ENABLE_FLEX" = "FLEXを有効化";
 "ENABLE_FLEX_DESC" = "デバッグ用のFLEXを有効化します(推奨しません) \n何をやっているのか分からない場合はオフにしてください";
+
+// Version Spoofer
+"APP_VERSION_SPOOFER" = "アプリのバージョン偽装を有効にする";
+"APP_VERSION_SPOOFER_DESC" = "この機能を有効にするとバージョン偽装を使用し、以下で好みのバージョンを選択できます。アプリの再起動が必要です";
+"VERSION_SPOOFER_TITLE" = "偽装バージョンの選択";
 
 // Other Localization
 "APP_RESTART_DESC" = "App restart is required.";
