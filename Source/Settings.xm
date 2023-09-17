@@ -303,6 +303,7 @@ extern NSBundle *YouTubeRebornPlusBundle();
                     return YES;
                 }
                 settingItemId:0],
+
             [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_DONTEATMYCONTENT_SECTION")
                 titleDescription:LOC(@"APP_RESTART_DESC")
                 accessibilityIdentifier:nil
