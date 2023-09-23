@@ -81,20 +81,20 @@
 "HIDE_SHORTS_VIDEOS_DESC" = "ホームページからショートを非表示にします(推奨)";
 
 // App settings overlay options
-"APP_SETTINGS_OVERLAY_OPTIONS" = "App Settings Overlay Options";
+"APP_SETTINGS_OVERLAY_OPTIONS" = "アプリ設定オーバーレイオプション";
 
 "HIDE_ACCOUNT_SECTION" = "Hide `Account` Section";
-"HIDE_DONTEATMYCONTENT_SECTION" = "Hide `DontEatMyContent` Section";
-"HIDE_YOUTUBERETURNDISLIKE_SECTION" = "Hide `YouTube Return Dislike` Section";
-"HIDE_YOUPIP_SECTION" = "Hide `YouPiP` Section";
-"HIDE_AUTOPLAY_SECTION" = "Hide `Autoplay` Section";
-"HIDE_TRYNEWFEATURES_SECTION" = "Hide `Try New Features` Section";
-"HIDE_VIDEOQUALITYPREFERENCES_SECTION" = "Hide `Video quality preferences` Section";
-"HIDE_NOTIFICATIONS_SECTION" = "Hide `Notifications` Section";
-"HIDE_MANAGEALLHISTORY_SECTION" = "Hide `Manage all history` Section";
+"HIDE_DONTEATMYCONTENT_SECTION" = "`DontEatMyContent`セクションを非表示にする";
+"HIDE_YOUTUBERETURNDISLIKE_SECTION" = "`Return YouTube Dislike`セクションを非表示にする";
+"HIDE_YOUPIP_SECTION" = "`YouPiP`セクションを非表示にする";
+"HIDE_AUTOPLAY_SECTION" = "`自動再生`セクションを非表示にする";
+"HIDE_TRYNEWFEATURES_SECTION" = "`新機能を試す`セクションを非表示にする";
+"HIDE_VIDEOQUALITYPREFERENCES_SECTION" = "`動画の画質設定`セクションを非表示にする";
+"HIDE_NOTIFICATIONS_SECTION" = "`通知`セクションを非表示にする";
+"HIDE_MANAGEALLHISTORY_SECTION" = "`すべての履歴を管理`セクションを非表示にする";
 "HIDE_YOURDATAINYOUTUBE_SECTION" = "Hide `Your data in YouTube` Section";
-"HIDE_PRIVACY_SECTION" = "Hide `Privacy` Section";
-"HIDE_LIVECHAT_SECTION" = "Hide `Live Chat` Section";
+"HIDE_PRIVACY_SECTION" = "`プライバシー`セクションを非表示にする";
+"HIDE_LIVECHAT_SECTION" = "`チャット`セクションを非表示にする";
 
 // Theme
 "THEME_OPTIONS" = "テーマの設定";
@@ -114,9 +114,9 @@
 
 "LOW_CONTRAST_MODE" = "低コントラストモード";
 "LOW_CONTRAST_MODE_DESC" = "このオプションは、テキストとボタンのコントラストを以前のYouTubeインターフェイスのように低くします。アプリの再起動が必要です";
-"LCM_SELECTOR" = "Low contrast mode selection";
-"DEFAULT_LOWCONTRASTMODE" = "(Default) LowContrastMode";
-"CUSTOM_LOWCONTRASTMODE" = "(Custom Color) LowContrastMode";
+"LCM_SELECTOR" = "低コントラストモードの選択";
+"DEFAULT_LOWCONTRASTMODE" = "低コントラストモード(Default)";
+"CUSTOM_LOWCONTRASTMODE" = "低コントラストモード(Custom Color)";
 
 // Miscellaneous
 "MISCELLANEOUS" = "その他の設定";
@@ -142,7 +142,7 @@
 "CAST_CONFIRM" = "キャストする前に確認する (YTCastConfirm)";
 "CAST_CONFIRM_DESC" = "誤ってテレビにキャストしないように、確認の警告を表示します";
 "CASTING" = "キャスト";
-"MSG_ARE_YOU_SURE" = "本当にキャストを開始しますか";
+"MSG_ARE_YOU_SURE" = "本当にキャストを開始しますか?";
 "MSG_YES" = "はい";
 "MSG_CANCEL" = "いいえ";
 
@@ -179,4 +179,4 @@
 "VERSION_SPOOFER_TITLE" = "偽装バージョンの選択";
 
 // Other Localization
-"APP_RESTART_DESC" = "App restart is required.";
+"APP_RESTART_DESC" = "アプリの再起動が必要です";
