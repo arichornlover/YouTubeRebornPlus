@@ -281,7 +281,7 @@ UIColor *originalColor = [UIColor colorWithRed:0.129 green:0.129 blue:0.129 alph
     %orig;
     if (isDarkMode()) {
         if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = [UIColor clearColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"brand.promo_view"]) { self.superview.backgroundColor = originalColor; }
+        if ([self.accessibilityIdentifier isEqualToString:@"brand_promo.view"]) { self.superview.backgroundColor = originalColor; }
         if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = originalColor; }
         if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = originalColor; }
         if ([self.accessibilityIdentifier isEqualToString:@"id.ui.comment_cell"]) { self.backgroundColor = originalColor; }
@@ -548,7 +548,7 @@ UIColor* raisedColor = [UIColor blackColor];
     %orig;
     if (isDarkMode()) {
         if ([self.nextResponder isKindOfClass:%c(ASScrollView)]) { self.backgroundColor = [UIColor clearColor]; }
-        if ([self.accessibilityIdentifier isEqualToString:@"brand.promo_view"]) { self.backgroundColor = [UIColor blackColor]; }
+        if ([self.accessibilityIdentifier isEqualToString:@"brand_promo.view"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"eml.cvr"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"eml.live_chat_text_message"]) { self.backgroundColor = [UIColor blackColor]; }
         if ([self.accessibilityIdentifier isEqualToString:@"rich_header"]) { self.backgroundColor = [UIColor blackColor]; }
