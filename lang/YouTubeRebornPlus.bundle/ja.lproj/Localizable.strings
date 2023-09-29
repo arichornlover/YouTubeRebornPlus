@@ -81,9 +81,9 @@
 "HIDE_SHORTS_VIDEOS_DESC" = "ホームページからショートを非表示にします(推奨)";
 
 // App settings overlay options
-"APP_SETTINGS_OVERLAY_OPTIONS" = "アプリ設定オーバーレイオプション";
+"APP_SETTINGS_OVERLAY_OPTIONS" = "アプリの設定オーバーレイオプション";
 
-"HIDE_ACCOUNT_SECTION" = "Hide `Account` Section";
+"HIDE_ACCOUNT_SECTION" = "`Account`セクションを非表示にする";
 "HIDE_DONTEATMYCONTENT_SECTION" = "`DontEatMyContent`セクションを非表示にする";
 "HIDE_YOUTUBERETURNDISLIKE_SECTION" = "`Return YouTube Dislike`セクションを非表示にする";
 "HIDE_YOUPIP_SECTION" = "`YouPiP`セクションを非表示にする";
@@ -92,7 +92,7 @@
 "HIDE_VIDEOQUALITYPREFERENCES_SECTION" = "`動画の画質設定`セクションを非表示にする";
 "HIDE_NOTIFICATIONS_SECTION" = "`通知`セクションを非表示にする";
 "HIDE_MANAGEALLHISTORY_SECTION" = "`すべての履歴を管理`セクションを非表示にする";
-"HIDE_YOURDATAINYOUTUBE_SECTION" = "Hide `Your data in YouTube` Section";
+"HIDE_YOURDATAINYOUTUBE_SECTION" = "`Your data in YouTube`セクションを非表示にする";
 "HIDE_PRIVACY_SECTION" = "`プライバシー`セクションを非表示にする";
 "HIDE_LIVECHAT_SECTION" = "`チャット`セクションを非表示にする";
 
