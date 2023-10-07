@@ -1,5 +1,5 @@
-#import "Tweaks/YouTubeHeader/YTPlayerViewController.h" // Header.h
-#import "Tweaks/YouTubeHeader/YTQTMButton.h" // Header.h
+#import "Tweaks/YouTubeHeader/YTPlayerViewController.h" // YouTubeRebornPlus.h
+#import "Tweaks/YouTubeHeader/YTQTMButton.h" // YouTubeRebornPlus.h
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
@@ -81,6 +81,9 @@
 - (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath;
 @end
 
+@interface FRPSliderCell : UITableViewCell
+@end
+
 @interface YTPlaybackButton : UIControl
 @end
 
@@ -88,12 +91,8 @@
 @property (nonatomic, assign, readwrite) BOOL enableSnapToChapter;
 @end
 
-// Navigation Buttons
-@interface MDCButton : UIButton
-@end
-
+// Buttons
 @interface YTRightNavigationButtons : UIView
-@property (nonatomic, strong, readwrite) MDCButton *cercubeButton;
 @property YTQTMButton *notificationButton;
 @property YTQTMButton *sponsorBlockButton;
 @property YTQTMButton *youtubeRebornButton;
@@ -119,6 +118,15 @@
 @end
 
 // App Theme
+@interface YTColor : NSObject
++ (UIColor *)white1;
++ (UIColor *)white2;
++ (UIColor *)white3;
++ (UIColor *)white4;
++ (UIColor *)white5;
++ (UIColor *)grey1;
++ (UIColor *)grey2;
+@end
 @interface YCHLiveChatView : UIView
 @end
 
@@ -147,6 +155,9 @@
 @end
 
 @interface _ASDisplayView : UIView
+@end
+
+@interface YTAutonavEndscreenView : UIView
 @end
 
 @interface YTPivotBarIndicatorView : UIView
