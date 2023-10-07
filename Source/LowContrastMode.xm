@@ -1,4 +1,4 @@
-#import "../Header.h"
+#import "../YouTubeRebornPlus.h"
 
 //
 static BOOL IsEnabled(NSString *key) {
