@@ -100,11 +100,11 @@ jobs:
       - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl "https://dl.dropboxusercontent.com/s/8xv1vota8elfoml/YouTube.Reborn.v4.0.9.deb" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.0.9.deb"
+          curl "https://www.dropbox.com/scl/fi/vw8o9n73wb2wbe4iedc6k/h.ryan.youtubereborn_4.1.0_iphoneos-arm.deb?rlkey=sayjrd9co8u2drwhczcnzvt7a&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.1.0.deb"
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.0.9.deb" && tar -xf data.tar.* && cd ../../..
+          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.1.0.deb" && tar -xf data.tar.* && cd ../../..
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} unpacked! \033[0m"
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
