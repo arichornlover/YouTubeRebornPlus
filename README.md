@@ -1,7 +1,15 @@
+<p align="center">
+  <a href="https://user-images.githubusercontent.com/78001398/272768616-dd6060f8-9a75-420d-a90d-8183129ac9c2.png">
+    <img src="https://user-images.githubusercontent.com/78001398/272768287-192c1f44-06fb-402e-9381-382dad57f37a.png" alt="YOUTUBEREBORNPLUS_LOGO" width="200px" height="200px">
+  </a>
+</p>
+
 ## YouTube Reborn but with more features!
-
-
-![IMAGE_YOUTUBEREBORNPLUS_PREVIEW](https://user-images.githubusercontent.com/78001398/217129808-4efa2213-9e01-4fa4-a9d4-04c90e7fa88b.png)
+<p align="center">
+  <a href="https://user-images.githubusercontent.com/78001398/217129808-4efa2213-9e01-4fa4-a9d4-04c90e7fa88b.png">
+    <img src="https://user-images.githubusercontent.com/78001398/273735783-8ac8d491-fe89-4706-9406-6b82530f6f9d.png" alt="YOUTUBEREBORNPLUS_PREVIEW">
+  </a>
+</p>
 
 ---
 
@@ -10,14 +18,14 @@
 </p>
 
 <p align="center">
-    <a href="https://github.com/arichorn/CercubePlusExtra/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/CercubePlusExtra?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/CercubePlusExtra/releases/latest"><img src="https://img.shields.io/github/downloads/arichorn/CercubePlusExtra/total?label=Download" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/CercubePlusExtra/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/CercubePlusExtra?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/YouTubeRebornPlus/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/YouTubeRebornPlus?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/YouTubeRebornPlus/releases/latest"><img src="https://img.shields.io/github/downloads/arichorn/YouTubeRebornPlus/total?label=Download" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/YouTubeRebornPlus/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/YouTubeRebornPlus?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
 </p>
 
 <p align="center">
-   <img src="https://img.shields.io/github/stars/arichorn/CercubePlusExtra?style=social" alt="Badge"/>
-   <img src="https://img.shields.io/github/forks/arichorn/CercubePlusExtra?style=social" alt="Badge"/>
+   <img src="https://img.shields.io/github/stars/arichorn/YouTubeRebornPlus?style=social" alt="Badge"/>
+   <img src="https://img.shields.io/github/forks/arichorn/YouTubeRebornPlus?style=social" alt="Badge"/>
    <a href="https://github.com/qnblackcat/uYouPlus#support-the-developers"><img src="https://img.shields.io/badge/-Support-lightgrey?style=social&logo=paypal" alt="Badge"></img></a>
 </p>
 
@@ -35,144 +43,155 @@
 <table id='maintainer credit'>
 Special thanks to these developer(s) for maintaining and improving YouTubeRebornPlus!
 <tr>
-<td id='arichorn'>
+<td align="center">
 <a href='https://github.com/arichorn'>
-<img src='https://github.com/arichorn.png' width='140px;'>
+<img src='https://user-images.githubusercontent.com/78001398/271853100-d5c74be7-4890-411c-907a-dc5f7b5fa46e.png' width='110px;'>
 </a>
-<h4 align='center'><a href='https://github.com/arichorn'>arichorn</a></h4>
+<br>
+<a href='https://github.com/arichorn'>arichorn</a>
 </td>
-<td id='dayanch96'>
+<td align="center">
 <a href='https://github.com/dayanch96'>
-<img src='https://github.com/dayanch96.png' width='140px;'>
+<img src='https://user-images.githubusercontent.com/78001398/271853514-129334b3-498f-4804-aceb-392bf5e373e6.png' width='110px;'>
 </a>
-<h4 align='center'><a href='https://github.com/dayanch96'>dayanch96</a></h4>
+<br>
+<a href='https://github.com/dayanch96'>dayanch96</a>
 </td>
-<td id='ssuesskind'>
+<td align="center">
 <a href='https://github.com/ssuesskind'>
-<img src='https://github.com/ssuesskind.png' width='140px;'>
+<img src='https://user-images.githubusercontent.com/78001398/271853585-77271641-b825-43b1-af57-d9f5b12fe8ff.png' width='110px;'>
 </a>
-<h4 align='center'><a href='https://github.com/ssuesskind'>ssuesskind</a></h4>
+<br>
+<a href='https://github.com/ssuesskind'>ssuesskind</a>
 </td>
-<td id='Balackburn'>
+<td align="center">
 <a href='https://github.com/Balackburn'>
-<img src='https://github.com/Balackburn.png' width='140px;'>
+<img src='https://user-images.githubusercontent.com/78001398/271853318-3005deb3-b484-4b2b-a093-44c2af79b9af.png' width='110px;'>
 </a>
-<h4 align='center'><a href='https://github.com/Balackburn'>Balackburn</a></h4>
+<br>
+<a href='https://github.com/Balackburn'>Balackburn</a>
 </td>
 
 <table id='credit'>
-Special thanks to all the developers who have contributed to CercubePlus/YouTubeRebornPlus!
+Special thanks to all the developers who have orignally contributed to YouTube Reborn & CercubePlus!
 <tr>
-<td id='majd'>
-<a href='https://github.com/majd'>
-<img src='https://github.com/majd.png' width='140px;'>
+<td align="center">
+<a href='https://github.com/LillieH1000'>
+<img src='https://user-images.githubusercontent.com/78001398/273734554-1dbcb189-0778-4239-a139-fb4325c12e46.png' width='110px'>
 </a>
-<h4 align='center'><a href='https://github.com/majd'>Majd Alfhaily</a></h4>
+<br>
+<a href='https://github.com/LillieH1000'>LillieH1000</a>
 </td>
-<td id='miro92'>
+<td align="center">
 <a href='https://github.com/MiRO92'>
-<img src='https://github.com/MiRO92.png' width='140px;'>
+<img src='https://user-images.githubusercontent.com/78001398/271811861-da79accc-095c-4cb3-b7b4-8d48b1449259.png' width='110px'>
 </a>
-<h4 align='center'><a href='https://twitter.com/miro92'>MiRO92</a></h4>
+<br>
+<a href='https://twitter.com/miro92'>MiRO92</a>
 </td>
-<td id='level3tjg'>
-<a href='https://github.com/level3tjg'>
-<img src='https://github.com/level3tjg.png' width='140px;'>
+<td align="center">
+<a href='https://github.com/qnblackcat'>
+<img src='https://user-images.githubusercontent.com/78001398/271812521-e52ebf96-7272-4ec0-a149-8e721c053508.png' width='110px'>
 </a>
-<h4 align='center'><a href='https://twitter.com/level3tjg'>level3tjg</a></h4>
+<br>
+<a href='https://twitter.com/qnblackcat'>qnblackcat</a>
 </td>
-<td id='bandarHL'>
-<a href='https://github.com/BandarHL'>
-<img src='https://github.com/BandarHL.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://twitter.com/bandarhl'>BandarHelal</a></h4>
-</td>
-<td id='galactic-dev'>
-<a href='https://github.com/Galactic-Dev'>
-<img src='https://github.com/Galactic-Dev.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://twitter.com/dev_galactic'>galactic</a></h4>
-</td>
-</tr>
-  
-<tr>
-<td id='hbang'>
-<a href='https://github.com/hbang'>
-<img src='https://github.com/hbang.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://twitter.com/hashbang'>HASHBANG</a></h4>
-</td>
-<td id='lyvendia'>
-<a href='https://github.com/Lyvendia'>
-<img src='https://github.com/Lyvendia.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://github.com/Lyvendia'>Lyvendia</a></h4>
-</td>
-<td id='foxster'>
-<a href='https://github.com/therealFoxster'>
-<img src='https://github.com/therealFoxster.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://twitter.com/therealFoxster'>Foxster</a></h4>
-</td>
-<td id='julioverne'>
-<a href='https://github.com/julioverne'>
-<img src='https://github.com/julioverne.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://twitter.com/ijulioverne'>julioverne</a></h4>
-</td>
-<td id='ichitaso'>
-<a href='https://github.com/ichitaso'>
-<img src='https://github.com/ichitaso.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://twitter.com/ichitaso'>ichitaso</a></h4>
-</td>
-</tr>
-  
-<tr>
-<td id='ahmed-bafkir'>
-<a href='https://github.com/AhmedBafkir'>
-<img src='https://github.com/AhmedBafkir.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://twitter.com/Peaceful_0'>Ahmed Bafkir</a></h4>
-</td>
-<td id='cokepokes'>
-<a href='https://github.com/CokePokes'>
-<img src='https://github.com/CokePokes.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://twitter.com/cokepokes'>CokePokes</a></h4>
-</td>
-<td id='isnackable'>
-<a href='https://github.com/ISnackable'>
-<img src='https://github.com/ISnackable.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://isnackable.me/'>Tommy Teo</a></h4>
-</td>
-<td id='SKIEDs'>
-<a href='https://github.com/SKEIDs'>
-<img src='https://github.com/SKEIDs.png' width='140px;'>
-</a>
-<h4 align='center'><a href='https://github.com/SKEIDs'>SKIEDs</a></h4>
-</td>
-<td id='poomsmart'>
+<td align="center">
 <a href='https://github.com/PoomSmart'>
-<img src='https://github.com/PoomSmart.png' width='140px;'>
+<img src='https://user-images.githubusercontent.com/78001398/271811615-96093202-4aec-4e50-a750-8c7b83f3862c.png' width='110px'>
 </a>
-<h4 align='center'><a href='https://github.com/PoomSmart'>PoomSmart</a></h4>
+<br>
+<a href='https://twitter.com/poomsmart'>PoomSmart</a>
+</td>
+<td align="center">
+<a href='https://github.com/level3tjg'>
+<img src='https://user-images.githubusercontent.com/78001398/271812596-7854996a-3825-4971-a9ff-1001b4d153cb.png' width='110px'>
+</a>
+<br>
+<a href='https://twitter.com/level3tjg'>level3tjg</a>
+</td>
+<td align="center">
+<a href='https://github.com/BandarHL'>
+<img src='https://user-images.githubusercontent.com/78001398/271812729-2bb63da0-5239-43a4-aa3e-e1daa67e8dc2.png' width='110px'>
+</a>
+<br>
+<a href='https://twitter.com/bandarhl'>BandarHelal</a>
+</td>
+</tr>
+  
+<tr>
+<td align="center">
+<a href='https://github.com/Galactic-Dev'>
+<img src='https://user-images.githubusercontent.com/78001398/271812231-5b7d5d9f-6d19-4174-8478-8f07379ee1ca.png' width='110px'>
+</a>
+<br>
+<a href='https://twitter.com/dev_galactic'>galactic</a>
+</td>
+<td align="center">
+<a href='https://github.com/julioverne'>
+<img src='https://user-images.githubusercontent.com/78001398/271812914-bf26d603-2d94-49f4-9702-f5e66af3f44a.png' width='110px'>
+</a>
+<br>
+<a href='https://twitter.com/ijulioverne'>julioverne</a>
+</td>
+<td align="center">
+<a href='https://github.com/hbang'>
+<img src='https://user-images.githubusercontent.com/78001398/271813035-2e168ee5-fc47-43a6-9307-0fc20c7fca60.png' width='110px'>
+</a>
+<br>
+<a href='https://twitter.com/hashbang'>HASHBANG</a>
+</td>
+<td align="center">
+<a href='https://github.com/Lyvendia'>
+<img src='https://user-images.githubusercontent.com/78001398/271812187-1c0d5b24-caba-4616-b875-4c458d10ca55.png' width='110px'>
+</a>
+<br>
+<a href='https://github.com/Lyvendia'>Lyvendia</a>
+</td>
+<td align="center">
+<a href='https://github.com/therealFoxster'>
+<img src='https://user-images.githubusercontent.com/78001398/271812075-923038a7-5ffa-4ea4-9de4-fdf4e5d556c2.png' width='110px'>
+</a>
+<br>
+<a href='https://twitter.com/therealFoxster'>Foxster</a>
+</td>
+<td align="center">
+<a href='https://github.com/ichitaso'>
+<img src='https://user-images.githubusercontent.com/78001398/271812398-c7e40fa3-4e0b-4be2-aa51-900444d59abd.png' width='110px'>
+</a>
+<br>
+<a href='https://twitter.com/ichitaso'>ichitaso</a>
 </td>
 </tr>
 
 <tr>
-<td id='qnblackcat'>
-<a href='https://github.com/qnblackcat'>
-<img src='https://github.com/qnblackcat.png' width='140px;'>
+<td align="center">
+<a href='https://github.com/AhmedBafkir'>
+<img src='https://user-images.githubusercontent.com/78001398/271813114-dcb005f7-b83b-40e6-a9cb-9b661dd6b33b.png' width='110px'>
 </a>
-<h4 align='center'><a href='https://github.com/qnblackcat'>qnblackcat</a></h4>
+<br>
+<a href='https://twitter.com/Peaceful_0'>Ahmed Bafkir</a>
 </td>
-<td id='theos-team'>
-<a href='https://github.com/theos/theos'>
-<img src='https://github.com/theos.png' width='140px;'>
+<td align="center">
+<a href='https://github.com/CokePokes'>
+<img src='https://user-images.githubusercontent.com/78001398/271813228-d28471b4-cb67-442c-bd63-276f1641a14e.png' width='110px'>
 </a>
-<h4 align='center'><a href='https://theos.dev'>theos</a></h4>
+<br>
+<a href='https://twitter.com/cokepokes'>CokePokes</a>
+</td>
+<td align="center">
+<a href='https://github.com/ISnackable'>
+<img src='https://user-images.githubusercontent.com/78001398/271813311-2027a8de-a08d-4f1b-97a4-167f4bcef497.png' width='110px'>
+</a>
+<br>
+<a href='https://isnackable.me/'>Tommy Teo</a>
+</td>
+<td align="center">
+<a href='https://github.com/theos/theos'>
+<img src='https://user-images.githubusercontent.com/78001398/271813393-56a63730-a56d-41ba-b473-4d37761526c9.png' width='110px'>
+</a>
+<br>
+<a href='https://theos.dev'>theos</a>
 </td>
 </tr>
 </table>
@@ -263,17 +282,17 @@ any many more...
 
 - **YouTubeRebornPlus** (or you can call it YouTubeReborn+) requires iOS & iPadOS 14.0 and later. The latest version of **YouTubeRebornPlus** can be found in the [Release tab](https://github.com/arichorn/YouTubeRebornPlus/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.34.5-4.2.1)](https://tinyurl.com/3ucyf2th) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.40.1-4.2.2)](https://tinyurl.com/5n8mvykm) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Sep 8th 2023)_
+- Version info: _(Oct 9th 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.34.5 | ✖︎ |
-| **YouTube Reborm** | LillieH1000 | 4.2.1 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
+| **YouTube** | Google Inc | 18.40.1 | ✖︎ |
+| **YouTube Reborm** | LillieH1000 | 4.2.2 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -286,7 +305,7 @@ any many more...
 | **YTUHD** | PoomSmart | 1.4.0 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | PoomSmart | 1.7.20 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YouMute** | PoomSmart | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YouMute) |
-| **YTABConfig** | PoomSmart | 1.5.0-1 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
+| **YTABConfig** | PoomSmart | 1.5.0-2 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
 | **IAmYouTube** | PoomSmart | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | PoomSmart | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | PoomSmart | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
