@@ -1,4 +1,4 @@
-#import "Header.h"
+#import "YouTubeRebornPlus.h"
 
 NSBundle *YouTubeRebornPlusBundle() {
     static NSBundle *bundle = nil;
