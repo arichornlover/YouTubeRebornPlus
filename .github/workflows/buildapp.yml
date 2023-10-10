@@ -8,7 +8,7 @@ on:
     inputs:
       reborn_version:
         description: "The version of YouTube Reborn"
-        default: "4.2.1"
+        default: "4.2.2"
         required: true
         type: string
       decrypted_youtube_url:
@@ -100,19 +100,17 @@ jobs:
       - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl "https://www.dropbox.com/scl/fi/vw8o9n73wb2wbe4iedc6k/h.ryan.youtubereborn_4.1.0_iphoneos-arm.deb?rlkey=sayjrd9co8u2drwhczcnzvt7a&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.1.0.deb"
+          curl "https://www.dropbox.com/scl/fi/cs2badax0q63aftakahsz/YouTube.Reborn.v4.2.2.deb?rlkey=v74hu0pamwxvegcpf8xkh7l11&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.2.deb"
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.1.0.deb" && tar -xf data.tar.* && cd ../../..
+          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.2.2.deb" && tar -xf data.tar.* && cd ../../..
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} unpacked! \033[0m"
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
           rm -rf main/tmp/Payload/YouTube.app/PlugIns/*
           cp -R main/Extensions/*.appex main/tmp/Payload/YouTube.app/PlugIns
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} unpacked! \033[0m"
-          dpkg-deb --build main com.arichorn.youtuberebornplus.deb
-          echo -e "==> \033[1mDeb has been built! \033[0m"
 
         env:
           THEOS: ${{ github.workspace }}/theos
