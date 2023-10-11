@@ -74,6 +74,17 @@
 @interface YTTransportControlsButtonView : UIView
 @end
 
+@interface _ASCollectionViewCell : UICollectionViewCell
+- (id)node;
+@end
+
+@interface YTAsyncCollectionView : UICollectionView
+- (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath;
+@end
+
+@interface FRPSliderCell : UITableViewCell
+@end
+
 @interface YTPlaybackButton : UIControl
 @end
 
@@ -81,7 +92,7 @@
 @property (nonatomic, assign, readwrite) BOOL enableSnapToChapter;
 @end
 
-// Cercube button in Nav bar
+// Buttons
 @interface MDCButton : UIButton
 @end
 
@@ -106,23 +117,25 @@
 // YTAutoFullscreen
 @interface YTPlayerViewController (YTAFS)
 - (void)autoFullscreen;
-@end
-
-// YTNoShorts
-@interface _ASCollectionViewCell : UICollectionViewCell
-- (id)node;
-@end
-
-@interface YTAsyncCollectionView : UICollectionView
-- (void)removeShortsCellAtIndexPath:(NSIndexPath *)indexPath;
+- (id)activeVideoPlayerOverlay;
+- (id)playerView;
 @end
 
 @interface YTPlayerView : UIView
 - (void)downloadVideo;
 @end
 
-
 // App Theme
+@interface YTColor : NSObject
++ (UIColor *)white1;
++ (UIColor *)white2;
++ (UIColor *)white3;
++ (UIColor *)white4;
++ (UIColor *)white5;
++ (UIColor *)grey1;
++ (UIColor *)grey2;
+@end
+
 @interface YCHLiveChatView : UIView
 @end
 
@@ -130,6 +143,9 @@
 @end
 
 @interface YTRelatedVideosView : UIView
+@end
+
+@interface YTTopAlignedView : UIView
 @end
 
 @interface ELMView: UIView
@@ -148,11 +164,15 @@
 @end
 
 @interface _ASDisplayView : UIView
-- (UILabel *)findLabelInSubviews:(NSArray *)subviews;
-- (void)customizeLabel:(UILabel *)label;
 @end
 
 @interface YTCommentDetailHeaderCell : UIView
+@end
+
+@interface YTAutonavEndscreenView : UIView
+@end
+
+@interface YTPivotBarIndicatorView : UIView
 @end
 
 @interface SponsorBlockSettingsController : UITableViewController 
@@ -165,4 +185,14 @@
 @end
 
 @interface UIPredictionViewController : UIViewController
+@end
+
+@interface FRPreferences : UITableViewController
+@end
+
+@interface FRPSelectListTable : UITableViewController
+@end
+
+@interface settingsReorderTable : UIViewController
+@property(nonatomic, strong) UITableView *tableView;
 @end
