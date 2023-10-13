@@ -1,9 +1,9 @@
 ## Cercube with extra features!
-
-
-![IMAGE_CERCUBEPLUS_PREVIEW](https://gcdnb.pbrd.co/images/PnpTdZf0IXbd.png)
-
----
+<p align="center">
+  <a href="https://user-images.githubusercontent.com/78001398/217129808-4efa2213-9e01-4fa4-a9d4-04c90e7fa88b.png">
+    <img src="https://user-images.githubusercontent.com/78001398/273735783-8ac8d491-fe89-4706-9406-6b82530f6f9d.png" alt="CERCUBEPLUSEXTRA_PREVIEW">
+  </a>
+</p>
 
 <p align="center">
     <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20iPadOS%2014.0%2B-yellow" alt="Badge"/>  
@@ -28,31 +28,42 @@
 * [Known issues](#known-issues)
 * [Download (IPA)](#download-ipa)
 * [Support the developers!](#support-the-developers)
-* [Building (optional)](#building-optional)
+* [Building (optional)](#Building(s)-(optional))
 
 # Credits
 
 <table id='maintainer credit'>
 Special thanks to these developer(s) for maintaining and improving CercubePlus!
 <tr>
-<td id='arichorn'>
+<td align="center">
 <a href='https://github.com/arichorn'>
-<img src='https://github.com/arichorn.png' width='140px;'>
+<img src='https://user-images.githubusercontent.com/78001398/274782532-5a29d9a6-c0a8-4d34-a3f5-d75ea4fadcc1.png' width='110px;'>
 </a>
-<h4 align='center'><a href='https://github.com/arichorn'>arichorn</a></h4>
+<br>
+<a href='https://github.com/arichorn'>arichorn</a>
 </td>
-<td id='dayanch96'>
+<td align="center">
 <a href='https://github.com/dayanch96'>
-<img src='https://github.com/dayanch96.png' width='140px;'>
+<img src='https://user-images.githubusercontent.com/78001398/271853514-129334b3-498f-4804-aceb-392bf5e373e6.png' width='110px;'>
 </a>
-<h4 align='center'><a href='https://github.com/dayanch96'>dayanch96</a></h4>
+<br>
+<a href='https://github.com/dayanch96'>dayanch96</a>
 </td>
-<td id='ssuesskind'>
+<td align="center">
 <a href='https://github.com/ssuesskind'>
-<img src='https://github.com/ssuesskind.png' width='140px;'>
+<img src='https://user-images.githubusercontent.com/78001398/271853585-77271641-b825-43b1-af57-d9f5b12fe8ff.png' width='110px;'>
 </a>
-<h4 align='center'><a href='https://github.com/ssuesskind'>ssuesskind</a></h4>
+<br>
+<a href='https://github.com/ssuesskind'>ssuesskind</a>
 </td>
+<td align="center">
+<a href='https://github.com/Balackburn'>
+<img src='https://user-images.githubusercontent.com/78001398/271853318-3005deb3-b484-4b2b-a093-44c2af79b9af.png' width='110px;'>
+</a>
+<br>
+<a href='https://github.com/Balackburn'>Balackburn</a>
+</td>
+</tr>
 
 <table id='credit'>
 Special thanks to all the developers who have contributed to CercubePlus/CercubePlusExtra!
@@ -238,14 +249,14 @@ any many more...
 
 - For AltStore user: [Open in AltStore (v18.22.9-5.3.11)](https://tinyurl.com/v7m2tk9e) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(June 6th 2023)_
+- Version info: _(Oct 12 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.22.9 | ✖︎ |
+| **YouTube** | Google Inc | 18.40.1 | ✖︎ |
 | **Cercube** | Majd Alfhaily | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
@@ -253,12 +264,12 @@ any many more...
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
-| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.6 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
-| **LowContrastMode** | arichorn | 1.2.3 | [✔︎](https://github.com/arichorn/LowContrastMode) |
+| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.11 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
+| **LowContrastMode** | arichorn | 1.4.2 | [✔︎](https://github.com/arichorn/LowContrastMode) |
 | **YTUHD** | PoomSmart | 1.4.0 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | PoomSmart | 1.7.19-2 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YouPiP** | PoomSmart | 1.7.20 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **YouMute** | PoomSmart | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YouMute) |
-| **YTABConfig** | PoomSmart | 1.5.0-1 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
+| **YTABConfig** | PoomSmart | 1.5.0-2 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
 | **IAmYouTube** | PoomSmart | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | PoomSmart | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | PoomSmart | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
@@ -282,5 +293,3 @@ any many more...
 # Building(s) (optional)
 See [CercubePlusExtra/Building - Wiki](https://github.com/arichorn/CercubePlusExtra/wiki/Building)
 or Another Version [uYouPlus/Building - Wiki](https://github.com/qnblackcat/uYouPlus/wiki/Building)
-
-![IMAGE CERCUBEPLUS LOGO](https://github.com/arichorn/YouTubeRebornPlus/assets/78001398/57051dbb-82e1-4a45-ae28-a6dc741f3393)
