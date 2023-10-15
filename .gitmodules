@@ -28,7 +28,7 @@
 	branch = main
 [submodule "Tweaks/YTABConfig"]
 	path = Tweaks/YTABConfig
-	url = https://github.com/PoomSmart/YTABConfig.git
+	url = https://github.com/arichorn/YTABConfig.git
 	branch = main
 [submodule "Tweaks/YouMute"]
 	path = Tweaks/YouMute
