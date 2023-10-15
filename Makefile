@@ -1,10 +1,10 @@
-TARGET = iphone:clang:15.5:14.0
+TARGET = iphone:clang:16.2:14.0
 CercubePlus_USE_FISHHOOK = 0
 ARCHS = arm64
 MODULES = jailed
 FINALPACKAGE = 1
 CODESIGN_IPA = 0
-PACKAGE_VERSION = 18.25.1-5.3.11
+PACKAGE_VERSION = 18.40.1-5.3.11
 
 TWEAK_NAME = CercubePlus
 DISPLAY_NAME = YouTube
@@ -32,6 +32,7 @@ before-package::
 	@cp -R Tweaks/YTABConfig/layout/Library/Application\ Support/YTABC.bundle Resources/
 	@cp -R Tweaks/DontEatMyContent/layout/Library/Application\ Support/DontEatMyContent.bundle Resources/
 	@cp -R Tweaks/YTHoldForSpeed/layout/Library/Application\ Support/YTHoldForSpeed.bundle Resources/
+	@cp -R Tweaks/YTNoCommunityPosts/layout/Library/Application\ Support/YTNoCommunityPosts.bundle Resources/
 	@cp -R Tweaks/YTVideoOverlay/layout/Library/Application\ Support/YTVideoOverlay.bundle Resources/
 	@cp -R Tweaks/YouMute/layout/Library/Application\ Support/YouMute.bundle Resources/
 	@cp -R Tweaks/YouQuality/layout/Library/Application\ Support/YouQuality.bundle Resources/
