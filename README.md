@@ -4,29 +4,26 @@
   </a>
 </p>
 
-## YouTube Reborn but with more features!
 <p align="center">
   <a href="https://user-images.githubusercontent.com/78001398/217129808-4efa2213-9e01-4fa4-a9d4-04c90e7fa88b.png">
     <img src="https://user-images.githubusercontent.com/78001398/273735783-8ac8d491-fe89-4706-9406-6b82530f6f9d.png" alt="YOUTUBEREBORNPLUS_PREVIEW">
   </a>
 </p>
 
----
-
 <p align="center">
-    <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20iPadOS%2014.0%2B-yellow" alt="Badge"/>  
+  <img src="https://img.shields.io/badge/Platform-iOS%20%7C%20iPadOS%2014.0%2B-yellow?logo=apple&logoColor=darkgray" alt="Platform Badge">
 </p>
 
 <p align="center">
-    <a href="https://github.com/arichorn/YouTubeRebornPlus/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/YouTubeRebornPlus?color=brightgreen&label=Latest%20release" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/YouTubeRebornPlus/releases/latest"><img src="https://img.shields.io/github/downloads/arichorn/YouTubeRebornPlus/total?label=Download" alt="Badge"></img></a>
-    <a href="https://github.com/arichorn/YouTubeRebornPlus/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/YouTubeRebornPlus?logo=history&logoColor=white&label=Last commit" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/YouTubeRebornPlus/release/latest"><img src="https://custom-icon-badges.demolab.com/github/v/release/arichorn/YouTubeRebornPlus?logo=youtube&color=%23ff0000&label=Latest%20Release" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/YouTubeRebornPlus/releases/latest"><img src="https://img.shields.io/github/downloads/arichorn/YouTubeRebornPlus/total?color=%23ff0000&label=Downloads&logo=cloudsmith&logoColor=white" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/YouTubeRebornPlus/commit"><img src="https://custom-icon-badges.demolab.com/github/last-commit/arichorn/YouTubeRebornPlus?logo=history&logoColor=white&color=%23ff0000&label=Last%20Commit" alt="Last Commit Badge"></a>
+    <a href="https://github.com/arichorn/YouTubeRebornPlus/issues"><img src="https://custom-icon-badges.demolab.com/github/issues-raw/arichorn/YouTubeRebornPlus?logo=issue-opened&logoColor=white&color=%23ff0000&label=Issues" alt="Issues Badge"></a>
 </p>
 
 <p align="center">
-   <img src="https://img.shields.io/github/stars/arichorn/YouTubeRebornPlus?style=social" alt="Badge"/>
-   <img src="https://img.shields.io/github/forks/arichorn/YouTubeRebornPlus?style=social" alt="Badge"/>
-   <a href="https://github.com/qnblackcat/uYouPlus#support-the-developers"><img src="https://img.shields.io/badge/-Support-lightgrey?style=social&logo=paypal" alt="Badge"></img></a>
+    <a href="https://github.com/arichorn/YouTubeRebornPlus/stargazers"><img src="https://custom-icon-badges.demolab.com/github/stars/arichorn/YouTubeRebornPlus?logo=star&logoColor=white&color=%23ff0000&label=Stars" alt="Stars Badge"></img></a>
+<a href="https://github.com/arichorn/YouTubeRebornPlus/network/members"><img src="https://custom-icon-badges.demolab.com/github/forks/arichorn/YouTubeRebornPlus?logo=github&logoColor=white&color=%23ff0000&label=Forks"></a>
 </p>
 
 # Table of Contents
@@ -282,17 +279,17 @@ any many more...
 
 - **YouTubeRebornPlus** (or you can call it YouTubeReborn+) requires iOS & iPadOS 14.0 and later. The latest version of **YouTubeRebornPlus** can be found in the [Release tab](https://github.com/arichorn/YouTubeRebornPlus/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.40.1-4.2.2)](https://tinyurl.com/5n8mvykm) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.45.2-4.2.3)](https://tinyurl.com/mpf83c3h) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Oct 9th 2023)_
+- Version info: _(November 19 2023)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.40.1 | ✖︎ |
-| **YouTube Reborm** | LillieH1000 | 4.2.2 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
+| **YouTube** | Google Inc | 18.45.2 | ✖︎ |
+| **YouTube Reborn** | LillieH1000 | 4.2.3 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
@@ -300,11 +297,10 @@ any many more...
 | **YTNoCommunityPosts** | [michael-winay](https://github.com/michael-winay) | 0.0.2 | [✔︎](https://github.com/michael-winay/YTNoCommunityPosts) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
-| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.11 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
-| **LowContrastMode** | arichorn | 1.4.2 | [✔︎](https://github.com/arichorn/LowContrastMode) |
+| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.12 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
+| **Alderis Color Picker** | [HASHBANG Productions](https://github.com/hbang) | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
 | **YTUHD** | PoomSmart | 1.4.0 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | PoomSmart | 1.7.20 | [✔︎](https://github.com/PoomSmart/YouPiP) |
-| **YouMute** | PoomSmart | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YouMute) |
 | **YTABConfig** | PoomSmart | 1.5.0-2 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
 | **IAmYouTube** | PoomSmart | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | PoomSmart | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
@@ -312,7 +308,12 @@ any many more...
 | **YTNoPaidPromo** | PoomSmart | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YTAutoFullScreen** | PoomSmart | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen) |
 | **YTShortsProgress** | PoomSmart | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTShortsProgress) |
-| **Return YouTube Dislike** | PoomSmart | 1.11.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | PoomSmart | 1.11.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.1-2 | [✔︎](https://github.com/PoomSmart/YouMute) |
+| **YouQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.4 | [✔︎](https://github.com/PoomSmart/YouQuality) |
+| **YTVideoOverlay** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YTVideoOverlay) |
+| **YTHoldForSpeed** | [joshuaseltzer](https://github.com/joshuaseltzer) | 1.0.7 | [✔︎](https://github.com/joshuaseltzer/YTHoldForSpeed) |
+| **LowContrastMode** | [arichorn](https://github.com/arichorn) | 1.4.2 | [✔︎](https://github.com/arichorn/YTLowContrastMode) |
 
 </details>
 
