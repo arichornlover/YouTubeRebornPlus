@@ -59,6 +59,11 @@
 - (void)setRate:(float)rate;
 @end
 
+@interface YTLocalPlaybackController : NSObject
+- (void)setPlaybackRate:(float)rate;
+- (id)activeVideo;
+@end
+
 // YouTubeRebornPlus
 @interface YTChipCloudCell : UIView
 @end
@@ -111,10 +116,14 @@
 @end
 
 // YTAutoFullscreen
-@interface YTPlayerViewController (YTAFS)
+@interface YTPlayerViewController (YTAFS
 - (void)autoFullscreen;
-- (id)activeVideoPlayerOverlay; // DontEatMycontent
-- (id)playerView; // DontEatMycontent
+// YTSpeed
+@property id activeVideo;
+@property float playbackRate;
+- (void)singleVideo:(id)video playbackRateDidChange:(float)rate;
+- (YTSingleVideoController *)activeVideo;
+@end
 @end
 
 // App Theme
@@ -127,6 +136,7 @@
 + (UIColor *)grey1;
 + (UIColor *)grey2;
 @end
+
 @interface YCHLiveChatView : UIView
 @end
 
@@ -155,6 +165,9 @@
 @end
 
 @interface _ASDisplayView : UIView
+@end
+
+@interface ELMContainerNode : NSObject
 @end
 
 @interface YTAutonavEndscreenView : UIView
