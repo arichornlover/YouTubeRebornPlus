@@ -191,30 +191,45 @@ static BOOL IsEnabled(NSString *key) {
 - (BOOL)savedSettingShouldExpire { return NO; }
 %end
 
-// YTShortsProgress - @PoomSmart - https://github.com/PoomSmart/YTShortsProgress
+// YTShortsProgress - https://github.com/PoomSmart/YTShortsProgress/
+%hook YTShortsPlayerViewController
+- (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
+- (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
+%end
+
 %hook YTReelPlayerViewController
-- (BOOL)shouldEnablePlayerBar { return YES; }
 - (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
 - (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
 %end
 
 %hook YTReelPlayerViewControllerSub
-- (BOOL)shouldEnablePlayerBar { return YES; }
 - (BOOL)shouldAlwaysEnablePlayerBar { return YES; }
 - (BOOL)shouldEnablePlayerBarOnlyOnPause { return NO; }
 %end
 
 %hook YTColdConfig
 - (BOOL)iosEnableVideoPlayerScrubber { return YES; }
+- (BOOL)mobileShortsTablnlinedExpandWatchOnDismiss { return YES; }
 %end
 
 %hook YTHotConfig
 - (BOOL)enablePlayerBarForVerticalVideoWhenControlsHiddenInFullscreen { return YES; }
 %end
 
-// YTNoModernUI - @arichorn
-%group gYTNoModernUI
-%hook YTVersionUtils // YTNoModernUI Original Version
+// YTNoTracking - @arichorn - https://github.com/arichorn/YTNoTracking/
+%hook UIApplication
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+    NSString *originalURLString = [url absoluteString];
+    NSString *modifiedURLString = [originalURLString stringByReplacingOccurrencesOfString:@"&si=[a-zA-Z0-9_-]+" withString:@"" options:NSRegularExpressionSearch range:NSMakeRange(0, originalURLString.length)];
+    NSURL *modifiedURL = [NSURL URLWithString:modifiedURLString];
+    BOOL result = %orig(application, modifiedURL, options);
+    return result;
+}
+%end
+
+// Fix LowContrastMode - @arichorn
+%group gFixLowContrastMode
+%hook YTVersionUtils // Supported LowContrastMode Version
 + (NSString *)appVersion { return @"17.38.10"; }
 %end
 
@@ -228,29 +243,26 @@ static BOOL IsEnabled(NSString *key) {
     } %orig(arg1);
 }
 %end
-
-%hook YTInlinePlayerBarContainerView // Red Progress Bar - YTNoModernUI
-- (id)quietProgressBarColor {
-    return [UIColor redColor];
-}
 %end
 
-%hook YTSegmentableInlinePlayerBarView // Gray Buffer Progress - YTNoModernUI
-- (void)setBufferedProgressBarColor:(id)arg1 {
-     [UIColor colorWithRed:1.00 green:1.00 blue:1.00 alpha:0.90];
-}
-%end
-
-%hook YTQTMButton // No Modern/Rounded Buttons - YTNoModernUI
+// Disable Modern/Rounded Buttons (_ASDisplayView not included) - @arichorn
+%group gDisableModernButtons 
+%hook YTQTMButton // Disable Modern/Rounded Buttons
 + (BOOL)buttonModernizationEnabled { return NO; }
 %end
-
-%hook YTBubbleHintView // No Modern/Rounded Hints - YTNoModernUI
-+ (BOOL)modernRoundedCornersEnabled { return NO; }
 %end
 
+// Disable Rounded Hints with no Rounded Corners - @arichorn
+%group gDisableRoundedHints
+%hook YTBubbleHintView // Disable Modern/Rounded Hints
++ (BOOL)modernRoundedCornersEnabled { return NO; }
+%end
+%end
+
+// Disable Modern Flags - @arichorn
+%group gDisableModernFlags
 %hook YTColdConfig
-// Disable Modern Content - YTNoModernUI
+// Disable Modern Content
 - (BOOL)creatorClientConfigEnableStudioModernizedMdeThumbnailPickerForClient { return NO; }
 - (BOOL)cxClientEnableModernizedActionSheet { return NO; }
 - (BOOL)enableClientShortsSheetsModernization { return NO; }
@@ -263,37 +275,14 @@ static BOOL IsEnabled(NSString *key) {
 - (BOOL)uiSystemsClientGlobalConfigIosEnableEpUxUpdates { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigIosEnableSheetsUxUpdates { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigIosEnableSnackbarModernization { return NO; }
-// Disable Rounded Content - YTNoModernUI
+// Disable Rounded Content
 - (BOOL)iosDownloadsPageRoundedThumbs { return NO; }
 - (BOOL)iosRoundedSearchBarSuggestZeroPadding { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedDialogForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedThumbnailsForNative { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedThumbnailsForNativeLongTail { return NO; }
 - (BOOL)uiSystemsClientGlobalConfigEnableRoundedTimestampForNative { return NO; }
-// Disable Darker Dark Mode - YTNoModernUI
-- (BOOL)enableDarkerDarkMode { return NO; }
-- (BOOL)useDarkerPaletteBgColorForElements { return NO; }
-- (BOOL)useDarkerPaletteTextColorForElements { return NO; }
-- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteTextColorForNative { return NO; }
-- (BOOL)uiSystemsClientGlobalConfigUseDarkerPaletteBgColorForNative { return NO; }
-// Disable Ambient Mode - YTNoModernUI
-- (BOOL)disableCinematicForLowPowerMode { return NO; }
-- (BOOL)enableCinematicContainer { return NO; }
-- (BOOL)enableCinematicContainerOnClient { return NO; }
-- (BOOL)enableCinematicContainerOnTablet { return NO; }
-- (BOOL)enableTurnOffCinematicForFrameWithBlackBars { return YES; }
-- (BOOL)enableTurnOffCinematicForVideoWithBlackBars { return YES; }
-- (BOOL)iosCinematicContainerClientImprovement { return NO; }
-- (BOOL)iosEnableGhostCardInlineTitleCinematicContainerFix { return NO; }
-- (BOOL)iosUseFineScrubberMosaicStoreForCinematic { return NO; }
-- (BOOL)mainAppCoreClientEnableClientCinematicPlaylists { return NO; }
-- (BOOL)mainAppCoreClientEnableClientCinematicPlaylistsPostMvp { return NO; }
-- (BOOL)mainAppCoreClientEnableClientCinematicTablets { return NO; }
-- (BOOL)iosEnableFullScreenAmbientMode { return NO; }
-// 16.42.3 Styled YouTube Channel Page Interface - YTNoModernUI
-- (BOOL)channelsClientConfigIosChannelNavRestructuring { return NO; }
-- (BOOL)channelsClientConfigIosMultiPartChannelHeader { return NO; }
-// Disable Optional Content - YTNoModernUI
+// Disable Optional Content
 - (BOOL)elementsClientIosElementsEnableLayoutUpdateForIob { return NO; }
 - (BOOL)supportElementsInMenuItemSupportedRenderers { return NO; }
 - (BOOL)isNewRadioButtonStyleEnabled { return NO; }
@@ -308,6 +297,33 @@ static BOOL IsEnabled(NSString *key) {
 - (BOOL)liveChatModernizeClassicElementizeTextMessage { return NO; }
 - (BOOL)iosShouldRepositionChannelBar { return NO; }
 - (BOOL)enableElementRendererOnChannelCreation { return NO; }
+%end
+%end
+
+// Disable Ambient Mode in Fullscreen - @arichorn
+%group gDisableAmbientMode
+%hook YTCinematicContainerView
+- (BOOL)watchFullScreenCinematicSupported {
+    return NO;
+}
+- (BOOL)watchFullScreenCinematicEnabled {
+    return NO;
+}
+%end
+%hook YTColdConfig
+- (BOOL)disableCinematicForLowPowerMode { return NO; }
+- (BOOL)enableCinematicContainer { return NO; }
+- (BOOL)enableCinematicContainerOnClient { return NO; }
+- (BOOL)enableCinematicContainerOnTablet { return NO; }
+- (BOOL)enableTurnOffCinematicForFrameWithBlackBars { return YES; }
+- (BOOL)enableTurnOffCinematicForVideoWithBlackBars { return YES; }
+- (BOOL)iosCinematicContainerClientImprovement { return NO; }
+- (BOOL)iosEnableGhostCardInlineTitleCinematicContainerFix { return NO; }
+- (BOOL)iosUseFineScrubberMosaicStoreForCinematic { return NO; }
+- (BOOL)mainAppCoreClientEnableClientCinematicPlaylists { return NO; }
+- (BOOL)mainAppCoreClientEnableClientCinematicPlaylistsPostMvp { return NO; }
+- (BOOL)mainAppCoreClientEnableClientCinematicTablets { return NO; }
+- (BOOL)iosEnableFullScreenAmbientMode { return NO; }
 %end
 %end
 
@@ -495,27 +511,46 @@ static void replaceTab(YTIGuideResponse *response) {
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
 %group gYTSpeed
 %hook YTVarispeedSwitchController
-- (id)init {
-	id result = %orig;
+- (instancetype)init {
+	if ((self = %orig)) {
+        const int size = 17;
+        float speeds[] = {0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 5.0};
+        id varispeedSwitchControllerOptions[size];
 
-	const int size = 17;
-	float speeds[] = {0.25, 0.5, 0.75, 1.0, 1.25, 1.5, 1.75, 2.0, 2.25, 2.5, 2.75, 3.0, 3.25, 3.5, 3.75, 4.0, 5.0};
-	id varispeedSwitchControllerOptions[size];
+        for (int i = 0; i < size; ++i) {
+            id title = [NSString stringWithFormat:@"%.2fx", speeds[i]];
+            varispeedSwitchControllerOptions[i] = [[%c(YTVarispeedSwitchControllerOption) alloc] initWithTitle:title rate:speeds[i]];
+        }
 
-	for (int i = 0; i < size; ++i) {
-		id title = [NSString stringWithFormat:@"%.2fx", speeds[i]];
-		varispeedSwitchControllerOptions[i] = [[%c(YTVarispeedSwitchControllerOption) alloc] initWithTitle:title rate:speeds[i]];
-	}
+        NSUInteger count = sizeof(varispeedSwitchControllerOptions) / sizeof(id);
+        NSArray *varispeedArray = [NSArray arrayWithObjects:varispeedSwitchControllerOptions count:count];
+        MSHookIvar<NSArray *>(self, "_options") = varispeedArray;
+    }
+	return self;
+}
+%end
 
-	NSUInteger count = sizeof(varispeedSwitchControllerOptions) / sizeof(id);
-	NSArray *varispeedArray = [NSArray arrayWithObjects:varispeedSwitchControllerOptions count:count];
-	MSHookIvar<NSArray *>(self, "_options") = varispeedArray;
-
-	return result;
+%hook YTLocalPlaybackController
+- (instancetype)initWithParentResponder:(id)parentResponder overlayFactory:(id)overlayFactory playerView:(id)playerView playbackControllerDelegate:(id)playbackControllerDelegate viewportSizeProvider:(id)viewportSizeProvider shouldDelayAdsPlaybackCoordinatorCreation:(BOOL)shouldDelayAdsPlaybackCoordinatorCreation {
+    float savedRate = [[NSUserDefaults standardUserDefaults] floatForKey:@"YoutubeSpeed_PlaybackRate"];
+    if ((self = %orig)) {
+        MSHookIvar<float>(self, "_restoredPlaybackRate") = savedRate == 0 ? DEFAULT_RATE : savedRate;
+    }
+    return self;
+}
+- (void)setPlaybackRate:(float)rate {
+    %orig;
+	[[NSUserDefaults standardUserDefaults] setFloat: rate forKey:@"YoutubeSpeed_PlaybackRate"];
 }
 %end
 
 %hook MLHAMQueuePlayer
+- (instancetype)initWithStickySettings:(id)stickySettings playerViewProvider:(id)playerViewProvider {
+	id result = %orig;
+	float savedRate = [[NSUserDefaults standardUserDefaults] floatForKey:@"YoutubeSpeed_PlaybackRate"];
+	[self setRate: savedRate == 0 ? DEFAULT_RATE : savedRate];
+	return result;
+}
 - (void)setRate:(float)rate {
     MSHookIvar<float>(self, "_rate") = rate;
 	MSHookIvar<float>(self, "_preferredRate") = rate;
@@ -531,13 +566,6 @@ static void replaceTab(YTIGuideResponse *response) {
 	YTSingleVideoController *singleVideoController = self.delegate;
 	[singleVideoController playerRateDidChange: rate];
 }
-%end 
-
-%hook YTPlayerViewController
-%property (nonatomic, assign) float playbackRate;
-- (void)singleVideo:(id)video playbackRateDidChange:(float)rate {
-	%orig;
-}
 %end
 %end
 
@@ -548,13 +576,6 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IsEnabled(@"snapToChapter_enabled")) {
         self.enableSnapToChapter = NO;
     }
-}
-%end
-
-// Disable Pinch to zoom
-%hook YTColdConfig
-- (BOOL)videoZoomFreeZoomEnabledGlobalConfig {
-    return IsEnabled(@"pinchToZoom_enabled") ? NO : %orig;
 }
 %end
 
@@ -571,25 +592,6 @@ static void replaceTab(YTIGuideResponse *response) {
 	%orig(true, arg2);
 }
 %end
-%end
-
-// YTNoTracking - @arichorn - https://github.com/arichorn/YTNoTracking/
-%hook YTICompactLinkRenderer
-+ (BOOL)hasTrackingParams {
-    return NO;
-}
-%end
-
-%hook YTIReelPlayerOverlayRenderer
-+ (BOOL)hasTrackingParams {
-    return NO;
-}
-%end
-
-%hook YTIShareTargetServiceUpdateRenderer
-+ (BOOL)hasTrackingParams {
-    return NO;
-}
 %end
 
 // Hide Channel Watermark
@@ -817,9 +819,6 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IsEnabled(@"hideHeatwaves_enabled")) {
         %init(gHideHeatwaves);
     }
-    if (IsEnabled(@"ytNoModernUI_enabled")) {
-        %init(gYTNoModernUI);
-    }
     if (IsEnabled(@"disableVideoPlayerZoom_enabled")) {
         %init(gDisableVideoPlayerZoom);
     }
@@ -837,6 +836,21 @@ static void replaceTab(YTIGuideResponse *response) {
     }
     if (IsEnabled(@"stockVolumeHUD_enabled")) {
         %init(gStockVolumeHUD);
+    }
+    if (IsEnabled(@"fixLowContrastMode_enabled")) {
+        %init(gFixLowContrastMode);
+    }
+    if (IsEnabled(@"disableModernButtons_enabled")) {
+        %init(gDisableModernButtons);
+    }
+    if (IsEnabled(@"disableRoundedHints_enabled")) {
+        %init(gDisableRoundedHints);
+    }
+    if (IsEnabled(@"disableModernFlags_enabled")) {
+        %init(gDisableModernFlags);
+    }
+    if (IsEnabled(@"disableAmbientMode_enabled")) {
+        %init(gDisableAmbientMode);
     }
     if (IsEnabled(@"disableAccountSection_enabled")) {
         %init(gDisableAccountSection);
@@ -865,6 +879,28 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IsEnabled(@"disableLiveChatSection_enabled")) {
         %init(gDisableLiveChatSection);
     }
+
+    // YTNoModernUI - @arichorn
+    BOOL ytNoModernUIEnabled = IsEnabled(@"ytNoModernUI_enabled");
+    if (ytNoModernUIEnabled) {
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:NO forKey:@"enableVersionSpoofer_enabled"];
+    [userDefaults setBool:NO forKey:@"premiumYouTubeLogo_enabled"];
+    } else {
+    BOOL enableVersionSpooferEnabled = IsEnabled(@"enableVersionSpoofer_enabled");
+    BOOL premiumYouTubeLogoEnabled = IsEnabled(@"premiumYouTubeLogo_enabled");
+
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:enableVersionSpooferEnabled forKey:@"enableVersionSpoofer_enabled"];
+    [userDefaults setBool:premiumYouTubeLogoEnabled forKey:@"premiumYouTubeLogo_enabled"];
+    }
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setBool:ytNoModernUIEnabled ? ytNoModernUIEnabled : [userDefaults boolForKey:@"fixLowContrastMode_enabled"] forKey:@"fixLowContrastMode_enabled"];
+    [userDefaults setBool:ytNoModernUIEnabled ? ytNoModernUIEnabled : [userDefaults boolForKey:@"disableModernButtons_enabled"] forKey:@"disableModernButtons_enabled"];
+    [userDefaults setBool:ytNoModernUIEnabled ? ytNoModernUIEnabled : [userDefaults boolForKey:@"disableRoundedHints_enabled"] forKey:@"disableRoundedHints_enabled"];
+    [userDefaults setBool:ytNoModernUIEnabled ? ytNoModernUIEnabled : [userDefaults boolForKey:@"disableModernFlags_enabled"] forKey:@"disableModernFlags_enabled"];
+    [userDefaults setBool:ytNoModernUIEnabled ? ytNoModernUIEnabled : [userDefaults boolForKey:@"disableAmbientMode_enabled"] forKey:@"disableAmbientMode_enabled"];
+    [userDefaults setBool:ytNoModernUIEnabled ? ytNoModernUIEnabled : [userDefaults boolForKey:@"redProgressBar_enabled"] forKey:@"redProgressBar_enabled"];
 
     // Change the default value of some options
     NSArray *allKeys = [[[NSUserDefaults standardUserDefaults] dictionaryRepresentation] allKeys];
