@@ -35,6 +35,16 @@
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
 #define YT_NAME @"YouTube"
+#define DEFAULT_RATE 1.0f // YTSpeed
+
+@interface YTSingleVideoController ()
+- (float)playbackRate;
+- (void)setPlaybackRate:(float)arg1;
+@end
+
+@interface YTPlayerViewController ()
+- (YTSingleVideoController *)activeVideo;
+@end
 
 // YTSpeed
 @interface YTVarispeedSwitchControllerOption : NSObject
@@ -58,6 +68,11 @@
 
 @interface HAMPlayerInternal : NSObject
 - (void)setRate:(float)rate;
+@end
+
+@interface YTLocalPlaybackController : NSObject
+- (void)setPlaybackRate:(float)rate;
+- (id)activeVideo;
 @end
 
 // CercubePlus
@@ -114,11 +129,13 @@
 @interface YTWatchMiniBarView : UIView
 @end
 
-// YTAutoFullscreen
 @interface YTPlayerViewController (YTAFS)
+// YTAutoFullscreen
 - (void)autoFullscreen;
-- (id)activeVideoPlayerOverlay;
-- (id)playerView;
+// YTSpeed
+@property id activeVideo;
+@property float playbackRate;
+- (void)singleVideo:(id)video playbackRateDidChange:(float)rate;
 @end
 
 @interface YTPlayerView : UIView
@@ -166,7 +183,7 @@
 @interface _ASDisplayView : UIView
 @end
 
-@interface YTCommentDetailHeaderCell : UIView
+@interface ELMContainerNode : NSObject
 @end
 
 @interface YTAutonavEndscreenView : UIView
@@ -175,7 +192,10 @@
 @interface YTPivotBarIndicatorView : UIView
 @end
 
-@interface SponsorBlockSettingsController : UITableViewController 
+@interface YTCommentDetailHeaderCell : UIView
+@end
+
+@interface SponsorBlockSettingsController : UITableViewController
 @end
 
 @interface SponsorBlockViewController : UIViewController
