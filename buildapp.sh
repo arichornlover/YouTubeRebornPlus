@@ -5,10 +5,10 @@ cd "$(dirname "$0")"
 # Check Cercube
 if	[ ! -f Tweaks/Cercube/me.alfhaily.cercube_5.3.11_iphoneos-arm.deb ]
 then
-	echo -e "==> \033[1mCercube v5.3.13 is not found. Downloading Cercube (v5.3.11)...\033[0m"
+	echo -e "==> \033[1mCercube v5.3.11 is not found. Downloading Cercube (v5.3.11)...\033[0m"
 	curl https://dl.dropboxusercontent.com/s/b01erqbp3ajc5e2/me.alfhaily.cercube_5.3.11_iphoneos-arm.deb --output Tweaks/Cercube/me.alfhaily.cercube_5.3.11_iphoneos-arm.deb
 else
-   	echo -e "==> \033[1mFounded Cercube (v5.3.13)\033[0m"
+   	echo -e "==> \033[1mFounded Cercube (v5.3.11)\033[0m"
 fi
 
 # Extract Cercube
