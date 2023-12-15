@@ -139,7 +139,7 @@
 @interface YTLocalPlaybackController : NSObject
 - (void)setPlaybackRate:(float)rate;
 - (id)activeVideo;
-@en
+@end
 
 // BigYTMiniPlayer
 @interface YTMainAppVideoPlayerOverlayView : UIView
