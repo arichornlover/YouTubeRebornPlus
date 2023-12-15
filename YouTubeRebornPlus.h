@@ -134,7 +134,6 @@
 - (void)singleVideo:(id)video playbackRateDidChange:(float)rate;
 - (YTSingleVideoController *)activeVideo;
 @end
-@end
 
 // App Theme
 @interface YTColor : NSObject
