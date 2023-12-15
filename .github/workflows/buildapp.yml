@@ -1,7 +1,7 @@
 # Original idea by @ISnackable. Many thanks to him for handling the most hardest parts!
 # https://github.com/ISnackable/CercubePlus/blob/main/.github/workflows/Build.yml
 
-name: Build and Release CercubePlus
+name: Build and Release CercubePlusExtra
 
 on:
   workflow_dispatch:
@@ -43,14 +43,14 @@ concurrency:
 
 jobs:
   build:
-    name: Build CercubePlus
+    name: Build CercubePlusExtra
     runs-on: macos-latest
     permissions:
       contents: write
 
     steps:
       - name: Checkout Main
-        uses: actions/checkout@v3.5.2
+        uses: actions/checkout@v4.1.1
         with:
           path: main
           submodules: recursive
@@ -59,32 +59,32 @@ jobs:
         run: brew install ldid dpkg make
 
       - name: Setup Theos
-        uses: actions/checkout@v3.5.2
+        uses: actions/checkout@v4.1.1
         with:
           repository: theos/theos
-          ref: master
+          ref: 3da31488281ecf4394d10302d2629607f4a1aa07
           path: theos
           submodules: recursive
 
       - name: Caching
         id: SDK
-        uses: actions/cache@v3.3.1
+        uses: actions/cache@v3.3.2
         env:
-          cache-name: iOS-15.5-SDK
+          cache-name: iOS-16.2-SDK
         with:
           path: theos/sdks/
           key: ${{ env.cache-name }}
 
-      - name: Download iOS 15.5 SDK
+      - name: Download iOS 16.2 SDK
         if: steps.SDK.outputs.cache-hit != 'true'
         run: |
-          svn checkout -q https://github.com/chrisharper22/sdks/trunk/iPhoneOS15.5.sdk
+          svn checkout -q https://github.com/arichorn/sdks/trunk/iPhoneOS16.2.sdk
           mv *.sdk $THEOS/sdks
         env:
           THEOS: ${{ github.workspace }}/theos
 
       - name: Setup Theos Jailed
-        uses: actions/checkout@v3.5.2
+        uses: actions/checkout@v4.1.1
         with:
           repository: qnblackcat/theos-jailed
           ref: master
@@ -100,7 +100,7 @@ jobs:
       - name: Download Cercube & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl "https://dl.dropboxusercontent.com/s/b01erqbp3ajc5e2/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
+          curl -L "https://dl.dropboxusercontent.com/s/b01erqbp3ajc5e2/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb" --output "main/Tweaks/Cercube/me.alfhaily.cercube_${{ env.CERCUBE_VERSION }}_iphoneos-arm.deb"
           echo -e "==> \033[1mCercube v${{ inputs.cercube_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
@@ -126,7 +126,7 @@ jobs:
           sed -i '' "12s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
           sed -i '' "11s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
           make package FINALPACKAGE=1
-          (mv "packages/$(ls -t packages | head -n1)" "packages/CercubePlus_${{ env.YOUTUBE_VERSION }}_${{ env.CERCUBE_VERSION }}.ipa")
+          (mv "packages/$(ls -t packages | head -n1)" "packages/CercubePlusExtra_${{ env.YOUTUBE_VERSION }}_${{ env.CERCUBE_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
           echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
           echo -e "==> \033[1mBundle ID: ${{ env.BUNDLE_ID }}\033[0m"
@@ -143,7 +143,7 @@ jobs:
           CERCUBE_VERSION: ${{ inputs.cercube_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
         with:
-          name: CercubePlus_${{ env.YOUTUBE_VERSION }}_${{ env.CERCUBE_VERSION }}
+          name: CercubePlusExtra_${{ env.YOUTUBE_VERSION }}_${{ env.CERCUBE_VERSION }}
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
           if-no-files-found: error
 
