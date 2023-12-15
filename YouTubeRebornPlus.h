@@ -34,6 +34,16 @@
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
 #define YT_NAME @"YouTube"
+#define DEFAULT_RATE 1.0f // YTSpeed
+
+@interface YTSingleVideoController ()
+- (float)playbackRate;
+- (void)setPlaybackRate:(float)arg1;
+@end
+
+@interface YTPlayerViewController ()
+- (YTSingleVideoController *)activeVideo;
+@end
 
 // YTSpeed
 @interface YTVarispeedSwitchControllerOption : NSObject
@@ -116,7 +126,7 @@
 @end
 
 // YTAutoFullscreen
-@interface YTPlayerViewController (YTAFS
+@interface YTPlayerViewController (YTAFS)
 - (void)autoFullscreen;
 // YTSpeed
 @property id activeVideo;
