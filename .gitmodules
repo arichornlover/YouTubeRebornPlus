@@ -8,7 +8,7 @@
 	branch = main
 [submodule "Tweaks/Return-YouTube-Dislikes"]
 	path = Tweaks/Return-YouTube-Dislikes
-	url = https://github.com/PoomSmart/Return-YouTube-Dislikes.git
+	url = https://github.com/arichorn/Return-YouTube-Dislikes.git
 	branch = main
 [submodule "Tweaks/YouTubeHeader"]
 	path = Tweaks/YouTubeHeader
@@ -16,7 +16,7 @@
 	branch = main
 [submodule "Tweaks/Alderis"]
 	path = Tweaks/Alderis
-	url = https://github.com/qnblackcat/Alderis.git
+	url = https://github.com/arichorn/Alderis.git
 	branch = master
 [submodule "Tweaks/PSHeader"]
 	path = Tweaks/PSHeader
