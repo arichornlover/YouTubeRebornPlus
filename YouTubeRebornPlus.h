@@ -14,9 +14,14 @@
 #import "Tweaks/YouTubeHeader/YTIGuideResponse.h"
 #import "Tweaks/YouTubeHeader/YTIGuideResponseSupportedRenderers.h"
 #import "Tweaks/YouTubeHeader/YTIPivotBarSupportedRenderers.h"
+#import "Tweaks/YouTubeHeader/YTIPivotBarItemRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIPivotBarRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIBrowseRequest.h"
+#import "Tweaks/YouTubeHeader/YTIButtonRenderer.h"
+#import "Tweaks/YouTubeHeader/YTISectionListRenderer.h"
+#import "Tweaks/YouTubeHeader/YTColorPalette.h"
 #import "Tweaks/YouTubeHeader/YTCommonColorPalette.h"
+#import "Tweaks/YouTubeHeader/YTSettingsSectionItemManager.h"
 #import "Tweaks/YouTubeHeader/ASCollectionView.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlay.h"
 #import "Tweaks/YouTubeHeader/YTPlayerOverlayProvider.h"
@@ -24,12 +29,11 @@
 #import "Tweaks/YouTubeHeader/YTReelPlayerBottomButton.h"
 #import "Tweaks/YouTubeHeader/YTReelPlayerViewController.h"
 #import "Tweaks/YouTubeHeader/YTAlertView.h"
-#import "Tweaks/YouTubeHeader/YTISectionListRenderer.h"
 #import "Tweaks/YouTubeHeader/YTIMenuConditionalServiceItemRenderer.h"
 #import "Tweaks/YouTubeHeader/YTPivotBarItemView.h"
-#import "Tweaks/YouTubeHeader/YTVideoWithContextNode.h"
-#import "Tweaks/YouTubeHeader/ELMCellNode.h"
-#import "Tweaks/YouTubeHeader/ELMNodeController.h"
+#import "Tweaks/YouTubeHeader/YTVideoWithContextNode.h" // YouTube-X
+#import "Tweaks/YouTubeHeader/ELMCellNode.h" // YouTube-X
+#import "Tweaks/YouTubeHeader/ELMNodeController.h" // YouTube-X
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
@@ -43,6 +47,69 @@
 
 @interface YTPlayerViewController ()
 - (YTSingleVideoController *)activeVideo;
+@end
+
+// IAmYouTube
+@interface SSOConfiguration : NSObject
+@end
+
+// YouTubeRebornPlus
+@interface YTHeaderLogoController : UIView
+@property(readonly, nonatomic) long long pageStyle;
+@end
+
+@interface YTNavigationBarTitleView : UIView
+@end
+
+@interface YTChipCloudCell : UIView
+@end
+
+@interface YTPlayabilityResolutionUserActionUIController : NSObject // Skips content warning before playing *some videos - @PoomSmart
+- (void)confirmAlertDidPressConfirm;
+@end 
+
+@interface YTMainAppControlsOverlayView: UIView
+@end
+
+@interface YTTransportControlsButtonView : UIView
+@end
+
+@interface _ASCollectionViewCell : UICollectionViewCell
+- (id)node;
+@end
+
+@interface YTAsyncCollectionView : UICollectionView
+- (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath;
+@end
+
+@interface FRPSliderCell : UITableViewCell
+@end
+
+@interface YTPlaybackButton : UIControl
+@end
+
+@interface PlayerManager : NSObject
+- (float)progress;
+@end
+
+@interface YTSegmentableInlinePlayerBarView
+@property (nonatomic, assign, readwrite) BOOL enableSnapToChapter;
+@end
+
+@interface YTPlaylistHeaderViewController: UIViewController
+@property UIButton *downloadsButton;
+@end
+
+// Buttons
+@interface YTRightNavigationButtons : UIView
+@property YTQTMButton *notificationButton;
+@property YTQTMButton *sponsorBlockButton;
+@property YTQTMButton *youtubeRebornButton;
+@end
+
+@interface YTISlimMetadataButtonSupportedRenderers : NSObject
+- (id)slimButton_buttonRenderer;
+- (id)slimMetadataButtonRenderer;
 @end
 
 // YTSpeed
@@ -72,50 +139,7 @@
 @interface YTLocalPlaybackController : NSObject
 - (void)setPlaybackRate:(float)rate;
 - (id)activeVideo;
-@end
-
-// YouTubeRebornPlus
-@interface YTChipCloudCell : UIView
-@end
-
-@interface YTPlayabilityResolutionUserActionUIController : NSObject // Skips content warning before playing *some videos - @PoomSmart
-- (void)confirmAlertDidPressConfirm;
-@end 
-
-@interface YTMainAppControlsOverlayView: UIView
-@end
-
-@interface YTTransportControlsButtonView : UIView
-@end
-
-@interface _ASCollectionViewCell : UICollectionViewCell
-- (id)node;
-@end
-
-@interface YTAsyncCollectionView : UICollectionView
-- (void)removeCellsAtIndexPath:(NSIndexPath *)indexPath;
-@end
-
-@interface FRPSliderCell : UITableViewCell
-@end
-
-@interface YTPlaybackButton : UIControl
-@end
-
-@interface YTSegmentableInlinePlayerBarView
-@property (nonatomic, assign, readwrite) BOOL enableSnapToChapter;
-@end
-
-// Buttons
-@interface YTRightNavigationButtons : UIView
-@property YTQTMButton *notificationButton;
-@property YTQTMButton *sponsorBlockButton;
-@property YTQTMButton *youtubeRebornButton;
-@end
-
-// IAmYouTube
-@interface SSOConfiguration : NSObject
-@end
+@en
 
 // BigYTMiniPlayer
 @interface YTMainAppVideoPlayerOverlayView : UIView
@@ -142,8 +166,16 @@
 + (UIColor *)white3;
 + (UIColor *)white4;
 + (UIColor *)white5;
++ (UIColor *)black0;
++ (UIColor *)black1;
++ (UIColor *)black2;
++ (UIColor *)black3;
++ (UIColor *)black4;
++ (UIColor *)blackPure;
 + (UIColor *)grey1;
 + (UIColor *)grey2;
++ (UIColor *)white1Alpha98;
++ (UIColor *)white1Alpha95;
 @end
 
 @interface YCHLiveChatView : UIView
