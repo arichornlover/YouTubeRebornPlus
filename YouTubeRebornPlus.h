@@ -1,5 +1,3 @@
-#import "Tweaks/YouTubeHeader/YTPlayerViewController.h" // YouTubeRebornPlus.h
-#import "Tweaks/YouTubeHeader/YTQTMButton.h" // YouTubeRebornPlus.h
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
@@ -8,6 +6,10 @@
 #import <substrate.h>
 #import <rootless.h>
 #import "Tweaks/FLEX/FLEX.h"
+
+#import "Tweaks/YouTubeHeader/YTAppDelegate.h"
+#import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
+#import "Tweaks/YouTubeHeader/YTQTMButton.h"
 #import "Tweaks/YouTubeHeader/YTVideoQualitySwitchOriginalController.h"
 #import "Tweaks/YouTubeHeader/YTPlayerViewController.h"
 #import "Tweaks/YouTubeHeader/YTWatchController.h"
@@ -36,9 +38,12 @@
 #import "Tweaks/YouTubeHeader/ELMNodeController.h" // YouTube-X
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
+#define IS_ENABLED(k) [[NSUserDefaults standardUserDefaults] boolForKey:k]
+// #define APP_THEME_IDX [[NSUserDefaults standardUserDefaults] integerForKey:@"appTheme"]
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
 #define YT_NAME @"YouTube"
 #define DEFAULT_RATE 1.0f // YTSpeed
+#define LOWCONTRASTMODE_CUTOFF_VERSION @"17.38.10" // LowContrastMode
 
 @interface YTSingleVideoController ()
 - (float)playbackRate;
@@ -240,4 +245,20 @@
 
 @interface settingsReorderTable : UIViewController
 @property(nonatomic, strong) UITableView *tableView;
+@end
+
+// Snack bar
+@interface YTHUDMessage : NSObject
++ (id)messageWithText:(id)text;
+- (void)setAction:(id)action;
+@end
+
+@interface GOOHUDMessageAction : NSObject
+- (void)setTitle:(NSString *)title;
+- (void)setHandler:(void (^)(id))handler;
+@end
+
+@interface GOOHUDManagerInternal : NSObject
+- (void)showMessageMainThread:(id)message;
++ (id)sharedInstance;
 @end
