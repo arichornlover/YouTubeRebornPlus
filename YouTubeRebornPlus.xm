@@ -24,7 +24,7 @@ static BOOL IsEnabled(NSString *key) {
     didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
     BOOL didFinishLaunching = %orig;
 
-    if (IsEnabled(@"flex_enabled")) {
+    if (IS_ENABLED(@"flex_enabled")) {
         [[FLEXManager sharedManager] showExplorer];
     }
 
@@ -32,7 +32,7 @@ static BOOL IsEnabled(NSString *key) {
 }
 - (void)appWillResignActive:(id)arg1 {
     %orig;
-        if (IsEnabled(@"flex_enabled")) {
+        if (IS_ENABLED(@"flex_enabled")) {
         [[FLEXManager sharedManager] showExplorer];
     }
 }
@@ -56,13 +56,10 @@ static BOOL IsEnabled(NSString *key) {
 %hook YTRightNavigationButtons
 - (void)layoutSubviews {
     %orig;
-    if (IsEnabled(@"hideNotificationButton_enabled")) {
-        self.notificationButton.hidden = YES;
-    }
-    if (IsEnabled(@"hideSponsorBlockButton_enabled")) { 
+    if (IS_ENABLED(@"hideSponsorBlockButton_enabled")) { 
         self.sponsorBlockButton.hidden = YES;
     }
-    if (IsEnabled(@"hideYouTubeRebornButton_enabled")) { 
+    if (IS_ENABLED(@"hideYouTubeRebornButton_enabled")) { 
         self.youtubeRebornButton.hidden = YES;
     }
 }
@@ -730,56 +727,27 @@ static void replaceTab(YTIGuideResponse *response) {
 // %end
 %end
 
-%group giPadLayout // https://github.com/LillieH001/YouTube-Reborn
-%hook UIDevice
-- (long long)userInterfaceIdiom {
-    return YES;
-} 
-%end
-%hook UIStatusBarStyleAttributes
-- (long long)idiom {
-    return NO;
-} 
-%end
-%hook UIKBTree
-- (long long)nativeIdiom {
-    return NO;
-} 
-%end
-%hook UIKBRenderer
-- (long long)assetIdiom {
-    return NO;
-} 
-%end
-%end
-
-%group giPhoneLayout // https://github.com/LillieH001/YouTube-Reborn
-%hook UIDevice
-- (long long)userInterfaceIdiom {
-    return NO;
-} 
-%end
-%hook UIStatusBarStyleAttributes
-- (long long)idiom {
-    return YES;
-} 
-%end
-%hook UIKBTree
-- (long long)nativeIdiom {
-    return NO;
-} 
-%end
-%hook UIKBRenderer
-- (long long)assetIdiom {
-    return NO;
-} 
-%end
-%end
-
 // YT startup animation
 %hook YTColdConfig
 - (BOOL)mainAppCoreClientIosEnableStartupAnimation {
-    return IsEnabled(@"ytStartupAnimation_enabled") ? YES : NO;
+    return IS_ENABLED(@"ytStartupAnimation_enabled") ? YES : NO;
+}
+%end
+
+// YTCastConfirm: https://github.com/JamieBerghmans/YTCastConfirm
+%hook MDXPlaybackRouteButtonController
+- (void)didPressButton:(id)arg1 {
+    if (IS_ENABLED(@"castConfirm_enabled")) {
+        NSBundle *tweakBundle = uYouPlusBundle();
+        YTAlertView *alertView = [%c(YTAlertView) confirmationDialogWithAction:^{
+            %orig;
+        } actionTitle:LOC(@"MSG_YES")];
+        alertView.title = LOC(@"CASTING");
+        alertView.subtitle = LOC(@"MSG_ARE_YOU_SURE");
+        [alertView show];
+	} else {
+    return %orig;
+    }
 }
 %end
 
@@ -788,12 +756,6 @@ static void replaceTab(YTIGuideResponse *response) {
     %init;
     if (IsEnabled(@"hideCastButton_enabled")) {
         %init(gHideCastButton);
-    }
-    if (IsEnabled(@"iPadLayout_enabled")) {
-        %init(giPadLayout);
-    }
-    if (IsEnabled(@"iPhoneLayout_enabled")) {
-        %init(giPhoneLayout);
     }
     if (IsEnabled(@"reExplore_enabled")) {
         %init(gReExplore);
@@ -825,31 +787,31 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IsEnabled(@"disableHints_enabled")) {
         %init(gDisableHints);
     }
-    if (IsEnabled(@"stickNavigationBar_enabled")) {
+    if (IS_ENABLED(@"stickNavigationBar_enabled")) {
         %init(gStickNavigationBar);
     }
-    if (IsEnabled(@"hideChipBar_enabled")) {
+    if (IS_ENABLED(@"hideChipBar_enabled")) {
         %init(gHideChipBar);
     }
-    if (IsEnabled(@"ytSpeed_enabled")) {
+    if (IS_ENABLED(@"ytSpeed_enabled")) {
         %init(gYTSpeed);
     }
     if (IsEnabled(@"stockVolumeHUD_enabled")) {
         %init(gStockVolumeHUD);
     }
-    if (IsEnabled(@"fixLowContrastMode_enabled")) {
+    if (IS_ENABLED(@"fixLowContrastMode_enabled")) {
         %init(gFixLowContrastMode);
     }
-    if (IsEnabled(@"disableModernButtons_enabled")) {
+    if (IS_ENABLED(@"disableModernButtons_enabled")) {
         %init(gDisableModernButtons);
     }
-    if (IsEnabled(@"disableRoundedHints_enabled")) {
+    if (IS_ENABLED(@"disableRoundedHints_enabled")) {
         %init(gDisableRoundedHints);
     }
-    if (IsEnabled(@"disableModernFlags_enabled")) {
+    if (IS_ENABLED(@"disableModernFlags_enabled")) {
         %init(gDisableModernFlags);
     }
-    if (IsEnabled(@"disableAmbientMode_enabled")) {
+    if (IS_ENABLED(@"disableAmbientMode_enabled")) {
         %init(gDisableAmbientMode);
     }
     if (IsEnabled(@"disableAccountSection_enabled")) {
@@ -881,14 +843,14 @@ static void replaceTab(YTIGuideResponse *response) {
     }
 
     // YTNoModernUI - @arichorn
-    BOOL ytNoModernUIEnabled = IsEnabled(@"ytNoModernUI_enabled");
+    BOOL ytNoModernUIEnabled = IS_ENABLED(@"ytNoModernUI_enabled");
     if (ytNoModernUIEnabled) {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setBool:NO forKey:@"enableVersionSpoofer_enabled"];
     [userDefaults setBool:NO forKey:@"premiumYouTubeLogo_enabled"];
     } else {
-    BOOL enableVersionSpooferEnabled = IsEnabled(@"enableVersionSpoofer_enabled");
-    BOOL premiumYouTubeLogoEnabled = IsEnabled(@"premiumYouTubeLogo_enabled");
+    BOOL enableVersionSpooferEnabled = IS_ENABLED(@"enableVersionSpoofer_enabled");
+    BOOL premiumYouTubeLogoEnabled = IS_ENABLED(@"premiumYouTubeLogo_enabled");
 
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setBool:enableVersionSpooferEnabled forKey:@"enableVersionSpoofer_enabled"];
