@@ -164,8 +164,8 @@
 "HIDE_YOUTUBE_REBORN_BUTTON" = "Ocultar el botón YouTube Reborn en la barra de navegación";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
-"YT_RE_EXPLORE" = "Sustituir pestaña Cortos por pestaña Explorar (YTReExplore)";
-"YT_RE_EXPLORE_DESC" = "Es necesario reiniciar la aplicación";
+"YT_RE_EXPLORE" = "Sustituir Shorts por Explorar (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "Sustituye la pestaña Shorts de la barra inferior por la pestaña Explorar.\nEs necesario reiniciar la aplicación.";
 
 "YT_SPEED" = "Activar YTSpeed";
 "YT_SPEED_DESC" = "Activa YTSpeed para tener más opciones de velocidad de reproducción. Es necesario reiniciar la aplicación";
