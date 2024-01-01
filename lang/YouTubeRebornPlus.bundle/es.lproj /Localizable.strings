@@ -107,7 +107,7 @@
 "OLD_DARK_THEME_DESC" = "Antiguo tema oscuro de YouTube (tema gris). Es necesario reiniciar la aplicación";
 
 "DEFAULT_THEME" = "Tema predeterminado";
-"DEFAULT_THEME_DESC" = "Tema oscuro(er) predeterminado de YouTube. Se requiere reiniciar la aplicación";
+"DEFAULT_THEME_DESC" = "Tema oscuro predeterminado de YouTube. Se requiere reiniciar la aplicación";
 
 "OLED_KEYBOARD" = "Teclado OLED (Experimental)";
 "OLED_KEYBOARD_DESC" = "Puede que no funcione correctamente en algunos casos. Es necesario reiniciar la aplicación";
@@ -115,8 +115,8 @@
 "LOW_CONTRAST_MODE" = "Modo de bajo contraste";
 "LOW_CONTRAST_MODE_DESC" = "Esta opción bajará el contraste de los textos y botones como en la antigua interfaz de YouTube. Es necesario reiniciar la aplicación";
 "LCM_SELECTOR" = "Selección de modo de bajo contraste";
-"DEFAULT_LOWCONTRASTMODE" = "(Por defecto) LowContrastMode";
-"CUSTOM_LOWCONTRASTMODE" = "(Color personalizado) LowContrastMode";
+"DEFAULT_LOWCONTRASTMODE" = "(LowContrastMode) Por defecto";
+"CUSTOM_LOWCONTRASTMODE" = "(LowContrastMode) Color personalizado";
 
 // Miscellaneous
 "MISCELLANEOUS" = "Varios";
@@ -152,7 +152,7 @@
 "NEW_MINIPLAYER_STYLE" = "Nuevo estilo de barra de minirreproductores (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "Es necesario reiniciar la aplicación";
 
-"HIDE_CAST_BUTTON" = "Ocultar botón Cast";
+"HIDE_CAST_BUTTON" = "Ocultar botón Enviar contenido";
 "HIDE_CAST_BUTTON_DESC" = "Es necesario reiniciar la aplicación";
 
 "HIDE_NOTIFICATION_BUTTON" = "Ocultar botón Notifcation en la barra de navegación";
