@@ -245,39 +245,43 @@ any many more...
 
 # Download (IPA)
 
-- **CercubePlus** (or you can call it Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlus** can be found in the [Release tab](https://github.com/arichorn/CercubePlusExtra/releases/latest).
+- **CercubePlusExtra** (or you can call it CercubePlus / Cercube+) requires iOS & iPadOS 14.0 and later. The latest version of **CercubePlusExtra** can be found in the [Release tab](https://github.com/arichorn/CercubePlusExtra/releases/latest).
 
-- For AltStore user: [Open in AltStore (v18.22.9-5.3.11)](https://tinyurl.com/v7m2tk9e) - It will take a while to install because AltStore needs to download the IPA first.
+- For AltStore user: [Open in AltStore (v18.49.3-5.3.11)](http://tinyurl.com/ybsw4wfj) - It will take a while to install because AltStore needs to download the IPA first.
 
-- Version info: _(Oct 12 2023)_
+- Version info: _(Jan 2 2024)_
 
 <details>
   <summary>Expand!</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 18.40.1 | ✖︎ |
+| **YouTube** | Google Inc | 18.49.3 | ✖︎ |
 | **Cercube** | Majd Alfhaily | 5.3.11 | ✖︎ |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
-| **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
+| **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
+| **YTNoCommunityPosts** | [michael-winay](https://github.com/michael-winay) | 0.0.2 | [✔︎](https://github.com/michael-winay/YTNoCommunityPosts) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
-| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.0.11 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
-| **LowContrastMode** | arichorn | 1.4.2 | [✔︎](https://github.com/arichorn/LowContrastMode) |
+| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.1.2 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
+| **Alderis Color Picker** | [HASHBANG Productions](https://github.com/hbang) | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
 | **YTUHD** | PoomSmart | 1.4.0 | [✔︎](https://github.com/PoomSmart/YTUHD) |
 | **YouPiP** | PoomSmart | 1.7.20 | [✔︎](https://github.com/PoomSmart/YouPiP) |
-| **YouMute** | PoomSmart | 1.1.1-1 | [✔︎](https://github.com/PoomSmart/YouMute) |
 | **YTABConfig** | PoomSmart | 1.5.0-2 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
 | **IAmYouTube** | PoomSmart | 1.2.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
 | **YTReExplore** | PoomSmart | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | PoomSmart | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
-| **YTAutoFullScreen** | PoomSmart | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen) |
-| **YTHoldForSpeed** | joshuaseltzer | 1.0.3 | [✔︎](https://github.com/joshuaseltzer/YTHoldForSpeed) |
 | **YTNoPaidPromo** | PoomSmart | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
+| **YTAutoFullScreen** | PoomSmart | 1.0.3 | [✔︎](https://github.com/PoomSmart/YTAutoFullScreen) |
 | **YTShortsProgress** | PoomSmart | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTShortsProgress) |
-| **Return YouTube Dislike** | PoomSmart | 1.11.3 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | PoomSmart | 1.11.4 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.1-3 | [✔︎](https://github.com/PoomSmart/YouMute) |
+| **YouQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.4-2 | [✔︎](https://github.com/PoomSmart/YouQuality) |
+| **YTVideoOverlay** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.1-2 | [✔︎](https://github.com/PoomSmart/YTVideoOverlay) |
+| **YTHoldForSpeed** | [joshuaseltzer](https://github.com/joshuaseltzer) | 1.0.9 | [✔︎](https://github.com/joshuaseltzer/YTHoldForSpeed) |
+| **LowContrastMode** | [arichorn](https://github.com/arichorn) | 1.4.2 | [✔︎](https://github.com/arichorn/YTLowContrastMode) |
 
 </details>
 
