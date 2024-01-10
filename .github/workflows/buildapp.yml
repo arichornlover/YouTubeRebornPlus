@@ -71,7 +71,7 @@ jobs:
           path: theos
           submodules: recursive
 
-      - name: SDK Caching
+     - name: SDK Caching
         id: SDK
         uses: actions/cache@v3.3.2
         env:
@@ -89,6 +89,8 @@ jobs:
           git sparse-checkout set --no-cone iPhoneOS${{ inputs.sdk_version }}.sdk
           git checkout
           mv *.sdk $THEOS/sdks
+        env:
+          THEOS: ${{ github.workspace }}/theos
 
       - name: Setup Theos Jailed
         uses: actions/checkout@v4.1.1
