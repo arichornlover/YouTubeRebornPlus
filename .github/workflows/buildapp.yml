@@ -31,6 +31,11 @@ on:
         default: "YouTube"
         required: true
         type: string
+      sdk_version:
+        description: "iOS SDK version to be used during build"
+        default: "16.2"
+        required: true
+        type: string
       create_release:
         description: "Create a draft release"
         default: true
@@ -66,22 +71,24 @@ jobs:
           path: theos
           submodules: recursive
 
-      - name: Caching
+      - name: SDK Caching
         id: SDK
         uses: actions/cache@v3.3.2
         env:
-          cache-name: iOS-16.2-SDK
+          cache-name: iOS-${{ inputs.sdk_version }}-SDK
         with:
           path: theos/sdks/
           key: ${{ env.cache-name }}
+          restore-keys: ${{ env.cache-name }}
 
-      - name: Download iOS 16.2 SDK
+      - name: Download iOS SDK
         if: steps.SDK.outputs.cache-hit != 'true'
         run: |
-          git clone --quiet https://github.com/arichorn/sdks.git
-          mv sdks/iPhoneOS16.2.sdk $THEOS/sdks
-        env:
-          THEOS: ${{ github.workspace }}/theos
+          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/arichorn/sdks/
+          cd sdks
+          git sparse-checkout set --no-cone iPhoneOS${{ inputs.sdk_version }}.sdk
+          git checkout
+          mv *.sdk $THEOS/sdks
 
       - name: Setup Theos Jailed
         uses: actions/checkout@v4.1.1
