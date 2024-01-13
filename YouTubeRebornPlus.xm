@@ -457,7 +457,7 @@ static void replaceTab(YTIGuideResponse *response) {
     return %orig;
 }
 %end
-%en
+%end
 
 // YTSpeed - https://github.com/Lyvendia/YTSpeed
 %group gYTSpeed
