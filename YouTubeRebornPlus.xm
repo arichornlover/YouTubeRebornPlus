@@ -702,9 +702,6 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IS_ENABLED(@"bigYTMiniPlayer_enabled") && (UIDevice.currentDevice.userInterfaceIdiom != UIUserInterfaceIdiomPad)) {
         %init(Main);
     }
-    if (IS_ENABLED(@"hideShorts_enabled")) {
-        %init(gHideShorts);
-    }
     if (IS_ENABLED(@"hidePreviousAndNextButton_enabled")) {
         %init(gHidePreviousAndNextButton);
     }
