@@ -341,20 +341,6 @@ NSBundle *tweakBundle = YouTubeRebornPlusBundle();
 }
 %end
 
-// YTAutoFullScreen: https://github.com/PoomSmart/YTAutoFullScreen/
-%hook YTPlayerViewController
-- (void)loadWithPlayerTransition:(id)arg1 playbackConfig:(id)arg2 {
-    %orig;
-    if (IS_ENABLED(@"autoFull_enabled"))
-        [NSTimer scheduledTimerWithTimeInterval:0.75 target:self selector:@selector(autoFullscreen) userInfo:nil repeats:NO];
-}
-%new
-- (void)autoFullscreen {
-    YTWatchController *watchController = [self valueForKey:@"_UIDelegate"];
-    [watchController showFullScreen];
-}
-%end
-
 %hook YTYouThereController
 - (BOOL)shouldShowYouTherePrompt { return NO; }
 %end
@@ -552,13 +538,6 @@ static void replaceTab(YTIGuideResponse *response) {
     else { return %orig; }
 }
 %end
-
-// Disable double tap to seek
-%hook YTMainAppVideoPlayerOverlayViewController
-- (BOOL)allowDoubleTapToSeekGestureRecognizer {
-     return IS_ENABLED(@"disableDoubleTapToSkip_enabled") ? NO : %orig;
- }
- %end
 
 // App Settings Overlay Options
 %group gDisableAccountSection
