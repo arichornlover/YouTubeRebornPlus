@@ -210,7 +210,7 @@
 # pragma mark - ctor
 %ctor {
     %init;
-    if (IS_ENABLED(lowContrastMode_enabled)) {
+    if (IS_ENABLED(@"lowContrastMode_enabled")) {
         %init(gLowContrastMode);
     }
 }
