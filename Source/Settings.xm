@@ -221,124 +221,19 @@ extern NSBundle *YouTubeRebornPlusBundle();
     }];
     [sectionItems addObject:videoPlayerGroup];
 
-# pragma mark - Video Controls Overlay Options
-    YTSettingsSectionItem *videoControlOverlayGroup = [YTSettingsSectionItemClass itemWithTitle:LOC(@"VIDEO_CONTROLS_OVERLAY_OPTIONS") accessibilityIdentifier:nil detailTextBlock:nil selectBlock:^BOOL (YTSettingsCell *cell, NSUInteger arg1) {
-        NSArray <YTSettingsSectionItem *> *rows = @[
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_SHARE_BUTTON")
-                titleDescription:LOC(@"ENABLE_SHARE_BUTTON_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"enableShareButton_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"enableShareButton_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
+# pragma mark - Video controls overlay options
+    SECTION_HEADER(LOC(@"VIDEO_CONTROLS_OVERLAY_OPTIONS"));
 
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"ENABLE_SAVE_TO_PLAYLIST_BUTTON")
-                titleDescription:LOC(@"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"enableSaveToButton_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"enableSaveToButton_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_HUD_MESSAGES")
-                titleDescription:LOC(@"HIDE_HUD_MESSAGES_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideHUD_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideHUD_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_PAID_PROMOTION_CARDS")
-                titleDescription:LOC(@"HIDE_PAID_PROMOTION_CARDS_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hidePaidPromotionCard_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hidePaidPromotionCard_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_CHANNEL_WATERMARK")
-                titleDescription:LOC(@"HIDE_CHANNEL_WATERMARK_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideChannelWatermark_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideChannelWatermark_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-                
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_SHADOW_OVERLAY_BUTTONS")
-                titleDescription:LOC(@"HIDE_SHADOW_OVERLAY_BUTTONS_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideVideoPlayerShadowOverlayButtons_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideVideoPlayerShadowOverlayButtons_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON")
-                titleDescription:LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hidePreviousAndNextButton_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hidePreviousAndNextButton_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON")
-                titleDescription:LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"replacePreviousAndNextButton_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"replacePreviousAndNextButton_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_HOVER_CARD")
-                titleDescription:LOC(@"HIDE_HOVER_CARD_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideHoverCards_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideHoverCards_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_RIGHT_PANEL")
-                titleDescription:LOC(@"HIDE_RIGHT_PANEL_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideRightPanel_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideRightPanel_enabled"];
-                    return YES;
-                }
-                settingItemId:0],
-
-            [YTSettingsSectionItemClass switchItemWithTitle:LOC(@"HIDE_HEATWAVES")
-                titleDescription:LOC(@"HIDE_HEATWAVES_DESC")
-                accessibilityIdentifier:nil
-                switchOn:IsEnabled(@"hideHeatwaves_enabled")
-                switchBlock:^BOOL (YTSettingsCell *cell, BOOL enabled) {
-                    [[NSUserDefaults standardUserDefaults] setBool:enabled forKey:@"hideHeatwaves_enabled"];
-                    return YES;
-                }
-                settingItemId:0]
-        ];        
-        YTSettingsPickerViewController *picker = [[%c(YTSettingsPickerViewController) alloc] initWithNavTitle:LOC(@"VIDEO_CONTROLS_OVERLAY_OPTIONS") pickerSectionTitle:nil rows:rows selectedItemIndex:NSNotFound parentResponder:[self parentResponder]];
-        [settingsViewController pushViewController:picker];
-        return YES;
-    }];
-    [sectionItems addObject:videoControlOverlayGroup]
+    SWITCH_ITEM(LOC(@"ENABLE_SHARE_BUTTON"), LOC(@"ENABLE_SHARE_BUTTON_DESC"), @"enableShareButton_enabled");
+    SWITCH_ITEM(LOC(@"ENABLE_SAVE_TO_PLAYLIST_BUTTON"), LOC(@"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC"), @"enableSaveToButton_enabled");
+    SWITCH_ITEM(LOC(@"HIDE_HUD_MESSAGES"), LOC(@"HIDE_HUD_MESSAGES_DESC"), @"hideHUD_enabled");
+    SWITCH_ITEM(LOC(@"HIDE_PAID_PROMOTION_CARDS"), LOC(@"HIDE_PAID_PROMOTION_CARDS_DESC"), @"hidePaidPromotionCard_enabled");
+    SWITCH_ITEM2(LOC(@"HIDE_SHADOW_OVERLAY_BUTTONS"), LOC(@"HIDE_SHADOW_OVERLAY_BUTTONS_DESC"), @"hideVideoPlayerShadowOverlayButtons_enabled");
+    SWITCH_ITEM(LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON"), LOC(@"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC"), @"hidePreviousAndNextButton_enabled");
+    SWITCH_ITEM2(LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON"), LOC(@"REPLACE_PREVIOUS_NEXT_BUTTON_DESC"), @"replacePreviousAndNextButton_enabled");
+    SWITCH_ITEM(LOC(@"HIDE_HOVER_CARD"), LOC(@"HIDE_HOVER_CARD_DESC"), @"hideHoverCards_enabled");
+    SWITCH_ITEM2(LOC(@"HIDE_RIGHT_PANEL"), LOC(@"HIDE_RIGHT_PANEL_DESC"), @"hideRightPanel_enabled");
+    SWITCH_ITEM2(LOC(@"HIDE_HEATWAVES"), LOC(@"HIDE_HEATWAVES_DESC"), @"hideHeatwaves_enabled");
 
 # pragma mark - App settings overlay options
     SECTION_HEADER(LOC(@"APP_SETTINGS_OVERLAY_OPTIONS"));
