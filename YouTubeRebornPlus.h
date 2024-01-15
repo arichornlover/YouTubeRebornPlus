@@ -39,7 +39,7 @@
 
 #define LOC(x) [tweakBundle localizedStringForKey:x value:nil table:nil]
 #define IS_ENABLED(k) [[NSUserDefaults standardUserDefaults] boolForKey:k]
-// #define APP_THEME_IDX [[NSUserDefaults standardUserDefaults] integerForKey:@"appTheme"]
+#define APP_THEME_IDX [[NSUserDefaults standardUserDefaults] integerForKey:@"appTheme"]
 #define YT_BUNDLE_ID @"com.google.ios.youtube"
 #define YT_NAME @"YouTube"
 #define DEFAULT_RATE 1.0f // YTSpeed
