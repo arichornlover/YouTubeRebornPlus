@@ -16,18 +16,40 @@ https://github.com/PoomSmart/YTUHD/tree/master/layout/Library/Application%20Supp
 https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Application%20Support/RYD.bundle
 */
 
-// Settings
+// About
+"ABOUT" = "About";
+
 "VERSION" = "YouTubeRebornPlus's version: %@";
-"VERSION_CHECK" = "Tap to check for update!";
+"VERSION_CHECK" = "Tap to check for updates!";
+
+"REPORT_AN_ISSUE" = "Report an issue";
+"ADD_TITLE" = "Add your title here...";
+
+"QUIT_YOUTUBE" = "Quit YouTube";
+
+"RESTART_YOUTUBE" = "Restart YouTube to apply changes";
+
+// App appearance
+"APP_THEME" = "App appearance";
+"THEME_OPTIONS" = "Theme options";
+
+"DARK_THEME" = "Dark theme";
+
+"DEFAULT_THEME" = "Default";
+"DEFAULT_THEME_DESC" = "";
+
+"OLD_DARK_THEME" = "Lighter grey";
+"OLD_DARK_THEME_DESC" = "YouTube's old dark theme";
+
+"OLED_DARK_THEME" = "OLED (experimental)";
+"OLED_DARK_THEME_2" = "OLED";
+"OLED_DARK_THEME_DESC" = "Pure-black dark theme";
+
+"OLED_KEYBOARD" = "OLED keyboard (experimental)";
+"OLED_KEYBOARD_DESC" = "";
 
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "Video Player Options";
-
-"AUTO_FULLSCREEN" = "Auto Full Screen (YTAutoFullScreen)";
-"AUTO_FULLSCREEN_DESC" = "Autoplay videos at full screen.";
-
-"DISABLE_DOUBLE_TAP_TO_SKIP" = "Disable double tap to skip";
-"DISABLE_DOUBLE_TAP_TO_SKIP_DESC" = "Disables the double tap to skip gestures in the video player. App restart is required.";
 
 "SNAP_TO_CHAPTER" = "Disable snap to chapter";
 "SNAP_TO_CHAPTER_DESC" = "Disable auto snap to chapter when seeking in videos. App restart is required.";
@@ -38,9 +60,6 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "YT_MINIPLAYER" = "Enable the Miniplayer for all YouTube videos";
 "YT_MINIPLAYER_DESC" = "Kid videos for example.";
 
-"STOCK_VOLUME_HUD" = "Use iOS stock volume HUD";
-"STOCK_VOLUME_HUD_DESC" = "";
-
 // Video controls overlay options
 "VIDEO_CONTROLS_OVERLAY_OPTIONS" = "Video Controls Overlay Options";
 
@@ -50,20 +69,11 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "Enable 'Save To Playlist' Button";
 "ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "Enable the 'Save To Playlist' Button in video controls overlay.";
 
-"HIDE_AUTOPLAY_SWITCH" = "Hide Autoplay switch";
-"HIDE_AUTOPLAY_SWITCH_DESC" = "Hide the Autoplay switch in video controls overlay.";
-
-"HIDE_SUBTITLES_BUTTON" = "Hide Subtitles button";
-"HIDE_SUBTITLES_BUTTON_DESC" = "Hide the Subtitles button in video controls overlay.";
-
 "HIDE_HUD_MESSAGES" = "Hide HUD Messages";
 "HIDE_HUD_MESSAGES_DESC" = "Example: CC is turned on/off, Video loop is on,...";
 
 "HIDE_PAID_PROMOTION_CARDS" = "Hide Paid Promotion cards";
 "HIDE_PAID_PROMOTION_CARDS_DESC" = "Hide the 'Includes Paid Promotions' card in some videos.";
-
-"HIDE_CHANNEL_WATERMARK" = "Hide Channel Watermark";
-"HIDE_CHANNEL_WATERMARK_DESC" = "Hide channel's watermark in video controls overlay. App restart is required.";
 
 "HIDE_SHADOW_OVERLAY_BUTTONS" = "Hide Shadow Overlay Buttons";
 "HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Hide the Shadow Overlay on the Play/Pause, Previous, Next, Forward & Rewind Buttons.";
@@ -72,13 +82,7 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
 
 "REPLACE_PREVIOUS_NEXT_BUTTON" = "Replace Previous and Next Button";
-"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next buttons with Fast forward and Rewind buttons. App restart is required.";
-
-"RED_PROGRESS_BAR" = "Red progress bar";
-"RED_PROGRESS_BAR_DESC" = "Bring back the red progress bar. App restart is required.";
-
-"DISABLE_VIDEO_PLAYER_ZOOM" = "Disable the Zoom Feature in the Video Player. App restart is required.";
-"DISABLE_VIDEO_PLAYER_ZOOM_DESC" = "Disables the Zoom Feature on both iPhone & iPad.";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next buttons with Fast forward and Rewind buttons. App restart is required."
 
 "HIDE_HOVER_CARD" = "Hide End screens hover cards (YTNoHoverCards)";
 "HIDE_HOVER_CARD_DESC" = "Hide creator End screens (thumbnails) at the end of videos.";
@@ -88,15 +92,6 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 
 "HIDE_HEATWAVES" = "Hide Heatwaves";
 "HIDE_HEATWAVES_DESC" = "Hides the Heatwaves in the video player. App restart is required.";
-
-"HIDE_DARK_OVERLAY_BACKGROUND" = "Hide Dark Overlay Background";
-"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "Hide video player's dark overlay background.";
-
-// Shorts options
-"SHORTS_OPTIONS" = "Shorts Options";
-
-"HIDE_SHORTS_VIDEOS" = "Hide Shorts videos";
-"HIDE_SHORTS_VIDEOS_DESC" = "Hide Shorts videos in Homepage, Recommended...";
 
 // App settings overlay options
 "APP_SETTINGS_OVERLAY_OPTIONS" = "App Settings Overlay Options";
@@ -114,27 +109,30 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_PRIVACY_SECTION" = "Hide `Privacy` Section";
 "HIDE_LIVECHAT_SECTION" = "Hide `Live Chat` Section";
 
-// Theme
-"THEME_OPTIONS" = "Theme Options";
-
-"OLED_DARK_THEME" = "OLED dark theme (Experimental)";
-"OLED_DARK_THEME_2" = "OLED dark theme";
-"OLED_DARK_THEME_DESC" = "True dark theme. Might not work correctly in some cases. App restart is required after you enable/disable this option.";
-
-"OLD_DARK_THEME" = "Old dark theme";
-"OLD_DARK_THEME_DESC" = "Old YouTube's dark theme (grey theme). App restart is required.";
-
-"DEFAULT_THEME" = "Default";
-"DEFAULT_THEME_DESC" = "Default dark(er) theme of YouTube. App restart is required.";
-
-"OLED_KEYBOARD" = "OLED Keyboard (Experimental)";
-"OLED_KEYBOARD_DESC" = "Might not work correctly in some cases. App restart is required.";
+// UI interface options
+"UI_INTERFACE_OPTIONS" = "UI Interface Options";
 
 "LOW_CONTRAST_MODE" = "Low Contrast Mode";
-"LOW_CONTRAST_MODE_DESC" = "This option will Low Contrast of the texts and buttons just like how the old YouTube Interface was. App restart is required.";
-"LCM_SELECTOR" = "Low contrast mode selection";
-"DEFAULT_LOWCONTRASTMODE" = "(Default) LowContrastMode";
-"CUSTOM_LOWCONTRASTMODE" = "(Custom Color) LowContrastMode";
+"LOW_CONTRAST_MODE_DESC" = "This will lower the contrast of texts and buttons, similar to the old YouTube Interface. App restart is required.";
+
+"FIX_LOW_CONTRAST_MODE" = "Fix LowContrastMode";
+"FIX_LOW_CONTRAST_MODE_DESC" = "This will fix the LowContrastMode functionality by Spoofing to YouTube v17.38.10. App restart is required.";
+
+"DISABLE_MODERN_BUTTONS" = "Disable Modern Buttons";
+"DISABLE_MODERN_BUTTONS_DESC" = "This will remove the new Modern/Chip Buttons in YouTube. but not all of them. App restart is required.";
+
+"DISABLE_ROUNDED_CORNERS_ON_HINTS" = "Disable Rounded Corners on Hints";
+"DISABLE_ROUNDED_CORNERS_ON_HINTS_DESC" = "This will make any of the Hints prompts not include the Rounded Corners. App restart is required.";
+
+"DISABLE_MODERN_FLAGS" = "Disable Modern A/B Flags";
+"DISABLE_MODERN_FLAGS_DESC" = "This will turn off any Modern Flag that was enabled by default. App restart is required.";
+
+"HIDE_MODERN_INTERFACE" = "Enable Specific UI Related Options (YTNoModernUI)";
+"HIDE_MODERN_INTERFACE_DESC" = "When Enabled, this will enable other options to give it a less-modern feeling. App restart is required.";
+
+"APP_VERSION_SPOOFER" = "Enable App Version Spoofer";
+"APP_VERSION_SPOOFER_DESC" = "Enable this to use the Version Spoofer and select your perferred version below. App restart is required.";
+"VERSION_SPOOFER_TITLE" = "Version Spoofer Picker";
 
 // Miscellaneous
 "MISCELLANEOUS" = "Miscellaneous";
@@ -148,15 +146,6 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_CHIP_BAR" = "Hide the Upper bar";
 "HIDE_CHIP_BAR_DESC" = "Hide Upper bar in the Home feeds (Trends, Music, Gaming...) and Subscription feeds (All videos, Continue watching...).";
 
-"HIDE_MODERN_INTERFACE" = "Hide Modern Interface (YTNoModernUI)";
-"HIDE_MODERN_INTERFACE_DESC" = "Toggle this on to hide any Modern Element added by YouTube. Removes Ambient Mode, Rounded Design & More. App restart is required.";
-
-"IPAD_LAYOUT" = "iPad Layout";
-"IPAD_LAYOUT_DESC" = "only use this if you want to have the iPad Layout on your current iPhone/iPod. App restart is required.";
-
-"IPHONE_LAYOUT" = "iPhone Layout";
-"IPHONE_LAYOUT_DESC" = "only use this if you want to have the iPhone Layout on your current iPad. App restart is required.";
-
 "CAST_CONFIRM" = "Confirm alert before casting (YTCastConfirm)";
 "CAST_CONFIRM_DESC" = "Show a confirm alert before casting to prevent accidentally hijacking TV.";
 "CASTING" = "Castings";
@@ -164,17 +153,8 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "MSG_YES" = "Yes";
 "MSG_CANCEL" = "Cancel";
 
-"DISABLE_HINTS" = "Disable hints";
-"DISABLE_HINTS_DESC" = "Disable feature hints from YouTube that usually display when the app is freshly installed.";
-
 "NEW_MINIPLAYER_STYLE" = "New mini player bar style (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "App restart is required.";
-
-"HIDE_CAST_BUTTON" = "Hide Cast button";
-"HIDE_CAST_BUTTON_DESC" = "App restart is required.";
-
-"HIDE_NOTIFICATION_BUTTON" = "Hide Notifcation button in the Navigation bar";
-"HIDE_NOTIFICATION_BUTTON_DESC" = "";
 
 "HIDE_SPONSORBLOCK_BUTTON" = "Hide iSponsorBlock button in the Navigation bar";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
@@ -182,19 +162,14 @@ https://github.com/PoomSmart/Return-YouTube-Dislikes/tree/main/layout/Library/Ap
 "HIDE_YOUTUBE_REBORN_BUTTON" = "Hide YouTube Reborn button in the Navigation bar";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
-"YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
-"YT_RE_EXPLORE_DESC" = "App restart is required.";
-
 "YT_SPEED" = "Enable YTSpeed";
 "YT_SPEED_DESC" = "Enable YTSpeed to have more Playback Speed Options. App restart is required.";
 
+"YT_RE_EXPLORE" = "Replace Shorts tab with Explore tab (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "App restart is required.";
+
 "ENABLE_FLEX" = "Enable FLEX";
 "ENABLE_FLEX_DESC" = "Enable FLEX for debugging (not recommended). Leave this off unless you know what you are doing.";
-
-// Version Spoofer
-"APP_VERSION_SPOOFER" = "Enable App Version Spoofer";
-"APP_VERSION_SPOOFER_DESC" = "Enable this to use the Version Spoofer and select your perferred version below. App restart is required.";
-"VERSION_SPOOFER_TITLE" = "Version Spoofer Picker";
 
 // Other Localization
 "APP_RESTART_DESC" = "App restart is required.";
