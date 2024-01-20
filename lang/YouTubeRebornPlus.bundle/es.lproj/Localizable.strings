@@ -1,0 +1,157 @@
+// About
+"ABOUT" = "Acerca de";
+
+"VERSION" = "Versión de YouTubeRebornPlus: %@";
+"VERSION_CHECK" = "Pulse para comprobar si hay actualizaciones.";
+
+"REPORT_AN_ISSUE" = "Informar de un problema";
+"ADD_TITLE" = "Añada aquí su título...";
+
+"QUIT_YOUTUBE" = "Salir de YouTube";
+
+"RESTART_YOUTUBE" = "Reinicia YouTube para aplicar los cambios";
+
+// App appearance
+"APP_THEME" = "Apariencia de la aplicación";
+"THEME_OPTIONS" = "Opciones de tema";
+
+"DARK_THEME" = "Tema oscuro";
+
+"DEFAULT_THEME" = "Predeterminado";
+"DEFAULT_THEME_DESC" = "";
+
+"OLD_DARK_THEME" = "Gris más claro";
+"OLD_DARK_THEME_DESC" = "Antiguo tema oscuro de YouTube";
+
+"OLED_DARK_THEME" = "OLED (experimental)";
+"OLED_DARK_THEME_2" = "OLED";
+"OLED_DARK_THEME_DESC" = "Tema oscuro puro-negro";
+
+"OLED_KEYBOARD" = "Teclado OLED (experimental)";
+"OLED_KEYBOARD_DESC" = "";
+
+// Video player options
+"VIDEO_PLAYER_OPTIONS" = "Opciones del reproductor de video";
+
+"SNAP_TO_CHAPTER" = "Desactivar ajuste a capítulo";
+"SNAP_TO_CHAPTER_DESC" = "Desactivar el ajuste automático a capítulo al buscar en videos. Se requiere reiniciar la aplicación.";
+
+"PINCH_TO_ZOOM" = "Desactivar el zoom con pellizco";
+"PINCH_TO_ZOOM_DESC" = "Se requiere reiniciar la aplicación.";
+
+"YT_MINIPLAYER" = "Habilitar el Minireproductor para todos los videos de YouTube";
+"YT_MINIPLAYER_DESC" = "Por ejemplo, videos para niños.";
+
+// Video controls overlay options
+"VIDEO_CONTROLS_OVERLAY_OPTIONS" = "Opciones de superposición de controles de video";
+
+"ENABLE_SHARE_BUTTON" = "Habilitar botón de compartir";
+"ENABLE_SHARE_BUTTON_DESC" = "Habilitar el botón de compartir en la superposición de controles de video.";
+
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "Habilitar botón 'Guardar en lista de reproducción'";
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "Habilitar el botón 'Guardar en lista de reproducción' en la superposición de controles de video.";
+
+"HIDE_HUD_MESSAGES" = "Ocultar mensajes del HUD";
+"HIDE_HUD_MESSAGES_DESC" = "Ejemplo: CC activado/desactivado, Repetición de video activada,...";
+
+"HIDE_PAID_PROMOTION_CARDS" = "Ocultar tarjetas de promoción pagada";
+"HIDE_PAID_PROMOTION_CARDS_DESC" = "Ocultar la tarjeta 'Incluye promociones pagadas' en algunos videos.";
+
+"HIDE_SHADOW_OVERLAY_BUTTONS" = "Ocultar botones de superposición de sombra";
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "Ocultar la superposición de sombra en los botones de Reproducir/Pausa, Anterior, Siguiente, Avance y Retroceso.";
+
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "Ocultar botón Anterior y Siguiente";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Ocultar los botones Anterior y Siguiente en la superposición de controles de video.";
+
+"REPLACE_PREVIOUS_NEXT_BUTTON" = "Reemplazar botón Anterior y Siguiente";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Reemplazar los botones Anterior y Siguiente con los botones de Avance rápido y Retroceso. Se requiere reiniciar la aplicación.";
+
+"HIDE_HOVER_CARD" = "Ocultar tarjetas emergentes de pantallas finales (YTNoHoverCards)";
+"HIDE_HOVER_CARD_DESC" = "Ocultar pantallas finales del creador (miniaturas) al final de los videos.";
+
+"HIDE_RIGHT_PANEL" = "Ocultar el panel derecho en modo pantalla completa";
+"HIDE_RIGHT_PANEL_DESC" = "Se requiere reiniciar la aplicación.";
+
+"HIDE_HEATWAVES" = "Ocultar Ondas de calor";
+"HIDE_HEATWAVES_DESC" = "Oculta las ondas de calor en el reproductor de video. Se requiere reiniciar la aplicación.";
+
+// App settings overlay options
+"APP_SETTINGS_OVERLAY_OPTIONS" = "Opciones de superposición de configuración de la aplicación";
+
+"HIDE_ACCOUNT_SECTION" = "Ocultar sección 'Cuenta'";
+"HIDE_DONTEATMYCONTENT_SECTION" = "Ocultar sección 'DontEatMyContent'";
+"HIDE_YOUTUBERETURNDISLIKE_SECTION" = "Ocultar sección 'YouTube Return Dislike'";
+"HIDE_YOUPIP_SECTION" = "Ocultar sección 'YouPiP'";
+"HIDE_AUTOPLAY_SECTION" = "Ocultar sección 'Reproducción automática'";
+"HIDE_TRYNEWFEATURES_SECTION" = "Ocultar sección 'Probar nuevas funciones'";
+"HIDE_VIDEOQUALITYPREFERENCES_SECTION" = "Ocultar sección 'Preferencias de calidad de video'";
+"HIDE_NOTIFICATIONS_SECTION" = "Ocultar sección 'Notificaciones'";
+"HIDE_MANAGEALLHISTORY_SECTION" = "Ocultar sección 'Administrar todo el historial'";
+"HIDE_YOURDATAINYOUTUBE_SECTION" = "Ocultar sección 'Tus datos en YouTube'";
+"HIDE_PRIVACY_SECTION" = "Ocultar sección 'Privacidad'";
+"HIDE_LIVECHAT_SECTION" = "Ocultar sección 'Chat en vivo'";
+
+// UI interface options
+"UI_INTERFACE_OPTIONS" = "Opciones de interfaz de usuario (UI)";
+
+"LOW_CONTRAST_MODE" = "Modo de bajo contraste";
+"LOW_CONTRAST_MODE_DESC" = "Esto reducirá el contraste de textos y botones, similar a la antigua interfaz de YouTube. Se requiere reiniciar la aplicación.";
+
+"FIX_LOW_CONTRAST_MODE" = "Corregir LowContrastMode";
+"FIX_LOW_CONTRAST_MODE_DESC" = "Esto corregirá la funcionalidad de LowContrastMode emulando YouTube v17.38.10. Se requiere reiniciar la aplicación.";
+
+"DISABLE_MODERN_BUTTONS" = "Desactivar botones modernos";
+"DISABLE_MODERN_BUTTONS_DESC" = "Esto eliminará los nuevos botones modernos en YouTube, pero no todos. Se requiere reiniciar la aplicación.";
+
+"DISABLE_ROUNDED_CORNERS_ON_HINTS" = "Desactivar esquinas redondeadas en pistas";
+"DISABLE_ROUNDED_CORNERS_ON_HINTS_DESC" = "Esto hará que las indicaciones no incluyan esquinas redondeadas. Se requiere reiniciar la aplicación.";
+
+"DISABLE_MODERN_FLAGS" = "Desactivar banderas modernas A/B";
+"DISABLE_MODERN_FLAGS_DESC" = "Esto apagará cualquier bandera moderna habilitada por defecto. Se requiere reiniciar la aplicación.";
+
+"HIDE_MODERN_INTERFACE" = "Habilitar opciones específicas de la interfaz de usuario (YTNoModernUI)";
+"HIDE_MODERN_INTERFACE_DESC" = "Cuando esté habilitado, permitirá otras opciones para darle una sensación menos moderna. Se requiere reiniciar la aplicación.";
+
+"APP_VERSION_SPOOFER" = "Habilitar simulador de versión de la aplicación";
+"APP_VERSION_SPOOFER_DESC" = "Habilitar esto para usar el simulador de versión y seleccionar su versión preferida a continuación. Se requiere reiniciar la aplicación.";
+"VERSION_SPOOFER_TITLE" = "Selector de simulador de versión";
+
+// Miscellaneous
+"MISCELLANEOUS" = "Misceláneo";
+
+"ENABLE_YT_STARTUP_ANIMATION" = "Habilitar animación de inicio de YouTube";
+"ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
+
+"STICK_NAVIGATION_BAR" = "Fijar barra de navegación";
+"STICK_NAVIGATION_BAR_DESC" = "Habilitar para que la barra de navegación permanezca en la aplicación al desplazarse.";
+
+"HIDE_CHIP_BAR" = "Ocultar la barra superior";
+"HIDE_CHIP_BAR_DESC" = "Ocultar la barra superior en las feeds de inicio (Tendencias, Música, Juegos...) y feeds de suscripciones (Todos los videos, Continuar viendo...).";
+
+"CAST_CONFIRM" = "Confirmar alerta antes de transmitir (YTCastConfirm)";
+"CAST_CONFIRM_DESC" = "Mostrar una alerta de confirmación antes de transmitir para evitar secuestros accidentales de la televisión.";
+"CASTING" = "Transmisiones";
+"MSG_ARE_YOU_SURE" = "¿Estás seguro de que quieres empezar a transmitir?";
+"MSG_YES" = "Sí";
+"MSG_CANCEL" = "Cancelar";
+
+"NEW_MINIPLAYER_STYLE" = "Nuevo estilo de barra de mini reproductor (BigYTMiniPlayer)";
+"NEW_MINIPLAYER_STYLE_DESC" = "Se requiere reiniciar la aplicación.";
+
+"HIDE_SPONSORBLOCK_BUTTON" = "Ocultar botón de iSponsorBlock en la barra de navegación";
+"HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
+
+"HIDE_YOUTUBE_REBORN_BUTTON" = "Ocultar botón de YouTube Reborn en la barra de navegación";
+"HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
+
+"YT_SPEED" = "Habilitar YTSpeed";
+"YT_SPEED_DESC" = "Habilitar YTSpeed para tener más opciones de velocidad de reproducción. Se requiere reiniciar la aplicación.";
+
+"YT_RE_EXPLORE" = "Reemplazar la pestaña de Shorts con la pestaña de Explorar (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "Se requiere reiniciar la aplicación.";
+
+"ENABLE_FLEX" = "Habilitar FLEX";
+"ENABLE_FLEX_DESC" = "Habilitar FLEX para la depuración (no recomendado). Deja esto desactivado a menos que sepas lo que estás haciendo.";
+
+// Other Localization
+"APP_RESTART_DESC" = "Es necesario reiniciar la aplicación.";
