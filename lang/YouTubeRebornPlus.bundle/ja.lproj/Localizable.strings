@@ -1,15 +1,37 @@
-// Settings
+// About
+"ABOUT" = "アプリについて";
+
 "VERSION" = "YouTubeRebornPlusのバージョン: %@";
 "VERSION_CHECK" = "タップして更新をチェック!";
 
+"REPORT_AN_ISSUE" = "問題を報告";
+"ADD_TITLE" = "ここにタイトルを追加...";
+
+"QUIT_YOUTUBE" = "アプリを終了";
+
+"RESTART_YOUTUBE" = "変更を適用するためにアプリを再起動";
+
+// App appearance
+"APP_THEME" = "アプリのテーマ";
+"THEME_OPTIONS" = "テーマの設定";
+
+"DARK_THEME" = "ダークモード";
+
+"DEFAULT_THEME" = "通常";
+"DEFAULT_THEME_DESC" = "";
+
+"OLD_DARK_THEME" = "ライトグレー";
+"OLD_DARK_THEME_DESC" = "YouTubeの古いダークモード";
+
+"OLED_DARK_THEME" = "OLED(実験的)";
+"OLED_DARK_THEME_2" = "OLED";
+"OLED_DARK_THEME_DESC" = "真のダークテーマです。";
+
+"OLED_KEYBOARD" = "OLEDキーボード(実験的)";
+"OLED_KEYBOARD_DESC" = "";
+
 // Video player options
 "VIDEO_PLAYER_OPTIONS" = "動画プレーヤーの設定";
-
-"AUTO_FULLSCREEN" = "自動フルスクリーン (YTAutoFullScreen)";
-"AUTO_FULLSCREEN_DESC" = "フルスクリーンで動画を自動再生します。";
-
-"DISABLE_DOUBLE_TAP_TO_SKIP" = "ダブルタップでスキップを無効化";
-"DISABLE_DOUBLE_TAP_TO_SKIP_DESC" = "動画プレーヤーでのダブルタップによるスキップジェスチャーを無効にします。アプリの再起動が必要です。";
 
 "SNAP_TO_CHAPTER" = "チャプターへのスナップを無効化";
 "SNAP_TO_CHAPTER_DESC" = "シーク中のチャプターへの自動スナップを無効にします。アプリの再起動が必要です。";
@@ -20,9 +42,6 @@
 "YT_MINIPLAYER" = "全てのYouTube動画でミニプレーヤーを有効化";
 "YT_MINIPLAYER_DESC" = "例えば子供向け動画など";
 
-"STOCK_VOLUME_HUD" = "iOSの標準の音量HUDを使用する";
-"STOCK_VOLUME_HUD_DESC" = "";
-
 // Video controls overlay options
 "VIDEO_CONTROLS_OVERLAY_OPTIONS" = "動画コントロールオーバーレイの設定";
 
@@ -32,20 +51,11 @@
 "ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "再生リストに保存ボタンを有効化";
 "ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "動画コントロールオーバーレイの「再生リストに保存」ボタンを有効にします。";
 
-"HIDE_AUTOPLAY_SWITCH" = "自動再生スイッチを非表示";
-"HIDE_AUTOPLAY_SWITCH_DESC" = "動画コントロールオーバーレイの自動再生スイッチを非表示にします。";
-
-"HIDE_SUBTITLES_BUTTON" = "字幕ボタンを非表示";
-"HIDE_SUBTITLES_BUTTON_DESC" = "動画コントロールオーバーレイの字幕ボタンを非表示にします。";
-
 "HIDE_HUD_MESSAGES" = "HUDメッセージを非表示";
 "HIDE_HUD_MESSAGES_DESC" = "例: 字幕がオン/オフになりました, ループ再生はオンになっています など";
 
 "HIDE_PAID_PROMOTION_CARDS" = "有料プロモーションカードを非表示";
 "HIDE_PAID_PROMOTION_CARDS_DESC" = "「有料プロモーションを含みます」カードを非表示にします。";
-
-"HIDE_CHANNEL_WATERMARK" = "チャンネルウォーターマークを非表示";
-"HIDE_CHANNEL_WATERMARK_DESC" = "動画コントロールオーバーレイのチャンネルのウォーターマークを非表示にします。アプリの再起動が必要です。";
 
 "HIDE_SHADOW_OVERLAY_BUTTONS" = "シャドウオーバーレイボタンを非表示";
 "HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "再生/一時停止,前へ/次へ,早送り/巻き戻しボタンのシャドウオーバーレイを非表示にします。";
@@ -56,12 +66,6 @@
 "REPLACE_PREVIOUS_NEXT_BUTTON" = "前へ/次へボタンを置き換える";
 "REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "前へ/次へボタンを早送り/巻き戻しボタンに置き換えます。アプリの再起動が必要です。";
 
-"RED_PROGRESS_BAR" = "赤いプログレスバー";
-"RED_PROGRESS_BAR_DESC" = "赤いプログレスバーを復活させます。アプリの再起動が必要です。";
-
-"DISABLE_VIDEO_PLAYER_ZOOM" = "ズーム機能を無効化";
-"DISABLE_VIDEO_PLAYER_ZOOM_DESC" = "iPhoneとiPadの両方でズーム機能を無効化します。アプリの再起動が必要です。";
-
 "HIDE_HOVER_CARD" = "終了画面のホバーカードを非表示 (YTNoHoverCards)";
 "HIDE_HOVER_CARD_DESC" = "動画の終わりに表示されるクリエーターの終了画面(サムネイル)を非表示にします。";
 
@@ -70,15 +74,6 @@
 
 "HIDE_HEATWAVES" = "ヒートウェーブを非表示";
 "HIDE_HEATWAVES_DESC" = "動画プレーヤーのヒートウェーブを非表示にします。アプリの再起動が必要です。";
-
-"HIDE_DARK_OVERLAY_BACKGROUND" = "暗いオーバーレイの背景を非表示";
-"HIDE_DARK_OVERLAY_BACKGROUND_DESC" = "動画プレーヤーの暗いオーバーレイの背景を非表示にします。";
-
-// Shorts options
-"SHORTS_OPTIONS" = "ショートの設定";
-
-"HIDE_SHORTS_VIDEOS" = "ショートを非表示";
-"HIDE_SHORTS_VIDEOS_DESC" = "ホームなどからショート動画を非表示にします(推奨)";
 
 // App settings overlay options
 "APP_SETTINGS_OVERLAY_OPTIONS" = "アプリの設定オーバーレイの設定";
@@ -96,27 +91,30 @@
 "HIDE_PRIVACY_SECTION" = "「プライバシー」を非表示にする";
 "HIDE_LIVECHAT_SECTION" = "「チャット」を非表示にする";
 
-// Theme
-"THEME_OPTIONS" = "テーマの設定";
-
-"OLED_DARK_THEME" = "OLEDダークテーマ(実験的)";
-"OLED_DARK_THEME_2" = "OLEDダークテーマ";
-"OLED_DARK_THEME_DESC" = "真のダークテーマです。\n正しく動作しない場合があります。アプリの再起動が必要です。";
-
-"OLD_DARK_THEME" = "古いダークモード";
-"OLD_DARK_THEME_DESC" = "以前のダークモードです(グレー) アプリの再起動が必要です。";
-
-"DEFAULT_THEME" = "通常";
-"DEFAULT_THEME_DESC" = "通常のダークモードです。アプリの再起動が必要です。";
-
-"OLED_KEYBOARD" = "OLEDキーボード(実験的)";
-"OLED_KEYBOARD_DESC" = "正しく動作しない場合があります。アプリの再起動が必要です。";
+// UI interface options
+"UI_INTERFACE_OPTIONS" = "UIインターフェースの設定";
 
 "LOW_CONTRAST_MODE" = "低コントラストモード";
 "LOW_CONTRAST_MODE_DESC" = "このオプションは、テキストとボタンのコントラストを以前のYouTubeインターフェイスのように低くします。アプリの再起動が必要です";
-"LCM_SELECTOR" = "低コントラストモードの選択";
-"DEFAULT_LOWCONTRASTMODE" = "低コントラストモード(デフォルト)";
-"CUSTOM_LOWCONTRASTMODE" = "低コントラストモード(カスタムカラー)";
+
+"FIX_LOW_CONTRAST_MODE" = "低コントラストモードを修正";
+"FIX_LOW_CONTRAST_MODE_DESC" = "v17.38.10へ偽装することによって低コントラストモードを修正します。アプリの再起動が必要です。";
+
+"DISABLE_MODERN_BUTTONS" = "モダンボタンを無効化";
+"DISABLE_MODERN_BUTTONS_DESC" = "YouTubeの新しいモダン/チップボタンの一部を削除します。アプリの再起動が必要です。";
+
+"DISABLE_ROUNDED_CORNERS_ON_HINTS" = "ヒントの丸みを無効化";
+"DISABLE_ROUNDED_CORNERS_ON_HINTS_DESC" = "ヒントのプロンプトから丸みを削除します。アプリの再起動が必要です。";
+
+"DISABLE_MODERN_FLAGS" = "モダンなA/Bフラグを無効化";
+"DISABLE_MODERN_FLAGS_DESC" = "デフォルトで有効になっているモダンなフラグを無効にします。アプリの再起動が必要です。";
+
+"HIDE_MODERN_INTERFACE" = "特定のUI関連オプションを有効化 (YTNoModernUI)";
+"HIDE_MODERN_INTERFACE_DESC" = "有効にすると他のオプションも有効になり、よりモダンではなくなります。アプリの再起動が必要です。";
+
+"APP_VERSION_SPOOFER" = "アプリのバージョン偽装を有効にする";
+"APP_VERSION_SPOOFER_DESC" = "この機能を有効にするとバージョンを偽装します。以下でお好みのバージョンを選択できます。アプリの再起動が必要です";
+"VERSION_SPOOFER_TITLE" = "偽装バージョンの選択";
 
 // Miscellaneous
 "MISCELLANEOUS" = "その他";
@@ -130,15 +128,6 @@
 "HIDE_CHIP_BAR" = "トップバーを非表示";
 "HIDE_CHIP_BAR_DESC" = "ホーム(トレンド,音楽,ゲーム など)と登録チャンネル(すべて,続きを見る,ライブ など)リボンのトップバーを非表示にします。アプリの再起動が必要です。";
 
-"HIDE_MODERN_INTERFACE" = "モダンインターフェイスを非表示 (YTNoModernUI)";
-"HIDE_MODERN_INTERFACE_DESC" = "YouTubeによって追加されたモダンな要素を非表示にします。アンビエントモード,丸みを帯びたデザインなどを削除します。アプリの再起動が必要です。";
-
-"IPAD_LAYOUT" = "iPadレイアウト";
-"IPAD_LAYOUT_DESC" = "現在使用しているiPhone/iPodでiPadのレイアウトを使用したい場合にのみ使用して下さい。アプリの再起動が必要です。";
-
-"IPHONE_LAYOUT" = "iPhoneレイアウト";
-"IPHONE_LAYOUT_DESC" = "現在使用しているiPadでiPhoneのレイアウトを使用したい場合にのみ使用して下さい。アプリの再起動が必要です。";
-
 "CAST_CONFIRM" = "キャストする前に確認する (YTCastConfirm)";
 "CAST_CONFIRM_DESC" = "誤ってテレビにキャストしないように、確認の通知を表示します。";
 "CASTING" = "キャスト";
@@ -146,17 +135,8 @@
 "MSG_YES" = "はい";
 "MSG_CANCEL" = "いいえ";
 
-"DISABLE_HINTS" = "ヒントを無効化";
-"DISABLE_HINTS_DESC" = "アプリが新規インストールされた際に表示されるヒントを非表示にします。";
-
 "NEW_MINIPLAYER_STYLE" = "新しいミニプレーヤーバー (BigYTMiniPlayer)";
 "NEW_MINIPLAYER_STYLE_DESC" = "アプリの再起動が必要です。";
-
-"HIDE_CAST_BUTTON" = "キャストボタンを非表示";
-"HIDE_CAST_BUTTON_DESC" = "アプリの再起動が必要です。";
-
-"HIDE_NOTIFICATION_BUTTON" = "ナビゲーションバーの通知ボタンを非表示";
-"HIDE_NOTIFICATION_BUTTON_DESC" = "";
 
 "HIDE_SPONSORBLOCK_BUTTON" = "ナビゲーションバーのiSponsorBlockボタンを非表示";
 "HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
@@ -164,19 +144,14 @@
 "HIDE_YOUTUBE_REBORN_BUTTON" = "ナビゲーションバーのYouTube Rebornボタンを非表示";
 "HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
 
-"YT_RE_EXPLORE" = "ショートタブを探索タブに置き換える (YTReExplore)";
-"YT_RE_EXPLORE_DESC" = "アプリの再起動が必要です。";
-
 "YT_SPEED" = "YTSpeedを有効化";
 "YT_SPEED_DESC" = "より多くの再生速度を選択できるようになります。アプリの再起動が必要です。";
 
-"ENABLE_FLEX" = "FLEXを有効化";
-"ENABLE_FLEX_DESC" = "デバッグ用のFLEXを有効化します(推奨しません) 何をやっているのか分からない場合はオフにしてください";
+"YT_RE_EXPLORE" = "ショートタブを探索タブに置き換える (YTReExplore)";
+"YT_RE_EXPLORE_DESC" = "アプリの再起動が必要です。";
 
-// Version Spoofer
-"APP_VERSION_SPOOFER" = "アプリのバージョン偽装を有効にする";
-"APP_VERSION_SPOOFER_DESC" = "この機能を有効にするとバージョン偽装を使用し、以下で好みのバージョンを選択できます。アプリの再起動が必要です";
-"VERSION_SPOOFER_TITLE" = "偽装バージョンの選択";
+"ENABLE_FLEX" = "FLEXを有効化";
+"ENABLE_FLEX_DESC" = "デバッグ用のFLEXを有効化します(非推奨) 何をやっているのか分からない場合はオフにしてください";
 
 // Other Localization
 "APP_RESTART_DESC" = "アプリの再起動が必要です。";
