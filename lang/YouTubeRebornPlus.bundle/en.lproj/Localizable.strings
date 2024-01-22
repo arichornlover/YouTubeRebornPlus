@@ -64,7 +64,7 @@
 "HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "Hide Previous and Next button in video controls overlay.";
 
 "REPLACE_PREVIOUS_NEXT_BUTTON" = "Replace Previous and Next Button";
-"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next buttons with Fast forward and Rewind buttons. App restart is required."
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "Replace Previous and Next buttons with Fast forward and Rewind buttons. App restart is required.";
 
 "HIDE_HOVER_CARD" = "Hide End screens hover cards (YTNoHoverCards)";
 "HIDE_HOVER_CARD_DESC" = "Hide creator End screens (thumbnails) at the end of videos.";
