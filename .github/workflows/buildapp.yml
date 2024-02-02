@@ -8,7 +8,7 @@ on:
     inputs:
       reborn_version:
         description: "The version of YouTube Reborn"
-        default: "4.2.3"
+        default: "5.0.0"
         required: true
         type: string
       decrypted_youtube_url:
@@ -109,11 +109,11 @@ jobs:
       - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl -L "https://www.dropbox.com/scl/fi/ciejv4ph78e14oh8n5skl/YouTube.Reborn.4.2.3.deb?rlkey=cps2eiybbt6n6grm7vv5be5nm&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.3.deb"
+          curl -L "https://www.dropbox.com/scl/fi/89cr80jltxzkpeerrljix/YouTube.Reborn.v5.0.0.deb?rlkey=amn7gfhxdtz7mf6kfv5i1rak3&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v5.0.0.deb"
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.2.3.deb" && tar -xf data.tar.* && cd ../../..
+          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v5.0.0.deb" && tar -xf data.tar.* && cd ../../..
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} unpacked! \033[0m"
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
@@ -136,6 +136,7 @@ jobs:
           cd ${{ github.workspace }}/main
           sed -i '' "11s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
           sed -i '' "10s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
+          sed -i '' "s/^PACKAGE_VERSION.*$/PACKAGE_VERSION = ${{ inputs.youtube_version }}-${{ inputs.reborn_version }}/" Makefile
           make package FINALPACKAGE=1
           (mv "packages/$(ls -t packages | head -n1)" "packages/YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}.ipa")
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
