@@ -109,7 +109,7 @@ jobs:
       - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl -L "https://www.dropbox.com/scl/fi/5u86qf0ljb47dcrhvvb84/YouTube.Reborn.v5.0.0.deb?rlkey=byzeoy12if25osozo024bh96y&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v5.0.0.deb"
+          curl -L "https://www.dropbox.com/scl/fi/phmhffcwrl38gx62isg7p/YouTube.Reborn.v5.0.0.deb?rlkey=embyv0dbc8p4xuy2oz8h2dsxc&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v5.0.0.deb"
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
