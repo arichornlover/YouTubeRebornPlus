@@ -8,7 +8,7 @@ on:
     inputs:
       reborn_version:
         description: "The version of YouTube Reborn"
-        default: "4.2.3"
+        default: "4.2.4"
         required: true
         type: string
       decrypted_youtube_url:
@@ -73,7 +73,7 @@ jobs:
 
       - name: SDK Caching
         id: SDK
-        uses: actions/cache@v3.3.2
+        uses: actions/cache@v4.0.0
         env:
           cache-name: iOS-${{ inputs.sdk_version }}-SDK
         with:
@@ -109,19 +109,17 @@ jobs:
       - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl -L "https://www.dropbox.com/scl/fi/ciejv4ph78e14oh8n5skl/YouTube.Reborn.4.2.3.deb?rlkey=cps2eiybbt6n6grm7vv5be5nm&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.3.deb"
+          curl -L "https://www.dropbox.com/scl/fi/ajz9id8y8351ivgi0f5sj/YouTube.Reborn.v4.2.4.deb?rlkey=lct8ww8tkitqbrke5141pu30p&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.4.deb"
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.2.3.deb" && tar -xf data.tar.* && cd ../../..
+          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.2.4.deb" && tar -xf data.tar.* && cd ../../..
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} unpacked! \033[0m"
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
           rm -rf main/tmp/Payload/YouTube.app/PlugIns/*
           cp -R main/Extensions/*.appex main/tmp/Payload/YouTube.app/PlugIns
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} unpacked! \033[0m"
-          dpkg-deb --build main com.arichorn.youtuberebornplus.deb
-          echo -e "==> \033[1mDeb has been built! \033[0m"
 
         env:
           THEOS: ${{ github.workspace }}/theos
@@ -149,7 +147,7 @@ jobs:
           APP_NAME: ${{ inputs.app_name }}
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4.0.0
+        uses: actions/upload-artifact@v4.3.1
         env:
           REBORN_VERSION: ${{ inputs.reborn_version }}
           YOUTUBE_VERSION: ${{ inputs.youtube_version }}
