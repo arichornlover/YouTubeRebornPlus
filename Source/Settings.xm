@@ -73,10 +73,10 @@ extern NSBundle *YouTubeRebornPlusBundle();
         tweaks = [NSMutableArray new];
         [tweaks addObjectsFromArray:@[
             @(404), // YTABConfig
-            @(499), // YouTubeRebornPlus
             @(517), // DontEatMyContent
             @(1080), // Return YouTube Dislike
             @(200), // YouPiP
+            @(499), // YouTubeRebornPlus
 //          @(789), // YTLite
             @(2168), // YTHoldForSpeed
             @(1222), // YTVideoOverlay
