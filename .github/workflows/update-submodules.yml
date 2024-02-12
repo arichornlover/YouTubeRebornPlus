@@ -9,7 +9,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4.1.0
+        uses: actions/checkout@v4.1.1
 
       - name: Set up Git
         run: |
@@ -18,10 +18,35 @@ jobs:
 
       - name: Update submodules
         run: |
-          git submodule update --init --recursive --remote
+          git submodule update --init --recursive --remote Tweaks/Alderis
           git add .
+          git submodule update --init --recursive --remote Tweaks/DontEatMyContent
+          git add .
+          git submodule update --init --recursive --remote Tweaks/YTHoldForSpeed
+          git add .
+          git submodule update --init --recursive --remote Tweaks/PSHeader
+          git add .
+          git submodule update --init --recursive --remote Tweaks/Return-YouTube-Dislikes
+          git add .
+          git submodule update --init --recursive --remote Tweaks/YTABConfig
+          git add .
+          git submodule update --init --recursive --remote Tweaks/YTUHD
+          git add .
+          git submodule update --init --recursive --remote Tweaks/YTVideoOverlay
+          git add .
+          git submodule update --init --recursive --remote Tweaks/YouMute
+          git add .
+          git submodule update --init --recursive --remote Tweaks/YouPiP
+          git add .
+          git submodule update --init --recursive --remote Tweaks/YouQuality
+          git add .
+          git submodule update --init --recursive --remote Tweaks/YouTubeHeader
+          git add .
+          git submodule update --init --recursive --remote Tweaks/iSponsorBlock
+          git add .
+          git submodule update --init --recursive
           git commit -m "updated submodules"
-          git push origin
+          git push
         continue-on-error: true
 
       - name: Check exit code
