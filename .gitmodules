@@ -59,3 +59,6 @@
 [submodule "Tweaks/YTNoCommunityPosts"]
 	path = Tweaks/YTNoCommunityPosts
 	url = https://github.com/michael-winay/YTNoCommunityPosts.git
+[submodule "Tweaks/YouGroupSettings"]
+	path = Tweaks/YouGroupSettings
+	url = https://github.com/PoomSmart/YouGroupSettings.git
