@@ -1,11 +1,9 @@
-#import "../Tweaks/YouTubeHeader/YTSettingsGroupData.h"
 #import "../Tweaks/YouTubeHeader/YTSettingsViewController.h"
 #import "../Tweaks/YouTubeHeader/YTSearchableSettingsViewController.h"
 #import "../Tweaks/YouTubeHeader/YTSettingsSectionItem.h"
 #import "../Tweaks/YouTubeHeader/YTSettingsSectionItemManager.h"
 #import "../Tweaks/YouTubeHeader/YTUIUtils.h"
 #import "../Tweaks/YouTubeHeader/YTSettingsPickerViewController.h"
-#import "../Tweaks/YouTubeHeader/YTIIcon.h"
 #import "../YouTubeRebornPlus.h"
 
 #define VERSION_STRING [[NSString stringWithFormat:@"%@", @(OS_STRINGIFY(TWEAK_VERSION))] stringByReplacingOccurrencesOfString:@"\"" withString:@""]
@@ -20,12 +18,7 @@
 static int appVersionSpoofer() {
     return [[NSUserDefaults standardUserDefaults] integerForKey:@"versionSpoofer"];
 }
-static const NSInteger YouTubeRebornPlusSection = 499;
-static const NSUInteger GROUP_TYPE = 'psyt'; // PoomSmart/YouGroupSettings
-
-@interface YTSettingsGroupData (YouGroupSettings) // PoomSmart/YouGroupSettings
-+ (NSMutableArray <NSNumber *> *)tweaks;
-@end
+static const NSInteger YouTubeRebornPlusSection = 500;
 
 @interface YTSettingsSectionItemManager (YouTubeRebornPlus)
 - (void)updateYouTubeRebornPlusSectionWithEntry:(id)entry;
@@ -60,40 +53,6 @@ extern NSBundle *YouTubeRebornPlusBundle();
     if (insertIndex != NSNotFound)
         [mutableOrder insertObject:@(YouTubeRebornPlusSection) atIndex:insertIndex + 1];
     return mutableOrder;
-}
-%end
-
-// PoomSmart/YouGroupSettings
-%hook YTSettingsGroupData
-%new(@@:)
-+ (NSMutableArray <NSNumber *> *)tweaks {
-    static NSMutableArray <NSNumber *> *tweaks = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        tweaks = [NSMutableArray new];
-        [tweaks addObjectsFromArray:@[
-            @(404), // YTABConfig
-            @(517), // DontEatMyContent
-            @(1080), // Return YouTube Dislike
-            @(200), // YouPiP
-            @(499), // YouTubeRebornPlus
-//          @(789), // YTLite
-            @(2168), // YTHoldForSpeed
-            @(1222), // YTVideoOverlay
-        ]];
-    });
-    return tweaks;
-}
-- (NSString *)titleForSettingGroupType:(NSUInteger)type {
-    if (type == GROUP_TYPE) {
-        return @"Tweaks";
-    }
-    return %orig;
-}
-- (NSArray <NSNumber *> *)orderedCategoriesForGroupType:(NSUInteger)type {
-    if (type == GROUP_TYPE)
-        return [[self class] tweaks];
-    return %orig;
 }
 %end
 
