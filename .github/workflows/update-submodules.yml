@@ -22,6 +22,8 @@ jobs:
           git add .
           git submodule update --init --recursive --remote Tweaks/DontEatMyContent
           git add .
+          git submodule update --init --recursive --remote Tweaks/FLEX
+          git add .
           git submodule update --init --recursive --remote Tweaks/YTHoldForSpeed
           git add .
           git submodule update --init --recursive --remote Tweaks/PSHeader
