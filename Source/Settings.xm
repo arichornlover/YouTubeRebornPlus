@@ -56,17 +56,6 @@ extern NSBundle *YouTubeRebornPlusBundle();
 }
 %end
 
-%hook YTSettingsViewController
-- (void)setSectionItems:(NSMutableArray *)sectionItems forCategory:(NSInteger)category title:(NSString *)title icon:(YTIIcon *)icon titleDescription:(NSString *)titleDescription headerHidden:(BOOL)headerHidden {
-    if (icon == nil && [[%c(YTSettingsGroupData) tweaks] containsObject:@(category)]) {
-        icon = [%c(YTIIcon) new];
-        icon.iconType = 44;
-    }
-    %orig;
-}
-%end
-//
-
 %hook YTSettingsSectionController
 - (void)setSelectedItem:(NSUInteger)selectedItem {
     if (selectedItem != NSNotFound) %orig;
