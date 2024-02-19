@@ -1,10 +1,10 @@
 [submodule "Tweaks/YTUHD"]
 	path = Tweaks/YTUHD
-	url = https://github.com/arichorn/YTUHD.git
+	url = https://github.com/arichornloverALT/YTUHD.git
 	branch = master
 [submodule "Tweaks/YouPiP"]
 	path = Tweaks/YouPiP
-	url = https://github.com/arichorn/YouPiP.git
+	url = https://github.com/arichornloverALT/YouPiP.git
 	branch = main
 [submodule "Tweaks/YouMute"]
 	path = Tweaks/YouMute
@@ -12,15 +12,15 @@
 	branch = main
 [submodule "Tweaks/YouQuality"]
 	path = Tweaks/YouQuality
-	url = https://github.com/arichorn/YouQuality.git
+	url = https://github.com/arichornloverALT/YouQuality.git
 	branch = main
 [submodule "Tweaks/YTVideoOverlay"]
 	path = Tweaks/YTVideoOverlay
-	url = https://github.com/arichorn/YTVideoOverlay.git
+	url = https://github.com/arichornloverALT/YTVideoOverlay.git
 	branch = main
 [submodule "Tweaks/Return-YouTube-Dislikes"]
 	path = Tweaks/Return-YouTube-Dislikes
-	url = https://github.com/arichorn/Return-YouTube-Dislikes.git
+	url = https://github.com/arichornloverALT/Return-YouTube-Dislikes.git
 	branch = uYouEnhanced
 [submodule "Tweaks/YouTubeHeader"]
 	path = Tweaks/YouTubeHeader
@@ -40,7 +40,7 @@
 	branch = main
 [submodule "Tweaks/Alderis"]
 	path = Tweaks/Alderis
-	url = https://github.com/arichorn/Alderis.git
+	url = https://github.com/arichornloverALT/Alderis.git
 	branch = master
 [submodule "Tweaks/DontEatMyContent"]
 	path = Tweaks/DontEatMyContent
@@ -52,7 +52,7 @@
 [submodule "Tweaks/FLEX"]
 	branch = master
 	path = Tweaks/FLEX
-	url = https://github.com/qnblackcat/FLEX-Classes.git
+	url = https://github.com/arichornlover/FLEX-Classes.git
 [submodule "Tweaks/YTHoldForSpeed"]
 	path = Tweaks/YTHoldForSpeed
 	url = https://github.com/arichornlover/YTHoldForSpeed.git
@@ -61,4 +61,4 @@
 	url = https://github.com/michael-winay/YTNoCommunityPosts.git
 [submodule "Tweaks/YouGroupSettings"]
 	path = Tweaks/YouGroupSettings
-	url = https://github.com/PoomSmart/YouGroupSettings.git
+	url = https://github.com/arichornlover/YouGroupSettings.git
