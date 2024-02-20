@@ -129,10 +129,6 @@
 - (void)internalSetRate;
 @end
 
-@interface MLPlayerStickySettings : NSObject
-- (void)setRate:(float)rate;
-@end
-
 @interface MLPlayerEventCenter : NSObject
 - (void)broadcastRateChange:(float)rate;
 @end
