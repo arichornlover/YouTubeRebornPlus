@@ -50,7 +50,6 @@
 	url = https://github.com/Galactic-Dev/iSponsorBlock.git
 	branch = master
 [submodule "Tweaks/FLEX"]
-	branch = master
 	path = Tweaks/FLEX
 	url = https://github.com/arichornlover/FLEX-Classes.git
 [submodule "Tweaks/YTHoldForSpeed"]
