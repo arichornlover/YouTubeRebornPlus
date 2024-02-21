@@ -343,6 +343,13 @@ UIColor* raisedColor = [UIColor colorWithRed:0.035 green:0.035 blue:0.035 alpha:
 # pragma mark - OLED keyboard by @ichitaso <3 - http://gist.github.com/ichitaso/935100fd53a26f18a9060f7195a1be0e
 
 %group gOLEDKB 
+%hook TUIEmojiSearchView
+- (void)didMoveToWindow {
+    %orig;
+    self.backgroundColor = [UIColor blackColor];
+}
+%end
+
 %hook UIPredictionViewController
 - (void)loadView {
     %orig;
