@@ -233,6 +233,9 @@
 @interface UIPredictionViewController : UIViewController
 @end
 
+@interface TUIEmojiSearchView : UIView
+@end
+
 @interface FRPreferences : UITableViewController
 @end
 
