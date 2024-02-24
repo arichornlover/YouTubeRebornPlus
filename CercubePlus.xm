@@ -76,7 +76,8 @@ static BOOL IsEnabled(NSString *key) {
 - (void)didMoveToWindow {
     %orig;
     if (IsEnabled(@"hideCercubeButton_enabled")) { 
-        self.cercubeButton.hidden = YES; 
+        self.cercubeButton.hidden = YES;
+        self.cercubeButton.frame = CGRectZero;
     }
 }
 - (void)layoutSubviews {
@@ -86,6 +87,7 @@ static BOOL IsEnabled(NSString *key) {
     }
     if (IsEnabled(@"hideSponsorBlockButton_enabled")) { 
         self.sponsorBlockButton.hidden = YES;
+        self.sponsorBlockButton.frame = CGRectZero;
     }
 }
 %end
@@ -791,14 +793,19 @@ static void replaceTab(YTIGuideResponse *response) {
     for (UIView *subview in self.subviews) {
         if ([subview.accessibilityIdentifier isEqualToString:@"id.video.remix.button"]) {
             subview.hidden = hideRemixButton;
+            subview.frame = CGRectZero;
         } else if ([subview.accessibilityLabel isEqualToString:@"Thanks"]) {
             subview.hidden = hideThanksButton;
+            subview.frame = CGRectZero;
         } else if ([subview.accessibilityIdentifier isEqualToString:@"id.ui.add_to.offline.button"]) {
             subview.hidden = hideAddToOfflineButton;
+            subview.frame = CGRectZero;
         } else if ([subview.accessibilityLabel isEqualToString:@"Clip"]) {
             subview.hidden = hideClipButton;
+            subview.frame = CGRectZero;
         } else if ([subview.accessibilityLabel isEqualToString:@"Save to playlist"]) {
             subview.hidden = hideSaveToPlaylistButton;
+            subview.frame = CGRectZero;
         }
     }
 }
@@ -891,22 +898,6 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 
 // Hide Channel Watermark
-%hook YTMainAppVideoPlayerOverlayView
-- (BOOL)isWatermarkEnabled {
-    if (IsEnabled(@"hideChannelWatermark_enabled")) {
-        return NO;
-    }
-    return %orig;
-}
-- (void)setFeaturedChannelWatermarkImageView:(id)imageView {
-    if (IsEnabled(@"hideChannelWatermark_enabled")) {
-        return;
-    }
-    %orig(imageView);
-}
-%end
-
-// Hide Channel Watermark (for Backwards Compatibility)
 %hook YTAnnotationsViewController
 - (void)loadFeaturedChannelWatermark {
     if (IsEnabled(@"hideChannelWatermark_enabled")) {}
