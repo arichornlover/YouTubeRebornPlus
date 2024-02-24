@@ -53,9 +53,11 @@ NSBundle *tweakBundle = YouTubeRebornPlusBundle();
     %orig;
     if (IS_ENABLED(@"hideSponsorBlockButton_enabled")) { 
         self.sponsorBlockButton.hidden = YES;
+        self.sponsorBlockButton.frame = CGRectZero;
     }
     if (IS_ENABLED(@"hideYouTubeRebornButton_enabled")) { 
         self.youtubeRebornButton.hidden = YES;
+        self.youtubeRebornButton.frame = CGRectZero;
     }
 }
 %end
@@ -513,29 +515,6 @@ static void replaceTab(YTIGuideResponse *response) {
     if (IS_ENABLED(@"snapToChapter_enabled")) {
         self.enableSnapToChapter = NO;
     }
-}
-%end
-
-// Hide Channel Watermark
-%hook YTMainAppVideoPlayerOverlayView
-- (BOOL)isWatermarkEnabled {
-    if (IS_ENABLED(@"hideChannelWatermark_enabled")) {
-        return NO;
-    }
-    return %orig;
-}
-- (void)setFeaturedChannelWatermarkImageView:(id)imageView {
-    if (IS_ENABLED(@"hideChannelWatermark_enabled")) {
-        return;
-    }
-    %orig(imageView);
-}
-%end
-// Hide Channel Watermark (for Backwards Compatibility)
-%hook YTAnnotationsViewController
-- (void)loadFeaturedChannelWatermark {
-    if (IS_ENABLED(@"hideChannelWatermark_enabled")) {}
-    else { return %orig; }
 }
 %end
 
