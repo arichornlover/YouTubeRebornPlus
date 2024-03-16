@@ -8,7 +8,7 @@ on:
     inputs:
       reborn_version:
         description: "The version of YouTube Reborn"
-        default: "4.2.5"
+        default: "4.2.6"
         required: true
         type: string
       decrypted_youtube_url:
@@ -109,11 +109,11 @@ jobs:
       - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl -L "https://www.dropbox.com/scl/fi/0omzetpavkc8zuxq6j24y/YouTube.Reborn.v4.2.5.deb?rlkey=e99nznjpbsxh4anfbo31t4qun&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.5.deb"
+          curl -L "https://www.dropbox.com/scl/fi/i2nojctxmhtxuk130u8x7/YouTube.Reborn.v4.2.6.deb?rlkey=6fag37onv9c9061cg1bwnb1je&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.6.deb"
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.2.5.deb" && tar -xf data.tar.* && cd ../../..
+          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.2.6.deb" && tar -xf data.tar.* && cd ../../..
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} unpacked! \033[0m"
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
@@ -164,7 +164,7 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: softprops/action-gh-release@v0.1.15 # NOTICE: Node.js 16 is Deprecated ⚠️
+        uses: softprops/action-gh-release@v2.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REBORN_VERSION: ${{ inputs.REBORN_VERSION }}
