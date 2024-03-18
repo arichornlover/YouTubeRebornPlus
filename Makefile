@@ -1,4 +1,4 @@
-TARGET = iphone:clang:17.2:14.0
+TARGET = iphone:clang:16.4:14.0
 YouTubeRebornPlus_USE_FISHHOOK = 0
 ARCHS = arm64
 MODULES = jailed
