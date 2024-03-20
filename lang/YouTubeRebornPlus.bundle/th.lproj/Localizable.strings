@@ -1,0 +1,157 @@
+// About
+"ABOUT" = "เกี่ยวกับ";
+
+"VERSION" = "เวอร์ชันของ YouTubeBornPlus: %@";
+"VERSION_CHECK" = "แตะเพื่อตรวจสอบการอัปเดต!";
+
+"REPORT_AN_ISSUE" = "รายงานปัญหา";
+"ADD_TITLE" = "เพิ่มชื่อของคุณที่นี่...";
+
+"QUIT_YOUTUBE" = "ออกจาก YouTube";
+
+"RESTART_YOUTUBE" = "รีสตาร์ท YouTube เพื่อใช้การเปลี่ยนแปลง";
+
+// App appearance
+"APP_THEME" = "รูปลักษณ์ของแอพ";
+"THEME_OPTIONS" = "ตัวเลือกธีม";
+
+"DARK_THEME" = "ธีมมืด";
+
+"DEFAULT_THEME" = "ค่าเริ่มต้น";
+"DEFAULT_THEME_DESC" = "";
+
+"OLD_DARK_THEME" = "สีเทาอ่อน";
+"OLD_DARK_THEME_DESC" = "ธีมมืดเก่าของ YouTube";
+
+"OLED_DARK_THEME" = "OLED (ทดลอง)";
+"OLED_DARK_THEME_2" = "OLED";
+"OLED_DARK_THEME_DESC" = "ธีมมืดดำบริสุทธิ์";
+
+"OLED_KEYBOARD" = "คีย์บอร์ด OLED (ทดลอง)";
+"OLED_KEYBOARD_DESC" = "";
+
+// Video player options
+"VIDEO_PLAYER_OPTIONS" = "ตัวเลือกเครื่องเล่นวิดีโอ";
+
+"SNAP_TO_CHAPTER" = "ปิดการใช้งาน Snap ไปที่บท";
+"SNAP_TO_CHAPTER_DESC" = "ปิดการใช้งาน Auto Snap ไปที่บทเมื่อค้นหาในวิดีโอ จำเป็นต้องรีสตาร์ทแอป";
+
+"PINCH_TO_ZOOM" = "ปิดการใช้งานเพื่อซูม";
+"PINCH_TO_ZOOM_DESC" = "จำเป็นต้องรีสตาร์ทแอป";
+
+"YT_MINIPLAYER" = "เปิดใช้งาน Miniplayer สำหรับวิดีโอ YouTube ทั้งหมด";
+"YT_MINIPLAYER_DESC" = "ตัวอย่างวิดีโอเด็ก";
+
+// Video controls overlay options
+"VIDEO_CONTROLS_OVERLAY_OPTIONS" = "วิดีโอควบคุมตัวเลือกการซ้อนทับ";
+
+"ENABLE_SHARE_BUTTON" = "เปิดใช้งานปุ่มแบ่งปัน";
+"ENABLE_SHARE_BUTTON_DESC" = "เปิดใช้งานปุ่มแชร์ในวิดีโอควบคุมการซ้อนทับ";
+
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON" = "Enable 'ปุ่มบันทึกลงในเพลย์ลิสต์";
+"ENABLE_SAVE_TO_PLAYLIST_BUTTON_DESC" = "เปิดใช้งานปุ่ม 'บันทึกไปยังเพลย์ลิสต์' ในการควบคุมวิดีโอการซ้อนทับ";
+
+"HIDE_HUD_MESSAGES" = "ซ่อนข้อความ HUD";
+"HIDE_HUD_MESSAGES_DESC" = "ตัวอย่าง: CC เปิด/ปิดการวนรอบวิดีโอเปิดอยู่,...";
+
+"HIDE_PAID_PROMOTION_CARDS" = "ซ่อนบัตรส่งเสริมการขายแบบชำระเงิน";
+"HIDE_PAID_PROMOTION_CARDS_DESC" = "ซ่อนการ์ด 'รวมโปรโมชั่นที่ชำระเงิน' ไว้ในวิดีโอบางรายการ";
+
+"HIDE_SHADOW_OVERLAY_BUTTONS" = "ซ่อนปุ่ม Overlay Shadow";
+"HIDE_SHADOW_OVERLAY_BUTTONS_DESC" = "ซ่อนการซ้อนทับเงาบนปุ่ม Play/Pause, ก่อนหน้า, ถัดไป, ถัดไป, ไปข้างหน้าและย้อนกลับ";
+
+"HIDE_PREVIOUS_AND_NEXT_BUTTON" = "ซ่อนปุ่มก่อนหน้าและถัดไป";
+"HIDE_PREVIOUS_AND_NEXT_BUTTON_DESC" = "ซ่อนปุ่มก่อนหน้าและถัดไปในวิดีโอควบคุมการซ้อนทับ";
+
+"REPLACE_PREVIOUS_NEXT_BUTTON" = "แทนที่ปุ่มก่อนหน้าและถัดไป";
+"REPLACE_PREVIOUS_NEXT_BUTTON_DESC" = "แทนที่ปุ่มก่อนหน้าและปุ่มถัดไปด้วยปุ่มไปข้างหน้าอย่างรวดเร็วและย้อนกลับ จำเป็นต้องรีสตาร์ทแอป";
+
+"HIDE_HOVER_CARD" = "ซ่อนหน้าจอ,จบการ์ดชั่วโมง (YTNOHOVERCARDS)";
+"HIDE_HOVER_CARD_DESC" = "ซ่อนหน้าจอ End Creator (รูปขนาดย่อ) ในตอนท้ายของวิดีโอ";
+
+"HIDE_RIGHT_PANEL" = "ซ่อนแผงด้านขวาในโหมดเต็มหน้าจอ";
+"HIDE_RIGHT_PANEL_DESC" = "จำเป็นต้องรีสตาร์ทแอป";
+
+"HIDE_HEATWAVES" = "ซ่อนคลื่นความร้อน";
+"HIDE_HEATWAVES_DESC" = "ซ่อนคลื่นความร้อนในเครื่องเล่นวิดีโอ จำเป็นต้องรีสตาร์ทแอป";
+
+// App settings overlay options
+"APP_SETTINGS_OVERLAY_OPTIONS" = "ตัวเลือกการตั้งค่าแอปซ้อนทับ";
+
+"HIDE_ACCOUNT_SECTION" = "ซ่อนส่วน `บัญชี '";
+"HIDE_DONTEATMYCONTENT_SECTION" = "ซ่อนส่วน `donteatmycontent '";
+"HIDE_YOUTUBERETURNDISLIKE_SECTION" = "ซ่อนส่วน `youtube return dislike '";
+"HIDE_YOUPIP_SECTION" = "ซ่อนส่วน `youpip`";
+"HIDE_AUTOPLAY_SECTION" = "ซ่อนส่วน `Autoplay '";
+"HIDE_TRYNEWFEATURES_SECTION" = "ซ่อน `ลองส่วนคุณสมบัติใหม่ '";
+"HIDE_VIDEOQUALITYPREFERENCES_SECTION" = "ซ่อนส่วนการตั้งค่าคุณภาพวิดีโอ `";
+"HIDE_NOTIFICATIONS_SECTION" = "ซ่อนส่วน `การแจ้งเตือน '";
+"HIDE_MANAGEALLHISTORY_SECTION" = "ซ่อน `จัดการส่วนประวัติการเข้าชมทั้งหมด '";
+"HIDE_YOURDATAINYOUTUBE_SECTION" = "ซ่อนข้อมูลของคุณในส่วนของ YouTube`";
+"HIDE_PRIVACY_SECTION" = "ซ่อนส่วน `ความเป็นส่วนตัว '";
+"HIDE_LIVECHAT_SECTION" = "ซ่อน `ส่วนแชทสด '";
+
+// UI interface options
+"UI_INTERFACE_OPTIONS" = "ตัวเลือกอินเตอร์เฟส UI";
+
+"LOW_CONTRAST_MODE" = "โหมดความคมชัดต่ำ";
+"LOW_CONTRAST_MODE_DESC" = "สิ่งนี้จะลดความคมชัดของข้อความและปุ่มคล้ายกับอินเตอร์เฟส YouTube เก่า จำเป็นต้องรีสตาร์ทแอป";
+
+"FIX_LOW_CONTRAST_MODE" = "แก้ไข LowContrastMode";
+"FIX_LOW_CONTRAST_MODE_DESC" = "สิ่งนี้จะแก้ไขฟังก์ชันการทำงานของ LowContrastMode โดยการปลอมแปลงไปยัง YouTube v17.38.10 จำเป็นต้องรีสตาร์ทแอป";
+
+"DISABLE_MODERN_BUTTONS" = "ปิดการใช้งานปุ่มที่ทันสมัย";
+"DISABLE_MODERN_BUTTONS_DESC" = "สิ่งนี้จะลบปุ่มใหม่/ชิปใหม่ใน YouTube แต่ไม่ใช่ทั้งหมดของพวกเขา จำเป็นต้องรีสตาร์ทแอป";
+
+"DISABLE_ROUNDED_CORNERS_ON_HINTS" = "ปิดการใช้งานมุมโค้งมนหน้่าต่าง";
+"DISABLE_ROUNDED_CORNERS_ON_HINTS_DESC" = "สิ่งนี้จะทำให้หน้าต่างใด ๆ แจ้งไม่รวมถึงมุมโค้งมน จำเป็นต้องรีสตาร์ทแอป";
+
+"DISABLE_MODERN_FLAGS" = "ปิดการใช้งานธง A/B ที่ทันสมัย";
+"DISABLE_MODERN_FLAGS_DESC" = "สิ่งนี้จะปิดการตั้งค่าสถานะทันสมัยที่เปิดใช้งานโดยค่าเริ่มต้น จำเป็นต้องรีสตาร์ทแอป";
+
+"HIDE_MODERN_INTERFACE" = "เปิดใช้งานตัวเลือกที่เกี่ยวข้องกับ UI เฉพาะ (ytnomodernui)";
+"HIDE_MODERN_INTERFACE_DESC" = "เมื่อเปิดใช้งานสิ่งนี้จะเปิดใช้งานตัวเลือกอื่น ๆ เพื่อให้ความรู้สึกที่ทันสมัยน้อยลง จำเป็นต้องรีสตาร์ทแอป";
+
+"APP_VERSION_SPOOFER" = "เปิดใช้งาน Spoofer เวอร์ชั่นแอพ";
+"APP_VERSION_SPOOFER_DESC" = "เปิดใช้งานสิ่งนี้เพื่อใช้สแปมเวอร์เวอร์ชันและเลือกเวอร์ชั่นที่คุณมองเห็นด้านล่าง จำเป็นต้องรีสตาร์ทแอป";
+"VERSION_SPOOFER_TITLE" = "ตัวเลือกสแปงเวอร์ชัน";
+
+// Miscellaneous
+"MISCELLANEOUS" = "เบ็ดเตล็ด";
+
+"ENABLE_YT_STARTUP_ANIMATION" = "เปิดใช้งานแอนิเมชั่นเริ่มต้นของ YouTube";
+"ENABLE_YT_STARTUP_ANIMATION_DESC" = "";
+
+"STICK_NAVIGATION_BAR" = "แถบนำทางสติก";
+"STICK_NAVIGATION_BAR_DESC" = "เปิดใช้งานเพื่อให้แถบการนำทางอยู่บนแอพเมื่อเลื่อน";
+
+"HIDE_CHIP_BAR" = "ซ่อนบาร์บน";
+"HIDE_CHIP_BAR_DESC" = "ซ่อนบาร์บนในบ้านฟีด (เทรนด์ดนตรีเกม ... ) และฟีดการสมัครสมาชิก (วิดีโอทั้งหมดดูต่อไป..).";
+
+"CAST_CONFIRM" = "ยืนยันการฉายหน้าจอ (ytcastConfirm)";
+"CAST_CONFIRM_DESC" = "แสดงการแจ้งเตือนยืนยัน การฉายกน้าจอ เพื่อป้องกันการจี้ทีวีโดยไม่ตั้งใจ";
+"CASTING" = "Castings";
+"MSG_ARE_YOU_SURE" = "แน่ใจหรือว่าต้องการเริ่มต้น ฉายหน้าจอ?";
+"MSG_YES" = "ใช่";
+"MSG_CANCEL" = "ยกเลิก";
+
+"NEW_MINIPLAYER_STYLE" = "ใหม่สไตล์บาร์มินิเครื่องเล่น (Bigytminiplayer)";
+"NEW_MINIPLAYER_STYLE_DESC" = "จำเป็นต้องรีสตาร์ทแอป";
+
+"HIDE_SPONSORBLOCK_BUTTON" = "ซ่อนปุ่ม Isponsorblock ในแถบการนำทาง";
+"HIDE_SPONSORBLOCK_BUTTON_DESC" = "";
+
+"HIDE_YOUTUBE_REBORN_BUTTON" = "ซ่อนปุ่ม Reborn YouTube ในแถบนำทาง";
+"HIDE_YOUTUBE_REBORN_BUTTON_DESC" = "";
+
+"YT_SPEED" = "เปิดใช้งาน ytspeed";
+"YT_SPEED_DESC" = "เปิดใช้งาน ytspeed เพื่อมีตัวเลือกความเร็วในการเล่นมากขึ้น จำเป็นต้องรีสตาร์ทแอป";
+
+"YT_RE_EXPLORE" = "เปลี่ยนแท็บ shot ด้วยแท็บสำรวจ (ytreexplore)";
+"YT_RE_EXPLORE_DESC" = "จำเป็นต้องรีสตาร์ทแอป";
+
+"ENABLE_FLEX" = "เปิดใช้งาน Flex";
+"ENABLE_FLEX_DESC" = "เปิดใช้งาน Flex สำหรับการดีบัก (ไม่แนะนำ) ทิ้งสิ่งนี้ไว้เว้นแต่คุณจะรู้ว่าคุณกำลังทำอะไรอยู่";
+
+// Other Localization
+"APP_RESTART_DESC" = "จำเป็นต้องรีสตาร์ทแอป";
