@@ -33,7 +33,7 @@ on:
         type: string
       sdk_version:
         description: "iOS SDK version to be used during build"
-        default: "16.2"
+        default: "16.4"
         required: true
         type: string
       create_release:
