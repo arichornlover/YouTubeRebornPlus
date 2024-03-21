@@ -8,7 +8,7 @@ on:
     inputs:
       reborn_version:
         description: "The version of YouTube Reborn"
-        default: "4.2.6"
+        default: "5.0.0"
         required: true
         type: string
       decrypted_youtube_url:
@@ -109,11 +109,11 @@ jobs:
       - name: Download Reborn & Prepare YouTube iPA
         run: |
           curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl -L "https://www.dropbox.com/scl/fi/i2nojctxmhtxuk130u8x7/YouTube.Reborn.v4.2.6.deb?rlkey=6fag37onv9c9061cg1bwnb1je&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.6.deb"
+          curl -L "https://www.dropbox.com/scl/fi/fz2an5gbzyts9dsd2km2k/YouTube.Reborn.v5.0.0.deb?rlkey=tefs448gc85g77cct09clofal&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v5.0.0.deb"
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
           echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.2.6.deb" && tar -xf data.tar.* && cd ../../..
+          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v5.0.0.deb" && tar -xf data.tar.* && cd ../../..
           echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} unpacked! \033[0m"
           unzip -q main/YouTube.ipa -d main/tmp
           rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
