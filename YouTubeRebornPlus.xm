@@ -508,6 +508,7 @@ static void replaceTab(YTIGuideResponse *response) {
 %end
 %end
 
+/*
 // Disable snap to chapter
 %hook YTSegmentableInlinePlayerBarView
 - (void)didMoveToWindow {
@@ -517,6 +518,7 @@ static void replaceTab(YTIGuideResponse *response) {
     }
 }
 %end
+*/
 
 // App Settings Overlay Options
 %group gDisableAccountSection
