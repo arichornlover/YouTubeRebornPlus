@@ -15,13 +15,15 @@ TWEAK_NAME = YouTubeRebornPlus
 DISPLAY_NAME = YouTube
 BUNDLE_ID = com.google.ios.youtube
 
-$(TWEAK_NAME)_FILES := $(wildcard Source/*.m) $(wildcard Source/*.xm) $(wildcard Tweaks/FLEX/*.m)
+$(TWEAK_NAME)_FILES := $(wildcard Source/*.xm) $(wildcard Source/*.x) $(wildcard Source/*.m)
 $(TWEAK_NAME)_FRAMEWORKS = UIKit Foundation AVFoundation AVKit Photos Accelerate CoreMotion GameController VideoToolbox Security
 $(TWEAK_NAME)_LIBRARIES = bz2 c++ iconv z
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -Wno-unused-but-set-variable -Wno-module-import-in-extern-c -DTWEAK_VERSION=\"$(PACKAGE_VERSION)\"
 $(TWEAK_NAME)_INJECT_DYLIBS = Tweaks/Reborn/Library/MobileSubstrate/DynamicLibraries/YouTubeReborn.dylib .theos/obj/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib .theos/obj/YTUHD.dylib .theos/obj/YouPiP.dylib .theos/obj/YouTubeDislikesReturn.dylib .theos/obj/YTABConfig.dylib .theos/obj/DontEatMyContent.dylib .theos/obj/YTHoldForSpeed.dylib .theos/obj/YTVideoOverlay.dylib .theos/obj/YouMute.dylib .theos/obj/YouQuality.dylib .theos/obj/YouGroupSettings.dylib
 $(TWEAK_NAME)_EMBED_LIBRARIES = $(THEOS_OBJ_DIR)/libcolorpicker.dylib
 $(TWEAK_NAME)_EMBED_FRAMEWORKS = $(_THEOS_LOCAL_DATA_DIR)/$(THEOS_OBJ_DIR_NAME)/install_Alderis.xcarchive/Products/var/jb/Library/Frameworks/Alderis.framework
+$(TWEAK_NAME)_EMBED_BUNDLES = $(wildcard Bundles/*.bundle)
+$(TWEAK_NAME)_EMBED_EXTENSIONS = $(wildcard Extensions/*.appex)
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS_MAKE_PATH)/tweak.mk
