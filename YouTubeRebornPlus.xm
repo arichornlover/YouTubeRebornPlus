@@ -14,26 +14,28 @@ NSBundle *YouTubeRebornPlusBundle() {
 }
 NSBundle *tweakBundle = YouTubeRebornPlusBundle();
 
+# pragma mark - Tweaks
+
+// Activate FLEX
 %hook YTAppDelegate
 - (BOOL)application:(UIApplication *)application
     didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
     BOOL didFinishLaunching = %orig;
 
     if (IS_ENABLED(@"flex_enabled")) {
-        [[FLEXManager sharedManager] showExplorer];
+        [[%c(FLEXManager) performSelector:@selector(sharedManager)] performSelector:@selector(showExplorer)];
     }
 
     return didFinishLaunching;
 }
 - (void)appWillResignActive:(id)arg1 {
     %orig;
-        if (IS_ENABLED(@"flex_enabled")) {
-        [[FLEXManager sharedManager] showExplorer];
+         if (IS_ENABLED(@"flex_enabled")) {
+        [[%c(FLEXManager) performSelector:@selector(sharedManager)] performSelector:@selector(showExplorer)];
     }
 }
 %end
 
-# pragma mark - Tweaks
 // Skips content warning before playing *some videos - @PoomSmart
 %hook YTPlayabilityResolutionUserActionUIController
 - (void)showConfirmAlert { [self confirmAlertDidPressConfirm]; }
