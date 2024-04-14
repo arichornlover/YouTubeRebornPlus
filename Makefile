@@ -31,17 +31,4 @@ SUBPROJECTS += Tweaks/Alderis Tweaks/iSponsorBlock Tweaks/YTUHD Tweaks/YouPiP Tw
 include $(THEOS_MAKE_PATH)/aggregate.mk
 
 before-package::
-	@echo "Moving tweak's bundle to Resources/"
-	@mkdir -p Resources/Frameworks/Alderis.framework && cp -R .theos/obj/install/Library/Frameworks/Alderis.framework/* Resources/Frameworks/Alderis.framework/
-	@cp -R Tweaks/YTUHD/layout/Library/Application\ Support/YTUHD.bundle Resources/
-	@cp -R Tweaks/YouPiP/layout/Library/Application\ Support/YouPiP.bundle Resources/
-	@cp -R Tweaks/Return-YouTube-Dislikes/layout/Library/Application\ Support/RYD.bundle Resources/
-	@cp -R Tweaks/YTABConfig/layout/Library/Application\ Support/YTABC.bundle Resources/
-	@cp -R Tweaks/DontEatMyContent/layout/Library/Application\ Support/DontEatMyContent.bundle Resources/
-	@cp -R Tweaks/YTHoldForSpeed/layout/Library/Application\ Support/YTHoldForSpeed.bundle Resources/
-	@cp -R Tweaks/YTVideoOverlay/layout/Library/Application\ Support/YTVideoOverlay.bundle Resources/
-	@cp -R Tweaks/YouMute/layout/Library/Application\ Support/YouMute.bundle Resources/
-	@cp -R Tweaks/YouQuality/layout/Library/Application\ Support/YouQuality.bundle Resources/
-	@echo "Changing the installation path of dylibs"
-	@ldid -r .theos/obj/iSponsorBlock.dylib && install_name_tool -change /usr/lib/libcolorpicker.dylib @rpath/libcolorpicker.dylib .theos/obj/iSponsorBlock.dylib
-	@codesign --remove-signature .theos/obj/libcolorpicker.dylib && install_name_tool -change /Library/Frameworks/Alderis.framework/Alderis @rpath/Alderis.framework/Alderis .theos/obj/libcolorpicker.dylib
+	@mkdir -p $(THEOS_STAGING_DIR)/Library/Application\ Support; cp -r Localizations/YouTubeRebornPlus.bundle $(THEOS_STAGING_DIR)/Library/Application\ Support/
