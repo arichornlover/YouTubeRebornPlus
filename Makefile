@@ -1,6 +1,7 @@
 export TARGET = iphone:clang:16.4:14.0
 export ARCHS = arm64
 
+export libcolorpicker_ARCHS = arm64
 export libFLEX_ARCHS = arm64
 export Alderis_XCODEOPTS = LD_DYLIB_INSTALL_NAME=@rpath/Alderis.framework/Alderis
 export Alderis_XCODEFLAGS = DYLIB_INSTALL_NAME_BASE=/Library/Frameworks BUILD_LIBRARY_FOR_DISTRIBUTION=YES ARCHS="$(ARCHS)"
@@ -11,6 +12,7 @@ ifndef YOUTUBE_VERSION
 YOUTUBE_VERSION = 19.14.3
 PACKAGE_VERSION = $(YOUTUBE_VERSION)-4.2.6
 
+INSTALL_TARGET_PROCESSES = YouTube
 TWEAK_NAME = YouTubeRebornPlus
 DISPLAY_NAME = YouTube
 BUNDLE_ID = com.google.ios.youtube
@@ -26,14 +28,12 @@ $(TWEAK_NAME)_EMBED_BUNDLES = $(wildcard Bundles/*.bundle)
 $(TWEAK_NAME)_EMBED_EXTENSIONS = $(wildcard Extensions/*.appex)
 
 include $(THEOS)/makefiles/common.mk
+SUBPROJECTS += Tweaks/Alderis Tweaks/iSponsorBlock Tweaks/YTUHD Tweaks/YouPiP Tweaks/Return-YouTube-Dislikes Tweaks/YTABConfig Tweaks/DontEatMyContent Tweaks/YTHoldForSpeed Tweaks/YTVideoOverlay Tweaks/YouMute Tweaks/YouQuality Tweaks/YouGroupSettings
+include $(THEOS_MAKE_PATH)/aggregate.mk
 include $(THEOS_MAKE_PATH)/tweak.mk
 
 REMOVE_EXTENSIONS = 1
 CODESIGN_IPA = 0
-
-SUBPROJECTS += Tweaks/Alderis Tweaks/iSponsorBlock Tweaks/YTUHD Tweaks/YouPiP Tweaks/Return-YouTube-Dislikes Tweaks/YTABConfig Tweaks/DontEatMyContent Tweaks/YTHoldForSpeed Tweaks/YTVideoOverlay Tweaks/YouMute Tweaks/YouQuality Tweaks/YouGroupSettings
-
-include $(THEOS_MAKE_PATH)/aggregate.mk
 
 before-package::
 	@mkdir -p $(THEOS_STAGING_DIR)/Library/Application\ Support; cp -r Localizations/YouTubeRebornPlus.bundle $(THEOS_STAGING_DIR)/Library/Application\ Support/
