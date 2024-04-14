@@ -5,7 +5,6 @@
 #import <sys/utsname.h>
 #import <substrate.h>
 #import <rootless.h>
-#import "Tweaks/FLEX/FLEX.h"
 
 #import <YouTubeHeader/YTAppDelegate.h>
 #import <YouTubeHeader/YTPlayerViewController.h>
