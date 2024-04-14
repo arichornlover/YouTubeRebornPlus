@@ -1,10 +1,10 @@
-#import "../Tweaks/YouTubeHeader/YTSettingsViewController.h"
-#import "../Tweaks/YouTubeHeader/YTSearchableSettingsViewController.h"
-#import "../Tweaks/YouTubeHeader/YTSettingsSectionItem.h"
-#import "../Tweaks/YouTubeHeader/YTSettingsSectionItemManager.h"
-#import "../Tweaks/YouTubeHeader/YTUIUtils.h"
-#import "../Tweaks/YouTubeHeader/YTSettingsPickerViewController.h"
-#import "../YouTubeRebornPlus.h"
+#import <YouTubeHeader/YTSettingsViewController.h>
+#import <YouTubeHeader/YTSearchableSettingsViewController.h>
+#import <YouTubeHeader/YTSettingsSectionItem.h>
+#import <YouTubeHeader/YTSettingsSectionItemManager.h>
+#import <YouTubeHeader/YTUIUtils.h>
+#import <YouTubeHeader/YTSettingsPickerViewController.h>
+#import "YouTubeRebornPlus.h"
 
 #define VERSION_STRING [[NSString stringWithFormat:@"%@", @(OS_STRINGIFY(TWEAK_VERSION))] stringByReplacingOccurrencesOfString:@"\"" withString:@""]
 #define SHOW_RELAUNCH_YT_SNACKBAR [[%c(GOOHUDManagerInternal) sharedInstance] showMessageMainThread:[%c(YTHUDMessage) messageWithText:LOC(@"RESTART_YOUTUBE")]]
