@@ -1,4 +1,4 @@
-#import "../YouTubeRebornPlus.h"
+#import "YouTubeRebornPlus.h"
 
 //
 static int appVersionSpoofer() {
