@@ -1,7 +1,9 @@
+.theos
 .DS_Store
-.theos/
 packages/
 tmp/
-Tweaks/Cercube/*
-!Tweaks/Cercube/.gitkeep
+Tweaks/Reborn/*
+!Tweaks/Reborn/.gitkeep
 Resources/
+*.ipa
+.vscode
