@@ -51,7 +51,8 @@
 	branch = master
 [submodule "Tweaks/FLEX"]
 	path = Tweaks/FLEX
-	url = https://github.com/arichornlover/FLEX-Classes.git
+	url = https://github.com/PoomSmart/FLEXing.git
+	branch = rootless
 [submodule "Tweaks/YTHoldForSpeed"]
 	path = Tweaks/YTHoldForSpeed
 	url = https://github.com/arichornlover/YTHoldForSpeed.git
