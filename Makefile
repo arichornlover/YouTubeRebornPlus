@@ -14,9 +14,12 @@ MODULES = jailed
 endif
 
 ifndef YOUTUBE_VERSION
-YOUTUBE_VERSION = 19.14.3
+YOUTUBE_VERSION = 19.16.3
 endif
-PACKAGE_VERSION = $(YOUTUBE_VERSION)-4.2.6
+ifndef REBORN_VERSION
+REBORN_VERSION = 4.2.6
+endif
+PACKAGE_VERSION = $(YOUTUBE_VERSION)-$(REBORN_VERSION)
 
 INSTALL_TARGET_PROCESSES = YouTube
 TWEAK_NAME = YouTubeRebornPlus
@@ -43,5 +46,30 @@ include $(THEOS_MAKE_PATH)/tweak.mk
 REMOVE_EXTENSIONS = 1
 CODESIGN_IPA = 0
 
+REBORN_PATH = Tweaks/Reborn
+REBORN_DEB = $(REBORN_PATH)/YouTube.Reborn.v$(REBORN_VERSION).deb
+REBORN_DYLIB = $(REBORN_PATH)/Library/MobileSubstrate/DynamicLibraries/YouTubeReborn.dylib
+REBORN_BUNDLE = $(REBORN_PATH)/Library/Application\ Support/YouTubeReborn.bundle
+
+internal-clean::
+	@rm -rf $(REBORN_PATH)/*
+
+ifneq ($(JAILBROKEN),1)
+before-all::
+	@if [[ ! -f $(REBORN_DEB) ]]; then \
+		rm -rf $(REBORN_PATH)/*; \
+		$(PRINT_FORMAT_BLUE) "Downloading Reborn"; \
+	fi
+before-all::
+	@if [[ ! -f $(REBORN_DEB) ]]; then \
+ 		curl -s -L https://www.dropbox.com/scl/fi/i2nojctxmhtxuk130u8x7/YouTube.Reborn.v$(REBORN_VERSION).deb?rlkey=6fag37onv9c9061cg1bwnb1je&dl=1 -o $(REBORN_DEB); \
+ 	fi; \
+	if [[ ! -f $(REBORN_DYLIB) || ! -d $(REBORN_BUNDLE) ]]; then \
+		tar -xf Tweaks/Reborn/YouTube.Reborn.v$(REBORN_VERSION).deb -C Tweaks/Reborn; tar -xf Tweaks/Reborn/data.tar* -C Tweaks/Reborn; \
+		if [[ ! -f $(REBORN_DYLIB) || ! -d $(REBORN_BUNDLE) ]]; then \
+			$(PRINT_FORMAT_ERROR) "Failed to extract Reborn"; exit 1; \
+		fi; \
+	fi;
+else
 before-package::
     @mkdir -p $(THEOS_STAGING_DIR)/Library/Application\ Support; cp -r Localizations/YouTubeRebornPlus.bundle $(THEOS_STAGING_DIR)/Library/Application\ Support/
