@@ -19,7 +19,7 @@ on:
       youtube_version:
         description: "The version of YouTube"
         default: ""
-        required: true
+        required: false
         type: string
       bundle_id:
         description: "Modify the bundle ID. Not recommended"
@@ -49,13 +49,13 @@ concurrency:
 jobs:
   build:
     name: Build YouTubeRebornPlus
-    runs-on: macos-latest
+    runs-on: macos-12
     permissions:
       contents: write
 
     steps:
       - name: Checkout Main
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.4
         with:
           path: main
           submodules: recursive
@@ -64,7 +64,7 @@ jobs:
         run: brew install ldid dpkg make
 
       - name: Setup Theos
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.4
         with:
           repository: theos/theos
           ref: master
@@ -93,7 +93,7 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
 
       - name: Setup Theos Jailed
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.4
         with:
           repository: qnblackcat/theos-jailed
           ref: master
@@ -106,51 +106,46 @@ jobs:
         env:
           THEOS: ${{ github.workspace }}/theos
 
-      - name: Download Reborn & Prepare YouTube iPA
+      - name: Prepare YouTube iPA
+        id: prepare_youtube
         run: |
-          curl "https://raw.githubusercontent.com/Muirey03/RemoteLog/master/RemoteLog.h" --output "$THEOS/include/RemoteLog.h"
-          curl -L "https://www.dropbox.com/scl/fi/i2nojctxmhtxuk130u8x7/YouTube.Reborn.v4.2.6.deb?rlkey=6fag37onv9c9061cg1bwnb1je&dl=1" --output "main/Tweaks/Reborn/YouTube.Reborn.v4.2.6.deb"
-          echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} downloaded! \033[0m"
           wget "$YOUTUBE_URL" --no-verbose -O main/YouTube.ipa
-          echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} downloaded! \033[0m"
-          cd main/Tweaks/Reborn && tar -xf "YouTube.Reborn.v4.2.6.deb" && tar -xf data.tar.* && cd ../../..
-          echo -e "==> \033[1mReborn v${{ inputs.reborn_version }} unpacked! \033[0m"
-          unzip -q main/YouTube.ipa -d main/tmp
-          rm -rf main/tmp/Payload/YouTube.app/_CodeSignature/CodeResources
-          rm -rf main/tmp/Payload/YouTube.app/PlugIns/*
-          cp -R main/Extensions/*.appex main/tmp/Payload/YouTube.app/PlugIns
-          echo -e "==> \033[1mYouTube v${{ inputs.youtube_version }} unpacked! \033[0m"
+          cd ${{ github.workspace }}/main
+          mv YouTube.ipa YouTube.zip
+          unzip -q YouTube.zip
+          youtube_version=$(defaults read "$(pwd)/Payload/YouTube.app/Info" CFBundleVersion)
+          echo "==> YouTube v$youtube_version downloaded!"
+          sed -i '' "17s#.*#YOUTUBE_VERSION = ${youtube_version}#g" Makefile
+          echo "youtube_version=${youtube_version}" >> $GITHUB_OUTPUT
 
         env:
           THEOS: ${{ github.workspace }}/theos
-          REBORN_VERSION: ${{ inputs.reborn_version }}
-          YOUTUBE_VERSION: ${{ inputs.youtube_version }}
           YOUTUBE_URL: ${{ inputs.decrypted_youtube_url }}
 
-      - name: Fix Compiling & Build Package
+      - name: Fix compiling & Build Package
         id: build_package
         run: |
-          (echo PATH=\"$(brew --prefix make)/libexec/gnubin:\$PATH\" >> ~/.zprofile)
           cd ${{ github.workspace }}/main
-          sed -i '' "11s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile
-          sed -i '' "10s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile
-          make package FINALPACKAGE=1
-          (mv "packages/$(ls -t packages | head -n1)" "packages/YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}.ipa")
+          sed -i '' "27s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile                          # Modify the bundle ID
+          sed -i '' "26s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile                        # Modify the app name
+          sed -i '' "1s#.*#export TARGET = iphone:clang:${{ inputs.sdk_version }}:14.0#g" Makefile # Modify the SDK version
+          make package THEOS_PACKAGE_SCHEME=rootless IPA=Payload/YouTube.app FINALPACKAGE=1
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
           echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
           echo -e "==> \033[1mBundle ID: ${{ env.BUNDLE_ID }}\033[0m"
+
         env:
           THEOS: ${{ github.workspace }}/theos
-          REBORN_VERSION: ${{ inputs.reborn_version }}
-          YOUTUBE_VERSION: ${{ inputs.youtube_version }}
+          UYOU_VERSION: ${{ inputs.uyou_version }}
           BUNDLE_ID: ${{ inputs.bundle_id }}
           APP_NAME: ${{ inputs.app_name }}
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4.3.1
+        if: ${{ inputs.upload_artifact }}
+        uses: actions/upload-artifact@v4.3.3
         env:
           REBORN_VERSION: ${{ inputs.reborn_version }}
-          YOUTUBE_VERSION: ${{ inputs.youtube_version }}
+          YOUTUBE_VERSION: ${{ steps.prepare_youtube.outputs.youtube_version }}
         with:
           name: YouTubeRebornPlus_${{ env.YOUTUBE_VERSION }}_${{ env.REBORN_VERSION }}
           path: ${{ github.workspace }}/main/packages/${{ steps.build_package.outputs.package }}
