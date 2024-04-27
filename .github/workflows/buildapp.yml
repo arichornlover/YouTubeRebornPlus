@@ -16,11 +16,6 @@ on:
         default: ""
         required: true
         type: string
-      youtube_version:
-        description: "The version of YouTube"
-        default: ""
-        required: false
-        type: string
       bundle_id:
         description: "Modify the bundle ID. Not recommended"
         default: "com.google.ios.youtube"
