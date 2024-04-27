@@ -65,7 +65,8 @@ before-all::
  		curl -s -L https://www.dropbox.com/scl/fi/i2nojctxmhtxuk130u8x7/YouTube.Reborn.v$(REBORN_VERSION).deb?rlkey=6fag37onv9c9061cg1bwnb1je&dl=1 > $(REBORN_DEB); \
  	fi; \
 	if [[ ! -f $(REBORN_DYLIB) || ! -d $(REBORN_BUNDLE) ]]; then \
-		tar -xf Tweaks/Reborn/YouTube.Reborn.v$(REBORN_VERSION).deb -C Tweaks/Reborn; tar -xf Tweaks/Reborn/data.tar* -C Tweaks/Reborn; \
+		tar -xf Tweaks/Reborn/YouTube.Reborn.v$(REBORN_VERSION).deb -C Tweaks/Reborn; \
+		tar -xf $(REBORN_PATH)/data.tar* -C $(REBORN_PATH); \
 		if [[ ! -f $(REBORN_DYLIB) || ! -d $(REBORN_BUNDLE) ]]; then \
 			$(PRINT_FORMAT_ERROR) "Failed to extract Reborn"; exit 1; \
 		fi; \
