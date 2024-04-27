@@ -6,6 +6,11 @@ name: Build and Release YouTubeRebornPlus
 on:
   workflow_dispatch:
     inputs:
+      sdk_version:
+        description: "iOS SDK version to be used during build"
+        default: "16.4"
+        required: true
+        type: string
       reborn_version:
         description: "The version of YouTube Reborn"
         default: "4.2.6"
@@ -26,13 +31,13 @@ on:
         default: "YouTube"
         required: true
         type: string
-      sdk_version:
-        description: "iOS SDK version to be used during build"
-        default: "16.4"
-        required: true
-        type: string
       create_release:
         description: "Create a draft release"
+        default: true
+        required: false
+        type: boolean
+      upload_artifact:
+        description: "Upload Artifact"
         default: true
         required: false
         type: boolean
@@ -57,6 +62,9 @@ jobs:
 
       - name: Install Dependencies
         run: brew install ldid dpkg make
+
+      - name: Set PATH environment variable
+        run: echo "$(brew --prefix make)/libexec/gnubin" >> $GITHUB_PATH
 
       - name: Setup Theos
         uses: actions/checkout@v4.1.4
