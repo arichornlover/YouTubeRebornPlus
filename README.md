@@ -285,14 +285,14 @@ any many more...
 
   - My official AltStore repo: https://therealfoxster.github.io/altsource-viewer/view/?source=https://raw.githubusercontent.com/arichornlover/arichornlover.github.io/main/apps2.json
 
-- [Open in AltStore (v19.10.5-4.2.6)](https://tinyurl.com/735nundu) - It will take a while to install because AltStore needs to download the IPA first.
+- [Open in AltStore (v19.16.3-4.2.6)](https://tinyurl.com/52v7c3xr) - It will take a while to install because AltStore needs to download the IPA first.
 
 <details>
-  <summary>Version information (last updated: Mar 18, 2024)</summary>
+  <summary>Version information (last updated: Apr 27, 2024)</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 19.10.5 | ✖︎ |
+| **YouTube** | Google Inc | 19.16.3 | ✖︎ |
 | **YouTube Reborn** | LillieH1000 & arichornlover | 4.2.6 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
@@ -301,7 +301,7 @@ any many more...
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
-| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.1.3 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
+| **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.1.6 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
 | **YTSpeed** | [Lyvendia](https://github.com/Lyvendia) | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **Alderis Color Picker** | [HASHBANG Productions](https://github.com/hbang) | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
 | **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.4.3 | [✔︎](https://github.com/PoomSmart/YTUHD) |
@@ -323,6 +323,7 @@ any many more...
 
 # Support the developers
 - [**MiRO92**](https://twitter.com/miro92): https://github.com/MiRO92/uYou-for-YouTube#support
+- [**PoomSmart**](https://github.com/PoomSmart): https://poomsmart.github.io
 - [**level3tjg**](https://twitter.com/level3tjg): https://ko-fi.com/level3tjg
 - [**BandarHL**](https://twitter.com/bandarhl): https://www.paypal.com/paypalme/BandarHL
 - [**julioverne**](https://twitter.com/ijulioverne): https://www.patreon.com/julioverne
