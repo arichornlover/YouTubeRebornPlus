@@ -73,3 +73,4 @@ before-all::
 else
 before-package::
     @mkdir -p $(THEOS_STAGING_DIR)/Library/Application\ Support; cp -r Localizations/YouTubeRebornPlus.bundle $(THEOS_STAGING_DIR)/Library/Application\ Support/
+endif
