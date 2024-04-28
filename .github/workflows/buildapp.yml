@@ -129,13 +129,13 @@ jobs:
         id: build_package
         run: |
           cd ${{ github.workspace }}/main
-          sed -i '' "27s#.*#BUNDLE_ID = ${{ env.BUNDLE_ID }}#g" Makefile                          # Modify the bundle ID
-          sed -i '' "26s#.*#DISPLAY_NAME = ${{ env.APP_NAME }}#g" Makefile                        # Modify the app name
+          sed -i '' "27s#.*#BUNDLE_ID = ${{ inputs.bundle_id }}#g" Makefile                          # Modify the bundle ID
+          sed -i '' "26s#.*#DISPLAY_NAME = ${{ inputs.app_name }}#g" Makefile                        # Modify the app name
           sed -i '' "1s#.*#export TARGET = iphone:clang:${{ inputs.sdk_version }}:14.0#g" Makefile # Modify the SDK version
           make package THEOS_PACKAGE_SCHEME=rootless IPA=Payload/YouTube.app FINALPACKAGE=1
           echo "package=$(ls -t packages | head -n1)" >>$GITHUB_OUTPUT
           echo -e "==> \033[1mSHASUM256: $(shasum -a 256 packages/*.ipa | cut -f1 -d' ')\033[0m"
-          echo -e "==> \033[1mBundle ID: ${{ env.BUNDLE_ID }}\033[0m"
+          echo -e "==> \033[1mBundle ID: ${{ inputs.bundle_id }}\033[0m"
 
         env:
           THEOS: ${{ github.workspace }}/theos
@@ -155,12 +155,13 @@ jobs:
           if-no-files-found: error
 
       - name: Create Release
+        if: ${{ inputs.create_release }}
         id: create_release
         uses: softprops/action-gh-release@v2.0.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REBORN_VERSION: ${{ inputs.REBORN_VERSION }}
-          YOUTUBE_VERSION: ${{ inputs.youtube_version }}
+          REBORN_VERSION: ${{ inputs.reborn_version }}
+          YOUTUBE_VERSION: ${{ steps.prepare_youtube.outputs.youtube_version }}
           DRAFT: ${{ inputs.create_release }}
         with:
           tag_name: v${{ env.YOUTUBE_VERSION }}-${{ env.REBORN_VERSION }}-(${{ github.run_number }})
