@@ -40,8 +40,7 @@
 	branch = main
 [submodule "Tweaks/Alderis"]
 	path = Tweaks/Alderis
-	url = https://github.com/arichornlover/Alderis.git
-	branch = master
+	url = https://github.com/hbang/Alderis.git
 [submodule "Tweaks/DontEatMyContent"]
 	path = Tweaks/DontEatMyContent
 	url = https://github.com/therealFoxster/DontEatMyContent
