@@ -13,7 +13,7 @@ on:
         type: string
       reborn_version:
         description: "The version of YouTube Reborn"
-        default: "4.2.6"
+        default: "4.2.7"
         required: true
         type: string
       decrypted_youtube_url:
@@ -157,7 +157,7 @@ jobs:
       - name: Create Release
         if: ${{ inputs.create_release }}
         id: create_release
-        uses: softprops/action-gh-release@v2.0.4
+        uses: softprops/action-gh-release@v2.0.5
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REBORN_VERSION: ${{ inputs.reborn_version }}
