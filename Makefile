@@ -14,10 +14,10 @@ MODULES = jailed
 endif
 
 ifndef YOUTUBE_VERSION
-YOUTUBE_VERSION = 19.16.3
+YOUTUBE_VERSION = 19.19.7
 endif
 ifndef REBORN_VERSION
-REBORN_VERSION = 4.2.6
+REBORN_VERSION = 4.2.7
 endif
 PACKAGE_VERSION = $(YOUTUBE_VERSION)-$(REBORN_VERSION)
 
@@ -62,7 +62,7 @@ before-all::
 	fi
 before-all::
 	@if [[ ! -f $(REBORN_DEB) ]]; then \
- 		curl -s -L "https://www.dropbox.com/scl/fi/i2nojctxmhtxuk130u8x7/YouTube.Reborn.v$(REBORN_VERSION).deb?rlkey=6fag37onv9c9061cg1bwnb1je&dl=1" -o $(REBORN_DEB); \
+ 		curl -s -L "https://www.dropbox.com/scl/fi/8pezmgmo2h62kalm2yd6l/YouTube.Reborn.v4.2.7.deb?rlkey=jn38a3536id56aa5nhuq76aac&dl=1" -o $(REBORN_DEB); \
  	fi; \
 	if [[ ! -f $(REBORN_DYLIB) || ! -d $(REBORN_BUNDLE) ]]; then \
 		tar -xf Tweaks/Reborn/YouTube.Reborn.v$(REBORN_VERSION).deb -C Tweaks/Reborn; tar -xf Tweaks/Reborn/data.tar* -C Tweaks/Reborn; \
