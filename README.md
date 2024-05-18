@@ -259,17 +259,15 @@ any many more...
 
 - Downloading videos/audio not working. (probably a Client-Side change, don't know why this happened.)
 
-2. **LowContrastMode**: this tweak doesn't work correctly with the ui on v17.39.4 or later versions of the YouTube App. [WORKAROUND - go to `Settings > YouTubeRebornPlus > Miscellaneous > Enable App Version Spoofer` and go to `Version Spoofer Picker` and select `v17.38.10`]
+2. **LowContrastMode**: this tweak doesn't work correctly with the ui if you use v17.39.4 or later versions of the YouTube App. [WORKAROUND - go to `Settings > YouTubeRebornPlus > Miscellaneous > Enable App Version Spoofer` and go to `Version Spoofer Picker` and select `v17.38.10`]
 
-3. **YTSpeed**: this tweak doesn't show playback speed controls in the v18.19.1 or later versions of the YouTube App. [WORKAROUND - go to `Settings > YouTubeRebornPlus > Miscellaneous > Enable App Version Spoofer` and go to `Version Spoofer Picker` and select `v18.18.2`]
+3. **YTClassicVideoQuality**: this tweak that shows the old video quality menu has stopped working on v18.19.1 or later versions of the YouTube App. [WORKAROUND - read YTSpeed's workaround above]
 
-4. **YTClassicVideoQuality**: this tweak that shows the old video quality menu has stopped working on v18.19.1 or later versions of the YouTube App. [WORKAROUND - read YTSpeed's workaround above]
+4. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
 
-5. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
+5. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
 
-6. **YouPiP** (iOS 14.0 - 14.4.2): due to Apple's fault, you may encounter the *speedup-bug* as described [here](https://drive.google.com/file/d/1NKdv1fr_KRWgD8nhkMDfG2eLBnbdeVtX/view?usp=sharing). The bug also happens when you try to play multi-sources of sound at the same time. Enable **LegacyPiP** is a workaround. Keep in mind that LegacyPiP also removes UHD quality and breaks YouTube Autoplay next. Use it at your own risk!
-
-7. **Not a bug**: 
+6. **Not a bug**: 
 
 - The app won't be able to receive push notifications if you use a free developer account to sideload it. 
 
@@ -285,36 +283,36 @@ any many more...
 
   - My official AltStore repo: https://therealfoxster.github.io/altsource-viewer/view/?source=https://raw.githubusercontent.com/arichornlover/arichornlover.github.io/main/apps2.json
 
-- [Open in AltStore (v19.16.3-4.2.6)](https://tinyurl.com/52v7c3xr) - It will take a while to install because AltStore needs to download the IPA first.
+- [Open in AltStore (v19.19.7-4.2.7)](https://tinyurl.com/2v2m7nn7) - It will take a while to install because AltStore needs to download the IPA first.
 
 <details>
-  <summary>Version information (last updated: Apr 27, 2024)</summary>
+  <summary>Version information (last updated: May 17, 2024)</summary>
 
 | **Tweaks/App** | **Developer** | **Version** | **Open source** |
 | - | - | :-: | :-:  |
-| **YouTube** | Google Inc | 19.16.3 | ✖︎ |
-| **YouTube Reborn** | LillieH1000 & arichornlover | 4.2.6 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
+| **YouTube** | Google Inc | 19.19.7 | ✖︎ |
+| **YouTube Reborn** | LillieH1000 & arichornlover | 4.2.7 | [✔︎](https://github.com/LillieH1000/YouTube-Reborn) |
 | **Open in YouTube** | [CokePokes](https://github.com/CokePokes/) | 1.2 | ✖︎ |
 | **YTNoShorts** | [MiRO92](https://twitter.com/miro92) | 1.0.2 | [✔︎](https://github.com/MiRO92/YTNoShorts) |
 | **YTNoCommunityPosts** | [michael-winay](https://github.com/michael-winay) | 0.0.2 | [✔︎](https://github.com/michael-winay/YTNoCommunityPosts) |
-| **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2.2 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
+| **iSponsorBlock** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.2.5 | [✔︎](https://github.com/Galactic-Dev/iSponsorBlock) |
 | **BigYTMiniPlayer** | [Galactic-Dev](https://github.com/Galactic-Dev) | 1.0-1 | [✔︎](https://github.com/Galactic-Dev/BigYTMiniPlayer) |
 | **YTNoHoverCards** | [level3tjg](https://twitter.com/level3tjg) | 0.0.3 | [✔︎](https://github.com/level3tjg/YTNoHoverCards) |
 | **YTMiniplayerEnabler** | [level3tjg](https://twitter.com/level3tjg) | 0.0.2 | [✔︎](https://github.com/level3tjg/YTMiniplayerEnabler) |
 | **DontEatMyContent** | [therealFoxster](https://github.com/therealFoxster) | 1.1.6 | [✔︎](https://github.com/therealFoxster/DontEatMyContent) |
 | **YTSpeed** | [Lyvendia](https://github.com/Lyvendia) | 1.0.1 | [✔︎](https://github.com/Lyvendia/YTSpeed) |
 | **Alderis Color Picker** | [HASHBANG Productions](https://github.com/hbang) | 1.2 | [✔︎](https://github.com/hbang/Alderis) |
-| **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.4.3 | [✔︎](https://github.com/PoomSmart/YTUHD) |
-| **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.8.4 | [✔︎](https://github.com/PoomSmart/YouPiP) |
+| **YTUHD** | [PoomSmart](https://twitter.com/poomsmart) | 1.5.1 | [✔︎](https://github.com/PoomSmart/YTUHD) |
+| **YouPiP** | [PoomSmart](https://twitter.com/poomsmart) | 1.8.9 | [✔︎](https://github.com/PoomSmart/YouPiP) |
 | **IAmYouTube** | [PoomSmart](https://twitter.com/poomsmart) | 1.3.0 | [✔︎](https://github.com/PoomSmart/IAmYouTube) |
-| **YTABConfig** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.0 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
+| **YTABConfig** | [PoomSmart](https://twitter.com/poomsmart) | 1.7.2 | [✔︎](https://github.com/PoomSmart/YTABConfig) |
 | **YTReExplore** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.2 | [✔︎](https://github.com/PoomSmart/YTReExplore) |
 | **NoYTPremium** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.4 | [✔︎](https://github.com/PoomSmart/NoYTPremium) |
 | **YTNoPaidPromo** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://github.com/PoomSmart/YTNoPaidPromo) |
 | **YouRememberCaption** | [PoomSmart](https://twitter.com/poomsmart) | 1.0.0 | [✔︎](https://poomsmart.github.io/repo/depictions/youremembercaption.html) |
-| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.11.6 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
+| **Return YouTube Dislike** | [PoomSmart](https://twitter.com/poomsmart) | 1.11.11 | [✔︎](https://github.com/PoomSmart/Return-YouTube-Dislikes) |
 | **YouMute** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.1-3 | [✔︎](https://github.com/PoomSmart/YouMute) |
-| **YouQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.4-2 | [✔︎](https://github.com/PoomSmart/YouQuality) |
+| **YouQuality** | [PoomSmart](https://twitter.com/poomsmart) | 1.2.1 | [✔︎](https://github.com/PoomSmart/YouQuality) |
 | **YTVideoOverlay** | [PoomSmart](https://twitter.com/poomsmart) | 1.1.6 | [✔︎](https://github.com/PoomSmart/YTVideoOverlay) |
 | **YTHoldForSpeed** | [joshuaseltzer](https://github.com/joshuaseltzer) | 1.2.0 | [✔︎](https://github.com/joshuaseltzer/YTHoldForSpeed) |
 | **LowContrastMode** | [arichorn](https://github.com/arichorn) | 1.4.2 | [✔︎](https://github.com/arichorn/YTLowContrastMode) |
