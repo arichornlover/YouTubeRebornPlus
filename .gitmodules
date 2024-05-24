@@ -13,7 +13,7 @@
 [submodule "Tweaks/YouQuality"]
 	path = Tweaks/YouQuality
 	url = https://github.com/arichornloverALT/YouQuality.git
-	branch = main
+	branch = main-legacy
 [submodule "Tweaks/YTVideoOverlay"]
 	path = Tweaks/YTVideoOverlay
 	url = https://github.com/arichornloverALT/YTVideoOverlay.git
