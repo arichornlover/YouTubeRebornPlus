@@ -9,12 +9,20 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4.1.1
+        uses: actions/checkout@v4.1.6
 
       - name: Set up Git
         run: |
            git config --global user.email "actions@github.com"
            git config --global user.name "GitHub Actions"
+
+      - name: Make .bundle files
+        run: |
+          cd Bundles
+          ln -s ../Tweaks/Reborn/layout/Library/Application\ Support/YouTubeReborn.bundle YouTubeReborn.bundle
+          git add .
+          git commit -m "Added YouTube Reborn bundle."
+          git push origin
 
       - name: Update submodules
         run: |
