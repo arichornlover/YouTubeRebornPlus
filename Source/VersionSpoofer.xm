@@ -289,7 +289,7 @@ static BOOL version93() {
 
 %group gVersion0
 %hook YTVersionUtils // 0
-+ (NSString *)appVersion { return @"19.20.2"; } // Undefined
++ (NSString *)appVersion { return @"19.21.2"; }
 %end
 %end
 
