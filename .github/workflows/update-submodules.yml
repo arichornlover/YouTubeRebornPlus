@@ -9,7 +9,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
+
+      - name: Add uYouEnhanced submodules
+        run: |
+          git submodule add https://github.com/arichornlover/YouTimeStamp.git Tweaks/YouTimeStamp
+          git submodule add https://github.com/protocolbuffers/protobuf.git Tweaks/protobuf
+          git add .
+          git commit -m "added new submodules"
+          git push origin
 
       - name: Set up Git
         run: |
@@ -42,11 +50,15 @@ jobs:
           git add .
           git submodule update --init --recursive --remote Tweaks/YouQuality
           git add .
+          git submodule update --init --recursive --remote Tweaks/YouTimeStamp
+          git add .
           git submodule update --init --recursive --remote Tweaks/YouGroupSettings
           git add .
           git submodule update --init --recursive --remote Tweaks/YouTubeHeader
           git add .
           git submodule update --init --recursive --remote Tweaks/iSponsorBlock
+          git add .
+          git submodule update --init --recursive --remote Tweaks/protobuf
           git add .
           git submodule update --init --recursive
           git commit -m "updated submodules"
