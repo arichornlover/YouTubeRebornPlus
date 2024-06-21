@@ -83,7 +83,6 @@ Special thanks to these developer(s) for maintaining and improving YouTubeReborn
 </td>
 
 <table id='credit'>
-Special thanks to all the developers who have orignally contributed to YouTube Reborn & CercubePlus!
 <tr>
 <td align="center">
 <a href='https://github.com/LillieH1000'>
@@ -212,7 +211,7 @@ Special thanks to all the developers who have orignally contributed to YouTube R
 
 - Block all advertisements, Enable background playback & etc. (Video Options)
 
-- Set default player quality on WiFi & Celullar.
+- Set default player quality on WiFi & Cellular.
 
 - Tons of Options such as Video Options, Overlay Options, Tab Bar Options, PiP Options, Shorts Options & etc.
 
