@@ -13,7 +13,7 @@ on:
         type: string
       reborn_version:
         description: "The version of YouTube Reborn"
-        default: "4.2.8"
+        default: "4.2.9"
         required: true
         type: string
       decrypted_youtube_url:
@@ -55,7 +55,7 @@ jobs:
 
     steps:
       - name: Checkout Main
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
         with:
           path: main
           submodules: recursive
@@ -67,7 +67,7 @@ jobs:
         run: echo "$(brew --prefix make)/libexec/gnubin" >> $GITHUB_PATH
 
       - name: Setup Theos
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
         with:
           repository: theos/theos
           ref: 5bfdc3cb7133ec1cab43182115d902e2b57c9eac
@@ -96,7 +96,7 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
 
       - name: Setup Theos Jailed
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
         with:
           repository: qnblackcat/theos-jailed
           ref: master
