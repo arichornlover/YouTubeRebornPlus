@@ -58,7 +58,7 @@ ifneq ($(JAILBROKEN),1)
 before-all::
 	@if [[ ! -f $(REBORN_DEB) ]]; then \
 		rm -rf $(REBORN_PATH)/*; \
-		$(PRINT_FORMAT_BLUE) "Downloading Reborn"; \
+		$(PRINT_FORMAT_BLUE) "Downloading YouTubeReborn"; \
 	fi
 before-all::
 	@if [[ ! -f $(REBORN_DEB) ]]; then \
