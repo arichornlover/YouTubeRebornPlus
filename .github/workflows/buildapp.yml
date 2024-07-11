@@ -8,7 +8,7 @@ on:
     inputs:
       sdk_version:
         description: "iOS SDK version to be used during build"
-        default: "16.4"
+        default: "16.5"
         required: true
         type: string
       reborn_version:
@@ -55,7 +55,7 @@ jobs:
 
     steps:
       - name: Checkout Main
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
         with:
           path: main
           submodules: recursive
@@ -67,7 +67,7 @@ jobs:
         run: echo "$(brew --prefix make)/libexec/gnubin" >> $GITHUB_PATH
 
       - name: Setup Theos
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
         with:
           repository: theos/theos
           ref: 5bfdc3cb7133ec1cab43182115d902e2b57c9eac
@@ -87,7 +87,7 @@ jobs:
       - name: Download iOS SDK
         if: steps.SDK.outputs.cache-hit != 'true'
         run: |
-          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/arichornlover/sdks/
+          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/theos/sdks/
           cd sdks
           git sparse-checkout set --no-cone iPhoneOS${{ inputs.sdk_version }}.sdk
           git checkout
@@ -96,7 +96,7 @@ jobs:
           THEOS: ${{ github.workspace }}/theos
 
       - name: Setup Theos Jailed
-        uses: actions/checkout@v4.1.6
+        uses: actions/checkout@v4.1.7
         with:
           repository: qnblackcat/theos-jailed
           ref: master
@@ -157,7 +157,7 @@ jobs:
       - name: Create Release
         if: ${{ inputs.create_release }}
         id: create_release
-        uses: softprops/action-gh-release@v2.0.5
+        uses: softprops/action-gh-release@v2.0.6
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REBORN_VERSION: ${{ inputs.reborn_version }}
