@@ -14,7 +14,7 @@ MODULES = jailed
 endif
 
 ifndef YOUTUBE_VERSION
-YOUTUBE_VERSION = 19.26.5
+YOUTUBE_VERSION = 19.28.1
 endif
 ifndef REBORN_VERSION
 REBORN_VERSION = 4.2.8
@@ -30,7 +30,7 @@ $(TWEAK_NAME)_FILES := $(wildcard Source/*.xm) $(wildcard Source/*.x) $(wildcard
 $(TWEAK_NAME)_FRAMEWORKS = UIKit Foundation AVFoundation AVKit Photos Accelerate CoreMotion GameController VideoToolbox Security
 $(TWEAK_NAME)_LIBRARIES = bz2 c++ iconv z
 $(TWEAK_NAME)_CFLAGS = -fobjc-arc -Wno-deprecated-declarations -Wno-unused-but-set-variable -DTWEAK_VERSION=\"$(PACKAGE_VERSION)\"
-$(TWEAK_NAME)_INJECT_DYLIBS = Tweaks/Reborn/Library/MobileSubstrate/DynamicLibraries/YouTubeReborn.dylib $(THEOS_OBJ_DIR)/libcolorpicker.dylib $(THEOS_OBJ_DIR)/iSponsorBlock.dylib $(THEOS_OBJ_DIR)/YouPiP.dylib $(THEOS_OBJ_DIR)/YouTubeDislikesReturn.dylib $(THEOS_OBJ_DIR)/YTABConfig.dylib $(THEOS_OBJ_DIR)/YTUHD.dylib $(THEOS_OBJ_DIR)/DontEatMyContent.dylib $(THEOS_OBJ_DIR)/YTHoldForSpeed.dylib $(THEOS_OBJ_DIR)/YTVideoOverlay.dylib $(THEOS_OBJ_DIR)/YouMute.dylib $(THEOS_OBJ_DIR)/YouQuality.dylib $(THEOS_OBJ_DIR)/YouGroupSettings.dylib
+$(TWEAK_NAME)_INJECT_DYLIBS = Tweaks/YouTubeReborn/Library/MobileSubstrate/DynamicLibraries/YouTubeReborn.dylib $(THEOS_OBJ_DIR)/libcolorpicker.dylib $(THEOS_OBJ_DIR)/iSponsorBlock.dylib $(THEOS_OBJ_DIR)/YouPiP.dylib $(THEOS_OBJ_DIR)/YouTubeDislikesReturn.dylib $(THEOS_OBJ_DIR)/YTABConfig.dylib $(THEOS_OBJ_DIR)/YTUHD.dylib $(THEOS_OBJ_DIR)/DontEatMyContent.dylib $(THEOS_OBJ_DIR)/YTHoldForSpeed.dylib $(THEOS_OBJ_DIR)/YTVideoOverlay.dylib $(THEOS_OBJ_DIR)/YouMute.dylib $(THEOS_OBJ_DIR)/YouQuality.dylib $(THEOS_OBJ_DIR)/YouGroupSettings.dylib
 $(TWEAK_NAME)_EMBED_LIBRARIES = $(THEOS_OBJ_DIR)/libcolorpicker.dylib
 $(TWEAK_NAME)_EMBED_FRAMEWORKS = $(_THEOS_LOCAL_DATA_DIR)/$(THEOS_OBJ_DIR_NAME)/install_Alderis.xcarchive/Products/var/jb/Library/Frameworks/Alderis.framework
 $(TWEAK_NAME)_EMBED_BUNDLES = $(wildcard Bundles/*.bundle)
@@ -46,7 +46,7 @@ include $(THEOS_MAKE_PATH)/tweak.mk
 REMOVE_EXTENSIONS = 1
 CODESIGN_IPA = 0
 
-REBORN_PATH = Tweaks/Reborn
+REBORN_PATH = Tweaks/YouTubeReborn
 REBORN_DEB = $(REBORN_PATH)/YouTube.Reborn.v$(REBORN_VERSION).deb
 REBORN_DYLIB = $(REBORN_PATH)/Library/MobileSubstrate/DynamicLibraries/YouTubeReborn.dylib
 REBORN_BUNDLE = $(REBORN_PATH)/Library/Application\ Support/YouTubeReborn.bundle
@@ -65,7 +65,7 @@ before-all::
  		curl -s -L "https://www.dropbox.com/scl/fi/d7z8v8gblpu3ht0yzjlpe/YouTube.Reborn.v4.2.8.deb?rlkey=ywdbt74brxvrymbfbxg06uuu8&dl=1" -o $(REBORN_DEB); \
  	fi; \
 	if [[ ! -f $(REBORN_DYLIB) || ! -d $(REBORN_BUNDLE) ]]; then \
-		tar -xf Tweaks/Reborn/YouTube.Reborn.v$(REBORN_VERSION).deb -C Tweaks/Reborn; tar -xf Tweaks/Reborn/data.tar* -C Tweaks/Reborn; \
+		tar -xf Tweaks/YouTubeReborn/YouTube.Reborn.v$(REBORN_VERSION).deb -C Tweaks/YouTubeReborn; tar -xf Tweaks/YouTubeReborn/data.tar.lzma -C Tweaks/YouTubeReborn; \
 		if [[ ! -f $(REBORN_DYLIB) || ! -d $(REBORN_BUNDLE) ]]; then \
 			$(PRINT_FORMAT_ERROR) "Failed to extract Reborn"; exit 1; \
 		fi; \
