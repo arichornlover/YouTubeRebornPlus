@@ -1,6 +1,6 @@
 [submodule "Tweaks/YTUHD"]
 	path = Tweaks/YTUHD
-	url = https://github.com/arichornloverALT/YTUHD.git
+	url = https://github.com/PoomSmart/YTUHD.git
 	branch = master
 [submodule "Tweaks/YouPiP"]
 	path = Tweaks/YouPiP
