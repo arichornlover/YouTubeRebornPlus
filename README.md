@@ -273,7 +273,7 @@ any many more...
 
 2. **LowContrastMode**: this tweak doesn't work correctly with the ui if you use v17.39.4 or later versions of the YouTube App. [WORKAROUND - go to `Settings > YouTubeRebornPlus > Miscellaneous > Enable App Version Spoofer` and go to `Version Spoofer Picker` and select `v17.38.10`]
 
-3. **YTClassicVideoQuality**: this tweak that shows the old video quality menu has stopped working on v18.19.1 or later versions of the YouTube App. [WORKAROUND - read YTSpeed's workaround above]
+3. **YTClassicVideoQuality**: this tweak that shows the old video quality menu has stopped working on v18.19.1 or later versions of the YouTube App. [WORKAROUND - read LowContrastMode's workaround above]
 
 4. **YTUHD**: [Stuttering on 4K videos](https://github.com/qnblackcat/uYouPlus/issues/6).
 
