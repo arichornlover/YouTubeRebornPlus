@@ -1,5 +1,5 @@
-export TARGET = iphone:clang:16.5:15.0
-export SDK_PATH = $(THEOS)/sdks/iPhoneOS16.5.sdk/
+export TARGET = iphone:clang:17.5:15.0
+export SDK_PATH = $(THEOS)/sdks/iPhoneOS17.5.sdk/
 export SYSROOT = $(SDK_PATH)
 export ARCHS = arm64
 
@@ -16,7 +16,7 @@ MODULES = jailed
 endif
 
 ifndef YOUTUBE_VERSION
-YOUTUBE_VERSION = 19.40.4
+YOUTUBE_VERSION = 19.47.7
 endif
 ifndef REBORN_VERSION
 REBORN_VERSION = 4.2.8
