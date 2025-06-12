@@ -4,7 +4,7 @@
 	branch = master
 [submodule "Tweaks/YouPiP"]
 	path = Tweaks/YouPiP
-	url = https://github.com/arichornloverALT/YouPiP.git
+	url = https://github.com/PoomSmart/YouPiP.git
 	branch = main
 [submodule "Tweaks/YouMute"]
 	path = Tweaks/YouMute
@@ -19,11 +19,11 @@
 	branch = main
 [submodule "Tweaks/Return-YouTube-Dislikes"]
 	path = Tweaks/Return-YouTube-Dislikes
-	url = https://github.com/PoomSmart/Return-YouTube-Dislikes.git
+	url = https://github.com/aricloverEXTRA/Return-YouTube-Dislikes.git
 	branch = uYouEnhanced
 [submodule "Tweaks/YouTubeHeader"]
 	path = Tweaks/YouTubeHeader
-	url = https://github.com/arichornloverALT/YouTubeHeader.git
+	url = https://github.com/aricloverEXTRA/YouTubeHeader.git
 	branch = main
 [submodule "Tweaks/PSHeader"]
 	path = Tweaks/PSHeader
@@ -53,16 +53,16 @@
 	branch = rootless
 [submodule "Tweaks/YTHoldForSpeed"]
 	path = Tweaks/YTHoldForSpeed
-	url = https://github.com/arichornloverALT/YTHoldForSpeed.git
+	url = https://github.com/aricloverEXTRA/YTHoldForSpeed.git
 [submodule "Tweaks/YTNoCommunityPosts"]
 	path = Tweaks/YTNoCommunityPosts
 	url = https://github.com/michael-winay/YTNoCommunityPosts.git
 [submodule "Tweaks/YouGroupSettings"]
 	path = Tweaks/YouGroupSettings
-	url = https://github.com/arichornloverALT/YouGroupSettings.git
+	url = https://github.com/aricloverEXTRA/YouGroupSettings.git
 [submodule "Tweaks/YouTimeStamp"]
 	path = Tweaks/YouTimeStamp
-	url = https://github.com/arichornloverALT/YouTimeStamp.git
+	url = https://github.com/aricloverEXTRA/YouTimeStamp.git
 [submodule "Tweaks/protobuf"]
 	path = Tweaks/protobuf
 	url = https://github.com/protocolbuffers/protobuf.git
