@@ -28,8 +28,6 @@ jobs:
           git add .
           git submodule update --init --recursive --remote Tweaks/PSHeader
           git add .
-#         git submodule update --init --recursive --remote Tweaks/Return-YouTube-Dislikes
-#         git add .
           git submodule update --init --recursive --remote Tweaks/YTABConfig
           git add .
           git submodule update --init --recursive --remote Tweaks/YTUHD
