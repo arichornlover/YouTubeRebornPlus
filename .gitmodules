@@ -13,14 +13,13 @@
 [submodule "Tweaks/YouQuality"]
 	path = Tweaks/YouQuality
 	url = https://github.com/PoomSmart/YouQuality.git
-	branch = main
 [submodule "Tweaks/YTVideoOverlay"]
 	path = Tweaks/YTVideoOverlay
 	url = https://github.com/PoomSmart/YTVideoOverlay.git
 	branch = main
 [submodule "Tweaks/Return-YouTube-Dislikes"]
 	path = Tweaks/Return-YouTube-Dislikes
-	url = https://github.com/PoomSmart/Return-YouTube-Dislikes.git
+	url = https://github.com/aricloverEXTRA/Return-YouTube-Dislikes.git
 	branch = main
 [submodule "Tweaks/YouTubeHeader"]
 	path = Tweaks/YouTubeHeader
@@ -50,10 +49,11 @@
 	branch = master
 [submodule "Tweaks/FLEX"]
 	path = Tweaks/FLEX
-	url = https://github.com/arichornlover/FLEX-Classes.git
+	url = https://github.com/PoomSmart/FLEXing.git
+	branch = rootless
 [submodule "Tweaks/YTHoldForSpeed"]
 	path = Tweaks/YTHoldForSpeed
 	url = https://github.com/aricloverEXTRA/YTHoldForSpeed.git
 [submodule "Tweaks/YTNoCommunityPosts"]
 	path = Tweaks/YTNoCommunityPosts
-	url = https://github.com/arichornlover/YTNoCommunityPosts.git
+	url = https://github.com/michael-winay/YTNoCommunityPosts.git
