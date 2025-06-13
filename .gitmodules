@@ -12,7 +12,7 @@
 	branch = main
 [submodule "Tweaks/YouQuality"]
 	path = Tweaks/YouQuality
-	url = https://github.com/arichornloverALT/YouQuality.git
+	url = https://github.com/PoomSmart/YouQuality.git
 [submodule "Tweaks/YTVideoOverlay"]
 	path = Tweaks/YTVideoOverlay
 	url = https://github.com/PoomSmart/YTVideoOverlay.git
