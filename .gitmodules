@@ -15,12 +15,12 @@
 	url = https://github.com/arichornloverALT/YouQuality.git
 [submodule "Tweaks/YTVideoOverlay"]
 	path = Tweaks/YTVideoOverlay
-	url = https://github.com/arichornloverALT/YTVideoOverlay.git
+	url = https://github.com/PoomSmart/YTVideoOverlay.git
 	branch = main
 [submodule "Tweaks/Return-YouTube-Dislikes"]
 	path = Tweaks/Return-YouTube-Dislikes
 	url = https://github.com/aricloverEXTRA/Return-YouTube-Dislikes.git
-	branch = uYouEnhanced
+	branch = main
 [submodule "Tweaks/YouTubeHeader"]
 	path = Tweaks/YouTubeHeader
 	url = https://github.com/aricloverEXTRA/YouTubeHeader.git
@@ -59,7 +59,7 @@
 	url = https://github.com/michael-winay/YTNoCommunityPosts.git
 [submodule "Tweaks/YouGroupSettings"]
 	path = Tweaks/YouGroupSettings
-	url = https://github.com/aricloverEXTRA/YouGroupSettings.git
+	url = https://github.com/PoomSmart/YouGroupSettings.git
 [submodule "Tweaks/YouTimeStamp"]
 	path = Tweaks/YouTimeStamp
 	url = https://github.com/aricloverEXTRA/YouTimeStamp.git
