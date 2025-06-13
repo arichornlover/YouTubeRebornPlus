@@ -129,10 +129,6 @@
 - (void)internalSetRate;
 @end
 
-@interface MLPlayerEventCenter : NSObject
-- (void)broadcastRateChange:(float)rate;
-@end
-
 @interface HAMPlayerInternal : NSObject
 - (void)setRate:(float)rate;
 @end
