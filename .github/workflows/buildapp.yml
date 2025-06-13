@@ -33,7 +33,7 @@ on:
         type: string
       sdk_version:
         description: "iOS SDK version to be used during build"
-        default: "16.2"
+        default: "17.5"
         required: true
         type: string
       create_release:
@@ -74,7 +74,7 @@ jobs:
         uses: actions/checkout@v4.2.2
         with:
           repository: theos/theos
-          ref: 9941262c450c0abac524574cb96b9a4cdf5e50f4
+          ref: master
           path: theos
           submodules: recursive
 
@@ -91,7 +91,7 @@ jobs:
       - name: Download iOS SDK
         if: steps.SDK.outputs.cache-hit != 'true'
         run: |
-          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/arichorn/sdks/
+          git clone --quiet -n --depth=1 --filter=tree:0 https://github.com/aricloverEXTRA/sdks/
           cd sdks
           git sparse-checkout set --no-cone iPhoneOS${{ inputs.sdk_version }}.sdk
           git checkout
