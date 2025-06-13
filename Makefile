@@ -11,6 +11,7 @@ PACKAGE_VERSION = 19.06.2-5.3.11
 FINALPACKAGE = 1
 CODESIGN_IPA = 0
 MODULES = jailed
+EXTRA_CFLAGS = -I$(THEOS_PROJECT_DIR)/Tweaks/RemoteLog -I$(THEOS_PROJECT_DIR)/Tweaks
 
 EXTRA_CFLAGS := $(addprefix -I,$(shell find Tweaks/FLEX -name '*.h' -exec dirname {} \;))
 
