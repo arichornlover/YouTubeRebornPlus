@@ -58,14 +58,6 @@
 - (void)internalSetRate;
 @end
 
-@interface MLPlayerStickySettings : NSObject
-- (void)setRate:(float)rate;
-@end
-
-@interface MLPlayerEventCenter : NSObject
-- (void)broadcastRateChange:(float)rate;
-@end
-
 @interface HAMPlayerInternal : NSObject
 - (void)setRate:(float)rate;
 @end
@@ -136,10 +128,6 @@
 @property id activeVideo;
 @property float playbackRate;
 - (void)singleVideo:(id)video playbackRateDidChange:(float)rate;
-@end
-
-@interface YTPlayerView : UIView
-- (void)downloadVideo;
 @end
 
 // App Theme
