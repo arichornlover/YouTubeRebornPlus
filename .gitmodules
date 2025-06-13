@@ -1,30 +1,30 @@
 [submodule "Tweaks/YTUHD"]
 	path = Tweaks/YTUHD
-	url = https://github.com/arichornloverALT/YTUHD.git
+	url = https://github.com/PoomSmart/YTUHD.git
 	branch = master
 [submodule "Tweaks/YouPiP"]
 	path = Tweaks/YouPiP
-	url = https://github.com/arichornloverALT/YouPiP.git
+	url = https://github.com/PoomSmart/YouPiP.git
 	branch = main
 [submodule "Tweaks/YouMute"]
 	path = Tweaks/YouMute
-	url = https://github.com/arichornlover/YouMute.git
+	url = https://github.com/PoomSmart/YouMute.git
 	branch = main
 [submodule "Tweaks/YouQuality"]
 	path = Tweaks/YouQuality
-	url = https://github.com/arichornloverALT/YouQuality.git
+	url = https://github.com/PoomSmart/YouQuality.git
 	branch = main
 [submodule "Tweaks/YTVideoOverlay"]
 	path = Tweaks/YTVideoOverlay
-	url = https://github.com/arichornloverALT/YTVideoOverlay.git
+	url = https://github.com/PoomSmart/YTVideoOverlay.git
 	branch = main
 [submodule "Tweaks/Return-YouTube-Dislikes"]
 	path = Tweaks/Return-YouTube-Dislikes
-	url = https://github.com/arichornloverALT/Return-YouTube-Dislikes.git
-	branch = uYouEnhanced
+	url = https://github.com/PoomSmart/Return-YouTube-Dislikes.git
+	branch = main
 [submodule "Tweaks/YouTubeHeader"]
 	path = Tweaks/YouTubeHeader
-	url = https://github.com/PoomSmart/YouTubeHeader.git
+	url = https://github.com/aricloverEXTRA/YouTubeHeader.git
 	branch = main
 [submodule "Tweaks/PSHeader"]
 	path = Tweaks/PSHeader
@@ -36,12 +36,11 @@
 	branch = main
 [submodule "Tweaks/YTABConfig"]
 	path = Tweaks/YTABConfig
-	url = https://github.com/arichornlover/YTABConfig.git
+	url = https://github.com/PoomSmart/YTABConfig.git
 	branch = main
 [submodule "Tweaks/Alderis"]
 	path = Tweaks/Alderis
-	url = https://github.com/arichornlover/Alderis.git
-	branch = master
+	url = https://github.com/hbang/Alderis.git
 [submodule "Tweaks/DontEatMyContent"]
 	path = Tweaks/DontEatMyContent
 	url = https://github.com/therealFoxster/DontEatMyContent
@@ -54,7 +53,7 @@
 	url = https://github.com/arichornlover/FLEX-Classes.git
 [submodule "Tweaks/YTHoldForSpeed"]
 	path = Tweaks/YTHoldForSpeed
-	url = https://github.com/arichornlover/YTHoldForSpeed.git
+	url = https://github.com/aricloverEXTRA/YTHoldForSpeed.git
 [submodule "Tweaks/YTNoCommunityPosts"]
 	path = Tweaks/YTNoCommunityPosts
 	url = https://github.com/arichornlover/YTNoCommunityPosts.git
